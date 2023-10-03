@@ -6,19 +6,21 @@ public class Room : MonoBehaviour
 {
 
 
-    public int Width;
-    public int Height;
+    public float Width;
+    public float Height;
 
     public int X;
     public int Y;
     // Start is called before the first frame update
     void Start()
     {
-        if(RoomController.instance == null)
+        if (RoomController.instance == null)
         {
             Debug.Log("You pressed play on the wrong scene!");
             return;
         }
+
+        RoomController.instance.RegisterRoom(this);
     }
 
     void OnDrawGizmos()
@@ -29,6 +31,6 @@ public class Room : MonoBehaviour
 
     public Vector3 GetRoomCentred()
     {
-        return new Vector3(X*Width, Y*Height );
+        return new Vector3(X * Width, Y * Height);
     }
 }
