@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d7d710a57bd01b4e8cfed556a584951, type: 3}
   m_Name: DungeonGenerationData
   m_EditorClassIdentifier: 
-  numbverofCrawlers: 0
-  iterationMin: 0
-  iterationMax: 0
+  numbverofCrawlers: 2
+  iterationMin: 7
+  iterationMax: 18
