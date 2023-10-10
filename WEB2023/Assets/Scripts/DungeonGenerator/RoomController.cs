@@ -21,6 +21,8 @@ public class RoomController : MonoBehaviour
 
     RoomInfo currentLoadRoomData;
 
+    Room currRom;
+
     Queue<RoomInfo> loadRoomQueue = new Queue<RoomInfo>();
 
     public List<Room> loadedRooms = new List<Room>();
@@ -95,11 +97,23 @@ public class RoomController : MonoBehaviour
 
         isLoadingRoom = false;
 
+
+        if(loadedRooms.Count == 0)
+        {
+            CameraController.instance.currRom = room;
+        }
+
         loadedRooms.Add(room);
 
     }
     public bool DoesRoomExist(int x, int y)
     {
         return loadedRooms.Find(item => item.X == x && item.Y == y) != null;
+    }
+
+    public void OnPlayerEnterRoom(Room room)
+    {
+        CameraController.instance.currRom= room;
+        currRom = room;
     }
 }
