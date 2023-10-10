@@ -1,18 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
-public class DungeonGenerationData : MonoBehaviour
+[CreateAssetMenu(fileName ="DungeonGenerationData.asset",menuName ="DungeonGenerationData/Dungeon Data")]
+public class DungeonGenerationData : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int numbverofCrawlers;
+    public int iterationMin;
+    public int iterationMax;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
