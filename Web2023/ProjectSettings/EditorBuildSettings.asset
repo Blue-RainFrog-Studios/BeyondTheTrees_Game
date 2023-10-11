@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BasementStart.unity
     guid: d1e6180647c8a844b820f3f916d3533d
+  - enabled: 1
+    path: Assets/Scenes/Campamento Base.unity
+    guid: a0431230117a59d4fac32a96c1c288d9
   m_configObjects: {}
