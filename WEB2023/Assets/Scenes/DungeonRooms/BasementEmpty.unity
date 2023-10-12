@@ -900,6 +900,7 @@ MonoBehaviour:
   Height: 10.1
   X: 0
   Y: 0
+  cont: 0
   leftDoor: {fileID: 0}
   rightDoor: {fileID: 0}
   topDoor: {fileID: 0}
