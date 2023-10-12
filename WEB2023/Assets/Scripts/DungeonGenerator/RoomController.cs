@@ -61,7 +61,7 @@ public class RoomController : MonoBehaviour
             if(!spawnedBossRoom)
             {
                 StartCoroutine(SpawnBossRoom());
-            }else if(spawnedBossRoom && updatedRooms) {
+            }else if(spawnedBossRoom && !updatedRooms) {
                 foreach(Room room in loadedRooms)
                 {
                     room.RemoveUnconnectedDoors();
