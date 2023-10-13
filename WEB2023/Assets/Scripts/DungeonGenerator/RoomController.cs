@@ -66,6 +66,7 @@ public class RoomController : MonoBehaviour
                 {
                     room.RemoveUnconnectedDoors();
                 }
+                UpdateRooms();
                 updatedRooms= true;
             }
             return;
@@ -164,5 +165,40 @@ public class RoomController : MonoBehaviour
     {
         CameraController.instance.currRom= room;
         currRom = room;
+
+        //los enemigos se quden quietos cuando la camara no este en la sala
+
+        UpdateRooms();
+    }
+
+    private void UpdateRooms()
+    {
+        foreach (Room room in loadedRooms)
+        {
+            if (currRom != room)
+            {
+                EnemyController[] enemies = room.GetComponentsInChildren<EnemyController>();
+                if(enemies != null)
+                {
+                    foreach(EnemyController enemy in enemies)
+                    {
+                        enemy.notInRoom = true;
+                        Debug.Log("Not in Room");
+                    }
+                }
+            }
+            else
+            {
+                EnemyController[] enemies = room.GetComponentsInChildren<EnemyController>();
+                if (enemies != null)
+                {
+                    foreach (EnemyController enemy in enemies)
+                    {
+                        enemy.notInRoom = false;
+                        Debug.Log("In Room");
+                    }
+                }
+            }
+        }
     }
 }

@@ -65,7 +65,7 @@ public class DungeonGenerator : MonoBehaviour
 
                 RoomController.instance.LoadRoom(RoomController.instance.GetRandomRoomName(), roomLocation.x, roomLocation.y); //changed EmptyRooms.ToString() from Empty
                                                                                                                       //RoomController.instance.LoadRoom("Empty", roomLocation.x, roomLocation.y);
-                Debug.Log(EmptyRooms.RandomItem());
+                //Debug.Log(EmptyRooms.RandomItem());
                 //Debug.Log(EmptyRooms.ToString());
             
 

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public enum EnemyState
 {
+    Idle,
+
     Wander,
 
     Follow, 
@@ -13,7 +15,7 @@ public enum EnemyState
 public class EnemyController : MonoBehaviour
 {
     GameObject player;
-    public EnemyState currState = EnemyState.Wander;
+    public EnemyState currState = EnemyState.Idle;
 
     public float range;
     public float speed;
@@ -22,9 +24,12 @@ public class EnemyController : MonoBehaviour
     private bool dead=false;
     private Vector3 randomDir;
     // Start is called before the first frame update
+
+    public bool notInRoom = false; 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        //Idle();
     }
 
     // Update is called once per frame
@@ -32,22 +37,35 @@ public class EnemyController : MonoBehaviour
     {
         switch(currState)
         {
+            case (EnemyState.Idle):
+                Idle();
+            break;
             case (EnemyState.Wander):
                 Wander();
             break;
             case (EnemyState.Follow):
                 Follow();
-                break;
-                case (EnemyState.Die):
-                break;
+            break;
+            case (EnemyState.Die):
+            break;
         }
-        if (isPlayerInRange(range) && currState!=EnemyState.Die)
+
+        if (!notInRoom)
         {
-            currState = EnemyState.Follow;
+            if (isPlayerInRange(range) && currState != EnemyState.Die)
+            {
+                currState = EnemyState.Follow;
+            }
+            else if (!isPlayerInRange(range) && currState != EnemyState.Die)
+            {
+                currState = EnemyState.Wander;
+            }
         }
-        else if(!isPlayerInRange(range) && currState != EnemyState.Die){
-            currState= EnemyState.Wander;
+        else
+        {
+            currState  = EnemyState.Idle;
         }
+
     }
 
     private bool isPlayerInRange(float range)
@@ -80,5 +98,10 @@ public class EnemyController : MonoBehaviour
     void Follow()
     {
         transform.position=Vector2.MoveTowards(transform.position,player.transform.position,speed * Time.deltaTime);
+    }
+
+    void Idle()
+    {
+        StopCoroutine(ChooseDirection());
     }
 }
