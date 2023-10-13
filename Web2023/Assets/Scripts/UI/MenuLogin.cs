@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class MenuLogin : MonoBehaviour
 {
     private bool genero;
+    [SerializeField] private Button maleButton;
+    [SerializeField] private Button femaleButton;
     private string nombreUsuario;
 
     public void volverMenuPrincipal()
@@ -19,11 +21,15 @@ public class MenuLogin : MonoBehaviour
     public void esMasculino()
     {
         genero = true;
+        maleButton.GetComponent<Image>().color = Color.black;
+        femaleButton.GetComponent<Image>().color = Color.white;
         Debug.Log("Es Hombre"+genero);
     }
     public void esFemenino()
     {
         genero=false;
+        femaleButton.GetComponent<Image>().color = Color.black;
+        maleButton.GetComponent<Image>().color = Color.white;
         Debug.Log("Es Mujer"+genero);
     }
     public void nuevoNombre(string s)
@@ -33,5 +39,9 @@ public class MenuLogin : MonoBehaviour
         //No hace falta coger el texto del inputField
         nombreUsuario = s;
         Debug.Log("El nombre de usuario es: " + nombreUsuario);
+    }
+    public void empezarJuego()
+    {
+        SceneManager.LoadScene("InventoryScene");
     }
 }
