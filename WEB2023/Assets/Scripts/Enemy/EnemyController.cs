@@ -104,4 +104,10 @@ public class EnemyController : MonoBehaviour
     {
         StopCoroutine(ChooseDirection());
     }
+
+    public void Death()
+    {
+        RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());
+        Destroy(gameObject);
+    }
 }
