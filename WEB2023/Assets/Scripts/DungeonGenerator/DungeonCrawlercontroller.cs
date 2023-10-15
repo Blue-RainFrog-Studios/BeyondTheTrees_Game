@@ -12,7 +12,7 @@ public enum Direction
 };
 public class DungeonCrawlercontroller : MonoBehaviour
 {
-public static List<Vector2Int> positionsVisited=new List<Vector2Int>();
+    public static List<Vector2Int> positionsVisited=new List<Vector2Int>();
     private static readonly Dictionary<Direction, Vector2Int> directionMovementMap = new Dictionary<Direction, Vector2Int>
     {
         {Direction.top,Vector2Int.up },
@@ -34,6 +34,7 @@ public static List<Vector2Int> positionsVisited=new List<Vector2Int>();
         {
             foreach(DungeonCrawler dungeonCrawler in dungeonCrawlers)
             {
+                
                 Vector2Int newPos = dungeonCrawler.Move(directionMovementMap);
                 positionsVisited.Add(newPos);
             }
