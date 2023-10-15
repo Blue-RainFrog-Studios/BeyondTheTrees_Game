@@ -8,9 +8,11 @@ public class PlayerMovementInputSystem : MonoBehaviour
     private Rigidbody2D player_rb;
     [SerializeField] private float speed = 8.0f;
     [SerializeField] private float smoothness = 0.3f;
+    [SerializeField] private GameObject attack;
 
     private Map playerInputActions;
     private Vector2 direction;
+    private Vector2 attackDirection;
     private Vector2 velocity;
     private void Awake()
     {
@@ -19,12 +21,14 @@ public class PlayerMovementInputSystem : MonoBehaviour
         playerInputActions.Enable();
 
         //playerInputActions.Player.Move.performed += Move;
+        playerInputActions.Player.Attack.performed += Attack;
     }
     private void Update()
     {
         //Actualiza las posiciones que le decimos mediante el input
         //Move
         direction = playerInputActions.Player.Move.ReadValue<Vector2>();
+        attackDirection = playerInputActions.Player.Attack.ReadValue<Vector2>();
     }
     private void FixedUpdate()
     {
@@ -38,5 +42,14 @@ public class PlayerMovementInputSystem : MonoBehaviour
         Vector2 inputVector = context.ReadValue<Vector2>();
         player_rb.AddForce(new Vector3(inputVector.x, 0, inputVector.y) * speed, ForceMode2D.Force);
         
+    }
+
+    public void Attack(InputAction.CallbackContext context)
+    {
+        Debug.Log(player_rb.position);
+        Debug.Log("Estoy atacando en la dirección: " + context);
+        Instantiate(attack, transform.position, transform.rotation);
+        Debug.Log(attack.transform.position);
+
     }
 }
