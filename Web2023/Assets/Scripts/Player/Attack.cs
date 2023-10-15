@@ -9,15 +9,15 @@ public class Attack : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //transform.Translate(Vector2.left*velocity*Time.deltaTime);
+        transform.Translate(Vector2.up*velocity*Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Enemy"))
-        {
-            //collision.GetComponent<Enemy>().TomarDaño(damage);
-            Destroy(gameObject);
-        }
+        //if(collision.CompareTag("Enemy"))
+        //{
+        //    collision.GetComponent<Enemy>().TomarDaño(damage);
+        //    Destroy(gameObject);
+        //}
     }
 }

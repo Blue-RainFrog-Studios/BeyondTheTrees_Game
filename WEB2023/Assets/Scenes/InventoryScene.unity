@@ -1213,6 +1213,10 @@ PrefabInstance:
       propertyPath: attackControler
       value: 
       objectReference: {fileID: 352576575}
+    - target: {fileID: 4239275511615422092, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: attack
+      value: 
+      objectReference: {fileID: 1720175491396843235, guid: 49b138763be454a4e99c46e4bc979230, type: 3}
     - target: {fileID: 5308110313655663404, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
       propertyPath: m_RootOrder
       value: 1
