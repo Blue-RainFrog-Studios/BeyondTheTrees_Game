@@ -12,7 +12,7 @@ public class PlayerMovementInputSystem : MonoBehaviour
 
     private Map playerInputActions;
     private Vector2 direction;
-    private Vector2 attackDirection;
+    public Vector2 attackDirection;
     private Vector2 velocity;
     private void Awake()
     {
@@ -28,7 +28,7 @@ public class PlayerMovementInputSystem : MonoBehaviour
         //Actualiza las posiciones que le decimos mediante el input
         //Move
         direction = playerInputActions.Player.Move.ReadValue<Vector2>();
-        attackDirection = playerInputActions.Player.Attack.ReadValue<Vector2>();
+        
     }
     private void FixedUpdate()
     {
@@ -46,10 +46,7 @@ public class PlayerMovementInputSystem : MonoBehaviour
 
     public void Attack(InputAction.CallbackContext context)
     {
-        Debug.Log(player_rb.position);
-        Debug.Log("Estoy atacando en la dirección: " + context);
+        attackDirection = playerInputActions.Player.Attack.ReadValue<Vector2>();
         Instantiate(attack, transform.position, transform.rotation);
-        Debug.Log(attack.transform.position);
-
     }
 }

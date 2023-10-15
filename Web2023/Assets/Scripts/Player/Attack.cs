@@ -6,10 +6,15 @@ public class Attack : MonoBehaviour
 {
     [SerializeField] private float velocity;
     [SerializeField] private float damage;
+    private Vector2 pmad;
 
+    private void Awake()
+    {
+        pmad = FindAnyObjectByType<PlayerMovementInputSystem>().attackDirection;
+    }
     private void FixedUpdate()
     {
-        transform.Translate(Vector2.up*velocity*Time.deltaTime);
+        transform.Translate(pmad*velocity*Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
