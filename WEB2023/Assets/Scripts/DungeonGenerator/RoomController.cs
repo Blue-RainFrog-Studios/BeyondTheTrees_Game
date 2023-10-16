@@ -19,6 +19,7 @@ public class RoomController : MonoBehaviour
     public static RoomController instance;
     string currentWorldName = "Basement";
 
+    int cont = 0;
 
     RoomInfo currentLoadRoomData;
 
@@ -50,6 +51,7 @@ public class RoomController : MonoBehaviour
 
     void Update()
     {
+
         UpdateRoomQueue();
     }
     void UpdateRoomQueue()
@@ -63,13 +65,18 @@ public class RoomController : MonoBehaviour
             if(!spawnedBossRoom)
             {
                 StartCoroutine(SpawnBossRoom());
+
             }else if(spawnedBossRoom && !updatedRooms) {
                 foreach(Room room in loadedRooms)
                 {
                     room.RemoveUnconnectedDoors();
                 }
                 UpdateRooms();
-                updatedRooms= true;
+                if(cont == 1)
+                {
+                    updatedRooms = true;
+                }
+                
             }
             return;
         }
@@ -92,7 +99,11 @@ public class RoomController : MonoBehaviour
             loadedRooms.Remove(roomToRemove);
             LoadRoom("End",tempRoom.X,tempRoom.Y);
         }
+<<<<<<< HEAD
         
+=======
+        cont= 1;
+>>>>>>> 748ceebd6f0b7ce7f1c1871998aaf4f755af81b0
     }
     public void LoadRoom(string name, int x, int y)
     {

@@ -13,5 +13,10 @@ MonoBehaviour:
   m_Name: DungeonGenerationData
   m_EditorClassIdentifier: 
   numbverofCrawlers: 1
+<<<<<<< HEAD
   iterationMin: 3
   iterationMax: 3
+=======
+  iterationMin: 6
+  iterationMax: 6
+>>>>>>> 748ceebd6f0b7ce7f1c1871998aaf4f755af81b0
