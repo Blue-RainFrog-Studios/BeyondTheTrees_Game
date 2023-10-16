@@ -2393,7 +2393,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: NOMBRE VIDEOJUEGO
+  m_text: BEYOND THE TREES
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bd2a80708f549f34ca78a6e0f54f3e18, type: 2}
   m_sharedMaterial: {fileID: 2798331685627873493, guid: bd2a80708f549f34ca78a6e0f54f3e18, type: 2}
