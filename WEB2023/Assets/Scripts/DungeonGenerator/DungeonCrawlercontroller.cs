@@ -4,11 +4,10 @@ using UnityEngine;
 
 public enum Direction
 {
-    top=0,
-
-    left=1,
-    down=2,
-    right=3
+    left = 0,
+    top =1,
+    right=2
+    
 };
 public class DungeonCrawlercontroller : MonoBehaviour
 {
@@ -17,14 +16,14 @@ public static List<Vector2Int> positionsVisited=new List<Vector2Int>();
     {
         {Direction.top,Vector2Int.up },
         {Direction.left,Vector2Int.left},
-        {Direction.down,Vector2Int.down},
+        //{Direction.down,Vector2Int.down},
         {Direction.right,Vector2Int.right}
     };
 
     public static List<Vector2Int> GenerateDungeon(DungeonGenerationData dungeonData)
     {
         List<DungeonCrawler> dungeonCrawlers=new List<DungeonCrawler>();
-
+        
         for (int i=0; i<dungeonData.numbverofCrawlers;i++)
         {
             dungeonCrawlers.Add(new DungeonCrawler(Vector2Int.zero));

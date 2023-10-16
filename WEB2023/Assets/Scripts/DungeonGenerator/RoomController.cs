@@ -80,10 +80,11 @@ public class RoomController : MonoBehaviour
     }
     IEnumerator SpawnBossRoom()
     {
-        spawnedBossRoom= true;
+        spawnedBossRoom = true;
         yield return new WaitForSeconds(0.5f);
         if (loadRoomQueue.Count == 0)
         {
+            
             Room bossRoom = loadedRooms[loadedRooms.Count-1];
             Room tempRoom = new Room(bossRoom.X, bossRoom.Y);
             Destroy(bossRoom.gameObject);
@@ -91,7 +92,7 @@ public class RoomController : MonoBehaviour
             loadedRooms.Remove(roomToRemove);
             LoadRoom("End",tempRoom.X,tempRoom.Y);
         }
-
+        
     }
     public void LoadRoom(string name, int x, int y)
     {
