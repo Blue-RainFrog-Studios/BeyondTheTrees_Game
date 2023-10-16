@@ -14,6 +14,9 @@ public class PlayerMovementInputSystem : MonoBehaviour
     private Vector2 direction;
     public Vector2 attackDirection;
     private Vector2 velocity;
+    public float shoteRate = 0.5f;
+
+    private float shotRateTime = 0;
     private void Awake()
     {
         player_rb = GetComponent<Rigidbody2D>();
@@ -46,7 +49,12 @@ public class PlayerMovementInputSystem : MonoBehaviour
 
     public void Attack(InputAction.CallbackContext context)
     {
-        attackDirection = playerInputActions.Player.Attack.ReadValue<Vector2>();
-        Instantiate(attack, transform.position, transform.rotation);
+        if (Time.time > shotRateTime) 
+        {
+            attackDirection = playerInputActions.Player.Attack.ReadValue<Vector2>();
+            Instantiate(attack, transform.position, transform.rotation);
+            shotRateTime = Time.time + shoteRate;
+        }
+
     }
 }
