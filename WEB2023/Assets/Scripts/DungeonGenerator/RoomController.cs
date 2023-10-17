@@ -99,8 +99,11 @@ public class RoomController : MonoBehaviour
             loadedRooms.Remove(roomToRemove);
             LoadRoom("End",tempRoom.X,tempRoom.Y);
         }
+<<<<<<< HEAD
+        
+=======
         cont= 1;
-
+>>>>>>> 748ceebd6f0b7ce7f1c1871998aaf4f755af81b0
     }
     public void LoadRoom(string name, int x, int y)
     {
