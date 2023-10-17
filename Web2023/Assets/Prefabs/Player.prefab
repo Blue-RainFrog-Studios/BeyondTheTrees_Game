@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a884b5308726cd444acecaaea91dd8b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryUI: {fileID: 0}
+  inventoryUI: {fileID: 2335634593040834986, guid: a68b9fc9a0fe09d49879213d453f29f0, type: 3}
   inventoryData: {fileID: 11400000, guid: 3d5e87fb3b39b8e4285030286a8a081f, type: 2}
   initialItems:
   - quantity: 98
