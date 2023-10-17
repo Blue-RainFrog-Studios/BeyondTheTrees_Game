@@ -185,7 +185,7 @@ MonoBehaviour:
   EmptyRooms:
   - Empty
   - Shop
---- !u!1001 &573186525
+--- !u!1001 &517970801
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -203,11 +203,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1994053357871231044, guid: 7f7a343310a7eb842b648a270a886b45, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.017341375
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1994053357871231044, guid: 7f7a343310a7eb842b648a270a886b45, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5912533
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 1994053357871231044, guid: 7f7a343310a7eb842b648a270a886b45, type: 3}
       propertyPath: m_LocalPosition.z
