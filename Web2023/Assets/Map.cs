@@ -25,12 +25,12 @@ public partial class @Map: IInputActionCollection2, IDisposable
     ""maps"": [
         {
             ""name"": ""Player"",
-            ""id"": ""2e823f25-f8f5-44f8-9c72-db39780b41c8"",
+            ""id"": ""92ccef8b-c1a6-4fb8-83d4-0c28f3a57269"",
             ""actions"": [
                 {
                     ""name"": ""Move"",
                     ""type"": ""Value"",
-                    ""id"": ""4e6101a1-9def-4374-a372-2f463f255512"",
+                    ""id"": ""38271cbb-5c76-4885-ac69-1651dae69a1e"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -39,7 +39,7 @@ public partial class @Map: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Attack"",
                     ""type"": ""Value"",
-                    ""id"": ""77af7851-7914-4cf7-9a58-445dba498314"",
+                    ""id"": ""56f246ce-e55f-417b-8616-cb5a66d58d21"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -48,8 +48,19 @@ public partial class @Map: IInputActionCollection2, IDisposable
             ],
             ""bindings"": [
                 {
+                    ""name"": """",
+                    ""id"": ""8d9e096b-4098-4d75-844a-d57f96367776"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
                     ""name"": ""WASD"",
-                    ""id"": ""9420165d-d7b5-477b-96d5-579373525fb4"",
+                    ""id"": ""62d1a011-bc08-424d-baab-b4da715b1ccb"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -60,7 +71,7 @@ public partial class @Map: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""up"",
-                    ""id"": ""7ab9f973-8407-4da1-9731-1367ac85c02b"",
+                    ""id"": ""c535e77d-6747-47e6-9930-d9fae36ab08c"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -71,7 +82,7 @@ public partial class @Map: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""down"",
-                    ""id"": ""e1aa7ab1-ad79-4b1e-9866-6a378e93c14d"",
+                    ""id"": ""d9dfb923-6dfe-4df5-9635-22a48ba6bd65"",
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -82,7 +93,7 @@ public partial class @Map: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""left"",
-                    ""id"": ""3b634fbe-3f73-4b3d-9ea1-08df2926603f"",
+                    ""id"": ""6ecdcd04-76e9-45cb-bec6-bd9dcd71fc15"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -93,7 +104,7 @@ public partial class @Map: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""right"",
-                    ""id"": ""896dcc44-1bee-4d73-b363-959aa59c2a46"",
+                    ""id"": ""6c8f345e-2c42-4a5b-99f6-b916d043570b"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -104,18 +115,18 @@ public partial class @Map: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""9e06be61-5e7a-4b56-b26c-e810ac1beccf"",
-                    ""path"": ""<Gamepad>/leftStick"",
+                    ""id"": ""439da741-a6d3-4e42-a15f-2c539b14198d"",
+                    ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": ""Arrows"",
-                    ""id"": ""27fd9f0e-688c-4ebe-bd2f-d9a789b872b4"",
+                    ""id"": ""e3f481db-b7e8-4158-8b4c-8ad5cfec8352"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -126,7 +137,7 @@ public partial class @Map: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""up"",
-                    ""id"": ""706712c0-8afa-4077-ba2c-1aecfac80cda"",
+                    ""id"": ""39906bff-9017-4ccb-814b-d6a5ff84a797"",
                     ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -137,7 +148,7 @@ public partial class @Map: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""down"",
-                    ""id"": ""8cc5e6f7-6d06-4b64-aaba-d0ca18ebe4e4"",
+                    ""id"": ""814a8757-eea2-46b6-b701-ed0ca28d5261"",
                     ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -148,7 +159,7 @@ public partial class @Map: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""left"",
-                    ""id"": ""0accf2fb-a267-4da6-8faf-46e27100b116"",
+                    ""id"": ""0ed1ee84-e544-4b2f-82b1-2f5e3fb544d2"",
                     ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -159,7 +170,7 @@ public partial class @Map: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""right"",
-                    ""id"": ""6bc918e1-b9f8-4ef2-b090-ac834252293b"",
+                    ""id"": ""68bdcfb4-669a-46c6-a2ce-b4de3301612b"",
                     ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -167,65 +178,6 @@ public partial class @Map: IInputActionCollection2, IDisposable
                     ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""0ccd28a1-0ed9-473a-adef-8e8b9bb6f6bc"",
-                    ""path"": ""<Gamepad>/rightStick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Attack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""Touch"",
-            ""id"": ""c4d570f5-d246-4e74-a1e6-e435f5fca3f6"",
-            ""actions"": [
-                {
-                    ""name"": ""Move"",
-                    ""type"": ""Value"",
-                    ""id"": ""b3f478da-5313-47c4-b34b-e2068419a375"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Attack"",
-                    ""type"": ""Button"",
-                    ""id"": ""d6f92c57-868d-4848-83ed-4a8521408ffd"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""5b94a68d-c185-49ab-a963-c016bfa83058"",
-                    ""path"": ""<Touchscreen>/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""fa4ebf30-e4d5-4e56-a0dd-f9b4ff978477"",
-                    ""path"": ""<Touchscreen>/Press"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Attack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -236,10 +188,6 @@ public partial class @Map: IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
-        // Touch
-        m_Touch = asset.FindActionMap("Touch", throwIfNotFound: true);
-        m_Touch_Move = m_Touch.FindAction("Move", throwIfNotFound: true);
-        m_Touch_Attack = m_Touch.FindAction("Attack", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -351,66 +299,7 @@ public partial class @Map: IInputActionCollection2, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
-
-    // Touch
-    private readonly InputActionMap m_Touch;
-    private List<ITouchActions> m_TouchActionsCallbackInterfaces = new List<ITouchActions>();
-    private readonly InputAction m_Touch_Move;
-    private readonly InputAction m_Touch_Attack;
-    public struct TouchActions
-    {
-        private @Map m_Wrapper;
-        public TouchActions(@Map wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Move => m_Wrapper.m_Touch_Move;
-        public InputAction @Attack => m_Wrapper.m_Touch_Attack;
-        public InputActionMap Get() { return m_Wrapper.m_Touch; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(TouchActions set) { return set.Get(); }
-        public void AddCallbacks(ITouchActions instance)
-        {
-            if (instance == null || m_Wrapper.m_TouchActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_TouchActionsCallbackInterfaces.Add(instance);
-            @Move.started += instance.OnMove;
-            @Move.performed += instance.OnMove;
-            @Move.canceled += instance.OnMove;
-            @Attack.started += instance.OnAttack;
-            @Attack.performed += instance.OnAttack;
-            @Attack.canceled += instance.OnAttack;
-        }
-
-        private void UnregisterCallbacks(ITouchActions instance)
-        {
-            @Move.started -= instance.OnMove;
-            @Move.performed -= instance.OnMove;
-            @Move.canceled -= instance.OnMove;
-            @Attack.started -= instance.OnAttack;
-            @Attack.performed -= instance.OnAttack;
-            @Attack.canceled -= instance.OnAttack;
-        }
-
-        public void RemoveCallbacks(ITouchActions instance)
-        {
-            if (m_Wrapper.m_TouchActionsCallbackInterfaces.Remove(instance))
-                UnregisterCallbacks(instance);
-        }
-
-        public void SetCallbacks(ITouchActions instance)
-        {
-            foreach (var item in m_Wrapper.m_TouchActionsCallbackInterfaces)
-                UnregisterCallbacks(item);
-            m_Wrapper.m_TouchActionsCallbackInterfaces.Clear();
-            AddCallbacks(instance);
-        }
-    }
-    public TouchActions @Touch => new TouchActions(this);
     public interface IPlayerActions
-    {
-        void OnMove(InputAction.CallbackContext context);
-        void OnAttack(InputAction.CallbackContext context);
-    }
-    public interface ITouchActions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);

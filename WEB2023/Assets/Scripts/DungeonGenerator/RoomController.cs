@@ -205,7 +205,7 @@ public class RoomController : MonoBehaviour
                     foreach(EnemyController enemy in enemies)
                     {
                         enemy.notInRoom = true;
-                        Debug.Log("Not in Room");
+                        //Debug.Log("Not in Room");
                     }
                     //related to cierre de puertas
 
