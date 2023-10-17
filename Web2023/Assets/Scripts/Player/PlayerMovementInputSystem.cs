@@ -49,11 +49,22 @@ public class PlayerMovementInputSystem : MonoBehaviour
 
     public void Attack(InputAction.CallbackContext context)
     {
+
+        //El disparo tiene Cooldown
         if (Time.time > shotRateTime) 
         {
+            //Leemos la entrada del usuario
             attackDirection = playerInputActions.Player.Attack.ReadValue<Vector2>();
-            Instantiate(attack, transform.position, transform.rotation);
-            shotRateTime = Time.time + shoteRate;
+            //Redondeamos para los controles de moviles
+            attackDirection.x = Mathf.Round(attackDirection.x);
+            attackDirection.y = Mathf.Round(attackDirection.y);
+            //Solo dispara si se ha llevado el joystick suficientemente lejos
+            if (attackDirection.magnitude == 1)
+            {
+                Instantiate(attack, transform.position, transform.rotation);
+                shotRateTime = Time.time + shoteRate;
+            }
+
         }
 
     }

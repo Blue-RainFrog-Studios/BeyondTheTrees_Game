@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class Attack : MonoBehaviour
@@ -11,6 +12,7 @@ public class Attack : MonoBehaviour
     private void Awake()
     {
         pmad = FindAnyObjectByType<PlayerMovementInputSystem>().attackDirection;
+
     }
     private void FixedUpdate()
     {
