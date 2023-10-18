@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11fbf4c64414c79478d4fc09bd8f32ab, type: 3}
-  m_Name: Apple
+  m_Name: DagaLunar
   m_EditorClassIdentifier: 
-  <IsStackable>k__BackingField: 1
-  <MaxStackSize>k__BackingField: 99
-  <Name>k__BackingField: Apple
-  <Descrption>k__BackingField: 'Health Points: +10'
-  <ItemImage>k__BackingField: {fileID: 7482667652216324306, guid: a5389cf4011917643b6b9107c60bd0b2, type: 3}
+  <IsStackable>k__BackingField: 0
+  <MaxStackSize>k__BackingField: 1
+  <Name>k__BackingField: Daga Lunar
+  <Descrption>k__BackingField: "Da\xF1o: +10"
+  <ItemImage>k__BackingField: {fileID: 21300000, guid: d454608163b76264c98714facfc3ea14, type: 3}
