@@ -28,6 +28,7 @@ public class EnemyController : MonoBehaviour
     private Vector3 randomDir;
     public Animator animator;
     Vector2 direction;
+    public int damage = 20;
     // Start is called before the first frame update
 
     public bool notInRoom = false; 
@@ -133,11 +134,11 @@ public class EnemyController : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene("GameOver");
+            collision.gameObject.GetComponent<KnightScript>().ReceiveAttack(damage);
         }
     }
 }

@@ -9,6 +9,6 @@ public class InventoryBtnScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.gameObject.GetComponent<Button>().onClick.AddListener(() => { if (inventory.active == true) { inventory.SetActive(false); } else { inventory.SetActive(true); } });
+        this.gameObject.GetComponent<Button>().onClick.AddListener(() => { if (inventory.activeInHierarchy) { inventory.SetActive(false); } else { inventory.SetActive(true); } });
     }
 }
