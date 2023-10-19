@@ -19,7 +19,7 @@ public class EnemyController : MonoBehaviour
 
     public float range;
     public float speed;
-
+    public float life;
     private bool chooseDir = false;
     private bool dead=false;
     private Vector3 randomDir;
@@ -47,6 +47,7 @@ public class EnemyController : MonoBehaviour
                 Follow();
             break;
             case (EnemyState.Die):
+                Die();
             break;
         }
 
@@ -105,9 +106,18 @@ public class EnemyController : MonoBehaviour
         StopCoroutine(ChooseDirection());
     }
 
-    public void Death()
+    public void Die()
     {
         RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());
         Destroy(gameObject);
+    }
+    public void RecieveDamage(float damage)
+    {
+        life -= damage;
+        Debug.Log("Recibo daño");
+        if(life < 0)
+        {
+            currState = EnemyState.Die;
+        }
     }
 }
