@@ -184,9 +184,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ghost: {fileID: 263330336992781321}
+  attack: {fileID: 0}
   currState: 0
-  range: 4
+  enemyType: 0
+  range: 8
+  attackRange: 0
+  coolDown: 1
   speed: 2
+  life: 80
   animator: {fileID: 6938415437227796382}
   damage: 10
   notInRoom: 0

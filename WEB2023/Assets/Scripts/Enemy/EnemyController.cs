@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal.Profiling.Memory.Experimental.FileFormat;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,20 +11,35 @@ public enum EnemyState
     Wander,
 
     Follow, 
+
+    Attack,
     
     Die
+};
+public enum EnemyType
+{
+    Melee,
+
+    Ranged
 };
 public class EnemyController : MonoBehaviour
 {
 
     public GameObject ghost;
     GameObject player;
+    public GameObject EnemyBullet;
     public EnemyState currState = EnemyState.Idle;
-
+    public EnemyType enemyType;
     public float range;
-    public float speed;
+    public float attackRange;
 
+    public float coolDown;
+    public float speed;
+    public float life;
+
+    private bool coolDownAttack = false;
     private bool chooseDir = false;
+    public float bulletSpeed;
     private bool dead=false;
     private Vector3 randomDir;
     public Animator animator;
@@ -53,6 +69,9 @@ public class EnemyController : MonoBehaviour
             case (EnemyState.Follow):
                 Follow();
             break;
+            case (EnemyState.Attack):
+                Attack();
+            break;
             case (EnemyState.Die):
             break;
         }
@@ -66,6 +85,9 @@ public class EnemyController : MonoBehaviour
             else if (!isPlayerInRange(range) && currState != EnemyState.Die)
             {
                 currState = EnemyState.Wander;
+            }
+            if(Vector3.Distance(transform.position,player.transform.position) < attackRange) {
+                currState = EnemyState.Attack;
             }
         }
         else
@@ -127,18 +149,47 @@ public class EnemyController : MonoBehaviour
     {
         StopCoroutine(ChooseDirection());
     }
-
-    public void Death()
+    private IEnumerator CoolDown()
     {
-        RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());
-        Destroy(gameObject);
+        coolDownAttack = true;
+        yield return new WaitForSeconds(coolDown);
+        coolDownAttack = false;
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    void Attack()
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (!coolDownAttack)
         {
-            collision.gameObject.GetComponent<KnightScript>().ReceiveAttack(damage);
+            switch (enemyType)
+            {
+                case(EnemyType.Melee):
+                    player.GetComponent<KnightScript>().ReceiveAttack(damage);
+                    StartCoroutine(CoolDown());
+                    break;
+                case (EnemyType.Ranged):
+                    GameObject bullet=Instantiate(EnemyBullet,transform.position,Quaternion.identity) as GameObject;
+                    bullet.GetComponent<BulletController>().GetPlayer(player.transform);
+                    bullet.AddComponent<Rigidbody2D>().gravityScale = 0;
+                    StartCoroutine(CoolDown());
+                    break;
+            }
         }
     }
+    public void Die()
+    {
+        RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());
+        Destroy(ghost);
+        
+    }
+    public void RecieveDamage(float damage)
+    {
+        life -= damage;
+        Debug.Log("Recibo daño");
+        if (life < 0)
+        {
+            currState = EnemyState.Die;
+        }
+    }
+
+
+
 }
