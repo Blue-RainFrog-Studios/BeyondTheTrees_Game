@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum EnemyState
 {
@@ -9,35 +10,25 @@ public enum EnemyState
     Wander,
 
     Follow, 
-
-    Attack,
     
     Die
 };
-
-public enum EnemyType
-{
-    Melee,
-    
-    Ranged
-};
 public class EnemyController : MonoBehaviour
 {
+
+    public GameObject ghost;
     GameObject player;
     public EnemyState currState = EnemyState.Idle;
 
-    public EnemyType enemyType;
     public float range;
-    public float attackRange;
-
-    public float coolDown;
     public float speed;
-    public float life;
 
-    private bool coolDownAttack=false;
     private bool chooseDir = false;
     private bool dead=false;
     private Vector3 randomDir;
+    public Animator animator;
+    Vector2 direction;
+    public int damage = 20;
     // Start is called before the first frame update
 
     public bool notInRoom = false; 
@@ -45,6 +36,7 @@ public class EnemyController : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         //Idle();
+        ghost = this.gameObject;
     }
 
     // Update is called once per frame
@@ -62,12 +54,7 @@ public class EnemyController : MonoBehaviour
                 Follow();
             break;
             case (EnemyState.Die):
-                Die();
             break;
-            //case (EnemyState.Attack):
-            //    Attack();
-            //break;
-
         }
 
         if (!notInRoom)
@@ -86,6 +73,22 @@ public class EnemyController : MonoBehaviour
             currState  = EnemyState.Idle;
         }
 
+        direction = player.transform.position - transform.position;
+        if (direction.x > 0.0f)
+        {
+            if (direction.y + 1.0f > direction.x)
+                animator.Play("GhostBack");
+            else
+                animator.Play("GhostRight");
+        }
+        else if (direction.x < 0.0f)
+        {
+            if (direction.y + 1.0f < direction.x)
+                animator.Play("GhostFront");
+            else
+                animator.Play("GhostLeft");
+        }
+
     }
 
     private bool isPlayerInRange(float range)
@@ -96,10 +99,10 @@ public class EnemyController : MonoBehaviour
     private IEnumerator ChooseDirection()
     {
         chooseDir=true;
-        yield return new WaitForSeconds(Random.Range(2f,5f));
+        yield return new WaitForSeconds(Random.Range(2f,8f));
         randomDir = new Vector3(0, 0, Random.Range(0, 360));
-        Quaternion nextRotation = Quaternion.Euler(randomDir);
-        transform.rotation = Quaternion.Lerp(transform.rotation, nextRotation, Random.Range(0.5f, 2.5f));
+       // Quaternion nextRotation = Quaternion.Euler(randomDir);
+        //transform.rotation = Quaternion.Lerp(transform.rotation, nextRotation, Random.Range(0.5f, 2.5f));
         chooseDir= false;
     }
     void Wander()
@@ -124,28 +127,18 @@ public class EnemyController : MonoBehaviour
     {
         StopCoroutine(ChooseDirection());
     }
-    void Attack()
-    {
 
-    }
-    private IEnumerator CoolDown()
-    {
-        coolDownAttack = true;
-        yield return new WaitForSeconds(coolDown);
-        coolDownAttack = false;
-    }
-    public void Die()
+    public void Death()
     {
         RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());
         Destroy(gameObject);
     }
-    public void RecieveDamage(float damage)
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        life -= damage;
-        Debug.Log("Recibo daño");
-        if(life < 0)
+        if (collision.gameObject.CompareTag("Player"))
         {
-            currState = EnemyState.Die;
+            collision.gameObject.GetComponent<KnightScript>().ReceiveAttack(damage);
         }
     }
 }
