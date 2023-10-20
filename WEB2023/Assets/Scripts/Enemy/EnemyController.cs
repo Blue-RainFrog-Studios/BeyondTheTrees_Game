@@ -9,17 +9,32 @@ public enum EnemyState
     Wander,
 
     Follow, 
+
+    Attack,
     
     Die
+};
+
+public enum EnemyType
+{
+    Melee,
+    
+    Ranged
 };
 public class EnemyController : MonoBehaviour
 {
     GameObject player;
     public EnemyState currState = EnemyState.Idle;
 
+    public EnemyType enemyType;
     public float range;
+    public float attackRange;
+
+    public float coolDown;
     public float speed;
     public float life;
+
+    private bool coolDownAttack=false;
     private bool chooseDir = false;
     private bool dead=false;
     private Vector3 randomDir;
@@ -49,6 +64,10 @@ public class EnemyController : MonoBehaviour
             case (EnemyState.Die):
                 Die();
             break;
+            //case (EnemyState.Attack):
+            //    Attack();
+            //break;
+
         }
 
         if (!notInRoom)
@@ -77,7 +96,7 @@ public class EnemyController : MonoBehaviour
     private IEnumerator ChooseDirection()
     {
         chooseDir=true;
-        yield return new WaitForSeconds(Random.Range(2f,8f));
+        yield return new WaitForSeconds(Random.Range(2f,5f));
         randomDir = new Vector3(0, 0, Random.Range(0, 360));
         Quaternion nextRotation = Quaternion.Euler(randomDir);
         transform.rotation = Quaternion.Lerp(transform.rotation, nextRotation, Random.Range(0.5f, 2.5f));
@@ -105,7 +124,16 @@ public class EnemyController : MonoBehaviour
     {
         StopCoroutine(ChooseDirection());
     }
+    void Attack()
+    {
 
+    }
+    private IEnumerator CoolDown()
+    {
+        coolDownAttack = true;
+        yield return new WaitForSeconds(coolDown);
+        coolDownAttack = false;
+    }
     public void Die()
     {
         RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());
