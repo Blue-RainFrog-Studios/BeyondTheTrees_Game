@@ -28,6 +28,8 @@ public class Room : MonoBehaviour
     public Door topDoor;
     public Door bottomDoor;
 
+    public GameObject trees;
+
     public List<Door> doors = new List<Door>();
     // Start is called before the first frame update
     void Start()
@@ -148,6 +150,7 @@ public class Room : MonoBehaviour
         if (other.tag=="Player")
         {
             RoomController.instance.OnPlayerEnterRoom(this);
+            trees.SetActive(false);
         }
     }
 }
