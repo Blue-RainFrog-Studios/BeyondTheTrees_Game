@@ -73,6 +73,7 @@ public class EnemyController : MonoBehaviour
                 Attack();
             break;
             case (EnemyState.Die):
+                Die();
             break;
         }
 
@@ -169,6 +170,7 @@ public class EnemyController : MonoBehaviour
                     GameObject bullet=Instantiate(EnemyBullet,transform.position,Quaternion.identity) as GameObject;
                     bullet.GetComponent<BulletController>().GetPlayer(player.transform);
                     bullet.AddComponent<Rigidbody2D>().gravityScale = 0;
+                    
                     StartCoroutine(CoolDown());
                     break;
             }
@@ -184,7 +186,7 @@ public class EnemyController : MonoBehaviour
     {
         life -= damage;
         Debug.Log("Recibo daño");
-        if (life < 0)
+        if (life <= 0)
         {
             currState = EnemyState.Die;
         }

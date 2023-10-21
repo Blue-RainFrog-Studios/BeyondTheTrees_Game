@@ -6,6 +6,7 @@ public class BulletController : MonoBehaviour
 {
     // Start is called before the first frame update
     public float lifeTime;
+    public int damage=10;
 
     private Vector2 lastPos;
 
@@ -32,5 +33,16 @@ public class BulletController : MonoBehaviour
     public void GetPlayer(Transform player)
     {
         playerPos = player.position;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision.CompareTag("Player"))
+        {
+
+            collision.GetComponent<KnightScript>().ReceiveAttack(damage);
+            Destroy(gameObject);
+        }
+       
     }
 }
