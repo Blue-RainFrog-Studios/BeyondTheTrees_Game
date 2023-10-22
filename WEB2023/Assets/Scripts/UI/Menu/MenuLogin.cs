@@ -42,6 +42,7 @@ public class MenuLogin : MonoBehaviour
     }
     public void empezarJuego()
     {
-        SceneManager.LoadScene("Basement");
+        //SceneManager.LoadScene("Basement");
+        SceneManager.LoadScene("Campamento Base");
     }
 }
