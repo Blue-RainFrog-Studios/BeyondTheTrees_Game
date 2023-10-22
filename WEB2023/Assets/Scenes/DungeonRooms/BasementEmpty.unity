@@ -1762,6 +1762,7 @@ MonoBehaviour:
   rightDoor: {fileID: 0}
   topDoor: {fileID: 0}
   bottomDoor: {fileID: 0}
+  trees: {fileID: 0}
   doors: []
 --- !u!61 &1940129676
 BoxCollider2D:
@@ -1823,7 +1824,7 @@ MonoBehaviour:
   grid: {fileID: 1850390393}
   spawnerData:
   - name: ChaseEnemy
-    spawnerData: {fileID: 11400000, guid: 6a31e8643d4ec10428e2560abf4ede17, type: 2}
+    spawnerData: {fileID: 0}
 --- !u!1 &2031183877
 GameObject:
   m_ObjectHideFlags: 0

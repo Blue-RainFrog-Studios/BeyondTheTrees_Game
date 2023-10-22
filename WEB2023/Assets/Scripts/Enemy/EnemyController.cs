@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal.Profiling.Memory.Experimental.FileFormat;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum EnemyState
 {
@@ -9,20 +11,40 @@ public enum EnemyState
     Wander,
 
     Follow, 
+
+    Attack,
     
     Die
 };
+public enum EnemyType
+{
+    Melee,
+
+    Ranged
+};
 public class EnemyController : MonoBehaviour
 {
-    GameObject player;
-    public EnemyState currState = EnemyState.Idle;
 
+    public GameObject ghost;
+    GameObject player;
+    public GameObject EnemyBullet;
+    public EnemyState currState = EnemyState.Idle;
+    public EnemyType enemyType;
     public float range;
+    public float attackRange;
+
+    public float coolDown;
     public float speed;
     public float life;
+
+    private bool coolDownAttack = false;
     private bool chooseDir = false;
+    public float bulletSpeed;
     private bool dead=false;
     private Vector3 randomDir;
+    public Animator animator;
+    Vector2 direction;
+    public int damage = 20;
     // Start is called before the first frame update
 
     public bool notInRoom = false; 
@@ -30,6 +52,7 @@ public class EnemyController : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         //Idle();
+        ghost = this.gameObject;
     }
 
     // Update is called once per frame
@@ -46,6 +69,9 @@ public class EnemyController : MonoBehaviour
             case (EnemyState.Follow):
                 Follow();
             break;
+            case (EnemyState.Attack):
+                Attack();
+            break;
             case (EnemyState.Die):
                 Die();
             break;
@@ -61,10 +87,29 @@ public class EnemyController : MonoBehaviour
             {
                 currState = EnemyState.Wander;
             }
+            if(Vector3.Distance(transform.position,player.transform.position) < attackRange) {
+                currState = EnemyState.Attack;
+            }
         }
         else
         {
             currState  = EnemyState.Idle;
+        }
+
+        direction = player.transform.position - transform.position;
+        if (direction.x > 0.0f)
+        {
+            if (direction.y + 1.0f > direction.x)
+                animator.Play("GhostBack");
+            else
+                animator.Play("GhostRight");
+        }
+        else if (direction.x < 0.0f)
+        {
+            if (direction.y + 1.0f < direction.x)
+                animator.Play("GhostFront");
+            else
+                animator.Play("GhostLeft");
         }
 
     }
@@ -79,8 +124,8 @@ public class EnemyController : MonoBehaviour
         chooseDir=true;
         yield return new WaitForSeconds(Random.Range(2f,8f));
         randomDir = new Vector3(0, 0, Random.Range(0, 360));
-        Quaternion nextRotation = Quaternion.Euler(randomDir);
-        transform.rotation = Quaternion.Lerp(transform.rotation, nextRotation, Random.Range(0.5f, 2.5f));
+       // Quaternion nextRotation = Quaternion.Euler(randomDir);
+        //transform.rotation = Quaternion.Lerp(transform.rotation, nextRotation, Random.Range(0.5f, 2.5f));
         chooseDir= false;
     }
     void Wander()
@@ -105,19 +150,48 @@ public class EnemyController : MonoBehaviour
     {
         StopCoroutine(ChooseDirection());
     }
-
+    private IEnumerator CoolDown()
+    {
+        coolDownAttack = true;
+        yield return new WaitForSeconds(coolDown);
+        coolDownAttack = false;
+    }
+    void Attack()
+    {
+        if (!coolDownAttack)
+        {
+            switch (enemyType)
+            {
+                case(EnemyType.Melee):
+                    player.GetComponent<KnightScript>().ReceiveAttack(damage);
+                    StartCoroutine(CoolDown());
+                    break;
+                case (EnemyType.Ranged):
+                    GameObject bullet=Instantiate(EnemyBullet,transform.position,Quaternion.identity) as GameObject;
+                    bullet.GetComponent<BulletController>().GetPlayer(player.transform);
+                    bullet.AddComponent<Rigidbody2D>().gravityScale = 0;
+                    
+                    StartCoroutine(CoolDown());
+                    break;
+            }
+        }
+    }
     public void Die()
     {
         RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());
-        Destroy(gameObject);
+        Destroy(ghost);
+        
     }
     public void RecieveDamage(float damage)
     {
         life -= damage;
         Debug.Log("Recibo daño");
-        if(life < 0)
+        if (life <= 0)
         {
             currState = EnemyState.Die;
         }
     }
+
+
+
 }

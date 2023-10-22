@@ -28,6 +28,8 @@ public class Room : MonoBehaviour
     public Door topDoor;
     public Door bottomDoor;
 
+    public GameObject trees;
+
     public List<Door> doors = new List<Door>();
     // Start is called before the first frame update
     void Start()
@@ -79,18 +81,22 @@ public class Room : MonoBehaviour
                 case Door.DoorType.right:
                     if(GetRight() == null)
                         door.gameObject.SetActive(false);
+                        door.doorCollider.SetActive(true);
                     break;
                 case Door.DoorType.left:
                     if (GetLeft() == null)
                         door.gameObject.SetActive(false);
+                        door.doorCollider.SetActive(true);
                     break;
                 case Door.DoorType.top:
                     if (GetTop() == null)
                         door.gameObject.SetActive(false);
+                        door.doorCollider.SetActive(true);
                     break;
                 case Door.DoorType.bottom:
                     if (GetBottom() == null)
                         door.gameObject.SetActive(false);
+                        door.doorCollider.SetActive(true);
                     break;
             }
         }
@@ -144,6 +150,7 @@ public class Room : MonoBehaviour
         if (other.tag=="Player")
         {
             RoomController.instance.OnPlayerEnterRoom(this);
+            trees.SetActive(false);
         }
     }
 }
