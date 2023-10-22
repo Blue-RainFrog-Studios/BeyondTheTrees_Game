@@ -1910,6 +1910,8 @@ MonoBehaviour:
   spawnerData:
   - name: ChaseEnemy
     spawnerData: {fileID: 11400000, guid: 6a31e8643d4ec10428e2560abf4ede17, type: 2}
+  - name: RangeEnemy
+    spawnerData: {fileID: 11400000, guid: f610335d58a7afb4da3f284359b175ee, type: 2}
 --- !u!1 &2031183877
 GameObject:
   m_ObjectHideFlags: 0
