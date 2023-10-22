@@ -159,16 +159,18 @@ Las armas determinan cómo ataca el personaje y el daño que hace. Hay dos tipos
 | Daño                | Mediano   | Alto      | Bajo                  | Mediano      | Alto         | Bajo    |
 | Velocidad de ataque | Mediano   | Lento     | Rápido                | Mediano      | Lento        | Rápido  |
 
-###Pociones
+### Pociones
 Las pociones servirán para curar la vida, al consumirlas el jugador se deberá quedar quieto brevemente y hacer una animación para poder curarse. 
 Para usar una poción se deberá hacer desde el menú de inventario, una vez usado se recuperará una cantidad de vida acorde a la calidad de las pociones.
 Las pociones no se podrán usar durante el combate, solo cuando se haya acabado con los enemigos de la sala o el jugador esté en una sala de tienda.
 
-###Items
+### Objetos
 Los objetos pueden aparecer al terminar  una sala y servirán para aumentar estadísticas y en algunos casos alterarán aspectos del personaje como el tipo de daño que hace o los estados que puede infligir, en versiones posteriores se implementarán más atributos que puedan dar los objetos, como sangrado, veneno, quemaduras…
 Los objetos tienen 4 **rarezas**: común, raro, épico, legendario. La rareza de los objetos determinará las stats que da al jugador y el precio de venta, además, los objetos de rareza superiores le podrán dar al jugador más de una estadística. 
+
+
 Más adelante en el juego, cuando el jugador desbloqueé la capacidad de ver auras, podrá ver el aura de los objetos en el bosque, este aura afecta al precio de venta y su daño y determina el estado del objeto en 5 categorías: Maltrecho, - 5% de su precio ; sin aura, tiene el precio de venta y estadísticas normal ; buen estado, + 10% de su precio de venta y estadísticas; perfecto estado, +15% de precio de venta y estadísticas; purificado, +20% de su precio de venta, estadísticas y un efecto sumado aleatorio. Estos porcentajes son orientativos y cambiarán cuando se haya testeado si impactan mucho o poco el gameplay.
-Enlace a la hoja de cálculo con los items: https://docs.google.com/spreadsheets/d/1nqJ6MIjXAtS5HyprhY6oJlgkHAHZMD0HF10bQ-MYcy4/edit?usp=sharing
+Enlace a la hoja de cálculo con los objetos: https://docs.google.com/spreadsheets/d/1nqJ6MIjXAtS5HyprhY6oJlgkHAHZMD0HF10bQ-MYcy4/edit?usp=sharing
 
 
 A = Ataque, D=Defensa, VA=Velocidad de Ataque, VM=Velocidad de Movimiento, R=Rareza y P = Precio 
@@ -203,64 +205,138 @@ Daga Solar
 Daga Lunar
 
 
-##DISEÑO
-###Personaje
+## DISEÑO
+### Personaje
 Kero es el protagonista.
 El personaje busca ser desenfadado y familiar. Un personaje simple del que poder encariñarse y ver como va cambiando a medida que el jugador desarrolla su manera de jugar.
 
 
-###Niveles
-El mapa del videojuego está generado aleatoriamente mediante un algoritmo, este mapa consiste en una serie de salas a las que llamaremos niveles organizadas en tres pisos. Estos pisos cuentan con 7-10 niveles por cada piso. A medida que se vaya pasando de piso, la estética y dificultad cambiará para balancear la curva de dificultad.
+### Niveles
+El mapa del videojuego está generado aleatoriamente mediante un algoritmo, este mapa consiste en una serie de salas a las que llamaremos niveles organizadas en tres pisos. Estos pisos cuentan con 7-10 niveles por cada piso. Una vez pasado un nivel, el jugador no podrá volver atrás. A medida que se vaya pasando de piso, la estética y dificultad cambiará para balancear la curva de dificultad.
+
 
 Los niveles se dividen en 4 categorías: niveles de desafío, niveles de jefe, niveles con tienda y niveles de puzzle. Cada uno de estos devuelve una recompensa diferente e involucra a un tipo de enemigo distinto.
 
-Niveles de desafío: estos niveles son los más comunes entre todos. Se componen de enemigos parcialmente aleatorios (ya que controlaremos la aleatoriedad) y obstáculos que dificultan al jugador. 
-Objetivo: el único objetivo de esta sala es matar a todos los enemigos, cuando esto se haga se abrirá la puerta. 
-Recompensa: este nivel no cuenta con una recompensa asegurada aunque los enemigos tienen posibilidad de soltar objetos cuando mueren.
-Enemigos: cualquier tipo de enemigo
-Niveles de jefe: son los más difíciles de completar porque cuentan con enemigos mucho más complicados. Estos niveles no cuentan o tienen muy pocos obstáculos porque la dificultad residirá en el enemigo.
-Objetivo: matar a todos los enemigos presentes en la sala (las salas no tienen solo por qué contar con un solo enemigo fuerte, este puede estar acompañado de enemigos comunes para aumentar la dificultad.
-Recompensa: el nivel de jefe cuenta con las mejores recompensas entre todas las salas. Estas son objetos de mucha rareza que serán muy valiosos para el jugador.
-Enemigos: Jefes y enemigos comunes o modificados.
-Niveles de tienda: estos niveles no tienen enemigos en ellos, simplemente cuentan con una pequeña tienda con un tendero donde el jugador puede comprar vida, objetos y mejoras para las habilidades
-Objetivo: ninguno en específico, el jugador no tiene por qué comprar nada y puede salir cuando desee
-Recompensa: los objetos y mejoras proporcionadas por el tendero
-Enemigos: ninguno
-Niveles de puzzle: estos niveles son los más complejos. Contaremos con 4 tipos de niveles de puzzle y cada uno de ellos tendrá diferentes distribuciones de enemigos y obstáculos. Los cuatro tipos son:
-King of the hill: dentro del nivel aparecerá una zona destacada de la sala donde cuanto más tiempo esté el jugador más recompensas obtendrá. Estás recompensas serán principalmente oro, si el jugador consigue estar más de 15 segundos en la zona se le recompensará con un objeto.
-Objetivo: estar el máximo tiempo posible en la zona destacada.
-Recompensa: una moneda por segundo dentro. Si el jugador llega a más de 15 segundos además se recompensará con un objeto
-Enemigos: Perdidos, ardillas y fantasmas.
-Duración: 20 segundos, una vez terminados la zona destacada desaparecerá y los enemigos morirán.
-Recoge las bellotas: en el nivel aparecerán un número de bellotas (entre 4-5 bellotas). El jugador deberá recoger las bellotas y dejarlas en un pedestal de piedra para que se pueda abrir la puerta. Los enemigos podrán coger las bellotas y para recuperarlas deberás matarlos, una vez muertos las bellotas caen al suelo.
-Objetivo: recoger las bellotas y dejarlas en el pedestal
-Recompensa: una vez dejadas las bellotas en el pedestal, este te proporcionará vida
-Enemigos: ardillas, duendes y duendes mágicos
-La calavera dorada: en el nivel se encontrará una calavera dorada tirada en algún lugar de la sala y un mayor número de enemigos que de costumbre. Cuando el jugador coja la calavera dorada todos los enemigos morirán. Por cada enemigo que mate la calavera (que no haya muerto antes de cogerla) se soltará una moneda. 
-Objetivo: coger la calavera lo antes posible
-Recompensa: una moneda por cada enemigo que mate la calavera
-Enemigos: perdidos, lobos, duendes o magos
-Apaga el incendio: en este nivel el jugador se encontrará con una serie de fuegos ardiendo, estos fuegos tienen recompensas de interés debajo (oro y objetos). Para obtenerlos el jugador debe apagar lo más rápidamente los fuegos. Para apagar un fuego el jugador deberá pegarlo tres veces. El jugador no podrá apagar todos los fuegos por lo que deberá escoger qué objeto es más valioso o más arriesgado coger. También habrá enemigos que el jugador deberá matar o esquivar. El nivel no se acabará hasta que todos los enemigos mueran
-Objetivo: salvar los objetos y matar a los enemigos
-Recompensa: objetos u oro
-Enemigos: fantasmas y magos
-Tiempo: los fuegos quemarán el objeto en 5-7 segundos
+
+- Niveles de desafío: estos niveles son los más comunes entre todos. Se componen de enemigos parcialmente aleatorios (ya que controlaremos la aleatoriedad) y obstáculos que dificultan al jugador. 
+   - Objetivo: el único objetivo de esta sala es matar a todos los enemigos, cuando esto se haga se abrirá la puerta. 
+   - Recompensa: este nivel no cuenta con una recompensa asegurada aunque los enemigos tienen posibilidad de soltar objetos cuando mueren.
+   - Enemigos: cualquier tipo de enemigo
+- Niveles de jefe: son los más difíciles de completar porque cuentan con enemigos mucho más complicados. Estos niveles no cuentan o tienen muy pocos obstáculos porque la dificultad residirá en el enemigo.
+   - Objetivo: matar a todos los enemigos presentes en la sala (las salas no tienen solo por qué contar con un solo enemigo fuerte, este puede estar acompañado de enemigos comunes para aumentar la dificultad.
+   - Recompensa: el nivel de jefe cuenta con las mejores recompensas entre todas las salas. Estas son objetos de mucha rareza que serán muy valiosos para el jugador.
+   - Enemigos: jefes y enemigos comunes o modificados.
+- Niveles de tienda: estos niveles no tienen enemigos en ellos, simplemente cuentan con una pequeña tienda con un tendero donde el jugador puede comprar vida, objetos y mejoras para el personaje.
+   - Objetivo: ninguno en específico, el jugador no tiene por qué comprar ni vender nada y puede salir cuando desee
+   - Recompensa: los objetos y mejoras proporcionadas por el tendero
+   - Enemigos: ninguno
+- Niveles de puzzle: estos niveles son los más complejos. Contaremos con 4 tipos de niveles de puzzle y cada uno de ellos tendrá diferentes distribuciones de enemigos y obstáculos. Los cuatro tipos son:
+   - King of the trees: dentro del nivel aparecerá una zona destacada de la sala donde, si el jugador permanece 5 segundos se completará la zona. Una vez completada la zona, esta cambiará de lugar, el jugador tendrá 30 segundos para completar 4 zonas de 5 segundos cada una. Las recompensas variarán en función de cuantas zonas lleves completas. Una vez terminada la cuarta zona los enemigos que continúen vivos morirán y las puertas del nivel se abrirán, dando por terminado el nivel.
+      - Objetivo: completar 4 zonas destacadas.
+      - Recompensa:  la primera zona recompensa con 1 moneda, la segunda con 5 monedas, la tercera con 10 monedas y la cuarta con un objeto.
+      - Enemigos: perdidos, ardillas y fantasmas.
+      - Duración: 30 segundos, una vez terminados la zona destacada desaparecerá y para terminar la sala deberá matar a los enemigos.
+      - Diseño de audio: para este nivel se implementará un sonido de tictac de reloj que se irá haciendo más rápido a medida que se vaya acabando el tiempo del nivel.
+      - Pensamiento computacional: este nivel se enfoca en las destrezas de descomposición, generalización y pensamiento algorítmico. El jugador deberá usar la deducción para, mediante pistas visuales, llegar a la solución del problema. Para las pistas visuales se ha pensado que la zona destacada brille en un color más llamativo. Cuando al jugador se le estén acabando los 30 segundos la zona destacada empezará a emitir pulsos de luz cada vez más rápidos. Cuando el tiempo se acabe la zona actual se apagará. Una vez que el jugador complete la primera zona, deberá hacer uso de la generalización para resolver el nuevo problema, la zona destacada nueva, basándose en las soluciones anteriores. Una vez terminada una zona el jugador deberá usar el pensamiento algorítmico para crear una ruta que le haga llegar lo antes posible y más seguro al objetivo.
+      - Mapa y ejemplos visuales:
+         -  Ejemplo mapa:
+            -  Enemigos: triángulo
+            - Zona transitable: verde
+            - Zona no transitable: azul
+            - Jugador: estrella
+            - Zona destacada: círculo
+            - Camino jugador: morado
+
+         - Ejemplo primera zona:
+
+         - Ejemplo segunda zona:
+
+         - Ejemplo situación segunda zona: el jugador deberá defenderse de los enemigos que se le acerquen
+
+         - Ejemplo de cómo profundizar el nivel: A medida que el jugador vaya jugando partidas, el nivel se le hará más y más familiar. Para evitar eso se ha decidido implementar en un futuro una variación del nivel donde haya diferentes zonas a la vez. Cada zona tendrá un icono, este icono representará el tipo de objeto que soltará la zona (armadura, velocidad o daño). El jugador deberá decidir cuál es el objeto que le interesa más y ajustarse a él, fortaleciendo las destrezas de evaluación.
+
+   - Recoge las bellotas: en el nivel aparecerán un número de bellotas (entre 4-5 bellotas). El jugador deberá recoger las bellotas y dejarlas en un pedestal de piedra. Los enemigos podrán coger las bellotas y para recuperarlas deberás matarlos, una vez muertos las bellotas caen al suelo. Si el jugador no es suficientemente rápido en matar a los enemigos con bellotas dentro estos se comerán las bellotas, impidiendo que el jugador obtenga su recompensa. Si el jugador consigue poner las bellotas en el pedestal se le curará el 50% de la vida actual.
+      - Objetivo: recoger las bellotas y dejarlas en el pedestal
+      - Recompensa: una vez dejadas las bellotas en el pedestal, este te proporcionará vida
+      - Enemigos: ardillas, duendes y duendes mágicos
+      - Diseño de audio: cuando los enemigos se estén comiendo las bellotas se escuchará un sonido de masticar. Cuando se hayan comido la bellota se escuchará un sonido de tragar para indicar al jugador que ya no puede obtener la recompensa. 
+      - Pensamiento computacional: este nivel estará centrado en las destrezas de pensamiento algorítmico, abstracción y descomposición. El jugador deberá deducir el funcionamiento del nivel, para ello se le proporcionarán pistas visuales como marcas con forma de bellota en el pedestal que le indicarán al jugador cuantas bellotas le quedan por coger. El diseño del pedestal estará puesto para llevar al jugador a echar las bellotas en el.
+
+Una vez entendido el funcionamiento del nivel el jugador deberá hacer un camino óptimo en poco tiempo y modificarlo en función del comportamiento de los enemigos. Para eso usará las herramientas de: reconocimiento de elementos clave en un problema de la abstracción, el jugador deberá entender en cada momento cual es la bellota en la que centrarse;  la creación de algoritmos o secuencias del pensamiento algorítmico, para la creación de un camino óptimo en el que los enemigos no se coman la bellota; la descomposición de problemas en otros más pequeños de la destreza de descomposición, el jugador deberá abstraerse del problema principal de conseguir poner las bellotas en el altar y centrarse en salvar la bellota más necesitada.
+      - Mapas y ejemplos visuales:
+         - Mapa ejemplo:
+            - Enemigos: triángulo
+            - Zona transitable: verde
+            - Zona no transitable: negro
+            - Jugador: estrella
+            - Bellotas: círculo
+            - Pedestal: corazón
+            - Camino jugador: morado
+
+Mapa con camino óptimo: el camino está escogido para que los enemigos no se coman ninguna bellota
+
+Mapa con camino fallido: para cuando el jugador llegue a la X morada el enemigo se habrá comido la bellota de abajo a la izquierda
 
 
+   - La calavera dorada: en el nivel se encontrará una calavera dorada tirada en algún lugar de la sala y un mayor número de enemigos que de costumbre. Cuando el jugador coja la calavera dorada todos los enemigos morirán. Por cada enemigo que mate la calavera (que no haya muerto antes de cogerla) se soltará una moneda. La primera vez que el jugador se encuentre con este nivel, no sabrá el funcionamiento de este por lo que se ha decidido que para que sea más fácil para el jugador descubrir sobre la calavera, se añadirán pistas visuales que lleven la atención a esta. Cuando el jugador mate a un enemigo, la calavera empezará a romperse (esto se representará con grietas y un sonido). Pasará lo mismo cuando el jugador mate a un segundo enemigo antes de coger la calavera. Finalmente, cuando el jugador mate a un tercer enemigo la calavera se romperá en pedazos. A partir de ese momento el jugador no podrá usar más la calavera.
+      - Objetivo: coger la calavera lo antes posible, si el jugador mata a 3 enemigos la calavera se romperá por lo que el objetivo cambiará a matar a todos los enemigos.
+      - Recompensa: una moneda por cada enemigo que mate la calavera
+      - Enemigos: perdidos, lobos, duendes o magos
+      - Diseño de audio: cada vez que el jugador mate a un enemigo mientras la calavera siga viva se escuchará un crujido metálico. Si se rompe la calavera sonará un estallido metálico. Si el jugador obtiene la calavera antes de que se rompa sonará un sonido de campana.
+      - Pensamiento computacional: para este nivel se han tenido en cuenta las destrezas de pensamiento algorítmico y descomposición. Cuando el jugador llega por primera vez al nivel tendrá que deducir el funcionamiento de este mediante los eventos que suceden. Lo más posible es que en las primeras ocasiones el jugador no entienda la solución del problema, por ello se añadirán pistas si el jugador pasa por la sala 3 veces sin resolver el problema. Las pistas se harán mediante conversaciones con NPCs en el campamento.  Una vez que el jugador entienda el funcionamiento del nivel, se le medirá el pensamiento algorítmico necesario para la creación de rutas donde el jugador sea capaz de llegar a la calavera con el menor número de enemigos muertos posibles.
+      - Mapa y ejemplos visuales:
+         - Ejemplo de mapa
+            - Enemigos: triángulo
+            - Zona transitable: verde y amarillo 
+            - Zona no transitable(río): azul
+            - Jugador: estrella
+            - Camino jugador: morado
+
+Ejemplo camino óptimo del jugador
+
+Ejemplo camino que rompe la calavera
+
+Efectos visuales de la calavera rompiéndose
 
 
-Chrono Trigger. Sala con más posible cercanía a una posible cuarto(no todas las salas tienen que tener 4 paredes) un claro rodeado por árboles. 
+   - Apaga el incendio: en este nivel el jugador se encontrará con una serie de fuegos ardiendo, estos fuegos tienen recompensas de interés debajo (oro y objetos). Para obtenerlos el jugador debe apagar lo más rápidamente los fuegos. Las recompensas de debajo de los fuegos tienen un color que el jugador puede ver, previamente se habrá enseñado al jugador que cada color de objeto significa una rareza. Las rarezas siempre tienen las mismas estadísticas por lo que el jugador siempre puede saber cual es la recompensa mayor. Para apagar un fuego el jugador deberá pegarlo tres veces. El jugador no podrá apagar todos los fuegos por lo que deberá escoger qué objeto es más valioso o más arriesgado coger. También habrá enemigos que el jugador deberá matar o esquivar. El nivel no se acabará hasta que todos los enemigos mueran. 
+      - Objetivo: salvar los objetos y matar a los enemigos
+      - Recompensa: objetos u oro
+      - Enemigos: fantasmas y magos
+      - Tiempo: los fuegos quemarán el objeto en 5-7 segundos
+      - Diseño de audio: para ese nivel se implementará un sonido de fuego que, a medida que se vayan quemando los objetos, se intensificará hasta hacer un sonido de quemado.
+      - Pensamiento computacional: este nivel se ha pensado en torno a la destreza de la abstracción y evaluación. Para pasarse el nivel el jugador deberá reconocer los elementos clave del problema ,los objetos que se están quemando, y resolverlo de la forma más óptima haciendo uso de los sistemas de representación previamente establecidos, en este caso los colores de los objetos. Para este nivel se han diseñado varias distribuciones de los elementos para que los objetos de mayor rareza no sean siempre los que cuentan con el camino más beneficioso para el jugador. Si el jugador quiere obtener la mejor combinación de recompensas deberá planear su estrategia en pocos segundos creando un camino rápido y con la menor cantidad de obstáculos posible. Para ello el jugador debe usar destrezas del pensamiento computacional como la evaluación donde el ajuste de las decisiones según el objetivo será clave para no perder los objetos.
+      - Mapa con recorridos:
+         - Ejemplo de mapa:
+            - Objetos quemandose: círculos
+            - Enemigos: triángulo
+            - Zona transitable: verde y amarillo
+            - Zona no transitable(río): azul
+            - Jugador: estrella
+            - Camino escogido: morado
+
+Ejemplo de camino óptimo: este camino es el que menos enemigos tiene, el que mejores estadísticas da y el que menos posibilidades tiene de que desaparezcan los objetos.
+
+
+Ejemplo  de camino poco óptimo: en este camino hay más riesgo de que el objeto se queme, además hay más enemigos y las estadísticas de los objetos recibidos son menores a la del objeto anterior.
+
+Ejemplo de camino poco óptimo: este camino es más seguro que el anterior pero la recompensa sigue siendo menor que la del primero.
+
+Ejemplo de cómo profundizar el nivel: una vez que el jugador se haya acostumbrado al nivel, el jugador será introducido a una nueva mecánica para dar complejidad a los niveles. Esta mecánica será conocida como las auras y estas aumentarán el daño de los objetos en función del color de las auras. Por ejemplo, en la imagen de abajo se puede observar que el objeto común tiene un aura, por lo que se tendrá que sumar el daño del aura al daño del objeto. Esto cambiará la forma óptima de pasarse un nivel previamente diseñado.
+
+
+#### Referencias visuales
+Chrono Trigger. Sala que se asemeja visualmente a un posible nivel, un claro rodeado por árboles con matojos y rocas que nos pueden servir como obstáculos. 
 
 Legend of Zelda Link to the past. Puede ser para referenciar una sala de enemigos y/o puzzle. Por ejemplo no le dejan pasar los guardias rojos si no mata a los enemigos y si pone los jarrones en un orden abrirá la puerta derecha o izquierda.
 
 The binding of  Isaac. Una sala donde hay que acabar con los enemigos, hasta que no lo hagas no te deja salir a la siguiente sala.
 
 
-
-Enemigos
+### Enemigos
 Por ahora estos son de perseguir o huir. Iremos desarrollando estas IA a medida que avancemos con la asignatura de Desarrollo de Personajes.
 
-Fantasma
+#### Fantasma
 Vida: 1 (el valor va aumentando en 1 en base a la sala)
 
 Tipo de movimiento: Persigue lentamente al jugador (su velocidad aumenta según se avanza en el juego).
@@ -272,7 +348,7 @@ Ataque: Quita poco a poco vida al jugador.
 Debilidad: El enemigo es débil a todos los ataques
 
 
-Lobo
+#### Lobo
 
 Vida: 10 (el valor va aumentando en 1 en base a la sala)
 
@@ -286,7 +362,7 @@ Debilidad: Si impacta contra una pared al  realizar el dash se queda aturdido du
 
 Variante superior: no se aturde al impactar contra las paredes.
 
-Duendecillo
+#### Duendecillo
 
 Vida: 6 (el valor va aumentando en 1 en base a la sala)
 
@@ -298,7 +374,7 @@ Ataque: Se teletransporta detrás del jugador y a los dos segundos ataca con un 
 
 Debilidad: Entre un teletransporte y otro está indefenso.
 
-Duendecillo mago
+#### Duendecillo mago
 
 Vida: 5 (el valor va aumentando en 1 en base a la sala)
 
@@ -408,138 +484,98 @@ Habilidad (Sin límites): Su vida no tiene límites es decir con la curación de
 
 Debilidad: A determinar.
 
-Campamento Base
-El Campamento Base es el lugar al que el jugador regresa tras las Expediciones para conseguir nuevo equipamiento y abastecerse de objetos para su próxima expedición.
-Debe tener un aspecto acogedor y cada puesto tiene que tener una identidad reconocible.
-Herrería
-La herrería es el lugar en el que el jugador puede conseguir nueva y mejor armadura
-El jugador puede comprar equipamiento básico.
-O puede crear equipamiento con los materiales que consiga de las expediciones.
-Armería
-Funciona de forma similar a la Herrería, se pueden comprar armas básicas, pero las mejores se crean con materiales 
-Tienda de pociones
-Las pociones se compran con oro.
-El juego comienza con solo pociones de vida básicas, puedes conseguir mejorar las pociones dándole al alquimista los materiales necesarios para ello.
-//Versiones posteriores, poder añadir efectos como rapidez de consumo, menos espacio en el inventario, o aumentar brevemente estadísticas.
-Cabaña Mística
-Los talismanes ocupan espacio en el inventario y otorgan estadísticas adicionales, como defensa, ataque o velocidad de movimiento.
-Los talismanes tienen se pueden usar en dos expediciones, tras eso desaparecen del inventario.
-Se pueden conseguir a cambio de oro y se encuentran disponibles de forma rotativa en la tienda.
-Casa
-Es el hogar del personaje en el campamento, aquí el jugador puede cambiar su equipamiento y su clase; además puede organizar su inventario antes de salir de expedición. 
-En la entrada al bosque también habrá un baúl que permite algunas de estas opciones.
-Tienda de ítems
-Cuando se entra el la tienda se pueden llegar a intercambiar un máximo de tres objetos, los objetos que aparecen en la tienda son aleatorios pero corresponden con la rareza del equipamiento que llevas puesto ( es decir si llevas un peto épico en la tienda puede aparecer otro peto épico por el que puedes intercambiarlo). El valor de las piezas que cambies se igualará para obtener el mismo resultado en tu oró que si hubieras optado por no cambiarlo. 
-Además en cada tienda (pueden aparecer máximo 1 vez por área) habrá un item que te permite recuperar la mitad de tu vida, si ya lo has comprado previamente su precio aumentará.
-La tienda de 
-ARTE
-Interfaces
-Flujo de Pantallas
-Menú Principal
+### Campamento Base
+El Campamento Base será el lugar al que el jugador regresa tras las Expediciones para conseguir nuevo equipamiento y desbloquear objetos para su próxima expedición.
+Deberá tener un aspecto acogedor y cada puesto tiene que tener una identidad reconocible.
+
+
+#### Casa
+Es el hogar del personaje en el campamento, aquí el jugador podrá cambiar su aspecto y su clase. En la entrada al bosque también habrá un baúl que permite algunas de estas opciones. El jugador podrá usar el dinero conseguido en las expediciones para personalizar la casa.
+
+
+#### Tablón de misiones
+En esta zona el jugador tendrá disponible misiones de diferentes gremios. Las misiones tendrán objetivos específicos para la partida, como intentar terminar lo más rápido la partida o con el máximo de dinero posible. Estas misiones darán como recompensa subidas de estadísticas para las partidas (subida de vida total, subida de ataque, subida de defensa). Cuando el jugador consiga todas las misiones de un gremio desbloqueará la clase de ese gremio, por ejemplo, si el jugador completa todas las misiones del gremio de los corredores podrá entrar al bosque con las estadísticas de un corredor.
+- Pensamiento computacional: El tablón de misiones es la mejor herramienta que se tiene para medir el pensamiento computacional. Al empezar una misión de gremio se podrá medir exactamente qué objetivo tiene el jugador para la partida, por ejemplo, en una misión donde el jugador debe el jugador deba conseguir el máximo oro posible se podrá implementar un algoritmo de mochila para calcular si el jugador podría haber obtenido una mayor recompensa con los objetos que se le han proporcionado (en este caso nos servirá para medir cómo de bien evalúa el jugador las situaciones y cómo se adapta en función del objetivo). Para versiones futuras, se ha pensado implementar un sistema de puntuación donde el jugador podrá competir contra él mismo para conseguir optimizar al máximo la misión.
+
+
+#### Tienda de objetos
+La tienda objetos permite desbloquear objetos para las expediciones. Estos objetos se desbloquean con el oro obtenido. Los objetos se desbloquean por tandas, es decir no puedes desbloquear objetos de rareza superior hasta que has comprado todos los de la rareza actual.
+
+
+#### Puesto del curtidor
+En esta tienda el jugador puede comprar mejoras para su inventario a cambio de oro. Solo estarán disponibles nuevas mejoras cuando se haya progresado en algunas misiones.
+Es un lugar austero, unos pocos bancos de trabajo y un árbol de los que cuelgan pieles curtidas y bolsas de cuero.
+
+
+#### Cabaña esotérica
+La cabaña esotérica vende pociones y permite elaborar mejores versiones de estas a cambio de oro y completando desafíos.
+La cabaña tiene un aspecto sombrío con un gran caldero en el costado derecho del mismo, tarros con ingredientes y matraces de todo tipo para hacer pociones. 
+
+
+#### Carro Ambulante
+Este carro es el que te encuentras en los niveles de tienda durante la expedición. No puedes comprar nada con el carro, pero, puedes donar dinero al carro. Cuando consigas alcanzar una meta de donaciones al carro este tendrá mejores y más objetos disponibles en los niveles de tienda.
+
+
+## ARTE
+### Interfaces
+#### Flujo de Pantallas
+El flujo de las pantallas que se van a describir a continuación es el siguiente:
+
+
+#### Menú Principal
 La interfaz de usuario del menú principal será sencilla y minimalista. Estará compuesta de un fondo con el personaje inicial “Kero” el nombre del videojuego “Beyond the trees” con su correspondiente tipografía y un escenario con temática de bosque encantado, y tres botones, el botón de jugar, el de opciones y el de créditos.
 
-Créditos
+#### Créditos
 La interfaz de créditos es accesible a partir del botón correspondiente en el menú principal.
 Esta pantalla muestra los nombres de todos los desarrolladores implicados en el proyecto y un mail del contacto de la empresa. Además incluirá un botón de volver al menú principal.
 
-Opciones
+#### Opciones
 La pantalla de opciones tiene las siguientes preferencias: modo de pantalla completa en el que el jugador podrá marcar la casilla según como quiera visualizar el juego, modificar volumen de la música y por último, el jugador puede seleccionar la calidad gráfica que tendrá en videojuego. El botón de volver también está presente para volver al menú principal.
 
-Login
+#### Login
 Tras dar al botón de jugar, aparecerá la pantalla de login en la que el usuario deberá introducir sus datos. El jugador podrá elegir su género y deberá introducir un nombre de usuario. Una vez hecho todo, el botón de empezar llevará al inicio del juego  al igual que la interfaz anterior, esta tiene el botón de volver para regresar al menú principal.
-En Juego
+#### En Juego
 La interfaz in-game de Beyond the Trees opta por ser afable y con temática fantástica.
 Esta interfaz contará con una barra de vida de color rojo indicando la vitalidad del personaje. Un contador de tiempo que indica el tiempo que lleva jugando el jugador y el dinero que muestra todo el oro con el que cuenta el jugador.
+#### Inventario
+La interfaz de inventario seguirá la misma estética que las otras interfaces, una con temática fantástica y de bosque encantado. En el inventario se puede ver los objetos que tiene actualmente el jugador, la cantidad de ellos, una imagen de estos junto a sus stats y una breve descripción.
+#### Pausa
+En el menú de pausa se puede pausar el estado del juego y acceder de nuevo al menú de opciones. También se podrá continuar con la partida o bien volver al menú principal.
+#### Victoria/Derrota
+Cuando el jugador derrota al jefe final, aparece la pantalla de victoria informandole que ha ganado. Por el contrario si el jugador es abatido por los enemigos aparecerá la pantalla de derrota.
 
 
-Inventario
+### Bocetos
+Como primeros bocetos se tiene el del personaje en papel. La idea es crear algo simple y fácilmente reconocible. A la derecha se han añadido posibles personalizaciones del personaje cambiándole los ojos.
 
-Victoria/Derrota
-
-
-Bocetos
-Como primeros bocetos tenemos alguno del personaje en papel. La idea es crear algo simple y fácilmente reconocible. A la derecha se han añadido posibles personalizaciones del personaje cambiándole los ojos.
-
-Arte conceptual
+### Arte conceptual
 El concept art del personaje es una versión aún más simplificada que el boceto inicial. Lo que se busca es que cualquiera pueda dibujar o reconocer al personaje principal. Esto está pensado para poder llegar al mayor público posible.
+#### Turn-around personaje
 
-
-
-
-
-
-
-
-
-Turn-around personaje:
-
-
-Sprites 
-
-Banda Sonora 
-
-ALCANCE 
+### Banda Sonora 
+La banda sonora busca ser algo que acompañe al jugador durante la partida, en ningún momento se buscará que la banda sonora tome protagonismo. Un ejemplo de banda sonora parecida al que se tiene pensado para el juego es la música de The binding of Isaac.
+https://www.youtube.com/watch?v=H9jqfH6Yp7w&list=OLAK5uy_nirxVnCtTeTtYMS9h1itNIK-cvZUufIhQ
+## ALCANCE 
 El objetivo principal es desarrollar un juego base con un conjunto de niveles ya hechos al que mediante DLCs, se le pueden añadir muchos más niveles.
-Público objetivo
-Quien va a comprar el juego. 
+### Público objetivo
+#### Quien va a comprar el juego
 Profesores, instituciones educativas, editoriales y el gobierno. Padres e instituciones educativas tienen que sentirse atraídos hacia la idea del juego. Tenemos dos principales atractivos para este grupo, una estética familiar que no les parezca demasiado disparatada o inadecuada para los niños; y el más importante un juego capaz de medir y mejorar el pensamiento computacional de los niños, una faceta clave del currículo escolar.
-
-Quién va a jugar el juego. 
+#### Quién va a jugar el juego
 El juego está dirigido a niños de entre 3 y 12 años haciendo especial énfasis al grupo de 8 a 12. Con partidas rápidas que permiten invertir una pequeña cantidad de tiempo, perfectas para jugar entre descansos, con el fin de obtener resultados analíticos.
 
-Publicidad y redes sociales
+### Publicidad y redes sociales
 Para publicitar el juego se va a dividir el proceso en dos etapas:
--Desarrollo: Mientras el juego esté en proceso de desarrollo se va a hacer una campaña por las redes sociales donde se pretenderá crear una comunidad de personas que sigan el proceso de creación del videojuego, para ello se ha de hacer publicaciones constantes en redes sociales. Se ha optado por las siguientes redes sociales para promocionar el videojuego: Twitter, Youtube y Tiktok. Se han elegido estas redes sociales debido a su facilidad para la exposición al público, ya que nuestro objetivo en esta fase es que llegue al máximo de personas posibles.
+- Desarrollo: Mientras el juego esté en proceso de desarrollo se va a hacer una campaña por las redes sociales donde se pretenderá crear una comunidad de personas que sigan el proceso de creación del videojuego, para ello
+ se ha de hacer publicaciones constantes en redes sociales. Se ha optado por las siguientes redes sociales para promocionar el videojuego: Twitter, Youtube y Tiktok. Se han elegido estas redes sociales debido a su facilidad para la exposición al público, ya que nuestro objetivo en esta fase es que llegue al máximo de personas posibles.
 
--Juego terminado: Una vez que tengamos el videojuego desarrollado, nuestro objetivo será que a los posibles compradores les llegue el producto. Para ello se ha decidido contactar con editoriales e instituciones educativas, esto se hará acudiendo presencialmente a escuelas y ferias como “AULA” donde se presentará el producto como una herramienta para aprender de forma inconsciente y se presentarán las métricas elegidas previamente. También se contactará con posibles clientes mediante métodos a distancia como correos electrónicos.
+- Juego terminado: Una vez que tengamos el videojuego desarrollado, nuestro objetivo será que a los posibles compradores les llegue el producto. Para ello se ha decidido contactar con editoriales e instituciones educativas, esto se hará acudiendo presencialmente a escuelas y ferias como “AULA” donde se presentará el producto como una herramienta para aprender de forma inconsciente y se presentarán las métricas elegidas previamente. También se contactará con posibles clientes mediante métodos a distancia como correos electrónicos.
 
-Modelo de Negocio
+### Modelo de Negocio
 
-Usaremos un modelo Freemium (Free + Premium) ofreciendo el juego de manera totalmente gratuita a los usuarios, teniendo estos la opción de ver métricas más completas y avanzadas si pagan la actualización a la versión completa. La versión completa son X € 	(Qué os parecen 3€???) haciendo descuento si se compran más de 100 unidades.
+Usaremos un modelo Freemium (Free + Premium) ofreciendo el juego de manera totalmente gratuita a los usuarios, teniendo estos la opción de ver un análisis de datos completo si pagan la versión premium.
 
-Planes de monetización
-F2P con futuros dlcs de pago.
-
-
-
-
-
-IDEAS
-Los pj tienen ultis 
-L. Las armas tienen espacio para gemas elementales, que le permiten tener distintas propiedades elementales o ataques especiales. Tipo materias en FFVII
-
-El juego cuenta con 3 pj cada uno de estos con sus respectivas estadísticas:
-
-PJ
-VIDA
-DAÑO
-VEL
-HABILIDAD
-INV
-Caballero
-4
-2
-2
-3 segundos de stats mejoradas
-2
-Explorador
-2
-3
-4
-Rodar
-1
-Arquero
-3
-2
-2
-lanza 3 flechas en forma de cono
-3
-
-
-
-
-
-
-
- Cambios
+### Planes de monetización
+Para un futuro F2P con futuros dlcs de pago.
+## CAMBIOS
+El documento de diseño se encuentra en la versión 1.0, este apartado servirá para comunicar los cambios hechos en futuras versiones.
 
