@@ -59,7 +59,10 @@
        * ¿Quien va a comprar el juego?
        * ¿Quien va a jugar el juego?
     * Publicidad y redes sociales	
-    * Modelo de Negocio	
+    * Modelo de Negocio
+       * Mapa de Empatía
+       * ToolBox
+       * Model Canvas
     * Planes de monetización	
 6. CAMBIOS	
 
