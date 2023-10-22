@@ -1,4 +1,5 @@
 # GAME DESIGN DOCUMENT: BEYOND THE TREES
+# BEYOND THE TREES
 ## Blue RainFrog Studios
 
 ### Grupo D
@@ -7,30 +8,37 @@
 ### ÍNDICE
 1. INTRODUCCIÓN
     * Concepto del juego	
-    * Característica	
     * Historia	
     * Género	
     * Estilo visual	
-    * Pensamiento computacional	
-    * Jugabilidad	
-    * Economía	
+    * Pensamiento computacional
+    * Jugabilidad
+    * Economía
+    * Plataforma
+    * Requisitos mínimos
+
 2. MECÁNICAS	
     * Movimiento	
     * Ataque	
     * Inventario	
     * Equipamiento	
-      * Armaduras	
       * Armas	
     * Pociones	
-    * Items	
-      * Daga Solar	
-      * Daga Lunar	
+    * Objetos
+      * Ejemplos Objetos	
 3. DISEÑO	
     * Personaje	
-    * Niveles	
-    * Enemigos	
-    * Jefes	
-    * Campamento Base	
+    * Niveles
+       * Referencias visuales
+    * Enemigos
+    * Jefes
+    * Campamento Base
+       * Casa
+       * Tablón de misiones
+       * Tienda de Objetos
+       * Puesto del curtidor
+       * Cabaña esotérica
+       * Carro Ambulante   
 4. ARTE	
   * Interfaces	
     * Flujo de Pantallas	
@@ -42,29 +50,32 @@
     * Inventario	
     * Victoria/Derrota	
   * Bocetos	
-  * Arte conceptual	
+  * Arte conceptual
+     * Turn arround personaje
   * Sprites	
   * Banda Sonora	
 5. ALCANCE	
-    * Público objetivo	
+    * Público objetivo
+       * ¿Quien va a comprar el juego?
+       * ¿Quien va a jugar el juego?
     * Publicidad y redes sociales	
     * Modelo de Negocio	
     * Planes de monetización	
-    * Modelo de negocios	
 6. CAMBIOS	
 
 
 ### INTRODUCCIÓN
 #### Concepto del juego
-Beyond the trees es un Roguelike de ambientación fantástica. El objetivo del juego es llegar a lo más profundo del bosque para descubrir qué se esconde en lo más profundo de este.
-Para conseguirlo se deberá valer de sus armas y equipamiento.
-El jugador deberá descubrir los secretos del bosque, descubrir las estratégias que elaboran las criaturas que lo habitan, valerse de su ingenio para resolver puzzles y gestionar sus recursos de forma eficiente para llegar hasta lo más profundo.
-El bosque cambiará con cada expedición y cuanto más te adentres en el bosque tanto los enemigos como el bosque se volverán más tenebrosos según la capa del bosque.
+Beyond the trees es un Roguelike de ambientación fantástica. El objetivo del juego es llegar a lo más profundo del bosque para descubrir qué esconde este.
+Para conseguirlo, nuestro jugador se deberá valer de sus armas y equipamiento.
+Este, deberá descubrir los secretos del bosque, descubrir las estratégias que elaboran las criaturas que lo habitan, valerse de su ingenio para resolver puzzles y gestionar sus recursos de forma eficiente para llegar hasta lo más profundo.
+El bosque cambiará con cada expedición y cuanto más te adentres en él tanto los enemigos como el escenario se volverán más tenebrosos y oscuros.
+
 #### Historia
 El mundo de Beyond the Trees está caracterizado por el enorme bosque de Evergreen, un gigantesco bosque que nunca se ha conseguido atravesar y aquellos que lo han intentado nunca han regresado, por ello,  toda la civilización conocida se ha construido alrededor del bosque del cual los  habitantes de este mundo extraen todos los recursos que necesitan.
-El bosque se lleva explorando años pero todavía nadie ha llegado al fondo del bosque, se saben pocas cosas. El bosque está habitado por todo tipo de criaturas, animales salvajes, fantasmas y monstruos. El bosque tiene tres capas conocidas, cuanto más profunda es la capa más fuertes y siniestros se vuelven los monstruos, esto se debe a la llamada maldición de Nahum, el que se dice que fue el creador del bosque. Dicha maldición tambien provoca que los objetos que se encuentran en el bosque adquieran propiedades mágicas que fortalecen a aquellos que se hacen con ellos, sin embargo, al salir del bosque esta magia se desvanece y hace que esos objetos vuelvan a ser normales. 
+El bosque se lleva explorando años pero todavía nadie ha llegado al fondo del bosque, se saben pocas cosas. El bosque está habitado por todo tipo de criaturas, animales salvajes, fantasmas y monstruos. El bosque tiene tres capas conocidas, cuanto más profunda es la capa más fuertes y siniestros se vuelven los monstruos, esto se debe a la llamada maldición de Nahum, el que se dice que fue el creador del bosque. Dicha maldición también provoca que los objetos que se encuentran en el bosque adquieran propiedades mágicas que fortalecen a aquellos que se hacen con ellos, sin embargo, al salir del bosque esta magia se desvanece y hace que esos objetos vuelvan a ser normales. 
 Los habitantes de este mundo son los lamins, animales antropomórficos que han hecho de su modo de vida el adentrarse en el bosque para extraer los recursos para levantar su civilización. 
-Dentro de esta sociedad hay multitud de trabajos pero el más vital es el de explorador, son los valientes lamins que se adentran al bosque para cazar y hacerse con los recursos necesarios para los asentamientos. Con el tiempo se han formado distintos gremios de exploradores, cada uno con su particular estilo de lucha para enfrentarse a las criaturas del bosque. Hay varias razones para convertirse en explotador: proveer a las familias, dinero, gloria. Por ello cada año llegan a cada asentamiento nuevos candidatos a explorador con ganas de ganarse un nombre adentrándose en el bosque para desentrañar sus secretos.
+Dentro de esta sociedad hay multitud de trabajos pero el más vital es el de explorador, son los valientes lamins que se adentran al bosque para cazar y hacerse con los recursos necesarios para los asentamientos. Con el tiempo se han formado distintos gremios de exploradores, cada uno con su particular estilo de lucha para enfrentarse a las criaturas del bosque. Hay varias razones para convertirse en explorador: proveer a las familias, dinero, gloria. Por ello cada año llegan a cada asentamiento nuevos candidatos a explorador con ganas de ganarse un nombre adentrándose en el bosque para desentrañar sus secretos.
 #### Género
 Roguelike con mapa lineal y toques RPG (estadísticas y equipamiento)
 #### Estilo visual
@@ -82,66 +93,65 @@ Cada enemigo contará con tres versiones distintas, para cada capa del bosque. L
 El cambio a medida que te adentras en el bosque también se verá en el escenario, volviéndose cada vez más tétrico y oscuro con elementos más tenebrosos. Se puede ver en este ejemplo de la serie Hora de Aventuras.
 
 #### Pensamiento computacional
+
 Se deberán monitorizar y evaluar la capacidad de pensamiento computacional de los jugadores, para un posterior tratado de los datos.
 Destrezas de pensamiento computacional y cómo se pueden medir:
 
-Abstracción. Hacer que los enemigos tengan distintos tipos de debilidades y que sea necesario usar un tipo de arma concreto para poder acabar con ellos de forma eficiente. Se puede medir la cantidad de golpes efectivos e inefectivos que se han hecho y utilizarlo como una métrica para saber si el jugador reconoce los patrones de diseño de los personajes.
+1. **Abstracción**. Hacer que los enemigos tengan distintos tipos de debilidades y que sea necesario usar un tipo de arma concreto para poder acabar con ellos de forma eficiente. Se puede medir la cantidad de golpes efectivos e inefectivos que se han hecho y utilizarlo como una métrica para saber si el jugador reconoce los patrones de diseño de los personajes. Esto está pensado para ser implementado en futuras versiones del videojuego
 
-Pensamiento algorítmico y reconocimiento de patrones. Los enemigos serán capaces de hacer fomaciones entre ellos, que harán que haya una forma óptima de poder limpiar cada nivel durante cada expedición. Se puede hacer una pila y determinar el orden en el que el jugador acaba con los enemigos y si es el adecuado o evaluarlo.
+2. **Pensamiento algorítmico y reconocimiento de patrones**. Los enemigos serán capaces de hacer formaciones entre ellos, que harán que haya una forma óptima de poder limpiar cada nivel durante cada expedición. Se puede hacer una pila y determinar el orden en el que el jugador acaba con los enemigos y si es el adecuado o evaluarlo.
 
-Descomposición. Se diseñan salas que además de enemigos cuentan con puzzles y se mide el porcentaje de jugadores que han completado el puzzle antes de matar a todos los enemigos (o en el orden que se haya diseñado). El objetivo es medir si el jugador es capaz de descomponer los problemas y solucionarlos uno a uno o intenta hacer todo al mismo tiempo.
+3. **Descomposición**. Se diseñan salas que además de enemigos cuentan con puzzles y se mide el porcentaje de jugadores que han completado el puzzle antes de matar a todos los enemigos (o en el orden que se haya diseñado). El objetivo es medir si el jugador es capaz de descomponer los problemas y solucionarlos uno a uno o intenta hacer todo al mismo tiempo.
 
-Evaluación. Se guarda el numero de items que se han recogido durante la partida, los ítems con los que se acaba la partida, la suma de las estadísticas de esos ítems, la mayor suma de estadísticas que se podría haber conseguido y el número de espacios vacíos en el inventario al acabar la partida. Con esto se puede medir cómo de bien optimiza los recursos el jugador y se puede mostrar al jugador cual podría haber sido la mejor opción, se implementarán desafíos en partidas aleatorias que especificarán al jugador que debe sacar el máximo oro posible, si al final de la partida el resultado de el algoritmo creado coincide con el inventario del jugador se le recompensará. Con eso se medirá como de bien se ajusta el jugador en función del objetivo. También se va a hacer un seguimiento de la mejora del jugador durante todo su paso por el videojuego, para esto se va a medir el tiempo que tarda el jugador en ganar la partida, daño recibido y oro recibido durante esos desafíos.
+4. **Evaluación**. Se guarda el número de objetos que se han recogido durante la partida, los objetos con los que se acaba la partida, la suma de las estadísticas de esos objetos, la mayor suma de estadísticas que se podría haber conseguido y el número de espacios vacíos en el inventario al acabar la partida. Con esto se puede medir cómo de bien optimiza los recursos el jugador y se puede mostrar al jugador cual podría haber sido la mejor opción, se implementarán partidas con desafíos que especificarán al jugador objetivos como ganar el máximo de oro u obtener el máximo daño posible, si al final de la partida el resultado de el algoritmo creado coincide con el orden del jugador se le recompensará. Con eso se medirá como de bien se ajusta el jugador en función del objetivo. También se va a hacer un seguimiento de la mejora del jugador durante todo su paso por el videojuego, para esto se va a medir el tiempo que tarda el jugador en ganar la partida, daño recibido y oro recibido durante esos desafíos.
 
-Análisis de datos. El jugador debe gestionar adecuadamente las divisas y sus recursos para crear nuevo equipo y poder progresar más rápidamente.
+5. **Análisis de datos**. El jugador debe gestionar adecuadamente las divisas y sus recursos para obtener nuevo equipo y poder progresar más rápidamente.
 
-Generalización. Implementación de niveles con puzles donde el jugador tendrá que reconocer objetos mediante su color y tomar decisiones en base a los conocimientos previamente adquiridos en las anteriores partidas. En el campamento (zona previa a las partidas), al jugador se le explicará lo básico y a medida que vaya descubriendo esos patrones, estos se irán haciendo más difíciles. 
-Jugabilidad
+6. **Generalización**. Implementación de niveles con puzles donde el jugador tendrá que reconocer objetos mediante su color y tomar decisiones en base a los conocimientos previamente adquiridos en las anteriores partidas. En el campamento (zona previa a las partidas), al jugador se le explicará lo básico y a medida que vaya descubriendo esos patrones, estos se irán haciendo más difíciles.
+
+###Jugabilidad
 El bucle jugable general consistirá en los siguientes pasos:
-Expedición, el jugador entra en el bosque e intenta llegar lo más profundo posible para conseguir la mayor cantidad de recursos. El jugador puede abandonar el bosque al terminar un nivel, en ese caso conservará todos los recursos que haya conseguido de la expedición,  o ser derrotado, en ese caso perderá todos los recursos adquiridos durante la partida.
-Al terminar la expedición todos los recursos del jugador se convertirán en oro. El jugador volverá al campamento base donde podrá usar el oro para comprar mejoras, objetos y decoración para el campamento.
-El jugador se acerca a la entrada del bosque para empezar una nueva expedición.
+1. Expedición, el jugador entra en el bosque e intenta llegar lo más profundo posible para conseguir la mayor cantidad de recursos. El jugador puede abandonar el bosque al terminar un nivel, en ese caso conservará todos los recursos que haya conseguido de la expedición,  o ser derrotado, en ese caso perderá todos los recursos adquiridos durante la partida.
+2. Al terminar la expedición todos los recursos del jugador se convertirán en oro. El jugador volverá al campamento base donde podrá usar el oro para comprar mejoras, objetos y decoración para el campamento.
+3. El jugador se acerca a la entrada del bosque para empezar una nueva expedición.
 
 El bucle jugable durante las Expediciones sigue los siguientes pasos.
-El jugador entra en el primer nivel de la primera capa del bosque.
-Empieza el combate contra los enemigos del nivel, combate que debería completarse de forma óptima teniendo en cuenta los enemigos que conforman la sala y la forma de esta. El juego evaluará  en una escala de  C->B->A->S->S+, en función de la puntuación se le dará la cantidad y calidad de objetos correspondiente. Los objetos que encuentre se guardarán en el inventario. Este es limitado por lo que el jugador deberá decidir qué objetos llevar y cuales no.
-El jugador puede salir del bosque para volver al Campamento Base o puede pasar al siguiente nivel de la capa del bosque en la que este.
-Si sigue avanzando durante 10 niveles se enfrentará a un jefe de la capa, si lo vence podrá continuar a la siguiente capa y repetir el proceso con enemigos más poderosos para conseguir mejores materiales.
+1. El jugador entra en el primer nivel de la primera capa del bosque.
+2. Empieza el combate contra los enemigos del nivel, combate que debería completarse de forma óptima teniendo en cuenta los enemigos que conforman la sala y la forma de esta. El juego evaluará  en una escala de  C->B->A->S->S+, en función de la puntuación se le dará la cantidad y calidad de objetos correspondiente. Los objetos que encuentre se guardarán en el inventario. Este es limitado por lo que el jugador deberá decidir qué objetos
+llevar y cuales no.
+3. El jugador puede salir del bosque para volver al Campamento Base o puede pasar al siguiente nivel de la capa del bosque en la que este.
+5. Si sigue avanzando durante 10 niveles se enfrentará a un jefe de la capa, si lo vence podrá continuar a la siguiente capa y repetir el proceso con enemigos más poderosos para conseguir mejores materiales.
 
-Economía
-El juego cuenta con una única divisa, el oro.
-El oro se puede obtener al completar expediciones, durante la partida. Sirve para comprar equipamiento y objetos para las expediciones.
-Plataforma
+###Economía
+El juego cuenta con una única divisa, el oro. El oro se puede obtener al completar expediciones, durante la partida. Sirve para desbloquear equipamiento y objetos en el campamento haciendo que el jugador los pueda encontrar en las expediciones. Además el jugador contará con una tienda por cada capa del bosque durante la expedición. En esta tienda el jugador podrá comprar objetos para usarlos durante la expedición o vender objetos para ganar dinero. El jugador deberá calcular cual es la mejor combinación de compraventa de objetos para sacar el máximo partido a sus recursos.
+###Plataforma
 El videojuego se va a subir a la plataforma de Itch.io y a la Play Store. En un futuro se contempla subirlo a plataformas como Steam y Epic Games en función del recibimiento del videojuego.
-Requisitos Mínimos
+###Requisitos Mínimos
 Pese a que no se cuentan con herramientas para calcular el rendimiento del videojuego en los dispositivos, se estima:
-Sistema operativo: Windows 7/8/10 o macOS
-Procesador: Un procesador de doble núcleo a 2.0 GHz o superior
-Memoria RAM: 2 GB de RAM o más
-Tarjeta gráfica: Integrada
-Espacio en disco duro: 1-3 GB
+- Sistema operativo: Windows 7/8/10 o macOS
+- Procesador: Un procesador de doble núcleo a 2.0 GHz o superior
+- Memoria RAM: 2 GB de RAM o más
+- Tarjeta gráfica: Integrada
+- Espacio en disco duro: 1-3 GB
 Estas estimaciones se han hecho en función a videojuegos con el mismo estilo al nuestro como el Brotato o The Binding of Isaac.
-MECÁNICAS
-Movimiento
-El movimiento del juego será en 16 direcciones.
+##MECÁNICAS
+###Movimiento
+El movimiento del juego será en 8 direcciones.
 Según la cantidad de objetos que lleve el jugador la velocidad podrá aumentar o reducir.
 
-Ataque
-El jugador podrá atacar independientemente de la dirección a la que se esté moviendo, se ataca moviendo el joystick en la dirección en la que se quiera atacar, en PC se ataca en la dirección del puntero haciendo click izquierdo (estilo Isaac).
-Las propiedades de ataque están determinadas por el arma equipada, este podrá ser cuerpo a cuerpo o a distancia. Se plantea poner 3 tipos de arma, cada una con un tipo de ataque distinto. Las armas cambiarán en función de la clase que escoja el personaje. Las diferentes armas son: arco, con ataque a distancia; espada, ataque cuerpo a cuerpo con un alcance considerable pero poca velocidad de ataque; y daga, con poco alcance pero mucha velocidad de ataque.
-Inventario
-El inventario es un espacio dividido en cuadrículas, el inventario puede contener todos los items del juego, estos ítems deben colocarse y organizarse en el inventario. Si sobresalen objetos del inventario, dependiendo de cuántas casillas sobresalen, el personaje se verá ralentizado un 10% por cada casilla de objeto que sobresalga del inventario.
-El inventario de puede mejorar en el Campamento Base añadiendo más casillas a este.
-Equipamiento
-El equipamiento determina las estadísticas del personaje
-Armaduras
-Las armaduras determinan la estadística de defensa. Tiene tres piezas, pecho, pierna y pies.
-Las armaduras se obtienen en la forja a cambio de oro y los materiales necesarios para hacer cada pieza.
-Las armaduras se pueden mejorar con oro.
-//Para versiones posteriores
-Cada monstruo tiene una armadura hecha con sus materiales y propiedades específicas cuando se completa el set (es decir están equipadas las tres piezas de la misma armadura) se obtiene una habilidad pasiva extra.
+###Ataque
+El jugador podrá atacar independientemente de la dirección a la que se esté moviendo, se ataca moviendo el joystick en la dirección en la que se quiera atacar, en PC se ataca con las flechas del teclado en 4 direcciones. 
+Las propiedades de ataque están determinadas por el arma equipada, este podrá ser cuerpo a cuerpo o a distancia.
+
+###Inventario
+El inventario es un espacio dividido en cuadrículas, el inventario puede contener todos los objetos del juego, estos objetos pueden colocarse y organizarse en el inventario. Si sobresalen objetos del inventario, dependiendo de cuántas casillas sobresalen, el personaje se verá ralentizado un 10% por cada casilla de objeto que sobresalga del inventario.
+El inventario puede variar en función de las mejoras adquiridas en el Campamento Base o mediante clases proporcionadas por los gremios.
+El inventario tiene una serie de huecos limitados, una vez se han llenado esos huecos  se podrán llevar algunos objetos extra pero estos contarán como sobrecarga y llevarlos implicará una reducción de la velocidad de movimiento, no se podrán llevar más objetos una vez superados los huecos de sobrecarga. Por ejemplo, el jugador tiene 10 huecos de inventario, 7 son normales y 3 de sobrecarga, si el jugador lleva 7 objetos tiene el límite antes de tener sobrecarga, si lleva 8 objetos obtendrá una penalización de sobrecarga, reduciendo su velocidad de movimiento un 10% y si lleva 9 recibirá una penalización de 20%, el jugador no puede llevar más de 10 objetos.
+
+###Equipamiento
 Armas
 Las armas determinan cómo ataca el personaje y el daño que hace. Hay dos tipos principales de armas a distancia y cuerpo a cuerpo.
+
 |                     | Arco      | Ballesta  | Cuchillos arrojadizos | Espada corta | Espada larga | Puñal   |
 |---------------------|-----------|-----------|-----------------------|--------------|--------------|---------|
 | Tipo de ataque      | Distancia | Distancia | Distancia             | CaC          | CaC          | CaC     |
@@ -149,12 +159,19 @@ Las armas determinan cómo ataca el personaje y el daño que hace. Hay dos tipos
 | Daño                | Mediano   | Alto      | Bajo                  | Mediano      | Alto         | Bajo    |
 | Velocidad de ataque | Mediano   | Lento     | Rápido                | Mediano      | Lento        | Rápido  |
 
-Arco. Es el arma inicial del juego dispara un proyectil rápido que hace daño ligero. Cada disparo debe cargarse brevemente antes de disparar y provoca retroceso leve con cada impacto.
-Espada ligera. Es un arma que se puede desbloquear con oro. Es un arma cuerpo a cuerpo que hace daño en un cono frente al jugador. El ataque es rápido y causa un poco de retroceso
-Pociones
-Las pociones sirven para curar la vida, al consumirlas el jugador se deberá quedar quieto brevemente y hacer una animación para poder curarse. Las posiciones ocupan espacio en el inventario en función de su efectividad.
-Items
-Los ítems son objetos que pueden aparecer al terminar una sala, estos ítems aumentan estadísticas y en algunos casos alteran aspectos del personaje como el tipo de daño que hace o los estados que puede infligir.
+###Pociones
+Las pociones servirán para curar la vida, al consumirlas el jugador se deberá quedar quieto brevemente y hacer una animación para poder curarse. 
+Para usar una poción se deberá hacer desde el menú de inventario, una vez usado se recuperará una cantidad de vida acorde a la calidad de las pociones.
+Las pociones no se podrán usar durante el combate, solo cuando se haya acabado con los enemigos de la sala o el jugador esté en una sala de tienda.
+
+###Items
+Los objetos pueden aparecer al terminar  una sala y servirán para aumentar estadísticas y en algunos casos alterarán aspectos del personaje como el tipo de daño que hace o los estados que puede infligir, en versiones posteriores se implementarán más atributos que puedan dar los objetos, como sangrado, veneno, quemaduras…
+Los objetos tienen 4 **rarezas**: común, raro, épico, legendario. La rareza de los objetos determinará las stats que da al jugador y el precio de venta, además, los objetos de rareza superiores le podrán dar al jugador más de una estadística. 
+Más adelante en el juego, cuando el jugador desbloqueé la capacidad de ver auras, podrá ver el aura de los objetos en el bosque, este aura afecta al precio de venta y su daño y determina el estado del objeto en 5 categorías: Maltrecho, - 5% de su precio ; sin aura, tiene el precio de venta y estadísticas normal ; buen estado, + 10% de su precio de venta y estadísticas; perfecto estado, +15% de precio de venta y estadísticas; purificado, +20% de su precio de venta, estadísticas y un efecto sumado aleatorio. Estos porcentajes son orientativos y cambiarán cuando se haya testeado si impactan mucho o poco el gameplay.
+objetos con estadísticas: [Enlace a la hoja de cálculo con los objetos] [https://docs.google.com/spreadsheets/d/1nqJ6MIjXAtS5HyprhY6oJlgkHAHZMD0HF10bQ-MYcy4/edit?usp=sharing]
+A = Ataque, D=Defensa, VA=Velocidad de Ataque, VM=Velocidad de Movimiento, R=Rareza y P = Precio 
+
+
 | Nombre           | Descripción                                                                                                                                                                             | A  | D  | VA | VM | R          | P  |
 |------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----|----|----|----|------------|----|
 | Daga usada       | Ha perdido mucho de su filo pero todavía cumple su función, se puede vender por un poco de oro                                                                                          |  3 |  0 |  0 |  0 | Común      |  5 |
@@ -166,7 +183,7 @@ Los ítems son objetos que pueden aparecer al terminar una sala, estos ítems au
 | Escama           | Una escama bien conservada y casi fresca. Te dará una buena cantidad de defensa y se puede vender por un buen dinero                                                                    |  0 |  7 |  0 |  0 | Raro       | 10 |
 | Escama pulida    | Una escama de una calidad excepcional que refleja la luz. Se puede vender por una cantidad muy buena de oro                                                                             |  0 | 12 |  0 |  0 | Épico      | 15 |
 | Escama de dragón | Una escama de una de las bestias más nobles, su brillo y resistencia son excepcionales. Otorga mucha defensa y se puede vender por una pequeña fortuna                                  |  0 | 16 |  0 |  0 | Legendario | 30 |
-|                  |                                                                                                                                                                                         |    |    |  1 |    |            |    |
+|                  |                                                                                                                                                                                         |    |    |    |    |            |    |
 | Pluma dañada     | Una pluma casi deshecha. Se podría vender por algo de dinero y te hará atacar un poco más rápido                                                                                        |  0 |  0 |  2 |  0 | Común      |  5 |
 | Pluma de paloma  | Una pluma que aunque sea poco noble no es inutil. Se puede vender por un poco de oro y te dará más velocidad de ataque                                                                  |  0 |  0 |  3 |  0 | Raro       | 10 |
 | Pluma de Halcón  | Una pluma de un animal noble, su calidad es excelente. Se puede vender por una buena cantidad de oro y te dará bastante velocidad de ataque                                             |  0 |  0 |  4 |  0 | Épico      | 15 |
@@ -178,46 +195,19 @@ Los ítems son objetos que pueden aparecer al terminar una sala, estos ítems au
 | Capa del viento  | Una capa que aparece en antiguas leyendas, se dice que allá dónde esté el viento sopla a espaldas de tu portador. Se puede vender por mucho oro y te dará mucha velocidad de movimiento |  0 |  0 |  0 | 11 | Legendario | 30 |
 
 Daga Solar
-Suma 10 puntos al ataque
+
 
 
 Daga Lunar
-Suma 20 puntos al ataque
 
-DISEÑO
-Personaje
+
+##DISEÑO
+###Personaje
 Kero es el protagonista.
 El personaje busca ser desenfadado y familiar. Un personaje simple del que poder encariñarse y ver como va cambiando a medida que el jugador desarrolla su manera de jugar.
 
-Se implementarán 3 diferentes clases para el personaje:
 
-PJ
-VIDA
-DAÑO
-VEL
-HABILIDAD
-INV
-Caballero
-4
-2
-2
-3 segundos de stats mejoradas
-2
-Explorador
-2
-3
-4
-Rodar
-1
-Arquero
-3
-2
-2
-lanza 3 flechas en forma de cono
-3
-
-
-Niveles
+###Niveles
 El mapa del videojuego está generado aleatoriamente mediante un algoritmo, este mapa consiste en una serie de salas a las que llamaremos niveles organizadas en tres pisos. Estos pisos cuentan con 7-10 niveles por cada piso. A medida que se vaya pasando de piso, la estética y dificultad cambiará para balancear la curva de dificultad.
 
 Los niveles se dividen en 4 categorías: niveles de desafío, niveles de jefe, niveles con tienda y niveles de puzzle. Cada uno de estos devuelve una recompensa diferente e involucra a un tipo de enemigo distinto.
