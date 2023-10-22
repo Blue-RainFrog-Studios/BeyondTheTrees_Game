@@ -142,10 +142,12 @@ Las armaduras se pueden mejorar con oro.
 Cada monstruo tiene una armadura hecha con sus materiales y propiedades específicas cuando se completa el set (es decir están equipadas las tres piezas de la misma armadura) se obtiene una habilidad pasiva extra.
 Armas
 Las armas determinan cómo ataca el personaje y el daño que hace. Hay dos tipos principales de armas a distancia y cuerpo a cuerpo.
-Las armas básicas se compran con oro y se mejoran con sellos de expedición.
-Las armas tienen una serie de atributos especiales que las hacen más o menos eficaces contra distintos tipos de enemigos.
-Los atributos son cortante, son eficaces contra monstruos con partes blandas; las armas contundentes son más eficaces contra monstruos con partes duras
-// Describir armas con una tabla
+|                     | Arco      | Ballesta  | Cuchillos arrojadizos | Espada corta | Espada larga | Puñal   |
+|---------------------|-----------|-----------|-----------------------|--------------|--------------|---------|
+| Tipo de ataque      | Distancia | Distancia | Distancia             | CaC          | CaC          | CaC     |
+| Hitbox              | Mediana   | Mediana   | Pequeña               | Mediana      | Mediana      | Pequeña |
+| Daño                | Mediano   | Alto      | Bajo                  | Mediano      | Alto         | Bajo    |
+| Velocidad de ataque | Mediano   | Lento     | Rápido                | Mediano      | Lento        | Rápido  |
 
 Arco. Es el arma inicial del juego dispara un proyectil rápido que hace daño ligero. Cada disparo debe cargarse brevemente antes de disparar y provoca retroceso leve con cada impacto.
 Espada ligera. Es un arma que se puede desbloquear con oro. Es un arma cuerpo a cuerpo que hace daño en un cono frente al jugador. El ataque es rápido y causa un poco de retroceso
@@ -153,6 +155,28 @@ Pociones
 Las pociones sirven para curar la vida, al consumirlas el jugador se deberá quedar quieto brevemente y hacer una animación para poder curarse. Las posiciones ocupan espacio en el inventario en función de su efectividad.
 Items
 Los ítems son objetos que pueden aparecer al terminar una sala, estos ítems aumentan estadísticas y en algunos casos alteran aspectos del personaje como el tipo de daño que hace o los estados que puede infligir.
+| Nombre           | Descripción                                                                                                                                                                             | A  | D  | VA | VM | R          | P  |
+|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----|----|----|----|------------|----|
+| Daga usada       | Ha perdido mucho de su filo pero todavía cumple su función, se puede vender por un poco de oro                                                                                          |  3 |  0 |  0 |  0 | Común      |  5 |
+| Daga pulida      | Esta daga ha sido afilada y retocada para cumplir mejor su trabajo. Se puede vender por un buen precio                                                                                  |  7 |  0 |  0 |  0 | Raro       | 10 |
+| Daga Solar       | Un objeto casi mitológico creado con un rayo del Sol. un coleccionista pagaría un gran precio por este objeto                                                                           | 13 |  0 |  0 |  0 | Épico      | 15 |
+| Daga del Eclipse | Las leyendas más siniestras hablan de una daga que solo se puede forjar tras un gran sacrificio. Su precio es altísimo, tanto como el poder que otorga.                                 | 20 |  0 |  0 |  0 | Legendario | 30 |
+|                  |                                                                                                                                                                                         |    |    |    |    |            |    |
+| Escama vieja     | Sea lo que sea que llevase esta escama ya no está entre nosotros, te dará defensa y se puede vender por un poco de dinero                                                               |  0 |  5 |  0 |  0 | Común      |  5 |
+| Escama           | Una escama bien conservada y casi fresca. Te dará una buena cantidad de defensa y se puede vender por un buen dinero                                                                    |  0 |  7 |  0 |  0 | Raro       | 10 |
+| Escama pulida    | Una escama de una calidad excepcional que refleja la luz. Se puede vender por una cantidad muy buena de oro                                                                             |  0 | 12 |  0 |  0 | Épico      | 15 |
+| Escama de dragón | Una escama de una de las bestias más nobles, su brillo y resistencia son excepcionales. Otorga mucha defensa y se puede vender por una pequeña fortuna                                  |  0 | 16 |  0 |  0 | Legendario | 30 |
+|                  |                                                                                                                                                                                         |    |    |  1 |    |            |    |
+| Pluma dañada     | Una pluma casi deshecha. Se podría vender por algo de dinero y te hará atacar un poco más rápido                                                                                        |  0 |  0 |  2 |  0 | Común      |  5 |
+| Pluma de paloma  | Una pluma que aunque sea poco noble no es inutil. Se puede vender por un poco de oro y te dará más velocidad de ataque                                                                  |  0 |  0 |  3 |  0 | Raro       | 10 |
+| Pluma de Halcón  | Una pluma de un animal noble, su calidad es excelente. Se puede vender por una buena cantidad de oro y te dará bastante velocidad de ataque                                             |  0 |  0 |  4 |  0 | Épico      | 15 |
+| Pluma de Grifo   | Una pluma de un animal mitológico a la gente le costará creerse que la has encontrado. Se puede vender por bastante dinero y te dará mucha más velocidad de ataque                      |  0 |  0 |  5 |  0 | Legendario | 30 |
+|                  |                                                                                                                                                                                         |    |    |    |  1 |            |    |
+| Capa usada       | Una capa que ya tiene un poco de trote pero puede servir bien. Se puede vender por un poco de oro y te dará un poco de velocidad de movimiento                                          |  0 |  0 |  0 |  4 | Común      |  5 |
+| Capa             | Una capa normal y corriente. Se puede vender por una cantidad normal de oro y te dará velocidad de movimiento                                                                           |  0 |  0 |  0 |  6 | Raro       | 10 |
+| Capa del cazador | Una capa que perteneció a un veterano cazador, muy valorada por coleccionistas. Se puede vender por bastante oro y dará bastante velocidad de movimiento                                |  0 |  0 |  0 |  8 | Épico      | 15 |
+| Capa del viento  | Una capa que aparece en antiguas leyendas, se dice que allá dónde esté el viento sopla a espaldas de tu portador. Se puede vender por mucho oro y te dará mucha velocidad de movimiento |  0 |  0 |  0 | 11 | Legendario | 30 |
+
 Daga Solar
 Suma 10 puntos al ataque
 
