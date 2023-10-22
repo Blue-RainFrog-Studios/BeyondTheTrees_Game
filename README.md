@@ -68,6 +68,8 @@
 
 
 ### INTRODUCCIÓN
+#### Nota de esta version del GDD
+En esta version del documento faltan imágenes que si están presentes en el documento original, este documento está disposible para examinar añ final del README. Lamentamos las molestias
 #### Concepto del juego
 Beyond the trees es un Roguelike de ambientación fantástica. El objetivo del juego es llegar a lo más profundo del bosque para descubrir qué esconde este.
 Para conseguirlo, nuestro jugador se deberá valer de sus armas y equipamiento.
