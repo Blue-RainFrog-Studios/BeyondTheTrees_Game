@@ -168,8 +168,9 @@ Las pociones no se podrán usar durante el combate, solo cuando se haya acabado 
 Los objetos pueden aparecer al terminar  una sala y servirán para aumentar estadísticas y en algunos casos alterarán aspectos del personaje como el tipo de daño que hace o los estados que puede infligir, en versiones posteriores se implementarán más atributos que puedan dar los objetos, como sangrado, veneno, quemaduras…
 Los objetos tienen 4 **rarezas**: común, raro, épico, legendario. La rareza de los objetos determinará las stats que da al jugador y el precio de venta, además, los objetos de rareza superiores le podrán dar al jugador más de una estadística. 
 Más adelante en el juego, cuando el jugador desbloqueé la capacidad de ver auras, podrá ver el aura de los objetos en el bosque, este aura afecta al precio de venta y su daño y determina el estado del objeto en 5 categorías: Maltrecho, - 5% de su precio ; sin aura, tiene el precio de venta y estadísticas normal ; buen estado, + 10% de su precio de venta y estadísticas; perfecto estado, +15% de precio de venta y estadísticas; purificado, +20% de su precio de venta, estadísticas y un efecto sumado aleatorio. Estos porcentajes son orientativos y cambiarán cuando se haya testeado si impactan mucho o poco el gameplay.
-objetos con estadísticas: [Enlace a la hoja de cálculo con los objetos] [items]
-[items]: https://docs.google.com/spreadsheets/d/1nqJ6MIjXAtS5HyprhY6oJlgkHAHZMD0HF10bQ-MYcy4/edit?usp=sharing
+Enlace a la hoja de cálculo con los items: https://docs.google.com/spreadsheets/d/1nqJ6MIjXAtS5HyprhY6oJlgkHAHZMD0HF10bQ-MYcy4/edit?usp=sharing
+
+
 A = Ataque, D=Defensa, VA=Velocidad de Ataque, VM=Velocidad de Movimiento, R=Rareza y P = Precio 
 
 
