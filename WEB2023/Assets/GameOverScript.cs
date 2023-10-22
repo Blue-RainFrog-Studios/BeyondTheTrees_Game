@@ -8,6 +8,6 @@ public class GameOverScript : MonoBehaviour
     
     public void Return()
     {
-        SceneManager.LoadScene("Basement");
+        SceneManager.LoadScene("Campamento Base");
     } 
 }
