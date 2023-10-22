@@ -336,153 +336,80 @@ The binding of  Isaac. Una sala donde hay que acabar con los enemigos, hasta que
 ### Enemigos
 Por ahora estos son de perseguir o huir. Iremos desarrollando estas IA a medida que avancemos con la asignatura de Desarrollo de Personajes.
 
-#### Fantasma
-Vida: 1 (el valor va aumentando en 1 en base a la sala)
+*Fantasma*
+- Vida: 1 (el valor va aumentando en 1 en base a la sala)
+- Tipo de movimiento: Persigue lentamente al jugador (su velocidad aumenta según se avanza en el juego).
+- Velocidad de movimiento: Un 10% inferior a la velocidad de movimiento del jugador.
+- Ataque: Quita poco a poco vida al jugador.
+- Debilidad: El enemigo es débil a todos los ataques
+
+*Lobo*
+- Vida: 10 (el valor va aumentando en 1 en base a la sala)
+- Tipo de movimiento: Se mantiene alejado del jugador.
+- Velocidad de movimiento:Un 15% superior a la velocidad de movimiento del jugador.
+- Ataque: Realiza un dash hacia el jugador.
+- Debilidad: Si impacta contra una pared al  realizar el dash se queda aturdido durante 2 segundos.
+- Variante superior: no se aturde al impactar contra las paredes.
+
+*Duendecillo*
+- Vida: 6 (el valor va aumentando en 1 en base a la sala)
+- Tipo de movimiento: Se teletransporta detrás del jugador con tiempo de espera entre cada movimiento.
+- Velocidad de movimiento:Igual a la del jugador.
+- Ataque: Se teletransporta detrás del jugador y a los dos segundos ataca con un cuchillo, poco rango.
+- Debilidad: Entre un teletransporte y otro está indefenso.
+
+*Duendecillo mago*
+- Vida: 5 (el valor va aumentando en 1 en base a la sala)
+- Tipo de movimiento: Busca alejarse del jugador.
+- Velocidad de movimiento:Un 10% menos que la del jugador.
+- Ataque: Lanza una bola de energía que desaparece delante suya y aparece detrás del jugador en dirección suya.
+- Debilidad: Lento disparando y mientras huye no puede atacar.
+
+*Carne de cañón (ardillas por ejemplo)*
+- Vida: 3 (el valor va aumentando en 1 en base a la sala)
+- Tipo de movimiento: Se mueve hacia al jugador
+- Velocidad de movimiento:Un 20% menos que la del jugador.
+- Ataque: Hace daño por contacto con el jugador
+- Debilidad: Poco resistentes.
+
+*Los perdidos (probablemente murciélagos o similar volador)*
+- Vida: 1 
+- Tipo de movimiento: Aleatorio (como si rebotaran en las paredes)
+- Velocidad de movimiento: Igual a la del jugador
+- Ataque: Hace daño por contacto con el jugador, cada vez que te golpea uno el siguiente ataque de otro te hace más daño así infinitamente.
+- Debilidad: Poco resistentes (oneshot).
+### Jefes
+*David el gnomo*
+- Vida: 100 (aparece al final de la primera área)
+- Tipo de movimiento: Mantiene la distancia pero si el jugador se acerca va a por él.
+- Velocidad de movimiento:Un 20% menos que la del jugador.
+- Ataques:
+   - Ataque 1: Golpea el suelo y crea una onda expansiva.
+   - Ataque 2: Derechazo al jugador si se encuentra cerca.
+   - Ataque 3: Lanza rocas al aire que caen en la zona en la que esté el jugador.
+- Habilidad (Soy diez veces más fuerte que tu): Cuando le queda un 20% de vida aumenta su velocidad en un 30% y hace un 25% más de daño durante 10 segundos (puede ser que sume el daño del jugador al suyo), después debe descansar durante 5 segundos.
+- Debilidad: sus golpes son fáciles de esquivar.
+
+*El encontrado*
+- Vida: 200 (aparece al final de la segunda área)
+- Tipo de movimiento: Se va moviendo por la sala.
+- Velocidad de movimiento: Un 30% más lento que el jugador.
+- Ataques:
+   - Ataque 1: Lanza ácido que se queda en el suelo durante un tiempo determinado, el jugador recibe daño al pasar por encima.
+   - Ataque 2: Invoca a los perdidos, estos son especiales en vez de aumentar el daño infinito cada vez que golpean al jugador el encontrado.
+   - Ataque 3: Acelera y realiza tres ataques directos seguidos a por el jugador
+- Habilidad (Sin límites): Su vida no tiene límites es decir con la curación de su segunda habilidad puede sobrepasar sus 200 de vida inicial y cuanto menos vida tenga más se cura.
+- Debilidad: A determinar.
+
+*Nahum*
+- Vida: 300 (Jefe final)
+- Primera fase:
+- Tipo de movimiento: parado
+- Ataques: a determinar
+- Segunda fase:
+- Tipo de movimiento: camina
+- Ataques: a determinar
 
-Tipo de movimiento: Persigue lentamente al jugador (su velocidad aumenta según se avanza en el juego).
-
-Velocidad de movimiento: Un 10% inferior a la velocidad de movimiento del jugador.
-
-Ataque: Quita poco a poco vida al jugador.
-
-Debilidad: El enemigo es débil a todos los ataques
-
-
-#### Lobo
-
-Vida: 10 (el valor va aumentando en 1 en base a la sala)
-
-Tipo de movimiento: Se mantiene alejado del jugador.
-
-Velocidad de movimiento:Un 15% superior a la velocidad de movimiento del jugador.
-
-Ataque: Realiza un dash hacia el jugador.
-
-Debilidad: Si impacta contra una pared al  realizar el dash se queda aturdido durante 2 segundos.
-
-Variante superior: no se aturde al impactar contra las paredes.
-
-#### Duendecillo
-
-Vida: 6 (el valor va aumentando en 1 en base a la sala)
-
-Tipo de movimiento: Se teletransporta detrás del jugador con tiempo de espera entre cada movimiento.
-
-Velocidad de movimiento:Igual a la del jugador.
-
-Ataque: Se teletransporta detrás del jugador y a los dos segundos ataca con un cuchillo, poco rango.
-
-Debilidad: Entre un teletransporte y otro está indefenso.
-
-#### Duendecillo mago
-
-Vida: 5 (el valor va aumentando en 1 en base a la sala)
-
-Tipo de movimiento: Busca alejarse del jugador.
-
-Velocidad de movimiento:Un 10% menos que la del jugador.
-
-Ataque: Lanza una bola de energía que desaparece delante suya y aparece detrás del jugador en dirección suya.
-
-Debilidad: Lento disparando y mientras huye no puede atacar.
-
-Carne de cañón (ardillas por ejemplo)
-
-Vida: 3 (el valor va aumentando en 1 en base a la sala)
-
-Tipo de movimiento: Se mueve hacia al jugador
-
-Velocidad de movimiento:Un 20% menos que la del jugador.
-
-Ataque: Hace daño por contacto con el jugador
-
-Debilidad: Poco resistentes.
-
-Los perdidos (probablemente murciélagos o similar volador)
-
-Vida: 1 
-
-Tipo de movimiento: Aleatorio (como si rebotaran en las paredes)
-
-Velocidad de movimiento: Igual a la del jugador
-
-Ataque: Hace daño por contacto con el jugador, cada vez que te golpea uno el siguiente ataque de otro te hace más daño así infinitamente.
-
-Debilidad: Poco resistentes (oneshot).
-
-
-Jefes
-David el gnomo
-
-Vida: 100 (aparece al final de la primera área)
-
-Tipo de movimiento: Mantiene la distancia pero si el jugador se acerca va a por él.
-
-Velocidad de movimiento:Un 20% menos que la del jugador.
-
-Ataque 1: Golpea el suelo y crea una onda expansiva.
-
-Ataque 2: Derechazo al jugador si se encuentra cerca.
-
-Ataque 3: Lanza rocas al aire que caen en la zona en la que esté el jugador.
-
-Habilidad (Soy diez veces más fuerte que tu): Cuando le queda un 20% de vida aumenta su velocidad en un 30% y hace un 25% más de daño durante 10 segundos (puede ser que sume el daño del jugador al suyo), después debe descansar durante 5 segundos.
-
-Debilidad: sus golpes son fáciles de esquivar.
-
-Corazón del bosque
-
-Vida: 150 (aparece al final de la primera área)
-
-Tipo de movimiento: No se mueve, se encuentra ubicado en la zona derecha de la sala.
-
-Velocidad de movimiento: 0
-
-Ataque 1: Raíces salen debajo del jugador.
-
-Ataque 2: Las raíces salen formando una pequeña área cerca de él.
-
-Ataque 3: Lanza sus frutos que explotan al impactar con los disparos del jugador o al segundo de quedarse quietos.
-
-Habilidad (Cuida la naturaleza): Se añade un escudo que reduce el daño un 30% cuando le queda la mitad de la vida.
-
-Debilidad: Ataques predecibles que intenta compensar con una gran cantidad de vida.
-
-It was me, the mage
-
-Vida: 180 (aparece al final de la segunda área)
-
-Tipo de movimiento: Mantiene la distancia todo lo posible
-
-Velocidad de movimiento: Velocidad del jugador.
-
-Ataque 1: Lanza un orbe rojo en dirección al jugador que va acelerando.
-
-Ataque 2: Lanza un orbe morado en dirección al jugador, si el orbe impacta contra una pared vuelve a aparecer en una de las otras paredes y vuelve a ir a por el jugador máximo ocurre dos veces.
-
-Ataque 3: dispara 4 orbes azules en direcciones aleatorias y rebotan en las paredes el jugador puede destruirlos o desaparecen al cabo del tiempo.
-
-Habilidad: Cuando el jugador está cerca suya durante más de 5 segundos se pone una barrera que empuja al jugador al lado contrario de la sala.
-
-Debilidad: Pasa bastante tiempo entre ataque y ataque.
-
-El encontrado
-
-Vida: 200 (aparece al final de la segunda área)
-
-Tipo de movimiento: Se va moviendo por la sala.
-
-Velocidad de movimiento: Un 30% más lento que el jugador.
-
-Ataque 1: Lanza ácido que se queda en el suelo durante un tiempo determinado, el jugador recibe daño al pasar por encima.
-
-Ataque 2: Invoca a los perdidos, estos son especiales en vez de aumentar el daño infinito cada vez que golpean al jugador el encontrado.
-
-Ataque 3: Acelera y realiza tres ataques directos seguidos a por el jugador
-
-Habilidad (Sin límites): Su vida no tiene límites es decir con la curación de su segunda habilidad puede sobrepasar sus 200 de vida inicial y cuanto menos vida tenga más se cura.
-
-Debilidad: A determinar.
 
 ### Campamento Base
 El Campamento Base será el lugar al que el jugador regresa tras las Expediciones para conseguir nuevo equipamiento y desbloquear objetos para su próxima expedición.
