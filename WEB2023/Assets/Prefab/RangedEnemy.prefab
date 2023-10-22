@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6807329344346774080}
   - component: {fileID: -8955868755180615599}
   - component: {fileID: -3937691868912107571}
+  - component: {fileID: 1330603882934896760}
   m_Layer: 0
   m_Name: RangedEnemy
   m_TagString: Enemy
@@ -109,7 +110,7 @@ MonoBehaviour:
   speed: 1
   life: 60
   bulletSpeed: 5
-  animator: {fileID: 0}
+  animator: {fileID: 1330603882934896760}
   damage: 20
   notInRoom: 0
 --- !u!50 &-8955868755180615599
@@ -174,3 +175,24 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 0.8828125}
   m_Direction: 0
+--- !u!95 &1330603882934896760
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3789336805313456490}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2607d1bb134bf2d4eb42a45329cb3260, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
