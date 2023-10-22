@@ -109,7 +109,7 @@ Destrezas de pensamiento computacional y cómo se pueden medir:
 
 6. **Generalización**. Implementación de niveles con puzles donde el jugador tendrá que reconocer objetos mediante su color y tomar decisiones en base a los conocimientos previamente adquiridos en las anteriores partidas. En el campamento (zona previa a las partidas), al jugador se le explicará lo básico y a medida que vaya descubriendo esos patrones, estos se irán haciendo más difíciles.
 
-###Jugabilidad
+### Jugabilidad
 El bucle jugable general consistirá en los siguientes pasos:
 1. Expedición, el jugador entra en el bosque e intenta llegar lo más profundo posible para conseguir la mayor cantidad de recursos. El jugador puede abandonar el bosque al terminar un nivel, en ese caso conservará todos los recursos que haya conseguido de la expedición,  o ser derrotado, en ese caso perderá todos los recursos adquiridos durante la partida.
 2. Al terminar la expedición todos los recursos del jugador se convertirán en oro. El jugador volverá al campamento base donde podrá usar el oro para comprar mejoras, objetos y decoración para el campamento.
@@ -122,11 +122,11 @@ llevar y cuales no.
 3. El jugador puede salir del bosque para volver al Campamento Base o puede pasar al siguiente nivel de la capa del bosque en la que este.
 5. Si sigue avanzando durante 10 niveles se enfrentará a un jefe de la capa, si lo vence podrá continuar a la siguiente capa y repetir el proceso con enemigos más poderosos para conseguir mejores materiales.
 
-###Economía
+### Economía
 El juego cuenta con una única divisa, el oro. El oro se puede obtener al completar expediciones, durante la partida. Sirve para desbloquear equipamiento y objetos en el campamento haciendo que el jugador los pueda encontrar en las expediciones. Además el jugador contará con una tienda por cada capa del bosque durante la expedición. En esta tienda el jugador podrá comprar objetos para usarlos durante la expedición o vender objetos para ganar dinero. El jugador deberá calcular cual es la mejor combinación de compraventa de objetos para sacar el máximo partido a sus recursos.
-###Plataforma
+### Plataforma
 El videojuego se va a subir a la plataforma de Itch.io y a la Play Store. En un futuro se contempla subirlo a plataformas como Steam y Epic Games en función del recibimiento del videojuego.
-###Requisitos Mínimos
+### Requisitos Mínimos
 Pese a que no se cuentan con herramientas para calcular el rendimiento del videojuego en los dispositivos, se estima:
 - Sistema operativo: Windows 7/8/10 o macOS
 - Procesador: Un procesador de doble núcleo a 2.0 GHz o superior
@@ -134,21 +134,21 @@ Pese a que no se cuentan con herramientas para calcular el rendimiento del video
 - Tarjeta gráfica: Integrada
 - Espacio en disco duro: 1-3 GB
 Estas estimaciones se han hecho en función a videojuegos con el mismo estilo al nuestro como el Brotato o The Binding of Isaac.
-##MECÁNICAS
-###Movimiento
+## MECÁNICAS
+### Movimiento
 El movimiento del juego será en 8 direcciones.
 Según la cantidad de objetos que lleve el jugador la velocidad podrá aumentar o reducir.
 
-###Ataque
+### Ataque
 El jugador podrá atacar independientemente de la dirección a la que se esté moviendo, se ataca moviendo el joystick en la dirección en la que se quiera atacar, en PC se ataca con las flechas del teclado en 4 direcciones. 
 Las propiedades de ataque están determinadas por el arma equipada, este podrá ser cuerpo a cuerpo o a distancia.
 
-###Inventario
+### Inventario
 El inventario es un espacio dividido en cuadrículas, el inventario puede contener todos los objetos del juego, estos objetos pueden colocarse y organizarse en el inventario. Si sobresalen objetos del inventario, dependiendo de cuántas casillas sobresalen, el personaje se verá ralentizado un 10% por cada casilla de objeto que sobresalga del inventario.
 El inventario puede variar en función de las mejoras adquiridas en el Campamento Base o mediante clases proporcionadas por los gremios.
 El inventario tiene una serie de huecos limitados, una vez se han llenado esos huecos  se podrán llevar algunos objetos extra pero estos contarán como sobrecarga y llevarlos implicará una reducción de la velocidad de movimiento, no se podrán llevar más objetos una vez superados los huecos de sobrecarga. Por ejemplo, el jugador tiene 10 huecos de inventario, 7 son normales y 3 de sobrecarga, si el jugador lleva 7 objetos tiene el límite antes de tener sobrecarga, si lleva 8 objetos obtendrá una penalización de sobrecarga, reduciendo su velocidad de movimiento un 10% y si lleva 9 recibirá una penalización de 20%, el jugador no puede llevar más de 10 objetos.
 
-###Equipamiento
+### Equipamiento
 Armas
 Las armas determinan cómo ataca el personaje y el daño que hace. Hay dos tipos principales de armas a distancia y cuerpo a cuerpo.
 
@@ -168,7 +168,8 @@ Las pociones no se podrán usar durante el combate, solo cuando se haya acabado 
 Los objetos pueden aparecer al terminar  una sala y servirán para aumentar estadísticas y en algunos casos alterarán aspectos del personaje como el tipo de daño que hace o los estados que puede infligir, en versiones posteriores se implementarán más atributos que puedan dar los objetos, como sangrado, veneno, quemaduras…
 Los objetos tienen 4 **rarezas**: común, raro, épico, legendario. La rareza de los objetos determinará las stats que da al jugador y el precio de venta, además, los objetos de rareza superiores le podrán dar al jugador más de una estadística. 
 Más adelante en el juego, cuando el jugador desbloqueé la capacidad de ver auras, podrá ver el aura de los objetos en el bosque, este aura afecta al precio de venta y su daño y determina el estado del objeto en 5 categorías: Maltrecho, - 5% de su precio ; sin aura, tiene el precio de venta y estadísticas normal ; buen estado, + 10% de su precio de venta y estadísticas; perfecto estado, +15% de precio de venta y estadísticas; purificado, +20% de su precio de venta, estadísticas y un efecto sumado aleatorio. Estos porcentajes son orientativos y cambiarán cuando se haya testeado si impactan mucho o poco el gameplay.
-objetos con estadísticas: [Enlace a la hoja de cálculo con los objetos] [https://docs.google.com/spreadsheets/d/1nqJ6MIjXAtS5HyprhY6oJlgkHAHZMD0HF10bQ-MYcy4/edit?usp=sharing]
+objetos con estadísticas: [Enlace a la hoja de cálculo con los objetos] [items]
+[items]: https://docs.google.com/spreadsheets/d/1nqJ6MIjXAtS5HyprhY6oJlgkHAHZMD0HF10bQ-MYcy4/edit?usp=sharing
 A = Ataque, D=Defensa, VA=Velocidad de Ataque, VM=Velocidad de Movimiento, R=Rareza y P = Precio 
 
 
