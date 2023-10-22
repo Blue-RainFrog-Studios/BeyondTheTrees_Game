@@ -187,7 +187,7 @@ MonoBehaviour:
   EnemyBullet: {fileID: 0}
   currState: 0
   enemyType: 0
-  range: 8
+  range: 15
   attackRange: 1.5
   coolDown: 1
   speed: 2
