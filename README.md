@@ -578,4 +578,6 @@ Usaremos un modelo Freemium (Free + Premium) ofreciendo el juego de manera total
 Para un futuro F2P con futuros dlcs de pago.
 ## CAMBIOS
 El documento de diseño se encuentra en la versión 1.0, este apartado servirá para comunicar los cambios hechos en futuras versiones.
+## Enlace de lector al GDD en Google docs
+https://docs.google.com/document/d/1l6Qfy3xQ0anlrgdIv_5JKlhzeY_67oTvJoi1X06fd6Q/edit?usp=sharing
 
