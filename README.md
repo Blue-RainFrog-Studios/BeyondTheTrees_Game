@@ -202,11 +202,10 @@ A = Ataque, D=Defensa, VA=Velocidad de Ataque, VM=Velocidad de Movimiento, R=Rar
 | Capa del viento  | Una capa que aparece en antiguas leyendas, se dice que allá dónde esté el viento sopla a espaldas de tu portador. Se puede vender por mucho oro y te dará mucha velocidad de movimiento |  0 |  0 |  0 | 11 | Legendario | 30 |
 
 Daga Solar
-
-
+![Daga solar][DagaSolar]
 
 Daga Lunar
-
+![Daga lunar][DagaLunar]
 
 ## DISEÑO
 ### Personaje
@@ -345,6 +344,7 @@ Por ahora estos son de perseguir o huir. Iremos desarrollando estas IA a medida 
 - Velocidad de movimiento: Un 10% inferior a la velocidad de movimiento del jugador.
 - Ataque: Quita poco a poco vida al jugador.
 - Debilidad: El enemigo es débil a todos los ataques
+- ![Concept Fantasma][fantasma]
 
 *Lobo*
 - Vida: 10 (el valor va aumentando en 1 en base a la sala)
@@ -381,6 +381,7 @@ Por ahora estos son de perseguir o huir. Iremos desarrollando estas IA a medida 
 - Velocidad de movimiento: Igual a la del jugador
 - Ataque: Hace daño por contacto con el jugador, cada vez que te golpea uno el siguiente ataque de otro te hace más daño así infinitamente.
 - Debilidad: Poco resistentes (oneshot).
+- ![Concept Murcielago][murcielago]
 ### Jefes
 *David el gnomo*
 - Vida: 100 (aparece al final de la primera área)
@@ -481,7 +482,7 @@ Como primeros bocetos se tiene el del personaje en papel. La idea es crear algo 
 ### Arte conceptual
 El concept art del personaje es una versión aún más simplificada que el boceto inicial. Lo que se busca es que cualquiera pueda dibujar o reconocer al personaje principal. Esto está pensado para poder llegar al mayor público posible.
 #### Turn-around personaje
-
+![Kero, el héroe de Evergreen][conceptPJ]
 ### Banda Sonora 
 La banda sonora busca ser algo que acompañe al jugador durante la partida, en ningún momento se buscará que la banda sonora tome protagonismo. Un ejemplo de banda sonora parecida al que se tiene pensado para el juego es la música de The binding of Isaac.
 https://www.youtube.com/watch?v=H9jqfH6Yp7w&list=OLAK5uy_nirxVnCtTeTtYMS9h1itNIK-cvZUufIhQ
@@ -492,6 +493,7 @@ El objetivo principal es desarrollar un juego base con un conjunto de niveles ya
 Profesores, instituciones educativas, editoriales y el gobierno. Padres e instituciones educativas tienen que sentirse atraídos hacia la idea del juego. Tenemos dos principales atractivos para este grupo, una estética familiar que no les parezca demasiado disparatada o inadecuada para los niños; y el más importante un juego capaz de medir y mejorar el pensamiento computacional de los niños, una faceta clave del currículo escolar.
 #### Quién va a jugar el juego
 El juego está dirigido a niños de entre 3 y 12 años haciendo especial énfasis al grupo de 8 a 12. Con partidas rápidas que permiten invertir una pequeña cantidad de tiempo, perfectas para jugar entre descansos, con el fin de obtener resultados analíticos.
+![Mapa Empatía][mapaEmpatia]
 
 ### Publicidad y redes sociales
 Para publicitar el juego se va a dividir el proceso en dos etapas:
@@ -506,8 +508,25 @@ Usaremos un modelo Freemium (Free + Premium) ofreciendo el juego de manera total
 
 ### Planes de monetización
 Para un futuro F2P con futuros dlcs de pago.
+
+### Model Canvas
+![Model Canvas][modelCanvas]
+
+
+###ToolBox
+![Tool Boxr][toolBox]
+
+
 ## CAMBIOS
 El documento de diseño se encuentra en la versión 1.0, este apartado servirá para comunicar los cambios hechos en futuras versiones.
 ## Enlace de lector al GDD en Google docs
 https://docs.google.com/document/d/1l6Qfy3xQ0anlrgdIv_5JKlhzeY_67oTvJoi1X06fd6Q/edit?usp=sharing
 
+[conceptPJ]: ImagesGDD/FINAL_CONCEPT.jpg
+[dagaSolar]: ImagesGDD/DagaSolar.png
+[dagaLunar]: ImagesGDD/DagaLunar.png
+[mapaEmpatia]: ImagesGDD/Empatia.png
+[fantasma]: ImagesGDD/Fantasma.png
+[murcielago]: ImagesGDD/Murcielago.png
+[modelCanvas]: ImagesGDD/modelCanvas2Fina.png
+[toolBox]: ImagesGDD/toolbox.png
