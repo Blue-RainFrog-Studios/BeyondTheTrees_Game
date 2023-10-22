@@ -19,7 +19,7 @@ public class KnightScript : MonoBehaviour
     public int defense { get; set; }
 
     public KnightScript() { 
-            health = 150;
+            health = 50;
             speed = 6;
             attack = 10;
             defense = 7;
