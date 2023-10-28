@@ -10,6 +10,10 @@ public class PlayerMovementInputSystem : MonoBehaviour
     [SerializeField] private float smoothness = 0.3f;
     [SerializeField] private GameObject attack;
 
+    //animacion personaje
+    public Animator characterAnimator;
+
+
     private Map playerInputActions;
     private Vector2 direction;
     public Vector2 attackDirection;
@@ -31,7 +35,17 @@ public class PlayerMovementInputSystem : MonoBehaviour
         //Actualiza las posiciones que le decimos mediante el input
         //Move
         direction = playerInputActions.Player.Move.ReadValue<Vector2>();
-        
+        //if the input action recieved is "s"
+        if (direction.y == -1)
+        {
+            //set the animator to play the "walkRight" animation
+            characterAnimator.Play("WalkFront");
+        }
+        else
+        {
+            characterAnimator.Play("Idle");
+        }
+
     }
     private void FixedUpdate()
     {
