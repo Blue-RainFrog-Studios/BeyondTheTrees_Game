@@ -36,15 +36,31 @@ public class PlayerMovementInputSystem : MonoBehaviour
         //Move
         direction = playerInputActions.Player.Move.ReadValue<Vector2>();
         //if the input action recieved is "s"
-        if (direction.y == -1)
+        if (direction.y < 0)
         {
             //set the animator to play the "walkRight" animation
             characterAnimator.Play("WalkFront");
         }
-        else
+        else if (direction.y > 0)
         {
-            characterAnimator.Play("Idle");
+            //set the animator to play the "walkRight" animation
+            characterAnimator.Play("WalkBack");
         }
+        else if (direction.x < 0)
+        {
+            //set the animator to play the "WalkLeft" animation
+            characterAnimator.Play("WalkLeft");
+        }
+        else if (direction.x > 0)
+        {
+            //set the animator to play the "walkRight" animation
+            characterAnimator.Play("WalkRight");
+        }
+
+
+
+        //if the player is going right
+
 
     }
     private void FixedUpdate()
