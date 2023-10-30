@@ -213,8 +213,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f52be6a6b15646349bf848318d90612c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
-  smoothness: 0.3
+  speed: 6
+  smoothness: 0.12
   attack: {fileID: 1720175491396843235, guid: 49b138763be454a4e99c46e4bc979230, type: 3}
   characterAnimator: {fileID: 2472352434232250267}
   attackDirection: {x: 0, y: 0}
@@ -967,7 +967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fec526dc4f106e4daaf726b45d07591, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
+  inventory: {fileID: 3010520855084953955, guid: a68b9fc9a0fe09d49879213d453f29f0, type: 3}
 --- !u!1 &8041198356173209196
 GameObject:
   m_ObjectHideFlags: 0

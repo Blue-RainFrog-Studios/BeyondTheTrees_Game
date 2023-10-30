@@ -2400,6 +2400,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a68b9fc9a0fe09d49879213d453f29f0, type: 3}
+--- !u!114 &174007252 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2335634593040834986, guid: a68b9fc9a0fe09d49879213d453f29f0, type: 3}
+  m_PrefabInstance: {fileID: 174007251}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052736590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d10fc80d098d30a4ea6001b7feadf615, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &204765820
 GameObject:
   m_ObjectHideFlags: 0
@@ -4059,6 +4070,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3594968746583997725, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 3.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3594968746583997725, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 4.97
+      objectReference: {fileID: 0}
     - target: {fileID: 3690938603894818664, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
       propertyPath: m_Size.x
       value: 3.7
@@ -4163,10 +4182,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6208758886428179061, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 2052736590}
     - target: {fileID: 6769414538310913179, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
       propertyPath: inventoryUI
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 174007252}
     - target: {fileID: 8030181703701749017, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4360,3 +4383,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2022397978}
   m_CullTransparentMesh: 1
+--- !u!1 &2052736590 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3010520855084953955, guid: a68b9fc9a0fe09d49879213d453f29f0, type: 3}
+  m_PrefabInstance: {fileID: 174007251}
+  m_PrefabAsset: {fileID: 0}

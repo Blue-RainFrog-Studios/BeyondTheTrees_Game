@@ -113,8 +113,10 @@ public class PlayerMovementInputSystem : MonoBehaviour
             //Solo dispara si se ha llevado el joystick suficientemente lejos
             if (attackDirection.magnitude == 1)
             {
+                if (this != null) { 
                 Instantiate(attack, transform.position, transform.rotation);
                 shotRateTime = Time.time + shoteRate;
+            }
             }
 
         }
