@@ -82,9 +82,7 @@ public class PlayerMovementInputSystem : MonoBehaviour
             characterAnimator.Play("StopBack");
 
         }
-
         //if the player is going right
-
 
     }
     private void FixedUpdate()
