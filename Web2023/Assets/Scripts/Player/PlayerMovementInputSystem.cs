@@ -35,6 +35,8 @@ public class PlayerMovementInputSystem : MonoBehaviour
         //Actualiza las posiciones que le decimos mediante el input
         //Move
         direction = playerInputActions.Player.Move.ReadValue<Vector2>();
+
+
         //if the input action recieved is "s"
         if (direction.y < 0)
         {
@@ -56,8 +58,30 @@ public class PlayerMovementInputSystem : MonoBehaviour
             //set the animator to play the "walkRight" animation
             characterAnimator.Play("WalkRight");
         }
+        else if (direction.x == 0 && direction.y == 0 && characterAnimator.GetCurrentAnimatorStateInfo(0).IsName("WalkRight") && player_rb.velocity.x < 0.3 && player_rb.velocity.y < 0.3)
+        {
+            //play the animation stopright
+            characterAnimator.Play("StopRight");
 
+        }
+        else if (direction.x == 0 && direction.y == 0 && characterAnimator.GetCurrentAnimatorStateInfo(0).IsName("WalkLeft") && player_rb.velocity.x < 0.3 && player_rb.velocity.y < 0.3)
+        {
+            //play the animation stopright
+            characterAnimator.Play("StopLeft");
 
+        }
+        else if (direction.x == 0 && direction.y == 0 && characterAnimator.GetCurrentAnimatorStateInfo(0).IsName("WalkFront") && player_rb.velocity.x < 0.3 && player_rb.velocity.y < 0.3)
+        {
+            //play the animation stopright
+            characterAnimator.Play("StopFront");
+
+        }
+        else if (direction.x == 0 && direction.y == 0 && characterAnimator.GetCurrentAnimatorStateInfo(0).IsName("WalkBack") && player_rb.velocity.x < 0.3 && player_rb.velocity.y < 0.3)
+        {
+            //play the animation stopright
+            characterAnimator.Play("StopBack");
+
+        }
 
         //if the player is going right
 
