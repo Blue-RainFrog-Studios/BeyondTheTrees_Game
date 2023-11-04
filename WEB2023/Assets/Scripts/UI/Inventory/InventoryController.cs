@@ -4,16 +4,47 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Inventory
 {
     public class InventoryController : MonoBehaviour
     {
         [SerializeField]
-        private UI.UIInventoryPage inventoryUI;
+        private UIInventoryPage inventoryUI;
 
         [SerializeField]
-        private Model.InventorySO inventoryData;
+        private InventorySO inventoryData;
+
+        private Map playerInputActions;
+
+        private void Awake()
+        {
+            Debug.Log(inventoryUI);
+            playerInputActions = new Map();
+            playerInputActions.Enable();
+
+            playerInputActions.Player.Inventory.performed += ShowInventory;
+        }
+
+        private void ShowInventory(InputAction.CallbackContext context)
+        {
+            Debug.Log("SE HA PULSADO I");
+            if (inventoryUI.isActiveAndEnabled == false)
+            {
+                inventoryUI.Show();
+                foreach (var item in inventoryData.GetCurrentInventoryState())
+                {
+                    inventoryUI.UpdateData(item.Key,
+                        item.Value.item.ItemImage,  //Muestra lo que hay en el inventario
+                        item.Value.quantity);
+                }
+            }
+            else
+            {
+                inventoryUI.Hide();
+            }
+        }
 
         private void Start()
         {
@@ -85,23 +116,23 @@ namespace Inventory
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.I))
-            {
-                if (inventoryUI.isActiveAndEnabled == false)
-                {
-                    inventoryUI.Show();
-                    foreach (var item in inventoryData.GetCurrentInventoryState())
-                    {
-                        inventoryUI.UpdateData(item.Key,
-                            item.Value.item.ItemImage,  //Muestra lo que hay en el inventario
-                            item.Value.quantity);
-                    }
-                }
-                else
-                {
-                    inventoryUI.Hide();
-                }
-            }
+            //if (Input.GetKeyDown(KeyCode.I))
+            //{
+            //    if (inventoryUI.isActiveAndEnabled == false)
+            //    {
+            //        inventoryUI.Show();
+            //        foreach (var item in inventoryData.GetCurrentInventoryState())
+            //        {
+            //            inventoryUI.UpdateData(item.Key,
+            //                item.Value.item.ItemImage,  //Muestra lo que hay en el inventario
+            //                item.Value.quantity);
+            //        }
+            //    }
+            //    else
+            //    {
+            //        inventoryUI.Hide();
+            //    }
+            //}
         }
 
 
