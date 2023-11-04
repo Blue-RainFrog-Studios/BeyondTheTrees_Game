@@ -13,7 +13,7 @@ public class MouseFollower : MonoBehaviour
 
     private void Awake()
     {
-        canvas = transform.root.GetComponent<Canvas>();
+        canvas = transform.GetComponentInParent<Canvas>();
         item = GetComponentInChildren<UIInventoryItem>();  //El prefab es el hijo del GO MouseFollower
     }
 
