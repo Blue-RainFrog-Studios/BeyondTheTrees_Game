@@ -36,8 +36,16 @@ public class KnightScript : MonoBehaviour
 
             knight.health -= (dmgValue - knight.defense);
             lifeBar.value = knight.health;
-            if (knight.health <= 0)
+        if (knight.health <= 0)
+                DeleteAll();
                 SceneManager.LoadScene("GameOver");
         
+    }
+    public void DeleteAll()
+    {
+        foreach (GameObject o in Object.FindObjectsOfType<GameObject>())
+        {
+            Destroy(o);
+        }
     }
 }

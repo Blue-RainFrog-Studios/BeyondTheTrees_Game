@@ -9,7 +9,7 @@ public class GridController : MonoBehaviour
     [System.Serializable]
     public struct Grid
     {
-        public int columns, rows;
+        public float columns, rows;
         public float verticalOffset, horizontalOffset;
     }
 
