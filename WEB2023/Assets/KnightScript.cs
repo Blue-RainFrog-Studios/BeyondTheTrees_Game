@@ -10,6 +10,8 @@ public class KnightScript : MonoBehaviour
     [SerializeField]
     public Slider lifeBar;
 
+    public GameObject gameOver;
+
     KnightScript knight;
     RoomController r;
 
@@ -41,12 +43,14 @@ public class KnightScript : MonoBehaviour
     public void ReceiveAttack(int dmgValue)
     {
 
-            knight.health -= (dmgValue - knight.defense);
-            lifeBar.value = knight.health;
+        knight.health -= (dmgValue - knight.defense);
+        lifeBar.value = knight.health;
         if (knight.health <= 0)
         {
             r.DestroyRooms();
-            
+            gameOver.SetActive(true);
+            gameObject.GetComponent<PlayerMovementInputSystem>().enabled = false;
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
             //SceneManager.LoadScene("GameOver");
         }
 
