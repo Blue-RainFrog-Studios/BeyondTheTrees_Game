@@ -36,8 +36,9 @@ public class PlayerMovementInputSystem : MonoBehaviour
     }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log("Se ha cargado");
+
         this.gameObject.SetActive(true);
+        //this.gameObject.transform.position = new Vector2(0.0f, -2.0f);
     }
     private void Update()
     {

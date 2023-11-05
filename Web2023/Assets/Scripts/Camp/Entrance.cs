@@ -18,12 +18,9 @@ public class Entrance : MonoBehaviour
         {
             playerMovementInputSystem.gameObject.SetActive(false);
             SceneManager.LoadScene("Basement");
-            
+            playerMovementInputSystem.gameObject.transform.position = new Vector2(0.0f, -2.0f);
         }
     }
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        playerMovementInputSystem.gameObject.SetActive(true);
-    }
+
 }
 
