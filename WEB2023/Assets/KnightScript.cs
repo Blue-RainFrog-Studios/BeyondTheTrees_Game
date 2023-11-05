@@ -11,6 +11,7 @@ public class KnightScript : MonoBehaviour
     public Slider lifeBar;
 
     KnightScript knight;
+    RoomController r;
 
     public int health { get; set; }
     public float speed { get; set; }
@@ -29,7 +30,13 @@ public class KnightScript : MonoBehaviour
 
     private void Awake()
     {
+        r = FindObjectOfType<RoomController>();
         knight = new();
+    }
+    public void Update()
+    {
+       
+        Debug.Log(r);
     }
     public void ReceiveAttack(int dmgValue)
     {
@@ -37,15 +44,13 @@ public class KnightScript : MonoBehaviour
             knight.health -= (dmgValue - knight.defense);
             lifeBar.value = knight.health;
         if (knight.health <= 0)
-                DeleteAll();
-                SceneManager.LoadScene("GameOver");
-        
-    }
-    public void DeleteAll()
-    {
-        foreach (GameObject o in Object.FindObjectsOfType<GameObject>())
         {
-            Destroy(o);
+            r.DestroyRooms();
+            
+            //SceneManager.LoadScene("GameOver");
         }
+
+
     }
+
 }

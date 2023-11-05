@@ -121,10 +121,16 @@ public class RoomController : MonoBehaviour
     }
      public void DestroyRooms()
     {
-        foreach(Room room in loadedRooms)
+        foreach (Room room in loadedRooms)
         {
-            loadedRooms.Remove(room);
+
+
+            Destroy(room.gameObject);
+            
+
         }
+        loadedRooms.Clear();
+        
     }
     IEnumerator LoadRoomRoutine(RoomInfo info)
     {
