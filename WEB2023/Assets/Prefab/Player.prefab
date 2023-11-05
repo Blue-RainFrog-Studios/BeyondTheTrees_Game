@@ -218,15 +218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryUI: {fileID: 3878882401653987122}
   inventoryData: {fileID: 11400000, guid: 3d5e87fb3b39b8e4285030286a8a081f, type: 2}
-  initialItems:
-  - quantity: 98
-    item: {fileID: 11400000, guid: 9ff2a6e3e36ef72439649bc6ff4ff375, type: 2}
-  - quantity: 0
-    item: {fileID: 0}
-  - quantity: 1
-    item: {fileID: 11400000, guid: f8bd05ae391ac7743b45663e02399d3a, type: 2}
-  - quantity: 0
-    item: {fileID: 0}
+  initialItems: []
 --- !u!114 &3220108037931169126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -608,7 +600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
+  m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}

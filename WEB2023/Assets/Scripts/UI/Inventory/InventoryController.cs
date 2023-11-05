@@ -20,16 +20,18 @@ namespace Inventory
 
         private void Awake()
         {
-            Debug.Log(inventoryUI);
+            
             playerInputActions = new Map();
             playerInputActions.Enable();
-
+            //inventoryUI = GetComponentInChildren<UIInventoryPage>();
+            Debug.Log(inventoryUI);
             playerInputActions.Player.Inventory.performed += ShowInventory;
         }
 
         private void ShowInventory(InputAction.CallbackContext context)
         {
             Debug.Log("SE HA PULSADO I");
+            if (this == null) return;
             if (inventoryUI.isActiveAndEnabled == false)
             {
                 inventoryUI.Show();
