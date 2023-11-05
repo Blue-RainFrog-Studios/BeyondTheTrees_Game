@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovementInputSystem : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class PlayerMovementInputSystem : MonoBehaviour
     private float shotRateTime = 0;
     private void Awake()
     {
+        
         DontDestroyOnLoad(this.gameObject);
         player_rb = GetComponent<Rigidbody2D>();
         playerInputActions = new Map();
@@ -30,6 +32,12 @@ public class PlayerMovementInputSystem : MonoBehaviour
 
         //playerInputActions.Player.Move.performed += Move;
         playerInputActions.Player.Attack.performed += Attack;
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log("Se ha cargado");
+        this.gameObject.SetActive(true);
     }
     private void Update()
     {

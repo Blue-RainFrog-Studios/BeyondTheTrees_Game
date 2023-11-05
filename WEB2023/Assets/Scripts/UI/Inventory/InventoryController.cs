@@ -30,7 +30,6 @@ namespace Inventory
 
         private void ShowInventory(InputAction.CallbackContext context)
         {
-            Debug.Log("SE HA PULSADO I");
             if (this == null) return;
             if (inventoryUI.isActiveAndEnabled == false)
             {
