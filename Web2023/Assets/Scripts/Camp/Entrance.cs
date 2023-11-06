@@ -7,9 +7,11 @@ public class Entrance : MonoBehaviour
 {
     private PlayerMovementInputSystem playerMovementInputSystem;
 
+
     private void Awake()
     {
         playerMovementInputSystem = FindObjectOfType<PlayerMovementInputSystem>().GetComponent<PlayerMovementInputSystem>();
+        
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

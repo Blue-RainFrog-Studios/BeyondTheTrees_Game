@@ -3596,6 +3596,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maleButton: {fileID: 502887776}
   femaleButton: {fileID: 900214495}
+  playerPrefab: {fileID: 1156985873014526917, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
 --- !u!1 &981252723
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,8 @@ public class MenuLogin : MonoBehaviour
     [SerializeField] private Button maleButton;
     [SerializeField] private Button femaleButton;
     private string nombreUsuario;
+    [SerializeField]
+    private GameObject playerPrefab;
 
     public void volverMenuPrincipal()
     {
@@ -44,5 +46,6 @@ public class MenuLogin : MonoBehaviour
     {
         //SceneManager.LoadScene("Basement");
         SceneManager.LoadScene("Campamento Base");
+        Instantiate(playerPrefab);  
     }
 }

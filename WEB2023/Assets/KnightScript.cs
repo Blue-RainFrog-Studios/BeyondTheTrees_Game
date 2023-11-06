@@ -34,11 +34,7 @@ public class KnightScript : MonoBehaviour
         r = FindObjectOfType<RoomController>();
         knight = new();
     }
-    public void Update()
-    {
-       
-        Debug.Log(r);
-    }
+
     public void ReceiveAttack(int dmgValue)
     {
 
@@ -48,6 +44,10 @@ public class KnightScript : MonoBehaviour
         {
             //r.DestroyRooms();
             SceneManager.LoadScene("GameOver");
+            knight.health = 50;
+            lifeBar.value = knight.health;
+            this.gameObject.transform.position = Vector2.zero;
+            this.GetComponentInParent<GameObject>().SetActive(false);
         }
 
 
