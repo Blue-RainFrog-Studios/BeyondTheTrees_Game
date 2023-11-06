@@ -119,6 +119,19 @@ public class RoomController : MonoBehaviour
         loadRoomQueue.Enqueue(newRoomData);
 
     }
+     public void DestroyRooms()
+    {
+        foreach (Room room in loadedRooms)
+        {
+
+
+            Destroy(room.gameObject);
+
+        }
+        loadedRooms.Clear();
+
+        
+    }
     IEnumerator LoadRoomRoutine(RoomInfo info)
     {
         string roomName = currentWorldName + info.name;

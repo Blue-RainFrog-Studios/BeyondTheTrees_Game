@@ -7,11 +7,11 @@ public class Room : MonoBehaviour
 
 
     //public float Width;
-    public int Width;
+    public float Width;
 
 
     //public float Height;
-    public int Height;
+    public float Height;
 
     public int X;
     public int Y;

@@ -39,5 +39,11 @@ public class DungeonCrawlercontroller : MonoBehaviour
             }
         }
         return positionsVisited;
+
+    }
+    public static void DestroyInf()
+    {
+        positionsVisited.Clear();
+
     }
 }

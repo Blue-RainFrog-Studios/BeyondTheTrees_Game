@@ -55,6 +55,8 @@ public class DungeonGenerator : MonoBehaviour
     {
         dungeonRooms = DungeonCrawlercontroller.GenerateDungeon(dungeonGenerationData);
         SpawnRooms(dungeonRooms);
+        
+        DungeonCrawlercontroller.DestroyInf();
     }
 
     private void SpawnRooms(IEnumerable<Vector2Int> rooms)
