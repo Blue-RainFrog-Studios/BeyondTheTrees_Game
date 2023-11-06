@@ -41,9 +41,8 @@ public class DungeonCrawlercontroller : MonoBehaviour
         return positionsVisited;
 
     }
-    public void DestroyInf()
+    public static void DestroyInf()
     {
-        Debug.Log( "Hola");
         positionsVisited.Clear();
 
     }
