@@ -126,10 +126,10 @@ public class RoomController : MonoBehaviour
 
 
             Destroy(room.gameObject);
-            
 
         }
         loadedRooms.Clear();
+
         
     }
     IEnumerator LoadRoomRoutine(RoomInfo info)
