@@ -102,6 +102,21 @@ namespace Inventory.Model
             return quantity;
         }
 
+        public void RemoveItem(int itemIndex, int amount)
+        {
+            if (inventoryItems.Count > itemIndex)
+            {
+                if (inventoryItems[itemIndex].IsEmpty)
+                    return;
+                int reminder = inventoryItems[itemIndex].quantity - amount;
+                if (reminder <= 0)
+                    inventoryItems[itemIndex] = InventoryItem.GetEmptyItem();  //Si quedan 0 items tras consumir se pone un hueco
+                else
+                    inventoryItems[itemIndex] = inventoryItems[itemIndex].ChangeQuantity(reminder);  //Si no, se reduce la cantidad en "amount"
+                InformAboutChange();
+            }
+        }
+
         public void AddItem(InventoryItem item)
         {
             AddItem(item.item, item.quantity);

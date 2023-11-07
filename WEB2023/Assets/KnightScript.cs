@@ -15,12 +15,14 @@ public class KnightScript : MonoBehaviour
     RoomController r;
 
     public int health { get; set; }
+    public int totalHealth { get; set; }
     public float speed { get; set; }
 
     public int attack { get; set; }
     public int defense { get; set; }
 
-    public KnightScript() { 
+    public KnightScript() {
+            totalHealth = 50;
             health = 50;
             speed = 6;
             attack = 10;
@@ -49,8 +51,20 @@ public class KnightScript : MonoBehaviour
             this.gameObject.transform.position = Vector2.zero;
             this.GetComponentInParent<GameObject>().SetActive(false);
         }
+    }
 
-
+    public void AddHealth(int val)
+    {
+        if (knight.health + val <= knight.totalHealth)
+        {
+            knight.health += val;
+            lifeBar.value = knight.health;
+        }
+        else
+        {
+            knight.health = knight.totalHealth;
+            lifeBar.value = knight.totalHealth;
+        }
     }
 
 }

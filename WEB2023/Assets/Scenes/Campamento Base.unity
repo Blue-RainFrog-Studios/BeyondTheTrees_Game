@@ -1113,7 +1113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3f311a9779233a4a844fe13d7ac36b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 1156985873014526917, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
 --- !u!1 &1073076230
 GameObject:
   m_ObjectHideFlags: 0
@@ -1206,6 +1205,10 @@ PrefabInstance:
       propertyPath: <Quantity>k__BackingField
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2848204570424025181, guid: 2d57eb1e24957c3498f9c80427388035, type: 3}
+      propertyPath: <InventoryItem>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: 00dbc01952661994ba629d4666e447b5, type: 2}
     - target: {fileID: 4275631869784606121, guid: 2d57eb1e24957c3498f9c80427388035, type: 3}
       propertyPath: m_Name
       value: Item

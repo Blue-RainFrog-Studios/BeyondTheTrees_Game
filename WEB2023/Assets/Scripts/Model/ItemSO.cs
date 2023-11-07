@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
  
-[CreateAssetMenu]
-public class ItemSO: ScriptableObject
+public abstract class ItemSO: ScriptableObject
 {
     [field: SerializeField]
     public bool IsStackable { get; set; }
 
-    public int ID => GetInstanceID();
+    public int ID => GetInstanceID();  //Para saber si hay que stackear (si ya hay n item con ese id en el inventario)
 
     [field: SerializeField]
     public int MaxStackSize { get; set; } = 1;

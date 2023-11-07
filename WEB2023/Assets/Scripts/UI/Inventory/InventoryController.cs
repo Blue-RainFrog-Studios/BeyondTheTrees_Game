@@ -1,3 +1,4 @@
+using Assets.Scripts.Model;
 using Inventory.Model;
 using Inventory.UI;
 using System;
@@ -17,6 +18,12 @@ namespace Inventory
         private InventorySO inventoryData;
 
         private Map playerInputActions;
+
+        [SerializeField]
+        private AudioClip dropClip;
+
+        [SerializeField]
+        private AudioSource audioSource;
 
         private void Awake()
         {
@@ -82,12 +89,50 @@ namespace Inventory
             inventoryUI.OnDescriptionRequested += HandleDescriptionRequest;
             inventoryUI.OnSwapItems += HandleSwapItems;
             inventoryUI.OnStartDragging += HandleDragging;
-            inventoryUI.OnItemActionRequested += HandleActionRequest;
+            inventoryUI.OnItemActionRequested += HandleItemActionRequest;
         }
 
-        private void HandleActionRequest(int itemIndex)
+        private void HandleItemActionRequest(int itemIndex)  //Para consumir objetos
         {
+            InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
+            if (inventoryItem.IsEmpty)  //Si la casilla está vacía volver
+                return;
+            IItemAction itemAction = inventoryItem.item as IItemAction;
+            if(itemAction != null)
+            {
+                inventoryUI.AddAction(itemAction.ActionName,() =>  PerformAction(itemIndex));  //Si se pulsa el boton
+                inventoryUI.ShowItemAction(itemIndex);
+            }
+            IDestroyableItem destroyableItem = inventoryItem.item as IDestroyableItem;  //Para que si se consume un item se pueda reducir la cantidad
+            if(destroyableItem != null)
+            {
+                inventoryUI.AddAction("Tirar", () => DropItem(itemIndex, inventoryItem.quantity));
+            }
+        }
 
+        private void DropItem(int itemIndex, int quantity)
+        {
+            inventoryData.RemoveItem(itemIndex, quantity);
+            inventoryUI.ResetSelection();
+            //audioSource.PlayOneShot(dropClip);
+        }
+
+        public void PerformAction(int itemIndex)  //Para mostrar el action panel
+        {
+            InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
+            if (inventoryItem.IsEmpty)  //Si la casilla está vacía volver
+                return;
+            IItemAction itemAction = inventoryItem.item as IItemAction;
+            if (itemAction != null)
+            {
+                itemAction.PerformAction(gameObject);
+                audioSource.PlayOneShot(itemAction.actionSFX);
+            }
+            IDestroyableItem destroyableItem = inventoryItem.item as IDestroyableItem;  //Para que si se consume un item se pueda reducir la cantidad
+            if (destroyableItem != null)
+            {
+                inventoryData.RemoveItem(itemIndex, 1);
+            }
         }
 
         private void HandleDragging(int itemIndex)
