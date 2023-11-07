@@ -127,7 +127,6 @@ public class PlayerMovementInputSystem : MonoBehaviour
                 if (this != null)
                 {
                     characterAnimator.Play("AttackFront");
-                    //Instantiate(attack, transform.position, transform.rotation);
                     shotRateTime = Time.time + shoteRate;
                 }
             }
@@ -136,7 +135,6 @@ public class PlayerMovementInputSystem : MonoBehaviour
                 if (this != null)
                 {
                     characterAnimator.Play("AttackBack");
-                    //Instantiate(attack, transform.position, transform.rotation);
                     shotRateTime = Time.time + shoteRate;
                 }
 
@@ -146,7 +144,6 @@ public class PlayerMovementInputSystem : MonoBehaviour
                 if (this != null)
                 {
                     characterAnimator.Play("AttackLeft");
-                    //Instantiate(attack, transform.position, transform.rotation);
                     shotRateTime = Time.time + shoteRate;
                 }
 
@@ -156,7 +153,6 @@ public class PlayerMovementInputSystem : MonoBehaviour
                 if (this != null)
                 {
                     characterAnimator.Play("AttackRight");
-                    //Instantiate(attack, transform.position, transform.rotation);
                     shotRateTime = Time.time + shoteRate;
                 }
 
