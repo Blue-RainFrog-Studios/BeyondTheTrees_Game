@@ -25,7 +25,7 @@ public class KnightScript : MonoBehaviour
             totalHealth = 50;
             health = 50;
             speed = 6;
-            attack = 10;
+            attack = 15;
             defense = 7;
         }
         

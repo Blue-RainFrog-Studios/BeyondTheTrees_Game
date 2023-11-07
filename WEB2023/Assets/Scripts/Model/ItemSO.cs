@@ -23,6 +23,15 @@ public abstract class ItemSO: ScriptableObject
     [field: SerializeField]
     public Sprite ItemImage { get; set; }
 
+    [field: SerializeField]
+    public int Attack { get; set; }
+
+    [field: SerializeField]
+    public int Defense { get; set; }
+
+    [field: SerializeField]
+    public int Speed { get; set; }
+
 }
 
 namespace Inventory.Model

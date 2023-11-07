@@ -6,6 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static Assets.Scripts.Model.NormalItemSO;
 
 namespace Inventory
 {
@@ -25,6 +26,9 @@ namespace Inventory
         [SerializeField]
         private AudioSource audioSource;
 
+        private KnightScript player;
+
+
         private void Awake()
         {
             
@@ -33,6 +37,7 @@ namespace Inventory
             //inventoryUI = GetComponentInChildren<UIInventoryPage>();
             Debug.Log(inventoryUI);
             playerInputActions.Player.Inventory.performed += ShowInventory;
+
         }
 
         private void ShowInventory(InputAction.CallbackContext context)
@@ -106,14 +111,24 @@ namespace Inventory
             IDestroyableItem destroyableItem = inventoryItem.item as IDestroyableItem;  //Para que si se consume un item se pueda reducir la cantidad
             if(destroyableItem != null)
             {
-                inventoryUI.AddAction("Tirar", () => DropItem(itemIndex, inventoryItem.quantity));
+                inventoryUI.AddAction("Tirar", () => DropItem(inventoryItem, itemIndex, inventoryItem.quantity));
+            }
+            INormalItem normalItem = inventoryItem.item as INormalItem;  //Para que si se consume un item se pueda reducir la cantidad
+            if (normalItem != null)
+            {
+                inventoryUI.ShowItemAction(itemIndex);
+                inventoryUI.AddAction("Tirar", () => DropItem(inventoryItem, itemIndex, inventoryItem.quantity));
             }
         }
 
-        private void DropItem(int itemIndex, int quantity)
+        private void DropItem(InventoryItem inventoryItem, int itemIndex, int quantity)
         {
             inventoryData.RemoveItem(itemIndex, quantity);
             inventoryUI.ResetSelection();
+            player = GameObject.FindWithTag("Player").GetComponent<KnightScript>(); //Estadísticas PROPIO
+            player.attack -= inventoryItem.item.Attack;
+            player.defense -= inventoryItem.item.Defense;
+            player.GetComponent<PlayerMovementInputSystem>().speed += inventoryItem.item.Speed;
             //audioSource.PlayOneShot(dropClip);
         }
 
@@ -131,7 +146,7 @@ namespace Inventory
             if (itemAction != null)
             {
                 itemAction.PerformAction(gameObject);
-                audioSource.PlayOneShot(itemAction.actionSFX);
+                //audioSource.PlayOneShot(itemAction.actionSFX);
                 if (inventoryData.GetItemAt(itemIndex).IsEmpty)
                     inventoryUI.ResetSelection();
             }

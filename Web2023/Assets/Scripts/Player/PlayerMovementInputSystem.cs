@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerMovementInputSystem : MonoBehaviour
 {
     private Rigidbody2D player_rb;
-    [SerializeField] private float speed = 8.0f;
+    [SerializeField] public float speed = 8.0f;
     [SerializeField] private float smoothness = 0.3f;
     [SerializeField] private GameObject attack;
 
