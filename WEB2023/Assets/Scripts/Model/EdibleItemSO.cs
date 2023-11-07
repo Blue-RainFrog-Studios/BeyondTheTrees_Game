@@ -10,7 +10,7 @@ namespace Assets.Scripts.Model
     {
         [SerializeField]
         private List<ModifierData> modifiersData = new();
-        public string ActionName => "Consume";
+        public string ActionName => "Usar";
 
         [field: SerializeField]
         public AudioClip actionSFX {get; private set;}

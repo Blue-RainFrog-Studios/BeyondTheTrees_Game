@@ -100,8 +100,8 @@ namespace Inventory
             IItemAction itemAction = inventoryItem.item as IItemAction;
             if(itemAction != null)
             {
-                inventoryUI.AddAction(itemAction.ActionName,() =>  PerformAction(itemIndex));  //Si se pulsa el boton
                 inventoryUI.ShowItemAction(itemIndex);
+                inventoryUI.AddAction(itemAction.ActionName,() =>  PerformAction(itemIndex));  //Si se pulsa el boton        
             }
             IDestroyableItem destroyableItem = inventoryItem.item as IDestroyableItem;  //Para que si se consume un item se pueda reducir la cantidad
             if(destroyableItem != null)
@@ -122,16 +122,18 @@ namespace Inventory
             InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
             if (inventoryItem.IsEmpty)  //Si la casilla está vacía volver
                 return;
+            IDestroyableItem destroyableItem = inventoryItem.item as IDestroyableItem;  //Para que si se consume un item se pueda reducir la cantidad
+            if (destroyableItem != null)
+            {
+                inventoryData.RemoveItem(itemIndex, 1);
+            }
             IItemAction itemAction = inventoryItem.item as IItemAction;
             if (itemAction != null)
             {
                 itemAction.PerformAction(gameObject);
                 audioSource.PlayOneShot(itemAction.actionSFX);
-            }
-            IDestroyableItem destroyableItem = inventoryItem.item as IDestroyableItem;  //Para que si se consume un item se pueda reducir la cantidad
-            if (destroyableItem != null)
-            {
-                inventoryData.RemoveItem(itemIndex, 1);
+                if (inventoryData.GetItemAt(itemIndex).IsEmpty)
+                    inventoryUI.ResetSelection();
             }
         }
 
