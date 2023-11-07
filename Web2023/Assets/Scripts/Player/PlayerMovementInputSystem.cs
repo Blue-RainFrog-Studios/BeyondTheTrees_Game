@@ -95,6 +95,7 @@ public class PlayerMovementInputSystem : MonoBehaviour
         //if the player is going right
 
     }
+
     private void FixedUpdate()
     {
         //Pintamos el movimiento del personaje con la interpolacion para que sea
@@ -113,7 +114,7 @@ public class PlayerMovementInputSystem : MonoBehaviour
     {
 
         //El disparo tiene Cooldown
-        if (Time.time > shotRateTime) 
+        if (Time.time > shotRateTime)
         {
             //Leemos la entrada del usuario
             attackDirection = playerInputActions.Player.Attack.ReadValue<Vector2>();
@@ -121,14 +122,45 @@ public class PlayerMovementInputSystem : MonoBehaviour
             attackDirection.x = Mathf.Round(attackDirection.x);
             attackDirection.y = Mathf.Round(attackDirection.y);
             //Solo dispara si se ha llevado el joystick suficientemente lejos
-            if (attackDirection.magnitude == 1)
+            if (attackDirection.y == -1)
             {
-                if (this != null) { 
-                Instantiate(attack, transform.position, transform.rotation);
-                shotRateTime = Time.time + shoteRate;
+                if (this != null)
+                {
+                    characterAnimator.Play("AttackFront");
+                    //Instantiate(attack, transform.position, transform.rotation);
+                    shotRateTime = Time.time + shoteRate;
+                }
             }
-            }
+            if (attackDirection.y == 1)
+            {
+                if (this != null)
+                {
+                    characterAnimator.Play("AttackBack");
+                    //Instantiate(attack, transform.position, transform.rotation);
+                    shotRateTime = Time.time + shoteRate;
+                }
 
+            }
+            if (attackDirection.x == -1)
+            {
+                if (this != null)
+                {
+                    characterAnimator.Play("AttackLeft");
+                    //Instantiate(attack, transform.position, transform.rotation);
+                    shotRateTime = Time.time + shoteRate;
+                }
+
+            }
+            if (attackDirection.x == 1)
+            {
+                if (this != null)
+                {
+                    characterAnimator.Play("AttackRight");
+                    //Instantiate(attack, transform.position, transform.rotation);
+                    shotRateTime = Time.time + shoteRate;
+                }
+
+            }
         }
 
     }
