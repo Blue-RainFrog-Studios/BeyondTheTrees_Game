@@ -14,11 +14,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
+          path: BeyondTheTrees_Game/WEB2023
           fetch-depth: 0
           lfs: true
       - uses: actions/cache@v2
         with:
-          path: Library
+          path: BeyondTheTrees_Game/WEB2023/Library
           key: Library-${{ matrix.targetPlatform }}
           restore-keys: Library-
       - uses: game-ci/unity-builder@v2
