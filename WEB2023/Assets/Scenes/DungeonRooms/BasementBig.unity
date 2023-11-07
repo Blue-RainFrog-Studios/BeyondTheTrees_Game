@@ -2029,7 +2029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67eb4dd51acbd0498b459b5618917e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  room: {fileID: 1940129675}
+  room: {fileID: 0}
   grid:
     columns: 0
     rows: 0
@@ -2149,7 +2149,7 @@ Transform:
   m_GameObject: {fileID: 1940129673}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1.05, z: 1}
+  m_LocalScale: {x: 1.822, y: 1.9130999, z: 1.822}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 548022613}
@@ -2178,8 +2178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d088b5eb2051af34d8fb1fa07fa34fa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Width: 20.36
-  Height: 10.05
+  Width: 37.2
+  Height: 15
   X: 0
   Y: 0
   leftDoor: {fileID: 0}
