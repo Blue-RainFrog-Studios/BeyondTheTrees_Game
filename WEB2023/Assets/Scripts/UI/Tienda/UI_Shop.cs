@@ -19,7 +19,8 @@ public class UI_Shop : MonoBehaviour
 
     private void Start()
     {
-        
+        CrearBotonTienda(PoolItems.GetSprite(PoolItems.NombreItem.DagaSolar), "Daga Solar", PoolItems.GetPrecio(PoolItems.NombreItem.DagaSolar), 0);
+        CrearBotonTienda(PoolItems.GetSprite(PoolItems.NombreItem.DagaLunar), "Daga Lunar", PoolItems.GetPrecio(PoolItems.NombreItem.DagaLunar), 1);
     }
     private void CrearBotonTienda(Sprite spriteObjeto, string nombreObjeto, int precioObjeto, int posicion)
     {
