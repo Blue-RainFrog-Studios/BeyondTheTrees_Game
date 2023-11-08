@@ -128,7 +128,7 @@ namespace Inventory
             player = GameObject.FindWithTag("Player").GetComponent<KnightScript>(); //Estadísticas PROPIO
             player.attack -= inventoryItem.item.Attack;
             player.defense -= inventoryItem.item.Defense;
-            player.GetComponent<PlayerMovementInputSystem>().speed -= inventoryItem.item.Speed;
+            player.GetComponent<PlayerMovementInputSystem>().speed += inventoryItem.item.Speed;
             //audioSource.PlayOneShot(dropClip);
         }
 
