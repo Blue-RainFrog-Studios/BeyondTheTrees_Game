@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -50,7 +51,7 @@ public class KnightScript : MonoBehaviour
             //this.GetComponentInParent<GameObject>().SetActive(false);
             GetComponent<PlayerMovementInputSystem>().enabled = false;
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            //GetComponentInChildren<Canvas>().gameObject.SetActive(false);
+            //GameObject.Find("CanvasInv").gameObject.transform.Find("Menu").gameObject.SetActive(false);
             GetComponentInChildren<Canvas>().enabled = false;
         }
 

@@ -14,6 +14,7 @@ public class PlayerManager : MonoBehaviour
     {
         player.GetComponent<PlayerMovementInputSystem>().enabled = true;
         //player.GetComponentInChildren<Canvas>().gameObject.SetActive(true);
+        //GameObject.Find("CanvasInv").gameObject.transform.Find("Menu").gameObject.SetActive(true);
         player.GetComponentInChildren<Canvas>().enabled = true;
     }
 }
