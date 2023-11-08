@@ -45,56 +45,28 @@ public class PlayerMovementInputSystem : MonoBehaviour
         //Actualiza las posiciones que le decimos mediante el input
         //Move
         direction = playerInputActions.Player.Move.ReadValue<Vector2>();
+        //if animation dont have attack tag
 
 
-        //if the input action recieved is "s"
-        if (direction.y < 0)
+        if (direction.y < 0 && !characterAnimator.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
         {
-            //set the animator to play the "walkRight" animation
             characterAnimator.Play("WalkFront");
         }
-        else if (direction.y > 0)
+        else if (direction.y > 0 && !characterAnimator.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
         {
-            //set the animator to play the "walkRight" animation
             characterAnimator.Play("WalkBack");
         }
-        else if (direction.x < 0)
+        else if (direction.x < 0 && !characterAnimator.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
         {
-            //set the animator to play the "WalkLeft" animation
             characterAnimator.Play("WalkLeft");
         }
-        else if (direction.x > 0)
+        else if (direction.x > 0 && !characterAnimator.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
         {
             //set the animator to play the "walkRight" animation
             characterAnimator.Play("WalkRight");
         }
-        else if (direction.x == 0 && direction.y == 0 && characterAnimator.GetCurrentAnimatorStateInfo(0).IsName("WalkRight") && player_rb.velocity.x < 0.3 && player_rb.velocity.y < 0.3)
-        {
-            //play the animation stopright
-            characterAnimator.Play("StopRight");
-
-        }
-        else if (direction.x == 0 && direction.y == 0 && characterAnimator.GetCurrentAnimatorStateInfo(0).IsName("WalkLeft") && player_rb.velocity.x < 0.3 && player_rb.velocity.y < 0.3)
-        {
-            //play the animation stopright
-            characterAnimator.Play("StopLeft");
-
-        }
-        else if (direction.x == 0 && direction.y == 0 && characterAnimator.GetCurrentAnimatorStateInfo(0).IsName("WalkFront") && player_rb.velocity.x < 0.3 && player_rb.velocity.y < 0.3)
-        {
-            //play the animation stopright
-            characterAnimator.Play("StopFront");
-
-        }
-        else if (direction.x == 0 && direction.y == 0 && characterAnimator.GetCurrentAnimatorStateInfo(0).IsName("WalkBack") && player_rb.velocity.x < 0.3 && player_rb.velocity.y < 0.3)
-        {
-            //play the animation stopright
-            characterAnimator.Play("StopBack");
-
-        }
-        //if the player is going right
-
     }
+
     private void FixedUpdate()
     {
         //Pintamos el movimiento del personaje con la interpolacion para que sea
@@ -113,22 +85,51 @@ public class PlayerMovementInputSystem : MonoBehaviour
     {
 
         //El disparo tiene Cooldown
-        if (Time.time > shotRateTime) 
+        if (Time.time > shotRateTime)
         {
             //Leemos la entrada del usuario
             attackDirection = playerInputActions.Player.Attack.ReadValue<Vector2>();
+
             //Redondeamos para los controles de moviles
             attackDirection.x = Mathf.Round(attackDirection.x);
             attackDirection.y = Mathf.Round(attackDirection.y);
-            //Solo dispara si se ha llevado el joystick suficientemente lejos
-            if (attackDirection.magnitude == 1)
-            {
-                if (this != null) { 
-                Instantiate(attack, transform.position, transform.rotation);
-                shotRateTime = Time.time + shoteRate;
-            }
-            }
 
+            //Solo dispara si se ha llevado el joystick suficientemente lejos
+            if (attackDirection.y == -1)
+            {
+                if (this != null)
+                {
+                    characterAnimator.Play("AttackFront");
+                    shotRateTime = Time.time + shoteRate;
+                }
+            }
+            if (attackDirection.y == 1)
+            {
+                if (this != null)
+                {
+                    characterAnimator.Play("AttackBack");
+                    shotRateTime = Time.time + shoteRate;
+                }
+
+            }
+            if (attackDirection.x == -1)
+            {
+                if (this != null)
+                {
+                    characterAnimator.Play("AttackLeft");
+                    shotRateTime = Time.time + shoteRate;
+                }
+
+            }
+            if (attackDirection.x == 1)
+            {
+                if (this != null)
+                {
+                    characterAnimator.Play("AttackRight");
+                    shotRateTime = Time.time + shoteRate;
+                }
+
+            }
         }
 
     }
