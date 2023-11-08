@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5402129600522178592}
   - component: {fileID: 6938415437227796382}
   - component: {fileID: 6628442988745050789}
+  - component: {fileID: 6954012009543549729}
   m_Layer: 0
   m_Name: ChaseEnemy
   m_TagString: Enemy
@@ -100,7 +101,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 3
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -147,8 +148,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.11080837, y: 0.11588963}
-  m_Size: {x: 4.003272, y: 6.455403}
+  m_Offset: {x: -0.11080831, y: 1.1203449}
+  m_Size: {x: 4.003272, y: 4.4464955}
   m_Direction: 0
 --- !u!95 &6938415437227796382
 Animator:
@@ -188,7 +189,7 @@ MonoBehaviour:
   currState: 0
   enemyType: 0
   range: 15
-  attackRange: 1.5
+  attackRange: 0.3
   coolDown: 1
   speed: 2
   life: 80
@@ -196,3 +197,60 @@ MonoBehaviour:
   animator: {fileID: 6938415437227796382}
   damage: 10
   notInRoom: 0
+--- !u!114 &6954012009543549729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263330336992781321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53f48daecdf6bd54d8b0796532def53f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RigidbodyComponent: {fileID: 0}
+  strength: 10
+  delay: 0.15
+  OnBegin:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDone:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
