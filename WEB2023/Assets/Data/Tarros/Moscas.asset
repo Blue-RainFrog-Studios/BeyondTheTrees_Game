@@ -10,13 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99ba869c7bf01b14f8fd26456b6ea1d3, type: 3}
-  m_Name: Mosca
+  m_Name: Moscas
   m_EditorClassIdentifier: 
   <IsStackable>k__BackingField: 1
   <MaxStackSize>k__BackingField: 6
   <Name>k__BackingField: Mosca
   <Descrption>k__BackingField: 'Vida: +5'
-  <ItemImage>k__BackingField: {fileID: 7482667652216324306, guid: 223a272bead28e249a57b2ea88627d76, type: 3}
+  <ItemImage>k__BackingField: {fileID: 1613509727, guid: 494bdb8b90558a348a86b4f89e80f513, type: 3}
+  <Attack>k__BackingField: 0
+  <Defense>k__BackingField: 0
+  <Speed>k__BackingField: 0
   modifiersData:
   - statModifier: {fileID: 11400000, guid: f4da559af5418614580a267b7dac9fa4, type: 2}
     value: 5
+  <actionSFX>k__BackingField: {fileID: 0}
