@@ -46,8 +46,11 @@ public class KnightScript : MonoBehaviour
             SceneManager.LoadScene("GameOver");
             knight.health = 50;
             lifeBar.value = knight.health;
-            this.gameObject.transform.position = Vector2.zero;
+            this.gameObject.transform.position = new Vector2(0,-4);
             //this.GetComponentInParent<GameObject>().SetActive(false);
+            GetComponent<PlayerMovementInputSystem>().enabled = false;
+            GetComponentInChildren<Canvas>().gameObject.SetActive(false);
+            GetComponentInChildren<Canvas>().enabled = false;
         }
 
 
