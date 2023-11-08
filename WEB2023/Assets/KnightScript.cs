@@ -20,7 +20,6 @@ public class KnightScript : MonoBehaviour
 
     public int attack { get; set; }
     public int defense { get; set; }
-    public int money { get; set; }
 
     public KnightScript() {
             totalHealth = 50;
