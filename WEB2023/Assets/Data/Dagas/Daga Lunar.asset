@@ -19,4 +19,4 @@ MonoBehaviour:
   <ItemImage>k__BackingField: {fileID: 213534527, guid: 494bdb8b90558a348a86b4f89e80f513, type: 3}
   <Attack>k__BackingField: 20
   <Defense>k__BackingField: 0
-  <Speed>k__BackingField: 10
+  <Speed>k__BackingField: 0
