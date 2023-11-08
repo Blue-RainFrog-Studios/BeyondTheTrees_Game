@@ -47,7 +47,7 @@ public class KnightScript : MonoBehaviour
             knight.health = 50;
             lifeBar.value = knight.health;
             this.gameObject.transform.position = Vector2.zero;
-            this.GetComponentInParent<GameObject>().SetActive(false);
+            //this.GetComponentInParent<GameObject>().SetActive(false);
         }
 
 
