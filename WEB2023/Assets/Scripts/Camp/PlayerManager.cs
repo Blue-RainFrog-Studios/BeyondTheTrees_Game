@@ -13,7 +13,7 @@ public class PlayerManager : MonoBehaviour
     private void Start()
     {
         player.GetComponent<PlayerMovementInputSystem>().enabled = true;
-        GetComponentInChildren<Canvas>().gameObject.SetActive(true);
+        //player.GetComponentInChildren<Canvas>().gameObject.SetActive(true);
         player.GetComponentInChildren<Canvas>().enabled = true;
     }
 }

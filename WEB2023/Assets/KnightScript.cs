@@ -49,7 +49,8 @@ public class KnightScript : MonoBehaviour
             this.gameObject.transform.position = new Vector2(0,-4);
             //this.GetComponentInParent<GameObject>().SetActive(false);
             GetComponent<PlayerMovementInputSystem>().enabled = false;
-            GetComponentInChildren<Canvas>().gameObject.SetActive(false);
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            //GetComponentInChildren<Canvas>().gameObject.SetActive(false);
             GetComponentInChildren<Canvas>().enabled = false;
         }
 
