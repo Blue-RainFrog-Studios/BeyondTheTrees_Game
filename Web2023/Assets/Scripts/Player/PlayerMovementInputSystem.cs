@@ -90,12 +90,13 @@ public class PlayerMovementInputSystem : MonoBehaviour
             //Leemos la entrada del usuario
             if (!this.enabled) return;
             attackDirection = playerInputActions.Player.Attack.ReadValue<Vector2>();
-
+            
             //Redondeamos para los controles de moviles
             attackDirection.x = Mathf.Round(attackDirection.x);
             attackDirection.y = Mathf.Round(attackDirection.y);
 
             //Solo dispara si se ha llevado el joystick suficientemente lejos
+            //Instantiate(attack, this.transform);
             if (attackDirection.y == -1)
             {
                 if (this != null)
