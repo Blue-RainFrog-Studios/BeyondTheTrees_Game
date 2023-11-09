@@ -185,15 +185,15 @@ public class EnemyController : MonoBehaviour
     public void RecieveDamage(float damage)
     {
         //get the rigid body component
-        //rb = GetComponent<Rigidbody2D>();
-        //direction = player.transform.position - transform.position;
+        rb = GetComponent<Rigidbody2D>();
+        direction = player.transform.position - transform.position;
         //Vector2 OpositeDirection = direction * -1;
-        ////do this for 1 second and then reset the velocity
+        //do this for 1 second and then reset the velocity
         //rb.AddForce(-direction * 10, ForceMode2D.Impulse);
-        //player.GetComponent<Rigidbody2D>().AddForce(direction * 10, ForceMode2D.Impulse);
+        player.GetComponent<Rigidbody2D>().AddForce(direction * 10, ForceMode2D.Impulse);
 
         //call the event PlayFeedback of the script feedback
-        GetComponent<Knockback>().PlayFeedback(player, GetComponent<Rigidbody2D>());
+        //GetComponent<Knockback>().PlayFeedback(player, GetComponent<Rigidbody2D>());
 
 
         life -= damage;
