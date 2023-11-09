@@ -1,3 +1,4 @@
+using Assets.Scripts.Model;
 using Inventory.Model;
 using Inventory.UI;
 using System;
@@ -5,6 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static Assets.Scripts.Model.NormalItemSO;
 
 namespace Inventory
 {
@@ -18,6 +20,15 @@ namespace Inventory
 
         private Map playerInputActions;
 
+        [SerializeField]
+        private AudioClip dropClip;
+
+        [SerializeField]
+        private AudioSource audioSource;
+
+        private KnightScript player;
+
+
         private void Awake()
         {
             
@@ -26,6 +37,7 @@ namespace Inventory
             //inventoryUI = GetComponentInChildren<UIInventoryPage>();
             Debug.Log(inventoryUI);
             playerInputActions.Player.Inventory.performed += ShowInventory;
+
         }
 
         private void ShowInventory(InputAction.CallbackContext context)
@@ -82,12 +94,62 @@ namespace Inventory
             inventoryUI.OnDescriptionRequested += HandleDescriptionRequest;
             inventoryUI.OnSwapItems += HandleSwapItems;
             inventoryUI.OnStartDragging += HandleDragging;
-            inventoryUI.OnItemActionRequested += HandleActionRequest;
+            inventoryUI.OnItemActionRequested += HandleItemActionRequest;
         }
 
-        private void HandleActionRequest(int itemIndex)
+        private void HandleItemActionRequest(int itemIndex)  //Para consumir objetos
         {
+            InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
+            if (inventoryItem.IsEmpty)  //Si la casilla está vacía volver
+                return;
+            IItemAction itemAction = inventoryItem.item as IItemAction;
+            if(itemAction != null)
+            {
+                inventoryUI.ShowItemAction(itemIndex);
+                inventoryUI.AddAction(itemAction.ActionName,() =>  PerformAction(itemIndex));  //Si se pulsa el boton        
+            }
+            IDestroyableItem destroyableItem = inventoryItem.item as IDestroyableItem;  //Para que si se consume un item se pueda reducir la cantidad
+            if(destroyableItem != null)
+            {
+                inventoryUI.AddAction("Tirar", () => DropItem(inventoryItem, itemIndex, inventoryItem.quantity));
+            }
+            INormalItem normalItem = inventoryItem.item as INormalItem;  //Para que si se consume un item se pueda reducir la cantidad
+            if (normalItem != null)
+            {
+                inventoryUI.ShowItemAction(itemIndex);
+                inventoryUI.AddAction("Tirar", () => DropItem(inventoryItem, itemIndex, inventoryItem.quantity));
+            }
+        }
 
+        private void DropItem(InventoryItem inventoryItem, int itemIndex, int quantity)
+        {
+            inventoryData.RemoveItem(itemIndex, quantity);
+            inventoryUI.ResetSelection();
+            player = GameObject.FindWithTag("Player").GetComponent<KnightScript>(); //Estadísticas PROPIO
+            player.attack -= inventoryItem.item.Attack;
+            player.defense -= inventoryItem.item.Defense;
+            player.GetComponent<PlayerMovementInputSystem>().speed -= inventoryItem.item.Speed;
+            //audioSource.PlayOneShot(dropClip);
+        }
+
+        public void PerformAction(int itemIndex)  //Para mostrar el action panel
+        {
+            InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
+            if (inventoryItem.IsEmpty)  //Si la casilla está vacía volver
+                return;
+            IDestroyableItem destroyableItem = inventoryItem.item as IDestroyableItem;  //Para que si se consume un item se pueda reducir la cantidad
+            if (destroyableItem != null)
+            {
+                inventoryData.RemoveItem(itemIndex, 1);
+            }
+            IItemAction itemAction = inventoryItem.item as IItemAction;
+            if (itemAction != null)
+            {
+                itemAction.PerformAction(gameObject);
+                //audioSource.PlayOneShot(itemAction.actionSFX);
+                if (inventoryData.GetItemAt(itemIndex).IsEmpty)
+                    inventoryUI.ResetSelection();
+            }
         }
 
         private void HandleDragging(int itemIndex)

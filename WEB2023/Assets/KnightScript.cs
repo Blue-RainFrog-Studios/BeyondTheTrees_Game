@@ -16,15 +16,17 @@ public class KnightScript : MonoBehaviour
     RoomController r;
 
     public int health { get; set; }
+    public int totalHealth { get; set; }
     public float speed { get; set; }
 
     public int attack { get; set; }
     public int defense { get; set; }
 
-    public KnightScript() { 
+    public KnightScript() {
+            totalHealth = 50;
             health = 50;
             speed = 6;
-            attack = 10;
+            attack = 15;
             defense = 7;
         }
         
@@ -54,8 +56,20 @@ public class KnightScript : MonoBehaviour
             //GameObject.Find("CanvasInv").gameObject.transform.Find("Menu").gameObject.SetActive(false);
             GetComponentInChildren<Canvas>().enabled = false;
         }
+    }
 
-
+    public void AddHealth(int val)
+    {
+        if (knight.health + val <= knight.totalHealth)
+        {
+            knight.health += val;
+            lifeBar.value = knight.health;
+        }
+        else
+        {
+            knight.health = knight.totalHealth;
+            lifeBar.value = knight.totalHealth;
+        }
     }
 
 }
