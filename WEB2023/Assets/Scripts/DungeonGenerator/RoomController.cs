@@ -196,8 +196,7 @@ public class RoomController : MonoBehaviour
         CameraController.instance.currRom= room;
         lastRoom = currRom;
         currRom = room;
-        Debug.Log(lastRoom);
-        Debug.Log(currRom);
+
 
         //los enemigos se quden quietos cuando la camara no este en la sala
 
