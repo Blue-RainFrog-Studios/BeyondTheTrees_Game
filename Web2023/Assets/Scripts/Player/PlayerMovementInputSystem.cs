@@ -116,6 +116,7 @@ public class PlayerMovementInputSystem : MonoBehaviour
         if (Time.time > shotRateTime) 
         {
             //Leemos la entrada del usuario
+            if (!this.enabled) return;
             attackDirection = playerInputActions.Player.Attack.ReadValue<Vector2>();
             //Redondeamos para los controles de moviles
             attackDirection.x = Mathf.Round(attackDirection.x);
