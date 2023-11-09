@@ -244,8 +244,10 @@ public class RoomController : MonoBehaviour
                 }
             }else if (lastRoom == room)
             {
+
                 foreach (Door door in room.GetComponentsInChildren<Door>())
                 {
+
                     door.doorCollider.SetActive(true);
                 }
             }
