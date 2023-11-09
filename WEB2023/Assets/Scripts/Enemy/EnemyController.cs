@@ -19,7 +19,9 @@ public enum EnemyType
 {
     Melee,
 
-    Ranged
+    Ranged,
+    
+    Teleport
 };
 public class EnemyController : MonoBehaviour
 {
@@ -41,6 +43,7 @@ public class EnemyController : MonoBehaviour
     public float bulletSpeed;
     private bool dead=false;
     private Vector3 randomDir;
+    private Vector3 space = new Vector3(0, 1,0);
     public Animator animator;
     Vector2 direction;
     public int damage = 20;
@@ -170,6 +173,10 @@ public class EnemyController : MonoBehaviour
                     bullet.GetComponent<BulletController>().GetPlayer(player.transform);
                     bullet.AddComponent<Rigidbody2D>().gravityScale = 0;
                     
+                    StartCoroutine(CoolDown());
+                    break;
+                case (EnemyType.Teleport):
+                    transform.position=player.transform.position+space;
                     StartCoroutine(CoolDown());
                     break;
             }
