@@ -14,7 +14,7 @@ public class UI_Shop : MonoBehaviour
     {
         contenedor = transform.Find("Contenedor");
         plantillaObjetoTienda = contenedor.Find("Plantilla Objeto tienda");
-        plantillaObjetoTienda.gameObject.SetActive(false);
+        plantillaObjetoTienda.gameObject.SetActive(true);
     }
 
     private void Start()
@@ -26,13 +26,14 @@ public class UI_Shop : MonoBehaviour
     {
         Transform tiendaObjetosTransform = Instantiate(plantillaObjetoTienda, contenedor);
         RectTransform tiendaObjetosRectTransform = tiendaObjetosTransform.GetComponent<RectTransform>();
-        float alturaTiendaObjetos = 30f;
+        float alturaTiendaObjetos = 100f;
         tiendaObjetosRectTransform.anchoredPosition = new Vector2(0, -alturaTiendaObjetos * posicion);
 
         tiendaObjetosTransform.Find("Nombre Item").GetComponent<TextMeshProUGUI>().SetText(nombreObjeto);
         tiendaObjetosTransform.Find("Precio").GetComponent<TextMeshProUGUI>().SetText(precioObjeto.ToString());
 
         tiendaObjetosTransform.Find("Imagen Item").GetComponent<Image>().sprite = spriteObjeto;
+
 
     }
 }
