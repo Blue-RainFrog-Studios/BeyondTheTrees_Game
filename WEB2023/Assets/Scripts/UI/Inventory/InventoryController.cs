@@ -31,7 +31,6 @@ namespace Inventory
 
         private void Awake()
         {
-            
             playerInputActions = new Map();
             playerInputActions.Enable();
             //inventoryUI = GetComponentInChildren<UIInventoryPage>();
@@ -103,13 +102,13 @@ namespace Inventory
             if (inventoryItem.IsEmpty)  //Si la casilla está vacía volver
                 return;
             IItemAction itemAction = inventoryItem.item as IItemAction;
-            if(itemAction != null)
+            if (itemAction != null)
             {
                 inventoryUI.ShowItemAction(itemIndex);
-                inventoryUI.AddAction(itemAction.ActionName,() =>  PerformAction(itemIndex));  //Si se pulsa el boton        
+                inventoryUI.AddAction(itemAction.ActionName, () => PerformAction(itemIndex));  //Si se pulsa el boton        
             }
             IDestroyableItem destroyableItem = inventoryItem.item as IDestroyableItem;  //Para que si se consume un item se pueda reducir la cantidad
-            if(destroyableItem != null)
+            if (destroyableItem != null)
             {
                 inventoryUI.AddAction("Tirar", () => DropItem(inventoryItem, itemIndex, inventoryItem.quantity));
             }
@@ -129,6 +128,7 @@ namespace Inventory
             player.attack -= inventoryItem.item.Attack;
             player.defense -= inventoryItem.item.Defense;
             player.GetComponent<PlayerMovementInputSystem>().speed -= inventoryItem.item.Speed;
+            player.GetComponent<CoinCounter>().ExpeditionMoneyChanger(-(inventoryItem.item.Price * quantity));
             //audioSource.PlayOneShot(dropClip);
         }
 
@@ -177,28 +177,16 @@ namespace Inventory
             inventoryUI.UpdateDescription(itemIndex, item.ItemImage, item.name, item.Descrption);
         }
 
-        private void Update()
+        public void EmptyInventory()
         {
-            //if (Input.GetKeyDown(KeyCode.I))
-            //{
-            //    if (inventoryUI.isActiveAndEnabled == false)
-            //    {
-            //        inventoryUI.Show();
-            //        foreach (var item in inventoryData.GetCurrentInventoryState())
-            //        {
-            //            inventoryUI.UpdateData(item.Key,
-            //                item.Value.item.ItemImage,  //Muestra lo que hay en el inventario
-            //                item.Value.quantity);
-            //        }
-            //    }
-            //    else
-            //    {
-            //        inventoryUI.Hide();
-            //    }
-            //}
-        }
+            int itemIndex = 0;
+            foreach (var item in inventoryData.GetCurrentInventoryState())
+            {
+                InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
+                DropItem(inventoryItem, itemIndex, inventoryItem.quantity);
+                itemIndex++;
+            }
 
-
-
+        } 
     }
 }
