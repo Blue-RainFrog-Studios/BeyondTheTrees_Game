@@ -13,13 +13,17 @@ public enum EnemyState
 
     Attack,
     
-    Die
+    Die,
+
+    Teleport
 };
 public enum EnemyType
 {
     Melee,
 
-    Ranged
+    Ranged,
+    
+    Teleport
 };
 public class EnemyController : MonoBehaviour
 {
@@ -30,6 +34,7 @@ public class EnemyController : MonoBehaviour
     public EnemyState currState = EnemyState.Idle;
     public EnemyType enemyType;
     public float range;
+    public float rangeTeleport;
     public float attackRange;
     Rigidbody2D rb;
 
@@ -42,6 +47,11 @@ public class EnemyController : MonoBehaviour
     public float bulletSpeed;
     private bool dead=false;
     private Vector3 randomDir;
+    private Vector3 space = new Vector3(1, 0, 0);
+    private Vector3 space1 = new Vector3(0,2,0);
+    private Vector3 space2 = new Vector3(2,0,0);
+    private Vector3 space3 = new Vector3(-2,0,0);
+    private Vector3 space4 = new Vector3(0,-2,0);
     public Animator animator;
     Vector2 direction;
     public int damage = 20;
@@ -75,6 +85,9 @@ public class EnemyController : MonoBehaviour
             case (EnemyState.Die):
                 Die();
             break;
+            case (EnemyState.Teleport):
+                Teleport();
+            break;
         }
 
         if (!notInRoom)
@@ -83,9 +96,13 @@ public class EnemyController : MonoBehaviour
             {
                 currState = EnemyState.Follow;
             }
-            else if (!isPlayerInRange(range) && currState != EnemyState.Die)
+            else if (!isPlayerInRange(range) && !isPlayerInRangeTeleport(rangeTeleport) && currState != EnemyState.Die)
             {
                 currState = EnemyState.Wander;
+            }else if(isPlayerInRangeTeleport(rangeTeleport) && currState!=EnemyState.Die)
+            {
+                
+                currState = EnemyState.Teleport;
             }
             if(Vector3.Distance(transform.position,player.transform.position) < attackRange) {
                 currState = EnemyState.Attack;
@@ -118,6 +135,10 @@ public class EnemyController : MonoBehaviour
     {
         return Vector3.Distance(transform.position, player.transform.position) <= range;
     }
+    private bool isPlayerInRangeTeleport(float rangeTeleport)
+    {
+        return Vector3.Distance(transform.position, player.transform.position) <= rangeTeleport;
+    }
 
     private IEnumerator ChooseDirection()
     {
@@ -138,6 +159,10 @@ public class EnemyController : MonoBehaviour
         if (isPlayerInRange(range))
         {
             currState= EnemyState.Follow;
+        }
+        else if (isPlayerInRangeTeleport(rangeTeleport))
+        {
+            currState=EnemyState.Teleport;
         }
 
     }
@@ -173,8 +198,54 @@ public class EnemyController : MonoBehaviour
                     
                     StartCoroutine(CoolDown());
                     break;
+                case (EnemyType.Teleport):
+                    
+                    StartCoroutine(CoolDown());
+                    player.GetComponent<KnightScript>().ReceiveAttack(damage);
+                    break;
             }
         }
+    }
+    void Teleport()
+    {
+        
+        if (player.GetComponent<KnightScript>().col==-1)
+        {
+            transform.position = player.transform.position + space;
+        }else if(player.GetComponent<KnightScript>().col == 0)
+        {
+            transform.position = player.transform.position + space2;
+        }
+        else if (player.GetComponent<KnightScript>().col == 1)
+        {
+            transform.position = player.transform.position + space3;
+        }
+        else if (player.GetComponent<KnightScript>().col == 2)
+        {
+            transform.position = player.transform.position + space4;
+        }
+        else if (player.GetComponent<KnightScript>().col == 3)
+        {
+            transform.position = player.transform.position + space1;
+        }
+        else if (player.GetComponent<KnightScript>().col == 4)
+        {
+            transform.position = player.transform.position + space1;
+        }
+        else if (player.GetComponent<KnightScript>().col == 5)
+        {
+            transform.position = player.transform.position + space2;
+        }
+        else if (player.GetComponent<KnightScript>().col == 6)
+        {
+            transform.position = player.transform.position + space3;
+        }
+        else if (player.GetComponent<KnightScript>().col == 7)
+        {
+            transform.position = player.transform.position + space1;
+        }
+
+
     }
     public void Die()
     {
