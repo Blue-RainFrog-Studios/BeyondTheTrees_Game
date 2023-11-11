@@ -527,7 +527,7 @@ SpriteRenderer:
   m_Size: {x: 1.69, y: 10.34}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &538145152
@@ -611,7 +611,7 @@ SpriteRenderer:
   m_Size: {x: 19.2, y: 1.52}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &548022612
@@ -860,7 +860,7 @@ SpriteRenderer:
   m_Size: {x: 19.2, y: 1.66}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1001 &788472427
@@ -2458,11 +2458,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 0}
-  spawnerData:
-  - name: ChaseEnemy
-    spawnerData: {fileID: 11400000, guid: 6a31e8643d4ec10428e2560abf4ede17, type: 2}
-  - name: RangeEnemy
-    spawnerData: {fileID: 11400000, guid: f610335d58a7afb4da3f284359b175ee, type: 2}
+  spawnerData: []
 --- !u!1 &2002194216
 GameObject:
   m_ObjectHideFlags: 0
