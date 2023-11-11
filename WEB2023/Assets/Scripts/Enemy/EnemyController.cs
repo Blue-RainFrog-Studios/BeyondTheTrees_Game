@@ -13,7 +13,9 @@ public enum EnemyState
 
     Attack,
     
-    Die
+    Die,
+
+    Teleport
 };
 public enum EnemyType
 {
@@ -32,6 +34,7 @@ public class EnemyController : MonoBehaviour
     public EnemyState currState = EnemyState.Idle;
     public EnemyType enemyType;
     public float range;
+    public float rangeTeleport;
     public float attackRange;
 
     public float coolDown;
@@ -43,7 +46,7 @@ public class EnemyController : MonoBehaviour
     public float bulletSpeed;
     private bool dead=false;
     private Vector3 randomDir;
-    private Vector3 space = new Vector3(0, 1,0);
+    private Vector3 space = new Vector3(0,2,0);
     public Animator animator;
     Vector2 direction;
     public int damage = 20;
@@ -77,6 +80,9 @@ public class EnemyController : MonoBehaviour
             case (EnemyState.Die):
                 Die();
             break;
+            case (EnemyState.Teleport):
+                Teleport();
+            break;
         }
 
         if (!notInRoom)
@@ -85,9 +91,12 @@ public class EnemyController : MonoBehaviour
             {
                 currState = EnemyState.Follow;
             }
-            else if (!isPlayerInRange(range) && currState != EnemyState.Die)
+            else if (!isPlayerInRange(range) && !isPlayerInRangeTeleport(rangeTeleport) && currState != EnemyState.Die)
             {
                 currState = EnemyState.Wander;
+            }else if(isPlayerInRangeTeleport(rangeTeleport) && currState!=EnemyState.Die)
+            {
+                currState = EnemyState.Teleport;
             }
             if(Vector3.Distance(transform.position,player.transform.position) < attackRange) {
                 currState = EnemyState.Attack;
@@ -120,6 +129,10 @@ public class EnemyController : MonoBehaviour
     {
         return Vector3.Distance(transform.position, player.transform.position) <= range;
     }
+    private bool isPlayerInRangeTeleport(float rangeTeleport)
+    {
+        return Vector3.Distance(transform.position, player.transform.position) <= rangeTeleport;
+    }
 
     private IEnumerator ChooseDirection()
     {
@@ -140,6 +153,10 @@ public class EnemyController : MonoBehaviour
         if (isPlayerInRange(range))
         {
             currState= EnemyState.Follow;
+        }
+        else if (isPlayerInRangeTeleport(rangeTeleport))
+        {
+            currState=EnemyState.Teleport;
         }
 
     }
@@ -176,11 +193,21 @@ public class EnemyController : MonoBehaviour
                     StartCoroutine(CoolDown());
                     break;
                 case (EnemyType.Teleport):
-                    transform.position=player.transform.position+space;
+                    
                     StartCoroutine(CoolDown());
+                    player.GetComponent<KnightScript>().ReceiveAttack(damage);
                     break;
             }
         }
+    }
+    void Teleport()
+    {
+        if (player.GetComponent<KnightScript>().colT)
+        {
+            transform.position = player.transform.position + space;
+        }
+        
+        
     }
     public void Die()
     {

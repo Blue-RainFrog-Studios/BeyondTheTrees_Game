@@ -7,6 +7,10 @@ TagManager:
   - Enemy
   - Prop
   - Attack
+  - ColliderTop
+  - ColliderBot
+  - ColliderLeft
+  - ColliderRight
   layers:
   - Default
   - TransparentFX

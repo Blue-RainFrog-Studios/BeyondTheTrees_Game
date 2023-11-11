@@ -624,6 +624,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3544500312377885349, guid: 8cd3ff43b02d03640b36b1b501ff5cb0, type: 3}
+      propertyPath: range
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544500312377885349, guid: 8cd3ff43b02d03640b36b1b501ff5cb0, type: 3}
+      propertyPath: speed
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544500312377885349, guid: 8cd3ff43b02d03640b36b1b501ff5cb0, type: 3}
+      propertyPath: attackRange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544500312377885349, guid: 8cd3ff43b02d03640b36b1b501ff5cb0, type: 3}
+      propertyPath: rangeTeleport
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4875267983180699273, guid: 8cd3ff43b02d03640b36b1b501ff5cb0, type: 3}
       propertyPath: m_Name
       value: Square
