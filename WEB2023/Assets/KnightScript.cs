@@ -16,7 +16,7 @@ public class KnightScript : MonoBehaviour
     KnightScript knight;
     RoomController r;
 
-    public int col=-1;
+    public int col = -1;
     public int health { get; set; }
     public int totalHealth { get; set; }
     public float speed { get; set; }
@@ -25,14 +25,14 @@ public class KnightScript : MonoBehaviour
     public int defense { get; set; }
 
     public KnightScript() {
-            totalHealth = 50;
-            health = 50;
-            speed = 6;
-            attack = 15;
-            defense = 7;
-        }
-        
-    
+        totalHealth = 50;
+        health = 50;
+        speed = 6;
+        attack = 15;
+        defense = 7;
+    }
+
+
 
     private void Awake()
     {
@@ -51,7 +51,7 @@ public class KnightScript : MonoBehaviour
             SceneManager.LoadScene("GameOver");
             knight.health = 50;
             lifeBar.value = knight.health;
-            this.gameObject.transform.position = new Vector2(0,-4);
+            this.gameObject.transform.position = new Vector2(0, -4);
             //this.GetComponentInParent<GameObject>().SetActive(false);
             GetComponent<PlayerMovementInputSystem>().enabled = false;
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
@@ -86,52 +86,48 @@ public class KnightScript : MonoBehaviour
         this.GetComponent<CoinCounter>().totalMoneyTxt.gameObject.SetActive(true);
         this.GetComponent<InventoryController>().EmptyInventory();
         this.GetComponent<CoinCounter>().ResetExpeditionMoney();
-        public void MoneyDealer()
-        {
-            this.GetComponent<CoinCounter>().TotalMoneyChanger(this.GetComponent<CoinCounter>().expeditionMoney);
-            this.GetComponent<CoinCounter>().expeditionMoneyTxt.gameObject.SetActive(false);
-            this.GetComponent<CoinCounter>().totalMoneyTxt.gameObject.SetActive(true);
-            this.GetComponent<InventoryController>().EmptyInventory();
-            this.GetComponent<CoinCounter>().ResetExpeditionMoney();
-        }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.CompareTag("ColliderTop"))
-        {
-            col=0;
 
-        }else if(collision.CompareTag("ColliderTop") && collision.CompareTag("ColliderRight")){
-            col = 1;
-        }
-        else if (collision.CompareTag("ColliderTop") && collision.CompareTag("ColliderLeft"))
-        {
-            col = 2;
-        }
-        else if ( collision.CompareTag("ColliderRight"))
-        {
-            col = 3;
-        }
-        else if (collision.CompareTag("ColliderBot") && collision.CompareTag("ColliderRight"))
-        {
-            col = 4;
-        }
-        else if (collision.CompareTag("ColliderBot") && collision.CompareTag("ColliderLeft"))
-        {
-            col = 5;
-        }
-        else if (collision.CompareTag("ColliderBot"))
-        {
-            col = 6;
-        }
-        else if ( collision.CompareTag("ColliderLeft"))
-        {
-            col = 7;
-        }
-        else
-        {
-            col = -1;
-        }
     }
 
+        private void OnTriggerStay2D(Collider2D collision)
+        {
+            if (collision.CompareTag("ColliderTop"))
+            {
+                col = 0;
 
-}
+            } else if (collision.CompareTag("ColliderTop") && collision.CompareTag("ColliderRight")) {
+                col = 1;
+            }
+            else if (collision.CompareTag("ColliderTop") && collision.CompareTag("ColliderLeft"))
+            {
+                col = 2;
+            }
+            else if (collision.CompareTag("ColliderRight"))
+            {
+                col = 3;
+            }
+            else if (collision.CompareTag("ColliderBot") && collision.CompareTag("ColliderRight"))
+            {
+                col = 4;
+            }
+            else if (collision.CompareTag("ColliderBot") && collision.CompareTag("ColliderLeft"))
+            {
+                col = 5;
+            }
+            else if (collision.CompareTag("ColliderBot"))
+            {
+                col = 6;
+            }
+            else if (collision.CompareTag("ColliderLeft"))
+            {
+                col = 7;
+            }
+            else
+            {
+                col = -1;
+            }
+        }
+
+
+    }
+
