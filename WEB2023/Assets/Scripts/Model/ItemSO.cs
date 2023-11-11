@@ -32,6 +32,9 @@ public abstract class ItemSO: ScriptableObject
     [field: SerializeField]
     public int Speed { get; set; }
 
+    [field: SerializeField]
+    public int Price { get; set; }
+
 }
 
 namespace Inventory.Model

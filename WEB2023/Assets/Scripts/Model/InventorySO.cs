@@ -35,8 +35,7 @@ namespace Inventory.Model
                 {
                     while (quantity > 0 && !IsInventoryFull())
                     {
-                        quantity -= AddItemToFirstFreeSlot(item, 1);
-                        
+                        quantity -= AddItemToFirstFreeSlot(item, 1);   
                     }
                         InformAboutChange();
                         return quantity;

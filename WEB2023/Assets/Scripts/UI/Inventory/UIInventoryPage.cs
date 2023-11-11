@@ -35,6 +35,7 @@ namespace Inventory.UI
         [SerializeField]
         private ItemActionPanel actionPanel;
 
+
         private void Awake()
         {
             Hide();
