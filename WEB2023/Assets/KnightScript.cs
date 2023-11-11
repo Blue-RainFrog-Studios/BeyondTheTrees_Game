@@ -73,13 +73,19 @@ public class KnightScript : MonoBehaviour
         }
 
     }
-        public void MoneyDealer()
-        {
-            this.GetComponent<CoinCounter>().TotalMoneyChanger(this.GetComponent<CoinCounter>().expeditionMoney);
-            this.GetComponent<CoinCounter>().expeditionMoneyTxt.gameObject.SetActive(false);
-            this.GetComponent<CoinCounter>().totalMoneyTxt.gameObject.SetActive(true);
-            this.GetComponent<InventoryController>().EmptyInventory();
-            this.GetComponent<CoinCounter>().ResetExpeditionMoney();
-        }
+    public void MoneyDealer()
+    {
+        this.GetComponent<CoinCounter>().TotalMoneyChanger(this.GetComponent<CoinCounter>().expeditionMoney);
+        ResetMoneyCanvas();
+    }
+
+    public void ResetMoneyCanvas()
+    {
+        this.GetComponent<CoinCounter>().expeditionMoneyTxt.gameObject.SetActive(false);
+        this.GetComponent<CoinCounter>().totalMoneyTxt.gameObject.SetActive(true);
+        this.GetComponent<InventoryController>().EmptyInventory();
+        this.GetComponent<CoinCounter>().ResetExpeditionMoney();
+    }
+
 
 }
