@@ -16,6 +16,7 @@ public class KnightScript : MonoBehaviour
     KnightScript knight;
     RoomController r;
 
+    public int col=-1;
     public int health { get; set; }
     public int totalHealth { get; set; }
     public float speed { get; set; }
@@ -81,5 +82,44 @@ public class KnightScript : MonoBehaviour
             this.GetComponent<InventoryController>().EmptyInventory();
             this.GetComponent<CoinCounter>().ResetExpeditionMoney();
         }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("ColliderTop"))
+        {
+            col=0;
+
+        }else if(collision.CompareTag("ColliderTop") && collision.CompareTag("ColliderRight")){
+            col = 1;
+        }
+        else if (collision.CompareTag("ColliderTop") && collision.CompareTag("ColliderLeft"))
+        {
+            col = 2;
+        }
+        else if ( collision.CompareTag("ColliderRight"))
+        {
+            col = 3;
+        }
+        else if (collision.CompareTag("ColliderBot") && collision.CompareTag("ColliderRight"))
+        {
+            col = 4;
+        }
+        else if (collision.CompareTag("ColliderBot") && collision.CompareTag("ColliderLeft"))
+        {
+            col = 5;
+        }
+        else if (collision.CompareTag("ColliderBot"))
+        {
+            col = 6;
+        }
+        else if ( collision.CompareTag("ColliderLeft"))
+        {
+            col = 7;
+        }
+        else
+        {
+            col = -1;
+        }
+    }
+
 
 }

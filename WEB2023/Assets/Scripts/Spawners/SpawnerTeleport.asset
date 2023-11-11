@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb5226cba7cda75478a72e4825b86ee4, type: 3}
+  m_Name: SpawnerTeleport
+  m_EditorClassIdentifier: 
+  itemToSpawn: {fileID: 4875267983180699273, guid: 8cd3ff43b02d03640b36b1b501ff5cb0, type: 3}
+  minSpawn: 1
+  maxSpawn: 1

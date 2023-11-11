@@ -8,6 +8,10 @@ TagManager:
   - Prop
   - Attack
   - Inventory
+  - ColliderTop
+  - ColliderBot
+  - ColliderLeft
+  - ColliderRight
   layers:
   - Default
   - TransparentFX
