@@ -10,7 +10,7 @@ public class MenuLogin : MonoBehaviour
     private bool genero;
     [SerializeField] private Button maleButton;
     [SerializeField] private Button femaleButton;
-    private string nombreUsuario;
+    public string nombreUsuario;
     [SerializeField]
     private GameObject playerPrefab;
 
@@ -44,10 +44,13 @@ public class MenuLogin : MonoBehaviour
     }
     public void empezarJuego()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        GameObject player = GameObject.Find("Player");
+        playerPrefab.GetComponent<Name>().nombre = nombreUsuario;
         SceneManager.LoadScene("Campamento Base");
         if (player == null)
+        {
             Instantiate(playerPrefab);
+        }
         else
         {
             player.GetComponent<PlayerMovementInputSystem>().enabled = true;
