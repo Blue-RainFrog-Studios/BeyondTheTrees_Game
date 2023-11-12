@@ -8,7 +8,7 @@ public class Name : MonoBehaviour
     public string nombre;
     public TMP_Text texto;
     public bool sexo;
-    private void Awake()
+    public void CambiarDatos()
     {
         texto.text = nombre;
     }

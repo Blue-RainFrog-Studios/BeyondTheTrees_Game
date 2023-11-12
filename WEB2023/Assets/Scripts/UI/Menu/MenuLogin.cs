@@ -44,16 +44,22 @@ public class MenuLogin : MonoBehaviour
     }
     public void empezarJuego()
     {
-        GameObject player = GameObject.Find("Player");
-        playerPrefab.GetComponent<Name>().nombre = nombreUsuario;
-        playerPrefab.GetComponent<Name>().sexo = genero;
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        
         SceneManager.LoadScene("Campamento Base");
         if (player == null)
         {
+            playerPrefab.GetComponent<Name>().nombre = nombreUsuario;
+            playerPrefab.GetComponent<Name>().sexo = genero;
+            playerPrefab.GetComponent<Name>().CambiarDatos();
             Instantiate(playerPrefab);
         }
         else
         {
+            player.GetComponent<Name>().nombre = nombreUsuario;
+            player.GetComponent<Name>().sexo = genero;
+            player.GetComponent<Name>().CambiarDatos();
+            player.transform.position = new Vector2(0, -4);
             player.GetComponent<PlayerMovementInputSystem>().enabled = true;
             player.GetComponentInChildren<Canvas>().enabled = true;
         }
