@@ -208,11 +208,12 @@ public class EnemyController : MonoBehaviour
     }
     void Teleport()
     {
-        
-        if (player.GetComponent<KnightScript>().col==-1)
+
+        if (player.GetComponent<KnightScript>().col == -1)
         {
             transform.position = player.transform.position + space;
-        }else if(player.GetComponent<KnightScript>().col == 0)
+        }
+        else if (player.GetComponent<KnightScript>().col == 0)
         {
             transform.position = player.transform.position + space2;
         }
@@ -243,6 +244,14 @@ public class EnemyController : MonoBehaviour
         else if (player.GetComponent<KnightScript>().col == 7)
         {
             transform.position = player.transform.position + space1;
+        }
+        else if (player.GetComponent<KnightScript>().col == 8)
+        {
+            transform.position = player.transform.position + space1;
+        }
+        else if (player.GetComponent<KnightScript>().col == 9)
+        {
+            transform.position = player.transform.position + space4;
         }
 
 

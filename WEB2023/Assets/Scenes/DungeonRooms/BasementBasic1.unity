@@ -2811,7 +2811,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grid: {fileID: 1850390393}
   spawnerData:
-  - name: TeleporterSpawner
+  - name: Chase
+    spawnerData: {fileID: 11400000, guid: 6a31e8643d4ec10428e2560abf4ede17, type: 2}
+  - name: Range
+    spawnerData: {fileID: 11400000, guid: f610335d58a7afb4da3f284359b175ee, type: 2}
+  - name: Teleport
     spawnerData: {fileID: 11400000, guid: ad5f0463d380b1a43817150c6b2e4d24, type: 2}
 --- !u!1 &2031183877
 GameObject:
