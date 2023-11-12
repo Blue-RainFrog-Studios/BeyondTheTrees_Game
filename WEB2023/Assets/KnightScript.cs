@@ -13,7 +13,6 @@ public class KnightScript : MonoBehaviour
     [SerializeField]
     public Slider lifeBar;
 
-
     KnightScript knight;
     RoomController r;
 
@@ -34,8 +33,6 @@ public class KnightScript : MonoBehaviour
         defense = 7;
         attackSpeed = 3;
     }
-
-
 
     private void Awake()
     {
@@ -75,9 +72,9 @@ public class KnightScript : MonoBehaviour
         }
 
     }
-    public void MoneyDealer()
+    public void MoneyDealer(float percentage)
     {
-        this.GetComponent<CoinCounter>().TotalMoneyChanger(this.GetComponent<CoinCounter>().expeditionMoney);
+        this.GetComponent<CoinCounter>().TotalMoneyChanger(this.GetComponent<CoinCounter>().expeditionMoney, percentage);
         ResetMoneyCanvas();
     }
 
@@ -95,7 +92,7 @@ public class KnightScript : MonoBehaviour
         attack += v * inventoryItem.Attack;
         defense += v * inventoryItem.Defense;
         GetComponent<PlayerMovementInputSystem>().speed += v * inventoryItem.Speed;
-        GetComponent<PlayerMovementInputSystem>().shoteRate += v * inventoryItem.AttackSpeed;
+        GetComponent<PlayerMovementInputSystem>().shoteRate -= v * inventoryItem.AttackSpeed;
         GetComponent<CoinCounter>().ExpeditionMoneyChanger(v * (inventoryItem.Price * quantity));
     }
 

@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <IsStackable>k__BackingField: 0
   <MaxStackSize>k__BackingField: 1
-  <Name>k__BackingField: 
-  <Descrption>k__BackingField: 
-  <ItemImage>k__BackingField: {fileID: 0}
+  <Name>k__BackingField: "Pluma de F\xE9nix"
+  <Descrption>k__BackingField: 'Velocidad de ataque: +4'
+  <ItemImage>k__BackingField: {fileID: -978607917, guid: 0d6e7eb0117b0dd42b3ef1b04224dbec, type: 3}
   <Attack>k__BackingField: 0
   <Defense>k__BackingField: 0
   <Speed>k__BackingField: 0
-  <Price>k__BackingField: 0
+  <AttackSpeed>k__BackingField: 0.2
+  <Price>k__BackingField: 30

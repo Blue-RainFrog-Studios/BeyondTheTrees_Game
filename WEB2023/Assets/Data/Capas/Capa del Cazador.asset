@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <IsStackable>k__BackingField: 0
   <MaxStackSize>k__BackingField: 1
-  <Name>k__BackingField: 
-  <Descrption>k__BackingField: 
+  <Name>k__BackingField: Capa del Czador
+  <Descrption>k__BackingField: 'Velocidad: +7'
   <ItemImage>k__BackingField: {fileID: -754118266, guid: 0d6e7eb0117b0dd42b3ef1b04224dbec, type: 3}
   <Attack>k__BackingField: 0
   <Defense>k__BackingField: 0
-  <Speed>k__BackingField: 0
-  <Price>k__BackingField: 0
+  <Speed>k__BackingField: 7
+  <AttackSpeed>k__BackingField: 0
+  <Price>k__BackingField: 15
