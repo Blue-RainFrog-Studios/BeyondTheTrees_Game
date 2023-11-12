@@ -46,6 +46,7 @@ public class MenuLogin : MonoBehaviour
     {
         GameObject player = GameObject.Find("Player");
         playerPrefab.GetComponent<Name>().nombre = nombreUsuario;
+        playerPrefab.GetComponent<Name>().sexo = genero;
         SceneManager.LoadScene("Campamento Base");
         if (player == null)
         {

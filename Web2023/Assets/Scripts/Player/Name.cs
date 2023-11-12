@@ -7,7 +7,7 @@ public class Name : MonoBehaviour
 {
     public string nombre;
     public TMP_Text texto;
-
+    public bool sexo;
     private void Awake()
     {
         texto.text = nombre;
