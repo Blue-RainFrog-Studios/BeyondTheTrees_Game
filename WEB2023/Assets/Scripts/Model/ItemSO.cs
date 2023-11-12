@@ -31,6 +31,7 @@ public abstract class ItemSO: ScriptableObject
 
     [field: SerializeField]
     public int Speed { get; set; }
+    public int AttackSpeed { get; set; }
 
     [field: SerializeField]
     public int Price { get; set; }

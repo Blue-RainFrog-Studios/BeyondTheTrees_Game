@@ -37,9 +37,6 @@ public class PickupSystem : MonoBehaviour
     private void IncrementStats(Item item, int quantity)
     {
         player = GameObject.FindWithTag("Player").GetComponent<KnightScript>(); //Estadísticas PROPIO
-        player.attack += item.InventoryItem.Attack;
-        player.defense += item.InventoryItem.Defense;
-        player.GetComponent<PlayerMovementInputSystem>().speed += item.InventoryItem.Speed;
-        player.GetComponent<CoinCounter>().ExpeditionMoneyChanger(item.InventoryItem.Price * quantity);
+        player.ModifyStats(1, item.InventoryItem, quantity);
     }
 }

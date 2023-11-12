@@ -1,4 +1,5 @@
 using Inventory;
+using Inventory.Model;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -22,6 +23,7 @@ public class KnightScript : MonoBehaviour
     public float speed { get; set; }
 
     public int attack { get; set; }
+    public int attackSpeed { get; set; }
     public int defense { get; set; }
 
     public KnightScript() {
@@ -30,6 +32,7 @@ public class KnightScript : MonoBehaviour
         speed = 6;
         attack = 15;
         defense = 7;
+        attackSpeed = 3;
     }
 
 
@@ -52,10 +55,8 @@ public class KnightScript : MonoBehaviour
             knight.health = 50;
             lifeBar.value = knight.health;
             this.gameObject.transform.position = new Vector2(0, -4);
-            //this.GetComponentInParent<GameObject>().SetActive(false);
             GetComponent<PlayerMovementInputSystem>().enabled = false;
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            //GameObject.Find("CanvasInv").gameObject.transform.Find("Menu").gameObject.SetActive(false);
             GetComponentInChildren<Canvas>().enabled = false;
         }
     }
@@ -87,6 +88,15 @@ public class KnightScript : MonoBehaviour
         this.GetComponent<InventoryController>().EmptyInventory();
         this.GetComponent<CoinCounter>().ResetExpeditionMoney();
 
+    }
+
+    public void ModifyStats(int v, ItemSO inventoryItem, int quantity)
+    {
+        attack += v * inventoryItem.Attack;
+        defense += v * inventoryItem.Defense;
+        GetComponent<PlayerMovementInputSystem>().speed += v * inventoryItem.Speed;
+        GetComponent<PlayerMovementInputSystem>().shoteRate += v * inventoryItem.AttackSpeed;
+        GetComponent<CoinCounter>().ExpeditionMoneyChanger(v * (inventoryItem.Price * quantity));
     }
 
         private void OnTriggerStay2D(Collider2D collision)

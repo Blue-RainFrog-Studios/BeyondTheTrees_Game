@@ -68,12 +68,12 @@ namespace Inventory
         {
             inventoryData.Initialize();
             inventoryData.OnInventoryUpdated += UpdateInventoryUI;
-            foreach (InventoryItem item in initialItems)
+            /*foreach (InventoryItem item in initialItems)     PARA EMPEZAR SIN ITEMS
             {
                 if (item.IsEmpty)
                     continue;
                 inventoryData.AddItem(item);
-            }
+            }*/
         }
 
         private void UpdateInventoryUI(Dictionary<int, InventoryItem> inventoryState)
@@ -125,10 +125,7 @@ namespace Inventory
             inventoryData.RemoveItem(itemIndex, quantity);
             inventoryUI.ResetSelection();
             player = GameObject.FindWithTag("Player").GetComponent<KnightScript>(); //Estadísticas PROPIO
-            player.attack -= inventoryItem.item.Attack;
-            player.defense -= inventoryItem.item.Defense;
-            player.GetComponent<PlayerMovementInputSystem>().speed -= inventoryItem.item.Speed;
-            player.GetComponent<CoinCounter>().ExpeditionMoneyChanger(-(inventoryItem.item.Price * quantity));
+            player.ModifyStats(-1, inventoryItem.item, quantity);
             //audioSource.PlayOneShot(dropClip);
         }
 
