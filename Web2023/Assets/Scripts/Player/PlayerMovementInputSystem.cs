@@ -126,41 +126,41 @@ public class PlayerMovementInputSystem : MonoBehaviour
                     Instantiate(attack, transform.position, transform.rotation);
                     shotRateTime = Time.time + shoteRate;
                 }
-                //if (attackDirection.y == -1)
-                //{
-                //    if (this != null)
-                //    {
-                //        characterAnimator.Play("AttackFront");
-                //        shotRateTime = Time.time + shoteRate;
-                //    }
-                //}
-                //if (attackDirection.y == 1)
-                //{
-                //    if (this != null)
-                //    {
-                //        characterAnimator.Play("AttackBack");
-                //        shotRateTime = Time.time + shoteRate;
-                //    }
+                if (attackDirection.y == -1)
+                {
+                    if (this != null)
+                    {
+                        characterAnimator.Play("AttackFront");
+                        shotRateTime = Time.time + shoteRate;
+                    }
+                }
+                if (attackDirection.y == 1)
+                {
+                    if (this != null)
+                    {
+                        characterAnimator.Play("AttackBack");
+                        shotRateTime = Time.time + shoteRate;
+                    }
 
-                //}
-                //if (attackDirection.x == -1)
-                //{
-                //    if (this != null)
-                //    {
-                //        characterAnimator.Play("AttackLeft");
-                //        shotRateTime = Time.time + shoteRate;
-                //    }
+                }
+                if (attackDirection.x == -1)
+                {
+                    if (this != null)
+                    {
+                        characterAnimator.Play("AttackLeft");
+                        shotRateTime = Time.time + shoteRate;
+                    }
 
-                //}
-                //if (attackDirection.x == 1)
-                //{
-                //    if (this != null)
-                //    {
-                //        characterAnimator.Play("AttackRight");
-                //        shotRateTime = Time.time + shoteRate;
-                //    }
+                }
+                if (attackDirection.x == 1)
+                {
+                    if (this != null)
+                    {
+                        characterAnimator.Play("AttackRight");
+                        shotRateTime = Time.time + shoteRate;
+                    }
 
-                //}
+                }
             }
 
         }
