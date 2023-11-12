@@ -42,7 +42,9 @@ public class MenuPausa : MonoBehaviour
         SceneManager.LoadScene("MenuPrincipal");
         //player.GetComponent<PlayerMovementInputSystem>().enabled = false;
         player.GetComponent<KnightScript>().ResetMoneyCanvas();
-        Destroy(player.gameObject);
-        //Debug.Log(player);
+        player.GetComponent<PlayerMovementInputSystem>().enabled = false;
+        player.GetComponentInChildren<Canvas>().enabled = false;
+        //player.gameObject.SetActive(false);
+
     }
 }

@@ -44,8 +44,14 @@ public class MenuLogin : MonoBehaviour
     }
     public void empezarJuego()
     {
-        //SceneManager.LoadScene("Basement");
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
         SceneManager.LoadScene("Campamento Base");
-        Instantiate(playerPrefab);  
+        if (player == null)
+            Instantiate(playerPrefab);
+        else
+        {
+            player.GetComponent<PlayerMovementInputSystem>().enabled = true;
+            player.GetComponentInChildren<Canvas>().enabled = true;
+        }
     }
 }
