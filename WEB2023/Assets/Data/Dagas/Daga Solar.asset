@@ -16,8 +16,8 @@ MonoBehaviour:
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: Daga Solar
   <Descrption>k__BackingField: 'Ataque: +13'
-  <ItemImage>k__BackingField: {fileID: 1950488512, guid: 494bdb8b90558a348a86b4f89e80f513, type: 3}
+  <ItemImage>k__BackingField: {fileID: 816346421, guid: 0d6e7eb0117b0dd42b3ef1b04224dbec, type: 3}
   <Attack>k__BackingField: 13
   <Defense>k__BackingField: 0
   <Speed>k__BackingField: 0
-  <Price>k__BackingField: 10
+  <Price>k__BackingField: 15

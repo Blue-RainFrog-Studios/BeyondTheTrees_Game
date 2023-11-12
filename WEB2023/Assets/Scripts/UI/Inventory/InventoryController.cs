@@ -68,12 +68,12 @@ namespace Inventory
         {
             inventoryData.Initialize();
             inventoryData.OnInventoryUpdated += UpdateInventoryUI;
-            foreach (InventoryItem item in initialItems)
+            /*foreach (InventoryItem item in initialItems)    PARA EMPEZAR SIN ITEMS
             {
                 if (item.IsEmpty)
                     continue;
                 inventoryData.AddItem(item);
-            }
+            }*/
         }
 
         private void UpdateInventoryUI(Dictionary<int, InventoryItem> inventoryState)
