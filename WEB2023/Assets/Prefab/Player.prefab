@@ -379,9 +379,9 @@ MonoBehaviour:
   smoothness: 0.12
   attack: {fileID: 1720175491396843235, guid: 49b138763be454a4e99c46e4bc979230, type: 3}
   characterAnimator: {fileID: 2472352434232250267}
-  AttackSoundEffect1: {fileID: 0}
-  AttackSoundEffect2: {fileID: 0}
-  WalkSoundEffect: {fileID: 0}
+  AttackSoundEffect1: {fileID: 7633266851515481693}
+  AttackSoundEffect2: {fileID: 7633266851515481693}
+  WalkSoundEffect: {fileID: 7633266851515481693}
   attackDirection: {x: 0, y: 0}
   shoteRate: 0.5
 --- !u!114 &2902353004927614186
