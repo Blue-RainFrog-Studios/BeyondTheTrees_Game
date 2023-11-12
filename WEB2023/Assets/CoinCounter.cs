@@ -23,7 +23,7 @@ public class CoinCounter : MonoBehaviour
     //Dinero expedición
     private void UpdateExpeditionMoneyText()
     {
-        expeditionMoneyTxt.text = $": {expeditionMoney}";
+        expeditionMoneyTxt.text = $"{expeditionMoney}";
     }
 
     public void ExpeditionMoneyChanger(int value)
@@ -41,7 +41,7 @@ public class CoinCounter : MonoBehaviour
     //Dinero Total
     private void UpdateTotalMoneyText()
     {
-        totalMoneyTxt.text = $": {totalMoney}";
+        totalMoneyTxt.text = $"{totalMoney}";
     }
 
     public void TotalMoneyChanger(int value)
