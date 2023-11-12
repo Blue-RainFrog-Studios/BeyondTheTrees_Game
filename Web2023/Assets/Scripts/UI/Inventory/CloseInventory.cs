@@ -10,9 +10,10 @@ public class CloseInventory : MonoBehaviour
     private Button invButton;
     [SerializeField]
     private GameObject inventory;
-
+    [SerializeField]
+    private GameObject invActionPanel;
     private void Start()
     {
-        this.gameObject.GetComponentInChildren<Button>().onClick.AddListener(() => {  inventory.SetActive(false);   if (Application.isMobilePlatform) invButton.gameObject.SetActive(true); } );
+        this.gameObject.GetComponentInChildren<Button>().onClick.AddListener(() => {  inventory.SetActive(false); invActionPanel.SetActive(false);  if (Application.isMobilePlatform) invButton.gameObject.SetActive(true); } );
     }
 }
