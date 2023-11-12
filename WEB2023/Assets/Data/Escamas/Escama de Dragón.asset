@@ -16,7 +16,7 @@ MonoBehaviour:
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: "Escama de Drag\xF3n"
   <Descrption>k__BackingField: 'Defensa: +16'
-  <ItemImage>k__BackingField: {fileID: 1719896115, guid: 494bdb8b90558a348a86b4f89e80f513, type: 3}
+  <ItemImage>k__BackingField: {fileID: 1402202630, guid: 0d6e7eb0117b0dd42b3ef1b04224dbec, type: 3}
   <Attack>k__BackingField: 0
   <Defense>k__BackingField: 16
   <Speed>k__BackingField: 0

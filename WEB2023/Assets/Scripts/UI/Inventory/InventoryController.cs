@@ -99,7 +99,7 @@ namespace Inventory
         private void HandleItemActionRequest(int itemIndex)  //Para consumir objetos
         {
             InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
-            if (inventoryItem.IsEmpty)  //Si la casilla está vacía volver
+            if (inventoryItem.IsEmpty)  //Si la casilla estï¿½ vacï¿½a volver
                 return;
             IItemAction itemAction = inventoryItem.item as IItemAction;
             if (itemAction != null)
@@ -124,7 +124,7 @@ namespace Inventory
         {
             inventoryData.RemoveItem(itemIndex, quantity);
             inventoryUI.ResetSelection();
-            player = GameObject.FindWithTag("Player").GetComponent<KnightScript>(); //Estadísticas PROPIO
+            player = GameObject.FindWithTag("Player").GetComponent<KnightScript>(); //Estadï¿½sticas PROPIO
             player.ModifyStats(-1, inventoryItem.item, quantity);
             //audioSource.PlayOneShot(dropClip);
         }
@@ -132,7 +132,7 @@ namespace Inventory
         public void PerformAction(int itemIndex)  //Para mostrar el action panel
         {
             InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
-            if (inventoryItem.IsEmpty)  //Si la casilla está vacía volver
+            if (inventoryItem.IsEmpty)  //Si la casilla estï¿½ vacï¿½a volver
                 return;
             IDestroyableItem destroyableItem = inventoryItem.item as IDestroyableItem;  //Para que si se consume un item se pueda reducir la cantidad
             if (destroyableItem != null)
