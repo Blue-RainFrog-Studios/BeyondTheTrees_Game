@@ -14,6 +14,7 @@ public class Attack : MonoBehaviour
     private void Awake()
     {
         pmad = FindAnyObjectByType<PlayerMovementInputSystem>().attackDirection;
+        StartCoroutine(waiter());
     }
 
     private void Start()
@@ -34,13 +35,10 @@ public class Attack : MonoBehaviour
             collision.GetComponent<EnemyController>().RecieveDamage(damage);
             Destroy(gameObject);
         }
-        else if (collision.CompareTag("Prop"))
-        {
-            Destroy(gameObject);
-        }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    IEnumerator waiter()
     {
-        
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
     }
 }
