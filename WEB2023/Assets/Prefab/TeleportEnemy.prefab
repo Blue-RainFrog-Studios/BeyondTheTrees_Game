@@ -110,7 +110,7 @@ MonoBehaviour:
   speed: 1
   life: 40
   bulletSpeed: 0
-  animator: {fileID: 0}
+  animator: {fileID: 1330603882934896760, guid: b61eff804755ac34a8b2ded704f94d8b, type: 3}
   damage: 20
   notInRoom: 0
 --- !u!50 &3113921293586694263
