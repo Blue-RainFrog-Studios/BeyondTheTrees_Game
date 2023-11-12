@@ -25,7 +25,8 @@ public class KnightScript : MonoBehaviour
     public int attackSpeed { get; set; }
     public int defense { get; set; }
 
-    public KnightScript() {
+    public KnightScript() 
+    {
         totalHealth = 50;
         health = 50;
         speed = 6;
@@ -37,7 +38,7 @@ public class KnightScript : MonoBehaviour
     private void Awake()
     {
         r = FindObjectOfType<RoomController>();
-        knight = new();
+        knight = new KnightScript();
     }
 
     public void ReceiveAttack(int dmgValue)

@@ -33,8 +33,6 @@ namespace Inventory
         {
             playerInputActions = new Map();
             playerInputActions.Enable();
-            //inventoryUI = GetComponentInChildren<UIInventoryPage>();
-            Debug.Log(inventoryUI);
             playerInputActions.Player.Inventory.performed += ShowInventory;
 
         }
