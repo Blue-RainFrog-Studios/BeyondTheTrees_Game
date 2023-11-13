@@ -124,7 +124,7 @@ namespace Inventory
             inventoryUI.ResetSelection();
             player = GameObject.FindWithTag("Player").GetComponent<KnightScript>(); //Estad�sticas PROPIO
             player.ModifyStats(-1, inventoryItem.item, quantity);
-            //audioSource.PlayOneShot(dropClip);
+            audioSource.PlayOneShot(dropClip);
         }
 
         public void PerformAction(int itemIndex)  //Para mostrar el action panel
@@ -141,7 +141,7 @@ namespace Inventory
             if (itemAction != null)
             {
                 itemAction.PerformAction(gameObject);
-                //audioSource.PlayOneShot(itemAction.actionSFX);
+                audioSource.PlayOneShot(itemAction.actionSFX);
                 if (inventoryData.GetItemAt(itemIndex).IsEmpty)
                     inventoryUI.ResetSelection();
             }

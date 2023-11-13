@@ -20,8 +20,9 @@ MonoBehaviour:
   <Attack>k__BackingField: 0
   <Defense>k__BackingField: 0
   <Speed>k__BackingField: 0
+  <AttackSpeed>k__BackingField: 0
   <Price>k__BackingField: 10
   modifiersData:
   - statModifier: {fileID: 11400000, guid: f4da559af5418614580a267b7dac9fa4, type: 2}
     value: 10
-  <actionSFX>k__BackingField: {fileID: 0}
+  <actionSFX>k__BackingField: {fileID: 8300000, guid: 538400ad8d7d84d43a2922c352e8ac41, type: 3}
