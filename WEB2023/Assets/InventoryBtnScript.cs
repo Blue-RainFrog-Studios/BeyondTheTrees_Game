@@ -9,6 +9,6 @@ public class InventoryBtnScript : MonoBehaviour
 
     void Start()
     {
-        this.gameObject.GetComponent<Button>().onClick.AddListener(() => { if (inventory.activeInHierarchy) { inventory.SetActive(false); } else { inventory.SetActive(true); this.gameObject.SetActive(false); } });
+        this.gameObject.GetComponent<Button>().onClick.AddListener(() => { inventory.SetActive(true); this.gameObject.SetActive(false); } );
     }
 }

@@ -12,8 +12,20 @@ public class CloseInventory : MonoBehaviour
     private GameObject inventory;
     [SerializeField]
     private GameObject invActionPanel;
+
+    private void Awake()
+    {
+        //invButton = GetComponentInParent<Button>();
+    }
     private void Start()
     {
-        this.gameObject.GetComponentInChildren<Button>().onClick.AddListener(() => {  inventory.SetActive(false); invActionPanel.SetActive(false);  if (Application.isMobilePlatform) invButton.gameObject.SetActive(true); } );
+        this.gameObject.GetComponentInChildren<Button>().onClick.AddListener(() => { 
+            inventory.SetActive(false);
+            invActionPanel.SetActive(false);
+            if (Application.isMobilePlatform) 
+            { 
+                invButton.gameObject.SetActive(true); 
+            }
+                 } );
     }
 }
