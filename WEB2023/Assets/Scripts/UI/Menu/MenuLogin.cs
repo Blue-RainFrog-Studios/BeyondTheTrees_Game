@@ -8,9 +8,10 @@ using UnityEngine.UI;
 public class MenuLogin : MonoBehaviour
 {
     private bool genero;
+    private int edad;
     [SerializeField] private Button maleButton;
     [SerializeField] private Button femaleButton;
-    public string nombreUsuario;
+    private string nombreUsuario = "Invitado";
     [SerializeField]
     private GameObject playerPrefab;
 
@@ -39,7 +40,8 @@ public class MenuLogin : MonoBehaviour
         //Se modifica cuando pulsamos cualquier cosa
         //El texto se modifica al utilizar la funcion de string dinamica
         //No hace falta coger el texto del inputField
-        nombreUsuario = s;
+        if (s != "")
+            nombreUsuario = s;
         Debug.Log("El nombre de usuario es: " + nombreUsuario);
     }
     public void empezarJuego()
