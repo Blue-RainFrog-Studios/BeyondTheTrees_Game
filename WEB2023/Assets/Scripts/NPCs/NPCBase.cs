@@ -12,6 +12,7 @@ public class NPCBase : MonoBehaviour
     private int index;
 
     public GameObject continueButton;
+    public GameObject buyButton;
     public float wordSpeed;
     public bool playerIsClose;
     private void Update()
@@ -32,6 +33,7 @@ public class NPCBase : MonoBehaviour
         if(dialogueText.text == dialogue[index])
         {
             continueButton.SetActive(true);
+            buyButton.SetActive(true);
         }
     }
 
@@ -54,7 +56,8 @@ public class NPCBase : MonoBehaviour
     public void NextLine()
     {
         continueButton.SetActive(false);
-        if(index < dialogue.Length-1)
+        buyButton.SetActive(false);
+        if (index < dialogue.Length-1)
         {
             index++;
             dialogueText.text = "";
