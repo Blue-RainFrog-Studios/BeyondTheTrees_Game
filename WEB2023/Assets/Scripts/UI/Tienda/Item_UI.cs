@@ -60,7 +60,12 @@ public class Item_UI : MonoBehaviour
         purchItemPurchaseButton.onClick.RemoveAllListeners();
         purchItemPurchaseButton.onClick.AddListener (()=> action.Invoke (ItemIndex));
     }
-
+    public void OnItemSelect(int ItemIndex, UnityAction<int> action)
+    {
+        itemButtton.interactable = true;
+        itemButtton.onClick.RemoveAllListeners();
+        purchItemPurchaseButton.onClick.AddListener(()=> action.Invoke (ItemIndex));
+    }
     public void SelectItem()
     {
         itemOutline.enabled= true;

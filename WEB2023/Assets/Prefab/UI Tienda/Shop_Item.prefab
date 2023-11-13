@@ -169,7 +169,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 67.9
+  m_fontSize: 49.3
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -304,7 +304,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 58.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -502,7 +502,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemNotSelectedColor: {r: 0.7568628, g: 0.77647066, b: 0.8313726, a: 1}
   itemSelectedColor: {r: 0.3274424, g: 0.46499246, b: 0.745283, a: 1}
-  purchItemImage: {fileID: 296758838822692469}
+  purchItemImage: {fileID: 0}
   purchItemName: {fileID: 2692085125445663794}
   purchItemDescription: {fileID: 6413139382217864049}
   purchItemPriceText: {fileID: 8552019817851698559}
@@ -725,10 +725,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 30.4
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0

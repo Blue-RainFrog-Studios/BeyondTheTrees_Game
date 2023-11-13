@@ -74,6 +74,7 @@ public class Shop_UI : MonoBehaviour
             if(shop_Item.isPurchased)
             {
                 ui_item.SetItemAsPurchased();
+                ui_item.OnItemSelect ();
             }
             else
             {
@@ -91,5 +92,9 @@ public class Shop_UI : MonoBehaviour
     void OpenShop()
     {
         shopUI.SetActive(true);
+    }
+    void OnItemSelect(int index)
+    {
+        Debug.Log("Select " + index);
     }
 }
