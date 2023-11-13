@@ -107,6 +107,7 @@ MonoBehaviour:
   rangeTeleport: 10
   attackRange: 1
   coolDown: 5
+  coolDownTp: 10
   speed: 1
   life: 40
   bulletSpeed: 0

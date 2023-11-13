@@ -9,10 +9,10 @@ public enum EnemyState
 
     Wander,
 
-    Follow, 
+    Follow,
 
     Attack,
-    
+
     Die,
 
     Teleport
@@ -22,7 +22,7 @@ public enum EnemyType
     Melee,
 
     Ranged,
-    
+
     Teleport
 };
 public class EnemyController : MonoBehaviour
@@ -39,55 +39,61 @@ public class EnemyController : MonoBehaviour
     Rigidbody2D rb;
 
     public float coolDown;
+    public float coolDownTp;
     public float speed;
     public float life;
 
     private bool coolDownAttack = false;
+    private bool coolDownTeleport = false;
     private bool chooseDir = false;
     public float bulletSpeed;
-    private bool dead=false;
+    private bool dead = false;
     private Vector3 randomDir;
     private Vector3 space = new Vector3(1, 0, 0);
-    private Vector3 space1 = new Vector3(0,2,0);
-    private Vector3 space2 = new Vector3(2,0,0);
-    private Vector3 space3 = new Vector3(-2,0,0);
-    private Vector3 space4 = new Vector3(0,-2,0);
+    private Vector3 space1 = new Vector3(0, 2, 0);
+    private Vector3 space2 = new Vector3(2, 0, 0);
+    private Vector3 space3 = new Vector3(-2, 0, 0);
+    private Vector3 space4 = new Vector3(0, -2, 0);
     public Animator animator;
     Vector2 direction;
     public int damage = 20;
     // Start is called before the first frame update
 
-    public bool notInRoom = false; 
+    public bool notInRoom = false;
+    private void Awake()
+    {
+        Idle();
+    }
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        //Idle();
+        
         ghost = this.gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
-        switch(currState)
+        switch (currState)
         {
             case (EnemyState.Idle):
                 Idle();
-            break;
+                break;
             case (EnemyState.Wander):
                 Wander();
-            break;
+                break;
             case (EnemyState.Follow):
                 Follow();
-            break;
+                break;
             case (EnemyState.Attack):
                 Attack();
-            break;
+                break;
             case (EnemyState.Die):
                 Die();
-            break;
+                break;
             case (EnemyState.Teleport):
                 Teleport();
-            break;
+                break;
         }
 
         if (!notInRoom)
@@ -99,18 +105,20 @@ public class EnemyController : MonoBehaviour
             else if (!isPlayerInRange(range) && !isPlayerInRangeTeleport(rangeTeleport) && currState != EnemyState.Die)
             {
                 currState = EnemyState.Wander;
-            }else if(isPlayerInRangeTeleport(rangeTeleport) && currState!=EnemyState.Die)
+            }
+            else if (isPlayerInRangeTeleport(rangeTeleport) && currState != EnemyState.Die)
             {
-                
+
                 currState = EnemyState.Teleport;
             }
-            if(Vector3.Distance(transform.position,player.transform.position) < attackRange) {
+            if (Vector3.Distance(transform.position, player.transform.position) < attackRange)
+            {
                 currState = EnemyState.Attack;
             }
         }
         else
         {
-            currState  = EnemyState.Idle;
+            currState = EnemyState.Idle;
         }
 
         direction = player.transform.position - transform.position;
@@ -142,33 +150,33 @@ public class EnemyController : MonoBehaviour
 
     private IEnumerator ChooseDirection()
     {
-        chooseDir=true;
-        yield return new WaitForSeconds(Random.Range(2f,8f));
+        chooseDir = true;
+        yield return new WaitForSeconds(Random.Range(2f, 8f));
         randomDir = new Vector3(0, 0, Random.Range(0, 360));
-       // Quaternion nextRotation = Quaternion.Euler(randomDir);
+        // Quaternion nextRotation = Quaternion.Euler(randomDir);
         //transform.rotation = Quaternion.Lerp(transform.rotation, nextRotation, Random.Range(0.5f, 2.5f));
-        chooseDir= false;
+        chooseDir = false;
     }
     void Wander()
     {
-        if(!chooseDir)
+        if (!chooseDir)
         {
             StartCoroutine(ChooseDirection());
         }
         transform.position += -transform.right * speed * Time.deltaTime;
         if (isPlayerInRange(range))
         {
-            currState= EnemyState.Follow;
+            currState = EnemyState.Follow;
         }
         else if (isPlayerInRangeTeleport(rangeTeleport))
         {
-            currState=EnemyState.Teleport;
+            currState = EnemyState.Teleport;
         }
 
     }
     void Follow()
     {
-        transform.position=Vector2.MoveTowards(transform.position,player.transform.position,speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
     }
 
     void Idle()
@@ -181,25 +189,31 @@ public class EnemyController : MonoBehaviour
         yield return new WaitForSeconds(coolDown);
         coolDownAttack = false;
     }
+    private IEnumerator CoolDownTP()
+    {
+        coolDownTeleport = true;
+        yield return new WaitForSeconds(coolDownTp);
+        coolDownTeleport = false;
+    }
     void Attack()
     {
         if (!coolDownAttack)
         {
             switch (enemyType)
             {
-                case(EnemyType.Melee):
+                case (EnemyType.Melee):
                     player.GetComponent<KnightScript>().ReceiveAttack(damage);
                     StartCoroutine(CoolDown());
                     break;
                 case (EnemyType.Ranged):
-                    GameObject bullet=Instantiate(EnemyBullet,transform.position,Quaternion.identity) as GameObject;
+                    GameObject bullet = Instantiate(EnemyBullet, transform.position, Quaternion.identity) as GameObject;
                     bullet.GetComponent<BulletController>().GetPlayer(player.transform);
                     bullet.AddComponent<Rigidbody2D>().gravityScale = 0;
-                    
+
                     StartCoroutine(CoolDown());
                     break;
                 case (EnemyType.Teleport):
-                    
+
                     StartCoroutine(CoolDown());
                     player.GetComponent<KnightScript>().ReceiveAttack(damage);
                     break;
@@ -208,50 +222,53 @@ public class EnemyController : MonoBehaviour
     }
     void Teleport()
     {
-
-        if (player.GetComponent<KnightScript>().col == -1)
+        if (!coolDownTeleport)
         {
-            transform.position = player.transform.position + space;
-        }
-        else if (player.GetComponent<KnightScript>().col == 0)
-        {
-            transform.position = player.transform.position + space2;
-        }
-        else if (player.GetComponent<KnightScript>().col == 1)
-        {
-            transform.position = player.transform.position + space3;
-        }
-        else if (player.GetComponent<KnightScript>().col == 2)
-        {
-            transform.position = player.transform.position + space4;
-        }
-        else if (player.GetComponent<KnightScript>().col == 3)
-        {
-            transform.position = player.transform.position + space1;
-        }
-        else if (player.GetComponent<KnightScript>().col == 4)
-        {
-            transform.position = player.transform.position + space1;
-        }
-        else if (player.GetComponent<KnightScript>().col == 5)
-        {
-            transform.position = player.transform.position + space2;
-        }
-        else if (player.GetComponent<KnightScript>().col == 6)
-        {
-            transform.position = player.transform.position + space3;
-        }
-        else if (player.GetComponent<KnightScript>().col == 7)
-        {
-            transform.position = player.transform.position + space1;
-        }
-        else if (player.GetComponent<KnightScript>().col == 8)
-        {
-            transform.position = player.transform.position + space1;
-        }
-        else if (player.GetComponent<KnightScript>().col == 9)
-        {
-            transform.position = player.transform.position + space4;
+            StartCoroutine(CoolDownTP());
+            if (player.GetComponent<KnightScript>().col == -1)
+            {
+                transform.position = player.transform.position + space;
+            }
+            else if (player.GetComponent<KnightScript>().col == 0)
+            {
+                transform.position = player.transform.position + space2;
+            }
+            else if (player.GetComponent<KnightScript>().col == 1)
+            {
+                transform.position = player.transform.position + space3;
+            }
+            else if (player.GetComponent<KnightScript>().col == 2)
+            {
+                transform.position = player.transform.position + space4;
+            }
+            else if (player.GetComponent<KnightScript>().col == 3)
+            {
+                transform.position = player.transform.position + space1;
+            }
+            else if (player.GetComponent<KnightScript>().col == 4)
+            {
+                transform.position = player.transform.position + space1;
+            }
+            else if (player.GetComponent<KnightScript>().col == 5)
+            {
+                transform.position = player.transform.position + space2;
+            }
+            else if (player.GetComponent<KnightScript>().col == 6)
+            {
+                transform.position = player.transform.position + space3;
+            }
+            else if (player.GetComponent<KnightScript>().col == 7)
+            {
+                transform.position = player.transform.position + space1;
+            }
+            else if (player.GetComponent<KnightScript>().col == 8)
+            {
+                transform.position = player.transform.position + space1;
+            }
+            else if (player.GetComponent<KnightScript>().col == 9)
+            {
+                transform.position = player.transform.position + space4;
+            }
         }
 
 
@@ -260,7 +277,7 @@ public class EnemyController : MonoBehaviour
     {
         RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());
         Destroy(ghost);
-        
+
     }
     public void RecieveDamage(float damage)
     {
