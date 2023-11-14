@@ -265,7 +265,7 @@ Pluma de Grifo
 ![Pluma de Grifo][Pluma Grifo]
 
 Pluma de Fénix
-![PlumaD de Fénix][Pluma Fénix]
+![Pluma de Fénix][plumaFénix]
 
 Kero coin (moneda del juego)
 ![Daga lunar][DagaLunar]
@@ -651,6 +651,11 @@ https://docs.google.com/document/d/1l6Qfy3xQ0anlrgdIv_5JKlhzeY_67oTvJoi1X06fd6Q/
 
 [conceptPJ]: ImagesGDD/FINAL_CONCEPT.jpg
 [dagaSolar]: ImagesGDD/DagaSolar.png
+[dagaLunar]: ImagesGDD/DagaLunar.png
+[plumaFénix]: ImagesGDD/Pluma Fénix.png
+[dagaLunar]: ImagesGDD/DagaLunar.png
+[dagaLunar]: ImagesGDD/DagaLunar.png
+[dagaLunar]: ImagesGDD/DagaLunar.png
 [dagaLunar]: ImagesGDD/DagaLunar.png
 [mapaEmpatia]: ImagesGDD/Empatia.png
 [fantasma]: ImagesGDD/Fantasma.png
