@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class NPCBase : MonoBehaviour
 {
+    [SerializeField] GameObject shopUI;
     public GameObject dialoguePanel;
     public Text dialogueText;
     public string[] dialogue;
@@ -67,6 +68,11 @@ public class NPCBase : MonoBehaviour
         {
             zeroText();
         }
+    }
+    public void OpenShop()
+    {
+        shopUI.SetActive(true);
+        dialoguePanel.SetActive(false);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

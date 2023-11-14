@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
 public class Shop_UI : MonoBehaviour
@@ -12,7 +13,6 @@ public class Shop_UI : MonoBehaviour
     [Space(20)]
 
     [Header("UI elements")]
-    [SerializeField] GameObject ShopPanel;
     [SerializeField] Transform ShopMenu;
     [SerializeField] Transform ShopItemsContainer;
     [SerializeField] GameObject itemPrefab;
@@ -26,6 +26,7 @@ public class Shop_UI : MonoBehaviour
     [SerializeField] GameObject shopUI;
     [SerializeField] Button openShopButton;
     [SerializeField] Button closeShopButton;
+    [SerializeField] GameObject dialogUI;
 
 
 
@@ -74,27 +75,36 @@ public class Shop_UI : MonoBehaviour
             if(shop_Item.isPurchased)
             {
                 ui_item.SetItemAsPurchased();
-                ui_item.OnItemSelect ();
+                ui_item.OnItemSelect(i, OnItemSelected);
             }
             else
             {
-
+                ui_item.SetItemPrice(shop_Item.price);
+                ui_item.OnItemPurchased(i, OnItemPurchased);
             }
 
+            //ShopItemsContainer.GetComponent<RectTransform>().sizeDelta=
+            //    Vector2.up *(itemHeight+itemSpacing)* itemDB.ItemCount;
+            //Hay que expandir el bottom de content de objetos 86,66 unidades por cada objeto que se ñada a la tienda
         }
 
     }
     void CloseShop()
     {
         shopUI.SetActive(false);
+        dialogUI.SetActive(true);
     }
 
     void OpenShop()
     {
         shopUI.SetActive(true);
     }
-    void OnItemSelect(int index)
+    void OnItemSelected(int index)
     {
-        Debug.Log("Select " + index);
+        Debug.Log("Select" + index);
+    }
+    void OnItemPurchased(int index)
+    {
+        Debug.Log("Purchased" + index);
     }
 }

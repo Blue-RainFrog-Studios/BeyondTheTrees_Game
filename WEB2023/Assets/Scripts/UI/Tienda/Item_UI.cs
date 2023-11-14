@@ -10,17 +10,16 @@ public class Item_UI : MonoBehaviour
 {
     [SerializeField] Color itemNotSelectedColor;
     [SerializeField] Color itemSelectedColor;
-
     [Space(20f)]
 
-    [SerializeField] Sprite purchItemImage;
+    [SerializeField] Image purchItemImage;
     [SerializeField] TMP_Text purchItemName;
     [SerializeField] TMP_Text purchItemDescription;
     [SerializeField] TMP_Text purchItemPriceText;
     [SerializeField] Button purchItemPurchaseButton;
 
     [Space(20f)]
-    [SerializeField] Button itemButtton;
+    [SerializeField] Button itemButton;
     [SerializeField] Image itemImage;
     [SerializeField] Outline itemOutline;
         
@@ -29,9 +28,9 @@ public class Item_UI : MonoBehaviour
     {
         GetComponent<RectTransform>().anchoredPosition += Pos;
     }
-    public void SetItemImage(Sprite image)
+    public void SetItemImage(Sprite sprite)
     {
-        purchItemImage= image;
+        purchItemImage.sprite = sprite;
     }
     public void SetItemName(string name)
     {
@@ -50,7 +49,7 @@ public class Item_UI : MonoBehaviour
     public void SetItemAsPurchased()
     {
         purchItemPurchaseButton.gameObject.SetActive(false);
-        itemButtton.interactable= true;
+        itemButton.interactable= true;
 
         itemImage.color = itemNotSelectedColor;
     }
@@ -60,23 +59,25 @@ public class Item_UI : MonoBehaviour
         purchItemPurchaseButton.onClick.RemoveAllListeners();
         purchItemPurchaseButton.onClick.AddListener (()=> action.Invoke (ItemIndex));
     }
-    public void OnItemSelect(int ItemIndex, UnityAction<int> action)
+
+    public void OnItemSelect(int itemIndex, UnityAction<int> action)
     {
-        itemButtton.interactable = true;
-        itemButtton.onClick.RemoveAllListeners();
-        purchItemPurchaseButton.onClick.AddListener(()=> action.Invoke (ItemIndex));
+        itemButton.runInEditMode= true;
+        itemButton.onClick.RemoveAllListeners();
+        itemButton.onClick.AddListener(()=> action.Invoke (itemIndex));
     }
+
     public void SelectItem()
     {
         itemOutline.enabled= true;
         itemImage.color = itemSelectedColor;
-        itemButtton.interactable= false;
+        itemButton.interactable= false;
     }
 
     public void DeSelectItem()
     {
         itemOutline.enabled = false;
         itemImage.color = itemNotSelectedColor;
-        itemButtton.interactable = true;
+        itemButton.interactable = true;
     }
 }
