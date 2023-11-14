@@ -631,9 +631,12 @@ El concept art del personaje es una versión aún más simplificada que el bocet
 #### NPC Búho
 ![buho][Buho]
 #### Assets
-![puente][puente]
+![puente][puentes]
+
 ![arbusto][arbusto]
+
 ![hierbajo][hierbajo]
+
 ### Banda Sonora 
 La banda sonora busca ser algo que acompañe al jugador durante la partida, en ningún momento se buscará que la banda sonora tome protagonismo. Un ejemplo de banda sonora parecida al que se tiene pensado para el juego es la música de The binding of Isaac.
 https://www.youtube.com/watch?v=H9jqfH6Yp7w&list=OLAK5uy_nirxVnCtTeTtYMS9h1itNIK-cvZUufIhQ
