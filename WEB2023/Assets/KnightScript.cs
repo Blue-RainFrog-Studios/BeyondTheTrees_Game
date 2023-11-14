@@ -73,9 +73,9 @@ public class KnightScript : MonoBehaviour
         }
 
     }
-    public void MoneyDealer(float percentage)
+    public void MoneyDealer(float percentage, int quantity)
     {
-        this.GetComponent<CoinCounter>().TotalMoneyChanger(this.GetComponent<CoinCounter>().expeditionMoney, percentage);
+        this.GetComponent<CoinCounter>().TotalMoneyChanger(quantity, percentage);
         ResetMoneyCanvas();
     }
 
@@ -94,7 +94,7 @@ public class KnightScript : MonoBehaviour
         defense += v * inventoryItem.Defense;
         GetComponent<PlayerMovementInputSystem>().speed += v * inventoryItem.Speed;
         GetComponent<PlayerMovementInputSystem>().shoteRate -= v * inventoryItem.AttackSpeed;
-        GetComponent<CoinCounter>().ExpeditionMoneyChanger(v * (inventoryItem.Price * quantity));
+        GetComponent<CoinCounter>().ExpeditionMoneyChanger(v * (inventoryItem.Value * quantity));
     }
 
         private void OnTriggerStay2D(Collider2D collision)

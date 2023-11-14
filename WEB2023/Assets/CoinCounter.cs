@@ -39,14 +39,14 @@ public class CoinCounter : MonoBehaviour
     }
 
     //Dinero Total
-    private void UpdateTotalMoneyText()
+    public void UpdateTotalMoneyText()
     {
         totalMoneyTxt.text = $"{totalMoney}";
     }
 
     public void TotalMoneyChanger(int value, float percentage)
     {
-        totalMoney += (int)percentage * value;  //"percentage" es lo que conserva el jugador del total de dinero ganado
+        totalMoney += (int)(percentage * value);  //1 - "percentage" es lo que conserva el jugador del total de dinero ganado
         UpdateTotalMoneyText();
     }
 

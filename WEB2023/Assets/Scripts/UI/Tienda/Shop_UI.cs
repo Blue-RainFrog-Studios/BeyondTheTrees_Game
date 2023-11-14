@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
@@ -28,6 +29,11 @@ public class Shop_UI : MonoBehaviour
     [SerializeField] Button closeShopButton;
     [SerializeField] GameObject dialogUI;
 
+    [SerializeField]
+    private TextMeshProUGUI moneyText;
+
+    GameObject player;
+
 
 
     // Start is called before the first frame update
@@ -35,6 +41,7 @@ public class Shop_UI : MonoBehaviour
     {
         AddShopEvents();
         GenerateShopItems();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -93,11 +100,16 @@ public class Shop_UI : MonoBehaviour
     {
         shopUI.SetActive(false);
         dialogUI.SetActive(true);
+        /*player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponentInChildren<KnightScript>().lifeBar.gameObject.SetActive(true);  //Mostrar barra de vida*/
     }
 
     void OpenShop()
     {
         shopUI.SetActive(true);
+        /*player = GameObject.FindGameObjectWithTag("Player");
+        moneyText.text = player.GetComponent<CoinCounter>().totalMoney.ToString();
+        player.GetComponentInChildren<KnightScript>().lifeBar.gameObject.SetActive(false);  //Mostrar barra de vida*/
     }
     void OnItemSelected(int index)
     {
@@ -105,6 +117,15 @@ public class Shop_UI : MonoBehaviour
     }
     void OnItemPurchased(int index)
     {
-        Debug.Log("Purchased" + index);
+        if (player.GetComponent<CoinCounter>().totalMoney >= itemDB.GetItemToPool(index).price)
+        {
+            Debug.Log("Purchased" + index);
+            player.GetComponent<CoinCounter>().totalMoney -= itemDB.GetItemToPool(index).price;
+            player.GetComponent<CoinCounter>().UpdateTotalMoneyText();
+        }
+        else
+        {
+            Debug.Log("No tienes dinero suficiente");
+        }
     }
 }
