@@ -304,7 +304,7 @@ Pluma de Fénix
 
 Kero coin (moneda del juego)
 
-![Daga lunar][DagaLunar]
+![Kero Coin][keroCoin]
 
 ## DISEÑO
 ### Personaje
