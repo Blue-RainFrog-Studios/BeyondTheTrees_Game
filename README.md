@@ -652,11 +652,10 @@ https://docs.google.com/document/d/1l6Qfy3xQ0anlrgdIv_5JKlhzeY_67oTvJoi1X06fd6Q/
 [conceptPJ]: ImagesGDD/FINAL_CONCEPT.jpg
 [dagaSolar]: ImagesGDD/DagaSolar.png
 [dagaLunar]: ImagesGDD/DagaLunar.png
+[plumaDañada]: ImagesGDD/PlumaDañada.png
+[plumaBúho]: ImagesGDD/PlumaBúho.png
+[plumaGrifo]: ImagesGDD/PlumaGrifo.png
 [plumaFénix]: ImagesGDD/PlumaFénix.png
-[dagaLunar]: ImagesGDD/DagaLunar.png
-[dagaLunar]: ImagesGDD/DagaLunar.png
-[dagaLunar]: ImagesGDD/DagaLunar.png
-[dagaLunar]: ImagesGDD/DagaLunar.png
 [mapaEmpatia]: ImagesGDD/Empatia.png
 [fantasma]: ImagesGDD/Fantasma.png
 [murcielago]: ImagesGDD/Murcielago.png
