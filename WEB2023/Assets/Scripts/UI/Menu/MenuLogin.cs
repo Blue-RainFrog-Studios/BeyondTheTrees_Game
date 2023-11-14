@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,12 +9,17 @@ using UnityEngine.UI;
 public class MenuLogin : MonoBehaviour
 {
     private bool genero;
+    private int edad = 3;
+    public TMP_Text texto;
     [SerializeField] private Button maleButton;
     [SerializeField] private Button femaleButton;
-    private string nombreUsuario;
+    private string nombreUsuario = "Invitado";
     [SerializeField]
     private GameObject playerPrefab;
-
+    private void Awake()
+    {
+        texto.text = edad.ToString();
+    }
     public void volverMenuPrincipal()
     {
         //No usamos la escena
@@ -39,13 +45,42 @@ public class MenuLogin : MonoBehaviour
         //Se modifica cuando pulsamos cualquier cosa
         //El texto se modifica al utilizar la funcion de string dinamica
         //No hace falta coger el texto del inputField
-        nombreUsuario = s;
+        if (s != "")
+            nombreUsuario = s;
         Debug.Log("El nombre de usuario es: " + nombreUsuario);
     }
     public void empezarJuego()
     {
-        //SceneManager.LoadScene("Basement");
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        
         SceneManager.LoadScene("Campamento Base");
-        Instantiate(playerPrefab);  
+        if (player == null)
+        {
+            playerPrefab.GetComponent<Name>().nombre = nombreUsuario;
+            playerPrefab.GetComponent<Name>().sexo = genero;
+            playerPrefab.GetComponent<Name>().CambiarDatos();
+            Instantiate(playerPrefab);
+        }
+        else
+        {
+            player.GetComponent<Name>().nombre = nombreUsuario;
+            player.GetComponent<Name>().sexo = genero;
+            player.GetComponent<Name>().CambiarDatos();
+            player.transform.position = new Vector2(0, -4);
+            player.GetComponent<PlayerMovementInputSystem>().enabled = true;
+            player.GetComponentInChildren<Canvas>().enabled = true;
+        }
+    }
+    public void esDerecha()
+    {
+        edad++;
+        if (edad > 100) edad = 3;
+        Awake();
+    }
+    public void esIzquierda()
+    {
+        edad--;
+        if (edad < 3) edad = 3;
+        Awake();
     }
 }

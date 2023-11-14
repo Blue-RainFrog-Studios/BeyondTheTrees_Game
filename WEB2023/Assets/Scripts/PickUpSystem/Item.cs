@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Inventory.Model;
 using UnityEngine;
 
 public class Item : MonoBehaviour
 {
+
     [field: SerializeField]
     public ItemSO InventoryItem { get; private set; }
 
@@ -12,6 +14,8 @@ public class Item : MonoBehaviour
 
     [SerializeField]
     private AudioSource audioSource;
+    [SerializeField]
+    private AudioClip audioClip;
 
     [SerializeField]
     private float duration = 0.3f;
@@ -29,7 +33,7 @@ public class Item : MonoBehaviour
 
     private IEnumerator AnimateItemPickup()
     {
-        //audioSource.Play();
+        audioSource.PlayOneShot(audioClip);
         Vector2 startScale = transform.localScale;
         Vector2 endScale = Vector2.zero;
         float currentTime = 0;

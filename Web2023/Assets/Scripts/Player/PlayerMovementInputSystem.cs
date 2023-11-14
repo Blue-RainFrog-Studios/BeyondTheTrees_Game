@@ -7,13 +7,18 @@ using UnityEngine.SceneManagement;
 public class PlayerMovementInputSystem : MonoBehaviour
 {
     private Rigidbody2D player_rb;
-    [SerializeField] private float speed = 8.0f;
+    [SerializeField] public float speed = 8.0f;
     [SerializeField] private float smoothness = 0.3f;
     [SerializeField] private GameObject attack;
 
     //animacion personaje
     public Animator characterAnimator;
 
+    //audio source
+    [SerializeField] private AudioSource AttackSoundEffect1;
+    [SerializeField] private AudioSource AttackSoundEffect2;
+
+    [SerializeField] private AudioSource WalkSoundEffect;
 
     private Map playerInputActions;
     private Vector2 direction;
@@ -45,56 +50,36 @@ public class PlayerMovementInputSystem : MonoBehaviour
         //Actualiza las posiciones que le decimos mediante el input
         //Move
         direction = playerInputActions.Player.Move.ReadValue<Vector2>();
-
-
-        //if the input action recieved is "s"
-        if (direction.y < 0)
+        //if animation dont have attack tag
+        if (player_rb.velocity != Vector2.zero && !WalkSoundEffect.isPlaying)
         {
-            //set the animator to play the "walkRight" animation
+            WalkSoundEffect.Play();
+        } else if (player_rb.velocity == Vector2.zero)
+        {
+            WalkSoundEffect.Stop();
+        }
+        //make the walksoundeffect volume proportional to the player's velocity
+        WalkSoundEffect.volume = player_rb.velocity.magnitude / 10;
+
+        if (direction.y < 0 && !characterAnimator.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
+        {
             characterAnimator.Play("WalkFront");
         }
-        else if (direction.y > 0)
+        else if (direction.y > 0 && !characterAnimator.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
         {
-            //set the animator to play the "walkRight" animation
             characterAnimator.Play("WalkBack");
         }
-        else if (direction.x < 0)
+        else if (direction.x < 0 && !characterAnimator.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
         {
-            //set the animator to play the "WalkLeft" animation
             characterAnimator.Play("WalkLeft");
         }
-        else if (direction.x > 0)
+        else if (direction.x > 0 && !characterAnimator.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
         {
             //set the animator to play the "walkRight" animation
             characterAnimator.Play("WalkRight");
         }
-        else if (direction.x == 0 && direction.y == 0 && characterAnimator.GetCurrentAnimatorStateInfo(0).IsName("WalkRight") && player_rb.velocity.x < 0.3 && player_rb.velocity.y < 0.3)
-        {
-            //play the animation stopright
-            characterAnimator.Play("StopRight");
-
-        }
-        else if (direction.x == 0 && direction.y == 0 && characterAnimator.GetCurrentAnimatorStateInfo(0).IsName("WalkLeft") && player_rb.velocity.x < 0.3 && player_rb.velocity.y < 0.3)
-        {
-            //play the animation stopright
-            characterAnimator.Play("StopLeft");
-
-        }
-        else if (direction.x == 0 && direction.y == 0 && characterAnimator.GetCurrentAnimatorStateInfo(0).IsName("WalkFront") && player_rb.velocity.x < 0.3 && player_rb.velocity.y < 0.3)
-        {
-            //play the animation stopright
-            characterAnimator.Play("StopFront");
-
-        }
-        else if (direction.x == 0 && direction.y == 0 && characterAnimator.GetCurrentAnimatorStateInfo(0).IsName("WalkBack") && player_rb.velocity.x < 0.3 && player_rb.velocity.y < 0.3)
-        {
-            //play the animation stopright
-            characterAnimator.Play("StopBack");
-
-        }
-        //if the player is going right
-
     }
+
     private void FixedUpdate()
     {
         //Pintamos el movimiento del personaje con la interpolacion para que sea
@@ -113,23 +98,71 @@ public class PlayerMovementInputSystem : MonoBehaviour
     {
 
         //El disparo tiene Cooldown
-        if (Time.time > shotRateTime) 
+        if (Time.time > shotRateTime)
         {
             //Leemos la entrada del usuario
+            if (!this.enabled) return;
             attackDirection = playerInputActions.Player.Attack.ReadValue<Vector2>();
+
             //Redondeamos para los controles de moviles
             attackDirection.x = Mathf.Round(attackDirection.x);
             attackDirection.y = Mathf.Round(attackDirection.y);
+            //play audio source for attack
+            //get a random number between 1 and 2
+            int randomNum = Random.Range(1, 3);
+            if (randomNum == 1) { 
+                AttackSoundEffect1.Play();
+            }
+            else { 
+                AttackSoundEffect2.Play();
+            }
+
+
             //Solo dispara si se ha llevado el joystick suficientemente lejos
             if (attackDirection.magnitude == 1)
             {
-                if (this != null) { 
-                Instantiate(attack, transform.position, transform.rotation);
-                shotRateTime = Time.time + shoteRate;
-            }
+                if (this != null)
+                {
+                    Instantiate(attack, transform.position, transform.rotation);
+                    shotRateTime = Time.time + shoteRate;
+                }
+                if (attackDirection.y == -1)
+                {
+                    if (this != null)
+                    {
+                        characterAnimator.Play("AttackFront");
+                        shotRateTime = Time.time + shoteRate;
+                    }
+                }
+                if (attackDirection.y == 1)
+                {
+                    if (this != null)
+                    {
+                        characterAnimator.Play("AttackBack");
+                        shotRateTime = Time.time + shoteRate;
+                    }
+
+                }
+                if (attackDirection.x == -1)
+                {
+                    if (this != null)
+                    {
+                        characterAnimator.Play("AttackLeft");
+                        shotRateTime = Time.time + shoteRate;
+                    }
+
+                }
+                if (attackDirection.x == 1)
+                {
+                    if (this != null)
+                    {
+                        characterAnimator.Play("AttackRight");
+                        shotRateTime = Time.time + shoteRate;
+                    }
+
+                }
             }
 
         }
-
     }
 }

@@ -25,6 +25,8 @@ public class RoomController : MonoBehaviour
 
     Room currRom;
 
+    Room lastRoom;
+
     Queue<RoomInfo> loadRoomQueue = new Queue<RoomInfo>();
 
     public List<Room> loadedRooms = new List<Room>();
@@ -184,14 +186,17 @@ public class RoomController : MonoBehaviour
         string[] possibleRooms = new string[]
         {
             //"Empty",
-            "Basic1"
+            "Basic1",
+            
         };
         return possibleRooms[Random.Range(0,possibleRooms.Length)];
     }
     public void OnPlayerEnterRoom(Room room)
     {
         CameraController.instance.currRom= room;
+        lastRoom = currRom;
         currRom = room;
+
 
         //los enemigos se quden quietos cuando la camara no este en la sala
 
@@ -210,7 +215,7 @@ public class RoomController : MonoBehaviour
     {
         foreach (Room room in loadedRooms)
         {
-            if (currRom != room)
+            if (currRom != room && lastRoom!=room)
             {
                 EnemyController[] enemies = room.GetComponentsInChildren<EnemyController>();
                 if(enemies != null)
@@ -229,14 +234,23 @@ public class RoomController : MonoBehaviour
 
 
                 }
-                else
+                else 
                 {
                     foreach (Door door in room.GetComponentsInChildren<Door>())
                     {
                         door.doorCollider.SetActive(false);
                     }
                 }
+            }else if (lastRoom == room)
+            {
+
+                foreach (Door door in room.GetComponentsInChildren<Door>())
+                {
+
+                    door.doorCollider.SetActive(true);
+                }
             }
+
             else
             {
                 EnemyController[] enemies = room.GetComponentsInChildren<EnemyController>();

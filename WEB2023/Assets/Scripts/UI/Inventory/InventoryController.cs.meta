@@ -3,7 +3,11 @@ guid: a884b5308726cd444acecaaea91dd8b1
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - inventoryUI: {instanceID: 0}
+  - inventoryData: {instanceID: 0}
+  - dropClip: {fileID: 8300000, guid: 635799a1cc8d01141acbd6354c223692, type: 3}
+  - audioSource: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

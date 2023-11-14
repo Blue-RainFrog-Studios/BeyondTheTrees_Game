@@ -35,8 +35,7 @@ namespace Inventory.Model
                 {
                     while (quantity > 0 && !IsInventoryFull())
                     {
-                        quantity -= AddItemToFirstFreeSlot(item, 1);
-                        
+                        quantity -= AddItemToFirstFreeSlot(item, 1);   
                     }
                         InformAboutChange();
                         return quantity;
@@ -49,6 +48,7 @@ namespace Inventory.Model
 
         private int AddItemToFirstFreeSlot(ItemSO item, int quantity)
         {
+
             InventoryItem newItem = new InventoryItem
             {
                 item = item,
@@ -100,6 +100,21 @@ namespace Inventory.Model
                 AddItemToFirstFreeSlot(item, newQuantity);
             }
             return quantity;
+        }
+
+        public void RemoveItem(int itemIndex, int amount)
+        {
+            if (inventoryItems.Count > itemIndex)
+            {
+                if (inventoryItems[itemIndex].IsEmpty)
+                    return;
+                int reminder = inventoryItems[itemIndex].quantity - amount;
+                if (reminder <= 0)
+                    inventoryItems[itemIndex] = InventoryItem.GetEmptyItem();  //Si quedan 0 items tras consumir se pone un hueco
+                else
+                    inventoryItems[itemIndex] = inventoryItems[itemIndex].ChangeQuantity(reminder);  //Si no, se reduce la cantidad en "amount"
+                InformAboutChange();
+            }
         }
 
         public void AddItem(InventoryItem item)
