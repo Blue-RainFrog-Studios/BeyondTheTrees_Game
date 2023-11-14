@@ -414,16 +414,16 @@ Los niveles se dividen en 4 categorías: niveles de desafío, niveles de jefe, n
 
 - Ejemplo camino óptimo del jugador
 
-	    ![bn10][bn10]
+	 ![bn10][bn10]
 
 - Ejemplo camino que rompe la calavera
 
-	     ![bn16][bn16]
+	 ![bn16][bn16]
 
 - Efectos visuales de la calavera rompiéndose
 
-	     ![calavera][calavera]
-             ![bn11][bn11]
+	 ![calavera][calavera]
+         ![bn11][bn11]
 
    - Apaga el incendio: en este nivel el jugador se encontrará con una serie de fuegos ardiendo, estos fuegos tienen recompensas de interés debajo (oro y objetos). Para obtenerlos el jugador debe apagar lo más rápidamente los fuegos. Las recompensas de debajo de los fuegos tienen un color que el jugador puede ver, previamente se habrá enseñado al jugador que cada color de objeto significa una rareza. Las rarezas siempre tienen las mismas estadísticas por lo que el jugador siempre puede saber cual es la recompensa mayor. Para apagar un fuego el jugador deberá pegarlo tres veces. El jugador no podrá apagar todos los fuegos por lo que deberá escoger qué objeto es más valioso o más arriesgado coger. También habrá enemigos que el jugador deberá matar o esquivar. El nivel no se acabará hasta que todos los enemigos mueran. 
       - Objetivo: salvar los objetos y matar a los enemigos
@@ -445,20 +445,20 @@ Los niveles se dividen en 4 categorías: niveles de desafío, niveles de jefe, n
 
 - Ejemplo de camino óptimo: este camino es el que menos enemigos tiene, el que mejores estadísticas da y el que menos posibilidades tiene de que desaparezcan los objetos.
 
-            ![bn13][bn13]
+  ![bn13][bn13]
 
 - Ejemplo  de camino poco óptimo: en este camino hay más riesgo de que el objeto se queme, además hay más enemigos y las estadísticas de los objetos recibidos son menores a la del objeto anterior.
 
-            ![bn14][bn14]
+  ![bn14][bn14]
 
 - Ejemplo de camino poco óptimo: este camino es más seguro que el anterior pero la recompensa sigue siendo menor que la del primero.
 
-	    ![bn15][bn15]
+   ![bn15][bn15]
 
 
 - Ejemplo de cómo profundizar el nivel: una vez que el jugador se haya acostumbrado al nivel, el jugador será introducido a una nueva mecánica para dar complejidad a los niveles. Esta mecánica será conocida como las auras y estas aumentarán el daño de los objetos en función del color de las auras. Por ejemplo, en la imagen de abajo se puede observar que el objeto común tiene un aura, por lo que se tendrá que sumar el daño del aura al daño del objeto. Esto cambiará la forma óptima de pasarse un nivel previamente diseñado.
 
-	    ![bn16][bn16]
+   ![bn16][bn16]
 
 
 #### Referencias visuales
@@ -630,6 +630,10 @@ El concept art del personaje es una versión aún más simplificada que el bocet
 ![Kero, el héroe de Evergreen][conceptPJ]
 #### NPC Búho
 ![buho][Buho]
+#### Assets
+![puente][puente]
+![arbusto][arbusto]
+![hierbajo][hierbajo]
 ### Banda Sonora 
 La banda sonora busca ser algo que acompañe al jugador durante la partida, en ningún momento se buscará que la banda sonora tome protagonismo. Un ejemplo de banda sonora parecida al que se tiene pensado para el juego es la música de The binding of Isaac.
 https://www.youtube.com/watch?v=H9jqfH6Yp7w&list=OLAK5uy_nirxVnCtTeTtYMS9h1itNIK-cvZUufIhQ
