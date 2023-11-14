@@ -347,8 +347,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryUI: {fileID: 3878882401653987122}
   inventoryData: {fileID: 11400000, guid: 3d5e87fb3b39b8e4285030286a8a081f, type: 2}
-  dropClip: {fileID: 0}
-  audioSource: {fileID: 0}
+  dropClip: {fileID: 8300000, guid: 635799a1cc8d01141acbd6354c223692, type: 3}
+  audioSource: {fileID: 7633266851515481693}
   initialItems:
   - quantity: 2
     item: {fileID: 11400000, guid: 00dbc01952661994ba629d4666e447b5, type: 2}

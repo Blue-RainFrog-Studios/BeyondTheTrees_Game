@@ -12,6 +12,6 @@ public class GameOverMoney : MonoBehaviour
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         moneyText.text = $"HAS OBTENIDO {player.GetComponent<CoinCounter>().expeditionMoney} DE ORO";
-        player.GetComponent<KnightScript>().MoneyDealer();
+        player.GetComponent<KnightScript>().MoneyDealer(0.3f);  //El jugador conserva el 30% de lo que ha ganado si pierde
     }
 }

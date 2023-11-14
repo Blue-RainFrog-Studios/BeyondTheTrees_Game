@@ -1,4 +1,5 @@
 using Inventory;
+using Inventory.Model;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -12,7 +13,6 @@ public class KnightScript : MonoBehaviour
     [SerializeField]
     public Slider lifeBar;
 
-
     KnightScript knight;
     RoomController r;
 
@@ -22,22 +22,23 @@ public class KnightScript : MonoBehaviour
     public float speed { get; set; }
 
     public int attack { get; set; }
+    public int attackSpeed { get; set; }
     public int defense { get; set; }
 
-    public KnightScript() {
+    public KnightScript() 
+    {
         totalHealth = 50;
         health = 50;
         speed = 6;
         attack = 15;
         defense = 7;
+        attackSpeed = 3;
     }
-
-
 
     private void Awake()
     {
         r = FindObjectOfType<RoomController>();
-        knight = new();
+        knight = new KnightScript();
     }
 
     public void ReceiveAttack(int dmgValue)
@@ -52,10 +53,8 @@ public class KnightScript : MonoBehaviour
             knight.health = 50;
             lifeBar.value = knight.health;
             this.gameObject.transform.position = new Vector2(0, -4);
-            //this.GetComponentInParent<GameObject>().SetActive(false);
             GetComponent<PlayerMovementInputSystem>().enabled = false;
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            //GameObject.Find("CanvasInv").gameObject.transform.Find("Menu").gameObject.SetActive(false);
             GetComponentInChildren<Canvas>().enabled = false;
         }
     }
@@ -74,9 +73,9 @@ public class KnightScript : MonoBehaviour
         }
 
     }
-    public void MoneyDealer()
+    public void MoneyDealer(float percentage)
     {
-        this.GetComponent<CoinCounter>().TotalMoneyChanger(this.GetComponent<CoinCounter>().expeditionMoney);
+        this.GetComponent<CoinCounter>().TotalMoneyChanger(this.GetComponent<CoinCounter>().expeditionMoney, percentage);
         ResetMoneyCanvas();
     }
 
@@ -87,6 +86,15 @@ public class KnightScript : MonoBehaviour
         this.GetComponent<InventoryController>().EmptyInventory();
         this.GetComponent<CoinCounter>().ResetExpeditionMoney();
 
+    }
+
+    public void ModifyStats(int v, ItemSO inventoryItem, int quantity)
+    {
+        attack += v * inventoryItem.Attack;
+        defense += v * inventoryItem.Defense;
+        GetComponent<PlayerMovementInputSystem>().speed += v * inventoryItem.Speed;
+        GetComponent<PlayerMovementInputSystem>().shoteRate -= v * inventoryItem.AttackSpeed;
+        GetComponent<CoinCounter>().ExpeditionMoneyChanger(v * (inventoryItem.Price * quantity));
     }
 
         private void OnTriggerStay2D(Collider2D collision)

@@ -33,8 +33,6 @@ namespace Inventory
         {
             playerInputActions = new Map();
             playerInputActions.Enable();
-            //inventoryUI = GetComponentInChildren<UIInventoryPage>();
-            Debug.Log(inventoryUI);
             playerInputActions.Player.Inventory.performed += ShowInventory;
 
         }
@@ -68,7 +66,7 @@ namespace Inventory
         {
             inventoryData.Initialize();
             inventoryData.OnInventoryUpdated += UpdateInventoryUI;
-            /*foreach (InventoryItem item in initialItems)    PARA EMPEZAR SIN ITEMS
+            /*foreach (InventoryItem item in initialItems)     PARA EMPEZAR SIN ITEMS
             {
                 if (item.IsEmpty)
                     continue;
@@ -99,7 +97,7 @@ namespace Inventory
         private void HandleItemActionRequest(int itemIndex)  //Para consumir objetos
         {
             InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
-            if (inventoryItem.IsEmpty)  //Si la casilla está vacía volver
+            if (inventoryItem.IsEmpty)  //Si la casilla estï¿½ vacï¿½a volver
                 return;
             IItemAction itemAction = inventoryItem.item as IItemAction;
             if (itemAction != null)
@@ -124,18 +122,15 @@ namespace Inventory
         {
             inventoryData.RemoveItem(itemIndex, quantity);
             inventoryUI.ResetSelection();
-            player = GameObject.FindWithTag("Player").GetComponent<KnightScript>(); //Estadísticas PROPIO
-            player.attack -= inventoryItem.item.Attack;
-            player.defense -= inventoryItem.item.Defense;
-            player.GetComponent<PlayerMovementInputSystem>().speed -= inventoryItem.item.Speed;
-            player.GetComponent<CoinCounter>().ExpeditionMoneyChanger(-(inventoryItem.item.Price * quantity));
-            //audioSource.PlayOneShot(dropClip);
+            player = GameObject.FindWithTag("Player").GetComponent<KnightScript>(); //Estadï¿½sticas PROPIO
+            player.ModifyStats(-1, inventoryItem.item, quantity);
+            audioSource.PlayOneShot(dropClip);
         }
 
         public void PerformAction(int itemIndex)  //Para mostrar el action panel
         {
             InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
-            if (inventoryItem.IsEmpty)  //Si la casilla está vacía volver
+            if (inventoryItem.IsEmpty)  //Si la casilla estï¿½ vacï¿½a volver
                 return;
             IDestroyableItem destroyableItem = inventoryItem.item as IDestroyableItem;  //Para que si se consume un item se pueda reducir la cantidad
             if (destroyableItem != null)
@@ -146,7 +141,7 @@ namespace Inventory
             if (itemAction != null)
             {
                 itemAction.PerformAction(gameObject);
-                //audioSource.PlayOneShot(itemAction.actionSFX);
+                audioSource.PlayOneShot(itemAction.actionSFX);
                 if (inventoryData.GetItemAt(itemIndex).IsEmpty)
                     inventoryUI.ResetSelection();
             }
@@ -175,6 +170,11 @@ namespace Inventory
             }
             ItemSO item = inventoryItem.item;
             inventoryUI.UpdateDescription(itemIndex, item.ItemImage, item.name, item.Descrption);
+
+            if (Application.isMobilePlatform)
+            {
+                HandleItemActionRequest(itemIndex);
+            }
         }
 
         public void EmptyInventory()
