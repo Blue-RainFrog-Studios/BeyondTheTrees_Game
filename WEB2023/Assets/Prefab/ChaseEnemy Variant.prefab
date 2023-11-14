@@ -70,15 +70,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6628442988745050789, guid: f665b535ad4f5824c80d275df6f7c6cd, type: 3}
       propertyPath: life
-      value: 240
+      value: 350
       objectReference: {fileID: 0}
     - target: {fileID: 6628442988745050789, guid: f665b535ad4f5824c80d275df6f7c6cd, type: 3}
       propertyPath: range
-      value: 15
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6628442988745050789, guid: f665b535ad4f5824c80d275df6f7c6cd, type: 3}
       propertyPath: speed
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6628442988745050789, guid: f665b535ad4f5824c80d275df6f7c6cd, type: 3}
       propertyPath: damage

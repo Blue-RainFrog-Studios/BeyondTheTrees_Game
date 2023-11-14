@@ -49,7 +49,7 @@ public class EnemyController : MonoBehaviour
     public float bulletSpeed;
     private bool dead = false;
     private Vector3 randomDir;
-    private Vector3 space = new Vector3(1, 0, 0);
+    private Vector3 space = new Vector3(2, 0, 0);
     private Vector3 space1 = new Vector3(0, 2, 0);
     private Vector3 space2 = new Vector3(2, 0, 0);
     private Vector3 space3 = new Vector3(-2, 0, 0);

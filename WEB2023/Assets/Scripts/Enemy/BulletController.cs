@@ -21,6 +21,7 @@ public class BulletController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         currentPos= transform.position;
         transform.position = Vector2.MoveTowards(transform.position, playerPos, 5f * Time.deltaTime);
         if(currentPos==lastPos)

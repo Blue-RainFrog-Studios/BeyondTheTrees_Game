@@ -22,11 +22,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6807329344346774080, guid: b61eff804755ac34a8b2ded704f94d8b, type: 3}
       propertyPath: range
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6807329344346774080, guid: b61eff804755ac34a8b2ded704f94d8b, type: 3}
       propertyPath: speed
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 6807329344346774080, guid: b61eff804755ac34a8b2ded704f94d8b, type: 3}
       propertyPath: damage
@@ -38,7 +38,7 @@ PrefabInstance:
       objectReference: {fileID: -391864765268405954}
     - target: {fileID: 6807329344346774080, guid: b61eff804755ac34a8b2ded704f94d8b, type: 3}
       propertyPath: coolDown
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6807329344346774080, guid: b61eff804755ac34a8b2ded704f94d8b, type: 3}
       propertyPath: notInRoom
@@ -46,11 +46,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6807329344346774080, guid: b61eff804755ac34a8b2ded704f94d8b, type: 3}
       propertyPath: attackRange
-      value: 6
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6807329344346774080, guid: b61eff804755ac34a8b2ded704f94d8b, type: 3}
       propertyPath: bulletSpeed
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7386381207141798917, guid: b61eff804755ac34a8b2ded704f94d8b, type: 3}
       propertyPath: m_Color.b

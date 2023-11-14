@@ -188,9 +188,11 @@ MonoBehaviour:
   currState: 0
   enemyType: 0
   range: 15
+  rangeTeleport: 0
   attackRange: 1.5
   coolDown: 1
-  speed: 2
+  coolDownTp: 0
+  speed: 3
   life: 80
   bulletSpeed: 0
   animator: {fileID: 6938415437227796382}

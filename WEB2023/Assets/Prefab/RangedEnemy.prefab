@@ -105,12 +105,14 @@ MonoBehaviour:
   EnemyBullet: {fileID: 7118902396155586748, guid: cb6b95ca48fe6f24e88beb9c65cda3e2, type: 3}
   currState: 0
   enemyType: 1
-  range: 10
-  attackRange: 5
+  range: 15
+  rangeTeleport: 0
+  attackRange: 8
   coolDown: 1
+  coolDownTp: 0
   speed: 1
   life: 60
-  bulletSpeed: 5
+  bulletSpeed: 10
   animator: {fileID: 1330603882934896760}
   damage: 20
   notInRoom: 0
