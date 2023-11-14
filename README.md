@@ -244,16 +244,16 @@ Tarro con Libélula
 ![Daga lunar][DagaLunar]
 
 Capa Usada
-![Daga lunar][DagaLunar]
+![Capa Usada][capaUsada]
 
 Capa
-![Daga lunar][DagaLunar]
+![Capa][capa]
 
 Capa del Cazador
-![Daga lunar][DagaLunar]
+![Capa del Cazador][capaCazador]
 
 Capa del Viento
-![Daga lunar][DagaLunar]
+![Capa del Viento][capaViento]
 
 Pluma Dañada
 
