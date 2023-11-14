@@ -385,11 +385,14 @@ Una vez entendido el funcionamiento del nivel el jugador deberá hacer un camino
             - Bellotas: círculo
             - Pedestal: corazón
             - Camino jugador: morado
-
+![bn6][bn6]
 Mapa con camino óptimo: el camino está escogido para que los enemigos no se coman ninguna bellota
+
+![bn7][bn7]
 
 Mapa con camino fallido: para cuando el jugador llegue a la X morada el enemigo se habrá comido la bellota de abajo a la izquierda
 
+![bn8][bn8]
 
    - La calavera dorada: en el nivel se encontrará una calavera dorada tirada en algún lugar de la sala y un mayor número de enemigos que de costumbre. Cuando el jugador coja la calavera dorada todos los enemigos morirán. Por cada enemigo que mate la calavera (que no haya muerto antes de cogerla) se soltará una moneda. La primera vez que el jugador se encuentre con este nivel, no sabrá el funcionamiento de este por lo que se ha decidido que para que sea más fácil para el jugador descubrir sobre la calavera, se añadirán pistas visuales que lleven la atención a esta. Cuando el jugador mate a un enemigo, la calavera empezará a romperse (esto se representará con grietas y un sonido). Pasará lo mismo cuando el jugador mate a un segundo enemigo antes de coger la calavera. Finalmente, cuando el jugador mate a un tercer enemigo la calavera se romperá en pedazos. A partir de ese momento el jugador no podrá usar más la calavera.
       - Objetivo: coger la calavera lo antes posible, si el jugador mata a 3 enemigos la calavera se romperá por lo que el objetivo cambiará a matar a todos los enemigos.
@@ -405,12 +408,19 @@ Mapa con camino fallido: para cuando el jugador llegue a la X morada el enemigo 
             - Jugador: estrella
             - Camino jugador: morado
 
+![bn9][bn9]
+
 Ejemplo camino óptimo del jugador
+
+![bn10][bn10]
 
 Ejemplo camino que rompe la calavera
 
+![bn11][bn11]
+
 Efectos visuales de la calavera rompiéndose
 
+![calavera][calavera]
 
    - Apaga el incendio: en este nivel el jugador se encontrará con una serie de fuegos ardiendo, estos fuegos tienen recompensas de interés debajo (oro y objetos). Para obtenerlos el jugador debe apagar lo más rápidamente los fuegos. Las recompensas de debajo de los fuegos tienen un color que el jugador puede ver, previamente se habrá enseñado al jugador que cada color de objeto significa una rareza. Las rarezas siempre tienen las mismas estadísticas por lo que el jugador siempre puede saber cual es la recompensa mayor. Para apagar un fuego el jugador deberá pegarlo tres veces. El jugador no podrá apagar todos los fuegos por lo que deberá escoger qué objeto es más valioso o más arriesgado coger. También habrá enemigos que el jugador deberá matar o esquivar. El nivel no se acabará hasta que todos los enemigos mueran. 
       - Objetivo: salvar los objetos y matar a los enemigos
@@ -428,14 +438,24 @@ Efectos visuales de la calavera rompiéndose
             - Jugador: estrella
             - Camino escogido: morado
 
+![bn12][bn12]
+
 Ejemplo de camino óptimo: este camino es el que menos enemigos tiene, el que mejores estadísticas da y el que menos posibilidades tiene de que desaparezcan los objetos.
 
+![bn13][bn13]
 
 Ejemplo  de camino poco óptimo: en este camino hay más riesgo de que el objeto se queme, además hay más enemigos y las estadísticas de los objetos recibidos son menores a la del objeto anterior.
 
+![bn14][bn14]
+
 Ejemplo de camino poco óptimo: este camino es más seguro que el anterior pero la recompensa sigue siendo menor que la del primero.
 
+![bn15][bn15]
+
+
 Ejemplo de cómo profundizar el nivel: una vez que el jugador se haya acostumbrado al nivel, el jugador será introducido a una nueva mecánica para dar complejidad a los niveles. Esta mecánica será conocida como las auras y estas aumentarán el daño de los objetos en función del color de las auras. Por ejemplo, en la imagen de abajo se puede observar que el objeto común tiene un aura, por lo que se tendrá que sumar el daño del aura al daño del objeto. Esto cambiará la forma óptima de pasarse un nivel previamente diseñado.
+
+![bn16][bn16]
 
 
 #### Referencias visuales
@@ -745,8 +765,20 @@ https://docs.google.com/document/d/1l6Qfy3xQ0anlrgdIv_5JKlhzeY_67oTvJoi1X06fd6Q/
 [bn1]: ImagesGDD/BN1.png
 [bn2]: ImagesGDD/BN2.png
 [bn3]: ImagesGDD/BN3.png
-[bn4]: ImagesGDD/BN3.png
-[bn5]: ImagesGDD/BN3.png
+[bn4]: ImagesGDD/BN4.png
+[bn5]: ImagesGDD/BN5.png
+[bn6]: ImagesGDD/BN6.png
+[bn7]: ImagesGDD/BN7.png
+[bn8]: ImagesGDD/BN8.png
+[bn9]: ImagesGDD/BN9.png
+[bn10]: ImagesGDD/BN10.png
+[bn11]: ImagesGDD/BN11.png
+[bn12]: ImagesGDD/BN12.png
+[bn13]: ImagesGDD/BN13.png
+[bn14]: ImagesGDD/BN14.png
+[bn15]: ImagesGDD/BN15.png
+[bn16]: ImagesGDD/BN16.png
+[calavera]: ImagesGDD/Calavera.png
 [pili]: ImagesGDD/Pili.png
 [modelCanvas]: ImagesGDD/modelCanvas2Fina.png
 [toolBox]: ImagesGDD/toolbox.png
