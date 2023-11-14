@@ -660,6 +660,10 @@ https://docs.google.com/document/d/1l6Qfy3xQ0anlrgdIv_5JKlhzeY_67oTvJoi1X06fd6Q/
 [plumaBúho]: ImagesGDD/PlumaBúho.png
 [plumaGrifo]: ImagesGDD/PlumaGrifo.png
 [plumaFénix]: ImagesGDD/PlumaFénix.png
+[capaUsada]: ImagesGDD/CapaUsada.png
+[capa]: ImagesGDD/Capa.png
+[capaCazador]: ImagesGDD/CapaCazador.png
+[capaViento]: ImagesGDD/CapaViento.png
 [mapaEmpatia]: ImagesGDD/Empatia.png
 [fantasma]: ImagesGDD/Fantasma.png
 [murcielago]: ImagesGDD/Murcielago.png
