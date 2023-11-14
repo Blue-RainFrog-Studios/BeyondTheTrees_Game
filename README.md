@@ -533,6 +533,54 @@ El jugador podrá escoger al principio de la partida que tipo de clase querrá u
 #### Generación aleatoria
 El juego escoge aleatoriamente entre salas ya creadas, entre esas salas se encuentran las de tipo puzle, tipo tienda y tipo jefe. Por cada piso habrá una de jefe asegurada y mínimo una de los otros tipos.
 
+### Dinámicas
+#### Toma de decisiones estratégicas en el Inventario
+Los jugadores se enfrentan a decisiones tácticas al gestionar su inventario limitado. Deben equilibrar entre objetos de ataque, objetos curativos y otros elementos clave. La pérdida irreversible de objetos agrega un componente de riesgo a cada elección, fomentando la planificación cuidadosa por parte del jugador.
+#### Búsqueda y Valoración de objetos
+La búsqueda de objetos se convierte en una parte esencial del juego, ya que los jugadores buscan constantemente mejoras estadísticas y objetos raros. La dinámica se centra en la emoción de descubrir un objeto valioso y en la evaluación estratégica de cómo éstos afectarán su estilo de juego.
+#### Adaptación a la Clase Elegida
+Las dinámicas cambian según la clase seleccionada al inicio del juego. Cada clase ofrece un enfoque único en el combate, ya sea a distancia o cuerpo a cuerpo, y las estadísticas específicas de la clase afectan directamente el estilo de juego del jugador. La elección de la clase impacta en la estrategia y en cómo se enfrentan a los desafíos. Esto provoca rejugabilidad y frescura en cada partida. 
+#### Exploración de Salas Generadas Aleatoriamente
+La generación aleatoria de salas crea una experiencia diferente en cada partida. Los jugadores se enfrentan a la incertidumbre mientras exploran, sin conocer de antemano qué desafíos encontrarán. La presencia garantizada de salas de jefe y la posibilidad de encontrar salas de puzles o tiendas agregan variabilidad a la progresión del juego.
+#### Estrategias Puzle, Tienda y Jefe
+Las dinámicas varían en función del tipo de sala encontrada. Las salas de puzles desafían la mente del jugador, las salas de tienda ofrecen oportunidades estratégicas para mejorar el equipo y las salas de jefe requieren tácticas distintas a las utilizadas en las salas comunes de enemigos. Los jugadores deben adaptar sus estrategias a medida que enfrentan diferentes desafíos en cada tipo de sala.
+#### Progresión a lo Largo de los Pisos
+La dinámica del juego cambia a medida que los jugadores avanzan a través de los pisos, enfrentándose a enemigos más difíciles y adquiriendo recompensas más valiosas. La progresión está marcada por la acumulación de recursos y la toma de decisiones estratégicas que afectarán la dificultad y la recompensa en etapas posteriores del juego. Cuanto más avance el jugador más fuertes se volverán los enemigos por lo que la curva de dificultad avanzará progresivamente. Juntado con la generación aleatoria de salas, las clases y objetos dan una experiencia única en cada partida al jugador.
+
+### Estética I
+
+Estas son las siguientes estéticas principales en Beyond The Trees:
+
+#### Desafío
+El juego se caracteriza por el desafío que presenta a los jugadores, este desafío se presenta a través de puzzles que llevarán al jugador a pensar y valorar cual es el curso a seguir más óptimo para ellos.
+El desafío también se presenta a través de los bosses del juego los cuales van a provocar que el jugador deba cambiar en parte la estrategia que llevaba siguiendo hasta este momento.
+	
+#### Sumisión
+
+En el mundo del juego, la tarea de eliminar enemigos sala por sala se convierte en una sumisión intrínseca, una actividad que se realiza como un cautivador pasatiempo.
+
+El objetivo fundamental del juego es alcanzar los niveles finales, una hazaña que se presenta como un desafío considerable debido a la abundancia y complejidad de estos niveles. 
+
+Cada nivel presenta desafíos concretos que requieren la atención estratégica y táctica del jugador. La aplicación de conocimientos empíricos confiere a algunos jugadores una ventaja, marcando la diferencia entre la victoria y la derrota.
+Tomemos, por ejemplo, el desafío denominado "Apaga el incendio". Jugadores menos experimentados podrían verse abrumados al no tomar la mejor decisión al entrar. 
+
+En contraste, los jugadores más expertos podrán resolver esta sala con un simple vistazo, subrayando la importancia de la experiencia en el juego.
+La sumisión se ve profundamente influenciada por los ítems. El peso de las decisiones en torno a portar un ítem u otro puede tener consecuencias significativas, alterando la dinámica del juego y ofreciendo oportunidades estratégicas.
+
+#### Sensación
+Quizás, la estética de sensación es la menos predominante de las 3 principales pero sigue siendo muy importante. Al estar presente en todo momento el desafío (tener que derrotar a todos los enemigos para avanzar y no poder salir), sumado a la generación aleatoria de personajes, el juego te genera una sensación de intriga al no saber qué enemigos te enfrentarás en la siguiente sala y sobre todo, la sensación de estar en alerta cuando combates contra los adversarios. 
+
+### Estética II
+
+Las estéticas secundarias no son tan abundantes como las principales pero siguen estando presentes a lo largo de todo el videojuego:
+
+#### Descubrimiento
+A lo largo de una partida te suelen aparecer un conjunto de puzzles, pero no todos, según vas jugandolos te encontrarás con nuevos.
+
+Según el paso de niveles vas encontrándote con enemigos con propiedades y comportamientos distintos y los enemigos finales que son únicos por nivel.
+#### Coleccionismo
+En Beyond The Trees hay muchos objetos que no aparecen en la primera iteración del jugador con el videojuego. Tiene que volver a jugar y con el oro obtenido desbloquear nuevos ítems. En definitiva, hay que ganar y volver a jugar para poder desbloquear todos los objetos.
+
 ## CAMBIOS
 El documento de diseño se encuentra en la versión 1.1, este apartado servirá para comunicar los cambios hechos en futuras versiones.
 
