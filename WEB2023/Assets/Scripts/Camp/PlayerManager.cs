@@ -6,15 +6,24 @@ public class PlayerManager : MonoBehaviour
 {
     private GameObject player;
 
+    [SerializeField]
+    private GameObject pausePrefab;
+
+    GameObject pause;
+
     private void Awake()
     {
+        pause = GameObject.FindGameObjectWithTag("Pause");
         player = GameObject.FindGameObjectWithTag("Player");
+        if (pause == null)
+        {
+            Instantiate(pausePrefab);
+        }
     }
+
     private void Start()
     {
         player.GetComponent<PlayerMovementInputSystem>().enabled = true;
-        //player.GetComponentInChildren<Canvas>().gameObject.SetActive(true);
-        //GameObject.Find("CanvasInv").gameObject.transform.Find("Menu").gameObject.SetActive(true);
         player.GetComponentInChildren<Canvas>().enabled = true;
     }
 }

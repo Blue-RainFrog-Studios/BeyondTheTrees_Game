@@ -12,6 +12,7 @@ TagManager:
   - ColliderBot
   - ColliderLeft
   - ColliderRight
+  - Pause
   layers:
   - Default
   - TransparentFX
