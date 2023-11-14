@@ -90,9 +90,14 @@ Roguelike con mapa lineal y toques RPG (estadísticas y equipamiento)
 #### Estilo visual
 Se ha escogido un estilo “cartoon” desenfadado con trazo grueso, similar a juegos como Isaac o Brotato.
 
+![r1][r1]
+
 https://store.steampowered.com/app/113200/The_Binding_of_Isaac/
 https://store.steampowered.com/app/1942280/Brotato/
+
 Influencias estéticas de series como Más allá del Jardín u Hora de Aventuras para crear un mundo de fantasía no realista pero si reconocible.
+
+![r2][r2]
 
 https://www.filmaffinity.com/es/film896033.html
 https://en.wikipedia.org/wiki/Adventure_Time
@@ -495,6 +500,8 @@ Por ahora estos son de perseguir o huir. Iremos desarrollando estas IA a medida 
 - Ataque: Se teletransporta detrás del jugador y a los dos segundos ataca con un cuchillo, poco rango.
 - Debilidad: Entre un teletransporte y otro está indefenso.
 
+![f1][duende]
+
 *Duendecillo mago*
 - Vida: 5 (el valor va aumentando en 1 en base a la sala)
 - Tipo de movimiento: Busca alejarse del jugador.
@@ -597,6 +604,7 @@ Este carro es el que te encuentras en los niveles de tienda durante la expedici�
 #### Flujo de Pantallas
 El flujo de las pantallas que se van a describir a continuación es el siguiente:
 
+![f1][f1]
 
 #### Menú Principal
 La interfaz de usuario del menú principal será sencilla y minimalista. Estará compuesta de un fondo con el personaje inicial “Kero” el nombre del videojuego “Beyond the trees” con su correspondiente tipografía y un escenario con temática de bosque encantado, y tres botones, el botón de jugar, el de opciones y el de créditos.
@@ -626,6 +634,9 @@ Como primeros bocetos se tiene el del personaje en papel. La idea es crear algo 
 
 ### Arte conceptual
 El concept art del personaje es una versión aún más simplificada que el boceto inicial. Lo que se busca es que cualquiera pueda dibujar o reconocer al personaje principal. Esto está pensado para poder llegar al mayor público posible.
+
+![f1][b1]
+
 #### Turn-around personaje
 ![Kero, el héroe de Evergreen][conceptPJ]
 #### NPC Búho
@@ -792,3 +803,8 @@ https://docs.google.com/document/d/1l6Qfy3xQ0anlrgdIv_5JKlhzeY_67oTvJoi1X06fd6Q/
 [pili]: ImagesGDD/Pili.jpg
 [modelCanvas]: ImagesGDD/modelCanvas2Fina.png
 [toolBox]: ImagesGDD/toolbox.png
+[r1]: ImagesGDD/R1.png
+[r2]: ImagesGDD/R2.png
+[Duende]: ImagesGDD/Duende.png
+[b1]: ImagesGDD/B1.png
+[f1]: ImagesGDD/F1.png
