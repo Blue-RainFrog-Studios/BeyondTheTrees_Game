@@ -256,16 +256,16 @@ Capa del Viento
 ![Daga lunar][DagaLunar]
 
 Pluma Dañada
-![Daga lunar][DagaLunar]
+![Pluma Dañada][Pluma Dañada]
 
 Pluma de Búho
-![Daga lunar][DagaLunar]
+![Pluma de Búho][Pluma Búho]
 
 Pluma de Grifo
-![Daga lunar][DagaLunar]
+![Pluma de Grifo][Pluma Grifo]
 
 Pluma de Fénix
-![Daga lunar][DagaLunar]
+![PlumaD de Fénix][Pluma Fénix]
 
 Kero coin (moneda del juego)
 ![Daga lunar][DagaLunar]
