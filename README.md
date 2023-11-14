@@ -519,9 +519,19 @@ Para un futuro F2P con futuros dlcs de pago.
 ![Model Canvas][modelCanvas]
 
 
-###ToolBox
+### ToolBox
 ![Tool Boxr][toolBox]
 
+## ANÁLISIS MDA
+### Mecánicas
+#### Inventario
+El jugador deberá escoger bien los objetos que coge ya que cuenta con un número limitado de espacios para guardar objetos. Cuando el jugador tira un objeto este desaparece por lo que el jugador deberá tener mucho cuidado a la hora de escoger sus objetos ya que los cambios que haga serán irreversibles.
+#### Objetos
+Los objetos proporcionan mejoras estadísticas al jugador. Hay diferentes tipos de objetos y de diferentes rarezas que dan al jugador diferentes combinaciones para adecuarse a las necesidades de la partida.
+#### Clases
+El jugador podrá escoger al principio de la partida que tipo de clase querrá usar, cada clase cuenta con unas estadísticas diferentes y dos tipos de ataque, a distancia y cuerpo a cuerpo.
+#### Generación aleatoria
+El juego escoge aleatoriamente entre salas ya creadas, entre esas salas se encuentran las de tipo puzle, tipo tienda y tipo jefe. Por cada piso habrá una de jefe asegurada y mínimo una de los otros tipos.
 
 ## CAMBIOS
 El documento de diseño se encuentra en la versión 1.1, este apartado servirá para comunicar los cambios hechos en futuras versiones.
