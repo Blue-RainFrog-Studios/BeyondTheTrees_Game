@@ -170,6 +170,11 @@ namespace Inventory
             }
             ItemSO item = inventoryItem.item;
             inventoryUI.UpdateDescription(itemIndex, item.ItemImage, item.name, item.Descrption);
+
+            if (Application.isMobilePlatform)
+            {
+                HandleItemActionRequest(itemIndex);
+            }
         }
 
         public void EmptyInventory()
