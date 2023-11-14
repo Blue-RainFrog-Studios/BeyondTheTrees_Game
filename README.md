@@ -480,9 +480,18 @@ Por ahora estos son de perseguir o huir. Iremos desarrollando estas IA a medida 
 - Velocidad de movimiento: Igual a la del jugador
 - Ataque: Hace daño por contacto con el jugador, cada vez que te golpea uno el siguiente ataque de otro te hace más daño así infinitamente.
 - Debilidad: Poco resistentes (oneshot).
-- ![Concept Murcielago Fase 1][murcielago]
-- ![Concept Murcielago Fase 2][murcielago1]
-- ![Concept Murcielago Fase 3][murcielago2]
+- Murciélago Fase 1
+  
+  ![Concept Murcielago Fase 1][murcielago]
+
+- Murciélago Fase 2
+
+  ![Concept Murcielago Fase 2][murcielago1]
+  
+- Murciélago Fase 3
+  
+  ![Concept Murcielago Fase 3][murcielago2]
+  
 ### Jefes
 *David el gnomo*
 - Vida: 100 (aparece al final de la primera área)
