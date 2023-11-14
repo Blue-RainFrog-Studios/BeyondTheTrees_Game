@@ -208,49 +208,79 @@ A = Ataque, D=Defensa, VA=Velocidad de Ataque, VM=Velocidad de Movimiento, R=Rar
 | Capa del viento  | Una capa que aparece en antiguas leyendas, se dice que allá dónde esté el viento sopla a espaldas de tu portador. Se puede vender por mucho oro y te dará mucha velocidad de movimiento |  0 |  0 |  0 | 11 | Legendario | 30 |
 
 Daga Solar
+
 ![Daga solar][DagaSolar]
 
+
 Daga Lunar
+
 ![Daga lunar][DagaLunar]
 
+
 Daga Usada
+
 ![Daga Usada][dagaUsada]
 
+
 Daga Pulida
+
 ![Daga Pulida][dagaPulida]
 
+
 Escama Vieja
+
 ![Escama Vieja][escamaVieja]
 
+
 Escama 
+
 ![Escama][escama]
 
+
 Escama Pulida
+
 ![Escama Pulida][escamaPulida]
 
+
 Escama del Dragón
+
 ![Escama del Dragón][escamaDragón]
 
+
 Tarro con moscas
+
 ![Tarro con Moscas][moscas]
 
+
 Tarro con Abejas
+
 ![Tarro con Abejas][abejas]
 
+
 Tarro con Libélula
+
 ![Tarro con Libélula][libélula]
 
+
 Capa Usada
+
 ![Capa Usada][capaUsada]
 
+
 Capa
+
 ![Capa][capa]
 
+
 Capa del Cazador
+
 ![Capa del Cazador][capaCazador]
 
+
 Capa del Viento
+
 ![Capa del Viento][capaViento]
+
 
 Pluma Dañada
 
@@ -269,6 +299,7 @@ Pluma de Fénix
 ![Pluma de Fénix][plumaFénix]
 
 Kero coin (moneda del juego)
+
 ![Daga lunar][DagaLunar]
 
 ## DISEÑO
@@ -668,7 +699,7 @@ https://docs.google.com/document/d/1l6Qfy3xQ0anlrgdIv_5JKlhzeY_67oTvJoi1X06fd6Q/
 [escama]: ImagesGDD/Escama.png
 [escamaPulida]: ImagesGDD/EscamaPulida.png
 [escamaDragón]: ImagesGDD/EscamaDragón.png
-[moscas]: ImagesGDD/moscas.png
+[moscas]: ImagesGDD/Moscas.png
 [abejas]: ImagesGDD/Abejas.png
 [libélulas]: ImagesGDD/Libélulas.png
 [keroCoin]: ImagesGDD/KeroCoin.png
