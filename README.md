@@ -286,17 +286,21 @@ Pluma Dañada
 
 ![Pluma Dañada][plumaDañada]
 
+
 Pluma de Búho
 
 ![Pluma de Búho][plumaBúho]
+
 
 Pluma de Grifo
 
 ![Pluma de Grifo][plumaGrifo]
 
+
 Pluma de Fénix
 
 ![Pluma de Fénix][plumaFénix]
+
 
 Kero coin (moneda del juego)
 
@@ -695,13 +699,13 @@ https://docs.google.com/document/d/1l6Qfy3xQ0anlrgdIv_5JKlhzeY_67oTvJoi1X06fd6Q/
 [capa]: ImagesGDD/Capa.png
 [capaCazador]: ImagesGDD/CapaCazador.png
 [capaViento]: ImagesGDD/CapaViento.png
-[escamaDañada]: ImagesGDD/EscamaDañada.png
+[escamaVieja]: ImagesGDD/EscamaDañada.png
 [escama]: ImagesGDD/Escama.png
 [escamaPulida]: ImagesGDD/EscamaPulida.png
 [escamaDragón]: ImagesGDD/EscamaDragón.png
 [moscas]: ImagesGDD/Moscas.png
 [abejas]: ImagesGDD/Abejas.png
-[libélulas]: ImagesGDD/Libélulas.png
+[libélula]: ImagesGDD/Libélula.png
 [keroCoin]: ImagesGDD/KeroCoin.png
 
 [mapaEmpatia]: ImagesGDD/Empatia.png
