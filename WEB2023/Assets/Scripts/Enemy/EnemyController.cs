@@ -275,8 +275,13 @@ public class EnemyController : MonoBehaviour
     }
     public void Die()
     {
+        if (player.GetComponent<KnightScript>().king)
+        {
+            player.GetComponent<CoinCounter>().ExpeditionMoneyChanger(2);
+        }
         RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());
         Destroy(ghost);
+
 
     }
     public void RecieveDamage(float damage)

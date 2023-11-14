@@ -17,6 +17,8 @@ public class KnightScript : MonoBehaviour
     RoomController r;
 
     public int col = -1;
+    public bool king = false;
+    public bool bush = false;
     public int health { get; set; }
     public int totalHealth { get; set; }
     public float speed { get; set; }
@@ -58,6 +60,10 @@ public class KnightScript : MonoBehaviour
             //GameObject.Find("CanvasInv").gameObject.transform.Find("Menu").gameObject.SetActive(false);
             GetComponentInChildren<Canvas>().enabled = false;
         }
+    }
+    private void Update()
+    {
+        Debug.Log(king);
     }
 
     public void AddHealth(int val)
@@ -137,8 +143,30 @@ public class KnightScript : MonoBehaviour
                 col = -1;
             }
 
-    }
+        if (collision.CompareTag("ColliderBush"))
+        {
+            bush = true;
+        }
+        else
+        {
+            bush = false;
+        }
 
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("ColliderKing"))
+        {
+            king = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("ColliderKing"))
+        {
+            king = false;
+        }
+    }
 
 }
 

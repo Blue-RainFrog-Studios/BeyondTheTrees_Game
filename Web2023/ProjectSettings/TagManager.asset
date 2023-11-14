@@ -12,6 +12,8 @@ TagManager:
   - ColliderBot
   - ColliderLeft
   - ColliderRight
+  - ColliderBush
+  - ColliderKing
   layers:
   - Default
   - TransparentFX
