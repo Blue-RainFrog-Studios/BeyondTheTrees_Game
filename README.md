@@ -356,15 +356,15 @@ Los niveles se dividen en 4 categorías: niveles de desafío, niveles de jefe, n
 
          - Ejemplo segunda zona:
 
-![bn3][bn3]
+              ![bn3][bn3]
 
          - Ejemplo situación segunda zona: el jugador deberá defenderse de los enemigos que se le acerquen
 
-![bn4][bn4]
+	      ![bn4][bn4]
 
          - Ejemplo de cómo profundizar el nivel: A medida que el jugador vaya jugando partidas, el nivel se le hará más y más familiar. Para evitar eso se ha decidido implementar en un futuro una variación del nivel donde haya diferentes zonas a la vez. Cada zona tendrá un icono, este icono representará el tipo de objeto que soltará la zona (armadura, velocidad o daño). El jugador deberá decidir cuál es el objeto que le interesa más y ajustarse a él, fortaleciendo las destrezas de evaluación.
 
-![bn5][bn5]
+	      ![bn5][bn5]
 
    - Recoge las bellotas: en el nivel aparecerán un número de bellotas (entre 4-5 bellotas). El jugador deberá recoger las bellotas y dejarlas en un pedestal de piedra. Los enemigos podrán coger las bellotas y para recuperarlas deberás matarlos, una vez muertos las bellotas caen al suelo. Si el jugador no es suficientemente rápido en matar a los enemigos con bellotas dentro estos se comerán las bellotas, impidiendo que el jugador obtenga su recompensa. Si el jugador consigue poner las bellotas en el pedestal se le curará el 50% de la vida actual.
       - Objetivo: recoger las bellotas y dejarlas en el pedestal
@@ -373,7 +373,7 @@ Los niveles se dividen en 4 categorías: niveles de desafío, niveles de jefe, n
       - Diseño de audio: cuando los enemigos se estén comiendo las bellotas se escuchará un sonido de masticar. Cuando se hayan comido la bellota se escuchará un sonido de tragar para indicar al jugador que ya no puede obtener la recompensa. 
       - Pensamiento computacional: este nivel estará centrado en las destrezas de pensamiento algorítmico, abstracción y descomposición. El jugador deberá deducir el funcionamiento del nivel, para ello se le proporcionarán pistas visuales como marcas con forma de bellota en el pedestal que le indicarán al jugador cuantas bellotas le quedan por coger. El diseño del pedestal estará puesto para llevar al jugador a echar las bellotas en el.
 
-![pili][pili]
+		![pili][pili]
 
 Una vez entendido el funcionamiento del nivel el jugador deberá hacer un camino óptimo en poco tiempo y modificarlo en función del comportamiento de los enemigos. Para eso usará las herramientas de: reconocimiento de elementos clave en un problema de la abstracción, el jugador deberá entender en cada momento cual es la bellota en la que centrarse;  la creación de algoritmos o secuencias del pensamiento algorítmico, para la creación de un camino óptimo en el que los enemigos no se coman la bellota; la descomposición de problemas en otros más pequeños de la destreza de descomposición, el jugador deberá abstraerse del problema principal de conseguir poner las bellotas en el altar y centrarse en salvar la bellota más necesitada.
       - Mapas y ejemplos visuales:
@@ -385,14 +385,14 @@ Una vez entendido el funcionamiento del nivel el jugador deberá hacer un camino
             - Bellotas: círculo
             - Pedestal: corazón
             - Camino jugador: morado
-![bn6][bn6]
+		![bn6][bn6]
 Mapa con camino óptimo: el camino está escogido para que los enemigos no se coman ninguna bellota
 
-![bn7][bn7]
-
+		![bn7][bn7]
+		
 Mapa con camino fallido: para cuando el jugador llegue a la X morada el enemigo se habrá comido la bellota de abajo a la izquierda
 
-![bn8][bn8]
+		![bn8][bn8]
 
    - La calavera dorada: en el nivel se encontrará una calavera dorada tirada en algún lugar de la sala y un mayor número de enemigos que de costumbre. Cuando el jugador coja la calavera dorada todos los enemigos morirán. Por cada enemigo que mate la calavera (que no haya muerto antes de cogerla) se soltará una moneda. La primera vez que el jugador se encuentre con este nivel, no sabrá el funcionamiento de este por lo que se ha decidido que para que sea más fácil para el jugador descubrir sobre la calavera, se añadirán pistas visuales que lleven la atención a esta. Cuando el jugador mate a un enemigo, la calavera empezará a romperse (esto se representará con grietas y un sonido). Pasará lo mismo cuando el jugador mate a un segundo enemigo antes de coger la calavera. Finalmente, cuando el jugador mate a un tercer enemigo la calavera se romperá en pedazos. A partir de ese momento el jugador no podrá usar más la calavera.
       - Objetivo: coger la calavera lo antes posible, si el jugador mata a 3 enemigos la calavera se romperá por lo que el objetivo cambiará a matar a todos los enemigos.
@@ -408,19 +408,19 @@ Mapa con camino fallido: para cuando el jugador llegue a la X morada el enemigo 
             - Jugador: estrella
             - Camino jugador: morado
 
-![bn9][bn9]
+		![bn9][bn9]
 
-Ejemplo camino óptimo del jugador
+- Ejemplo camino óptimo del jugador
 
-![bn10][bn10]
+		![bn10][bn10]
 
-Ejemplo camino que rompe la calavera
+- Ejemplo camino que rompe la calavera
 
-![bn11][bn11]
+		![bn11][bn11]
 
-Efectos visuales de la calavera rompiéndose
+- Efectos visuales de la calavera rompiéndose
 
-![calavera][calavera]
+		![calavera][calavera]
 
    - Apaga el incendio: en este nivel el jugador se encontrará con una serie de fuegos ardiendo, estos fuegos tienen recompensas de interés debajo (oro y objetos). Para obtenerlos el jugador debe apagar lo más rápidamente los fuegos. Las recompensas de debajo de los fuegos tienen un color que el jugador puede ver, previamente se habrá enseñado al jugador que cada color de objeto significa una rareza. Las rarezas siempre tienen las mismas estadísticas por lo que el jugador siempre puede saber cual es la recompensa mayor. Para apagar un fuego el jugador deberá pegarlo tres veces. El jugador no podrá apagar todos los fuegos por lo que deberá escoger qué objeto es más valioso o más arriesgado coger. También habrá enemigos que el jugador deberá matar o esquivar. El nivel no se acabará hasta que todos los enemigos mueran. 
       - Objetivo: salvar los objetos y matar a los enemigos
@@ -438,24 +438,24 @@ Efectos visuales de la calavera rompiéndose
             - Jugador: estrella
             - Camino escogido: morado
 
-![bn12][bn12]
+		![bn12][bn12]
 
-Ejemplo de camino óptimo: este camino es el que menos enemigos tiene, el que mejores estadísticas da y el que menos posibilidades tiene de que desaparezcan los objetos.
+- Ejemplo de camino óptimo: este camino es el que menos enemigos tiene, el que mejores estadísticas da y el que menos posibilidades tiene de que desaparezcan los objetos.
 
-![bn13][bn13]
+		![bn13][bn13]
 
-Ejemplo  de camino poco óptimo: en este camino hay más riesgo de que el objeto se queme, además hay más enemigos y las estadísticas de los objetos recibidos son menores a la del objeto anterior.
+- Ejemplo  de camino poco óptimo: en este camino hay más riesgo de que el objeto se queme, además hay más enemigos y las estadísticas de los objetos recibidos son menores a la del objeto anterior.
 
-![bn14][bn14]
+		![bn14][bn14]
 
-Ejemplo de camino poco óptimo: este camino es más seguro que el anterior pero la recompensa sigue siendo menor que la del primero.
+- Ejemplo de camino poco óptimo: este camino es más seguro que el anterior pero la recompensa sigue siendo menor que la del primero.
 
-![bn15][bn15]
+		![bn15][bn15]
 
 
-Ejemplo de cómo profundizar el nivel: una vez que el jugador se haya acostumbrado al nivel, el jugador será introducido a una nueva mecánica para dar complejidad a los niveles. Esta mecánica será conocida como las auras y estas aumentarán el daño de los objetos en función del color de las auras. Por ejemplo, en la imagen de abajo se puede observar que el objeto común tiene un aura, por lo que se tendrá que sumar el daño del aura al daño del objeto. Esto cambiará la forma óptima de pasarse un nivel previamente diseñado.
+- Ejemplo de cómo profundizar el nivel: una vez que el jugador se haya acostumbrado al nivel, el jugador será introducido a una nueva mecánica para dar complejidad a los niveles. Esta mecánica será conocida como las auras y estas aumentarán el daño de los objetos en función del color de las auras. Por ejemplo, en la imagen de abajo se puede observar que el objeto común tiene un aura, por lo que se tendrá que sumar el daño del aura al daño del objeto. Esto cambiará la forma óptima de pasarse un nivel previamente diseñado.
 
-![bn16][bn16]
+		![bn16][bn16]
 
 
 #### Referencias visuales
