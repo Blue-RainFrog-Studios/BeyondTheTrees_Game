@@ -385,15 +385,16 @@ Una vez entendido el funcionamiento del nivel el jugador deberá hacer un camino
             - Bellotas: círculo
             - Pedestal: corazón
             - Camino jugador: morado
+	    
 	    ![bn6][bn6]
      
 - Mapa con camino óptimo: el camino está escogido para que los enemigos no se coman ninguna bellota
 
-	    ![bn7][bn7]
+	     ![bn7][bn7]
 		
 - Mapa con camino fallido: para cuando el jugador llegue a la X morada el enemigo se habrá comido la bellota de abajo a la izquierda
 
-	    ![bn8][bn8]
+	     ![bn8][bn8]
 
    - La calavera dorada: en el nivel se encontrará una calavera dorada tirada en algún lugar de la sala y un mayor número de enemigos que de costumbre. Cuando el jugador coja la calavera dorada todos los enemigos morirán. Por cada enemigo que mate la calavera (que no haya muerto antes de cogerla) se soltará una moneda. La primera vez que el jugador se encuentre con este nivel, no sabrá el funcionamiento de este por lo que se ha decidido que para que sea más fácil para el jugador descubrir sobre la calavera, se añadirán pistas visuales que lleven la atención a esta. Cuando el jugador mate a un enemigo, la calavera empezará a romperse (esto se representará con grietas y un sonido). Pasará lo mismo cuando el jugador mate a un segundo enemigo antes de coger la calavera. Finalmente, cuando el jugador mate a un tercer enemigo la calavera se romperá en pedazos. A partir de ese momento el jugador no podrá usar más la calavera.
       - Objetivo: coger la calavera lo antes posible, si el jugador mata a 3 enemigos la calavera se romperá por lo que el objetivo cambiará a matar a todos los enemigos.
