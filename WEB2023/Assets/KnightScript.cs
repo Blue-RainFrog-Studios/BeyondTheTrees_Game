@@ -143,14 +143,7 @@ public class KnightScript : MonoBehaviour
                 col = -1;
             }
 
-        if (collision.CompareTag("ColliderBush"))
-        {
-            bush = true;
-        }
-        else
-        {
-            bush = false;
-        }
+       
 
     }
     private void OnTriggerEnter2D(Collider2D collision)

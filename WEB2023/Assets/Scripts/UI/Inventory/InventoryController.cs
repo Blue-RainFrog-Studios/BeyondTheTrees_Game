@@ -131,6 +131,7 @@ namespace Inventory
             player.GetComponent<CoinCounter>().ExpeditionMoneyChanger(-(inventoryItem.item.Price * quantity));
             //audioSource.PlayOneShot(dropClip);
         }
+        
 
         public void PerformAction(int itemIndex)  //Para mostrar el action panel
         {
