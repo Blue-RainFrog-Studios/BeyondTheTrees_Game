@@ -214,34 +214,31 @@ Daga Lunar
 ![Daga lunar][DagaLunar]
 
 Daga Usada
-![Daga lunar][DagaLunar]
+![Daga Usada][dagaUsada]
 
 Daga Pulida
-![Daga lunar][DagaLunar]
+![Daga Pulida][dagaPulida]
 
 Escama Vieja
-![Daga lunar][DagaLunar]
+![Escama Vieja][escamaVieja]
 
 Escama 
-![Daga lunar][DagaLunar]
+![Escama][escama]
 
 Escama Pulida
-![Daga lunar][DagaLunar]
-
-Escama Pulida
-![Daga lunar][DagaLunar]
+![Escama Pulida][escamaPulida]
 
 Escama del Dragón
-![Daga lunar][DagaLunar]
+![Escama del Dragón][escamaDragón]
 
 Tarro con moscas
-![Daga lunar][DagaLunar]
+![Tarro con Moscas][moscas]
 
 Tarro con Abejas
-![Daga lunar][DagaLunar]
+![Tarro con Abejas][abejas]
 
 Tarro con Libélula
-![Daga lunar][DagaLunar]
+![Tarro con Libélula][libélula]
 
 Capa Usada
 ![Capa Usada][capaUsada]
@@ -654,8 +651,11 @@ Se ha añadido el análisis MDA del videojuego.
 https://docs.google.com/document/d/1l6Qfy3xQ0anlrgdIv_5JKlhzeY_67oTvJoi1X06fd6Q/edit?usp=sharing
 
 [conceptPJ]: ImagesGDD/FINAL_CONCEPT.jpg
+
 [dagaSolar]: ImagesGDD/DagaSolar.png
 [dagaLunar]: ImagesGDD/DagaLunar.png
+[dagaUsada]: ImagesGDD/DagaUsada.png
+[dagaPulida]: ImagesGDD/DagaPulida.png
 [plumaDañada]: ImagesGDD/PlumaDañada.png
 [plumaBúho]: ImagesGDD/PlumaBúho.png
 [plumaGrifo]: ImagesGDD/PlumaGrifo.png
@@ -664,6 +664,15 @@ https://docs.google.com/document/d/1l6Qfy3xQ0anlrgdIv_5JKlhzeY_67oTvJoi1X06fd6Q/
 [capa]: ImagesGDD/Capa.png
 [capaCazador]: ImagesGDD/CapaCazador.png
 [capaViento]: ImagesGDD/CapaViento.png
+[escamaDañada]: ImagesGDD/EscamaDañada.png
+[escama]: ImagesGDD/Escama.png
+[escamaPulida]: ImagesGDD/EscamaPulida.png
+[escamaDragón]: ImagesGDD/EscamaDragón.png
+[moscas]: ImagesGDD/moscas.png
+[abejas]: ImagesGDD/Abejas.png
+[libélulas]: ImagesGDD/Libélulas.png
+[keroCoin]: ImagesGDD/KeroCoin.png
+
 [mapaEmpatia]: ImagesGDD/Empatia.png
 [fantasma]: ImagesGDD/Fantasma.png
 [murcielago]: ImagesGDD/Murcielago.png
