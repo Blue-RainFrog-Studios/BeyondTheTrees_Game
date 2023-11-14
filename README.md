@@ -348,11 +348,11 @@ Los niveles se dividen en 4 categorías: niveles de desafío, niveles de jefe, n
             - Zona destacada: círculo
             - Camino jugador: morado
               
-	![bn1][bn1]
+	      ![bn1][bn1]
 
          - Ejemplo primera zona:
            
-![bn2][bn2]
+	      ![bn2][bn2]
 
          - Ejemplo segunda zona:
 
