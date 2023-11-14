@@ -213,6 +213,63 @@ Daga Solar
 Daga Lunar
 ![Daga lunar][DagaLunar]
 
+Daga Usada
+![Daga lunar][DagaLunar]
+
+Daga Pulida
+![Daga lunar][DagaLunar]
+
+Escama Vieja
+![Daga lunar][DagaLunar]
+
+Escama 
+![Daga lunar][DagaLunar]
+
+Escama Pulida
+![Daga lunar][DagaLunar]
+
+Escama Pulida
+![Daga lunar][DagaLunar]
+
+Escama del Dragón
+![Daga lunar][DagaLunar]
+
+Tarro con moscas
+![Daga lunar][DagaLunar]
+
+Tarro con Abejas
+![Daga lunar][DagaLunar]
+
+Tarro con Libélula
+![Daga lunar][DagaLunar]
+
+Capa Usada
+![Daga lunar][DagaLunar]
+
+Capa
+![Daga lunar][DagaLunar]
+
+Capa del Cazador
+![Daga lunar][DagaLunar]
+
+Capa del Viento
+![Daga lunar][DagaLunar]
+
+Pluma Dañada
+![Daga lunar][DagaLunar]
+
+Pluma de Búho
+![Daga lunar][DagaLunar]
+
+Pluma de Grifo
+![Daga lunar][DagaLunar]
+
+Pluma de Fénix
+![Daga lunar][DagaLunar]
+
+Kero coin (moneda del juego)
+![Daga lunar][DagaLunar]
+
 ## DISEÑO
 ### Personaje
 Kero es el protagonista.
@@ -583,6 +640,9 @@ En Beyond The Trees hay muchos objetos que no aparecen en la primera iteración 
 
 ## CAMBIOS
 El documento de diseño se encuentra en la versión 1.1, este apartado servirá para comunicar los cambios hechos en futuras versiones.
+
+Items:
+Se han cambiado las pociones por insectos dado que el personaje principal es una mosca. Se han añadido las imágenes de los items que faltaban de la tabla del apartado items:
 
 Se ha añadido el análisis MDA del videojuego.
 
