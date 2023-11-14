@@ -265,7 +265,7 @@ Pluma de Grifo
 ![Pluma de Grifo][Pluma Grifo]
 
 Pluma de Fénix
-![[PlumaFénix][PlumaFénix]
+![Pluma de Fénix][plumaFénix]
 
 Kero coin (moneda del juego)
 ![Daga lunar][DagaLunar]
