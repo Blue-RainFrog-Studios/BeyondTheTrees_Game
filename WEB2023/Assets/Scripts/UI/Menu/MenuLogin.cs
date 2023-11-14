@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,13 +9,17 @@ using UnityEngine.UI;
 public class MenuLogin : MonoBehaviour
 {
     private bool genero;
-    private int edad;
+    private int edad = 3;
+    public TMP_Text texto;
     [SerializeField] private Button maleButton;
     [SerializeField] private Button femaleButton;
     private string nombreUsuario = "Invitado";
     [SerializeField]
     private GameObject playerPrefab;
-
+    private void Awake()
+    {
+        texto.text = edad.ToString();
+    }
     public void volverMenuPrincipal()
     {
         //No usamos la escena
@@ -65,5 +70,17 @@ public class MenuLogin : MonoBehaviour
             player.GetComponent<PlayerMovementInputSystem>().enabled = true;
             player.GetComponentInChildren<Canvas>().enabled = true;
         }
+    }
+    public void esDerecha()
+    {
+        edad++;
+        if (edad > 100) edad = 3;
+        Awake();
+    }
+    public void esIzquierda()
+    {
+        edad--;
+        if (edad < 3) edad = 3;
+        Awake();
     }
 }
