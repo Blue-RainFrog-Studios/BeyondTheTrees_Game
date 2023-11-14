@@ -386,11 +386,12 @@ Una vez entendido el funcionamiento del nivel el jugador deberá hacer un camino
             - Pedestal: corazón
             - Camino jugador: morado
 	    ![bn6][bn6]
-Mapa con camino óptimo: el camino está escogido para que los enemigos no se coman ninguna bellota
+     
+- Mapa con camino óptimo: el camino está escogido para que los enemigos no se coman ninguna bellota
 
 	    ![bn7][bn7]
 		
-Mapa con camino fallido: para cuando el jugador llegue a la X morada el enemigo se habrá comido la bellota de abajo a la izquierda
+- Mapa con camino fallido: para cuando el jugador llegue a la X morada el enemigo se habrá comido la bellota de abajo a la izquierda
 
 	    ![bn8][bn8]
 
