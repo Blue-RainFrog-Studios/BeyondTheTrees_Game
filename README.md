@@ -652,7 +652,7 @@ https://docs.google.com/document/d/1l6Qfy3xQ0anlrgdIv_5JKlhzeY_67oTvJoi1X06fd6Q/
 [conceptPJ]: ImagesGDD/FINAL_CONCEPT.jpg
 [dagaSolar]: ImagesGDD/DagaSolar.png
 [dagaLunar]: ImagesGDD/DagaLunar.png
-[plumaFénix]: ImagesGDD/PlumaFénix.png
+[plumaFénix]: ImagesGDD/Pluma_Fénix.png
 [dagaLunar]: ImagesGDD/DagaLunar.png
 [dagaLunar]: ImagesGDD/DagaLunar.png
 [dagaLunar]: ImagesGDD/DagaLunar.png
