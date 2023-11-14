@@ -347,14 +347,24 @@ Los niveles se dividen en 4 categorías: niveles de desafío, niveles de jefe, n
             - Jugador: estrella
             - Zona destacada: círculo
             - Camino jugador: morado
+              
+![bn1][bn1]
 
          - Ejemplo primera zona:
+           
+![bn2][bn2]
 
          - Ejemplo segunda zona:
 
+![bn3][bn3]
+
          - Ejemplo situación segunda zona: el jugador deberá defenderse de los enemigos que se le acerquen
 
+![bn4][bn4]
+
          - Ejemplo de cómo profundizar el nivel: A medida que el jugador vaya jugando partidas, el nivel se le hará más y más familiar. Para evitar eso se ha decidido implementar en un futuro una variación del nivel donde haya diferentes zonas a la vez. Cada zona tendrá un icono, este icono representará el tipo de objeto que soltará la zona (armadura, velocidad o daño). El jugador deberá decidir cuál es el objeto que le interesa más y ajustarse a él, fortaleciendo las destrezas de evaluación.
+
+![bn5][bn5]
 
    - Recoge las bellotas: en el nivel aparecerán un número de bellotas (entre 4-5 bellotas). El jugador deberá recoger las bellotas y dejarlas en un pedestal de piedra. Los enemigos podrán coger las bellotas y para recuperarlas deberás matarlos, una vez muertos las bellotas caen al suelo. Si el jugador no es suficientemente rápido en matar a los enemigos con bellotas dentro estos se comerán las bellotas, impidiendo que el jugador obtenga su recompensa. Si el jugador consigue poner las bellotas en el pedestal se le curará el 50% de la vida actual.
       - Objetivo: recoger las bellotas y dejarlas en el pedestal
@@ -362,6 +372,8 @@ Los niveles se dividen en 4 categorías: niveles de desafío, niveles de jefe, n
       - Enemigos: ardillas, duendes y duendes mágicos
       - Diseño de audio: cuando los enemigos se estén comiendo las bellotas se escuchará un sonido de masticar. Cuando se hayan comido la bellota se escuchará un sonido de tragar para indicar al jugador que ya no puede obtener la recompensa. 
       - Pensamiento computacional: este nivel estará centrado en las destrezas de pensamiento algorítmico, abstracción y descomposición. El jugador deberá deducir el funcionamiento del nivel, para ello se le proporcionarán pistas visuales como marcas con forma de bellota en el pedestal que le indicarán al jugador cuantas bellotas le quedan por coger. El diseño del pedestal estará puesto para llevar al jugador a echar las bellotas en el.
+
+![pili][pili]
 
 Una vez entendido el funcionamiento del nivel el jugador deberá hacer un camino óptimo en poco tiempo y modificarlo en función del comportamiento de los enemigos. Para eso usará las herramientas de: reconocimiento de elementos clave en un problema de la abstracción, el jugador deberá entender en cada momento cual es la bellota en la que centrarse;  la creación de algoritmos o secuencias del pensamiento algorítmico, para la creación de un camino óptimo en el que los enemigos no se coman la bellota; la descomposición de problemas en otros más pequeños de la destreza de descomposición, el jugador deberá abstraerse del problema principal de conseguir poner las bellotas en el altar y centrarse en salvar la bellota más necesitada.
       - Mapas y ejemplos visuales:
@@ -593,6 +605,8 @@ Como primeros bocetos se tiene el del personaje en papel. La idea es crear algo 
 El concept art del personaje es una versión aún más simplificada que el boceto inicial. Lo que se busca es que cualquiera pueda dibujar o reconocer al personaje principal. Esto está pensado para poder llegar al mayor público posible.
 #### Turn-around personaje
 ![Kero, el héroe de Evergreen][conceptPJ]
+#### NPC Búho
+![buho][Buho]
 ### Banda Sonora 
 La banda sonora busca ser algo que acompañe al jugador durante la partida, en ningún momento se buscará que la banda sonora tome protagonismo. Un ejemplo de banda sonora parecida al que se tiene pensado para el juego es la música de The binding of Isaac.
 https://www.youtube.com/watch?v=H9jqfH6Yp7w&list=OLAK5uy_nirxVnCtTeTtYMS9h1itNIK-cvZUufIhQ
@@ -724,5 +738,15 @@ https://docs.google.com/document/d/1l6Qfy3xQ0anlrgdIv_5JKlhzeY_67oTvJoi1X06fd6Q/
 [murcielago]: ImagesGDD/Murcielago.png
 [murcielago1]: ImagesGDD/MurcielagoCor1.png
 [murcielago2]: ImagesGDD/MurcielagoCor2.png
+[buho]: ImagesGDD/Buho.png
+[arbusto]: ImagesGDD/Arbusto.png
+[hierbajo]: ImagesGDD/Hierbajo.png
+[puentes]: ImagesGDD/Puentes.png
+[bn1]: ImagesGDD/BN1.png
+[bn2]: ImagesGDD/BN2.png
+[bn3]: ImagesGDD/BN3.png
+[bn4]: ImagesGDD/BN3.png
+[bn5]: ImagesGDD/BN3.png
+[pili]: ImagesGDD/Pili.png
 [modelCanvas]: ImagesGDD/modelCanvas2Fina.png
 [toolBox]: ImagesGDD/toolbox.png
