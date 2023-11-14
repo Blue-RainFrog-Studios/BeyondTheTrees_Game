@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb5226cba7cda75478a72e4825b86ee4, type: 3}
-  m_Name: SpawnerTeleport
+  m_Name: BushSpawner
   m_EditorClassIdentifier: 
-  itemToSpawn: {fileID: 4875267983180699273, guid: 8cd3ff43b02d03640b36b1b501ff5cb0, type: 3}
+  itemToSpawn: {fileID: 7424862419896459819, guid: 47f39bc839dec83489ef1d43b0e7f17d, type: 3}
   minSpawn: 0
-  maxSpawn: 1
+  maxSpawn: 3
