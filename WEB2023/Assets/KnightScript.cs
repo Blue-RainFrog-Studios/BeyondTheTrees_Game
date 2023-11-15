@@ -17,6 +17,8 @@ public class KnightScript : MonoBehaviour
     RoomController r;
 
     public int col = -1;
+    public bool king = false;
+    public bool bush = false;
     public int health { get; set; }
     public int totalHealth { get; set; }
     public float speed { get; set; }
@@ -57,6 +59,10 @@ public class KnightScript : MonoBehaviour
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             GetComponentInChildren<Canvas>().enabled = false;
         }
+    }
+    private void Update()
+    {
+        Debug.Log(king);
     }
 
     public void AddHealth(int val)
@@ -145,8 +151,23 @@ public class KnightScript : MonoBehaviour
                 col = -1;
             }
 
-    }
+       
 
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("ColliderKing"))
+        {
+            king = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("ColliderKing"))
+        {
+            king = false;
+        }
+    }
 
 }
 

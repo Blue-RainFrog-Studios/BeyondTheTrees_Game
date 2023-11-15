@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:WEB2023/Assets/Prefab/Pausa.prefab.meta
 guid: 3acb6ed13840cde43be7e07232bf95ce
 PrefabImporter:
+========
+guid: b01e697713815ff4e8c160a043b46ef0
+DefaultImporter:
+>>>>>>>> Escenarios:WEB2023/Assets/Scenes/DungeonRooms/BasementBasic2.unity.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

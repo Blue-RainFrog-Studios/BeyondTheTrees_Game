@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SpawnerTeleport
   m_EditorClassIdentifier: 
   itemToSpawn: {fileID: 4875267983180699273, guid: 8cd3ff43b02d03640b36b1b501ff5cb0, type: 3}
-  minSpawn: 1
+  minSpawn: 0
   maxSpawn: 1

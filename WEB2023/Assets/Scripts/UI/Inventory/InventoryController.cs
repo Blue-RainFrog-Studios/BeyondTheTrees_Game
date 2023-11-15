@@ -126,6 +126,7 @@ namespace Inventory
             player.ModifyStats(-1, inventoryItem.item, quantity);
             audioSource.PlayOneShot(dropClip);
         }
+        
 
         public void PerformAction(int itemIndex)  //Para mostrar el action panel
         {

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:WEB2023/Assets/Prefab/Enemies.meta
 guid: 3916767c50b7f2d469dbb735c9e44f2c
+========
+guid: e71fb331e05737343aa09ea99672bac5
+>>>>>>>> Escenarios:WEB2023/Assets/Scenes/DungeonRooms/Puzzles.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

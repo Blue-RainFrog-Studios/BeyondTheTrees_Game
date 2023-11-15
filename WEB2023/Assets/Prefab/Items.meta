@@ -1,6 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:WEB2023/Assets/Prefab/Items.meta
 guid: 1b67333177f809f4e8bb3fbf260a8e67
 folderAsset: yes
+========
+guid: e1900cf2443e7a24abd83d2bb2f15cae
+>>>>>>>> Escenarios:WEB2023/Assets/Scenes/DungeonRooms/Puzzles/BasementKing1.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

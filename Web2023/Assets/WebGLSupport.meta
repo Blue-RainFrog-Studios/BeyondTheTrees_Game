@@ -1,6 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Web2023/Assets/WebGLSupport.meta
 guid: 19b231dc2e1ab5e47bb801e8853f659a
 folderAsset: yes
+========
+guid: 38d7598265195444197196e9f127524a
+>>>>>>>> Escenarios:WEB2023/Assets/Scenes/DungeonRooms/Puzzles/RapidoQueSeQueman.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

@@ -13,6 +13,8 @@ TagManager:
   - ColliderLeft
   - ColliderRight
   - Pause
+  - ColliderBush
+  - ColliderKing
   layers:
   - Default
   - TransparentFX
