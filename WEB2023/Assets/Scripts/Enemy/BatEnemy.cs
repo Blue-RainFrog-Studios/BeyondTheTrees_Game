@@ -5,12 +5,13 @@ using UnityEngine;
 public class BatEnemy : MonoBehaviour
 {
     Rigidbody2D rb;
-    Vector2 direccion;
-    Vector2 reflejado_aux;
-    bool pega = false;
+    Vector2 direction;
+    GameObject player;
+    bool col = false;
     // Use this for initialization
     void Start()
     {
+        player = GameObject.FindWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
         //Damos una velocidad inicial
         rb.velocity = new Vector2(1, -1) * 10;
@@ -19,23 +20,24 @@ public class BatEnemy : MonoBehaviour
     {
 
         //Almacenamos la velocidad que lleva antes de la colision
-        if (!pega)
+        if (!col)
         {
-            direccion = rb.velocity;
+            direction = rb.velocity;
         }
 
         
     }
     void OnCollisionEnter2D(Collision2D coll)
     {
-        pega = true;
+        col = true;
         //coll.contacts nos devuelve una matriz con los contactos de la colision
-        Vector2 reflejado = Vector2.Reflect(direccion, coll.contacts[0].normal);
+        Vector2 reflejado = Vector2.Reflect(direction, coll.contacts[0].normal);
         rb.velocity = reflejado;
+   
     }
 
     void OnCollisionExit2D(Collision2D coll)
     {
-        pega = false;
+        col = false;
     }
 }
