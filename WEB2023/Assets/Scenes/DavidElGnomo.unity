@@ -156,7 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 631842432}
   DavidElGnomoTransform: {fileID: 216383177}
-  speed: 10
+  speed: 1
 --- !u!114 &216383174
 MonoBehaviour:
   m_ObjectHideFlags: 0

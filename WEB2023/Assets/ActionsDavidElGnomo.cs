@@ -1,4 +1,5 @@
 using BehaviourAPI.Core;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,10 @@ public class ActionsDavidElGnomo : MonoBehaviour
     [SerializeField] private Transform playerTransform;
     [SerializeField] private Transform DavidElGnomoTransform;
     [SerializeField] private float speed;
+    public void StartMethodWalk()
+    {
+        GetComponent<SpriteRenderer>().color = Color.blue;
+    }
     public Status UpdateMethodWalk()
     {
         //make the object move to the player position
@@ -15,9 +20,25 @@ public class ActionsDavidElGnomo : MonoBehaviour
         return Status.Running;
     }
 
-    public Status UpdateMethodPunch()
+    public void StartMethodWalkAttack()
+    {
+        GetComponent<SpriteRenderer>().color = Color.green;
+    }
+    public Status UpdateMethodWalkAttack()
+    {
+        return Status.Success;
+    }
+
+
+    public void StartMethodPunch()
     {
         GetComponent<SpriteRenderer>().color = Color.red;
+    }
+    public Status UpdateMethodPunch()
+    {
+        //wait 2 seconds
+                
+
         //play the punch animation
         return Status.Success;
     }
@@ -25,7 +46,11 @@ public class ActionsDavidElGnomo : MonoBehaviour
 
     public bool CheckPlayerInPunchRange()
     {
-        return Vector2.Distance(playerTransform.position, DavidElGnomoTransform.position) < 0.5f;
+        return Vector2.Distance(playerTransform.position, DavidElGnomoTransform.position) < 2f;
     }
 
+    public bool CheckCollisionWithYAxis()
+    {
+        return ((playerTransform.position.y > DavidElGnomoTransform.position.y-1) && (playerTransform.position.y < DavidElGnomoTransform.position.y + 1));
+    }
 }
