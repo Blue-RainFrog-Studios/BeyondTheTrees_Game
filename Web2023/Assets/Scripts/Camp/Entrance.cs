@@ -18,7 +18,7 @@ public class Entrance : MonoBehaviour
         {
             playerMovementInputSystem.gameObject.SetActive(false);
             SceneManager.LoadScene("Basement");
-            playerMovementInputSystem.gameObject.transform.position = new Vector2(0.0f, -2.0f);
+            playerMovementInputSystem.gameObject.transform.position = new Vector2(0.0f, -4.0f);
             collision.GetComponent<CoinCounter>().totalMoneyTxt.gameObject.SetActive(false);
             collision.GetComponent<CoinCounter>().expeditionMoneyTxt.gameObject.SetActive(true);
         }

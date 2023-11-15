@@ -103,8 +103,8 @@ MonoBehaviour:
   EnemyBullet: {fileID: 0}
   currState: 0
   enemyType: 2
-  range: 7
-  rangeTeleport: 10
+  range: 6
+  rangeTeleport: 8
   attackRange: 1
   coolDown: 5
   coolDownTp: 10
