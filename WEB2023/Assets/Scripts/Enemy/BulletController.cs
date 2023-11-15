@@ -7,12 +7,14 @@ public class BulletController : MonoBehaviour
     // Start is called before the first frame update
     public float lifeTime;
     public int damage=10;
+    public int bulletSpeed = 0;
 
     private Vector2 lastPos;
 
     private Vector2 currentPos;
 
     private Vector2 playerPos;
+
     void Start()
     {
         
@@ -22,7 +24,7 @@ public class BulletController : MonoBehaviour
     void Update()
     {
         currentPos= transform.position;
-        transform.position = Vector2.MoveTowards(transform.position, playerPos, 5f * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, playerPos, bulletSpeed * Time.deltaTime);
         if(currentPos==lastPos)
         {
             Destroy(gameObject);
