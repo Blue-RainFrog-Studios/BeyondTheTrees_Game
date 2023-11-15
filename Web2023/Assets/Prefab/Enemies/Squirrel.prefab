@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 4625157923182912523}
   - component: {fileID: 4413202303269975415}
   - component: {fileID: 8067895411344977043}
+  - component: {fileID: 8771941632011251851}
+  - component: {fileID: 8057056320807100863}
+  - component: {fileID: 2058549560013175938}
   m_Layer: 0
   m_Name: Squirrel
   m_TagString: Untagged
@@ -111,21 +114,20 @@ MonoBehaviour:
       nodes:
       - name: Loop Buscar
         id: 00c831fe-c5f6-4870-ad88-ca6cb7f61a8d
-        position: {x: 652, y: -336}
+        position: {x: 669, y: -591}
         node:
           rid: 4999895336544894977
         references: []
         parentIds: []
         childIds:
-        - fabfe53d-f4c2-42ac-8732-f202b7452593
+        - 61f4eec9-4a89-4047-9c46-60af8e868eab
       - name: Sequence Buscar
         id: fabfe53d-f4c2-42ac-8732-f202b7452593
         position: {x: 652, y: -196}
         node:
           rid: 4999895336544894978
         references: []
-        parentIds:
-        - 00c831fe-c5f6-4870-ad88-ca6cb7f61a8d
+        parentIds: []
         childIds:
         - 0fbe17de-a559-44a9-8ed3-511776618c32
         - d6355124-4d0c-4dd7-a745-a0fd7be20eb6
@@ -207,6 +209,20 @@ MonoBehaviour:
         parentIds:
         - d6355124-4d0c-4dd7-a745-a0fd7be20eb6
         childIds: []
+      - name: Idle
+        id: 61f4eec9-4a89-4047-9c46-60af8e868eab
+        position: {x: 675, y: -418}
+        node:
+          rid: 4999895336544894986
+        references:
+        - fieldName: Action
+          value:
+            rid: 4999895336544894987
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 00c831fe-c5f6-4870-ad88-ca6cb7f61a8d
+        childIds: []
     pushPerceptions: []
   references:
     version: 2
@@ -239,3 +255,50 @@ MonoBehaviour:
       type: {class: ConditionNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
     - rid: 4999895336544894984
       type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+    - rid: 4999895336544894986
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+    - rid: 4999895336544894987
+      type: {class: PatrolAction, ns: BehaviourAPI.UnityToolkit, asm: BehaviourAPI.UnityToolkit}
+      data:
+        maxDistance: 20
+--- !u!114 &8771941632011251851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5304357250516780494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 219235103676b284cb397bd94f723525, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8057056320807100863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5304357250516780494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aacbb01c8890a4498d7d6f60cad372c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  distanceThreshold: 0.2
+--- !u!114 &2058549560013175938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5304357250516780494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1726e9fdb9ff2d4baa8710d607b31ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventHandler:
+    debugStatusChanges: 0
+    identifier: 
