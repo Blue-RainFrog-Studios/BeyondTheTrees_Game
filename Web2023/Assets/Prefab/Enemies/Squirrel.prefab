@@ -14,9 +14,11 @@ GameObject:
   - component: {fileID: 8771941632011251851}
   - component: {fileID: 8057056320807100863}
   - component: {fileID: 2058549560013175938}
+  - component: {fileID: 7988745774428449434}
+  - component: {fileID: 5037092153588110418}
   m_Layer: 0
   m_Name: Squirrel
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,104 +116,16 @@ MonoBehaviour:
       nodes:
       - name: Loop Buscar
         id: 00c831fe-c5f6-4870-ad88-ca6cb7f61a8d
-        position: {x: 669, y: -591}
+        position: {x: 626, y: -744}
         node:
           rid: 4999895336544894977
         references: []
         parentIds: []
         childIds:
         - 61f4eec9-4a89-4047-9c46-60af8e868eab
-      - name: Sequence Buscar
-        id: fabfe53d-f4c2-42ac-8732-f202b7452593
-        position: {x: 652, y: -196}
-        node:
-          rid: 4999895336544894978
-        references: []
-        parentIds: []
-        childIds:
-        - 0fbe17de-a559-44a9-8ed3-511776618c32
-        - d6355124-4d0c-4dd7-a745-a0fd7be20eb6
-      - name: 
-        id: 0fbe17de-a559-44a9-8ed3-511776618c32
-        position: {x: 71, y: -47}
-        node:
-          rid: 4999895336544894979
-        references: []
-        parentIds:
-        - fabfe53d-f4c2-42ac-8732-f202b7452593
-        childIds:
-        - 4efcb8ed-ca61-428c-bbc8-e329bd2d3e59
-        - 7a202c89-1190-46ee-9944-b1ab2b0c7a65
-      - name: 
-        id: d6355124-4d0c-4dd7-a745-a0fd7be20eb6
-        position: {x: 862, y: -44}
-        node:
-          rid: 4999895336544894980
-        references: []
-        parentIds:
-        - fabfe53d-f4c2-42ac-8732-f202b7452593
-        childIds:
-        - ce9014bb-2ba6-44c1-acf7-a532a25680b0
-        - 7fbbce9f-3b59-4cf4-8cd8-f548ca08e64d
-      - name: Bellota???
-        id: 4efcb8ed-ca61-428c-bbc8-e329bd2d3e59
-        position: {x: -203, y: 110}
-        node:
-          rid: 4999895336544894981
-        references:
-        - fieldName: Perception
-          value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
-            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - 0fbe17de-a559-44a9-8ed3-511776618c32
-        childIds: []
-      - name: IrBellota
-        id: 7a202c89-1190-46ee-9944-b1ab2b0c7a65
-        position: {x: 275, y: 110}
-        node:
-          rid: 4999895336544894982
-        references:
-        - fieldName: Action
-          value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - 0fbe17de-a559-44a9-8ed3-511776618c32
-        childIds: []
-      - name: Jugador???
-        id: ce9014bb-2ba6-44c1-acf7-a532a25680b0
-        position: {x: 711, y: 157}
-        node:
-          rid: 4999895336544894983
-        references:
-        - fieldName: Perception
-          value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
-            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - d6355124-4d0c-4dd7-a745-a0fd7be20eb6
-        childIds: []
-      - name: IrJugador
-        id: 7fbbce9f-3b59-4cf4-8cd8-f548ca08e64d
-        position: {x: 1185, y: 154}
-        node:
-          rid: 4999895336544894984
-        references:
-        - fieldName: Action
-          value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - d6355124-4d0c-4dd7-a745-a0fd7be20eb6
-        childIds: []
       - name: Idle
         id: 61f4eec9-4a89-4047-9c46-60af8e868eab
-        position: {x: 675, y: -418}
+        position: {x: 628, y: -428}
         node:
           rid: 4999895336544894986
         references:
@@ -227,40 +141,18 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
     - rid: 4999895336544894976
       type: {class: BehaviourTree, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
     - rid: 4999895336544894977
       type: {class: LoopNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data:
         Iterations: -1
-    - rid: 4999895336544894978
-      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data:
-        IsRandomized: 0
-    - rid: 4999895336544894979
-      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data:
-        IsRandomized: 0
-    - rid: 4999895336544894980
-      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data:
-        IsRandomized: 0
-    - rid: 4999895336544894981
-      type: {class: ConditionNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-    - rid: 4999895336544894982
-      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-    - rid: 4999895336544894983
-      type: {class: ConditionNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-    - rid: 4999895336544894984
-      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
     - rid: 4999895336544894986
       type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
     - rid: 4999895336544894987
       type: {class: PatrolAction, ns: BehaviourAPI.UnityToolkit, asm: BehaviourAPI.UnityToolkit}
       data:
-        maxDistance: 20
+        maxDistance: 10
 --- !u!114 &8771941632011251851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aacbb01c8890a4498d7d6f60cad372c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 1
   distanceThreshold: 0.2
 --- !u!114 &2058549560013175938
 MonoBehaviour:
@@ -302,3 +194,65 @@ MonoBehaviour:
   _eventHandler:
     debugStatusChanges: 0
     identifier: 
+--- !u!50 &7988745774428449434
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5304357250516780494}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!58 &5037092153588110418
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5304357250516780494}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.008624911, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5879742

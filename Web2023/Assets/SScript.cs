@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using BehaviourAPI.Core;
-using BehaviourAPI.UnityToolkit;
 
 public class SScript : MonoBehaviour
 {
@@ -12,6 +11,10 @@ public class SScript : MonoBehaviour
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        
     }
-
+    private void Update()
+    {
+        this.gameObject.transform.parent.rotation.y =0;
+    }
 }
