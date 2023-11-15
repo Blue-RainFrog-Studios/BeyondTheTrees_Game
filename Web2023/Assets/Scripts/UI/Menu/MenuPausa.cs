@@ -34,7 +34,8 @@ public class MenuPausa : MonoBehaviour
         SceneManager.LoadScene("Campamento Base");
         player.GetComponent<KnightScript>().ResetMoneyCanvas();
         player.transform.position = new Vector2(0, -4);
-
+        botonPausa.SetActive(true);
+        menuPausa.SetActive(false);
     }
     public void VolverAlMenuPrincipal()
     {
@@ -45,6 +46,8 @@ public class MenuPausa : MonoBehaviour
         player.GetComponent<PlayerMovementInputSystem>().enabled = false;
         player.GetComponentInChildren<Canvas>().enabled = false;
         //player.gameObject.SetActive(false);
+        botonPausa.SetActive(true);
+        menuPausa.SetActive(false);
 
     }
 }
