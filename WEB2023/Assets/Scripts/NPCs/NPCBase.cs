@@ -6,12 +6,14 @@ using UnityEngine.UI;
 
 public class NPCBase : MonoBehaviour
 {
+    [SerializeField] GameObject shopUI;
     public GameObject dialoguePanel;
     public Text dialogueText;
     public string[] dialogue;
     private int index;
 
     public GameObject continueButton;
+    public GameObject buyButton;
     public float wordSpeed;
     public bool playerIsClose;
     private void Update()
@@ -32,6 +34,7 @@ public class NPCBase : MonoBehaviour
         if(dialogueText.text == dialogue[index])
         {
             continueButton.SetActive(true);
+            buyButton.SetActive(true);
         }
     }
 
@@ -54,7 +57,8 @@ public class NPCBase : MonoBehaviour
     public void NextLine()
     {
         continueButton.SetActive(false);
-        if(index < dialogue.Length-1)
+        buyButton.SetActive(false);
+        if (index < dialogue.Length-1)
         {
             index++;
             dialogueText.text = "";
@@ -64,6 +68,11 @@ public class NPCBase : MonoBehaviour
         {
             zeroText();
         }
+    }
+    public void OpenShop()
+    {
+        shopUI.SetActive(true);
+        dialoguePanel.SetActive(false);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

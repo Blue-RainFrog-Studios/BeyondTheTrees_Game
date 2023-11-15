@@ -20,7 +20,7 @@ namespace Assets.Scripts.Model
             foreach(ModifierData data in modifiersData)
             {
                 data.statModifier.AffectCharacter(character, data.value);
-                character.GetComponent<CoinCounter>().ExpeditionMoneyChanger(-this.Price);
+                character.GetComponent<CoinCounter>().ExpeditionMoneyChanger(-this.Value);
             }
             return true;
         }

@@ -20,4 +20,7 @@ MonoBehaviour:
   <Attack>k__BackingField: 20
   <Defense>k__BackingField: 0
   <Speed>k__BackingField: 0
-  <Price>k__BackingField: 30
+  <AttackSpeed>k__BackingField: 0
+  <Value>k__BackingField: 30
+  <ShopValue>k__BackingField: 300
+  <isPurchased>k__BackingField: 0

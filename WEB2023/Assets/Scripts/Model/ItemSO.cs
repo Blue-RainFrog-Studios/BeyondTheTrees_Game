@@ -36,7 +36,13 @@ public abstract class ItemSO: ScriptableObject
     public float AttackSpeed { get; set; }
 
     [field: SerializeField]
-    public int Price { get; set; }
+    public int Value { get; set; }
+    
+    [field: SerializeField]
+    public int ShopValue { get; set; }
+
+    [field: SerializeField]
+    public bool isPurchased { get; set; }
 
 }
 
