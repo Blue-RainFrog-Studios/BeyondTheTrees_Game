@@ -20,7 +20,17 @@ public static class GameDataManager
 
     public static void AddPurchasedItems(int itemIndex)
     {
+        shopData.purchasedItemsIndexes.Add(itemIndex);
+        SaveShopData();
+    }
 
+    public static List<int> GetAllPurchasedItems()
+    {
+        return shopData.purchasedItemsIndexes;
+    }
+    public static int GetPurchasedItem(int index)
+    {
+        return shopData.purchasedItemsIndexes[index];
     }
     static void SaveShopData()
     {

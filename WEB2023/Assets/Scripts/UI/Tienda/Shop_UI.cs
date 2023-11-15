@@ -61,13 +61,10 @@ public class Shop_UI : MonoBehaviour
     {
         // Puede que haya que cambiar de donde pilla los datos
         // Escribe los items que se han compreado como bloqueados
-        for(int i = 0; i < itemDB.ItemCount; i++)
+        for(int i = 0; i < GameDataManager.GetAllPurchasedItems().Count; i++)
         {
-            Shop_Item checkPucrh = itemDB.GetItemToPool(i);
-            if (checkPucrh.isPurchased)
-            {
-
-            }
+            int purchasedItemsIndex = GameDataManager.GetPurchasedItem(i);
+            itemDB.PurchaseItem(purchasedItemsIndex);
         }
 
         // DeleteItem Template After generating items
@@ -143,6 +140,7 @@ public class Shop_UI : MonoBehaviour
             itemDB.PurchaseItem(index);
 
             ui_item.SetItemAsPurchased();
+            GameDataManager.AddPurchasedItems(index);
             
         }
         else

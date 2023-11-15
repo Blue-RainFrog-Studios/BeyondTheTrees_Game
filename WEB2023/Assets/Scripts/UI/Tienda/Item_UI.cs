@@ -49,9 +49,7 @@ public class Item_UI : MonoBehaviour
     public void SetItemAsPurchased()
     {
         purchItemPurchaseButton.gameObject.SetActive(false);
-        itemButton.interactable= true;
-
-        itemImage.color = itemNotSelectedColor;
+        itemButton.interactable= false;
     }
 
     public void OnItemPurchased(int ItemIndex, UnityAction<int> action)
