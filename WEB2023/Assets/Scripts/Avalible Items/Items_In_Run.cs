@@ -6,9 +6,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ItemsInRunDatabase", menuName = "Items_Database")]
 public class Items_In_Run : ScriptableObject
 {
-    public Item[] AllItems;
-    public Item[] LockedItems;
-    public Item[] UnlockedItems;
+    public ItemSO[] AllItems;
+    public ItemSO[] LockedItems;
+    public ItemSO[] UnlockedItems;
 
     public int AllItemCount
     {
@@ -22,9 +22,9 @@ public class Items_In_Run : ScriptableObject
     {
         get { return UnlockedItems.Length; }
     }
-    public Item ItemAleatorioPool()
+    /*public ItemSO ItemAleatorioPool()
     {
-        Item itemSelect= new Item();  
+        ItemSO itemSelect =  
         return itemSelect;
-    }
+    }*/
 }

@@ -59,6 +59,17 @@ public class Shop_UI : MonoBehaviour
     }
     void GenerateShopItems()
     {
+        // Puede que haya que cambiar de donde pilla los datos
+        // Escribe los items que se han compreado como bloqueados
+        for(int i = 0; i < itemDB.ItemCount; i++)
+        {
+            Shop_Item checkPucrh = itemDB.GetItemToPool(i);
+            if (checkPucrh.isPurchased)
+            {
+
+            }
+        }
+
         // DeleteItem Template After generating items
         itemHeight = ShopItemsContainer.GetChild(0).GetComponent<RectTransform>().sizeDelta.y;
         Destroy(ShopItemsContainer.GetChild(0).gameObject);
@@ -82,7 +93,6 @@ public class Shop_UI : MonoBehaviour
             if(shop_Item.isPurchased)
             {
                 ui_item.SetItemAsPurchased();
-                ui_item.OnItemSelect(i, OnItemSelected);
             }
             else
             {
@@ -95,6 +105,10 @@ public class Shop_UI : MonoBehaviour
             //Hay que expandir el bottom de content de objetos 86,66 unidades por cada objeto que se ñada a la tienda
         }
 
+    }
+    Item_UI GetItem_UI(int index)
+    {
+        return ShopItemsContainer.GetChild(index).GetComponent<Item_UI>();
     }
     void CloseShop()
     {
@@ -117,11 +131,19 @@ public class Shop_UI : MonoBehaviour
     }
     void OnItemPurchased(int index)
     {
+        Shop_Item shop_Item = itemDB.GetItemToPool(index);
+        Item_UI ui_item = GetItem_UI(index);
+
         if (player.GetComponent<CoinCounter>().totalMoney >= itemDB.GetItemToPool(index).price)
         {
+            // Compra el objeto y resta el dinero
             Debug.Log("Purchased" + index);
             player.GetComponent<CoinCounter>().totalMoney -= itemDB.GetItemToPool(index).price;
             player.GetComponent<CoinCounter>().UpdateTotalMoneyText();
+            itemDB.PurchaseItem(index);
+
+            ui_item.SetItemAsPurchased();
+            
         }
         else
         {

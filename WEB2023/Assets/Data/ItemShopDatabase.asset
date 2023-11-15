@@ -16,12 +16,12 @@ MonoBehaviour:
   - image: {fileID: 21300000, guid: 4dccf57ee612e64429e7d0909234451d, type: 3}
     name: Daga Solar
     description: nvoehgvwshenbsernbhknhjfdbnv lkidfnb
-    price: 150
-    isPurchased: 0
+    price: 0
+    isPurchased: 1
   - image: {fileID: 21300000, guid: 5fbe5f3cb3c129147b5c3763433ac849, type: 3}
     name: Daga Lunar
     description: sebrgtberytjnretynsdtrrtwsrthbw
-    price: 200
+    price: 20
     isPurchased: 0
   - image: {fileID: 21300000, guid: c6ad21568dc61014c8a9ae63a4190849, type: 3}
     name: Colmillo aguila
