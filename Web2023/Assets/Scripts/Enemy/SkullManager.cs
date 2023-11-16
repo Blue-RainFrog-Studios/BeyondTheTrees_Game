@@ -35,7 +35,7 @@ public class SkullManager : MonoBehaviour
         if(collision.CompareTag("Enemy"))
         {
             Debug.Log("PENE");
-            enemy = collision.gameObject;
+            //enemy = collision.gameObject;
             if(collision.gameObject.GetComponent<EnemyController>().life <= 0)
             {
                 Debug.Log("TETAS GORDAS");
