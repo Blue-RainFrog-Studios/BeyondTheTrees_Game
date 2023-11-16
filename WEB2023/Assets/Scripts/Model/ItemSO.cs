@@ -42,7 +42,10 @@ public abstract class ItemSO: ScriptableObject
     public int ShopValue { get; set; }
 
     [field: SerializeField]
-    public bool isPurchased { get; set; }
+    public bool IsPurchased { get; set; }
+
+    [field: SerializeField]
+    public int Rarity { get; set; }
 
 }
 

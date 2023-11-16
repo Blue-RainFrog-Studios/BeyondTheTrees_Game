@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
@@ -20,7 +21,8 @@ public class Shop_UI : MonoBehaviour
 
     [Space(20)]
 
-    [SerializeField] Purchasable_Items_Database itemDB;
+    //[SerializeField] Purchasable_Items_Database itemDB;
+    [SerializeField] All_Items_Database itemDB;
     [Space(20)]
 
     [Header("Shop Event")]
@@ -73,27 +75,33 @@ public class Shop_UI : MonoBehaviour
         ShopItemsContainer.DetachChildren();
 
         // GenerateItems
-        for(int i = 0; i < itemDB.ItemCount; i++)
+        // for (int i = 0; i < itemDB.ItemCount; i++)
+        for (int i = 0; i < itemDB.Shop_Items_Count; i++)
         {
-            Shop_Item shop_Item = itemDB.GetItemToPool(i);
+            //Shop_Item shop_Item = itemDB.GetItemToPool(i);
+            ItemSO shop_Item= itemDB.ShopGetItemFromPool(i);
             Item_UI ui_item = Instantiate (itemPrefab, ShopItemsContainer).GetComponent<Item_UI>();
 
             // Move item to position
             ui_item.SetItemPosittion(Vector2.down * i * (itemHeight + itemSpacing));
 
             // AddInformation to UI
-            ui_item.SetItemName(shop_Item.name);
-            ui_item.SetItemImage(shop_Item.image);
-            ui_item.SetItemDescription(shop_Item.description);
-            ui_item.SetItemPrice(shop_Item.price);
-            
-            if(shop_Item.isPurchased)
+            //ui_item.SetItemName(shop_Item.name);
+            ui_item.SetItemName(shop_Item.Name);
+            //ui_item.SetItemImage(shop_Item.image);
+            ui_item.SetItemImage(shop_Item.ItemImage);
+            //ui_item.SetItemDescription(shop_Item.description);
+            ui_item.SetItemDescription(shop_Item.Descrption);
+            //ui_item.SetItemPrice(shop_Item.price);
+            ui_item.SetItemPrice(shop_Item.ShopValue);
+
+            if (shop_Item.IsPurchased)
             {
                 ui_item.SetItemAsPurchased();
             }
             else
             {
-                ui_item.SetItemPrice(shop_Item.price);
+                ui_item.SetItemPrice(shop_Item.ShopValue);
                 ui_item.OnItemPurchased(i, OnItemPurchased);
             }
 
@@ -128,14 +136,14 @@ public class Shop_UI : MonoBehaviour
     }
     void OnItemPurchased(int index)
     {
-        Shop_Item shop_Item = itemDB.GetItemToPool(index);
+        ItemSO shop_Item = itemDB.ShopGetItemFromPool(index);
         Item_UI ui_item = GetItem_UI(index);
 
-        if (player.GetComponent<CoinCounter>().totalMoney >= itemDB.GetItemToPool(index).price)
+        if (player.GetComponent<CoinCounter>().totalMoney >= itemDB.ShopGetItemFromPool(index).ShopValue)
         {
             // Compra el objeto y resta el dinero
             Debug.Log("Purchased" + index);
-            player.GetComponent<CoinCounter>().totalMoney -= itemDB.GetItemToPool(index).price;
+            player.GetComponent<CoinCounter>().totalMoney -= itemDB.ShopGetItemFromPool(index).ShopValue;
             player.GetComponent<CoinCounter>().UpdateTotalMoneyText();
             itemDB.PurchaseItem(index);
 

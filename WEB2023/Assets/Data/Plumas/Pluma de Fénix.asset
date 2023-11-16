@@ -23,4 +23,5 @@ MonoBehaviour:
   <AttackSpeed>k__BackingField: 0.2
   <Value>k__BackingField: 30
   <ShopValue>k__BackingField: 300
-  <isPurchased>k__BackingField: 0
+  <IsPurchased>k__BackingField: 0
+  <Rarity>k__BackingField: 3

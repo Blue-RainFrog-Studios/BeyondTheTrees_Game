@@ -30,8 +30,13 @@ public class All_Items_Database : ScriptableObject
 
     public void PurchaseItem(int index)
     {
-        Shop_Items[index].isPurchased = true;
+        Shop_Items[index].IsPurchased = true;
         Run_Items.Add(Shop_Items[index]);
+    }
+
+    public ItemSO ShopGetItemFromPool(int index)
+    {
+        return Shop_Items[index];
     }
 
     public void Random_Run_Item()
