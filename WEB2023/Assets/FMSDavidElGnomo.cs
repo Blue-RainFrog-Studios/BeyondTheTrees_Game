@@ -11,9 +11,11 @@ namespace BehaviourAPI.UnityToolkit.Demos
     public class FMSDavidElGnomo : BehaviourRunner
     {
         ActionsDavidElGnomo _ActionsDavidElGnomo;
+        ActionsDavidElGnomoNoHat _ActionsDavidElGnomoNoHat;
         protected override void Init()
         {
             _ActionsDavidElGnomo = GetComponent<ActionsDavidElGnomo>();
+            _ActionsDavidElGnomoNoHat = GetComponent<ActionsDavidElGnomoNoHat>();
             base.Init();
         }
 
@@ -21,21 +23,20 @@ namespace BehaviourAPI.UnityToolkit.Demos
         {
             FSM Gnomefsm = new FSM();
 
-            //actions
-            /**/
+            #region Actions
+
             FunctionalAction WalkToPlayerAction = new FunctionalAction(_ActionsDavidElGnomo.StartMethodWalk, _ActionsDavidElGnomo.UpdateMethodWalk); //estados que hay que meter
-            /**/
+            
             FunctionalAction PunchAction = new FunctionalAction(_ActionsDavidElGnomo.StartMethodPunch, _ActionsDavidElGnomo.UpdateMethodPunch); //estados que hay que meter
 
-            /**/
             FunctionalAction WalkAttackAction = new FunctionalAction(_ActionsDavidElGnomo.StartMethodWalkAttack, _ActionsDavidElGnomo.UpdateMethodWalkAttack);
 
             FunctionalAction GnomeModeAction = new FunctionalAction(_ActionsDavidElGnomo.StartMethodGnomeMode, _ActionsDavidElGnomo.UpdateMethodGnomeMode);
 
             FunctionalAction TiredAction = new FunctionalAction(_ActionsDavidElGnomo.StartMethodTired, _ActionsDavidElGnomo.UpdateMethodTired);
+            #endregion
 
-            //states
-            /**/
+            #region States
             State WalkToPlayer = Gnomefsm.CreateState(WalkToPlayerAction); //el estado WalkToPlayer se crea con la acción WalkToPlayerAction
             /**/
             State Punch = Gnomefsm.CreateState(PunchAction);
@@ -46,12 +47,12 @@ namespace BehaviourAPI.UnityToolkit.Demos
             State GnomeMode = Gnomefsm.CreateState(GnomeModeAction); //SOLO REPETIR 1 vez
 
             State Tired = Gnomefsm.CreateState(TiredAction);
+            #endregion
 
-            //Perceptions
+            #region Perception
+            ConditionPerception isInPunchRange = new ConditionPerception(() =>_ActionsDavidElGnomo.CheckPlayerInPunchRange()); //esto nos va a decir cuando debe cambiar de estado
             /**/
-            ConditionPerception isInPunchRange = new ConditionPerception((/*Parametros*/) =>/*expresion*/_ActionsDavidElGnomo.CheckPlayerInPunchRange()); //esto nos va a decir cuando debe cambiar de estado
-            /**/
-            ConditionPerception leavesPunchRange = new ConditionPerception((/*Parametros*/) =>/*expresion*/!_ActionsDavidElGnomo.CheckPlayerInPunchRange()); //esto nos va a decir cuando debe cambiar de estado
+            ConditionPerception leavesPunchRange = new ConditionPerception(() =>!_ActionsDavidElGnomo.CheckPlayerInPunchRange()); //esto nos va a decir cuando debe cambiar de estado
 
             /**/
             ConditionPerception collisionWithYAxis = new ConditionPerception(() => _ActionsDavidElGnomo.CheckCollisionWithYAxis());
@@ -59,9 +60,9 @@ namespace BehaviourAPI.UnityToolkit.Demos
             ConditionPerception noCollisionWithYAxis = new ConditionPerception(() => !_ActionsDavidElGnomo.CheckCollisionWithYAxis());
 
             ConditionPerception HPLow = new ConditionPerception(() => _ActionsDavidElGnomo.CheckHPLow());
+            #endregion
 
-            //Transitions
-            /**/
+            #region Transitions
             StateTransition WalkingToPlayer_to_Punch = Gnomefsm.CreateTransition(WalkToPlayer, Punch, isInPunchRange); // cambiara cuando se cumpla la percepcion 
             /**/
             StateTransition Punch_to_WalkingToPlayer = Gnomefsm.CreateTransition(Punch, WalkToPlayer, /*leavesPunchRange,*/ statusFlags: StatusFlags.Finished); // cambiara cuando se acabe la accion
@@ -78,25 +79,27 @@ namespace BehaviourAPI.UnityToolkit.Demos
 
             StateTransition WalkingToPlayerAttack_to_Tired = Gnomefsm.CreateTransition(WalkAttack, Tired, statusFlags: StatusFlags.Success);
             StateTransition Tired_to_WalkingToPlayer = Gnomefsm.CreateTransition(Tired, WalkToPlayer, statusFlags: StatusFlags.Finished);
-
-            /**/
+            #endregion
+            
             return Gnomefsm;
         }
 
         private FSM CreateGnomeWithoutHatFSM()
         {
             FSM GnomeWithoutHatFSM = new FSM();
-            //actions
-            FunctionalAction WalkToPlayerActionNoHat = new FunctionalAction(); //estados que hay que meter
-            FunctionalAction PunchActionNoHat = new FunctionalAction(); //estados que hay que meter
+            
+            #region Actions
+            FunctionalAction WalkToPlayerActionNoHat = new FunctionalAction(_ActionsDavidElGnomoNoHat.StartMethodWalkNoHat, _ActionsDavidElGnomoNoHat.UpdateMethodWalkNoHat); 
+            FunctionalAction PunchActionNoHat = new FunctionalAction(_ActionsDavidElGnomoNoHat.StartMethodPunchNoHat, _ActionsDavidElGnomoNoHat.UpdateMethodPunchNoHat); 
 
-            FunctionalAction WalkAttackActionNoHat = new FunctionalAction();
+            FunctionalAction WalkAttackActionNoHat = new FunctionalAction(_ActionsDavidElGnomoNoHat.StartMethodWalkAttackNoHat, _ActionsDavidElGnomoNoHat.UpdateMethodWalkAttackNoHat);
 
-            FunctionalAction GnomeModeActionNoHat = new FunctionalAction();
+            FunctionalAction GnomeModeActionNoHat = new FunctionalAction(_ActionsDavidElGnomoNoHat.StartMethodGnomeModeNoHat, _ActionsDavidElGnomoNoHat.UpdateMethodGnomeModeNoHat);
 
-            FunctionalAction TiredActionNoHat = new FunctionalAction();
+            FunctionalAction TiredActionNoHat = new FunctionalAction(_ActionsDavidElGnomoNoHat.StartMethodTiredNoHat, _ActionsDavidElGnomoNoHat.UpdateMethodTiredNoHat);
+            #endregion
 
-            //states
+            #region States
             State WalkToPlayerNoHat = GnomeWithoutHatFSM.CreateState(WalkToPlayerActionNoHat); //el estado WalkToPlayer se crea con la acción WalkToPlayerAction
             State PunchNoHat = GnomeWithoutHatFSM.CreateState(PunchActionNoHat);
 
@@ -105,21 +108,23 @@ namespace BehaviourAPI.UnityToolkit.Demos
             State GnomeModeNoHat = GnomeWithoutHatFSM.CreateState(GnomeModeActionNoHat); //SOLO REPETIR 1 vez
 
             State TiredNoHat = GnomeWithoutHatFSM.CreateState(TiredActionNoHat);
+            #endregion
 
-            //Perceptions
-            ConditionPerception isInPunchRangeNoHat = new ConditionPerception(); //esto nos va a decir cuando debe cambiar de estado
-            ConditionPerception leavesPunchRangeNoHat = new ConditionPerception(); //esto nos va a decir cuando debe cambiar de estado
+            #region Perceptions
+            ConditionPerception isInPunchRangeNoHat = new ConditionPerception(() => _ActionsDavidElGnomoNoHat.CheckPlayerInPunchRangeNoHat()); 
+            ConditionPerception leavesPunchRangeNoHat = new ConditionPerception(() => !_ActionsDavidElGnomoNoHat.CheckPlayerInPunchRangeNoHat()); 
 
-            ConditionPerception collisionWithYAxisNoHat = new ConditionPerception();
-            ConditionPerception noCollisionWithYAxisNoHat = new ConditionPerception();
+            ConditionPerception collisionWithYAxisNoHat = new ConditionPerception(() => _ActionsDavidElGnomoNoHat.CheckCollisionWithYAxisNoHat());
+            ConditionPerception noCollisionWithYAxisNoHat = new ConditionPerception(() => !_ActionsDavidElGnomoNoHat.CheckCollisionWithYAxisNoHat());
 
-            ConditionPerception HPLowNoHat = new ConditionPerception(() => _ActionsDavidElGnomo.CheckHPLow());
+            ConditionPerception HPLowNoHat = new ConditionPerception(() => _ActionsDavidElGnomoNoHat.CheckHPLowNoHat());
+            #endregion
 
-            //Transitions
-            StateTransition WalkingToPlayerNoHat_to_PunchNoHat = GnomeWithoutHatFSM.CreateTransition(WalkToPlayerNoHat, PunchNoHat, isInPunchRangeNoHat); // cambiara cuando se cumpla la percepcion 
+            #region Transitions
+            StateTransition WalkingToPlayerNoHat_to_PunchNoHat = GnomeWithoutHatFSM.CreateTransition(WalkToPlayerNoHat, PunchNoHat, isInPunchRangeNoHat); 
             StateTransition PunchNoHat_to_WalkingToPlayerNoHat = GnomeWithoutHatFSM.CreateTransition(PunchNoHat, WalkToPlayerNoHat, /*leavesPunchRange,*/ statusFlags: StatusFlags.Finished); // cambiara cuando se acabe la accion
 
-            StateTransition WalkToPlayer_to_WalkAttack = GnomeWithoutHatFSM.CreateTransition(WalkToPlayerNoHat, WalkAttackNoHat, collisionWithYAxisNoHat);
+            StateTransition WalkToPlayerNoHat_to_WalkAttackNoHat = GnomeWithoutHatFSM.CreateTransition(WalkToPlayerNoHat, WalkAttackNoHat, collisionWithYAxisNoHat);
 
             StateTransition GnomeModeNoHat_to_WalkToPlayerNoHat = GnomeWithoutHatFSM.CreateTransition(GnomeModeNoHat, WalkToPlayerNoHat, statusFlags: StatusFlags.Finished);
             StateTransition WalkToPlayerNoHat_to_GnomeModeNoHat = GnomeWithoutHatFSM.CreateTransition(WalkToPlayerNoHat, GnomeModeNoHat, HPLowNoHat);
@@ -129,7 +134,7 @@ namespace BehaviourAPI.UnityToolkit.Demos
 
             StateTransition WalkingToPlayerAttackNoHat_to_TiredNoHat = GnomeWithoutHatFSM.CreateTransition(WalkAttackNoHat, TiredNoHat, statusFlags: StatusFlags.Success);
             StateTransition TiredNoHat_to_WalkingToPlayerNoHat = GnomeWithoutHatFSM.CreateTransition(TiredNoHat, WalkToPlayerNoHat, statusFlags: StatusFlags.Finished);
-
+            #endregion
             return GnomeWithoutHatFSM;
         }
 
