@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 2b027aa050cf85d4e86a26b2ff56e863, type: 2}
     - target: {fileID: 4275631869784606121, guid: 2d57eb1e24957c3498f9c80427388035, type: 3}
       propertyPath: m_Name
-      value: DagaLunar 2
+      value: PlumaFenix
       objectReference: {fileID: 0}
     - target: {fileID: 4275631869784606121, guid: 2d57eb1e24957c3498f9c80427388035, type: 3}
       propertyPath: m_IsActive
@@ -278,7 +278,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.5283019, g: 0.06678532, b: 0.38429847, a: 1}
+      maxColor: {r: 0.7735849, g: 0.4444089, b: 0.11238872, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1363,8 +1363,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.754717, g: 0.1666073, b: 0.496493, a: 1}
-        key1: {r: 0.8000001, g: 0.47058824, b: 0.5882353, a: 0}
+        key0: {r: 0.7725491, g: 0.4431373, b: 0.1137255, a: 1}
+        key1: {r: 0.7725491, g: 0.4431373, b: 0.1137255, a: 0}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
