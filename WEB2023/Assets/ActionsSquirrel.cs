@@ -35,6 +35,9 @@ public class ActionsSquirrel : MonoBehaviour
         }
         else
         {
+            if(acornTransform == null)
+                return Status.Running;
+
             squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, acornTransform.position, speed * Time.deltaTime);
             return Status.Running;
         }
@@ -58,12 +61,14 @@ public class ActionsSquirrel : MonoBehaviour
 
     public bool CheckAcornInRange()
     {
-        return Vector2.Distance(squirrelTransform.position, acornTransform.position) < 0.5f;
+        if(acornTransform != null)
+            return Vector2.Distance(squirrelTransform.position, acornTransform.position) < 0.5f;
+        return true;
     }
 
     public void StartEatAcorn()
     {
-
+        
     }
 
     public Status UpdateEatAcorn()
@@ -71,6 +76,7 @@ public class ActionsSquirrel : MonoBehaviour
         StartCoroutine(WaitSeconds(1));
         if (ended){
             ended = false;
+            Destroy(acornTransform.gameObject);
             return Status.Success;
         }
         else
@@ -85,7 +91,6 @@ public class ActionsSquirrel : MonoBehaviour
     {
         yield return new WaitForSeconds(Time);
         ended = true;
-        acornTransform.gameObject.SetActive(false);
     }
 }
 

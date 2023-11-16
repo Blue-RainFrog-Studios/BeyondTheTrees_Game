@@ -12,7 +12,8 @@ namespace BehaviourAPI.UnityToolkit.Demos
     public class SScript : BehaviourRunner
     {
         ActionsSquirrel _ActionsSquirrel;
-        float maxDistance = 5.0f;
+
+        public PushPerception stop;
 
         protected override void Init()
         {
@@ -23,7 +24,7 @@ namespace BehaviourAPI.UnityToolkit.Demos
         protected override BehaviourGraph CreateGraph()
         {
             FSM Squirrelfsm = new FSM();
-
+            
             //actions
             /**/
             FunctionalAction SquirrelWalkAcorn = new(_ActionsSquirrel.StartWalkAcorn, _ActionsSquirrel.UpdateWalkAcorn);
@@ -32,6 +33,7 @@ namespace BehaviourAPI.UnityToolkit.Demos
             /**/
             FunctionalAction SquirrelEatAcorn = new(_ActionsSquirrel.StartEatAcorn, _ActionsSquirrel.UpdateEatAcorn); 
             
+
             //states
             /**/
             State WalkAcorn = Squirrelfsm.CreateState(SquirrelWalkAcorn);
@@ -41,10 +43,13 @@ namespace BehaviourAPI.UnityToolkit.Demos
             State EatAcorn = Squirrelfsm.CreateState(SquirrelEatAcorn);
             /**/
 
+
             //Perceptions
             /**/
             ConditionPerception CheckAcornConsumed = new ConditionPerception((/*Parametros*/) => _ActionsSquirrel.CheckAcornExists());
+            /**/
             ConditionPerception CheckEatEnded = new ConditionPerception((/*Parametros*/) => _ActionsSquirrel.CheckEnded());
+
 
             //Transitions
             /**/
@@ -54,6 +59,11 @@ namespace BehaviourAPI.UnityToolkit.Demos
             /**/
             StateTransition EatingAcorn_to_WalkingPlayer = Squirrelfsm.CreateTransition(EatAcorn, WalkPlayer, CheckEatEnded);
             /**/
+
+            //Push Perceptions
+            /**/
+            stop = new(WalkingAcorn_to_WalkingPlayer, EatingAcorn_to_WalkingPlayer);
+            
 
             Squirrelfsm.SetEntryState(WalkAcorn);
 
