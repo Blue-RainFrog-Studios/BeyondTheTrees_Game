@@ -62,7 +62,7 @@ public class KnightScript : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(king);
+        //Debug.Log(king);
     }
 
     public void AddHealth(int val)
