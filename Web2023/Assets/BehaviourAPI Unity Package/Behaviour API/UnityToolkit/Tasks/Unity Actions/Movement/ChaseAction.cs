@@ -37,9 +37,6 @@ namespace BehaviourAPI.UnityToolkit
         /// </summary>
         public ChaseAction() { }
 
-        /// <summary>
-        /// Create a new Chase Action.
-        /// </summary>
         /// <param name="target">The transform that the agent chase.</param>
         /// <param name="speed">The movement speed of the agent.</param>
         /// <param name="maxDistance">The distance that the agent must be to its target to end with success.</param>
