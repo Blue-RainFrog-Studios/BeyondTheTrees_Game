@@ -465,7 +465,7 @@ SpriteRenderer:
   m_Size: {x: 1.69, y: 10.34}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &538145152
@@ -549,7 +549,7 @@ SpriteRenderer:
   m_Size: {x: 19.2, y: 1.52}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &548022612
@@ -798,7 +798,7 @@ SpriteRenderer:
   m_Size: {x: 19.2, y: 1.66}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &811615549
@@ -2247,10 +2247,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grid: {fileID: 1850390393}
   spawnerData:
-  - name: ChaseEnemy
-    spawnerData: {fileID: 11400000, guid: 68c44062c5258ba41842d63953de1dd2, type: 2}
-  - name: RangeEnemy
-    spawnerData: {fileID: 11400000, guid: 42081156395ce2c45b4097576f254164, type: 2}
+  - name: '>GnomoJEFE'
+    spawnerData: {fileID: 11400000, guid: 35fce0954d06913429bfaef448bb7d48, type: 2}
 --- !u!1 &2031183877
 GameObject:
   m_ObjectHideFlags: 0
