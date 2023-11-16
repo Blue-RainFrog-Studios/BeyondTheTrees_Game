@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2963898610207967150}
   - component: {fileID: 2323308384729083150}
-  - component: {fileID: 2651361189319938596}
   - component: {fileID: 4903149949793395714}
   - component: {fileID: 1623266460585233045}
+  - component: {fileID: 4540097278395962136}
   m_Layer: 0
   m_Name: LittleGnome
-  m_TagString: Enemy
+  m_TagString: LittleGnome
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2323308384729083150
 SpriteRenderer:
@@ -87,32 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2651361189319938596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3517669100422621170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 450c7171584c7d740adfedb980fda1d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ghost: {fileID: 3517669100422621170}
-  EnemyBullet: {fileID: 0}
-  currState: 0
-  enemyType: 0
-  range: 20
-  rangeTeleport: 0
-  attackRange: 1
-  coolDown: 0
-  speed: 1
-  life: 10
-  bulletSpeed: 0
-  animator: {fileID: 1623266460585233045}
-  damage: 10
-  notInRoom: 0
 --- !u!61 &4903149949793395714
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -179,3 +153,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4540097278395962136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3517669100422621170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b4c5e6ca172f684185768f51529f38e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1156985873014526917, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+  speed: 1
+  HP: 20
+  animator: {fileID: 1623266460585233045}

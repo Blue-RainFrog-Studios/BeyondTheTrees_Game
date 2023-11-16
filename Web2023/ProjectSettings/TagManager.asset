@@ -14,6 +14,7 @@ TagManager:
   - ColliderRight
   - Pause
   - Boss
+  - LittleGnome
   layers:
   - Default
   - TransparentFX

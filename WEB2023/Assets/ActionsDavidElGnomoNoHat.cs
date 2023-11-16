@@ -12,10 +12,11 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     [SerializeField] private Transform playerTransform;
     [SerializeField] private Transform DavidElGnomoTransform;
 
-    [SerializeField] private float speed;
-    [SerializeField] private int damage;
-    [SerializeField] private float HP;
-    [SerializeField] private float HPGnomeMode;
+    //[SerializeField] private float speed;
+    //[SerializeField] private int damage;
+    //[SerializeField] private float HP;
+    //[SerializeField] private float HPGnomeMode;
+
     [SerializeField] private float TimeTired;
 
     [SerializeField] private Animator animator;
@@ -32,13 +33,13 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     public void StartMethodWalkNoHat()
     {
         Debug.Log("ANDANDO AL JUGADOR");
-        GetComponent<SpriteRenderer>().color = Color.green;
+        GetComponent<SpriteRenderer>().color = Color.red;
         animator.Play("WalkFrontDG");
     }
     public Status UpdateMethodWalkNoHat()
     {
         //make the object move to the player position
-        DavidElGnomoTransform.position = Vector2.MoveTowards(DavidElGnomoTransform.position, playerTransform.transform.position, speed * Time.deltaTime);
+        DavidElGnomoTransform.position = Vector2.MoveTowards(DavidElGnomoTransform.position, playerTransform.transform.position, GetComponent<DavidElGnomoController>().speedNoHat * Time.deltaTime);
         return Status.Running;
     }
     #endregion
@@ -46,7 +47,7 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     #region MethodsWalkAttackNoHat
     public void StartMethodWalkAttackNoHat()
     {
-        GetComponent<SpriteRenderer>().color = Color.white;
+        GetComponent<SpriteRenderer>().color = Color.red;
         screenShake = GetComponent<ScreenShake>();
         GetComponent<Knockback>().strength = 40f;
         ended = false;
@@ -65,12 +66,12 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
         //coroutine that moves the object to the right for 2 seconds
         if (playerTransform.position.x > DavidElGnomoTransform.position.x)
         {
-            StartCoroutine(MoveRightForTwoSeconds(DavidElGnomoTransform, speed));
+            StartCoroutine(MoveRightForTwoSeconds(DavidElGnomoTransform, GetComponent<DavidElGnomoController>().speedNoHat));
             screenShake.StartCoroutine(screenShake.ShakeScreen());
         }
         else
         {
-            StartCoroutine(MoveLeftForTwoSeconds(DavidElGnomoTransform, speed));
+            StartCoroutine(MoveLeftForTwoSeconds(DavidElGnomoTransform, GetComponent<DavidElGnomoController>().speedNoHat));
             screenShake.StartCoroutine(screenShake.ShakeScreen());
         }
         if (ended)
@@ -86,7 +87,7 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     #region MethodsPunchNoHat
     public void StartMethodPunchNoHat()
     {
-        GetComponent<SpriteRenderer>().color = Color.cyan;
+        GetComponent<SpriteRenderer>().color = Color.red;
         //StartCoroutine(PlayAnimation("PunchDG"));
         animator.Play("PunchDG");
     }
@@ -110,14 +111,17 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     {
         StopAllCoroutines();
 
-        GetComponent<SpriteRenderer>().color = Color.black;
+        GetComponent<SpriteRenderer>().color = Color.red;
         
         animator.Play("Idle");
-        
+
+        StartCoroutine(InvokeGnomes(1f));
+        StartCoroutine(InvokeGnomes(2f));
+        StartCoroutine(InvokeGnomes(3f)); 
         StartCoroutine(InvokeGnomes(1f));
         StartCoroutine(InvokeGnomes(2f));
         StartCoroutine(InvokeGnomes(3f));
-        StartCoroutine(WaitSeconds(5));
+        StartCoroutine(WaitSeconds(6));
         
         invulnerable = true;
     }
@@ -142,7 +146,7 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
         ended = false;
         animator.Play("Idle");
         //cambia el color a morado
-        GetComponent<SpriteRenderer>().color = Color.yellow;
+        GetComponent<SpriteRenderer>().color = Color.red;
         StartCoroutine(WaitSeconds(TimeTired));
     }
     public Status UpdateMethodTiredNoHat()
@@ -171,7 +175,7 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
 
     public bool CheckHPLowNoHat()
     {
-        return HP < HPGnomeMode && !hasBeenPlayed;
+        return GetComponent<DavidElGnomoController>().HP < GetComponent<DavidElGnomoController>().HPGnomeMode && !hasBeenPlayed;
     }
     #endregion
 
@@ -220,37 +224,4 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
 
     #endregion
 
-    #region BossController
-
-    //ESTO EN UN FUTURO DEBE ESTAR EN UN ENEMYCONTROLLER
-    void Die()
-    {
-        Destroy(gameObject);
-    }
-
-    // Update is called once per frame
-    public void RecieveDamage(float damage)
-    {
-        if (!invulnerable)
-        {
-            HP -= damage;
-            Debug.Log("Recibo daño");
-            if (HP <= 0)
-            {
-                Die();
-            }
-        }
-    }
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (!invulnerable)
-        {
-            if (collision.gameObject.CompareTag("Player"))
-            {
-                player.GetComponent<KnightScript>().ReceiveAttack(damage);
-                GetComponent<Knockback>().PlayFeedback(gameObject, player.GetComponent<Rigidbody2D>());
-            }
-        }
-    }
-    #endregion
 }
