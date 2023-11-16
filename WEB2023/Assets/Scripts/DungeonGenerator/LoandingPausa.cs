@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Loanding : MonoBehaviour
+public class LoandingPausa : MonoBehaviour
 {
 
-    public GameObject loanding;
-    public GameObject noInve;
+    public GameObject noPausa;
 
     private bool once = true;
     // Start is called before the first frame update
@@ -28,8 +27,7 @@ public class Loanding : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "Basement" && once)
         {
-            loanding.SetActive(true);
-            noInve.SetActive(false);
+            noPausa.SetActive(false);
             
             StartCoroutine(WaitLoad());
             
@@ -42,8 +40,8 @@ public class Loanding : MonoBehaviour
         if (RoomController.iHaveFinishied)
         {
             yield return new WaitForSeconds(4);
-            loanding.SetActive(false);
-            noInve.SetActive(true);
+
+            noPausa.SetActive(true);
             once = false;
 
         }

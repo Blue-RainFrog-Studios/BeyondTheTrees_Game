@@ -2977,7 +2977,6 @@ GameObject:
   - component: {fileID: 1940129675}
   - component: {fileID: 1940129676}
   - component: {fileID: 1940129677}
-  - component: {fileID: 1940129678}
   m_Layer: 0
   m_Name: Room
   m_TagString: Prop
@@ -3091,19 +3090,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grid: {fileID: 0}
   spawnerData: []
---- !u!114 &1940129678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1940129673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c071b21e260425e4fb837a9596332483, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loanding: {fileID: 292984635}
 --- !u!1 &2002194216
 GameObject:
   m_ObjectHideFlags: 0
