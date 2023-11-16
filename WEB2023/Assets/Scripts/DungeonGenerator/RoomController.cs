@@ -15,6 +15,7 @@ public class RoomInfo
 
 public class RoomController : MonoBehaviour
 {
+    public static bool iHaveFinishied = false;
     // Start is called before the first frame update
     public static RoomController instance;
     string currentWorldName = "Basement";
@@ -80,6 +81,7 @@ public class RoomController : MonoBehaviour
                 }
                 
             }
+            iHaveFinishied = true;
             return;
         }
         currentLoadRoomData = loadRoomQueue.Dequeue();
