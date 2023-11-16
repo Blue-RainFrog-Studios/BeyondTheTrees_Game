@@ -776,7 +776,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -113.41785, y: 323.12924}
+  m_AnchoredPosition: {x: 260, y: 209.99997}
   m_SizeDelta: {x: 59.911, y: 64.1309}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5933185410556657577
@@ -1236,7 +1236,7 @@ MonoBehaviour:
   m_text: Inventory
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c41a1a6355e104641857672414d4b012, type: 2}
-  m_sharedMaterial: {fileID: -6783741486500212791, guid: c41a1a6355e104641857672414d4b012, type: 2}
+  m_sharedMaterial: {fileID: -7099467593743831185, guid: c41a1a6355e104641857672414d4b012, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1337,7 +1337,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 32.582153, y: 323.12924}
+  m_AnchoredPosition: {x: 406, y: 210}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1289846527409290462
@@ -2047,7 +2047,7 @@ MonoBehaviour:
   m_text: Name
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c41a1a6355e104641857672414d4b012, type: 2}
-  m_sharedMaterial: {fileID: -6783741486500212791, guid: c41a1a6355e104641857672414d4b012, type: 2}
+  m_sharedMaterial: {fileID: -7099467593743831185, guid: c41a1a6355e104641857672414d4b012, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4577,7 +4577,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5123110051929079311, guid: a68b9fc9a0fe09d49879213d453f29f0, type: 3}
       propertyPath: m_fontSize
-      value: 15
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5123110051929079311, guid: a68b9fc9a0fe09d49879213d453f29f0, type: 3}
       propertyPath: m_fontSizeBase
@@ -5701,7 +5701,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9221793529534617052, guid: a68b9fc9a0fe09d49879213d453f29f0, type: 3}
       propertyPath: m_fontSize
-      value: 10
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 9221793529534617052, guid: a68b9fc9a0fe09d49879213d453f29f0, type: 3}
       propertyPath: m_fontSizeBase
