@@ -358,7 +358,7 @@ MonoBehaviour:
   ShopMenu: {fileID: 891438303}
   ShopItemsContainer: {fileID: 1270878185}
   itemPrefab: {fileID: 5023801194274651572, guid: e4032e73f8c2289469ce070e02ca90d5, type: 3}
-  itemDB: {fileID: 11400000, guid: f25f080a6867dab409aea6dde7391662, type: 2}
+  itemDB: {fileID: 11400000, guid: 2ee96af344e7fe34d833bdf9633d44d3, type: 2}
   shopUI: {fileID: 146149028}
   openShopButton: {fileID: 822403570}
   closeShopButton: {fileID: 1945535084}
@@ -480,7 +480,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1877077070207730097, guid: 4b34a251eb4a7864eaa893eb0d0f173e, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1877077070207730097, guid: 4b34a251eb4a7864eaa893eb0d0f173e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -521,6 +521,10 @@ PrefabInstance:
     - target: {fileID: 1877077070207730097, guid: 4b34a251eb4a7864eaa893eb0d0f173e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4444756022072417623, guid: 4b34a251eb4a7864eaa893eb0d0f173e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4923847181735188414, guid: 4b34a251eb4a7864eaa893eb0d0f173e, type: 3}
       propertyPath: m_Name
@@ -1631,7 +1635,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &787960829
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2137,6 +2141,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4444756022072417623, guid: 2de19b490e676fc4b8b6bcefc4f52035, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4923847181735188414, guid: 2de19b490e676fc4b8b6bcefc4f52035, type: 3}
       propertyPath: m_Name
       value: Pluma Grifo
@@ -2630,7 +2638,7 @@ RectTransform:
   m_AnchorMin: {x: 0.014, y: 0}
   m_AnchorMax: {x: 0.98300004, y: 1}
   m_AnchoredPosition: {x: -14, y: 0.000061035156}
-  m_SizeDelta: {x: 31, y: 1920}
+  m_SizeDelta: {x: 31, y: 260.00006}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1270878186
 MonoBehaviour:
@@ -3014,7 +3022,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7282227974990517158, guid: 2d57eb1e24957c3498f9c80427388035, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7282227974990517158, guid: 2d57eb1e24957c3498f9c80427388035, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3581,7 +3589,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 57.8
+  m_fontSize: 62.25
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3770,11 +3778,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5171927144619549791, guid: e4032e73f8c2289469ce070e02ca90d5, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1099.4921
+      value: 1182.6129
       objectReference: {fileID: 0}
     - target: {fileID: 5171927144619549791, guid: e4032e73f8c2289469ce070e02ca90d5, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 2430.3787
+      value: 810.2595
       objectReference: {fileID: 0}
     - target: {fileID: 5171927144619549791, guid: e4032e73f8c2289469ce070e02ca90d5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3806,11 +3814,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5171927144619549791, guid: e4032e73f8c2289469ce070e02ca90d5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 562.74603
+      value: 604.30646
       objectReference: {fileID: 0}
     - target: {fileID: 5171927144619549791, guid: e4032e73f8c2289469ce070e02ca90d5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1220.1893
+      value: -410.12976
       objectReference: {fileID: 0}
     - target: {fileID: 5171927144619549791, guid: e4032e73f8c2289469ce070e02ca90d5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
