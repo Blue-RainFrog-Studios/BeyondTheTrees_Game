@@ -10,6 +10,7 @@ public class SkullManager : MonoBehaviour
     private GameObject enemy;
     private GameObject player;
     private int cantidadEnemigos = 0;
+    private int valor = 9;
     private void Awake()
     {
         //enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -39,7 +40,22 @@ public class SkullManager : MonoBehaviour
             if(collision.gameObject.GetComponent<EnemyController>().life <= 0)
             {
                 Debug.Log("TETAS GORDAS");
-                skull.GetComponent<Animator>().SetTrigger("Fase 1-2");
+                if(valor == 9)
+                {
+                    skull.GetComponent<Animator>().SetTrigger("Fase 1-2");
+                    valor = 6;
+                }
+                else if (valor == 6)
+                {
+                    skull.GetComponent<Animator>().SetTrigger("Fase 2-3");
+                    valor = 3;
+                }
+                else if (valor == 3)
+                {
+                    skull.GetComponent<Animator>().SetTrigger("Fase 3-4");
+                    valor = 0;
+                }
+
             }
         }
     }
