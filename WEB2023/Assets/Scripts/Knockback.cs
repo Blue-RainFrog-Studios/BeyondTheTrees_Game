@@ -12,13 +12,13 @@ public class Knockback : MonoBehaviour
     public UnityEvent OnBegin, OnDone;
     Vector2 direction;
     Rigidbody2D rbGlobal;
-    public void PlayFeedback(GameObject player, Rigidbody2D rb)
+    public void PlayFeedback(GameObject KnokbackProducer, Rigidbody2D KnokbackReciever)
     {
-        rbGlobal = rb;
+        rbGlobal = KnokbackReciever;
         OnDone?.Invoke();
-        direction = transform.position - player.transform.position;
+        direction = transform.position - KnokbackProducer.transform.position;
         direction = direction.normalized;
-        rb.AddForce(direction * strength, ForceMode2D.Impulse);
+        KnokbackReciever.AddForce(direction * strength, ForceMode2D.Impulse);
         StartCoroutine(Reset());
     }
 
