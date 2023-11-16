@@ -1,0 +1,303 @@
+fileFormatVersion: 2
+guid: 6813be155fbc17842995631c73703d62
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpriteGnomeWalkSide_0
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 444
+        width: 160
+        height: 362
+      alignment: 9
+      pivot: {x: 0.5591277, y: 0.4945151}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa1a8d0c58ebd8e4c81ebf8e45cae0bc
+      internalID: 2142731871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteGnomeWalkSide_1
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 444
+        width: 154
+        height: 362
+      alignment: 9
+      pivot: {x: 0.5523305, y: 0.4945151}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b75ab329ee7a129419d5ae949f389668
+      internalID: 1837037925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteGnomeWalkSide_2
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 443
+        width: 168
+        height: 362
+      alignment: 9
+      pivot: {x: 0.5776756, y: 0.49580577}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86d05dd2706ec4745b997d6afe94d1b6
+      internalID: 501382993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteGnomeWalkSide_3
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 444
+        width: 154
+        height: 362
+      alignment: 9
+      pivot: {x: 0.54364765, y: 0.49408466}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a2401e7eadd87840abe8c31c41400b5
+      internalID: -1280184033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteGnomeWalkSide_4
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 32
+        width: 160
+        height: 362
+      alignment: 9
+      pivot: {x: 0.5601393, y: 0.49501035}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb9a559b1ddd1d6498a01fce87dc5af8
+      internalID: -258125393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteGnomeWalkSide_5
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 32
+        width: 154
+        height: 362
+      alignment: 9
+      pivot: {x: 0.5452417, y: 0.49509534}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d7cd90ae1b5c274a95b2f4b0a15dac2
+      internalID: -1889553336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteGnomeWalkSide_6
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 31
+        width: 168
+        height: 362
+      alignment: 9
+      pivot: {x: 0.57832515, y: 0.4964681}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6db3404a66437c74c9261fd22262dea3
+      internalID: -1222657322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteGnomeWalkSide_7
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 32
+        width: 154
+        height: 362
+      alignment: 9
+      pivot: {x: 0.5427686, y: 0.49470714}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 326815a083de8b04babb5dad93de71a2
+      internalID: 1652961089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      SpriteGnomeWalkSide_0: 2142731871
+      SpriteGnomeWalkSide_1: 1837037925
+      SpriteGnomeWalkSide_2: 501382993
+      SpriteGnomeWalkSide_3: -1280184033
+      SpriteGnomeWalkSide_4: -258125393
+      SpriteGnomeWalkSide_5: -1889553336
+      SpriteGnomeWalkSide_6: -1222657322
+      SpriteGnomeWalkSide_7: 1652961089
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

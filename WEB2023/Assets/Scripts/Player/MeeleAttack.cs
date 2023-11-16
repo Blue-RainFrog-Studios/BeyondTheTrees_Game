@@ -12,6 +12,10 @@ public class MeeleAttack : MonoBehaviour
         {
             collision.GetComponent<EnemyController>().RecieveDamage(damage);
         }
+        if (collision.CompareTag("Boss"))
+        {
+            collision.GetComponent<ActionsDavidElGnomo>().RecieveDamage(damage);
+        }
     }
     }
 
