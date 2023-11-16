@@ -1,4 +1,5 @@
 using BehaviourAPI.Core;
+using BehaviourAPI.StateMachines;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,92 +12,80 @@ public class ActionsSquirrel : MonoBehaviour
     [SerializeField] private Transform acornTransform;
     [SerializeField] private Transform squirrelTransform;
     [SerializeField] private float speed;
+    private bool ended = false;
+    public bool consumedAcorn;
     [SerializeField] private int damage;
 
-    [SerializeField] private Animator animator;
-    private bool acornExists = false;
-
-
-    //SE EJECUTA MIENTRAS ESTA EN EL ESTADO DE WALKTOPLAYER
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public void StartMethodWalkToPlayer()
+    private void Awake()
     {
-        Debug.Log("ANDANDO AL JUGADOR");
-        GetComponent<SpriteRenderer>().color = Color.blue;
-        //animator.Play("WalkFrontDG");
+        consumedAcorn = false;
     }
-    public Status UpdateMethodWalkToPlayer()
-    {
-        //make the object move to the player position
-        squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, playerTransform.transform.position, speed * Time.deltaTime);
-        return Status.Running;
-    }
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    //SE EJECUTA MIENTRAS ESTA EN EL ESTADO DE WALKTOPLAYERATTACK
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public void StartMethodWalkAttack()
+    public void StartWalkAcorn()
     {
-        GetComponent<SpriteRenderer>().color = Color.green;
-        ended = false;
-        if (playerTransform.position.x > squirrelTransform.position.x)
-            animator.Play("WalkSideRightDG");
-        else
-            animator.Play("WalkSideDG");
 
     }
 
-    private bool ended;
-
-    //SE EJECUTA MIENTRAS ESTA EN EL ESTADO DE PUNCH
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public void StartMethodAcorn()
+    public Status UpdateWalkAcorn()
     {
-        GetComponent<SpriteRenderer>().color = Color.red;
-        //StartCoroutine(PlayAnimation("PunchDG"));
-        animator.Play("PunchDG");
-    }
-    public Status UpdateMethodAcorn()
-    {
-        //wait 2 seconds
-        //if the animation "PunchDG" is playing
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("PunchDG"))
+        if (CheckAcornInRange())
         {
-            return Status.Running;
-        }
-        else
-        {
+            consumedAcorn = true;
             return Status.Success;
         }
+        else
+        {
+            squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, acornTransform.position, speed * Time.deltaTime);
+            return Status.Running;
+        }
     }
-    
 
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    public bool CheckInAcornRange()
+    public void StartWalkPlayer()
     {
-        return Vector2.Distance(acornTransform.position, squirrelTransform.position) < 2f;
+
     }
 
-    public bool CheckCollisionWithYAxis()
+    public Status UpdateWalkPlayer()
     {
-        return ((playerTransform.position.y > squirrelTransform.position.y - 1) && (playerTransform.position.y < squirrelTransform.position.y + 1));
+        squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, playerTransform.position, speed * Time.deltaTime);
+        return Status.Running;
     }
-
-    ///////////////////////////////////////////
 
     public bool CheckAcornExists()
     {
-        return acornTransform != null;
+        return consumedAcorn;
     }
 
-
-
-    //ESTO EN UN FUTURO DEBE ESTAR EN UN ENEMYCONTROLLER
-    void Die()
+    public bool CheckAcornInRange()
     {
-        Destroy(gameObject);
+        return Vector2.Distance(squirrelTransform.position, acornTransform.position) < 0.5f;
+    }
+
+    public void StartEatAcorn()
+    {
+
+    }
+
+    public Status UpdateEatAcorn()
+    {
+        StartCoroutine(WaitSeconds(1));
+        if (ended){
+            ended = false;
+            return Status.Success;
+        }
+        else
+            return Status.Running;
+    }
+    public bool CheckEnded()
+    {
+        return ended;
+    }
+
+    IEnumerator WaitSeconds(float Time)
+    {
+        yield return new WaitForSeconds(Time);
+        ended = true;
+        acornTransform.gameObject.SetActive(false);
     }
 }
 

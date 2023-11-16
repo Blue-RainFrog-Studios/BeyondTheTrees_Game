@@ -5,13 +5,14 @@ using BehaviourAPI.Core;
 using BehaviourAPI.Core.Actions;
 using BehaviourAPI.StateMachines;
 using BehaviourAPI.Core.Perceptions;
+using System;
 
 namespace BehaviourAPI.UnityToolkit.Demos
 {
     public class SScript : BehaviourRunner
     {
         ActionsSquirrel _ActionsSquirrel;
-        float maxDistance = 10.0f;
+        float maxDistance = 5.0f;
 
         protected override void Init()
         {
@@ -25,40 +26,39 @@ namespace BehaviourAPI.UnityToolkit.Demos
 
             //actions
             /**/
-            PatrolAction PatrolAction = new PatrolAction(maxDistance); 
+            FunctionalAction SquirrelWalkAcorn = new(_ActionsSquirrel.StartWalkAcorn, _ActionsSquirrel.UpdateWalkAcorn);
             /**/
-            FunctionalAction WalkToAcornAction = new FunctionalAction(_ActionsSquirrel.StartMethodAcorn, _ActionsSquirrel.UpdateMethodAcorn);
+            FunctionalAction SquirrelWalkPlayer = new(_ActionsSquirrel.StartWalkPlayer, _ActionsSquirrel.UpdateWalkPlayer);            
             /**/
-            FunctionalAction WalkToPlayerAction = new FunctionalAction(_ActionsSquirrel.StartMethodWalkToPlayer, _ActionsSquirrel.UpdateMethodWalkToPlayer);
-
+            FunctionalAction SquirrelEatAcorn = new(_ActionsSquirrel.StartEatAcorn, _ActionsSquirrel.UpdateEatAcorn); 
+            
             //states
             /**/
-            State Patrol = Squirrelfsm.CreateState(PatrolAction); 
+            State WalkAcorn = Squirrelfsm.CreateState(SquirrelWalkAcorn);
             /**/
-            State WalkToAcorn = Squirrelfsm.CreateState(WalkToAcornAction);
+            State WalkPlayer = Squirrelfsm.CreateState(SquirrelWalkPlayer);     
             /**/
-            State WalkToPlayer = Squirrelfsm.CreateState(WalkToPlayerAction);
+            State EatAcorn = Squirrelfsm.CreateState(SquirrelEatAcorn);
+            /**/
 
             //Perceptions
             /**/
-            ConditionPerception isInAcornRange = new ConditionPerception((/*Parametros*/) =>/*expresion*/_ActionsSquirrel.CheckInAcornRange());
-            /**/
-            ConditionPerception acornExists = new ConditionPerception((/*Parametros*/) =>/*expresion*/!_ActionsSquirrel.CheckAcornExists());
+            ConditionPerception CheckAcornConsumed = new ConditionPerception((/*Parametros*/) => _ActionsSquirrel.CheckAcornExists());
+            ConditionPerception CheckEatEnded = new ConditionPerception((/*Parametros*/) => _ActionsSquirrel.CheckEnded());
 
             //Transitions
             /**/
-            StateTransition WalkingToAcorn_to_Eat = Squirrelfsm.CreateTransition(Patrol, WalkToAcorn, statusFlags: StatusFlags.Finished/*cuando el player entre o cuando aparezca el acorn*/);
-
-            StateTransition Patrol_after_eat = Squirrelfsm.CreateTransition(WalkToAcorn, Patrol, statusFlags: StatusFlags.Finished);
+            StateTransition WalkingAcorn_to_EatingAcorn = Squirrelfsm.CreateTransition(WalkAcorn, EatAcorn, CheckAcornConsumed);
             /**/
-            StateTransition WalkingToPlayer_to_Attack = Squirrelfsm.CreateTransition(WalkToAcorn, WalkToPlayer, statusFlags: StatusFlags.Finished); 
-
-            StateTransition Patrol_after_kill = Squirrelfsm.CreateTransition(WalkToAcorn, WalkToPlayer, statusFlags: StatusFlags.Finished); 
-
+            StateTransition WalkingAcorn_to_WalkingPlayer = Squirrelfsm.CreateTransition(WalkAcorn, WalkPlayer, CheckAcornConsumed/*cuando el player entre o cuando aparezca el acorn*/);
             /**/
+            StateTransition EatingAcorn_to_WalkingPlayer = Squirrelfsm.CreateTransition(EatAcorn, WalkPlayer, CheckEatEnded);
+            /**/
+
+            Squirrelfsm.SetEntryState(WalkAcorn);
+
             return Squirrelfsm;
 
         }
-
     }
 }
