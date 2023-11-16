@@ -13,10 +13,15 @@ public class CoinCounter : MonoBehaviour
     public TextMeshProUGUI totalMoneyTxt;
 
     public int expeditionMoney { get; set; }
+
     public int totalMoney { get; set; } = 0;
+
+    //Debug tienda
+    //public int totalMoney { get; set; } = 100;
 
     private void Awake()
     {
+        //expeditionMoney = 100;
         expeditionMoney = 0;
     }
 

@@ -25,3 +25,4 @@ MonoBehaviour:
   <ShopValue>k__BackingField: 30
   <IsPurchased>k__BackingField: 0
   <Rarity>k__BackingField: 1
+  <dropChance>k__BackingField: 0

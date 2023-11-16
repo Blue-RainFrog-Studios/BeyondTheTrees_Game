@@ -47,6 +47,10 @@ public abstract class ItemSO: ScriptableObject
     [field: SerializeField]
     public int Rarity { get; set; }
 
+    [field: SerializeField]
+
+    public int dropChance { get; set; }
+
 }
 
 namespace Inventory.Model
