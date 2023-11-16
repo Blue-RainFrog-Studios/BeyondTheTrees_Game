@@ -7,7 +7,7 @@ public class Knockback : MonoBehaviour
 {
     //[SerializeField] private Rigidbody2D RigidbodyComponent;
 
-    [SerializeField] private float strength = 10f, delay = 0.15f;
+    [SerializeField] public float strength = 10f, delay = 0.15f;
     //se crean 2 eventos 
     public UnityEvent OnBegin, OnDone;
     Vector2 direction;
@@ -16,7 +16,7 @@ public class Knockback : MonoBehaviour
     {
         rbGlobal = KnokbackReciever;
         OnDone?.Invoke();
-        direction = transform.position - KnokbackProducer.transform.position;
+        direction =  KnokbackReciever.transform.position-transform.position;
         direction = direction.normalized;
         KnokbackReciever.AddForce(direction * strength, ForceMode2D.Impulse);
         StartCoroutine(Reset());

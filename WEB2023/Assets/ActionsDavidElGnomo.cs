@@ -2,6 +2,7 @@ using BehaviourAPI.Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ActionsDavidElGnomo : MonoBehaviour
@@ -15,10 +16,11 @@ public class ActionsDavidElGnomo : MonoBehaviour
     [SerializeField] private float HPGnomeMode;
     [SerializeField] private float TimeTired;
     [SerializeField] private Animator animator;
+    [SerializeField] private GameObject littleGnome;
     private bool invulnerable = false;
     private bool hasBeenPlayed = false;
     Vector2 walkAttackDistance = new Vector2(0, 2);
-
+    ScreenShake screenShake;
     //SE EJECUTA MIENTRAS ESTA EN EL ESTADO DE WALKTOPLAYER
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public void StartMethodWalk()
@@ -41,6 +43,8 @@ public class ActionsDavidElGnomo : MonoBehaviour
     public void StartMethodWalkAttack()
     {
         GetComponent<SpriteRenderer>().color = Color.green;
+        screenShake = GetComponent<ScreenShake>();
+        GetComponent<Knockback>().strength = 30f;
         ended = false;
         if (playerTransform.position.x > DavidElGnomoTransform.position.x)
             animator.Play("WalkSideRightDG");
@@ -57,12 +61,15 @@ public class ActionsDavidElGnomo : MonoBehaviour
         //coroutine that moves the object to the right for 2 seconds
         if (playerTransform.position.x > DavidElGnomoTransform.position.x) {
             StartCoroutine(MoveRightForTwoSeconds(DavidElGnomoTransform, speed));
+            screenShake.StartCoroutine(screenShake.ShakeScreen());
         }
         else
         {
             StartCoroutine(MoveLeftForTwoSeconds(DavidElGnomoTransform, speed));
+            screenShake.StartCoroutine(screenShake.ShakeScreen());
         }
         if (ended){
+            GetComponent<Knockback>().strength = 10f;
             StopAllCoroutines();
             return Status.Success;
         }
@@ -97,6 +104,9 @@ public class ActionsDavidElGnomo : MonoBehaviour
         StopAllCoroutines();
         GetComponent<SpriteRenderer>().color = Color.yellow;
         animator.Play("Idle");
+        StartCoroutine(InvokeGnomes(1f));
+        StartCoroutine(InvokeGnomes(2f));
+        StartCoroutine(InvokeGnomes(3f));
         StartCoroutine(WaitSeconds(5));
         invulnerable = true;
     }
@@ -157,7 +167,7 @@ public class ActionsDavidElGnomo : MonoBehaviour
 
     public bool CheckHPLow()
     {
-        return HP<HPGnomeMode && hasBeenPlayed;
+        return HP<HPGnomeMode && !hasBeenPlayed;
     }
 
     /// <summary>
@@ -201,6 +211,12 @@ public class ActionsDavidElGnomo : MonoBehaviour
         ended = true;
     }
 
+    IEnumerator InvokeGnomes(float timeSpawn)
+    {
+        yield return new WaitForSeconds(timeSpawn); ;
+        Instantiate(littleGnome, new Vector3(new System.Random().Next((int)DavidElGnomoTransform.position.x-3, (int)DavidElGnomoTransform.position.x+3), new System.Random().Next((int)DavidElGnomoTransform.position.y-3, (int)DavidElGnomoTransform.position.y + 3), 0), Quaternion.identity);
+    }
+
     IEnumerator PlayAnimation(string animationName)
     {
         animator.Play(animationName);
@@ -234,6 +250,7 @@ public class ActionsDavidElGnomo : MonoBehaviour
             if (collision.gameObject.CompareTag("Player"))
             {
                 player.GetComponent<KnightScript>().ReceiveAttack(damage);
+                GetComponent<Knockback>().PlayFeedback(gameObject, player.GetComponent<Rigidbody2D>());
             }
         }
     }
