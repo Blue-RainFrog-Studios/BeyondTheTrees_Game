@@ -38,6 +38,8 @@ public class RoomController : MonoBehaviour
 
     bool updatedRooms = false;
 
+    int contPuzzle = 0;
+
     private void Awake()
     {
         instance = this;
@@ -185,15 +187,30 @@ public class RoomController : MonoBehaviour
     }
     public string GetRandomRoomName()
     {
+        int randomAux = Random.Range(0, 1);
         string[] possibleRooms = new string[]
         {
             //"Empty",
-            //"Basic1",
-            //"King1",
-            "SkullPuzzle",
-            
+            "Basic1",           
         };
-        return possibleRooms[Random.Range(0,possibleRooms.Length)];
+        string[] puzzleRooms = new string[]
+        {
+            "King1",
+            "SkullPuzzle",
+            "RapidoQueSeQueman",
+            "RapidoQueSeQueman 1",
+            "RapidoQueSeQueman 2",
+        };
+        if(randomAux == 0 && contPuzzle < 1)
+        {
+            contPuzzle++;
+            return puzzleRooms[Random.Range(0, puzzleRooms.Length)];
+        }
+        else
+        {
+            return possibleRooms[Random.Range(0, possibleRooms.Length)];
+        }
+        
     }
     public void OnPlayerEnterRoom(Room room)
     {

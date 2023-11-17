@@ -44,5 +44,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DungeonRooms/Puzzles/BasementSkullPuzzle.unity
     guid: fb377558bbbd375458571de75a8a744e
+  - enabled: 1
+    path: Assets/Scenes/DungeonRooms/Puzzles/BasementRapidoQueSeQueman.unity
+    guid: 0f675bceb78633049afd57bd7c1181d1
+  - enabled: 1
+    path: Assets/Scenes/DungeonRooms/Puzzles/BasementRapidoQueSeQueman 1.unity
+    guid: 699f587ec714a1d44a2313e6beb6ad06
+  - enabled: 1
+    path: Assets/Scenes/DungeonRooms/Puzzles/BasementRapidoQueSeQueman 2.unity
+    guid: 023ed04820caf5042a400c6edf2aad96
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9ecf038445ed1da49931ebbc8f3a8320, type: 2}

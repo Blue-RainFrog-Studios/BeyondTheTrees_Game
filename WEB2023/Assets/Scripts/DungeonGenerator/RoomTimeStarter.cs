@@ -63,12 +63,13 @@ public class RoomTimeStarter : MonoBehaviour
 
             // Interpolación lineal para modificar la opacidad gradualmente
             Color lerpedColor = Color.Lerp(originalColor, new Color(originalColor.r, originalColor.g, originalColor.b, 0f), percentageCompleted);
-            itemRenderer.material.color = lerpedColor;
+            if(itemRenderer != null)
+                itemRenderer.material.color = lerpedColor;
 
             yield return null;
         }
-
-        Destroy(itemRenderer.gameObject); // Destruir el objeto después de reducir la opacidad
+        if (itemRenderer != null)
+            Destroy(itemRenderer.gameObject); // Destruir el objeto después de reducir la opacidad
     }
 
 
