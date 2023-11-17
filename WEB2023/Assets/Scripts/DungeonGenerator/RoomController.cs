@@ -28,6 +28,10 @@ public class RoomController : MonoBehaviour
 
     Room lastRoom;
 
+    public static bool boosDoor = false;
+
+
+
     Queue<RoomInfo> loadRoomQueue = new Queue<RoomInfo>();
 
     public List<Room> loadedRooms = new List<Room>();
@@ -95,7 +99,7 @@ public class RoomController : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         if (loadRoomQueue.Count == 0)
         {
-            
+
             Room bossRoom = loadedRooms[loadedRooms.Count-1];
             Room tempRoom = new Room(bossRoom.X, bossRoom.Y);
             Destroy(bossRoom.gameObject);
@@ -270,13 +274,14 @@ public class RoomController : MonoBehaviour
                         door.doorCollider.SetActive(true);
                     }
 
-                }
-                else
-                {
+                }else if(currRom== loadedRooms[loadedRooms.Count - 1] && enemies.Length == 0){
+                    boosDoor = true;
+                }else{
                     foreach (Door door in room.GetComponentsInChildren<Door>())
                     {
                         door.doorCollider.SetActive(false);
                     }
+
                 }
             }
         }
