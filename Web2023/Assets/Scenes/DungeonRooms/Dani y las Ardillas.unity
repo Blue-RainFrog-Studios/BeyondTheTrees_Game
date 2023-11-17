@@ -2014,6 +2014,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1856821096735309085, guid: f35aa5fe2f581a7468bb5eeb2777b25b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1592649284}
+    - target: {fileID: 1856821096735309085, guid: f35aa5fe2f581a7468bb5eeb2777b25b, type: 3}
       propertyPath: consumedAcorn
       value: 0
       objectReference: {fileID: 0}
@@ -2637,6 +2641,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1592649284 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1156985873014526917, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+  m_PrefabInstance: {fileID: 924529838}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1768745080
 GameObject:
   m_ObjectHideFlags: 0

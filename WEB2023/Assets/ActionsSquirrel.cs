@@ -16,6 +16,12 @@ public class ActionsSquirrel : MonoBehaviour
     public bool consumedAcorn;
     [SerializeField] private int damage;
 
+    [SerializeField]
+    private AudioClip eatClip;
+
+    [SerializeField]
+    private AudioSource audioSource;
+
     private void Awake()
     {
         consumedAcorn = false;
@@ -45,7 +51,8 @@ public class ActionsSquirrel : MonoBehaviour
 
     public void StartWalkPlayer()
     {
-
+        if(audioSource.isPlaying)
+            audioSource.Stop();
     }
 
     public Status UpdateWalkPlayer()
@@ -62,13 +69,13 @@ public class ActionsSquirrel : MonoBehaviour
     public bool CheckAcornInRange()
     {
         if(acornTransform != null)
-            return Vector2.Distance(squirrelTransform.position, acornTransform.position) < 0.5f;
+            return Vector2.Distance(squirrelTransform.position, acornTransform.position) < 1.0f;
         return true;
     }
 
     public void StartEatAcorn()
     {
-        
+        audioSource.PlayOneShot(eatClip);
     }
 
     public Status UpdateEatAcorn()
