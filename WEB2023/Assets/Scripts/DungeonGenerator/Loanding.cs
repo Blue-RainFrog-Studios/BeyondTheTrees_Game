@@ -8,7 +8,6 @@ public class Loanding : MonoBehaviour
 
     public GameObject loanding;
     public GameObject noInve;
-
     private bool once = true;
     // Start is called before the first frame update
 
@@ -30,7 +29,7 @@ public class Loanding : MonoBehaviour
         {
             loanding.SetActive(true);
             noInve.SetActive(false);
-            
+            this.gameObject.GetComponent<PlayerMovementInputSystem>().enabled = false;
             StartCoroutine(WaitLoad());
             
         }
@@ -44,6 +43,7 @@ public class Loanding : MonoBehaviour
             yield return new WaitForSeconds(4);
             loanding.SetActive(false);
             noInve.SetActive(true);
+            this.gameObject.GetComponent<PlayerMovementInputSystem>().enabled = true;
             once = false;
 
         }
