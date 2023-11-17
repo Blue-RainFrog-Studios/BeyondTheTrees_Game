@@ -152,9 +152,10 @@ public class Room : MonoBehaviour
         if (other.tag=="Player")
         {
             RoomController.instance.OnPlayerEnterRoom(this);
-            if (trees != null){ 
-                trees.SetActive(false);
-            }
+            //if (trees != null)
+            //{
+            //    trees.SetActive(false);
+            //}
         }
     }
 }

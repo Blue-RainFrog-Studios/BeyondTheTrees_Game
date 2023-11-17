@@ -299,6 +299,10 @@ public class RoomController : MonoBehaviour
 
                 }else if(currRom== loadedRooms[loadedRooms.Count - 1] && enemies.Length == 0){
                     boosDoor = true;
+                    //AQUI CAMBIAR ESCENA
+
+                    
+
                 }else{
                     foreach (Door door in room.GetComponentsInChildren<Door>())
                     {

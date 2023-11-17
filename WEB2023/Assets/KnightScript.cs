@@ -29,10 +29,10 @@ public class KnightScript : MonoBehaviour
 
     public KnightScript() 
     {
-        totalHealth = 50;
-        health = 50;
+        totalHealth = 300;
+        health = 300;
         speed = 6;
-        attack = 15;
+        attack = 50;
         defense = 7;
         attackSpeed = 3;
     }
