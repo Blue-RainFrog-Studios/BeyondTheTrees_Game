@@ -52,10 +52,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 34fb42aaca0b15348ac7c42654e803fc, type: 2}
   - {fileID: 11400000, guid: 7a2b7f1dcbedc0c4090472f0cc3e75a2, type: 2}
   - {fileID: 11400000, guid: 6d4b787610268d642a807af78f88b1b8, type: 2}
-  Run_Rare_Items:
-  - {fileID: 11400000, guid: 2883508b101feda49a4352d064fed83a, type: 2}
-  - {fileID: 11400000, guid: c0e6c370b58e86d46ba7bc7cb2c6f444, type: 2}
-  - {fileID: 11400000, guid: 5af95d00a7450214bb297cd4a8ad8ba2, type: 2}
-  - {fileID: 11400000, guid: 5093d364f949a9048bdd9e49d6cac2e9, type: 2}
+  Run_Rare_Items: []
   Run_Epic_Items: []
   Run_Legendary_Items: []
