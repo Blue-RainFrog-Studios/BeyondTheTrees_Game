@@ -191,7 +191,12 @@ public class RoomController : MonoBehaviour
         string[] possibleRooms = new string[]
         {
             //"Empty",
-            "Basic1",           
+            "Basic3",           
+        };
+        string[] possibleRooms1 = new string[]
+{
+            //"Empty",
+            "Basic1",
         };
         string[] puzzleRooms = new string[]
         {

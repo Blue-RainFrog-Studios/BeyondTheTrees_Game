@@ -10,6 +10,7 @@ public class PlayerMovementInputSystem : MonoBehaviour
     [SerializeField] public float speed = 8.0f;
     [SerializeField] private float smoothness = 0.3f;
     [SerializeField] private GameObject attack;
+    public int nivel = 0;
 
     //animacion personaje
     public Animator characterAnimator;

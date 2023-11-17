@@ -33,6 +33,12 @@ EditorBuildSettings:
     path: Assets/Scenes/DungeonRooms/BasementBasic1.unity
     guid: 5e84cac0802a94f4d83b93dd12e580f5
   - enabled: 1
+    path: Assets/Scenes/DungeonRooms/BasementBasic2.unity
+    guid: 8eca9841883c7df448c1350ee6e22f52
+  - enabled: 1
+    path: Assets/Scenes/DungeonRooms/BasementBasic3.unity
+    guid: f2e740c4ccbacce49a2e211dc7a9c283
+  - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: a809f6fa662af8141903199a308f2d66
   - enabled: 1
