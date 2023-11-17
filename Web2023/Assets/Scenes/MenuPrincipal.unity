@@ -6015,7 +6015,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 13
+  m_text: 3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c41a1a6355e104641857672414d4b012, type: 2}
   m_sharedMaterial: {fileID: -7099467593743831185, guid: c41a1a6355e104641857672414d4b012, type: 2}
@@ -12712,7 +12712,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a813187ef7c8a842a5856948e25c810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  texto: {fileID: 456952234}
+  textoENG: {fileID: 456952234}
+  textoESP: {fileID: 1766498127}
   maleButton: {fileID: 502887776}
   femaleButton: {fileID: 900214495}
   playerPrefab: {fileID: 1156985873014526917, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
@@ -23335,7 +23336,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 13
+  m_text: 3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c41a1a6355e104641857672414d4b012, type: 2}
   m_sharedMaterial: {fileID: -7099467593743831185, guid: c41a1a6355e104641857672414d4b012, type: 2}

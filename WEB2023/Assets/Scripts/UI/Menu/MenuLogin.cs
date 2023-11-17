@@ -10,15 +10,17 @@ public class MenuLogin : MonoBehaviour
 {
     private bool genero;
     private int edad = 3;
-    public TMP_Text texto;
+    public TMP_Text textoENG;
+    public TMP_Text textoESP;
     [SerializeField] private Button maleButton;
     [SerializeField] private Button femaleButton;
     private string nombreUsuario = "Invitado";
     [SerializeField]
     private GameObject playerPrefab;
-    private void Awake()
+    private void CambioEdad()
     {
-        texto.text = edad.ToString();
+        textoENG.text = edad.ToString();
+        textoESP.text = edad.ToString();
     }
     public void volverMenuPrincipal()
     {
@@ -75,12 +77,12 @@ public class MenuLogin : MonoBehaviour
     {
         edad++;
         if (edad > 100) edad = 3;
-        Awake();
+        CambioEdad();
     }
     public void esIzquierda()
     {
         edad--;
         if (edad < 3) edad = 3;
-        Awake();
+        CambioEdad();
     }
 }
