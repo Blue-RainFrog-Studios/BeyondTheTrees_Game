@@ -38,5 +38,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DungeonRooms/BasementBig.unity
     guid: 98ab4bcde1c3c954ba120584f15a828e
+  - enabled: 1
+    path: Assets/Scenes/DungeonRooms/BasementDani y las Ardillas.unity
+    guid: 5126602ffbf5bf44cb60dc5bfde0aeae
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9ecf038445ed1da49931ebbc8f3a8320, type: 2}

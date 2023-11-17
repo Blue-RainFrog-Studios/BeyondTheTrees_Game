@@ -29,16 +29,16 @@ namespace BehaviourAPI.UnityToolkit.Demos
             /**/
             FunctionalAction SquirrelWalkAcorn = new(_ActionsSquirrel.StartWalkAcorn, _ActionsSquirrel.UpdateWalkAcorn);
             /**/
-            FunctionalAction SquirrelWalkPlayer = new(_ActionsSquirrel.StartWalkPlayer, _ActionsSquirrel.UpdateWalkPlayer);            
+            FunctionalAction SquirrelWalkPlayer = new(_ActionsSquirrel.StartWalkPlayer, _ActionsSquirrel.UpdateWalkPlayer);   
             /**/
-            FunctionalAction SquirrelEatAcorn = new(_ActionsSquirrel.StartEatAcorn, _ActionsSquirrel.UpdateEatAcorn); 
+            FunctionalAction SquirrelEatAcorn = new(_ActionsSquirrel.StartEatAcorn, _ActionsSquirrel.UpdateEatAcorn);
             
 
             //states
             /**/
             State WalkAcorn = Squirrelfsm.CreateState(SquirrelWalkAcorn);
             /**/
-            State WalkPlayer = Squirrelfsm.CreateState(SquirrelWalkPlayer);     
+            State WalkPlayer = Squirrelfsm.CreateState(SquirrelWalkPlayer);
             /**/
             State EatAcorn = Squirrelfsm.CreateState(SquirrelEatAcorn);
             /**/

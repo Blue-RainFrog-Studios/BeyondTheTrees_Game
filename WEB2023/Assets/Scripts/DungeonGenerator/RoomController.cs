@@ -101,9 +101,6 @@ public class RoomController : MonoBehaviour
             loadedRooms.Remove(roomToRemove);
             LoadRoom("End",tempRoom.X,tempRoom.Y);
         }
-
-        
-
         cont= 1;
 
     }
@@ -186,7 +183,8 @@ public class RoomController : MonoBehaviour
         string[] possibleRooms = new string[]
         {
             //"Empty",
-            "Basic1",
+            //"Basic1",
+            "Dani y las Ardillas",
             
         };
         return possibleRooms[Random.Range(0,possibleRooms.Length)];
