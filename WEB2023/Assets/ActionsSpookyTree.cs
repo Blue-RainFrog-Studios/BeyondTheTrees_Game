@@ -9,7 +9,11 @@ public class ActionsSpookyTree : MonoBehaviour
 {
     [SerializeField] private GameObject spookyTree;
     [SerializeField] private GameObject player;
-    [SerializeField] private GameObject EnemyBullet;
+    [SerializeField] private GameObject EnemyBulletLeaf;
+    [SerializeField] private Transform finalPos1;
+    [SerializeField] private Transform finalPos2;
+    [SerializeField] private Transform finalPos3;
+    //[SerializeField] private GameObject prueba;
     GameObject leaveFinalPos;
      bool ended;
     #region MethodsSleep
@@ -33,13 +37,13 @@ public class ActionsSpookyTree : MonoBehaviour
         Debug.Log("SHARP LEAVES P1");
         //instancia unos objetos bala que se muevan hacia delante mediante una corrutina
         ended = false;
-        Quaternion lookDown = Quaternion.LookRotation(Vector3.down, Vector3.forward);
+        Quaternion lookDown = Quaternion.LookRotation(Vector3.down);
         Vector3 posBullet1 = new Vector3(spookyTree.transform.position.x + 4, spookyTree.transform.position.y, spookyTree.transform.position.z);
         Vector3 posBullet2 = new Vector3(spookyTree.transform.position.x, spookyTree.transform.position.y, spookyTree.transform.position.z);
         Vector3 posBullet3 = new Vector3(spookyTree.transform.position.x - 4, spookyTree.transform.position.y, spookyTree.transform.position.z);
-        StartCoroutine(InstantiateBullet(posBullet1, lookDown));
-        StartCoroutine(InstantiateBullet(posBullet2, lookDown));
-        StartCoroutine(InstantiateBullet(posBullet3, lookDown));
+        StartCoroutine(InstantiateBullet(posBullet1, finalPos2));
+        StartCoroutine(InstantiateBullet(posBullet2, finalPos1));
+        StartCoroutine(InstantiateBullet(posBullet3, finalPos3));
         //cuando termine cambia la variable de ended a true
         StartCoroutine(WaitThreeSecondsAndEnd());
 
@@ -59,15 +63,15 @@ public class ActionsSpookyTree : MonoBehaviour
         Debug.Log("sharp leaves p2");   
         //instancia unos objetos bala que se muevan hacia delante mediante una corrutina
         ended = false;
-        Quaternion lookDown = Quaternion.LookRotation(Vector3.down, Vector3.forward);
-        Quaternion lookLeft = Quaternion.Euler(0f, -45f, 0f) * Quaternion.LookRotation(Vector3.down);
-        Quaternion lookRight = Quaternion.Euler(0f, 45f, 0f) * Quaternion.LookRotation(Vector3.down);
-        Vector3 posBullet1 = new Vector3(spookyTree.transform.position.x + 4, spookyTree.transform.position.y, spookyTree.transform.position.z);
+        //Quaternion lookDown = Quaternion.LookRotation(Vector3.down);
+        //Quaternion lookLeft = Quaternion.Euler(0f, -45f, 0f) * Quaternion.LookRotation(Vector3.down);
+        //Quaternion lookRight = Quaternion.Euler(0f, 45f, 0f) * Quaternion.LookRotation(Vector3.down);
+        Vector3 posBullet1 = new Vector3(spookyTree.transform.position.x + 8, spookyTree.transform.position.y, spookyTree.transform.position.z);
         Vector3 posBullet2 = new Vector3(spookyTree.transform.position.x, spookyTree.transform.position.y, spookyTree.transform.position.z);
-        Vector3 posBullet3 = new Vector3(spookyTree.transform.position.x - 4, spookyTree.transform.position.y, spookyTree.transform.position.z);
-        StartCoroutine(InstantiateBullet(posBullet1, lookLeft));
-        StartCoroutine(InstantiateBullet(posBullet2, lookDown));
-        StartCoroutine(InstantiateBullet(posBullet3, lookRight));
+        Vector3 posBullet3 = new Vector3(spookyTree.transform.position.x - 8, spookyTree.transform.position.y, spookyTree.transform.position.z);
+        StartCoroutine(InstantiateBullet(posBullet1, finalPos3));
+        StartCoroutine(InstantiateBullet(posBullet2, finalPos1));
+        StartCoroutine(InstantiateBullet(posBullet3, finalPos2));
         //cuando termine cambia la variable de ended a true
         StartCoroutine(WaitThreeSecondsAndEnd());
     }
@@ -119,13 +123,13 @@ public class ActionsSpookyTree : MonoBehaviour
     }
     #endregion
 
-    IEnumerator InstantiateBullet(Vector2 position, Quaternion direction)
+    IEnumerator InstantiateBullet(Vector2 position, Transform finalPos)
     {
-        EnemyBullet.GetComponent<BulletController>().lifeTime = 3;
-        GameObject bullet = Instantiate(EnemyBullet, position, direction) as GameObject;
-        leaveFinalPos.transform.rotation = EnemyBullet.transform.rotation;
-        leaveFinalPos.transform.position = EnemyBullet.transform.forward*10; //la pos a donde va a ir la bala
-        bullet.GetComponent<BulletController>().GetPlayer(leaveFinalPos.transform); //se manda la posicion a donde va a ir la bala
+        
+        EnemyBulletLeaf.GetComponent<BulletController>().lifeTime = 3;
+        GameObject bullet = Instantiate(EnemyBulletLeaf, position, Quaternion.identity) as GameObject;
+        bullet.GetComponent<BulletController>().GetPlayer(finalPos);
+ //se manda la posicion a donde va a ir la bala
         yield return null;
     }
     IEnumerator WaitThreeSecondsAndEnd() { yield return new WaitForSeconds(3); ended = true; }
@@ -133,6 +137,7 @@ public class ActionsSpookyTree : MonoBehaviour
     private void Start()
     {
         ended = false;
-        leaveFinalPos = new GameObject();
+        //leaveFinalPos = new GameObject();
+        //leaveFinalPos.transform.position = new Vector3(EnemyBullet.transform.position.x, EnemyBullet.transform.position.y + 10, EnemyBullet.transform.position.z); //la pos a donde va a ir la bala
     }
 }
