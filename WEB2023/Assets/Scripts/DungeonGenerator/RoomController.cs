@@ -187,7 +187,7 @@ public class RoomController : MonoBehaviour
     }
     public string GetRandomRoomName()
     {
-        int randomAux = Random.Range(0, 1);
+        int randomAux = Random.Range(0, 2);
         string[] possibleRooms = new string[]
         {
             //"Empty",
