@@ -30,6 +30,7 @@ public class Room : MonoBehaviour
 
     public GameObject trees;
 
+
     public List<Door> doors = new List<Door>();
     // Start is called before the first frame update
     void Start()
@@ -71,6 +72,7 @@ public class Room : MonoBehaviour
             RemoveUnconnectedDoors();
             updatedDoors = true;
         }
+
     }
     public void RemoveUnconnectedDoors()
     {
