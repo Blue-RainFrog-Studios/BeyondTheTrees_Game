@@ -17,6 +17,7 @@ public class AcornScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             //squirrel.GetComponent<SScript>().stop.Fire();
+            collision.gameObject.GetComponent<CoinCounter>().ExpeditionMoneyChanger(10);
             Destroy(this.gameObject);
         }
     }
