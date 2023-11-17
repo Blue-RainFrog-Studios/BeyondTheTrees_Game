@@ -299,7 +299,7 @@ public class EnemyController : MonoBehaviour
 
 
         life -= damage;
-        Debug.Log("Recibo daño");
+        Debug.Log("Recibo daï¿½o");
         if (life <= 0)
         {
             currState = EnemyState.Die;
