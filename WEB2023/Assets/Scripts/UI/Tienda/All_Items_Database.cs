@@ -38,9 +38,8 @@ public class All_Items_Database : ScriptableObject
     {
         return Shop_Items[index];
     }
-
-    public void Random_Run_Item()
+    public ItemSO RunGetItemFromPool(int index)
     {
-
+        return Run_Items[index];
     }
 }
