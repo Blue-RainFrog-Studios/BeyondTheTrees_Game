@@ -15,6 +15,7 @@ TagManager:
   - Pause
   - ColliderBush
   - ColliderKing
+  - ItemSpawner
   layers:
   - Default
   - TransparentFX
