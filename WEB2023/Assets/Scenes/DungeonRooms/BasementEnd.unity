@@ -2811,10 +2811,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grid: {fileID: 1850390393}
   spawnerData:
-  - name: BoosGhost
-    spawnerData: {fileID: 11400000, guid: 68c44062c5258ba41842d63953de1dd2, type: 2}
-  - name: BossRange
-    spawnerData: {fileID: 11400000, guid: 42081156395ce2c45b4097576f254164, type: 2}
+  - name: Gnomeo
+    spawnerData: {fileID: 11400000, guid: 35fce0954d06913429bfaef448bb7d48, type: 2}
 --- !u!1 &2031183877
 GameObject:
   m_ObjectHideFlags: 0

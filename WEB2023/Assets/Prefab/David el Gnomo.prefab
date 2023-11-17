@@ -40,7 +40,7 @@ Transform:
   m_Children:
   - {fileID: 3216427522868637631}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5027540615572099060
 SpriteRenderer:
@@ -439,8 +439,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fb8a3a5e1072de4589d2a61625cd706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  playerTransform: {fileID: 0}
+  player: {fileID: 1156985873014526917, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+  playerTransform: {fileID: 5308110313655663404, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
   DavidElGnomoTransform: {fileID: 1256431170692015488}
   TimeTired: 1.5
   animator: {fileID: 2394337430247210253}
@@ -559,8 +559,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d414c493cbb3e114e8c3965e41823139, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  playerTransform: {fileID: 0}
+  player: {fileID: 1156985873014526917, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+  playerTransform: {fileID: 5308110313655663404, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
   DavidElGnomoTransform: {fileID: 1256431170692015488}
   TimeTired: 1
   animator: {fileID: 2394337430247210253}
@@ -584,7 +584,7 @@ MonoBehaviour:
   HP: 300
   HPGnomeMode: 200
   HPSecondPhase: 100
-  player: {fileID: 0}
+  player: {fileID: 4836137330429216003}
 --- !u!1 &8686479143785322692
 GameObject:
   m_ObjectHideFlags: 0
