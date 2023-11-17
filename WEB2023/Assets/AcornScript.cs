@@ -12,11 +12,11 @@ public class AcornScript : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            squirrel.GetComponent<SScript>().stop.Fire();
+            //squirrel.GetComponent<SScript>().stop.Fire();
             Destroy(this.gameObject);
         }
     }

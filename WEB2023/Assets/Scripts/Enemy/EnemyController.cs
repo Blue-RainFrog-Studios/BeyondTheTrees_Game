@@ -45,8 +45,8 @@ public class EnemyController : MonoBehaviour
     public float rangeTeleport;
     public float attackRange;
     public float rangeSquirrel;
-    public float eatRange = 2;
-    public bool consumed;
+    public float eatRange;
+    [SerializeField]public bool consumed;
     Rigidbody2D rb;
 
     [SerializeField]
@@ -119,7 +119,7 @@ public class EnemyController : MonoBehaviour
             {
                 currState = EnemyState.Follow;
             }
-            else if (!isPlayerInRange(range) && !isPlayerInRangeTeleport(rangeTeleport) && !isPlayerInRangeSquirrel(rangeSquirrel) && currState != EnemyState.Die)
+            else if (!isPlayerInRange(range) && !isPlayerInRangeTeleport(rangeTeleport) && !isAcornInRangeSquirrel(rangeSquirrel) && currState != EnemyState.Die)
             {
                 currState = EnemyState.Wander;
             }
@@ -127,15 +127,17 @@ public class EnemyController : MonoBehaviour
             {       
                 currState = EnemyState.Teleport;
             }
-            else if(isPlayerInRangeSquirrel(rangeSquirrel) && currState != EnemyState.Die)
+            else if(isAcornInRangeSquirrel(rangeSquirrel) && currState != EnemyState.Die)
             {
                 currState = EnemyState.WalkAcorn;
             }
-            if (Vector3.Distance(transform.position, acorn.transform.position) < eatRange && currState != EnemyState.Die && consumed == false)
+
+            if (acorn != null && Vector3.Distance(transform.position, acorn.transform.position) < eatRange && currState != EnemyState.Die && consumed == false)
             {
                 currState = EnemyState.EatAcorn;
             }
-            if (Vector3.Distance(transform.position,player.transform.position) < attackRange) 
+
+            if (Vector3.Distance(transform.position, player.transform.position) < attackRange) 
             {
                 currState = EnemyState.Attack;
             }
@@ -172,11 +174,16 @@ public class EnemyController : MonoBehaviour
         return Vector3.Distance(transform.position, player.transform.position) <= rangeTeleport;
     }
 
-    private bool isPlayerInRangeSquirrel(float rangeSquirrel)
+    private bool isAcornInRangeSquirrel(float rangeSquirrel)
     {
         acorn = GameObject.FindGameObjectWithTag("Acorn");
-        return Vector3.Distance(transform.position, acorn.transform.position) <= rangeSquirrel;
-    }
+        if (acorn != null)
+            return Vector3.Distance(transform.position, acorn.transform.position) <= rangeSquirrel;
+        else
+            currState = EnemyState.Follow;
+        range = 10;
+        return false;
+    }    
 
     private void WalkAcorn()
     {
@@ -198,7 +205,7 @@ public class EnemyController : MonoBehaviour
         {
             Destroy(acorn);
         }
-        currState = EnemyState.Follow;
+        range = 10;
     }
 
     private IEnumerator ChooseDirection()
