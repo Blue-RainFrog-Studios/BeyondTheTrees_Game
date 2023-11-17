@@ -31,6 +31,7 @@ public class RoomController : MonoBehaviour
     public static bool boosDoor = false;
 
 
+    GameObject player; 
 
     Queue<RoomInfo> loadRoomQueue = new Queue<RoomInfo>();
 
@@ -47,6 +48,7 @@ public class RoomController : MonoBehaviour
     private void Awake()
     {
         instance = this;
+
     }
 
     void Start()
@@ -191,26 +193,44 @@ public class RoomController : MonoBehaviour
     }
     public string GetRandomRoomName()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         int randomAux = Random.Range(0, 2);
-        string[] possibleRooms = new string[]
+        string[] possibleRooms = new string[2]; 
+        if (player.GetComponent<PlayerMovementInputSystem>().nivel == 0)
         {
-            //"Empty",
-            "Basic3",           
-        };
-        string[] possibleRooms1 = new string[]
-{
+            possibleRooms = new string[]
+            {
+                    //"Empty",
+                    "Basic3",
+            };
+                    
+        }
+        else if (player.GetComponent<PlayerMovementInputSystem>().nivel == 1)
+        {
+            possibleRooms = new string[]
+            {
             //"Empty",
             "Basic1",
-        };
+            };
+        }
+        else if (player.GetComponent<PlayerMovementInputSystem>().nivel == 2)
+        {
+            possibleRooms = new string[]
+            {
+            //"Empty",
+            "Basic1",
+            "Basic3",
+            };
+        }
         string[] puzzleRooms = new string[]
         {
             "King1",
             "SkullPuzzle",
             "RapidoQueSeQueman",
-            "RapidoQueSeQueman 1",
-            "RapidoQueSeQueman 2",
+            //"RapidoQueSeQueman 1",
+            //"RapidoQueSeQueman 2",
         };
-        if(randomAux == 0 && contPuzzle < 1)
+        if(randomAux == 8 && contPuzzle < 1)
         {
             contPuzzle++;
             return puzzleRooms[Random.Range(0, puzzleRooms.Length)];
@@ -300,8 +320,13 @@ public class RoomController : MonoBehaviour
                 }else if(currRom== loadedRooms[loadedRooms.Count - 1] && enemies.Length == 0){
                     boosDoor = true;
                     //AQUI CAMBIAR ESCENA
-
-                    
+                    Debug.Log("TERMINASTE LA RUN");
+                    if(player != null)
+                    {
+                        player.GetComponent<PlayerMovementInputSystem>().nivel++;
+                        GameObject menuOpcion = GameObject.Find("Opcion");
+                        menuOpcion.transform.GetChild(0).gameObject.SetActive(true);
+                    }
 
                 }else{
                     foreach (Door door in room.GetComponentsInChildren<Door>())

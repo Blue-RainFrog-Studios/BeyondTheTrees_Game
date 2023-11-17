@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ExitBoss : MonoBehaviour
 {
-    public GameObject exit;
+    //public GameObject exit;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,7 @@ public class ExitBoss : MonoBehaviour
 
         if (RoomController.boosDoor)
         {
-            exit.SetActive(true);
+            //exit.SetActive(true);
         }
     }
 }
