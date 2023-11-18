@@ -29,10 +29,35 @@ public class Attack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+
         if (collision.CompareTag("Enemy"))
-        {  
+        {
             collision.GetComponent<EnemyController>().RecieveDamage(damage);
+            Destroy(gameObject);
+        }
+        if (collision.CompareTag("Boss"))
+        {
+            collision.GetComponent<DavidElGnomoController>().RecieveDamage(damage);
+            Destroy(gameObject);
+        }
+
+        if (collision.CompareTag("Root"))
+        {
+            collision.GetComponent<RootController>().RecieveDamage((int)damage);
+            Destroy(gameObject);
+        }
+        if (collision.CompareTag("LittleGnome"))
+        {
+            collision.GetComponent<LittleGnomes>().RecieveDamage((int)damage);
+            Destroy(gameObject);
+        }
+        if (collision.CompareTag("GhostTree"))
+        {
+            collision.GetComponent<GhostTree>().RecieveDamage((int)damage);
+            Destroy(gameObject);
+        }
+        if (collision.CompareTag("BossTree"))
+        {
             Destroy(gameObject);
         }
     }

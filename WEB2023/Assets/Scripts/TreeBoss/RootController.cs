@@ -11,7 +11,7 @@ public class RootController : MonoBehaviour
     int TotalHP;
     private void Start()
     {
-        Tree = GameObject.FindGameObjectWithTag("Boss");
+        Tree = GameObject.FindGameObjectWithTag("BossTree");
         TotalHP = HP;
     }
     public void RecieveDamage(int damage)
