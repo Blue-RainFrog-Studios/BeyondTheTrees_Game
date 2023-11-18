@@ -32,6 +32,8 @@ public class Room : MonoBehaviour
 
     public List<Door> doors = new List<Door>();
     // Start is called before the first frame update
+
+    [SerializeField] GameObject ItemSpawner;
     void Start()
     {
         if (RoomController.instance == null)

@@ -15,6 +15,7 @@ public class All_Items_Database : ScriptableObject
     public List<ItemSO> Run_Epic_Items;
     public List<ItemSO> Run_Legendary_Items;
 
+
     public int All_Items_Count
     {
         get { return All_items.Count; }

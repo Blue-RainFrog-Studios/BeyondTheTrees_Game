@@ -37,6 +37,8 @@ public class RoomController : MonoBehaviour
 
     bool updatedRooms = false;
 
+    ItemSpawner spawn;
+
     private void Awake()
     {
         instance = this;
@@ -49,6 +51,11 @@ public class RoomController : MonoBehaviour
         //LoadRoom("Empty", -1, 0);
         //LoadRoom("Empty", 0, 1);
         //LoadRoom("Empty", 0, -1);
+
+        //ItemSpawner spawn = currRom.GetComponentInChildren<ItemSpawner>();
+        //spawn = currRom.GetComponent<ItemSpawner>();
+        //spawn.SpawObject();
+
     }
 
     void Update()
@@ -275,6 +282,10 @@ public class RoomController : MonoBehaviour
                     {
                         door.doorCollider.SetActive(false);
                     }
+
+                    Debug.Log("Spawnea el objeto");
+
+
                 }
             }
         }

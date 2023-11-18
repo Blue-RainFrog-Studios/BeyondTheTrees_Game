@@ -18,7 +18,8 @@ public class ItemSpawner : MonoBehaviour
     void Start()
     {
         //RandomItemFromRun();
-        RandomItem_BasedOnProbability_FromRun();
+        //RandomItem_BasedOnProbability_FromRun();
+        SpawObject();
     }
 
     // Update is called once per frame
@@ -157,5 +158,11 @@ public class ItemSpawner : MonoBehaviour
                     Debug.Log("No se ha spawneado nada");
                     break;
             }
+    }
+    public void SpawObject()
+    {
+        //RandomItemFromRun();
+        RandomItem_BasedOnProbability_FromRun();
+        Debug.LogFormat("<color=green>Se ha spawneado un objeto.</color>");
     }
 }
