@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 72702505, guid: a88d8b6e1cf625743844d9f93db1fe4c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -108,7 +108,7 @@ MonoBehaviour:
   rangeTeleport: 8
   attackRange: 1
   coolDown: 5
-  coolDownTp: 10
+  coolDownTp: 0
   speed: 1
   life: 40
   bulletSpeed: 0
