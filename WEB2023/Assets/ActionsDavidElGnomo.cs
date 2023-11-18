@@ -8,7 +8,7 @@ using UnityEngine;
 public class ActionsDavidElGnomo : MonoBehaviour
 {
     #region Varibles
-    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject player; //        player = GameObject.FindGameObjectWithTag("Player");
     [SerializeField] private Transform playerTransform;
     [SerializeField] private Transform DavidElGnomoTransform;
 

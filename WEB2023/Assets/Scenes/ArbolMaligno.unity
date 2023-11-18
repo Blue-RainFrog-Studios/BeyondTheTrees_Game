@@ -764,6 +764,7 @@ MonoBehaviour:
   spookyTree: {fileID: 1513786769}
   player: {fileID: 688600862}
   EnemyBulletLeaf: {fileID: 7118902396155586748, guid: ada12fb54ff5cde4689115035863fc74, type: 3}
+  Ghost: {fileID: 3517669100422621170, guid: 868c32c33275de749861c04a739e00c2, type: 3}
   finalPos1: {fileID: 4259761}
   finalPos2: {fileID: 1518249425}
   finalPos3: {fileID: 1559202492}

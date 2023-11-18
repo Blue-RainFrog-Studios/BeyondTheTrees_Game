@@ -26,9 +26,9 @@ public class FSMSpookyTree : BehaviourRunner
 
         FunctionalAction SharpLeavesP2Action = new FunctionalAction(_ActionsSpookyTree.StartMethodSharpLeavesP2, _ActionsSpookyTree.UpdateMethodSharpLeavesP2);
 
-        FunctionalAction GhostSpawnAction = new FunctionalAction();
+        FunctionalAction GhostSpawnAction = new FunctionalAction(_ActionsSpookyTree.StartMethodGhostSpawn, _ActionsSpookyTree.UpdateMethodGhostSpawn);
 
-        FunctionalAction SharpRootsAction = new FunctionalAction();
+        FunctionalAction SharpRootsAction = new FunctionalAction(_ActionsSpookyTree.StartMethodSharpRoots, _ActionsSpookyTree.UpdateMethodSharpRoots);
 
         FunctionalAction RootsOutAction = new FunctionalAction(_ActionsSpookyTree.StartMethodRootsOut,_ActionsSpookyTree.UpdateMethodRootsOut);
         #endregion
@@ -51,10 +51,10 @@ public class FSMSpookyTree : BehaviourRunner
         RootsOut.SetProbability(RootsOut_to_SharpLeaves1, 0.35f);
         StateTransition RootsOut_to_SharpLeaves2 = TreeFSM.CreateTransition(RootsOut, SharpLeavesP2, statusFlags:StatusFlags.Finished);
         RootsOut.SetProbability(RootsOut_to_SharpLeaves2, 0.35f);
-        /*StateTransition RootsOut_to_GhostSpawn = TreeFSM.CreateTransition(RootsOut, GhostSpawn, statusFlags:StatusFlags.Finished);
+        StateTransition RootsOut_to_GhostSpawn = TreeFSM.CreateTransition(RootsOut, GhostSpawn, statusFlags:StatusFlags.Finished);
         RootsOut.SetProbability(RootsOut_to_GhostSpawn, 0.1f);
         StateTransition RootsOut_to_SharpRoots = TreeFSM.CreateTransition(RootsOut, SharpRoots, statusFlags:StatusFlags.Finished);
-        RootsOut.SetProbability(RootsOut_to_SharpRoots, 0.2f);*/
+        RootsOut.SetProbability(RootsOut_to_SharpRoots, 0.2f);
         //else to rootOut
         StateTransition SharpLeaves1_to_RootsOut = TreeFSM.CreateTransition(SharpLeavesP1, RootsOut, statusFlags:StatusFlags.Finished);
         StateTransition SharpLeaves2_to_RootsOut = TreeFSM.CreateTransition(SharpLeavesP2, RootsOut, statusFlags:StatusFlags.Finished);
