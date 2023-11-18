@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6938415437227796382}
   - component: {fileID: 6628442988745050789}
   m_Layer: 0
-  m_Name: ChaseEnemy
+  m_Name: Ghost
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

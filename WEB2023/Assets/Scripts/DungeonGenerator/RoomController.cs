@@ -215,8 +215,7 @@ public class RoomController : MonoBehaviour
         {
             possibleRooms = new string[]
             {
-            //"Empty",
-            "Basic1",
+                "Basic1",
             };
         }
         else if (player.GetComponent<PlayerMovementInputSystem>().nivel == 2)
@@ -282,7 +281,6 @@ public class RoomController : MonoBehaviour
                         enemy.notInRoom = true;
                         //Debug.Log("Not in Room");
                     }
-                    //related to cierre de puertas
 
                     foreach (Door door in room.GetComponentsInChildren<Door>())
                     {
