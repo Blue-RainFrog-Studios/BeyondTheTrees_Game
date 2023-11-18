@@ -6,11 +6,20 @@ public class RootController : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private int HP;
-     GameObject Tree;
+    [SerializeField] private Animator animator;
+    GameObject Tree;
 
     int TotalHP;
     private void Start()
     {
+        int rand = new System.Random().Next(1, 4);
+        if (rand == 1)
+            animator.Play("Root1");
+        else if (rand == 2)
+            animator.Play("Root2");
+        else if (rand == 3) { 
+            animator.Play("Root3");
+        }
         Tree = GameObject.FindGameObjectWithTag("BossTree");
         TotalHP = HP;
     }

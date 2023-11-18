@@ -17,7 +17,9 @@ public class BulletController : MonoBehaviour
 
     void Start()
     {
-        
+        //make the bullet look towards the player in two dimensions + 90 degrees
+        transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(playerPos.y - transform.position.y, playerPos.x - transform.position.x) * Mathf.Rad2Deg + 90);
+
     }
 
     // Update is called once per frame
