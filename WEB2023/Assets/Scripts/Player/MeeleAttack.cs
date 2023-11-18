@@ -24,6 +24,10 @@ public class MeeleAttack : MonoBehaviour
         {
             collision.GetComponent<GhostTree>().RecieveDamage((int)damage);
         }
+        if (collision.CompareTag("Root"))
+        {
+            collision.GetComponent<RootController>().RecieveDamage((int)damage);
+        }
     }
     }
 

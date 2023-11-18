@@ -8,10 +8,12 @@ using UnityEngine;
 public class ActionsSpookyTree : MonoBehaviour
 {
     [SerializeField] private GameObject spookyTree;
-    [SerializeField] private GameObject player;
+    // [SerializeField] private GameObject player;
+    private GameObject player;
     [SerializeField] private GameObject EnemyBulletLeaf;
     [SerializeField] private GameObject Ghost;
     [SerializeField] private GameObject RootAttack;
+    [SerializeField] private GameObject Root;
 
     [SerializeField] private Transform finalPos1;
     [SerializeField] private Transform finalPos2;
@@ -19,6 +21,12 @@ public class ActionsSpookyTree : MonoBehaviour
     //[SerializeField] private GameObject prueba;
     GameObject leaveFinalPos;
      bool ended;
+
+    private void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
     #region MethodsSleep
     public void StartMethodSleep()
     {
@@ -42,6 +50,7 @@ public class ActionsSpookyTree : MonoBehaviour
         Debug.Log("SHARP LEAVES P1");
         //instancia unos objetos bala que se muevan hacia delante mediante una corrutina
         ended = false;
+        SpawnRootIfNotActive();
         Quaternion lookDown = Quaternion.LookRotation(Vector3.down);
         Vector3 posBullet1 = new Vector3(spookyTree.transform.position.x + 4, spookyTree.transform.position.y, spookyTree.transform.position.z);
         Vector3 posBullet2 = new Vector3(spookyTree.transform.position.x, spookyTree.transform.position.y, spookyTree.transform.position.z);
@@ -66,8 +75,9 @@ public class ActionsSpookyTree : MonoBehaviour
     #region MethodsSharpLeavesP2
     public void StartMethodSharpLeavesP2()
     {
-        Debug.Log("sharp leaves p2");   
+        Debug.Log("sharp leaves p2");
         //instancia unos objetos bala que se muevan hacia delante mediante una corrutina
+        SpawnRootIfNotActive();
         ended = false;
         Vector3 posBullet1 = new Vector3(spookyTree.transform.position.x + 4, spookyTree.transform.position.y, spookyTree.transform.position.z);
         Vector3 posBullet2 = new Vector3(spookyTree.transform.position.x, spookyTree.transform.position.y, spookyTree.transform.position.z);
@@ -91,6 +101,7 @@ public class ActionsSpookyTree : MonoBehaviour
     public void StartMethodGhostSpawn()
     {
         Debug.Log("ghost spawn");
+        SpawnRootIfNotActive();
         ended = false;
         //instancia unos fantasmas en momentos diferentes y en lugares diferentes
         int x = new System.Random().Next(-10, 10);
@@ -121,8 +132,15 @@ public class ActionsSpookyTree : MonoBehaviour
     {
         Debug.Log("sharp roots");
         ended = false;
+        SpawnRootIfNotActive();
+        int prob = new System.Random().Next(1, 3);
         //instancia unas raices con su animacion en diferentes sitios y momentos
-        StartCoroutine(SpawnRootAtSecond(3));
+        if (prob == 1) { 
+            StartCoroutine(SpawnRootAtSecond(3));
+        }
+        else { 
+            SpawnPattern3();
+        }
         //cuando termine cambia la variable de ended a true
         StartCoroutine(WaitThreeSecondsAndEnd());
     }
@@ -139,13 +157,15 @@ public class ActionsSpookyTree : MonoBehaviour
     public void StartMethodRootsOut()
     {
         Debug.Log("roots out");
-        //instancia unas raices que el jugador pueda golpear
-        //cuando el jugador mate la raiz cambia la variable de ended a true
+        ended = false;
+        StartCoroutine(WaitOneSecondsAndEnd());
     }
     public Status UpdateMethodRootsOut()
     {
-        //crea lo de las variables
-        return Status.Success;
+        if (ended)
+            return Status.Success;
+        else
+            return Status.Running;
     }
     #endregion
 
@@ -174,6 +194,16 @@ public class ActionsSpookyTree : MonoBehaviour
         //pattern 2
         //second = 5
     }
+    private void SpawnRootIfNotActive()
+    {
+        //si no hay ningun objeto en la escena que tenga el tag root
+        int x = new System.Random().Next(-10, 10);
+        int y = new System.Random().Next(-6, -4);
+        if (GameObject.FindGameObjectWithTag("Root") == null)
+        {
+            Instantiate(Root, new Vector3(spookyTree.transform.position.x+ x,spookyTree.transform.position.y+ y,0), Quaternion.identity);
+        }
+    }
     private void SpawnPattern1()
     {
         Instantiate(RootAttack, new Vector3(spookyTree.transform.position.x - 4, spookyTree.transform.position.y - 4, 0), Quaternion.identity);//der
@@ -190,7 +220,15 @@ public class ActionsSpookyTree : MonoBehaviour
         Instantiate(RootAttack, new Vector3(spookyTree.transform.position.x, spookyTree.transform.position.y - 4, 0), Quaternion.identity);//centro
         Instantiate(RootAttack, new Vector3(spookyTree.transform.position.x + 4, spookyTree.transform.position.y - 2, 0), Quaternion.identity);//der
     }
+    private void SpawnPattern3()
+    {
+        StartCoroutine(WaitSecondAndAttack(1));
+        StartCoroutine(WaitSecondAndAttack(2));
+        StartCoroutine(WaitSecondAndAttack(3));
+    }
     IEnumerator WaitThreeSecondsAndEnd() { yield return new WaitForSeconds(3); ended = true; }
+    IEnumerator WaitOneSecondsAndEnd() { yield return new WaitForSeconds(1); ended = true; }
+    IEnumerator WaitSecondAndAttack(int time) { yield return new WaitForSeconds(time); Instantiate(RootAttack, player.transform.position, Quaternion.identity);}
 
     private void Start()
     {
