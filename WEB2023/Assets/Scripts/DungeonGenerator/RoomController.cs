@@ -263,6 +263,7 @@ public class RoomController : MonoBehaviour
 
     public void UpdateRooms()
     {
+        boosDoor = false;
         foreach (Room room in loadedRooms)
         {
             if (currRom != room && lastRoom!=room)
@@ -316,6 +317,7 @@ public class RoomController : MonoBehaviour
                     {
                         door.doorCollider.SetActive(true);
                     }
+                    
 
                 }else if(currRom== loadedRooms[loadedRooms.Count - 1] && enemies.Length == 0){
                     boosDoor = true;
@@ -324,8 +326,9 @@ public class RoomController : MonoBehaviour
                     if(player != null)
                     {
                         player.GetComponent<PlayerMovementInputSystem>().nivel++;
-                        GameObject menuOpcion = GameObject.Find("Opcion");
-                        menuOpcion.transform.GetChild(0).gameObject.SetActive(true);
+                        //GameObject menuOpcion = GameObject.Find("Opcion");
+                        //menuOpcion.transform.GetChild(0).gameObject.SetActive(true);
+                        
                     }
 
                 }else{
