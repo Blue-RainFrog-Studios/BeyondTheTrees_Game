@@ -17,6 +17,8 @@ TagManager:
   - ColliderKing
   - Boss
   - LittleGnome
+  - GhostTree
+  - Root
   layers:
   - Default
   - TransparentFX

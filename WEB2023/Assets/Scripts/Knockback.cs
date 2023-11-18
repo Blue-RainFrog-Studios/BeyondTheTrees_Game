@@ -16,7 +16,7 @@ public class Knockback : MonoBehaviour
     {
         rbGlobal = KnokbackReciever;
         OnDone?.Invoke();
-        direction =  KnokbackReciever.transform.position-transform.position;
+        direction = transform.position-KnokbackProducer.transform.position;
         direction = direction.normalized;
         KnokbackReciever.AddForce(direction * strength, ForceMode2D.Impulse);
         StartCoroutine(Reset());
