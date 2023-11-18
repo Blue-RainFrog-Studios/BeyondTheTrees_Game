@@ -156,7 +156,41 @@ public class EnemyController : MonoBehaviour
 
             }
         }
-       
+        if (isPlayerInRange(range) && !(Vector3.Distance(transform.position, player.transform.position) < attackRange))
+        {
+            if (direction.x > 0.0f)
+            {
+                if (direction.y + 1.0f > direction.x)
+                    animator.Play("WalkTopMage");
+                else
+                    animator.Play("WalkRightMage");
+            }
+            else if (direction.x < 0.0f)
+            {
+                if (direction.y + 1.0f < direction.x)
+                    animator.Play("WalkDownMage");
+                else
+                    animator.Play("WalkLeftMage");
+
+            }
+        }
+        else
+        {
+            if (direction.x > 0.0f)
+            {
+                if (direction.y + 1.0f > direction.x)
+                    animator.Play("MageUp");
+                else
+                    animator.Play("MageRight");
+            }
+            else if (direction.x < 0.0f)
+            {
+                if (direction.y + 1.0f < direction.x)
+                    animator.Play("MageDown");
+                else
+                    animator.Play("MageLeft");
+            }
+        }
 
     }
 
