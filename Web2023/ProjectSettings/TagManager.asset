@@ -20,6 +20,7 @@ TagManager:
   - GhostTree
   - Root
   - BossTree
+  - AttackRoot
   layers:
   - Default
   - TransparentFX

@@ -208,7 +208,6 @@ public class ActionsSpookyTree : MonoBehaviour
     private void SpawnPattern1()
     {
         Instantiate(RootAttack, new Vector3(spookyTree.transform.position.x - 4, spookyTree.transform.position.y - 4, 0), Quaternion.identity);//der
-        Instantiate(RootAttack, new Vector3(spookyTree.transform.position.x, spookyTree.transform.position.y - 2, 0), Quaternion.identity);//centroarr
         Instantiate(RootAttack, new Vector3(spookyTree.transform.position.x, spookyTree.transform.position.y - 8, 0), Quaternion.identity);//centroab
         Instantiate(RootAttack, new Vector3(spookyTree.transform.position.x, spookyTree.transform.position.y - 4, 0), Quaternion.identity);//centro
         Instantiate(RootAttack, new Vector3(spookyTree.transform.position.x + 4, spookyTree.transform.position.y - 4, 0), Quaternion.identity);//izq

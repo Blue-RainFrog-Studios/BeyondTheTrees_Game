@@ -24,4 +24,14 @@ public class RootManager : MonoBehaviour
         if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !animator.IsInTransition(0))
             Destroy(gameObject);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            collision.GetComponent<KnightScript>().ReceiveAttack(30);
+            collision.GetComponent<Knockback>().PlayFeedback(this.gameObject, collision.GetComponent<Rigidbody2D>());
+        }
+    }
+
 }

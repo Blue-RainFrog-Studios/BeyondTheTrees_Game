@@ -27,4 +27,12 @@ public class GhostTree : MonoBehaviour
         GetComponent<Knockback>().PlayFeedback(player, GetComponent<Rigidbody2D>());
         HP -= damage;
     }
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            collision.GetComponent<KnightScript>().ReceiveAttack(20);
+            collision.GetComponent<Knockback>().PlayFeedback(this.gameObject, collision.GetComponent<Rigidbody2D>());
+        }
+    }
 }
