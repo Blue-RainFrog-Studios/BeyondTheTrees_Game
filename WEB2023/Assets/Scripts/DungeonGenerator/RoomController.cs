@@ -37,7 +37,7 @@ public class RoomController : MonoBehaviour
 
     bool updatedRooms = false;
 
-    ItemSpawner spawn;
+    //ItemSpawner spawn;
 
     private void Awake()
     {
@@ -204,12 +204,14 @@ public class RoomController : MonoBehaviour
         CameraController.instance.currRom= room;
         lastRoom = currRom;
         currRom = room;
-
+        
 
         //los enemigos se quden quietos cuando la camara no este en la sala
 
         //UpdateRooms();
         StartCoroutine(RoomCoroutine());
+
+        //currRom.ActivarSpawn();
     }
 
     public IEnumerator RoomCoroutine()
@@ -281,12 +283,12 @@ public class RoomController : MonoBehaviour
                     foreach (Door door in room.GetComponentsInChildren<Door>())
                     {
                         door.doorCollider.SetActive(false);
+                        //spawn.SpawObject();
                     }
-
-                    Debug.Log("Spawnea el objeto");
-
-
+                    //
+                    currRom.ActivarSpawn();
                 }
+                
             }
         }
     }

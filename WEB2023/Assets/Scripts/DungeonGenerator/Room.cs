@@ -31,9 +31,9 @@ public class Room : MonoBehaviour
     public GameObject trees;
 
     public List<Door> doors = new List<Door>();
-    // Start is called before the first frame update
 
-    [SerializeField] GameObject ItemSpawner;
+    [SerializeField] GameObject itemSpawner;
+    // Start is called before the first frame update
     void Start()
     {
         if (RoomController.instance == null)
@@ -156,5 +156,15 @@ public class Room : MonoBehaviour
                 trees.SetActive(false);
             }
         }
+    }
+    public void ActivarSpawn()
+    {
+        if(itemSpawner!= null)
+        {
+            //itemSpawner.enabled = true;
+            itemSpawner.SetActive(true);
+            Debug.Log("Tus muertos pisoteados");
+        }
+        //itemSpawner.enabled = true;
     }
 }

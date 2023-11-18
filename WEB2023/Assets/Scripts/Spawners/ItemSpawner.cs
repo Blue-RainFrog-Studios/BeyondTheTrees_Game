@@ -133,12 +133,9 @@ public class ItemSpawner : MonoBehaviour
                 Debug.Log("Spawnea Rare");
                     break;
                 
-            case "Common":
-                if (!ItemDB.Run_Common_Items.Any())
-                {
-                    goto default;
-                }
-                else
+                case "Common":
+
+                if (ItemDB.Run_Common_Items.Any())
                 {
                     int RandomNumer = UnityEngine.Random.Range(0, ItemDB.Run_Common_Items.Count);
                     //Debug.Log("Tamano pool" + maxList);
@@ -151,6 +148,8 @@ public class ItemSpawner : MonoBehaviour
                     itemComponent.InventoryItem = data;
                     itemComponent.Quantity = 1;
                 }
+
+                
                 Debug.Log("Spawnea Common");
                     break;
 
@@ -161,8 +160,8 @@ public class ItemSpawner : MonoBehaviour
     }
     public void SpawObject()
     {
-        //RandomItemFromRun();
-        RandomItem_BasedOnProbability_FromRun();
+        RandomItemFromRun();
+        //RandomItem_BasedOnProbability_FromRun();
         Debug.LogFormat("<color=green>Se ha spawneado un objeto.</color>");
     }
 }

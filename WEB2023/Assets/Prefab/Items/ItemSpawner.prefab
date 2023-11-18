@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1713792812871682689
 SpriteRenderer:
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemDB: {fileID: 11400000, guid: f25f080a6867dab409aea6dde7391662, type: 2}
-  CommonChance: 65
+  CommonChance: 60
   RareChance: 25
   EpicChance: 10
   LegendaryChance: 5

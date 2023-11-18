@@ -714,17 +714,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 331884276074499800, guid: 3685253e5f5f1b941b6724092da4050c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1270029314359457028, guid: 3685253e5f5f1b941b6724092da4050c, type: 3}
+      propertyPath: CommonChance
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 8224585114216296096, guid: 3685253e5f5f1b941b6724092da4050c, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8224585114216296096, guid: 3685253e5f5f1b941b6724092da4050c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.09
+      value: -3.92
       objectReference: {fileID: 0}
     - target: {fileID: 8224585114216296096, guid: 3685253e5f5f1b941b6724092da4050c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.08
+      value: -1.48
       objectReference: {fileID: 0}
     - target: {fileID: 8224585114216296096, guid: 3685253e5f5f1b941b6724092da4050c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -763,6 +771,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3685253e5f5f1b941b6724092da4050c, type: 3}
+--- !u!1 &537653350 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 331884276074499800, guid: 3685253e5f5f1b941b6724092da4050c, type: 3}
+  m_PrefabInstance: {fileID: 537653349}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &538145152
 GameObject:
   m_ObjectHideFlags: 0
@@ -1013,11 +1026,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 3.6}
   m_EdgeRadius: 0
---- !u!1 &686440320 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 331884276074499800, guid: 3685253e5f5f1b941b6724092da4050c, type: 3}
-  m_PrefabInstance: {fileID: 537653349}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &686440323 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8224585114216296096, guid: 3685253e5f5f1b941b6724092da4050c, type: 3}
@@ -3543,7 +3551,7 @@ MonoBehaviour:
   bottomDoor: {fileID: 0}
   trees: {fileID: 820901192}
   doors: []
-  ItemSpawner: {fileID: 686440320}
+  itemSpawner: {fileID: 537653350}
 --- !u!61 &1940129676
 BoxCollider2D:
   m_ObjectHideFlags: 0
