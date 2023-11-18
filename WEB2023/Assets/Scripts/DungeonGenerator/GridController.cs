@@ -43,6 +43,10 @@ public class GridController : MonoBehaviour
                 availablePoints.Add(go.transform.position);
             }
         }
-        GetComponentInParent<ObjectRoomSpawner>().InitialiseObjectSpawning();
+        if(this.GetComponentInParent<ObjectRoomSpawner>() != null)
+        {
+            GetComponentInParent<ObjectRoomSpawner>().InitialiseObjectSpawning();
+        }
+        
     }
 }
