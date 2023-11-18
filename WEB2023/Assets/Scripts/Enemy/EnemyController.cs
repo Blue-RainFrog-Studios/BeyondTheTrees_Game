@@ -138,20 +138,25 @@ public class EnemyController : MonoBehaviour
             else
                 animator.Play("GhostLeft");
         }
+        if (isPlayerInRange(range))
+        {
+            if (direction.x > 0.0f)
+            {
+                if (direction.y + 1.0f > direction.x)
+                    animator.Play("WalkTop");
+                else
+                    animator.Play("WalkRight");
+            }
+            else if (direction.x < 0.0f)
+            {
+                if (direction.y + 1.0f < direction.x)
+                    animator.Play("WalkDown");
+                else
+                    animator.Play("WalkLeft");
 
-        if (direction.x > 0.0f)
-        {
-            if (direction.y + 1.0f > direction.x)
-                animator.Play("WalkTop");
-            else
-                animator.Play("WalkRight");
+            }
         }
-        else if (direction.x < 0.0f)
-        {
-            if (direction.y + 1.0f < direction.x)
-                animator.Play("WalkDown");
-           
-        }
+       
 
     }
 
@@ -213,9 +218,22 @@ public class EnemyController : MonoBehaviour
     }
     private IEnumerator wait()
     {
+
+        animator.Play("Aplauso");
         
-        yield return new WaitForSeconds(1);
+
+        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("Aplauso"))
+        {
+            animationEx = false;
+            yield return null;
+        }
+        
+
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
         animationEx = true;
+
+
+
     }
     void Attack()
     {
@@ -244,8 +262,9 @@ public class EnemyController : MonoBehaviour
     }
     void Teleport()
     {
-        animator.Play("Aplauso");
+
         StartCoroutine(wait());
+
         if (!coolDownTeleport && animationEx==true)
         {
             animationEx = false;
