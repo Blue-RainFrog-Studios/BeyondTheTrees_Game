@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7282227974990517158, guid: 2d57eb1e24957c3498f9c80427388035, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7282227974990517158, guid: 2d57eb1e24957c3498f9c80427388035, type: 3}
       propertyPath: m_LocalPosition.x
@@ -70,17 +70,17 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4275631869784606121, guid: 2d57eb1e24957c3498f9c80427388035, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8180870203855018066}
+      addedObject: {fileID: 2935932307235216366}
     - targetCorrespondingSourceObject: {fileID: 4275631869784606121, guid: 2d57eb1e24957c3498f9c80427388035, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7976416928885775643}
+      addedObject: {fileID: 7895624041805229023}
   m_SourcePrefab: {fileID: 100100000, guid: 2d57eb1e24957c3498f9c80427388035, type: 3}
 --- !u!1 &3469580558347156436 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4275631869784606121, guid: 2d57eb1e24957c3498f9c80427388035, type: 3}
   m_PrefabInstance: {fileID: 824288108558941821}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &8180870203855018066
+--- !u!198 &2935932307235216366
 ParticleSystem:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,7 +89,7 @@ ParticleSystem:
   m_GameObject: {fileID: 3469580558347156436}
   serializedVersion: 8
   lengthInSec: 5
-  simulationSpeed: 0.7
+  simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -270,7 +270,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0, g: 0.17319985, b: 0.6509434, a: 1}
+      maxColor: {r: 1, g: 0.8535939, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -651,7 +651,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     gravitySource: 1
-    maxNumParticles: 100
+    maxNumParticles: 200
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -1355,8 +1355,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.7725491, g: 0.4431373, b: 0.1137255, a: 1}
-        key1: {r: 0.7725491, g: 0.4431373, b: 0.1137255, a: 0}
+        key0: {r: 0.754717, g: 0.1666073, b: 0.496493, a: 1}
+        key1: {r: 0.8000001, g: 0.47058824, b: 0.5882353, a: 0}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -4803,7 +4803,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!199 &7976416928885775643
+--- !u!199 &7895624041805229023
 ParticleSystemRenderer:
   serializedVersion: 6
   m_ObjectHideFlags: 0
