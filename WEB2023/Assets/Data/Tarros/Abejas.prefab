@@ -15,10 +15,10 @@ PrefabInstance:
     - target: {fileID: 2848204570424025181, guid: 2d57eb1e24957c3498f9c80427388035, type: 3}
       propertyPath: <InventoryItem>k__BackingField
       value: 
-      objectReference: {fileID: 11400000, guid: 5af95d00a7450214bb297cd4a8ad8ba2, type: 2}
+      objectReference: {fileID: 11400000, guid: 842b951d19f3ee54083fba349640b61f, type: 2}
     - target: {fileID: 4275631869784606121, guid: 2d57eb1e24957c3498f9c80427388035, type: 3}
       propertyPath: m_Name
-      value: Pluma de Buho
+      value: Abejas
       objectReference: {fileID: 0}
     - target: {fileID: 7282227974990517158, guid: 2d57eb1e24957c3498f9c80427388035, type: 3}
       propertyPath: m_RootOrder
