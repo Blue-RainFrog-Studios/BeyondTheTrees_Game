@@ -800,6 +800,7 @@ MonoBehaviour:
   speed: 6
   smoothness: 0.12
   attack: {fileID: 1720175491396843235, guid: 49b138763be454a4e99c46e4bc979230, type: 3}
+  nivel: 0
   characterAnimator: {fileID: 2472352434232250267}
   AttackSoundEffect1: {fileID: 7633266851515481693}
   AttackSoundEffect2: {fileID: 7633266851515481693}
@@ -1878,7 +1879,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 42, y: 327}
+  m_AnchoredPosition: {x: 36, y: 304}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1289846527409290462
@@ -2276,7 +2277,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2555876096551466833
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2294,7 +2295,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 41, y: 286}
+  m_AnchoredPosition: {x: 36, y: 304}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5491833385366772914
