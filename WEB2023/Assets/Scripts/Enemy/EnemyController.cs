@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 using UnityEngine.SceneManagement;
 
 public enum EnemyState
@@ -43,6 +44,7 @@ public class EnemyController : MonoBehaviour
     public float speed;
     public float life;
 
+    private bool animationEx = false;
     private bool coolDownAttack = false;
     private bool coolDownTeleport = false;
     private bool chooseDir = false;
@@ -108,7 +110,7 @@ public class EnemyController : MonoBehaviour
             }
             else if (isPlayerInRangeTeleport(rangeTeleport) && currState != EnemyState.Die)
             {
-
+                
                 currState = EnemyState.Teleport;
             }
             if (Vector3.Distance(transform.position, player.transform.position) < attackRange)
@@ -135,6 +137,59 @@ public class EnemyController : MonoBehaviour
                 animator.Play("GhostFront");
             else
                 animator.Play("GhostLeft");
+        }
+        if (isPlayerInRange(range))
+        {
+            if (direction.x > 0.0f)
+            {
+                if (direction.y + 1.0f > direction.x)
+                    animator.Play("WalkTop");
+                else
+                    animator.Play("WalkRight");
+            }
+            else if (direction.x < 0.0f)
+            {
+                if (direction.y + 1.0f < direction.x)
+                    animator.Play("WalkDown");
+                else
+                    animator.Play("WalkLeft");
+
+            }
+        }
+        if (isPlayerInRange(range) && !(Vector3.Distance(transform.position, player.transform.position) < attackRange))
+        {
+            if (direction.x > 0.0f)
+            {
+                if (direction.y + 1.0f > direction.x)
+                    animator.Play("WalkTopMage");
+                else
+                    animator.Play("WalkRightMage");
+            }
+            else if (direction.x < 0.0f)
+            {
+                if (direction.y + 1.0f < direction.x)
+                    animator.Play("WalkDownMage");
+                else
+                    animator.Play("WalkLeftMage");
+
+            }
+        }
+        else
+        {
+            if (direction.x > 0.0f)
+            {
+                if (direction.y + 1.0f > direction.x)
+                    animator.Play("MageUp");
+                else
+                    animator.Play("MageRight");
+            }
+            else if (direction.x < 0.0f)
+            {
+                if (direction.y + 1.0f < direction.x)
+                    animator.Play("MageDown");
+                else
+                    animator.Play("MageLeft");
+            }
         }
 
     }
@@ -195,6 +250,25 @@ public class EnemyController : MonoBehaviour
         yield return new WaitForSeconds(coolDownTp);
         coolDownTeleport = false;
     }
+    private IEnumerator wait()
+    {
+
+        animator.Play("Aplauso");
+        
+
+        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("Aplauso"))
+        {
+            animationEx = false;
+            yield return null;
+        }
+        
+
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+        animationEx = true;
+
+
+
+    }
     void Attack()
     {
         if (!coolDownAttack)
@@ -222,9 +296,14 @@ public class EnemyController : MonoBehaviour
     }
     void Teleport()
     {
-        if (!coolDownTeleport)
+
+        StartCoroutine(wait());
+
+        if (!coolDownTeleport && animationEx==true)
         {
+            animationEx = false;
             StartCoroutine(CoolDownTP());
+            
             if (player.GetComponent<KnightScript>().col == -1)
             {
                 transform.position = player.transform.position + space;
