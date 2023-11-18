@@ -14,6 +14,7 @@ public class ActionsSpookyTree : MonoBehaviour
     [SerializeField] private GameObject Ghost;
     [SerializeField] private GameObject RootAttack;
     [SerializeField] private GameObject Root;
+    [SerializeField] private Animator animator;
 
     [SerializeField] private Transform finalPos1;
     [SerializeField] private Transform finalPos2;
@@ -30,16 +31,16 @@ public class ActionsSpookyTree : MonoBehaviour
     #region MethodsSleep
     public void StartMethodSleep()
     {
-        Debug.Log("SLEEP");
-       spookyTree.SetActive(false);
+        ended = false;
+        animator.Play("Awake");
+        StartCoroutine(WaitThreeSecondsAndEnd());
     }
     public Status UpdateMethodSleep()
     {
-        return Status.Success;
-    }
-    public void StopMethodSleep()
-    {
-        spookyTree.SetActive(true);
+        if (ended)
+            return Status.Success;
+        else
+            return Status.Running;
     }
 
     #endregion

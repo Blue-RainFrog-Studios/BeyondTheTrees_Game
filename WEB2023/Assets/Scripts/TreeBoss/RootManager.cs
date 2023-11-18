@@ -8,7 +8,13 @@ public class RootManager : MonoBehaviour
     [SerializeField] private Animator animator;
     void Start()
     {
-        animator.Play("RootAttack");
+        int rand=new System.Random().Next(1,3);
+        if (rand == 1)
+            animator.Play("AttackRoot");
+        else if (rand == 2)
+        {
+            animator.Play("AttackRoot2");
+        }
     }
 
     // Update is called once per frame

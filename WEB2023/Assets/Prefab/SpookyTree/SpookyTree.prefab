@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 533482863796109136}
   - component: {fileID: 4670197327101837733}
   - component: {fileID: 517137408922997646}
+  - component: {fileID: 405764049244003836}
   m_Layer: 0
   m_Name: SpookyTree
   m_TagString: BossTree
@@ -125,7 +126,7 @@ Transform:
   m_GameObject: {fileID: 6481013943073577523}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.01, y: 3.41, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5630177469817267137}
@@ -175,7 +176,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: eaabad6afe738e14abe896ebb1e98f91, type: 3}
+  m_Sprite: {fileID: -881945704, guid: c654b7066fa7a084886eaa6e28429b95, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -240,6 +241,7 @@ MonoBehaviour:
   Ghost: {fileID: 3517669100422621170, guid: 868c32c33275de749861c04a739e00c2, type: 3}
   RootAttack: {fileID: 2856303385361890803, guid: 7ea084d28c8d6fd4aab3321f55e21612, type: 3}
   Root: {fileID: 9126251333826291658, guid: b89a1e83f1787e144b7bc2c45ad8f99b, type: 3}
+  animator: {fileID: 405764049244003836}
   finalPos1: {fileID: 5630177469817267137}
   finalPos2: {fileID: 182223261824536613}
   finalPos3: {fileID: 3756473696974354741}
@@ -314,16 +316,37 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.22211647, y: 0.8329382}
+  m_Offset: {x: 0.2135992, y: -0.8089839}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 21.31, y: 24.085474}
+    oldSize: {x: 5.07, y: 5.78}
     newSize: {x: 21.31, y: 24.085474}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 20.865765, y: 22.419596}
+  m_Size: {x: 4.695858, y: 4.224581}
   m_EdgeRadius: 0
+--- !u!95 &405764049244003836
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6481013943073577523}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7fc87e022d4e58f4aa2dfa85121836a2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

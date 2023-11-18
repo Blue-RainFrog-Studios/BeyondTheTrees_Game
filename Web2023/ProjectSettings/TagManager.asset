@@ -19,6 +19,7 @@ TagManager:
   - LittleGnome
   - GhostTree
   - Root
+  - BossTree
   layers:
   - Default
   - TransparentFX

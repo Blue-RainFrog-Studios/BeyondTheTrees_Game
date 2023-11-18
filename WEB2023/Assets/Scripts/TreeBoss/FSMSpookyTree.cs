@@ -20,7 +20,7 @@ public class FSMSpookyTree : BehaviourRunner
         FSM TreeFSM = new FSM();
 
         #region Actions
-        FunctionalAction SleepAction = new FunctionalAction(_ActionsSpookyTree.StartMethodSleep, _ActionsSpookyTree.UpdateMethodSleep, _ActionsSpookyTree.StopMethodSleep);
+        FunctionalAction SleepAction = new FunctionalAction(_ActionsSpookyTree.StartMethodSleep, _ActionsSpookyTree.UpdateMethodSleep);
     
         FunctionalAction SharpLeavesP1Action = new FunctionalAction(_ActionsSpookyTree.StartMethodSharpLeavesP1, _ActionsSpookyTree.UpdateMethodSharpLeavesP1);
 
@@ -34,7 +34,7 @@ public class FSMSpookyTree : BehaviourRunner
         #endregion
 
         #region States
-        //State Sleep = TreeFSM.CreateState("Sleep", SleepAction);
+        State Sleep = TreeFSM.CreateState("Sleep", SleepAction);
         State SharpLeavesP1 = TreeFSM.CreateState("SharpLeavesP1", SharpLeavesP1Action);
         State SharpLeavesP2 = TreeFSM.CreateState("SharpLeavesP2", SharpLeavesP2Action);
         State GhostSpawn = TreeFSM.CreateState("GhostSpawn", GhostSpawnAction);
@@ -45,7 +45,7 @@ public class FSMSpookyTree : BehaviourRunner
         #region Transitions
 
         //sleep
-        //StateTransition Sleep_to_RootsOut = TreeFSM.CreateTransition(Sleep, RootsOut, statusFlags:StatusFlags.Finished);
+        StateTransition Sleep_to_RootsOut = TreeFSM.CreateTransition(Sleep, RootsOut, statusFlags:StatusFlags.Finished);
         //rootOut
         StateTransition RootsOut_to_SharpLeaves1 = TreeFSM.CreateTransition(RootsOut, SharpLeavesP1, statusFlags:StatusFlags.Finished);
         RootsOut.SetProbability(RootsOut_to_SharpLeaves1, 0.3f);
