@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 using UnityEngine.SceneManagement;
 
 public enum EnemyState
@@ -43,6 +44,7 @@ public class EnemyController : MonoBehaviour
     public float speed;
     public float life;
 
+    private bool animationEx = false;
     private bool coolDownAttack = false;
     private bool coolDownTeleport = false;
     private bool chooseDir = false;
@@ -108,7 +110,7 @@ public class EnemyController : MonoBehaviour
             }
             else if (isPlayerInRangeTeleport(rangeTeleport) && currState != EnemyState.Die)
             {
-
+                
                 currState = EnemyState.Teleport;
             }
             if (Vector3.Distance(transform.position, player.transform.position) < attackRange)
@@ -135,6 +137,20 @@ public class EnemyController : MonoBehaviour
                 animator.Play("GhostFront");
             else
                 animator.Play("GhostLeft");
+        }
+
+        if (direction.x > 0.0f)
+        {
+            if (direction.y + 1.0f > direction.x)
+                animator.Play("WalkTop");
+            else
+                animator.Play("WalkRight");
+        }
+        else if (direction.x < 0.0f)
+        {
+            if (direction.y + 1.0f < direction.x)
+                animator.Play("WalkDown");
+           
         }
 
     }
@@ -195,6 +211,12 @@ public class EnemyController : MonoBehaviour
         yield return new WaitForSeconds(coolDownTp);
         coolDownTeleport = false;
     }
+    private IEnumerator wait()
+    {
+        
+        yield return new WaitForSeconds(1);
+        animationEx = true;
+    }
     void Attack()
     {
         if (!coolDownAttack)
@@ -222,9 +244,13 @@ public class EnemyController : MonoBehaviour
     }
     void Teleport()
     {
-        if (!coolDownTeleport)
+        animator.Play("Aplauso");
+        StartCoroutine(wait());
+        if (!coolDownTeleport && animationEx==true)
         {
+            animationEx = false;
             StartCoroutine(CoolDownTP());
+            
             if (player.GetComponent<KnightScript>().col == -1)
             {
                 transform.position = player.transform.position + space;

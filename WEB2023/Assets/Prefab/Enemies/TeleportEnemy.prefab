@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3544500312377885349}
   - component: {fileID: 3113921293586694263}
   - component: {fileID: -1793667132281868266}
+  - component: {fileID: -5769247891855293941}
   m_Layer: 0
   m_Name: TeleportEnemy
   m_TagString: Enemy
@@ -111,7 +112,7 @@ MonoBehaviour:
   speed: 1
   life: 40
   bulletSpeed: 0
-  animator: {fileID: 1330603882934896760, guid: b61eff804755ac34a8b2ded704f94d8b, type: 3}
+  animator: {fileID: -5769247891855293941}
   damage: 20
   notInRoom: 0
 --- !u!50 &3113921293586694263
@@ -176,3 +177,24 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
+--- !u!95 &-5769247891855293941
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4875267983180699273}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 15f7792642aac5e4ea595904e664587a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
