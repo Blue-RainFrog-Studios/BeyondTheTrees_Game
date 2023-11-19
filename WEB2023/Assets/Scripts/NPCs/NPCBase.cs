@@ -12,30 +12,40 @@ public class NPCBase : MonoBehaviour
     public string[] dialogue;
     private int index;
 
+    private GameObject player;
     public GameObject continueButton;
     public GameObject buyButton;
     public float wordSpeed;
     public bool playerIsClose;
+
+    private void Awake()
+    {
+        player = GameObject.Find("Player");
+    }
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0) && playerIsClose) 
+        if (dialogueText.text == dialogue[index])
         {
-            if(dialoguePanel.activeInHierarchy)
-            {
-                zeroText();
-            }
-            else
-            {
-                dialoguePanel.SetActive(true);
-                StartCoroutine(Typing());
-            }
+            player.GetComponent<PlayerMovementInputSystem>().enabled = true;
+            //continueButton.SetActive(true);
+            //buyButton.SetActive(true);
+        }
+    }
+    public void EnseñarDialogo()
+    {
+        player.GetComponent<PlayerMovementInputSystem>().enabled = false;
+        if (dialoguePanel.activeInHierarchy)
+        {
+            zeroText();
+        }
+        else
+        {
+            dialoguePanel.SetActive(true);
+            StartCoroutine(Typing());
         }
 
-        if(dialogueText.text == dialogue[index])
-        {
-            continueButton.SetActive(true);
-            buyButton.SetActive(true);
-        }
+        
+        
     }
 
     public void zeroText()
@@ -78,14 +88,13 @@ public class NPCBase : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            playerIsClose= true;
+            EnseñarDialogo();
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            playerIsClose = false;
             zeroText();
         }
     }
