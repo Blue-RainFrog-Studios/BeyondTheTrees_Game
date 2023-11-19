@@ -17,7 +17,7 @@ public class Bush : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Debug.Log("Choque");
-            player.GetComponent<PlayerMovementInputSystem>().speed -= 3;
+            player.GetComponent<PlayerMovementInputSystem>().speed /= 2 ;
         }
 
 
@@ -26,7 +26,7 @@ public class Bush : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            player.GetComponent<PlayerMovementInputSystem>().speed += 3;
+            player.GetComponent<PlayerMovementInputSystem>().speed *= 2;
         }
 
     }
