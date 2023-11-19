@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuOpcion : MonoBehaviour
-{
+{ private bool act = true;
     private GameObject player;
     private void Awake()
     {
@@ -12,11 +12,12 @@ public class MenuOpcion : MonoBehaviour
     }
     private void Update()
     {
-        if(player.GetComponent<PlayerMovementInputSystem>().nivel > 0 && player.GetComponent<PlayerMovementInputSystem>().nivel < 3 && RoomController.boosDoor)
+        if(player.GetComponent<PlayerMovementInputSystem>().nivel > 0 && player.GetComponent<PlayerMovementInputSystem>().nivel < 3 && RoomController.boosDoor && act==false)
         {
+            act = true;
             //this.transform.GetChild(0).gameObject.SetActive(true);
             SceneManager.LoadScene("LoandingBoss");
-           
+            
         }
         else if(player.GetComponent<PlayerMovementInputSystem>().nivel == 3)
         {
