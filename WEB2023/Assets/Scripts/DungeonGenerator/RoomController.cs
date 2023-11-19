@@ -111,9 +111,6 @@ public class RoomController : MonoBehaviour
             loadedRooms.Remove(roomToRemove);
             LoadRoom("End",tempRoom.X,tempRoom.Y);
         }
-
-        
-
         cont= 1;
 
     }

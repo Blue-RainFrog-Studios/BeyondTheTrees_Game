@@ -1,3 +1,4 @@
+using BehaviourAPI.UnityToolkit.Demos;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,20 +17,27 @@ public enum EnemyState
 
     Die,
 
-    Teleport
+    Teleport,
+
+    WalkAcorn,
+
+    EatAcorn
 };
 public enum EnemyType
 {
     Melee,
 
     Ranged,
+    
+    Teleport,
 
-    Teleport
+    Squirrel
 };
 public class EnemyController : MonoBehaviour
 {
 
     public GameObject ghost;
+    GameObject acorn;
     GameObject player;
     public GameObject EnemyBullet;
     public EnemyState currState = EnemyState.Idle;
@@ -37,7 +45,16 @@ public class EnemyController : MonoBehaviour
     public float range;
     public float rangeTeleport;
     public float attackRange;
+    public float rangeSquirrel;
+    public float eatRange;
+    [SerializeField]public bool consumed;
     Rigidbody2D rb;
+
+    [SerializeField]
+    private AudioClip eatClip;
+
+    [SerializeField]
+    private AudioSource audioSource;
 
     public float coolDown;
     public float coolDownTp;
@@ -95,6 +112,12 @@ public class EnemyController : MonoBehaviour
                 break;
             case (EnemyState.Teleport):
                 Teleport();
+            break;
+            case (EnemyState.WalkAcorn):
+                WalkAcorn();
+                break;
+            case (EnemyState.EatAcorn):
+                EatAcorn();
                 break;
         }
 
@@ -104,16 +127,25 @@ public class EnemyController : MonoBehaviour
             {
                 currState = EnemyState.Follow;
             }
-            else if (!isPlayerInRange(range) && !isPlayerInRangeTeleport(rangeTeleport) && currState != EnemyState.Die)
+            else if (!isPlayerInRange(range) && !isPlayerInRangeTeleport(rangeTeleport) && !isAcornInRangeSquirrel(rangeSquirrel) && currState != EnemyState.Die)
             {
                 currState = EnemyState.Wander;
             }
-            else if (isPlayerInRangeTeleport(rangeTeleport) && currState != EnemyState.Die)
-            {
-                
+            else if(isPlayerInRangeTeleport(rangeTeleport) && currState!=EnemyState.Die)
+            {       
                 currState = EnemyState.Teleport;
             }
-            if (Vector3.Distance(transform.position, player.transform.position) < attackRange)
+            else if(isAcornInRangeSquirrel(rangeSquirrel) && currState != EnemyState.Die)
+            {
+                currState = EnemyState.WalkAcorn;
+            }
+
+            if (acorn != null && Vector3.Distance(transform.position, acorn.transform.position) < eatRange && currState != EnemyState.Die && consumed == false)
+            {
+                currState = EnemyState.EatAcorn;
+            }
+
+            if (Vector3.Distance(transform.position, player.transform.position) < attackRange) 
             {
                 currState = EnemyState.Attack;
             }
@@ -203,6 +235,40 @@ public class EnemyController : MonoBehaviour
         return Vector3.Distance(transform.position, player.transform.position) <= rangeTeleport;
     }
 
+    private bool isAcornInRangeSquirrel(float rangeSquirrel)
+    {
+        acorn = GameObject.FindGameObjectWithTag("Acorn");
+        if (acorn != null)
+            return Vector3.Distance(transform.position, acorn.transform.position) <= rangeSquirrel;
+        else
+            currState = EnemyState.Follow;
+        range = 10;
+        return false;
+    }    
+
+    private void WalkAcorn()
+    {
+        if(acorn != null)
+            transform.position = Vector2.MoveTowards(transform.position, acorn.transform.position, speed * Time.deltaTime);
+    }
+
+    private void EatAcorn()
+    {
+        audioSource.PlayOneShot(eatClip);
+        StartCoroutine(WaitSeconds(1));
+    }
+
+    IEnumerator WaitSeconds(float Time)
+    {
+        yield return new WaitForSeconds(Time);
+        consumed = true;
+        if (consumed)
+        {
+            Destroy(acorn);
+        }
+        range = 10;
+    }
+
     private IEnumerator ChooseDirection()
     {
         chooseDir = true;
@@ -231,7 +297,7 @@ public class EnemyController : MonoBehaviour
     }
     void Follow()
     {
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position,player.transform.position,speed * Time.deltaTime);
     }
 
     void Idle()
@@ -282,14 +348,17 @@ public class EnemyController : MonoBehaviour
                 case (EnemyType.Ranged):
                     GameObject bullet = Instantiate(EnemyBullet, transform.position, Quaternion.identity) as GameObject;
                     bullet.GetComponent<BulletController>().GetPlayer(player.transform);
-                    bullet.AddComponent<Rigidbody2D>().gravityScale = 0;
-
+                    bullet.AddComponent<Rigidbody2D>().gravityScale = 0;    
                     StartCoroutine(CoolDown());
                     break;
                 case (EnemyType.Teleport):
 
                     StartCoroutine(CoolDown());
                     player.GetComponent<KnightScript>().ReceiveAttack(damage);
+                    break;
+                case (EnemyType.Squirrel):
+                    player.GetComponent<KnightScript>().ReceiveAttack(damage);
+                    StartCoroutine(CoolDown());
                     break;
             }
         }
@@ -378,7 +447,8 @@ public class EnemyController : MonoBehaviour
 
 
         life -= damage;
-        Debug.Log("Recibo da�o");
+        this.GetComponent<Knockback>().PlayFeedback(player , this.gameObject.GetComponent<Rigidbody2D>());
+        //Debug.Log("Recibo da�o");
         if (life <= 0)
         {
             currState = EnemyState.Die;
