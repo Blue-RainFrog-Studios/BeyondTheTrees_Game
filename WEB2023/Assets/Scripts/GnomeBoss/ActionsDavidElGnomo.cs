@@ -35,12 +35,12 @@ public class ActionsDavidElGnomo : MonoBehaviour
     public void StartMethodSleep()
     {
         //si el jugador esta a 1 metro de distancia
-
+        animator.Play("SleepGnome");
 
     }
     public Status UpdateMethodSleep()
     {
-        if (Vector2.Distance(playerTransform.position, DavidElGnomoTransform.position) < 3f)
+        if (Vector2.Distance(playerTransform.position, DavidElGnomoTransform.position) < 3f || GetComponent<DavidElGnomoController>().HP<300)
         {
             return Status.Success;
         }

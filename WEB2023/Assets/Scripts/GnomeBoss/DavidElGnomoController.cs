@@ -42,9 +42,15 @@ public class DavidElGnomoController : MonoBehaviour
     //ESTO EN UN FUTURO DEBE ESTAR EN UN ENEMYCONTROLLER
     void DieGO()
     {
-        Destroy(gameObject);
+        StartCoroutine(animAndDie());
+            Destroy(gameObject);
     }
-    
+    IEnumerator animAndDie()
+    {
+        Animator animator = GetComponent<Animator>();
+        animator.Play("DieGnome");
+        yield return new WaitForSeconds(1f);
+    }
     // Update is called once per frame
     public void RecieveDamage(float damage)
     {
