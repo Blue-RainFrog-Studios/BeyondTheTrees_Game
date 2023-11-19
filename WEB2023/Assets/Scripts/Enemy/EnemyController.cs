@@ -263,8 +263,9 @@ public class EnemyController : MonoBehaviour
 
     private void EatAcorn()
     {
-        audioSource.PlayOneShot(eatClip);
         StartCoroutine(WaitSeconds(1));
+        if(!audioSource.isPlaying)
+            audioSource.PlayOneShot(eatClip);
     }
 
     IEnumerator WaitSeconds(float Time)
