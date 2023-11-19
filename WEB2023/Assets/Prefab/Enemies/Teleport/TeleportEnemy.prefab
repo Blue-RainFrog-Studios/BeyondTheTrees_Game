@@ -119,7 +119,7 @@ MonoBehaviour:
   life: 40
   bulletSpeed: 0
   animator: {fileID: -5769247891855293941}
-  damage: 20
+  damage: 12
   notInRoom: 0
   blinkDuration: 1
   blinkNumber: 6

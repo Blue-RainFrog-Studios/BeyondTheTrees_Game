@@ -17,6 +17,7 @@ public class KnightScript : MonoBehaviour
     RoomController r;
 
     public int col = -1;
+    private int minDmg = 3;
     public bool king = false;
     public bool bush = false;
     public int health { get; set; }
@@ -45,12 +46,10 @@ public class KnightScript : MonoBehaviour
 
     public void ReceiveAttack(int dmgValue)
     {
-
-        knight.health -= (dmgValue - knight.defense);
+        knight.health -= (dmgValue - knight.defense <= 0.0f)? minDmg : (dmgValue - knight.defense);
         lifeBar.value = knight.health;
         if (knight.health <= 0)
         {
-            //r.DestroyRooms();
             SceneManager.LoadScene("GameOver");
             knight.health = 50;
             lifeBar.value = knight.health;
