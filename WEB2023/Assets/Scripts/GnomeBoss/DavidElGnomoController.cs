@@ -2,6 +2,7 @@ using BehaviourAPI.UnityToolkit.Demos;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DavidElGnomoController : MonoBehaviour
 {
@@ -43,7 +44,10 @@ public class DavidElGnomoController : MonoBehaviour
     void DieGO()
     {
         StartCoroutine(animAndDie());
-            Destroy(gameObject);
+        Destroy(gameObject);
+        player.GetComponent<PlayerMovementInputSystem>().nivel++;
+        SceneManager.LoadScene("LoandingBoss");
+
     }
     IEnumerator animAndDie()
     {

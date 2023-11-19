@@ -31,13 +31,11 @@ public class ActionsSpookyTree : MonoBehaviour
     #region MethodsSleep
     public void StartMethodSleep()
     {
-        ended = false;
-        animator.Play("Awake");
-        StartCoroutine(WaitThreeSecondsAndEnd());
     }
     public Status UpdateMethodSleep()
     {
-        if (ended)
+        //if the player is in a distance below 6 units
+        if(Vector3.Distance(player.transform.position,spookyTree.transform.position)<7)
             return Status.Success;
         else
             return Status.Running;
@@ -56,9 +54,9 @@ public class ActionsSpookyTree : MonoBehaviour
         Vector3 posBullet1 = new Vector3(spookyTree.transform.position.x + 4, spookyTree.transform.position.y, spookyTree.transform.position.z);
         Vector3 posBullet2 = new Vector3(spookyTree.transform.position.x, spookyTree.transform.position.y, spookyTree.transform.position.z);
         Vector3 posBullet3 = new Vector3(spookyTree.transform.position.x - 4, spookyTree.transform.position.y, spookyTree.transform.position.z);
-        StartCoroutine(InstantiateBullet(posBullet1, finalPos2, 8));
-        StartCoroutine(InstantiateBullet(posBullet2, finalPos1, 8));
-        StartCoroutine(InstantiateBullet(posBullet3, finalPos3, 8));
+        StartCoroutine(InstantiateBullet(posBullet1, finalPos2, 10));
+        StartCoroutine(InstantiateBullet(posBullet2, finalPos1, 10));
+        StartCoroutine(InstantiateBullet(posBullet3, finalPos3, 10));
         //cuando termine cambia la variable de ended a true
         StartCoroutine(WaitThreeSecondsAndEnd());
 
@@ -83,9 +81,9 @@ public class ActionsSpookyTree : MonoBehaviour
         Vector3 posBullet1 = new Vector3(spookyTree.transform.position.x + 4, spookyTree.transform.position.y, spookyTree.transform.position.z);
         Vector3 posBullet2 = new Vector3(spookyTree.transform.position.x, spookyTree.transform.position.y, spookyTree.transform.position.z);
         Vector3 posBullet3 = new Vector3(spookyTree.transform.position.x - 4, spookyTree.transform.position.y, spookyTree.transform.position.z);
-        StartCoroutine(InstantiateBullet(posBullet1, finalPos3,10));
-        StartCoroutine(InstantiateBullet(posBullet2, finalPos1, 8));
-        StartCoroutine(InstantiateBullet(posBullet3, finalPos2, 10));
+        StartCoroutine(InstantiateBullet(posBullet1, finalPos3,12));
+        StartCoroutine(InstantiateBullet(posBullet2, finalPos1, 10));
+        StartCoroutine(InstantiateBullet(posBullet3, finalPos2, 12));
         //cuando termine cambia la variable de ended a true
         StartCoroutine(WaitThreeSecondsAndEnd());
     }
@@ -157,9 +155,9 @@ public class ActionsSpookyTree : MonoBehaviour
 
     public void StartMethodRootsOut()
     {
-        Debug.Log("roots out");
         ended = false;
-        StartCoroutine(WaitOneSecondsAndEnd());
+        animator.Play("Awake");
+        StartCoroutine(WaitThreeSecondsAndEnd());
     }
     public Status UpdateMethodRootsOut()
     {
@@ -207,18 +205,23 @@ public class ActionsSpookyTree : MonoBehaviour
     }
     private void SpawnPattern1()
     {
-        Instantiate(RootAttack, new Vector3(spookyTree.transform.position.x - 4, spookyTree.transform.position.y - 4, 0), Quaternion.identity);//der
+        Instantiate(RootAttack, new Vector3(spookyTree.transform.position.x - 4, spookyTree.transform.position.y - 6, 0), Quaternion.identity);//der
         Instantiate(RootAttack, new Vector3(spookyTree.transform.position.x, spookyTree.transform.position.y - 8, 0), Quaternion.identity);//centroab
-        Instantiate(RootAttack, new Vector3(spookyTree.transform.position.x, spookyTree.transform.position.y - 4, 0), Quaternion.identity);//centro
-        Instantiate(RootAttack, new Vector3(spookyTree.transform.position.x + 4, spookyTree.transform.position.y - 4, 0), Quaternion.identity);//izq
+        Instantiate(RootAttack, new Vector3(spookyTree.transform.position.x, spookyTree.transform.position.y - 6, 0), Quaternion.identity);//centro
+        Instantiate(RootAttack, new Vector3(spookyTree.transform.position.x + 4, spookyTree.transform.position.y - 6, 0), Quaternion.identity);//izq
     }
     private void SpawnPattern2()
     {
-        Instantiate(RootAttack, new Vector3(spookyTree.transform.position.x - 4, spookyTree.transform.position.y - 2, 0), Quaternion.identity);//izarr
-        Instantiate(RootAttack, new Vector3(spookyTree.transform.position.x - 4 , spookyTree.transform.position.y - 8, 0), Quaternion.identity);//izabb
-        Instantiate(RootAttack, new Vector3(spookyTree.transform.position.x + 4 , spookyTree.transform.position.y - 8, 0), Quaternion.identity);//centroab
-        Instantiate(RootAttack, new Vector3(spookyTree.transform.position.x, spookyTree.transform.position.y - 4, 0), Quaternion.identity);//centro
-        Instantiate(RootAttack, new Vector3(spookyTree.transform.position.x + 4, spookyTree.transform.position.y - 2, 0), Quaternion.identity);//der
+        Instantiate(RootAttack, new Vector3(spookyTree.transform.position.x - 4, spookyTree.transform.position.y - 6, 0), Quaternion.identity);//izarr
+        Instantiate(RootAttack, new Vector3(spookyTree.transform.position.x, spookyTree.transform.position.y - 6, 0), Quaternion.identity);//centro
+        Instantiate(RootAttack, new Vector3(spookyTree.transform.position.x + 4, spookyTree.transform.position.y - 6, 0), Quaternion.identity);//der
+        Instantiate(RootAttack, new Vector3(spookyTree.transform.position.x + 8, spookyTree.transform.position.y - 6, 0), Quaternion.identity);//der
+        Instantiate(RootAttack, new Vector3(spookyTree.transform.position.x - 8, spookyTree.transform.position.y - 6, 0), Quaternion.identity);//der
+        Instantiate(RootAttack, new Vector3(spookyTree.transform.position.x - 4, spookyTree.transform.position.y - 10, 0), Quaternion.identity);//izabb
+        Instantiate(RootAttack, new Vector3(spookyTree.transform.position.x - 8, spookyTree.transform.position.y - 10, 0), Quaternion.identity);//izabb
+        Instantiate(RootAttack, new Vector3(spookyTree.transform.position.x + 8, spookyTree.transform.position.y - 10, 0), Quaternion.identity);//izabb
+        Instantiate(RootAttack, new Vector3(spookyTree.transform.position.x + 4, spookyTree.transform.position.y - 10, 0), Quaternion.identity);//centroab
+        Instantiate(RootAttack, new Vector3(spookyTree.transform.position.x, spookyTree.transform.position.y - 10, 0), Quaternion.identity);//centroab
     }
     private void SpawnPattern3()
     {

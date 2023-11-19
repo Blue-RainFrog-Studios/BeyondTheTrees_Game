@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SpookyTreeController : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class SpookyTreeController : MonoBehaviour
         if (hpTree <= 0)
         {
             Destroy(this.gameObject);
+            SceneManager.LoadScene("Victory");
+            
         }
     }
     public void RecieveDamage(int damage)
