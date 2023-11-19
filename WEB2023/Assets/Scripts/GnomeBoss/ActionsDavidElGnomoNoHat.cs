@@ -34,7 +34,7 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     {
         Debug.Log("ANDANDO AL JUGADOR");
         GetComponent<SpriteRenderer>().color = Color.red;
-        animator.Play("WalkFrontDG");
+        animator.Play("WalkFrontNoHat");
     }
     public Status UpdateMethodWalkNoHat()
     {
@@ -52,9 +52,9 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
         GetComponent<Knockback>().strength = 40f;
         ended = false;
         if (playerTransform.position.x > DavidElGnomoTransform.position.x)
-            animator.Play("WalkSideRightDG");
+            animator.Play("WalkSideNoHat");
         else
-            animator.Play("WalkSideDG");
+            animator.Play("WalkSideLeftNoHat");
 
     }
 
@@ -89,13 +89,13 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().color = Color.red;
         //StartCoroutine(PlayAnimation("PunchDG"));
-        animator.Play("PunchDG");
+        animator.Play("PunchNoHat");
     }
     public Status UpdateMethodPunchNoHat()
     {
         //wait 2 seconds
         //if the animation "PunchDG" is playing
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("PunchDG"))
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("PunchNoHat"))
         {
             return Status.Running;
         }
@@ -113,7 +113,7 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
 
         GetComponent<SpriteRenderer>().color = Color.red;
         
-        animator.Play("Idle");
+        animator.Play("IdleNoHat");
 
         StartCoroutine(InvokeGnomes(1f));
         StartCoroutine(InvokeGnomes(2f));
@@ -144,7 +144,7 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     public void StartMethodTiredNoHat()
     {
         ended = false;
-        animator.Play("Idle");
+        animator.Play("IdleNoHat");
         //cambia el color a morado
         GetComponent<SpriteRenderer>().color = Color.red;
         StartCoroutine(WaitSeconds(TimeTired));

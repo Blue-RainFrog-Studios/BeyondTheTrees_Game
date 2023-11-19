@@ -1,0 +1,391 @@
+fileFormatVersion: 2
+guid: fa61c51408d6771468d4ce4662ad2445
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: punchNoHatHard_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 237
+        width: 947
+        height: 1127
+      alignment: 9
+      pivot: {x: 0.51526946, y: 0.6443472}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9091800d5d2d96e4c9c704d24604951c
+      internalID: -1720744344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punchNoHatHard_1
+      rect:
+        serializedVersion: 2
+        x: 1420
+        y: 236
+        width: 929
+        height: 1114
+      alignment: 9
+      pivot: {x: 0.51167434, y: 0.64278656}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ad86c4131f99d545921fa8941b55823
+      internalID: 264051083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punchNoHatHard_2
+      rect:
+        serializedVersion: 2
+        x: 2564
+        y: 231
+        width: 1152
+        height: 1160
+      alignment: 9
+      pivot: {x: 0.51673675, y: 0.62985253}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ded13fc9c7234834b9a120b19ebaa82a
+      internalID: -1772690293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punchNoHatHard_3
+      rect:
+        serializedVersion: 2
+        x: 3904
+        y: 213
+        width: 995
+        height: 1150
+      alignment: 9
+      pivot: {x: 0.5108997, y: 0.6309817}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcfc9e325dbda604ba9be7f00214a588
+      internalID: -330374139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punchNoHatHard_4
+      rect:
+        serializedVersion: 2
+        x: 5040
+        y: 236
+        width: 1189
+        height: 1152
+      alignment: 9
+      pivot: {x: 0.5162159, y: 0.65272105}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eacbce205d5681449cd4c3ec8964bd1
+      internalID: 1795615027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punchNoHatHard_5
+      rect:
+        serializedVersion: 2
+        x: 6431
+        y: 238
+        width: 1063
+        height: 1098
+      alignment: 9
+      pivot: {x: 0.49546582, y: 0.6327949}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bbf0a30552760b4b8e3f094791579e4
+      internalID: -1782534780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punchNoHatHard_6
+      rect:
+        serializedVersion: 2
+        x: 7746
+        y: 282
+        width: 912
+        height: 1088
+      alignment: 9
+      pivot: {x: 0.5330329, y: 0.62183225}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5bfb724c1af5f840862514bcfdf901d
+      internalID: 668837211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punchNoHatHard_7
+      rect:
+        serializedVersion: 2
+        x: 8868
+        y: 0
+        width: 1841
+        height: 1414
+      alignment: 9
+      pivot: {x: 0.52683717, y: 0.7394723}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f02ed034a6b40a42a682d8c38c5a630
+      internalID: -748505229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punchNoHatHard_8
+      rect:
+        serializedVersion: 2
+        x: 11183
+        y: 117
+        width: 1436
+        height: 1285
+      alignment: 9
+      pivot: {x: 0.5201399, y: 0.6725493}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3fc071be920bae46be677e9864b4b9a
+      internalID: -1392768613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punchNoHatHard_9
+      rect:
+        serializedVersion: 2
+        x: 13140
+        y: 0
+        width: 1473
+        height: 1281
+      alignment: 9
+      pivot: {x: 0.514726, y: 0.6655625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffcadf9e599f01543a443e3c88488be6
+      internalID: -183267679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punchNoHatHard_10
+      rect:
+        serializedVersion: 2
+        x: 14716
+        y: 101
+        width: 1182
+        height: 1141
+      alignment: 9
+      pivot: {x: 0.5316044, y: 0.6848208}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4197ff59b3f70c54baacc550d03e31d7
+      internalID: -1039653835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punchNoHatHard_11
+      rect:
+        serializedVersion: 2
+        x: 16415
+        y: 129
+        width: 905
+        height: 1145
+      alignment: 9
+      pivot: {x: 0.5514179, y: 0.6733163}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d83f11104c0acc442b4e346723856757
+      internalID: 130270157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      punchNoHatHard_0: -1720744344
+      punchNoHatHard_1: 264051083
+      punchNoHatHard_10: -1039653835
+      punchNoHatHard_11: 130270157
+      punchNoHatHard_2: -1772690293
+      punchNoHatHard_3: -330374139
+      punchNoHatHard_4: 1795615027
+      punchNoHatHard_5: -1782534780
+      punchNoHatHard_6: 668837211
+      punchNoHatHard_7: -748505229
+      punchNoHatHard_8: -1392768613
+      punchNoHatHard_9: -183267679
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
