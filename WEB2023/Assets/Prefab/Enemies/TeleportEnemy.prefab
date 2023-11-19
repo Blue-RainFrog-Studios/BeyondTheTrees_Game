@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3544500312377885349}
   - component: {fileID: 3113921293586694263}
   - component: {fileID: -1793667132281868266}
+  - component: {fileID: 8996587817541370119}
   m_Layer: 0
   m_Name: TeleportEnemy
   m_TagString: Enemy
@@ -106,6 +107,11 @@ MonoBehaviour:
   range: 7
   rangeTeleport: 10
   attackRange: 1
+  rangeSquirrel: 0
+  eatRange: 0
+  consumed: 0
+  eatClip: {fileID: 0}
+  audioSource: {fileID: 0}
   coolDown: 5
   speed: 1
   life: 40
@@ -175,3 +181,23 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
+--- !u!114 &8996587817541370119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4875267983180699273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53f48daecdf6bd54d8b0796532def53f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strength: 10
+  delay: 0.15
+  OnBegin:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDone:
+    m_PersistentCalls:
+      m_Calls: []

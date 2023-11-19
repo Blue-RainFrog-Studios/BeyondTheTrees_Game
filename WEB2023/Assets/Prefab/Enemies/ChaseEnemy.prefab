@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5402129600522178592}
   - component: {fileID: 6938415437227796382}
   - component: {fileID: 6628442988745050789}
+  - component: {fileID: 5509788322218400130}
   m_Layer: 0
   m_Name: ChaseEnemy
   m_TagString: Enemy
@@ -100,8 +101,8 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 500
-  m_LinearDrag: 0
+  m_Mass: 3
+  m_LinearDrag: 10
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -188,7 +189,13 @@ MonoBehaviour:
   currState: 0
   enemyType: 0
   range: 15
+  rangeTeleport: 0
   attackRange: 1.5
+  rangeSquirrel: 0
+  eatRange: 0
+  consumed: 0
+  eatClip: {fileID: 0}
+  audioSource: {fileID: 0}
   coolDown: 1
   speed: 2
   life: 80
@@ -196,3 +203,23 @@ MonoBehaviour:
   animator: {fileID: 6938415437227796382}
   damage: 10
   notInRoom: 0
+--- !u!114 &5509788322218400130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263330336992781321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53f48daecdf6bd54d8b0796532def53f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strength: 10
+  delay: 0.15
+  OnBegin:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDone:
+    m_PersistentCalls:
+      m_Calls: []

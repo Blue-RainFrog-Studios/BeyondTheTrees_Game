@@ -348,7 +348,8 @@ public class EnemyController : MonoBehaviour
 
 
         life -= damage;
-        Debug.Log("Recibo daño");
+        this.GetComponent<Knockback>().PlayFeedback(player , this.gameObject.GetComponent<Rigidbody2D>());
+        //Debug.Log("Recibo daño");
         if (life <= 0)
         {
             currState = EnemyState.Die;

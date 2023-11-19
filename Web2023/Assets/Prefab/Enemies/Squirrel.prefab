@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 1856821096735309085}
   - component: {fileID: 8848712778407726177}
   - component: {fileID: 4225666012270259615}
+  - component: {fileID: 6951873516816919427}
   m_Layer: 0
   m_Name: Squirrel
   m_TagString: Enemy
@@ -409,3 +410,23 @@ MonoBehaviour:
   animator: {fileID: 0}
   damage: 10
   notInRoom: 0
+--- !u!114 &6951873516816919427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5304357250516780494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53f48daecdf6bd54d8b0796532def53f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strength: 10
+  delay: 0.15
+  OnBegin:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDone:
+    m_PersistentCalls:
+      m_Calls: []
