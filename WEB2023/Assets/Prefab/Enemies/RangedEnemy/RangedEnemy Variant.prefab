@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: -391864765268405954}
     - target: {fileID: 6807329344346774080, guid: b61eff804755ac34a8b2ded704f94d8b, type: 3}
       propertyPath: coolDown
-      value: 0.1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6807329344346774080, guid: b61eff804755ac34a8b2ded704f94d8b, type: 3}
       propertyPath: notInRoom
