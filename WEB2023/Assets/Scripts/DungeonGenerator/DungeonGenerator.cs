@@ -45,6 +45,7 @@ public class DungeonGenerator : MonoBehaviour
 {
     public DungeonGenerationData dungeonGenerationData;
     private List<Vector2Int> dungeonRooms;
+    GameObject player;
 
     public string[] EmptyRooms = { "Empty", "Shop" }; //get random string room from this array of strings c#
 
@@ -61,7 +62,20 @@ public class DungeonGenerator : MonoBehaviour
 
     private void SpawnRooms(IEnumerable<Vector2Int> rooms)
     {
-        RoomController.instance.LoadRoom("Start", 0, 0);
+        player = GameObject.FindGameObjectWithTag("Player");
+        if (player.GetComponent<PlayerMovementInputSystem>().nivel == 0)
+        {
+            RoomController.instance.LoadRoom("Start", 0, 0);
+        }
+        else if (player.GetComponent<PlayerMovementInputSystem>().nivel == 1)
+        {
+            RoomController.instance.LoadRoom("Start1", 0, 0);
+        }
+        else if (player.GetComponent<PlayerMovementInputSystem>().nivel == 2)
+        {
+            RoomController.instance.LoadRoom("Start2", 0, 0);
+        }
+
         foreach (Vector2Int roomLocation in rooms)
         {
 

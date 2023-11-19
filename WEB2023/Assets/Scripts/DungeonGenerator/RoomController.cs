@@ -115,7 +115,23 @@ public class RoomController : MonoBehaviour
             Destroy(bossRoom.gameObject);
             var roomToRemove=loadedRooms.Single(r=>r.X==tempRoom.X && r.Y==tempRoom.Y);
             loadedRooms.Remove(roomToRemove);
-            LoadRoom("End",tempRoom.X,tempRoom.Y);
+
+            if (player.GetComponent<PlayerMovementInputSystem>().nivel == 0)
+            {
+
+                LoadRoom("End", tempRoom.X, tempRoom.Y);
+            }
+            else if (player.GetComponent<PlayerMovementInputSystem>().nivel == 1)
+            {
+                LoadRoom("End2", tempRoom.X, tempRoom.Y);
+            }
+            else if (player.GetComponent<PlayerMovementInputSystem>().nivel >= 2)
+            {
+                LoadRoom("End3", tempRoom.X, tempRoom.Y);
+            }
+
+
+           
         }
         cont= 1;
 
@@ -205,12 +221,13 @@ public class RoomController : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         int randomAux = Random.Range(0, 2);
         string[] possibleRooms = new string[2]; 
+        string[] puzzleRooms = new string[1]; 
         if (player.GetComponent<PlayerMovementInputSystem>().nivel == 0)
         {
             possibleRooms = new string[]
             {
                     //"Empty",
-                    "Basic3",
+                    "Basic1",
             };
                     
         }
@@ -218,27 +235,64 @@ public class RoomController : MonoBehaviour
         {
             possibleRooms = new string[]
             {
-                "Basic1",
+                "Basic1_1",
             };
         }
-        else if (player.GetComponent<PlayerMovementInputSystem>().nivel == 2)
+        else if (player.GetComponent<PlayerMovementInputSystem>().nivel >= 2)
         {
             possibleRooms = new string[]
             {
-            //"Empty",
-            "Basic1",
-            "Basic3",
+                //"Empty",
+                //"Basic1",
+                "Basic3",
             };
         }
-        string[] puzzleRooms = new string[]
+        if (player.GetComponent<PlayerMovementInputSystem>().nivel == 0)
         {
-            /*"King1",
-            "SkullPuzzle",
-            "RapidoQueSeQueman",*/
-            "Ardilla",
-            //"RapidoQueSeQueman 1",
-            //"RapidoQueSeQueman 2",
-        };
+            puzzleRooms = new string[]
+            {
+
+                "King1",
+                "SkullPuzzle",
+                "RapidoQueSeQueman",
+                "Ardilla",
+                //"RapidoQueSeQueman 2",
+            };
+
+        }
+        else if (player.GetComponent<PlayerMovementInputSystem>().nivel == 1)
+        {
+            puzzleRooms = new string[]
+            {
+
+                "King2",
+                "SkullPuzzle1",
+                "RapidoQueSeQueman 1",
+                "Ardilla1",
+
+            };
+        }
+        else if (player.GetComponent<PlayerMovementInputSystem>().nivel >= 2)
+        {
+            puzzleRooms = new string[]
+            {
+                
+                "King3",
+                "SkullPuzzle2",
+                "RapidoQueSeQueman 2",
+                "Ardilla2",
+            };
+        }
+        //string[] puzzleRooms = new string[]
+        //{
+
+        //    /*"King1",
+        //    "SkullPuzzle",
+        //    "RapidoQueSeQueman",*/
+        //    "Ardilla",
+        //    //"RapidoQueSeQueman 1",
+        //    //"RapidoQueSeQueman 2",
+        //};
         if(randomAux == 0 && contPuzzle < 1)
         {
             contPuzzle++;
@@ -333,8 +387,9 @@ public class RoomController : MonoBehaviour
                     boosDoor = true;
                     //AQUI CAMBIAR ESCENA
                     Debug.Log("TERMINASTE LA RUN");
-                    if(player != null)
+                    if(player != null && spawnedBossRoom)
                     {
+                        
                         player.GetComponent<PlayerMovementInputSystem>().nivel++;
                         //GameObject menuOpcion = GameObject.Find("Opcion");
                         //menuOpcion.transform.GetChild(0).gameObject.SetActive(true);
@@ -342,6 +397,7 @@ public class RoomController : MonoBehaviour
                     }
 
                 }else{
+                    
                     foreach (Door door in room.GetComponentsInChildren<Door>())
                     {
                         door.doorCollider.SetActive(false);

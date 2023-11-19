@@ -166,7 +166,6 @@ public class Room : MonoBehaviour
         {
             //itemSpawner.enabled = true;
             itemSpawner.SetActive(true);
-            Debug.Log("Tus muertos pisoteados");
         }
         //itemSpawner.enabled = true;
     }

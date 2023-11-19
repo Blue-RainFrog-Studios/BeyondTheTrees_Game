@@ -30,7 +30,7 @@ public class KnightScript : MonoBehaviour
     public KnightScript() 
     {
         totalHealth = 50;
-        health = 50;
+        health = 11111150;
         speed = 6;
         attack = 30;
         defense = 7;
@@ -52,6 +52,7 @@ public class KnightScript : MonoBehaviour
         {
             //r.DestroyRooms();
             SceneManager.LoadScene("GameOver");
+            GetComponent<PlayerMovementInputSystem>().nivel =0;
             knight.health = 50;
             lifeBar.value = knight.health;
             this.gameObject.transform.position = new Vector2(0, -4);

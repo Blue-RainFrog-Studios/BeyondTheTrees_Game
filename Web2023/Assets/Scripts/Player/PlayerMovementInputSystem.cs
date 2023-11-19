@@ -30,7 +30,6 @@ public class PlayerMovementInputSystem : MonoBehaviour
     private float shotRateTime = 0;
     private void Awake()
     {
-        
         DontDestroyOnLoad(this.gameObject);
         player_rb = GetComponent<Rigidbody2D>();
         playerInputActions = new Map();
