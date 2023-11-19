@@ -121,25 +121,40 @@ public class PlayerMovementInputSystem : MonoBehaviour
             //Solo dispara si se ha llevado el joystick suficientemente lejos
             if (attackDirection.magnitude == 1)
             {
-                if (this != null)
-                {
-                    Instantiate(attack, transform.position, transform.rotation);
-                    shotRateTime = Time.time + shoteRate;
-                }
+
                 if (attackDirection.y == -1)
                 {
+
+                    
                     if (this != null)
                     {
-                        characterAnimator.Play("AttackFront");
-                        shotRateTime = Time.time + shoteRate;
+                        if(transform.Find("FrontCollider").gameObject.GetComponentInChildren<ComprobarAtaque>().Cercano())
+                        {
+                            characterAnimator.Play("AttackFront");
+                            shotRateTime = Time.time + shoteRate;
+ 
+                        }
+                        else
+                        {
+                            Instantiate(attack, transform.position, transform.rotation);
+                            shotRateTime = Time.time + shoteRate;
+                        }
                     }
                 }
                 if (attackDirection.y == 1)
                 {
                     if (this != null)
                     {
-                        characterAnimator.Play("AttackBack");
-                        shotRateTime = Time.time + shoteRate;
+                        if (transform.Find("BackCollider").gameObject.GetComponentInChildren<ComprobarAtaque>().Cercano())
+                        {
+                            characterAnimator.Play("AttackBack");
+                            shotRateTime = Time.time + shoteRate;
+                        }
+                        else
+                        {
+                            Instantiate(attack, transform.position, transform.rotation);
+                            shotRateTime = Time.time + shoteRate;
+                        }
                     }
 
                 }
@@ -147,8 +162,16 @@ public class PlayerMovementInputSystem : MonoBehaviour
                 {
                     if (this != null)
                     {
-                        characterAnimator.Play("AttackLeft");
-                        shotRateTime = Time.time + shoteRate;
+                        if (transform.Find("LeftCollider").gameObject.GetComponentInChildren<ComprobarAtaque>().Cercano())
+                        {
+                            characterAnimator.Play("AttackLeft");
+                            shotRateTime = Time.time + shoteRate;
+                        }
+                        else
+                        {
+                            Instantiate(attack, transform.position, transform.rotation);
+                            shotRateTime = Time.time + shoteRate;
+                        }
                     }
 
                 }
@@ -156,12 +179,20 @@ public class PlayerMovementInputSystem : MonoBehaviour
                 {
                     if (this != null)
                     {
-                        characterAnimator.Play("AttackRight");
-                        shotRateTime = Time.time + shoteRate;
-                    }
+                        if (transform.Find("RightCollider").gameObject.GetComponentInChildren<ComprobarAtaque>().Cercano())
+                        {
+                            characterAnimator.Play("AttackRight");
+                            shotRateTime = Time.time + shoteRate;
+                        }
+                        else
+                        {
+                            Instantiate(attack, transform.position, transform.rotation);
+                            shotRateTime = Time.time + shoteRate;
+                        }
 
+                    }
                 }
-            }
+            }   
 
         }
     }
