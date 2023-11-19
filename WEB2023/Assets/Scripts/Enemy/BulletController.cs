@@ -37,7 +37,7 @@ public class BulletController : MonoBehaviour
 
     public void GetPlayer(Transform player)
     {
-        playerPos = player.position;
+        playerPos = player.position*2;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -35,7 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7386381207141798917
 SpriteRenderer:
@@ -78,8 +78,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
-  m_Color: {r: 0.6698113, g: 0.12322002, b: 0.12322002, a: 1}
+  m_Sprite: {fileID: 813361291, guid: 70e85111105532d42a516e37e49b656a, type: 3}
+  m_Color: {r: 0.7686275, g: 0.7686275, b: 0.7686275, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -108,9 +108,6 @@ MonoBehaviour:
   range: 15
   rangeTeleport: 0
   attackRange: 8
-  range: 10
-  rangeTeleport: 0
-  attackRange: 5
   rangeSquirrel: 0
   eatRange: 0
   consumed: 0
@@ -124,6 +121,8 @@ MonoBehaviour:
   animator: {fileID: 1330603882934896760}
   damage: 20
   notInRoom: 0
+  blinkDuration: 0
+  blinkNumber: 0
 --- !u!50 &-8955868755180615599
 Rigidbody2D:
   serializedVersion: 4
@@ -183,8 +182,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 0.8828125}
+  m_Offset: {x: 0, y: -0.0000019073486}
+  m_Size: {x: 1, y: 3.8387794}
   m_Direction: 0
 --- !u!95 &1330603882934896760
 Animator:
