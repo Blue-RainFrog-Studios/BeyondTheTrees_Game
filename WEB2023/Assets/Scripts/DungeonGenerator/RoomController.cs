@@ -44,6 +44,7 @@ public class RoomController : MonoBehaviour
     bool updatedRooms = false;
 
     int contPuzzle = 0;
+    //ItemSpawner spawn;
 
     private void Awake()
     {
@@ -58,6 +59,11 @@ public class RoomController : MonoBehaviour
         //LoadRoom("Empty", -1, 0);
         //LoadRoom("Empty", 0, 1);
         //LoadRoom("Empty", 0, -1);
+
+        //ItemSpawner spawn = currRom.GetComponentInChildren<ItemSpawner>();
+        //spawn = currRom.GetComponent<ItemSpawner>();
+        //spawn.SpawObject();
+
     }
 
     void Update()
@@ -249,12 +255,14 @@ public class RoomController : MonoBehaviour
         CameraController.instance.currRom= room;
         lastRoom = currRom;
         currRom = room;
-
+        
 
         //los enemigos se quden quietos cuando la camara no este en la sala
 
         //UpdateRooms();
         StartCoroutine(RoomCoroutine());
+
+        //currRom.ActivarSpawn();
     }
 
     public IEnumerator RoomCoroutine()
@@ -337,9 +345,13 @@ public class RoomController : MonoBehaviour
                     foreach (Door door in room.GetComponentsInChildren<Door>())
                     {
                         door.doorCollider.SetActive(false);
+                        //spawn.SpawObject();
                     }
 
+                    //
+                    currRom.ActivarSpawn();
                 }
+                
             }
         }
     }

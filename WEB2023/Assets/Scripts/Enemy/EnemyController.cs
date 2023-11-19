@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.SceneManagement;
 
+
 public enum EnemyState
 {
     Idle,
@@ -35,6 +36,8 @@ public enum EnemyType
 };
 public class EnemyController : MonoBehaviour
 {
+
+    Material enemyMaterial;
 
     public GameObject ghost;
     GameObject acorn;
@@ -79,6 +82,10 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
 
     public bool notInRoom = false;
+
+    public float blinkDuration = 1f;
+    public int blinkNumber = 6;
+    private bool blinking = false;
     private void Awake()
     {
         Idle();
@@ -88,6 +95,8 @@ public class EnemyController : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         
         ghost = this.gameObject;
+
+        enemyMaterial = GetComponent<Renderer>().material;
     }
 
     // Update is called once per frame
@@ -452,6 +461,34 @@ public class EnemyController : MonoBehaviour
         {
             currState = EnemyState.Die;
         }
+
+        /*if (!blinking)
+        {
+            StartCoroutine(Blink());
+        }*/
+
+    }
+
+    private IEnumerator Blink()
+    {
+        
+
+        blinking = true;
+
+        // Almacenar el color original del material
+        Color colorOriginal = enemyMaterial.color;
+
+        // Cambiar el color a rojo durante el parpadeo
+        for (int i = 0; i < blinkNumber; i++)
+        {
+            enemyMaterial.color = Color.red;
+            yield return new WaitForSeconds(blinkDuration);
+
+            enemyMaterial.color = colorOriginal;
+            yield return new WaitForSeconds(blinkDuration);
+        }
+
+        blinking = false;
     }
 
 
