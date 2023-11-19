@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class Room : MonoBehaviour
 {
@@ -162,11 +163,16 @@ public class Room : MonoBehaviour
     }
     public void ActivarSpawn()
     {
-        if(itemSpawner!= null)
+        int RandomNumer = UnityEngine.Random.Range(0, 3);
+        if(RandomNumer == 1)
         {
+            if(itemSpawner != null)
+            {
+                //itemSpawner.enabled = true;
+                itemSpawner.SetActive(true);
+            }
             //itemSpawner.enabled = true;
-            itemSpawner.SetActive(true);
         }
-        //itemSpawner.enabled = true;
+
     }
 }
