@@ -27,5 +27,15 @@ public class LittleGnomes : MonoBehaviour
     public void RecieveDamage(int damage)
     {
         HP -= damage;
+        GetComponent<Knockback>().PlayFeedback(player, GetComponent<Rigidbody2D>());
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            collision.GetComponent<KnightScript>().ReceiveAttack(10);
+            collision.GetComponent<Knockback>().PlayFeedback(this.gameObject, collision.GetComponent<Rigidbody2D>());
+        }
     }
 }

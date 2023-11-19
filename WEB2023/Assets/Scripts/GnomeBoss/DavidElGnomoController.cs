@@ -13,7 +13,7 @@ public class DavidElGnomoController : MonoBehaviour
     [SerializeField] public float HP;
     [SerializeField] public float HPGnomeMode;
     [SerializeField] public float HPSecondPhase;
-    [SerializeField] public GameObject player;
+    GameObject player;
     private bool Played;
     private bool PlayedSF;
 
@@ -23,6 +23,7 @@ public class DavidElGnomoController : MonoBehaviour
     {
         Played = false;
         PlayedSF = false;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Update()
@@ -67,12 +68,12 @@ public class DavidElGnomoController : MonoBehaviour
                 if (HP > HPSecondPhase)
                 {
                     player.GetComponent<KnightScript>().ReceiveAttack(damage);
-                    GetComponent<Knockback>().PlayFeedback(gameObject, player.GetComponent<Rigidbody2D>());
+                    player.GetComponent<Knockback>().PlayFeedback(gameObject, player.GetComponent<Rigidbody2D>());
                 }
                 else
                 {
                     player.GetComponent<KnightScript>().ReceiveAttack(damageNoHat);
-                    GetComponent<Knockback>().PlayFeedback(gameObject, player.GetComponent<Rigidbody2D>());
+                    player.GetComponent<Knockback>().PlayFeedback(gameObject, player.GetComponent<Rigidbody2D>());
                 }
 
             }

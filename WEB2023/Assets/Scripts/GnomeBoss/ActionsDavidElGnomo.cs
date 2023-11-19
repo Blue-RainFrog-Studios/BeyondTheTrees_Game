@@ -8,9 +8,9 @@ using UnityEngine;
 public class ActionsDavidElGnomo : MonoBehaviour
 {
     #region Varibles
-    [SerializeField] private GameObject player; //        player = GameObject.FindGameObjectWithTag("Player");
-    [SerializeField] private Transform playerTransform;
-    [SerializeField] private Transform DavidElGnomoTransform;
+    private GameObject player; //        player = GameObject.FindGameObjectWithTag("Player");
+    private Transform playerTransform;
+    private Transform DavidElGnomoTransform;
 
     [SerializeField] private float TimeTired;
     [SerializeField] private Animator animator;
@@ -20,6 +20,13 @@ public class ActionsDavidElGnomo : MonoBehaviour
     Vector2 walkAttackDistance = new Vector2(0, 2);
     ScreenShake screenShake;
     #endregion
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerTransform = player.transform;
+        DavidElGnomoTransform = GetComponent<Transform>();
+    }
 
     #region MethodsWalk
     public void StartMethodWalk()

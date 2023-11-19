@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 4903149949793395714}
   - component: {fileID: 1623266460585233045}
   - component: {fileID: 4540097278395962136}
+  - component: {fileID: 5998938594310694296}
+  - component: {fileID: 1983457679609627684}
   m_Layer: 0
   m_Name: LittleGnome
   m_TagString: LittleGnome
@@ -165,7 +167,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b4c5e6ca172f684185768f51529f38e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1156985873014526917, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
   speed: 1
-  HP: 20
+  HP: 100
   animator: {fileID: 1623266460585233045}
+--- !u!114 &5998938594310694296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3517669100422621170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53f48daecdf6bd54d8b0796532def53f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strength: 100
+  delay: 0.15
+  OnBegin:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDone:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!50 &1983457679609627684
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3517669100422621170}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 20
+  m_LinearDrag: 10
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

@@ -5,14 +5,18 @@ using UnityEngine;
 public class PunchController : MonoBehaviour
 {
     [SerializeField] private int damage;
-    [SerializeField] private Rigidbody2D player;
+    GameObject player;
     [SerializeField] private GameObject punch;
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
             collision.GetComponent<KnightScript>().ReceiveAttack(damage);
-            GetComponent<Knockback>().PlayFeedback(punch, player);
+            collision.GetComponent<Knockback>().PlayFeedback(punch, player.GetComponent<Rigidbody2D>());
         }
     }
 }

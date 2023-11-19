@@ -8,9 +8,9 @@ using UnityEngine;
 public class ActionsDavidElGnomoNoHat : MonoBehaviour
 {
     #region Variables
-    [SerializeField] private GameObject player;
-    [SerializeField] private Transform playerTransform;
-    [SerializeField] private Transform DavidElGnomoTransform;
+    private GameObject player;
+    private Transform playerTransform;
+    private Transform DavidElGnomoTransform;
 
     //[SerializeField] private float speed;
     //[SerializeField] private int damage;
@@ -28,6 +28,13 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     Vector2 walkAttackDistance = new Vector2(0, 2);
     ScreenShake screenShake;
     #endregion
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerTransform = player.transform;
+        DavidElGnomoTransform = GetComponent<Transform>();
+    }
 
     #region MethodsWalkNoHat
     public void StartMethodWalkNoHat()
