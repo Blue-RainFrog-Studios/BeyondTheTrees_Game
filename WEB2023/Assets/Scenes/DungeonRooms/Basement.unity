@@ -913,7 +913,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &548022613
 Transform:
   m_ObjectHideFlags: 0
@@ -3116,6 +3116,7 @@ MonoBehaviour:
   bottomDoor: {fileID: 0}
   trees: {fileID: 820901192}
   doors: []
+  itemSpawner: {fileID: 0}
 --- !u!61 &1940129676
 BoxCollider2D:
   m_ObjectHideFlags: 0
