@@ -310,7 +310,7 @@ Pluma de Fénix
 Kero coin (moneda del juego)
 
 ![Kero Coin][keroCoin]
-
+f
 ## DISEÑO
 ### Personaje
 Kero es el protagonista.
@@ -572,10 +572,6 @@ El Campamento Base será el lugar al que el jugador regresa tras las Expedicione
 Deberá tener un aspecto acogedor y cada puesto tiene que tener una identidad reconocible.
 
 
-#### Casa
-Es el hogar del personaje en el campamento, aquí el jugador podrá cambiar su aspecto y su clase. En la entrada al bosque también habrá un baúl que permite algunas de estas opciones. El jugador podrá usar el dinero conseguido en las expediciones para personalizar la casa.
-
-
 #### Tablón de misiones
 En esta zona el jugador tendrá disponible misiones de diferentes gremios. Las misiones tendrán objetivos específicos para la partida, como intentar terminar lo más rápido la partida o con el máximo de dinero posible. Estas misiones darán como recompensa subidas de estadísticas para las partidas (subida de vida total, subida de ataque, subida de defensa). Cuando el jugador consiga todas las misiones de un gremio desbloqueará la clase de ese gremio, por ejemplo, si el jugador completa todas las misiones del gremio de los corredores podrá entrar al bosque con las estadísticas de un corredor.
 - Pensamiento computacional: El tablón de misiones es la mejor herramienta que se tiene para medir el pensamiento computacional. Al empezar una misión de gremio se podrá medir exactamente qué objetivo tiene el jugador para la partida, por ejemplo, en una misión donde el jugador debe el jugador deba conseguir el máximo oro posible se podrá implementar un algoritmo de mochila para calcular si el jugador podría haber obtenido una mayor recompensa con los objetos que se le han proporcionado (en este caso nos servirá para medir cómo de bien evalúa el jugador las situaciones y cómo se adapta en función del objetivo). Para versiones futuras, se ha pensado implementar un sistema de puntuación donde el jugador podrá competir contra él mismo para conseguir optimizar al máximo la misión.
@@ -743,7 +739,20 @@ En Beyond The Trees hay muchos objetos que no aparecen en la primera iteración 
 ## CAMBIOS
 El documento de diseño se encuentra en la versión 1.1, este apartado servirá para comunicar los cambios hechos en futuras versiones.
 
-Items:
+### Cambios en la version beta
+Para esta version se han tenido que descartar algunas cosas debido a que daban problemas inicialmente.
+#### Campamento base
+##### Puesto del curtidor
+No se ha implementado el puesto del curtidor que permití aumentar el tamaño del inventario
+##### Tienda de pociones
+No se ha implementado la t ienda de pociones que permitía comprar pociones antes de una run, estas aparece en la primera sala de cada piso para que el jjugador tenga una cura en cada una
+##### Puesto de misiones
+No se ha implementado esta funcion que recompensaba al jugador por jugar según se indicaba en las misiones que seleccionaba.
+
+#### Enemigos
+No se han implementado todos los enemigos ni los boses, esto se debe a que la herramienta para hacer la IA de estos se nos explicó la semana antes de la entrega de esta versión.
+
+### Items:
 Se han cambiado las pociones por insecto. Se han añadido las imágenes de los items que faltaban de la tabla del apartado items.
 
 Se ha añadido el análisis MDA del videojuego.
