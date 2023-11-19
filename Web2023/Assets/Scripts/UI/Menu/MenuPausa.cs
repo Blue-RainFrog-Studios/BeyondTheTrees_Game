@@ -32,6 +32,8 @@ public class MenuPausa : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Campamento Base");
+        player.GetComponent<KnightScript>().resetStats();
+        player.GetComponent<KnightScript>().MoneyDealer(0.5f,player.GetComponent<CoinCounter>().expeditionMoney);
         player.GetComponent<PlayerMovementInputSystem>().nivel = 0;
         player.GetComponent<KnightScript>().ResetMoneyCanvas();
         player.transform.position = new Vector2(0, -4);
