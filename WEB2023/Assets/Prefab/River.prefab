@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8220837559685250634}
   - component: {fileID: 2749056925545251115}
   - component: {fileID: 6953355766630865098}
-  m_Layer: 8
+  m_Layer: 4
   m_Name: River
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &8220837559685250634
 BoxCollider2D:
