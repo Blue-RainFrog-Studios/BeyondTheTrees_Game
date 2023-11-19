@@ -163,7 +163,7 @@ public class Room : MonoBehaviour
     public void ActivarSpawn()
     {
         int RandomNumer = UnityEngine.Random.Range(0, 3);
-        if(RandomNumer == 1 || RandomNumer == 0 || RandomNumer == 2)
+        if(RandomNumer == 1 || RandomNumer == 0)
         {
             if(itemSpawner != null)
             {
