@@ -14,7 +14,7 @@ public class CoinCounter : MonoBehaviour
 
     public int expeditionMoney { get; set; }
 
-    public int totalMoney { get; set; } = 1000;
+    public int totalMoney { get; set; } = 0;
 
     //Debug tienda
     //public int totalMoney { get; set; } = 100;

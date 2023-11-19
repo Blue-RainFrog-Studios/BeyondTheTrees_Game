@@ -83,8 +83,8 @@ public class EnemyController : MonoBehaviour
 
     public bool notInRoom = false;
 
-    public float blinkDuration = 1f;
-    public int blinkNumber = 6;
+    public float blinkDuration;
+    public int blinkNumber;
     private bool blinking = false;
     private void Awake()
     {
@@ -473,17 +473,17 @@ public class EnemyController : MonoBehaviour
             currState = EnemyState.Die;
         }
 
-        /*if (!blinking)
+        if (!blinking)
         {
             StartCoroutine(Blink());
-        }*/
+        }
 
     }
 
     private IEnumerator Blink()
     {
-        
-
+        blinkDuration = 0.05f; ;
+        blinkNumber = 3;
         blinking = true;
 
         // Almacenar el color original del material
