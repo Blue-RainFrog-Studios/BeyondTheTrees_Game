@@ -18,7 +18,6 @@ public class PlayerMovementInputSystem : MonoBehaviour
     //audio source
     [SerializeField] private AudioSource AttackSoundEffect1;
     [SerializeField] private AudioSource AttackSoundEffect2;
-
     [SerializeField] private AudioSource WalkSoundEffect;
 
     private Map playerInputActions;

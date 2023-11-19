@@ -105,8 +105,8 @@ MonoBehaviour:
   EnemyBullet: {fileID: 0}
   currState: 0
   enemyType: 2
-  range: 20
-  rangeTeleport: 8
+  range: 5
+  rangeTeleport: 7
   attackRange: 1
   rangeSquirrel: 0
   eatRange: 0
