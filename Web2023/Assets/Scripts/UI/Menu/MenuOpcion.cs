@@ -21,6 +21,7 @@ public class MenuOpcion : MonoBehaviour
             this.transform.GetChild(1).gameObject.SetActive(true);
             player.GetComponent<PlayerMovementInputSystem>().nivel = 0;
             this.transform.GetChild(1).gameObject.transform.Find("VictoriaESP").gameObject.SetActive(true);
+            player.GetComponent<KnightScript>().ResetMoneyCanvas();
             StartCoroutine(Wait(10));
         }
     }
@@ -29,6 +30,7 @@ public class MenuOpcion : MonoBehaviour
         SceneManager.LoadScene("Campamento Base");
         //player.GetComponent<KnightScript>().ResetMoneyCanvas();
         player.transform.position = new Vector2(0, -4);
+        player.GetComponent<KnightScript>().ResetMoneyCanvas();
     }
     public void ContinuarLaRun()
     {
