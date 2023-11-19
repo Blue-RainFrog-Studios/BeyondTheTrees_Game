@@ -97,7 +97,7 @@ public class KnightScript : MonoBehaviour
     {
         knight.health = knight.totalHealth;
         knight.speed = 6;
-        knight.attack = 100;
+        knight.attack = 20;
         knight.defense = 7;
         knight.attackSpeed = 3;
     }
