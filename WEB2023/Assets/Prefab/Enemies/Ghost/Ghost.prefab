@@ -188,7 +188,7 @@ MonoBehaviour:
   EnemyBullet: {fileID: 0}
   currState: 0
   enemyType: 0
-  range: 15
+  range: 20
   rangeTeleport: 0
   attackRange: 1.5
   rangeSquirrel: 0
@@ -204,6 +204,8 @@ MonoBehaviour:
   animator: {fileID: 6938415437227796382}
   damage: 10
   notInRoom: 0
+  blinkDuration: 1
+  blinkNumber: 6
 --- !u!114 &5509788322218400130
 MonoBehaviour:
   m_ObjectHideFlags: 0

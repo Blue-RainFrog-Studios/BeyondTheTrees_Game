@@ -105,7 +105,7 @@ MonoBehaviour:
   EnemyBullet: {fileID: 0}
   currState: 0
   enemyType: 2
-  range: 6
+  range: 20
   rangeTeleport: 8
   attackRange: 1
   rangeSquirrel: 0
@@ -182,8 +182,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 1}
+  m_Offset: {x: -0.03667048, y: -0.024446761}
+  m_Size: {x: 1.317807, y: 3.7380328}
   m_Direction: 0
 --- !u!95 &-5769247891855293941
 Animator:
