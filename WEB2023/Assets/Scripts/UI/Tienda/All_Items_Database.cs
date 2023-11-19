@@ -83,4 +83,22 @@ public class All_Items_Database : ScriptableObject
     {
 
     }
+    public void ResetDatabase()
+    {
+        Run_Rare_Items.Clear();
+        Run_Epic_Items.Clear();
+        Run_Legendary_Items.Clear();
+        if (Run_Items.Count > 4)
+        {
+            for (int i = 4; i < Run_Common_Items.Count; i++)
+            {
+                Run_Common_Items.RemoveAt(i);
+            }
+        }
+        for (int i = 0; i < Shop_Items.Count; i++)
+        {
+            Shop_Items[i].IsPurchased = false;
+        }
+
+    }
 }

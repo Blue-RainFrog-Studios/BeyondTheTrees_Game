@@ -96,6 +96,9 @@ EditorBuildSettings:
     path: Assets/Scenes/DungeonRooms/Puzzles/BasementArdilla2.unity
     guid: bfe444c314de3464e8aa6450fc406263
   - enabled: 1
+    path: Assets/Scenes/Victory.unity
+    guid: f15a5a062443a8a47aa6363cc243ea04
+  - enabled: 1
     path: Assets/Scenes/ArbolMaligno.unity
     guid: 76352d08c3833d8448f7af7872513c98
   - enabled: 1

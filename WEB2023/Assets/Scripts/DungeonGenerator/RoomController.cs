@@ -402,7 +402,15 @@ public class RoomController : MonoBehaviour
                     {
                         
                         player.GetComponent<PlayerMovementInputSystem>().nivel++;
-                        SceneManager.LoadScene("LoandingBoss");
+                        if (player.GetComponent<PlayerMovementInputSystem>().nivel < 3)
+                        {
+                            SceneManager.LoadScene("LoandingBoss");
+                        }
+                        else
+                        {
+                            SceneManager.LoadScene("Victory");
+                        }
+                        
                         //GameObject menuOpcion = GameObject.Find("Opcion");
                         //menuOpcion.transform.GetChild(0).gameObject.SetActive(true);
 
