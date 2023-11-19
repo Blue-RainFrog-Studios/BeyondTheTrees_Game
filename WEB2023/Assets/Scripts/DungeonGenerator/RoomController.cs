@@ -210,7 +210,7 @@ public class RoomController : MonoBehaviour
             possibleRooms = new string[]
             {
                     //"Empty",
-                    "Basic3",
+                    "Basic1",
             };
                     
         }
@@ -218,16 +218,16 @@ public class RoomController : MonoBehaviour
         {
             possibleRooms = new string[]
             {
-                "Basic1",
+                "Basic1_1",
             };
         }
         else if (player.GetComponent<PlayerMovementInputSystem>().nivel == 2)
         {
             possibleRooms = new string[]
             {
-            //"Empty",
-            "Basic1",
-            "Basic3",
+                //"Empty",
+                //"Basic1",
+                "Basic3",
             };
         }
         string[] puzzleRooms = new string[]
