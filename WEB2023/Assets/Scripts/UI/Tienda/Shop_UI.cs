@@ -118,7 +118,8 @@ public class Shop_UI : MonoBehaviour
     void CloseShop()
     {
         shopUI.SetActive(false);
-        dialogUI.SetActive(true);
+        player.GetComponent<PlayerMovementInputSystem>().enabled = true;
+        //dialogUI.SetActive(true);
         /*player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponentInChildren<KnightScript>().lifeBar.gameObject.SetActive(true);  //Mostrar barra de vida*/
     }
@@ -126,6 +127,7 @@ public class Shop_UI : MonoBehaviour
     void OpenShop()
     {
         shopUI.SetActive(true);
+        player.GetComponent<PlayerMovementInputSystem>().enabled = false;
         /*player = GameObject.FindGameObjectWithTag("Player");
         moneyText.text = player.GetComponent<CoinCounter>().totalMoney.ToString();
         player.GetComponentInChildren<KnightScript>().lifeBar.gameObject.SetActive(false);  //Mostrar barra de vida*/
