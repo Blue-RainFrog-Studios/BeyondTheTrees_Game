@@ -78,6 +78,8 @@ public class EnemyController : MonoBehaviour
     private Vector3 space4 = new Vector3(0, -2, 0);
     public Animator animator;
     Vector2 direction;
+    Vector2 directionSquirrel;
+
     public int damage = 20;
     // Start is called before the first frame update
 
@@ -232,15 +234,25 @@ public class EnemyController : MonoBehaviour
                     animator.Play("MageLeft");
             }
         }
-        if (direction.x < 0.0f){
+        if (acorn != null) { 
+        directionSquirrel = acorn.transform.position - transform.position;
+        }
+        if (direction.x < 0.0f && acorn == null){
             animator.Play("SquirrelAnimationRigth");
 
         }
-        else if (direction.x > 0.0f)
+        else if (direction.x > 0.0f && acorn == null)
         {
             animator.Play("SquirrelAnimation");
+        }
+        if (directionSquirrel.x < 0.0f && acorn != null)
+        {
+            animator.Play("SquirrelAnimationRigth");
 
-
+        }
+        else if (directionSquirrel.x > 0.0f && acorn != null)
+        {
+            animator.Play("SquirrelAnimation");
         }
 
     }
