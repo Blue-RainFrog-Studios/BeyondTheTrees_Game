@@ -250,8 +250,14 @@ public class EnemyController : MonoBehaviour
         if (acorn != null)
             return Vector3.Distance(transform.position, acorn.transform.position) <= rangeSquirrel;
         else
-            currState = EnemyState.Follow;
-        range = 10;
+            switch (enemyType)
+            {
+                case (EnemyType.Squirrel):
+
+                    currState = EnemyState.Follow;
+                    range = 10;
+                    break;
+            }
         return false;
     }    
 
@@ -276,7 +282,13 @@ public class EnemyController : MonoBehaviour
         {
             Destroy(acorn);
         }
-        range = 10;
+        switch (enemyType)
+        {
+            case (EnemyType.Squirrel):              
+                range = 10;
+                break;
+        }
+
     }
 
     private IEnumerator ChooseDirection()

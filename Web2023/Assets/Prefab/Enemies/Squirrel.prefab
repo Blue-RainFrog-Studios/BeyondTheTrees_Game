@@ -12,10 +12,8 @@ GameObject:
   - component: {fileID: 4413202303269975415}
   - component: {fileID: 7988745774428449434}
   - component: {fileID: 5037092153588110418}
-  - component: {fileID: 8067895411344977043}
   - component: {fileID: 8771941632011251851}
   - component: {fileID: 8057056320807100863}
-  - component: {fileID: 2058549560013175938}
   - component: {fileID: 1856821096735309085}
   - component: {fileID: 8848712778407726177}
   - component: {fileID: 4225666012270259615}
@@ -156,69 +154,6 @@ CircleCollider2D:
   m_Offset: {x: -0.008624911, y: 0}
   serializedVersion: 2
   m_Radius: 0.5879742
---- !u!114 &8067895411344977043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5304357250516780494}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7033c32493b38240a6a2c47736ac9c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  executeOnLoop: 0
-  interruptOptions: 0
-  _eventHandler:
-    debugStatusChanges: 0
-    identifier: 
-  data:
-    graphs:
-    - name: SquirrelBT
-      id: d6aaa7f1-b4a5-43ce-8dd2-41a0aa7ae732
-      graph:
-        rid: 4999895336544894976
-      nodes:
-      - name: Loop Buscar
-        id: 00c831fe-c5f6-4870-ad88-ca6cb7f61a8d
-        position: {x: 626, y: -744}
-        node:
-          rid: 4999895336544894977
-        references: []
-        parentIds: []
-        childIds:
-        - 61f4eec9-4a89-4047-9c46-60af8e868eab
-      - name: Idle
-        id: 61f4eec9-4a89-4047-9c46-60af8e868eab
-        position: {x: 628, y: -428}
-        node:
-          rid: 4999895336544894986
-        references:
-        - fieldName: Action
-          value:
-            rid: 4999895336544894987
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - 00c831fe-c5f6-4870-ad88-ca6cb7f61a8d
-        childIds: []
-    pushPerceptions: []
-  references:
-    version: 2
-    RefIds:
-    - rid: 4999895336544894976
-      type: {class: BehaviourTree, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-    - rid: 4999895336544894977
-      type: {class: LoopNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data:
-        Iterations: -1
-    - rid: 4999895336544894986
-      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-    - rid: 4999895336544894987
-      type: {class: PatrolAction, ns: BehaviourAPI.UnityToolkit, asm: BehaviourAPI.UnityToolkit}
-      data:
-        maxDistance: 10
 --- !u!114 &8771941632011251851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,21 +182,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   distanceThreshold: 0.2
---- !u!114 &2058549560013175938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5304357250516780494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1726e9fdb9ff2d4baa8710d607b31ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _eventHandler:
-    debugStatusChanges: 0
-    identifier: 
 --- !u!114 &1856821096735309085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,7 +314,7 @@ MonoBehaviour:
   ghost: {fileID: 5304357250516780494}
   EnemyBullet: {fileID: 0}
   currState: 0
-  enemyType: 0
+  enemyType: 3
   range: 0
   rangeTeleport: 0
   attackRange: 1
@@ -411,6 +331,8 @@ MonoBehaviour:
   animator: {fileID: 0}
   damage: 10
   notInRoom: 0
+  blinkDuration: 0
+  blinkNumber: 0
 --- !u!114 &6951873516816919427
 MonoBehaviour:
   m_ObjectHideFlags: 0
