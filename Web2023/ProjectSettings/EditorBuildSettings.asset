@@ -59,7 +59,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DungeonRooms/Puzzles/BasementRapidoQueSeQueman 2.unity
     guid: 023ed04820caf5042a400c6edf2aad96
-    path: Assets/Scenes/DungeonRooms/BasementDani y las Ardillas.unity
+  - enabled: 1
+    path: Assets/Scenes/DungeonRooms/BasementArdilla.unity
     guid: 5126602ffbf5bf44cb60dc5bfde0aeae
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9ecf038445ed1da49931ebbc8f3a8320, type: 2}
