@@ -18,9 +18,9 @@ public class NPCBase : MonoBehaviour
     public float wordSpeed;
     public bool playerIsClose;
 
-    private void Awake()
+    private void Start()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
     }
     private void Update()
     {
