@@ -60,7 +60,7 @@ public class Item_UI : MonoBehaviour
 
     public void OnItemSelect(int itemIndex, UnityAction<int> action)
     {
-        itemButton.runInEditMode= true;
+        //itemButton.runInEditMode = true;
         itemButton.onClick.RemoveAllListeners();
         itemButton.onClick.AddListener(()=> action.Invoke (itemIndex));
     }
