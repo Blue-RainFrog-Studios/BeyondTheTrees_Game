@@ -121,6 +121,8 @@ MonoBehaviour:
   animator: {fileID: -5769247891855293941}
   damage: 20
   notInRoom: 0
+  blinkDuration: 1
+  blinkNumber: 6
 --- !u!50 &3113921293586694263
 Rigidbody2D:
   serializedVersion: 4
@@ -186,8 +188,6 @@ CapsuleCollider2D:
 --- !u!95 &-5769247891855293941
 Animator:
   serializedVersion: 5
---- !u!114 &8996587817541370119
-MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -206,6 +206,14 @@ MonoBehaviour:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8996587817541370119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4875267983180699273}
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53f48daecdf6bd54d8b0796532def53f, type: 3}
   m_Name: 
