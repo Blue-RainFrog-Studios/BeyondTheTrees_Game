@@ -28,6 +28,7 @@ namespace BehaviourAPI.UnityToolkit.Demos
             FSM GnomeNoHatfsm = CreateGnomeWithoutHatFSM();
 
             #region Actions
+            FunctionalAction SleepAction = new FunctionalAction(_ActionsDavidElGnomo.StartMethodSleep, _ActionsDavidElGnomo.UpdateMethodSleep); //estados que hay que meter
 
             FunctionalAction WalkToPlayerAction = new FunctionalAction(_ActionsDavidElGnomo.StartMethodWalk, _ActionsDavidElGnomo.UpdateMethodWalk); //estados que hay que meter
             
@@ -43,6 +44,8 @@ namespace BehaviourAPI.UnityToolkit.Demos
             #endregion
 
             #region States
+            State Sleep = Gnomefsm.CreateState(SleepAction); //SOLO REPETIR 1 vez
+
             State WalkToPlayer = Gnomefsm.CreateState(WalkToPlayerAction); //el estado WalkToPlayer se crea con la acción WalkToPlayerAction
             
             State Punch = Gnomefsm.CreateState(PunchAction);
@@ -75,6 +78,8 @@ namespace BehaviourAPI.UnityToolkit.Demos
             #endregion
 
             #region Transitions
+            StateTransition Sleep_to_WalkToPlayer = Gnomefsm.CreateTransition(Sleep, WalkToPlayer, statusFlags: StatusFlags.Finished); // cambiara cuando se acabe la accion
+
             StateTransition WalkingToPlayer_to_Punch = Gnomefsm.CreateTransition(WalkToPlayer, Punch, isInPunchRange); // cambiara cuando se cumpla la percepcion 
             /**/
             StateTransition Punch_to_WalkingToPlayer = Gnomefsm.CreateTransition(Punch, WalkToPlayer, /*leavesPunchRange,*/ statusFlags: StatusFlags.Finished); // cambiara cuando se acabe la accion

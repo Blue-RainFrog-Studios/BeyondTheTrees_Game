@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3249187385167074355}
   - component: {fileID: 2225530390664880856}
-  - component: {fileID: 1226334127424385280}
   - component: {fileID: 1776315117401744980}
   - component: {fileID: 1176421843811280347}
   - component: {fileID: 4386893879694494068}
@@ -20,6 +19,7 @@ GameObject:
   - component: {fileID: 3945916650864598501}
   - component: {fileID: 4251262224745933555}
   - component: {fileID: 7221667578932981501}
+  - component: {fileID: 7123108389654963960}
   m_Layer: 0
   m_Name: David el Gnomo
   m_TagString: Boss
@@ -41,7 +41,7 @@ Transform:
   m_Children:
   - {fileID: 8179934590521071182}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2225530390664880856
 SpriteRenderer:
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 1f303a4418118a3498ae9fafffc6b539, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -95,325 +95,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1226334127424385280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5537887831426479652}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7033c32493b38240a6a2c47736ac9c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  executeOnLoop: 0
-  interruptOptions: 0
-  _eventHandler:
-    debugStatusChanges: 0
-    identifier: 
-  data:
-    graphs:
-    - name: newbehaviourgraph
-      id: 9b05ee9d-a6fd-4708-af67-c40db4d2d737
-      graph:
-        rid: 148625716615839744
-      nodes:
-      - name: WalkToPlayer
-        id: 576d907d-e1c5-40f2-964a-38387ca0da9b
-        position: {x: 487, y: 461}
-        node:
-          rid: 148625716615839745
-        references:
-        - fieldName: Action
-          value:
-            rid: 148625716615839761
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - 66ba4d64-01d4-4559-a7c7-2ca1516ecefc
-        - ad8d89c5-532c-4287-96e3-5d9ef9f05bae
-        - 39d98652-e064-4d97-aec7-44baecc11778
-        childIds:
-        - 0b43e552-3f18-44c2-9f46-ca053985ed37
-        - b8c0373e-631f-4eea-9fc7-bedb758f5da3
-        - 44c0e4e0-9de5-4757-ae5e-4a2f5c8362d7
-      - name: Tired
-        id: 9408da2e-399b-4ee6-82c0-eda3b14e774f
-        position: {x: 1519, y: -52}
-        node:
-          rid: 148625716615839746
-        references:
-        - fieldName: Action
-          value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - 79f13fcd-2eea-456c-b421-89e8868c5438
-        childIds:
-        - 39d98652-e064-4d97-aec7-44baecc11778
-      - name: WalkAttack
-        id: 03b797c1-35cc-4ce4-8302-3b52f79d18b6
-        position: {x: 926, y: -50}
-        node:
-          rid: 148625716615839747
-        references:
-        - fieldName: Action
-          value:
-            rid: 148625716615839766
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - b8c0373e-631f-4eea-9fc7-bedb758f5da3
-        childIds:
-        - 79f13fcd-2eea-456c-b421-89e8868c5438
-      - name: Punch
-        id: 0c676cb4-fbe7-4f90-a9c2-11f8ac8c17d2
-        position: {x: 700, y: 939}
-        node:
-          rid: 148625716615839748
-        references:
-        - fieldName: Action
-          value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - 44c0e4e0-9de5-4757-ae5e-4a2f5c8362d7
-        childIds:
-        - ad8d89c5-532c-4287-96e3-5d9ef9f05bae
-      - name: GnomeMode
-        id: f2a4cf77-d6c3-4279-a37b-248738a3dd45
-        position: {x: 1385, y: 522}
-        node:
-          rid: 148625716615839749
-        references:
-        - fieldName: Action
-          value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - 0b43e552-3f18-44c2-9f46-ca053985ed37
-        childIds:
-        - 66ba4d64-01d4-4559-a7c7-2ca1516ecefc
-      - name: StopT
-        id: 39d98652-e064-4d97-aec7-44baecc11778
-        position: {x: 987, y: 205}
-        node:
-          rid: 148625716615839751
-        references:
-        - fieldName: Perception
-          value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
-            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        - fieldName: Action
-          value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - 9408da2e-399b-4ee6-82c0-eda3b14e774f
-        childIds:
-        - 576d907d-e1c5-40f2-964a-38387ca0da9b
-      - name: WARange
-        id: b8c0373e-631f-4eea-9fc7-bedb758f5da3
-        position: {x: 623, y: 75}
-        node:
-          rid: 148625716615839752
-        references:
-        - fieldName: Perception
-          value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
-            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        - fieldName: Action
-          value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - 576d907d-e1c5-40f2-964a-38387ca0da9b
-        childIds:
-        - 03b797c1-35cc-4ce4-8302-3b52f79d18b6
-      - name: StopWA
-        id: 79f13fcd-2eea-456c-b421-89e8868c5438
-        position: {x: 1214, y: -79}
-        node:
-          rid: 148625716615839753
-        references:
-        - fieldName: Perception
-          value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
-            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        - fieldName: Action
-          value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - 03b797c1-35cc-4ce4-8302-3b52f79d18b6
-        childIds:
-        - 9408da2e-399b-4ee6-82c0-eda3b14e774f
-      - name: HalfHP
-        id: 0b43e552-3f18-44c2-9f46-ca053985ed37
-        position: {x: 1020, y: 386}
-        node:
-          rid: 148625716615839754
-        references:
-        - fieldName: Perception
-          value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
-            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        - fieldName: Action
-          value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - 576d907d-e1c5-40f2-964a-38387ca0da9b
-        childIds:
-        - f2a4cf77-d6c3-4279-a37b-248738a3dd45
-      - name: StopGM
-        id: 66ba4d64-01d4-4559-a7c7-2ca1516ecefc
-        position: {x: 978, y: 599}
-        node:
-          rid: 148625716615839755
-        references:
-        - fieldName: Perception
-          value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
-            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        - fieldName: Action
-          value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - f2a4cf77-d6c3-4279-a37b-248738a3dd45
-        childIds:
-        - 576d907d-e1c5-40f2-964a-38387ca0da9b
-      - name: PunchRange
-        id: 44c0e4e0-9de5-4757-ae5e-4a2f5c8362d7
-        position: {x: 672, y: 705}
-        node:
-          rid: 148625716615839757
-        references:
-        - fieldName: Perception
-          value:
-            rid: 148625716615839764
-          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
-            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        - fieldName: Action
-          value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - 576d907d-e1c5-40f2-964a-38387ca0da9b
-        childIds:
-        - 0c676cb4-fbe7-4f90-a9c2-11f8ac8c17d2
-      - name: StopP
-        id: ad8d89c5-532c-4287-96e3-5d9ef9f05bae
-        position: {x: 391, y: 705}
-        node:
-          rid: 148625716615839758
-        references:
-        - fieldName: Perception
-          value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
-            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        - fieldName: Action
-          value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - 0c676cb4-fbe7-4f90-a9c2-11f8ac8c17d2
-        childIds:
-        - 576d907d-e1c5-40f2-964a-38387ca0da9b
-    pushPerceptions: []
-  references:
-    version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
-    - rid: 148625716615839744
-      type: {class: FSM, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-    - rid: 148625716615839745
-      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-    - rid: 148625716615839746
-      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-    - rid: 148625716615839747
-      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-    - rid: 148625716615839748
-      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-    - rid: 148625716615839749
-      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-    - rid: 148625716615839751
-      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data:
-        StatusFlags: 6
-    - rid: 148625716615839752
-      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data:
-        StatusFlags: -1
-    - rid: 148625716615839753
-      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data:
-        StatusFlags: 6
-    - rid: 148625716615839754
-      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data:
-        StatusFlags: -1
-    - rid: 148625716615839755
-      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data:
-        StatusFlags: 6
-    - rid: 148625716615839757
-      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data:
-        StatusFlags: -1
-    - rid: 148625716615839758
-      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data:
-        StatusFlags: 6
-    - rid: 148625716615839761
-      type: {class: ChaseAction, ns: BehaviourAPI.UnityToolkit, asm: BehaviourAPI.UnityToolkit}
-      data:
-        speed: 10
-        target: {fileID: 0}
-        maxDistance: 1000
-        maxTime: 100
-    - rid: 148625716615839764
-      type: {class: DistancePerception, ns: BehaviourAPI.UnityToolkit, asm: BehaviourAPI.UnityToolkit}
-      data:
-        OtherTransform: {fileID: 0}
-        MaxDistance: 0
-    - rid: 148625716615839766
-      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        start:
-          componentName: Attack
-          methodName: damage
-        update:
-          componentName: 
-          methodName: 
-        stop:
-          componentName: 
-          methodName: 
-        pause:
-          componentName: 
-          methodName: 
-        unpause:
-          componentName: 
-          methodName: 
 --- !u!114 &1776315117401744980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -606,6 +287,40 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &7123108389654963960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5537887831426479652}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 450c7171584c7d740adfedb980fda1d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ghost: {fileID: 0}
+  EnemyBullet: {fileID: 0}
+  currState: 0
+  enemyType: 0
+  range: 0
+  rangeTeleport: 0
+  attackRange: 0
+  rangeSquirrel: 0
+  eatRange: 0
+  consumed: 0
+  eatClip: {fileID: 0}
+  audioSource: {fileID: 0}
+  coolDown: 0
+  coolDownTp: 0
+  speed: 0
+  life: 0
+  bulletSpeed: 0
+  animator: {fileID: 0}
+  damage: 20
+  notInRoom: 0
+  blinkDuration: 1
+  blinkNumber: 6
 --- !u!1 &6429689891429034422
 GameObject:
   m_ObjectHideFlags: 0

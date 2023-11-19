@@ -5112,6 +5112,7 @@ MonoBehaviour:
   bottomDoor: {fileID: 0}
   trees: {fileID: 820901192}
   doors: []
+  itemSpawner: {fileID: 0}
 --- !u!61 &1940129676
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5171,10 +5172,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grid: {fileID: 1850390393}
   spawnerData:
-  - name: BoosGhost
-    spawnerData: {fileID: 11400000, guid: 68c44062c5258ba41842d63953de1dd2, type: 2}
-  - name: BossRange
-    spawnerData: {fileID: 11400000, guid: 42081156395ce2c45b4097576f254164, type: 2}
+  - name: DavidElGnomo
+    spawnerData: {fileID: 11400000, guid: 35fce0954d06913429bfaef448bb7d48, type: 2}
 --- !u!114 &1940129678
 MonoBehaviour:
   m_ObjectHideFlags: 0

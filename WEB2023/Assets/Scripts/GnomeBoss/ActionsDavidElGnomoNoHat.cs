@@ -11,6 +11,7 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     private GameObject player;
     private Transform playerTransform;
     private Transform DavidElGnomoTransform;
+    bool collisionDetected = false;
 
     //[SerializeField] private float speed;
     //[SerializeField] private int damage;
@@ -54,6 +55,7 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     #region MethodsWalkAttackNoHat
     public void StartMethodWalkAttackNoHat()
     {
+        collisionDetected = false;
         GetComponent<SpriteRenderer>().color = Color.red;
         screenShake = GetComponent<ScreenShake>();
         GetComponent<Knockback>().strength = 40f;
@@ -73,18 +75,19 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
         //coroutine that moves the object to the right for 2 seconds
         if (playerTransform.position.x > DavidElGnomoTransform.position.x)
         {
-            StartCoroutine(MoveRightForTwoSeconds(DavidElGnomoTransform, GetComponent<DavidElGnomoController>().speedNoHat));
-            screenShake.StartCoroutine(screenShake.ShakeScreen());
+            StartCoroutine(WalkRightUntilCollision(this.gameObject, GetComponent<DavidElGnomoController>().speedNoHat));
+            //screenShake.StartCoroutine(screenShake.ShakeScreen());
         }
         else
         {
-            StartCoroutine(MoveLeftForTwoSeconds(DavidElGnomoTransform, GetComponent<DavidElGnomoController>().speedNoHat));
-            screenShake.StartCoroutine(screenShake.ShakeScreen());
+            StartCoroutine(WalkLeftUntilCollision(this.gameObject, GetComponent<DavidElGnomoController>().speedNoHat));
+            //screenShake.StartCoroutine(screenShake.ShakeScreen());
         }
-        if (ended)
+        if (collisionDetected)
         {
             GetComponent<Knockback>().strength = 10f;
             StopAllCoroutines();
+            collisionDetected = false;
             return Status.Success;
         }
         return Status.Running;
@@ -117,7 +120,7 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     public void StartMethodGnomeModeNoHat()
     {
         StopAllCoroutines();
-
+        this.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         GetComponent<SpriteRenderer>().color = Color.red;
         
         animator.Play("IdleNoHat");
@@ -187,30 +190,30 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     #endregion
 
     #region Coroutines
-    IEnumerator MoveRightForTwoSeconds(Transform objectTransform, float speed)
+    IEnumerator WalkRightUntilCollision(GameObject gnomoObj, float speed)
     {
         float elapsedTime = 0f;
-        Vector3 startingPos = objectTransform.position;
-        Vector3 targetPos = startingPos + Vector3.right * 5;
+        Vector3 startingPos = gnomoObj.transform.position;
+        Vector3 targetPos = startingPos + Vector3.right * 20;
 
-        while (elapsedTime < 2f)
+        while (gnomoObj.GetComponent<Collider2D>())
         {
-            objectTransform.position = Vector3.Lerp(startingPos, targetPos, (elapsedTime));
+            gnomoObj.transform.position = Vector3.Lerp(startingPos, targetPos, (elapsedTime) * 0.45f);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
         ended = true;
 
     }
-    IEnumerator MoveLeftForTwoSeconds(Transform objectTransform, float speed)
+    IEnumerator WalkLeftUntilCollision(GameObject gnomoObj, float speed)
     {
         float elapsedTime = 0f;
-        Vector3 startingPos = objectTransform.position;
-        Vector3 targetPos = startingPos + Vector3.left * 5;
-
-        while (elapsedTime < 2f)
+        Vector3 startingPos = gnomoObj.transform.position;
+        Vector3 targetPos = startingPos + Vector3.left * 20;
+        //mientras que no haya collisiones
+        while (gnomoObj.GetComponent<Collider2D>())
         {
-            objectTransform.position = Vector3.Lerp(startingPos, targetPos, (elapsedTime));
+            gnomoObj.transform.position = Vector3.Lerp(startingPos, targetPos, (elapsedTime) * 0.45f);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
@@ -228,7 +231,11 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
         yield return new WaitForSeconds(timeSpawn); ;
         Instantiate(littleGnome, new Vector3(new System.Random().Next((int)DavidElGnomoTransform.position.x - 3, (int)DavidElGnomoTransform.position.x + 3), new System.Random().Next((int)DavidElGnomoTransform.position.y - 3, (int)DavidElGnomoTransform.position.y + 3), 0), Quaternion.identity);
     }
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (!collision.collider.CompareTag("Player") && !collision.collider.CompareTag("Attack") && !collision.collider.CompareTag("Root") && !collision.collider.CompareTag("LittleGnome") && !collision.collider.CompareTag("LittleGnome"))
+        collisionDetected = true;
+    }
     #endregion
 
 }

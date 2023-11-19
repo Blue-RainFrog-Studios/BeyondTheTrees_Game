@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb5226cba7cda75478a72e4825b86ee4, type: 3}
   m_Name: SpawnerGnomo
   m_EditorClassIdentifier: 
-  itemToSpawn: {fileID: 4836137330429216003, guid: 1923751e2d694fc4d9e0a87e36717ece, type: 3}
+  itemToSpawn: {fileID: 5537887831426479652, guid: 1923751e2d694fc4d9e0a87e36717ece, type: 3}
   minSpawn: 1
   maxSpawn: 1

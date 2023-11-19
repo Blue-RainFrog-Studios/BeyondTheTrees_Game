@@ -11,6 +11,7 @@ public class ActionsDavidElGnomo : MonoBehaviour
     private GameObject player; //        player = GameObject.FindGameObjectWithTag("Player");
     private Transform playerTransform;
     private Transform DavidElGnomoTransform;
+    private bool ended;
 
     [SerializeField] private float TimeTired;
     [SerializeField] private Animator animator;
@@ -18,6 +19,8 @@ public class ActionsDavidElGnomo : MonoBehaviour
     public bool invulnerable = false;
     private bool hasBeenPlayed = false;
     Vector2 walkAttackDistance = new Vector2(0, 2);
+    bool collisionDetected = false;
+
     ScreenShake screenShake;
     #endregion
 
@@ -27,6 +30,26 @@ public class ActionsDavidElGnomo : MonoBehaviour
         playerTransform = player.transform;
         DavidElGnomoTransform = GetComponent<Transform>();
     }
+
+    #region MethodsIdle
+    public void StartMethodSleep()
+    {
+        //si el jugador esta a 1 metro de distancia
+
+
+    }
+    public Status UpdateMethodSleep()
+    {
+        if (Vector2.Distance(playerTransform.position, DavidElGnomoTransform.position) < 3f)
+        {
+            return Status.Success;
+        }
+        else
+        {
+            return Status.Running;
+        }
+    }
+    #endregion
 
     #region MethodsWalk
     public void StartMethodWalk()
@@ -45,7 +68,8 @@ public class ActionsDavidElGnomo : MonoBehaviour
     #region MethodsWalkAttack
     public void StartMethodWalkAttack()
     {
-        screenShake = GetComponent<ScreenShake>();
+        collisionDetected = false;
+        //screenShake = GetComponent<ScreenShake>();
         GetComponent<Knockback>().strength = 30f;
         ended = false;
         if (playerTransform.position.x > DavidElGnomoTransform.position.x)
@@ -55,24 +79,24 @@ public class ActionsDavidElGnomo : MonoBehaviour
 
     }
 
-    private bool ended;
 
     public Status UpdateMethodWalkAttack()
     {
         //move right for 2 seconds
         //coroutine that moves the object to the right for 2 seconds
         if (playerTransform.position.x > DavidElGnomoTransform.position.x) {
-            StartCoroutine(MoveRightForTwoSeconds(DavidElGnomoTransform, GetComponent<DavidElGnomoController>().speed));
-            screenShake.StartCoroutine(screenShake.ShakeScreen());
+            StartCoroutine(WalkRightUntilCollision(this.gameObject, GetComponent<DavidElGnomoController>().speed));
+            //screenShake.StartCoroutine(screenShake.ShakeScreen());
         }
         else
         {
-            StartCoroutine(MoveLeftForTwoSeconds(DavidElGnomoTransform, GetComponent<DavidElGnomoController>().speed));
-            screenShake.StartCoroutine(screenShake.ShakeScreen());
+            StartCoroutine(WalkLeftUntilCollision(this.gameObject, GetComponent<DavidElGnomoController>().speed));
+            //screenShake.StartCoroutine(screenShake.ShakeScreen());
         }
-        if (ended){
+        if (collisionDetected){
             GetComponent<Knockback>().strength = 10f;
             StopAllCoroutines();
+            collisionDetected = false;
             return Status.Success;
         }
         return Status.Running;
@@ -103,6 +127,7 @@ public class ActionsDavidElGnomo : MonoBehaviour
     #region MethodsGnomeMode
     public void StartMethodGnomeMode()
     {
+        this.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         StopAllCoroutines();
         animator.Play("Idle");
         StartCoroutine(InvokeGnomes(1f));
@@ -155,7 +180,7 @@ public class ActionsDavidElGnomo : MonoBehaviour
 
     public bool CheckCollisionWithYAxis()
     {
-        return ((playerTransform.position.y > DavidElGnomoTransform.position.y-1) && (playerTransform.position.y < DavidElGnomoTransform.position.y + 1));
+        return ((playerTransform.position.y > DavidElGnomoTransform.position.y-1) && (playerTransform.position.y < DavidElGnomoTransform.position.y + 1) && GetComponent<DavidElGnomoController>().HP > GetComponent<DavidElGnomoController>().HPSecondPhase+80);
     }
 
     public bool CheckHPVeryLow()
@@ -180,19 +205,38 @@ public class ActionsDavidElGnomo : MonoBehaviour
         ended = true;
 
     }
-    IEnumerator MoveLeftForTwoSeconds(Transform objectTransform, float speed)
+    IEnumerator WalkRightUntilCollision(GameObject gnomoObj, float speed)
     {
         float elapsedTime = 0f;
-        Vector3 startingPos = objectTransform.position;
-        Vector3 targetPos = startingPos + Vector3.left*5;
+        Vector3 startingPos = gnomoObj.transform.position;
+        Vector3 targetPos = startingPos + Vector3.right * 20;
 
-        while (elapsedTime < 2f)
+        while (gnomoObj.GetComponent<Collider2D>())
         {
-            objectTransform.position = Vector3.Lerp(startingPos, targetPos, (elapsedTime));
+            gnomoObj.transform.position = Vector3.Lerp(startingPos, targetPos, (elapsedTime)*0.45f);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
         ended = true;
+
+    }
+    IEnumerator WalkLeftUntilCollision(GameObject gnomoObj, float speed)
+    {
+        float elapsedTime = 0f;
+        Vector3 startingPos = gnomoObj.transform.position;
+        Vector3 targetPos = startingPos + Vector3.left*20;
+        //mientras que no haya collisiones
+        while (gnomoObj.GetComponent<Collider2D>())
+        {
+            gnomoObj.transform.position = Vector3.Lerp(startingPos, targetPos, (elapsedTime)*0.45f);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        ended = true;
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        collisionDetected = true;
     }
 
     IEnumerator WaitSeconds(float Time)
