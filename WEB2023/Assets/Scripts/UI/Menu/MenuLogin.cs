@@ -17,6 +17,7 @@ public class MenuLogin : MonoBehaviour
     private string nombreUsuario = "Invitado";
     [SerializeField]
     private GameObject playerPrefab;
+    [SerializeField] All_Items_Database database;
     private void CambioEdad()
     {
         textoENG.text = edad.ToString();
@@ -54,7 +55,7 @@ public class MenuLogin : MonoBehaviour
     public void empezarJuego()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        
+        database.ResetDatabase();
         SceneManager.LoadScene("Campamento Base");
         if (player == null)
         {

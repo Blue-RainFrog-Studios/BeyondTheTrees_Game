@@ -86,8 +86,11 @@ public class All_Items_Database : ScriptableObject
     public void ResetDatabase()
     {
         Run_Rare_Items.Clear();
+        Debug.Log("Items raros eliminados");
         Run_Epic_Items.Clear();
+        Debug.Log("Items epicos eliminados");
         Run_Legendary_Items.Clear();
+        Debug.Log("Items legendarios eliminados");
         if (Run_Items.Count > 4)
         {
             for (int i = 4; i < Run_Common_Items.Count; i++)
@@ -95,10 +98,11 @@ public class All_Items_Database : ScriptableObject
                 Run_Common_Items.RemoveAt(i);
             }
         }
+        Debug.Log("Items run eliminados");
         for (int i = 0; i < Shop_Items.Count; i++)
         {
             Shop_Items[i].IsPurchased = false;
         }
-
+        Debug.Log("Items purchased eliminados");
     }
 }

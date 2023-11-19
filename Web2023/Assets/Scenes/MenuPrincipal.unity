@@ -14802,6 +14802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c98314837006764f8b1be06dda339cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  laDB: {fileID: 0}
 --- !u!114 &919053659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14832,6 +14833,7 @@ MonoBehaviour:
   maleButton: {fileID: 502887776}
   femaleButton: {fileID: 900214495}
   playerPrefab: {fileID: 1156985873014526917, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+  database: {fileID: 11400000, guid: f25f080a6867dab409aea6dde7391662, type: 2}
 --- !u!114 &919053661
 MonoBehaviour:
   m_ObjectHideFlags: 0

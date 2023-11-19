@@ -63,11 +63,11 @@ public class Shop_UI : MonoBehaviour
     {
         // Puede que haya que cambiar de donde pilla los datos
         // Escribe los items que se han compreado como bloqueados
-        for(int i = 0; i < GameDataManager.GetAllPurchasedItems().Count; i++)
+        /*for(int i = 0; i < GameDataManager.GetAllPurchasedItems().Count; i++)
         {
             int purchasedItemsIndex = GameDataManager.GetPurchasedItem(i);
             itemDB.PurchaseItem(purchasedItemsIndex);
-        }
+        }*/
 
         // DeleteItem Template After generating items
         itemHeight = ShopItemsContainer.GetChild(0).GetComponent<RectTransform>().sizeDelta.y;
