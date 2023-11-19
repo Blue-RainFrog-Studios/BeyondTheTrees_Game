@@ -147,8 +147,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.11080837, y: 0.11588963}
-  m_Size: {x: 4.003272, y: 6.455403}
+  m_Offset: {x: 0.08698359, y: 0.3984493}
+  m_Size: {x: 3.6076882, y: 7.020522}
   m_Direction: 0
 --- !u!95 &6938415437227796382
 Animator:
@@ -187,9 +187,14 @@ MonoBehaviour:
   EnemyBullet: {fileID: 0}
   currState: 0
   enemyType: 0
-  range: 15
+  range: 20
   rangeTeleport: 0
   attackRange: 1.5
+  rangeSquirrel: 0
+  eatRange: 0
+  consumed: 0
+  eatClip: {fileID: 0}
+  audioSource: {fileID: 0}
   coolDown: 1
   coolDownTp: 0
   speed: 3.5
@@ -198,3 +203,5 @@ MonoBehaviour:
   animator: {fileID: 6938415437227796382}
   damage: 12
   notInRoom: 0
+  blinkDuration: 1
+  blinkNumber: 6

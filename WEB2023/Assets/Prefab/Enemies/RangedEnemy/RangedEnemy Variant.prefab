@@ -12,6 +12,22 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 300
       objectReference: {fileID: 0}
+    - target: {fileID: -3937691868912107571, guid: b61eff804755ac34a8b2ded704f94d8b, type: 3}
+      propertyPath: m_Size.x
+      value: 0.7101593
+      objectReference: {fileID: 0}
+    - target: {fileID: -3937691868912107571, guid: b61eff804755ac34a8b2ded704f94d8b, type: 3}
+      propertyPath: m_Size.y
+      value: 3.0782394
+      objectReference: {fileID: 0}
+    - target: {fileID: -3937691868912107571, guid: b61eff804755ac34a8b2ded704f94d8b, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.020702839
+      objectReference: {fileID: 0}
+    - target: {fileID: -3937691868912107571, guid: b61eff804755ac34a8b2ded704f94d8b, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.3559246
+      objectReference: {fileID: 0}
     - target: {fileID: 3789336805313456490, guid: b61eff804755ac34a8b2ded704f94d8b, type: 3}
       propertyPath: m_Name
       value: RangedEnemy Variant
@@ -22,7 +38,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6807329344346774080, guid: b61eff804755ac34a8b2ded704f94d8b, type: 3}
       propertyPath: range
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6807329344346774080, guid: b61eff804755ac34a8b2ded704f94d8b, type: 3}
       propertyPath: speed
