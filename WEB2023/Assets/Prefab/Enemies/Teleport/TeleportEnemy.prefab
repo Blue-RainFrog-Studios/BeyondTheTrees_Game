@@ -116,7 +116,7 @@ MonoBehaviour:
   coolDown: 5
   coolDownTp: 0
   speed: 1
-  life: 40
+  life: 100
   bulletSpeed: 0
   animator: {fileID: -5769247891855293941}
   damage: 12
