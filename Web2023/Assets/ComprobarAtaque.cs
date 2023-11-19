@@ -9,7 +9,8 @@ public class ComprobarAtaque : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy") && collision.CompareTag("Boss") && collision.CompareTag("Root") && collision.CompareTag("LittleGnome") &&
+            collision.CompareTag("GhostTree") && collision.CompareTag("BossTree"))
         {
             cercano=true;
         }
