@@ -6,7 +6,7 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
     [SerializeField] private float velocity;
-    
+    [SerializeField] private Animator animator;
     [SerializeField] private float damage;
 
     private Vector2 pmad;
@@ -20,6 +20,7 @@ public class Attack : MonoBehaviour
     private void Start()
     {
         damage = GameObject.FindWithTag("Player").GetComponent<KnightScript>().attack;
+        animator.Play("AttackDist");
     }
 
     private void FixedUpdate()
