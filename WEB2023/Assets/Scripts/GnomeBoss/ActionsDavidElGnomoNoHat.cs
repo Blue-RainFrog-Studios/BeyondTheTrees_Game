@@ -41,7 +41,6 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     public void StartMethodWalkNoHat()
     {
         Debug.Log("ANDANDO AL JUGADOR");
-        GetComponent<SpriteRenderer>().color = Color.red;
         animator.Play("WalkFrontNoHat");
     }
     public Status UpdateMethodWalkNoHat()
@@ -56,7 +55,6 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     public void StartMethodWalkAttackNoHat()
     {
         collisionDetected = false;
-        GetComponent<SpriteRenderer>().color = Color.red;
         screenShake = GetComponent<ScreenShake>();
         GetComponent<Knockback>().strength = 40f;
         ended = false;
@@ -97,7 +95,6 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     #region MethodsPunchNoHat
     public void StartMethodPunchNoHat()
     {
-        GetComponent<SpriteRenderer>().color = Color.red;
         //StartCoroutine(PlayAnimation("PunchDG"));
         animator.Play("PunchNoHat");
     }
@@ -121,7 +118,6 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     {
         StopAllCoroutines();
         this.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        GetComponent<SpriteRenderer>().color = Color.red;
         
         animator.Play("IdleNoHat");
 
@@ -156,7 +152,6 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
         ended = false;
         animator.Play("IdleNoHat");
         //cambia el color a morado
-        GetComponent<SpriteRenderer>().color = Color.red;
         StartCoroutine(WaitSeconds(TimeTired));
     }
     public Status UpdateMethodTiredNoHat()

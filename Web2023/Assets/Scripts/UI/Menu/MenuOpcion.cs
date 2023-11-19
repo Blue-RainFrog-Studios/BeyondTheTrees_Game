@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuOpcion : MonoBehaviour
-{
+{ private bool act = true;
     private GameObject player;
     private void Awake()
     {
@@ -12,13 +12,17 @@ public class MenuOpcion : MonoBehaviour
     }
     private void Update()
     {
-        if(player.GetComponent<PlayerMovementInputSystem>().nivel > 0 && player.GetComponent<PlayerMovementInputSystem>().nivel < 3 && RoomController.boosDoor)
+        if(player.GetComponent<PlayerMovementInputSystem>().nivel > 0 && player.GetComponent<PlayerMovementInputSystem>().nivel < 3 && RoomController.boosDoor && act==false)
         {
-            this.transform.GetChild(0).gameObject.SetActive(true);
+            act = true;
+            //this.transform.GetChild(0).gameObject.SetActive(true);
+            SceneManager.LoadScene("LoandingBoss");
+            
         }
         else if(player.GetComponent<PlayerMovementInputSystem>().nivel == 3)
         {
-            this.transform.GetChild(1).gameObject.SetActive(true);
+
+            //this.transform.GetChild(1).gameObject.SetActive(true);
             player.GetComponent<PlayerMovementInputSystem>().nivel = 0;
             this.transform.GetChild(1).gameObject.transform.Find("VictoriaESP").gameObject.SetActive(true);
             StartCoroutine(Wait(10));
@@ -29,6 +33,7 @@ public class MenuOpcion : MonoBehaviour
         SceneManager.LoadScene("Campamento Base");
         //player.GetComponent<KnightScript>().ResetMoneyCanvas();
         player.transform.position = new Vector2(0, -4);
+        player.GetComponent<PlayerMovementInputSystem>().nivel = 0;
     }
     public void ContinuarLaRun()
     {

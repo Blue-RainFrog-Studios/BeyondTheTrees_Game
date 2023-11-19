@@ -9,4 +9,9 @@ public class MenuPrincipal : MonoBehaviour
     {
         Debug.Log("Entrando a la siguiente Pantalla");
     }
+
+    public void Salir()
+    {
+        Application.Quit();
+    }
 }

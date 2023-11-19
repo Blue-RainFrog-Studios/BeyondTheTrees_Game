@@ -27,6 +27,7 @@ public class RoomController : MonoBehaviour
     Room currRom;
 
     Room lastRoom;
+    Room lastlastRoom;
 
     public static bool boosDoor = false;
 
@@ -307,6 +308,7 @@ public class RoomController : MonoBehaviour
     public void OnPlayerEnterRoom(Room room)
     {
         CameraController.instance.currRom= room;
+        lastlastRoom = lastRoom;
         lastRoom = currRom;
         currRom = room;
         
@@ -331,7 +333,7 @@ public class RoomController : MonoBehaviour
         boosDoor = false;
         foreach (Room room in loadedRooms)
         {
-            if (currRom != room && lastRoom!=room)
+            if (currRom != room && lastRoom!=room && lastlastRoom!=room)
             {
                 EnemyController[] enemies = room.GetComponentsInChildren<EnemyController>();
                 if(enemies != null)
@@ -365,6 +367,15 @@ public class RoomController : MonoBehaviour
                     door.doorCollider.SetActive(true);
                 }
             }
+            else if (lastlastRoom == room)
+            {
+
+                foreach (Door door in room.GetComponentsInChildren<Door>())
+                {
+
+                    door.doorCollider.SetActive(false);
+                }
+            }
 
             else
             {
@@ -391,9 +402,10 @@ public class RoomController : MonoBehaviour
                     {
                         
                         player.GetComponent<PlayerMovementInputSystem>().nivel++;
+                        SceneManager.LoadScene("LoandingBoss");
                         //GameObject menuOpcion = GameObject.Find("Opcion");
                         //menuOpcion.transform.GetChild(0).gameObject.SetActive(true);
-                        
+
                     }
 
                 }else{

@@ -12,16 +12,20 @@ public class LittleGnomes : MonoBehaviour
     void Start()
     {
          player = GameObject.FindGameObjectWithTag("Player");
-         animator.Play("WalkingGnomes");
+        animator.Play("WakeLittleGnomes");
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-        if(HP<= 0)
+        //if the animation "WakeLittleGnomes" has finished and the walking animation has not started
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("WalkingGnomes"))
         {
-            Destroy(this.gameObject);
+            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+            if (HP <= 0)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
     public void RecieveDamage(int damage)
