@@ -430,7 +430,6 @@ public class EnemyController : MonoBehaviour
         RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());
         Destroy(ghost);
 
-
     }
     public void RecieveDamage(float damage)
     {
