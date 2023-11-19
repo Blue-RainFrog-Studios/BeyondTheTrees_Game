@@ -30,7 +30,10 @@ public class MenuOpcion : MonoBehaviour
         SceneManager.LoadScene("Campamento Base");
         //player.GetComponent<KnightScript>().ResetMoneyCanvas();
         player.transform.position = new Vector2(0, -4);
+        player.GetComponent<KnightScript>().MoneyDealer(1f, player.GetComponent<CoinCounter>().expeditionMoney);
         player.GetComponent<KnightScript>().ResetMoneyCanvas();
+        player.GetComponent <KnightScript>().resetStats();
+        player.GetComponent<PlayerMovementInputSystem>().nivel = 0;
     }
     public void ContinuarLaRun()
     {

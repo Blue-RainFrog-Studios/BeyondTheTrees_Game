@@ -62,7 +62,7 @@ public class KnightScript : MonoBehaviour
     }
     private void Update()
     {
-        //Debug.Log(king);
+        lifeBar.value= knight.health;
     }
 
     public void AddHealth(int val)
@@ -92,6 +92,14 @@ public class KnightScript : MonoBehaviour
         this.GetComponent<InventoryController>().EmptyInventory();
         this.GetComponent<CoinCounter>().ResetExpeditionMoney();
 
+    }
+    public void resetStats()
+    {
+        knight.health = knight.totalHealth;
+        knight.speed = 6;
+        knight.attack = 100;
+        knight.defense = 7;
+        knight.attackSpeed = 3;
     }
 
     public void ModifyStats(int v, ItemSO inventoryItem, int quantity)

@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 4670197327101837733}
   - component: {fileID: 517137408922997646}
   - component: {fileID: 405764049244003836}
+  - component: {fileID: 1306085290190797807}
   m_Layer: 0
   m_Name: SpookyTree
   m_TagString: BossTree
@@ -132,7 +133,7 @@ Transform:
   - {fileID: 182223261824536613}
   - {fileID: 3756473696974354741}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1551072527380984861
 SpriteRenderer:
@@ -174,7 +175,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: -881945704, guid: c654b7066fa7a084886eaa6e28429b95, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -326,3 +327,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1306085290190797807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6481013943073577523}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 450c7171584c7d740adfedb980fda1d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ghost: {fileID: 0}
+  EnemyBullet: {fileID: 0}
+  currState: 0
+  enemyType: 0
+  range: 0
+  rangeTeleport: 0
+  attackRange: 0
+  rangeSquirrel: 0
+  eatRange: 0
+  consumed: 0
+  eatClip: {fileID: 0}
+  audioSource: {fileID: 0}
+  coolDown: 0
+  coolDownTp: 0
+  speed: 0
+  life: 0
+  bulletSpeed: 0
+  animator: {fileID: 0}
+  damage: 20
+  notInRoom: 0
+  blinkDuration: 1
+  blinkNumber: 6
