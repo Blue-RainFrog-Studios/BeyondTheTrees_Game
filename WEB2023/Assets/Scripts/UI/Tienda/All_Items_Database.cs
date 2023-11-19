@@ -83,9 +83,4 @@ public class All_Items_Database : ScriptableObject
     {
 
     }
-
-    public void RestartData()
-    {
-
-    }
 }
