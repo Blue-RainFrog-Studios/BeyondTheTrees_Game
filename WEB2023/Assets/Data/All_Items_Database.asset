@@ -43,17 +43,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c98a924c825e0ce4e89fa657669523a8, type: 2}
   - {fileID: 11400000, guid: e757fdc784079d5469b36ada189a8998, type: 2}
   Run_Items:
+  - {fileID: 11400000, guid: 8e6336a503d404a4ea8e86fa86288ef2, type: 2}
   - {fileID: 11400000, guid: 34fb42aaca0b15348ac7c42654e803fc, type: 2}
   - {fileID: 11400000, guid: 7a2b7f1dcbedc0c4090472f0cc3e75a2, type: 2}
   - {fileID: 11400000, guid: 6d4b787610268d642a807af78f88b1b8, type: 2}
-  - {fileID: 11400000, guid: 8e6336a503d404a4ea8e86fa86288ef2, type: 2}
   Run_Common_Items:
   - {fileID: 11400000, guid: 8e6336a503d404a4ea8e86fa86288ef2, type: 2}
   - {fileID: 11400000, guid: 34fb42aaca0b15348ac7c42654e803fc, type: 2}
   - {fileID: 11400000, guid: 7a2b7f1dcbedc0c4090472f0cc3e75a2, type: 2}
   - {fileID: 11400000, guid: 6d4b787610268d642a807af78f88b1b8, type: 2}
-  Run_Rare_Items:
-  - {fileID: 11400000, guid: 5af95d00a7450214bb297cd4a8ad8ba2, type: 2}
-  - {fileID: 11400000, guid: c0e6c370b58e86d46ba7bc7cb2c6f444, type: 2}
+  Run_Rare_Items: []
   Run_Epic_Items: []
   Run_Legendary_Items: []

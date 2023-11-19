@@ -91,12 +91,17 @@ public class All_Items_Database : ScriptableObject
         Debug.Log("Items epicos eliminados");
         Run_Legendary_Items.Clear();
         Debug.Log("Items legendarios eliminados");
-        if (Run_Items.Count > 4)
+        /*if (Run_Items.Count > 4)
         {
-            for (int i = 4; i < Run_Common_Items.Count; i++)
+            for (int i = 4; i < Run_Items.Count+1; i++)
             {
-                Run_Common_Items.RemoveAt(i);
+                Run_Items.RemoveAt(i);
             }
+        }*/
+        Run_Items.Clear();
+        for(int i = 0; i< Run_Common_Items.Count; i++)
+        {
+            Run_Items.Add(Run_Common_Items[i]);
         }
         Debug.Log("Items run eliminados");
         for (int i = 0; i < Shop_Items.Count; i++)

@@ -82,11 +82,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6628442988745050789, guid: f665b535ad4f5824c80d275df6f7c6cd, type: 3}
       propertyPath: speed
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6628442988745050789, guid: f665b535ad4f5824c80d275df6f7c6cd, type: 3}
       propertyPath: damage
-      value: 20
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6628442988745050789, guid: f665b535ad4f5824c80d275df6f7c6cd, type: 3}
+      propertyPath: coolDown
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6628442988745050789, guid: f665b535ad4f5824c80d275df6f7c6cd, type: 3}
       propertyPath: notInRoom
