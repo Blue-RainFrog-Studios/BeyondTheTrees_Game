@@ -232,6 +232,16 @@ public class EnemyController : MonoBehaviour
                     animator.Play("MageLeft");
             }
         }
+        if (direction.x < 0.0f){
+            animator.Play("SquirrelAnimationRigth");
+
+        }
+        else if (direction.x > 0.0f)
+        {
+            animator.Play("SquirrelAnimation");
+
+
+        }
 
     }
 

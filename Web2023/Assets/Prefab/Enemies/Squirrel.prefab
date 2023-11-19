@@ -12,14 +12,13 @@ GameObject:
   - component: {fileID: 4413202303269975415}
   - component: {fileID: 7988745774428449434}
   - component: {fileID: 5037092153588110418}
-  - component: {fileID: 8067895411344977043}
   - component: {fileID: 8771941632011251851}
   - component: {fileID: 8057056320807100863}
-  - component: {fileID: 2058549560013175938}
   - component: {fileID: 1856821096735309085}
   - component: {fileID: 8848712778407726177}
   - component: {fileID: 4225666012270259615}
   - component: {fileID: 6951873516816919427}
+  - component: {fileID: 2864039043989138333}
   m_Layer: 0
   m_Name: Squirrel
   m_TagString: Enemy
@@ -35,8 +34,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5304357250516780494}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.05, y: 0.09, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -84,7 +83,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.94929254, g: 0.4292453, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -153,72 +152,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.008624911, y: 0}
+  m_Offset: {x: -0.18122217, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5879742
---- !u!114 &8067895411344977043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5304357250516780494}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7033c32493b38240a6a2c47736ac9c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  executeOnLoop: 0
-  interruptOptions: 0
-  _eventHandler:
-    debugStatusChanges: 0
-    identifier: 
-  data:
-    graphs:
-    - name: SquirrelBT
-      id: d6aaa7f1-b4a5-43ce-8dd2-41a0aa7ae732
-      graph:
-        rid: 4999895336544894976
-      nodes:
-      - name: Loop Buscar
-        id: 00c831fe-c5f6-4870-ad88-ca6cb7f61a8d
-        position: {x: 626, y: -744}
-        node:
-          rid: 4999895336544894977
-        references: []
-        parentIds: []
-        childIds:
-        - 61f4eec9-4a89-4047-9c46-60af8e868eab
-      - name: Idle
-        id: 61f4eec9-4a89-4047-9c46-60af8e868eab
-        position: {x: 628, y: -428}
-        node:
-          rid: 4999895336544894986
-        references:
-        - fieldName: Action
-          value:
-            rid: 4999895336544894987
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - 00c831fe-c5f6-4870-ad88-ca6cb7f61a8d
-        childIds: []
-    pushPerceptions: []
-  references:
-    version: 2
-    RefIds:
-    - rid: 4999895336544894976
-      type: {class: BehaviourTree, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-    - rid: 4999895336544894977
-      type: {class: LoopNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data:
-        Iterations: -1
-    - rid: 4999895336544894986
-      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-    - rid: 4999895336544894987
-      type: {class: PatrolAction, ns: BehaviourAPI.UnityToolkit, asm: BehaviourAPI.UnityToolkit}
-      data:
-        maxDistance: 10
+  m_Radius: 4.9014444
 --- !u!114 &8771941632011251851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,21 +183,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   distanceThreshold: 0.2
---- !u!114 &2058549560013175938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5304357250516780494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1726e9fdb9ff2d4baa8710d607b31ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _eventHandler:
-    debugStatusChanges: 0
-    identifier: 
 --- !u!114 &1856821096735309085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,9 +329,11 @@ MonoBehaviour:
   speed: 2
   life: 10
   bulletSpeed: 0
-  animator: {fileID: 0}
+  animator: {fileID: 2864039043989138333}
   damage: 10
   notInRoom: 0
+  blinkDuration: 1
+  blinkNumber: 6
 --- !u!114 &6951873516816919427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -431,3 +354,24 @@ MonoBehaviour:
   OnDone:
     m_PersistentCalls:
       m_Calls: []
+--- !u!95 &2864039043989138333
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5304357250516780494}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: de88e2a7ac2e1b642bceaf2df202a754, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
