@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuOpcion : MonoBehaviour
-{ private bool act = true;
+{
     private GameObject player;
     private void Awake()
     {
@@ -12,20 +12,17 @@ public class MenuOpcion : MonoBehaviour
     }
     private void Update()
     {
-        if(player.GetComponent<PlayerMovementInputSystem>().nivel > 0 && player.GetComponent<PlayerMovementInputSystem>().nivel < 3 && RoomController.boosDoor && act==false)
+        if(player.GetComponent<PlayerMovementInputSystem>().nivel > 0 && player.GetComponent<PlayerMovementInputSystem>().nivel < 3 && RoomController.boosDoor)
         {
-            act = true;
-            //this.transform.GetChild(0).gameObject.SetActive(true);
-            SceneManager.LoadScene("LoandingBoss");
-            
+            this.transform.GetChild(0).gameObject.SetActive(true);
         }
-        else if(player.GetComponent<PlayerMovementInputSystem>().nivel >= 3)
+        else if(player.GetComponent<PlayerMovementInputSystem>().nivel == 3)
         {
-            SceneManager.LoadScene("Victory");
-            //this.transform.GetChild(1).gameObject.SetActive(true);
+            this.transform.GetChild(1).gameObject.SetActive(true);
             player.GetComponent<PlayerMovementInputSystem>().nivel = 0;
-            //this.transform.GetChild(1).gameObject.transform.Find("VictoriaESP").gameObject.SetActive(true);
-            //StartCoroutine(Wait(10));
+            this.transform.GetChild(1).gameObject.transform.Find("VictoriaESP").gameObject.SetActive(true);
+            player.GetComponent<KnightScript>().ResetMoneyCanvas();
+            StartCoroutine(Wait(10));
         }
     }
     public void VolverAlCampamento()
@@ -33,7 +30,7 @@ public class MenuOpcion : MonoBehaviour
         SceneManager.LoadScene("Campamento Base");
         //player.GetComponent<KnightScript>().ResetMoneyCanvas();
         player.transform.position = new Vector2(0, -4);
-        player.GetComponent<PlayerMovementInputSystem>().nivel = 0;
+        player.GetComponent<KnightScript>().ResetMoneyCanvas();
     }
     public void ContinuarLaRun()
     {
