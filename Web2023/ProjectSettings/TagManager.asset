@@ -21,6 +21,7 @@ TagManager:
   - Root
   - BossTree
   - AttackRoot
+  - Acorn
   layers:
   - Default
   - TransparentFX

@@ -108,6 +108,14 @@ MonoBehaviour:
   range: 15
   rangeTeleport: 0
   attackRange: 8
+  range: 10
+  rangeTeleport: 0
+  attackRange: 5
+  rangeSquirrel: 0
+  eatRange: 0
+  consumed: 0
+  eatClip: {fileID: 0}
+  audioSource: {fileID: 0}
   coolDown: 1
   coolDownTp: 0
   speed: 1
@@ -129,7 +137,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 3
-  m_LinearDrag: 0
+  m_LinearDrag: 10
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}

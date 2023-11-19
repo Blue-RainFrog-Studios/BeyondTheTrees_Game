@@ -111,9 +111,6 @@ public class RoomController : MonoBehaviour
             loadedRooms.Remove(roomToRemove);
             LoadRoom("End",tempRoom.X,tempRoom.Y);
         }
-
-        
-
         cont= 1;
 
     }
@@ -229,13 +226,14 @@ public class RoomController : MonoBehaviour
         }
         string[] puzzleRooms = new string[]
         {
-            "King1",
+            /*"King1",
             "SkullPuzzle",
-            "RapidoQueSeQueman",
+            "RapidoQueSeQueman",*/
+            "Ardilla",
             //"RapidoQueSeQueman 1",
             //"RapidoQueSeQueman 2",
         };
-        if(randomAux == 8 && contPuzzle < 1)
+        if(randomAux == 0 && contPuzzle < 1)
         {
             contPuzzle++;
             return puzzleRooms[Random.Range(0, puzzleRooms.Length)];

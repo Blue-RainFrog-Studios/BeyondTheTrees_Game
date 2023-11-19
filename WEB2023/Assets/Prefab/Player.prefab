@@ -798,7 +798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f52be6a6b15646349bf848318d90612c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 10
   smoothness: 0.12
   attack: {fileID: 1720175491396843235, guid: 49b138763be454a4e99c46e4bc979230, type: 3}
   nivel: 0
