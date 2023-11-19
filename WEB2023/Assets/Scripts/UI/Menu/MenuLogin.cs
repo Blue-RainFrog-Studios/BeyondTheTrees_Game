@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class MenuLogin : MonoBehaviour
 {
     private bool genero;
-    private int edad = 3;
+    private int edad = 8;
     public TMP_Text textoENG;
     public TMP_Text textoESP;
     [SerializeField] private Button maleButton;
