@@ -2973,8 +2973,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grid: {fileID: 1850390393}
   spawnerData:
-  - name: Chase
-    spawnerData: {fileID: 11400000, guid: 6a31e8643d4ec10428e2560abf4ede17, type: 2}
+  - name: Ghost 3
+    spawnerData: {fileID: 11400000, guid: 72fdb8194c3d08540bbde33ca5d61205, type: 2}
   - name: Range
     spawnerData: {fileID: 11400000, guid: f610335d58a7afb4da3f284359b175ee, type: 2}
   - name: Teleport
