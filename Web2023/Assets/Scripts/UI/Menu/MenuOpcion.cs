@@ -19,13 +19,13 @@ public class MenuOpcion : MonoBehaviour
             SceneManager.LoadScene("LoandingBoss");
             
         }
-        else if(player.GetComponent<PlayerMovementInputSystem>().nivel == 3)
+        else if(player.GetComponent<PlayerMovementInputSystem>().nivel >= 3)
         {
-
+            SceneManager.LoadScene("Victory");
             //this.transform.GetChild(1).gameObject.SetActive(true);
             player.GetComponent<PlayerMovementInputSystem>().nivel = 0;
-            this.transform.GetChild(1).gameObject.transform.Find("VictoriaESP").gameObject.SetActive(true);
-            StartCoroutine(Wait(10));
+            //this.transform.GetChild(1).gameObject.transform.Find("VictoriaESP").gameObject.SetActive(true);
+            //StartCoroutine(Wait(10));
         }
     }
     public void VolverAlCampamento()
