@@ -3246,6 +3246,8 @@ MonoBehaviour:
   spawnerData:
   - name: Chase
     spawnerData: {fileID: 11400000, guid: 6a31e8643d4ec10428e2560abf4ede17, type: 2}
+  - name: Range
+    spawnerData: {fileID: 11400000, guid: 9730504d119f1c945a15008235c6838d, type: 2}
 --- !u!1 &2031183877
 GameObject:
   m_ObjectHideFlags: 0

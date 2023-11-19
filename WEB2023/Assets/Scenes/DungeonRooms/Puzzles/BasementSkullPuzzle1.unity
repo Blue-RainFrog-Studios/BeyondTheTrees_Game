@@ -2804,7 +2804,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1872907375}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.15, y: 1.88, z: 0}
+  m_LocalPosition: {x: -8.33, y: 3.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3245,7 +3245,13 @@ MonoBehaviour:
   grid: {fileID: 1850390393}
   spawnerData:
   - name: Chase
-    spawnerData: {fileID: 11400000, guid: 6a31e8643d4ec10428e2560abf4ede17, type: 2}
+    spawnerData: {fileID: 11400000, guid: bd08843459085104a8921142a90bf924, type: 2}
+  - name: Range
+    spawnerData: {fileID: 11400000, guid: 9730504d119f1c945a15008235c6838d, type: 2}
+  - name: Teleport
+    spawnerData: {fileID: 11400000, guid: dbec73390ace24043a5d1dbaa809ce38, type: 2}
+  - name: Bush
+    spawnerData: {fileID: 11400000, guid: 0a44789908d34364eb872aed755c1a3e, type: 2}
 --- !u!1 &2031183877
 GameObject:
   m_ObjectHideFlags: 0
