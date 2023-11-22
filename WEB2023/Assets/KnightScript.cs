@@ -28,6 +28,12 @@ public class KnightScript : MonoBehaviour
     public int attackSpeed { get; set; }
     public int defense { get; set; }
 
+    [SerializeField]
+    private AudioSource hitSource;    
+    
+    [SerializeField]
+    private AudioClip hitClip;
+
     public KnightScript() 
     {
         totalHealth = 50;
@@ -48,6 +54,7 @@ public class KnightScript : MonoBehaviour
     {
         knight.health -= (dmgValue - knight.defense <= 0.0f)? minDmg : (dmgValue - knight.defense);
         lifeBar.value = knight.health;
+        hitSource.PlayOneShot(hitClip);
         if (knight.health <= 0)
         {
             SceneManager.LoadScene("GameOver");
@@ -111,7 +118,7 @@ public class KnightScript : MonoBehaviour
         GetComponent<CoinCounter>().ExpeditionMoneyChanger(v * (inventoryItem.Value * quantity));
     }
 
-        private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
         {
             if (collision.CompareTag("ColliderTop") && !collision.CompareTag("ColliderRight") && !collision.CompareTag("ColliderLeft"))
             {
@@ -162,6 +169,8 @@ public class KnightScript : MonoBehaviour
        
 
     }
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("ColliderKing"))
