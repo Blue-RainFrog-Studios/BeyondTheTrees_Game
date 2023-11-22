@@ -167,20 +167,11 @@ public class EnemyController : MonoBehaviour
         }
 
         direction = player.transform.position - transform.position;
-        if (direction.x > 0.0f)
-        {
-            if (direction.y + 1.0f > direction.x)
-                animator.Play("GhostBack");
-            else
+            if (direction.x > 0)
                 animator.Play("GhostRight");
-        }
-        else if (direction.x < 0.0f)
-        {
-            if (direction.y + 1.0f < direction.x)
-                animator.Play("GhostFront");
             else
                 animator.Play("GhostLeft");
-        }
+
         if (isPlayerInRange(range))
         {
             if (direction.x > 0.0f)
