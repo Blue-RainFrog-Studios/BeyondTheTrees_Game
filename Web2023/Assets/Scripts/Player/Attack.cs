@@ -14,7 +14,7 @@ public class Attack : MonoBehaviour
     private void Awake()
     {
         pmad = FindAnyObjectByType<PlayerMovementInputSystem>().attackDirection;
-        StartCoroutine(waiter());
+        //StartCoroutine(waiter());
     }
 
     private void Start()
@@ -58,6 +58,10 @@ public class Attack : MonoBehaviour
             Destroy(gameObject);
         }
         if (collision.CompareTag("BossTree"))
+        {
+            Destroy(gameObject);
+        }
+        if (collision.CompareTag("Prop"))
         {
             Destroy(gameObject);
         }
