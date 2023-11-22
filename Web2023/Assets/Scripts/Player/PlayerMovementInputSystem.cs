@@ -34,7 +34,6 @@ public class PlayerMovementInputSystem : MonoBehaviour
         playerInputActions = new Map();
         playerInputActions.Enable();
 
-        //playerInputActions.Player.Move.performed += Move;
         playerInputActions.Player.Attack.performed += Attack;
         SceneManager.sceneLoaded += OnSceneLoaded;
     }

@@ -601,6 +601,7 @@ GameObject:
   - component: {fileID: 7633266851515481693}
   - component: {fileID: -8933665260586879379}
   - component: {fileID: 1799273431241015053}
+  - component: {fileID: 7130345995875859706}
   - component: {fileID: 1058037495170437862}
   - component: {fileID: 372513030826480231}
   - component: {fileID: 1995731812660044136}
@@ -774,9 +775,7 @@ MonoBehaviour:
   inventoryData: {fileID: 11400000, guid: 3d5e87fb3b39b8e4285030286a8a081f, type: 2}
   dropClip: {fileID: 8300000, guid: 635799a1cc8d01141acbd6354c223692, type: 3}
   audioSource: {fileID: 7633266851515481693}
-  initialItems:
-  - quantity: 2
-    item: {fileID: 11400000, guid: 00dbc01952661994ba629d4666e447b5, type: 2}
+  initialItems: []
 --- !u!114 &3220108037931169126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -828,6 +827,8 @@ MonoBehaviour:
   col: -1
   king: 0
   bush: 0
+  hitSource: {fileID: 7130345995875859706}
+  hitClip: {fileID: 8300000, guid: f39c3ece76e8dde4fb85bc7917f9437e, type: 3}
 --- !u!95 &2472352434232250267
 Animator:
   serializedVersion: 5
@@ -1151,6 +1152,102 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!82 &7130345995875859706
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156985873014526917}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: f39c3ece76e8dde4fb85bc7917f9437e, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &1058037495170437862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1344,7 +1441,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 462101399, guid: 819bd9a000cf7784c821707a2fdc6d6a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1827,7 +1924,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 53.6
+  m_fontSize: 18.95
   m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2367,8 +2464,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -200.14465, y: -91.924774}
-  m_SizeDelta: {x: 278.789, y: 114.8012}
+  m_AnchoredPosition: {x: -88, y: -196}
+  m_SizeDelta: {x: 108.9766, y: 114.8012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6987285789490360265
 MonoBehaviour:
@@ -3167,7 +3264,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6178552278414526382}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c428c7d0362d0249a3e4d164070659c, type: 3}
   m_Name: 
@@ -3663,7 +3760,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: -1890425291, guid: 819bd9a000cf7784c821707a2fdc6d6a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
