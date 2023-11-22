@@ -93,7 +93,7 @@ public class KnightScript : MonoBehaviour
         this.GetComponent<CoinCounter>().ResetExpeditionMoney();
 
     }
-    public void resetStats()
+    public void ResetStats()
     {
         knight.health = knight.totalHealth;
         knight.speed = 6;

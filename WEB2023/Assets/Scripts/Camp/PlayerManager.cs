@@ -19,6 +19,7 @@ public class PlayerManager : MonoBehaviour
         {
             Instantiate(pausePrefab);
         }
+        player.GetComponent<KnightScript>().ResetStats();
     }
 
     private void Start()

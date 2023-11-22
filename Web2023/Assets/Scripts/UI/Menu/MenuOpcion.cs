@@ -32,7 +32,7 @@ public class MenuOpcion : MonoBehaviour
         player.transform.position = new Vector2(0, -4);
         player.GetComponent<KnightScript>().MoneyDealer(1f, player.GetComponent<CoinCounter>().expeditionMoney);
         player.GetComponent<KnightScript>().ResetMoneyCanvas();
-        player.GetComponent <KnightScript>().resetStats();
+        player.GetComponent <KnightScript>().ResetStats();
         player.GetComponent<PlayerMovementInputSystem>().nivel = 0;
     }
     public void ContinuarLaRun()
