@@ -2989,7 +2989,7 @@ MonoBehaviour:
   rightDoor: {fileID: 0}
   topDoor: {fileID: 0}
   bottomDoor: {fileID: 0}
-  trees: {fileID: 0}
+  trees: {fileID: 21529291}
   doors: []
   itemSpawner: {fileID: 425641194}
 --- !u!61 &1940129676
