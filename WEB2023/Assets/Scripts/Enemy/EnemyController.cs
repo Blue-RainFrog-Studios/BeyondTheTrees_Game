@@ -77,6 +77,7 @@ public class EnemyController : MonoBehaviour
     private Vector3 space3 = new Vector3(-2, 0, 0);
     private Vector3 space4 = new Vector3(0, -2, 0);
     public Animator animator;
+    public GameObject IAmAGhost;
     Vector2 direction;
     Vector2 directionSquirrel;
 
@@ -164,6 +165,15 @@ public class EnemyController : MonoBehaviour
         else
         {
             currState = EnemyState.Idle;
+        }
+        //if the gameobject is a ghost
+        if (IAmAGhost != null)
+        {
+            float distance = Vector2.Distance(transform.position, player.transform.position);
+            //do it gradually
+            Color color = GetComponent<SpriteRenderer>().color;
+            color.a = 1 - (distance / 10);
+            GetComponent<SpriteRenderer>().color = color;
         }
 
         direction = player.transform.position - transform.position;

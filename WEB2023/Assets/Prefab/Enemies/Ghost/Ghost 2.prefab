@@ -202,6 +202,7 @@ MonoBehaviour:
   life: 100
   bulletSpeed: 0
   animator: {fileID: 6938415437227796382}
+  IAmAGhost: {fileID: 263330336992781321}
   damage: 12
   notInRoom: 0
   blinkDuration: 1
