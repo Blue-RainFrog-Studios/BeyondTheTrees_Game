@@ -8,6 +8,13 @@ public class MenuPausa : MonoBehaviour
 {
     [SerializeField]
     private GameObject menuPausa;
+
+    [SerializeField]
+    private GameObject cajaPausa;
+
+    [SerializeField]
+    private GameObject menuConfirmacion;
+
     [SerializeField]
     private GameObject botonPausa;
     private GameObject player;
@@ -26,21 +33,35 @@ public class MenuPausa : MonoBehaviour
     {
         Time.timeScale = 1f;
         botonPausa.SetActive(true);
+        cajaPausa.SetActive(true);
+        menuConfirmacion.SetActive(false);
         menuPausa.SetActive(false);
     }
     public void VolverAlCampamento()
     {
+        botonPausa.SetActive(true);
+        menuPausa.SetActive(false);
         Time.timeScale = 1f;
+        if (SceneManager.GetActiveScene().name == "Campamento Base") return;
         SceneManager.LoadScene("Campamento Base");
         player.GetComponent<KnightScript>().ResetStats();
         player.GetComponent<KnightScript>().MoneyDealer(0.5f,player.GetComponent<CoinCounter>().expeditionMoney);
         player.GetComponent<PlayerMovementInputSystem>().nivel = 0;
         player.GetComponent<KnightScript>().ResetMoneyCanvas();
         player.transform.position = new Vector2(0, -4);
-        botonPausa.SetActive(true);
-        menuPausa.SetActive(false);
-
     }
+    public void ConfirmarMenu()
+    {
+        menuConfirmacion.SetActive(true);
+        cajaPausa.SetActive(false);
+    }
+
+    public void NoSalir()
+    {
+        menuConfirmacion.SetActive(false);
+        cajaPausa.SetActive(true);
+    }
+
     public void VolverAlMenuPrincipal()
     {
         Time.timeScale = 1f;
@@ -52,7 +73,8 @@ public class MenuPausa : MonoBehaviour
         player.GetComponentInChildren<Canvas>().enabled = false;
         //player.gameObject.SetActive(false);
         botonPausa.SetActive(true);
+        menuConfirmacion.SetActive(false);
+        cajaPausa.SetActive(true);
         menuPausa.SetActive(false);
-
     }
 }
