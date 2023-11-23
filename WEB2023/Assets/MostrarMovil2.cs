@@ -10,11 +10,12 @@ public class MostrarMovil2 : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.anyKey && Application.isMobilePlatform)
+        if(Input.anyKey)
         {
+            Debug.Log("Puton");
             //Input.GetAxis
             //gameObject.transform.position = 
-            gameObject.SetActive(true);
+            gameObject.transform.position = Input.mousePosition;
         }
     }
 }
