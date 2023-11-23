@@ -34,6 +34,8 @@ public class KnightScript : MonoBehaviour
     [SerializeField]
     private AudioClip hitClip;
 
+    private bool inmune = false;
+
     public KnightScript() 
     {
         totalHealth = 50;
@@ -52,7 +54,10 @@ public class KnightScript : MonoBehaviour
 
     public void ReceiveAttack(int dmgValue)
     {
-        knight.health -= (dmgValue - knight.defense <= 0.0f)? minDmg : (dmgValue - knight.defense);
+        if (inmune) return;
+        inmune = true;
+        GetComponent<SpriteRenderer>().color = Color.black;
+        knight.health -= (dmgValue - knight.defense <= 0.0f) ? minDmg : (dmgValue - knight.defense);
         lifeBar.value = knight.health;
         hitSource.PlayOneShot(hitClip);
         if (knight.health <= 0)
@@ -66,7 +71,17 @@ public class KnightScript : MonoBehaviour
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             GetComponentInChildren<Canvas>().enabled = false;
         }
+        StartCoroutine(WaitSeconds(1));
     }
+
+    IEnumerator WaitSeconds(float Time)
+    {
+        yield return new WaitForSeconds(Time);
+        GetComponent<SpriteRenderer>().color = Color.white;
+        inmune = false;
+    }
+
+
     private void Update()
     {
         lifeBar.value= knight.health;
