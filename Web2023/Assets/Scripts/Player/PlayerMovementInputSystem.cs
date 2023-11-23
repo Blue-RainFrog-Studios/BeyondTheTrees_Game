@@ -34,7 +34,8 @@ public class PlayerMovementInputSystem : MonoBehaviour
         playerInputActions = new Map();
         playerInputActions.Enable();
 
-        playerInputActions.Player.Attack.performed += Attack;
+        //playerInputActions.Player.Attack.performed += Attack;
+        //playerInputActions.Player.Attack2.performed += Attack;
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -48,6 +49,8 @@ public class PlayerMovementInputSystem : MonoBehaviour
         //Actualiza las posiciones que le decimos mediante el input
         //Move
         direction = playerInputActions.Player.Move.ReadValue<Vector2>();
+        Attack2();
+        //attackDirection = playerInputActions.Player.Attack.ReadValue<Vector2>();
         //if animation dont have attack tag
         if (player_rb.velocity != Vector2.zero && !WalkSoundEffect.isPlaying)
         {
@@ -82,6 +85,7 @@ public class PlayerMovementInputSystem : MonoBehaviour
     {
         //Pintamos el movimiento del personaje con la interpolacion para que sea
         //mas visual
+        //Attack2();
         player_rb.velocity = Vector2.SmoothDamp(player_rb.velocity, direction * speed, ref velocity, smoothness);
     }
     public void Move(InputAction.CallbackContext context)
@@ -91,11 +95,112 @@ public class PlayerMovementInputSystem : MonoBehaviour
         player_rb.AddForce(new Vector3(inputVector.x, 0, inputVector.y) * speed, ForceMode2D.Force);
         
     }
+    public void Attack2()
+    {
+        if (Time.time > shotRateTime)
+        {
+            //Leemos la entrada del usuario
+            if (!this.enabled) return;
+            attackDirection = playerInputActions.Player.Attack.ReadValue<Vector2>();
 
+            //Redondeamos para los controles de moviles
+            attackDirection.x = Mathf.Round(attackDirection.x);
+            attackDirection.y = Mathf.Round(attackDirection.y);
+            //play audio source for attack
+            //get a random number between 1 and 2
+            int randomNum = Random.Range(1, 3);
+            if (randomNum == 1)
+            {
+                AttackSoundEffect1.Play();
+            }
+            else
+            {
+                AttackSoundEffect2.Play();
+            }
+
+
+            //Solo dispara si se ha llevado el joystick suficientemente lejos
+            if (attackDirection.magnitude == 1)
+            {
+
+                if (attackDirection.y == -1)
+                {
+
+
+                    if (this != null)
+                    {
+                        if (transform.Find("FrontCollider").gameObject.GetComponentInChildren<ComprobarAtaque>().Cercano())
+                        {
+                            characterAnimator.Play("AttackFront");
+                            shotRateTime = Time.time + shoteRate;
+
+                        }
+                        else
+                        {
+                            Instantiate(attack, transform.position, transform.rotation);
+                            shotRateTime = Time.time + shoteRate;
+                        }
+                    }
+                }
+                if (attackDirection.y == 1)
+                {
+                    if (this != null)
+                    {
+                        if (transform.Find("BackCollider").gameObject.GetComponentInChildren<ComprobarAtaque>().Cercano())
+                        {
+                            characterAnimator.Play("AttackBack");
+                            shotRateTime = Time.time + shoteRate;
+                        }
+                        else
+                        {
+                            Instantiate(attack, transform.position, transform.rotation);
+                            shotRateTime = Time.time + shoteRate;
+                        }
+                    }
+
+                }
+                if (attackDirection.x == -1)
+                {
+                    if (this != null)
+                    {
+                        if (transform.Find("LeftCollider").gameObject.GetComponentInChildren<ComprobarAtaque>().Cercano())
+                        {
+                            characterAnimator.Play("AttackLeft");
+                            shotRateTime = Time.time + shoteRate;
+                        }
+                        else
+                        {
+                            Instantiate(attack, transform.position, transform.rotation);
+                            shotRateTime = Time.time + shoteRate;
+                        }
+                    }
+
+                }
+                if (attackDirection.x == 1)
+                {
+                    if (this != null)
+                    {
+                        if (transform.Find("RightCollider").gameObject.GetComponentInChildren<ComprobarAtaque>().Cercano())
+                        {
+                            characterAnimator.Play("AttackRight");
+                            shotRateTime = Time.time + shoteRate;
+                        }
+                        else
+                        {
+                            Instantiate(attack, transform.position, transform.rotation);
+                            shotRateTime = Time.time + shoteRate;
+                        }
+
+                    }
+                }
+            }
+
+        }
+    }
     public void Attack(InputAction.CallbackContext context)
     {
-
         //El disparo tiene Cooldown
+        
         if (Time.time > shotRateTime)
         {
             //Leemos la entrada del usuario
