@@ -88,13 +88,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5357254448119106216}
+  - component: {fileID: 7267477494373722113}
   m_Layer: 5
   m_Name: RightStick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5357254448119106216
 RectTransform:
   m_ObjectHideFlags: 0
@@ -116,6 +117,18 @@ RectTransform:
   m_AnchoredPosition: {x: 1047.7709, y: 266.68555}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7267477494373722113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371945736897535441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a601883d27619ad489675fb7631a1de2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &504750477730462810
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,6 +473,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1079933214521353416}
   - component: {fileID: 3055191826792415832}
+  - component: {fileID: 3489570016190389903}
   m_Layer: 0
   m_Name: TouchControls
   m_TagString: Untagged
@@ -494,6 +508,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c428c7d0362d0249a3e4d164070659c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3489570016190389903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802572881914916159}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a601883d27619ad489675fb7631a1de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &836131456166031620
@@ -3920,13 +3946,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3712345682823561041}
+  - component: {fileID: 1682464939854461112}
   m_Layer: 5
   m_Name: LeftStick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3712345682823561041
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3948,6 +3975,18 @@ RectTransform:
   m_AnchoredPosition: {x: 825.6919, y: 266.68555}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1682464939854461112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8068415877970022135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a601883d27619ad489675fb7631a1de2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8076079403061358545
 GameObject:
   m_ObjectHideFlags: 0
