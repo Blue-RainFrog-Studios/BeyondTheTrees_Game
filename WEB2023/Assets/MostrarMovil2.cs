@@ -15,7 +15,7 @@ public class MostrarMovil2 : MonoBehaviour
             Debug.Log("Puton");
             //Input.GetAxis
             //gameObject.transform.position = 
-            gameObject.transform.position = Input.mousePosition;
+            gameObject.transform.localPosition = Input.mousePosition;
         }
     }
 }
