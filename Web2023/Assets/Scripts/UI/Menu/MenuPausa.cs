@@ -73,6 +73,8 @@ public class MenuPausa : MonoBehaviour
         player.GetComponentInChildren<Canvas>().enabled = false;
         //player.gameObject.SetActive(false);
         botonPausa.SetActive(true);
+        menuConfirmacion.SetActive(false);
+        cajaPausa.SetActive(true);
         menuPausa.SetActive(false);
     }
 }
