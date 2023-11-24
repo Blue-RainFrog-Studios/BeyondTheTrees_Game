@@ -421,6 +421,7 @@ public class RoomController : MonoBehaviour
                     foreach (Door door in room.GetComponentsInChildren<Door>())
                     {
                         door.doorCollider.SetActive(false);
+                        room.GetComponent<Collider2D>().enabled = false;
                         //spawn.SpawObject();
                     }
 
