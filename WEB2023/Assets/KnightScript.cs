@@ -38,10 +38,10 @@ public class KnightScript : MonoBehaviour
 
     public KnightScript() 
     {
-        totalHealth = 50;
+        totalHealth = 1000;
         health = 50;
         speed = 6;
-        attack = 20;
+        attack = 200;
         defense = 7;
         attackSpeed = 3;
     }
@@ -119,7 +119,7 @@ public class KnightScript : MonoBehaviour
     {
         knight.health = knight.totalHealth;
         knight.speed = 6;
-        knight.attack = 20;
+        knight.attack = 200;
         knight.defense = 7;
         knight.attackSpeed = 3;
     }

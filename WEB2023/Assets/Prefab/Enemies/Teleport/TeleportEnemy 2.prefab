@@ -119,6 +119,7 @@ MonoBehaviour:
   life: 80
   bulletSpeed: 0
   animator: {fileID: -5769247891855293941}
+  IAmAGhost: {fileID: 0}
   damage: 20
   notInRoom: 0
   blinkDuration: 1
@@ -135,7 +136,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 500
+  m_Mass: 20
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
