@@ -187,16 +187,16 @@ public class EnemyController : MonoBehaviour
             if (direction.x > 0.0f)
             {
                 if (direction.y + 1.0f > direction.x)
-                    animator.Play("WalkTop");
+                    animator.Play("WalkBackTeleGoblin");
                 else
-                    animator.Play("WalkRight");
+                    animator.Play("WalkRightTeleGoblin");
             }
             else if (direction.x < 0.0f)
             {
                 if (direction.y + 1.0f < direction.x)
-                    animator.Play("WalkDown");
+                    animator.Play("WalkFrontTeleGoblin");
                 else
-                    animator.Play("WalkLeft");
+                    animator.Play("WalkLeftTeleGoblin");
 
             }
         }
