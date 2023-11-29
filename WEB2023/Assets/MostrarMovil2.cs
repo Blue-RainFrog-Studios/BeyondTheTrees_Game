@@ -10,12 +10,15 @@ public class MostrarMovil2 : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.anyKey)
+        if(Input.touchCount > 0)
         {
             Debug.Log("Puton");
             //Input.GetAxis
             //gameObject.transform.position = 
-            gameObject.transform.localPosition = Input.mousePosition;
+            //gameObject.transform.localPosition = Input.mousePosition;
+            Touch touch = Input.GetTouch(0);
+            gameObject.transform.position = touch.position;//Input.mousePosition;
         }
     }
+   
 }
