@@ -28,6 +28,7 @@ public class RoomController : MonoBehaviour
 
     Room lastRoom;
     Room lastlastRoom;
+    Room auxRoom;
 
     public static bool boosDoor = false;
 
@@ -309,9 +310,9 @@ public class RoomController : MonoBehaviour
     {
         CameraController.instance.currRom= room;
         lastlastRoom = lastRoom;
-        lastRoom = currRom;
+        auxRoom= currRom;
         currRom = room;
-        
+        lastRoom = auxRoom;
 
         //los enemigos se quden quietos cuando la camara no este en la sala
 
