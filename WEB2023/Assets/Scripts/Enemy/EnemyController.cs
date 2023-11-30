@@ -22,7 +22,11 @@ public enum EnemyState
 
     WalkAcorn,
 
-    EatAcorn
+    EatAcorn,
+
+    Heal,
+
+    Run
 };
 public enum EnemyType
 {
@@ -76,6 +80,7 @@ public class EnemyController : MonoBehaviour
     private Vector3 space2 = new Vector3(2, 0, 0);
     private Vector3 space3 = new Vector3(-2, 0, 0);
     private Vector3 space4 = new Vector3(0, -2, 0);
+    private Vector3 runAway;
     public Animator animator;
     public GameObject IAmAGhost;
     Vector2 direction;
@@ -131,13 +136,35 @@ public class EnemyController : MonoBehaviour
             case (EnemyState.EatAcorn):
                 EatAcorn();
                 break;
+            case (EnemyState.Run):
+                Run();
+                  
+                break;
         }
 
         if (!notInRoom)
         {
             if (isPlayerInRange(range) && currState != EnemyState.Die)
             {
-                currState = EnemyState.Follow;
+                switch (enemyType)
+                {
+                    case (EnemyType.Melee):
+                        currState = EnemyState.Follow;
+                        break;
+                    case (EnemyType.Ranged):
+                        currState = EnemyState.Run;
+                        
+                        break;
+                    case (EnemyType.Teleport):
+
+                        currState = EnemyState.Follow;
+                        break;
+                    case (EnemyType.Squirrel):
+                        currState = EnemyState.Follow;
+                        break;
+                }
+
+                
             }
             else if (!isPlayerInRange(range) && !isPlayerInRangeTeleport(rangeTeleport) && !isAcornInRangeSquirrel(rangeSquirrel) && currState != EnemyState.Die)
             {
@@ -332,7 +359,23 @@ public class EnemyController : MonoBehaviour
         transform.position += -transform.right * speed * Time.deltaTime;
         if (isPlayerInRange(range))
         {
-            currState = EnemyState.Follow;
+            switch (enemyType)
+            {
+                case (EnemyType.Melee):
+                    currState = EnemyState.Follow;
+                    break;
+                case (EnemyType.Ranged):
+                    currState = EnemyState.Run;
+
+                    break;
+                case (EnemyType.Teleport):
+
+                    currState = EnemyState.Follow;
+                    break;
+                case (EnemyType.Squirrel):
+                    currState = EnemyState.Follow;
+                    break;
+            }
         }
         else if (isPlayerInRangeTeleport(rangeTeleport))
         {
@@ -343,6 +386,12 @@ public class EnemyController : MonoBehaviour
     void Follow()
     {
         transform.position = Vector2.MoveTowards(transform.position,player.transform.position,speed * Time.deltaTime);
+    }
+
+    void Run()
+    {
+        //runAway = transform.position - player.transform.position;
+        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
     }
 
     void Idle()
