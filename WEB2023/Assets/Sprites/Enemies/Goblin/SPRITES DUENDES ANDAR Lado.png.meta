@@ -1,0 +1,2503 @@
+fileFormatVersion: 2
+guid: 3cb21c3ff8d476d409250f99f0451ae0
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_0
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 10015
+        width: 493
+        height: 1173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af5f02eab2f6633469207612dea2ae27
+      internalID: -99837990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_1
+      rect:
+        serializedVersion: 2
+        x: 1034
+        y: 10015
+        width: 492
+        height: 1173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a498ecfe45312c545829c14e517b80b9
+      internalID: -1354508086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_2
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 10015
+        width: 498
+        height: 1173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96e6f3e80706b0c4fb8277fa410dc467
+      internalID: -149932846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_3
+      rect:
+        serializedVersion: 2
+        x: 2185
+        y: 10009
+        width: 492
+        height: 1179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94c9da17facf2b84ca01a7667bd4c85b
+      internalID: 602218449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_4
+      rect:
+        serializedVersion: 2
+        x: 2758
+        y: 10009
+        width: 498
+        height: 1180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d587503075af6846b9d365598ffd501
+      internalID: 1687077341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_5
+      rect:
+        serializedVersion: 2
+        x: 3336
+        y: 10009
+        width: 492
+        height: 1180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9171f732d8d67ab418a749fb086559ab
+      internalID: -1795614187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_6
+      rect:
+        serializedVersion: 2
+        x: 4132
+        y: 9293
+        width: 487
+        height: 865
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 580faadd9bf8b174fadc22233bcfbda0
+      internalID: 1245116920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_7
+      rect:
+        serializedVersion: 2
+        x: 4705
+        y: 9293
+        width: 492
+        height: 865
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 420ead3b7c5d6f44bbc5016a65d788ce
+      internalID: -971205110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_8
+      rect:
+        serializedVersion: 2
+        x: 5277
+        y: 9293
+        width: 493
+        height: 865
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddedc4c4a92fcd0448f4428ed3788072
+      internalID: -1687956902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_9
+      rect:
+        serializedVersion: 2
+        x: 5850
+        y: 9287
+        width: 492
+        height: 871
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8381a9fd20764654d800ce244f400f6b
+      internalID: -866323097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_10
+      rect:
+        serializedVersion: 2
+        x: 6423
+        y: 9287
+        width: 492
+        height: 871
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7520b44e65374344882b6bda015a125f
+      internalID: -66038835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_11
+      rect:
+        serializedVersion: 2
+        x: 6995
+        y: 9287
+        width: 493
+        height: 871
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7efba388fe11b44895015af71447036
+      internalID: 1726982192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_12
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 8697
+        width: 493
+        height: 1180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 145846eeeca4a7645bb3655cea10c393
+      internalID: 1661077060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_13
+      rect:
+        serializedVersion: 2
+        x: 1034
+        y: 8703
+        width: 492
+        height: 1174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 964382fdd6527d4418532149b3192949
+      internalID: 103726270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_14
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 8703
+        width: 498
+        height: 1174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db989c56766cff64bb186dd09c037680
+      internalID: -919118736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_15
+      rect:
+        serializedVersion: 2
+        x: 2185
+        y: 8703
+        width: 492
+        height: 1174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07e354cf5db18054a9b7787d3819c88c
+      internalID: 2009604092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_16
+      rect:
+        serializedVersion: 2
+        x: 2758
+        y: 8703
+        width: 498
+        height: 1174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d793b432be600fc4fa23dad9bc8c20ce
+      internalID: 1368179882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_17
+      rect:
+        serializedVersion: 2
+        x: 3336
+        y: 8703
+        width: 492
+        height: 1174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a27a4531b2829c84cbd52234f8e125c2
+      internalID: -1236053062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_18
+      rect:
+        serializedVersion: 2
+        x: 4132
+        y: 8331
+        width: 487
+        height: 870
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b05d816c636769845a7758f537085e42
+      internalID: -2125178701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_19
+      rect:
+        serializedVersion: 2
+        x: 4705
+        y: 8336
+        width: 492
+        height: 865
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ac93c7d88293984fb01ff6bf2b0a5bb
+      internalID: 1738089118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_20
+      rect:
+        serializedVersion: 2
+        x: 5277
+        y: 8337
+        width: 493
+        height: 864
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af5b586f342eed147aa6929dce01fefc
+      internalID: -1027826242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_21
+      rect:
+        serializedVersion: 2
+        x: 5850
+        y: 8337
+        width: 492
+        height: 864
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb073df4969e00340a565385e4fdfee2
+      internalID: -1242560887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_22
+      rect:
+        serializedVersion: 2
+        x: 6423
+        y: 8337
+        width: 492
+        height: 864
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7d5293c039818f44aa7685fa52f70d1
+      internalID: -1113804548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_23
+      rect:
+        serializedVersion: 2
+        x: 6995
+        y: 8337
+        width: 493
+        height: 864
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e69d6ffef05c5394fbd494aa2caae3c4
+      internalID: 1915860848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_24
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 7347
+        width: 493
+        height: 1167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93e44957fedc24342a54a7eaa1a8a877
+      internalID: 257481274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_25
+      rect:
+        serializedVersion: 2
+        x: 1034
+        y: 7347
+        width: 492
+        height: 1167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a278819911ffb54d937d4fa1738e57d
+      internalID: -414243729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_26
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 7346
+        width: 498
+        height: 1168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70bd45dcbbc094a4a967f9f2247053da
+      internalID: 901735280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_27
+      rect:
+        serializedVersion: 2
+        x: 2185
+        y: 7347
+        width: 492
+        height: 1167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27cc07058bd6cbb479b0769912eb2646
+      internalID: -1699016680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_28
+      rect:
+        serializedVersion: 2
+        x: 2763
+        y: 7351
+        width: 493
+        height: 1163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e52d355caa3d2764e9eaff78652fc4a3
+      internalID: 935090476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_29
+      rect:
+        serializedVersion: 2
+        x: 3336
+        y: 7357
+        width: 498
+        height: 1157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bd9b193bc19fc841b3d7310e76140ad
+      internalID: -221350055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_30
+      rect:
+        serializedVersion: 2
+        x: 4132
+        y: 7374
+        width: 487
+        height: 871
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21a459ddc79631d40878a6831766d032
+      internalID: -2080580617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_31
+      rect:
+        serializedVersion: 2
+        x: 4705
+        y: 7374
+        width: 492
+        height: 871
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bbe1fc477394ff4381d548c9d912298
+      internalID: 1301795403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_32
+      rect:
+        serializedVersion: 2
+        x: 5277
+        y: 7374
+        width: 493
+        height: 871
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f7b279f188fc064898a7d52b8a31ee5
+      internalID: 1615305188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_33
+      rect:
+        serializedVersion: 2
+        x: 5850
+        y: 7374
+        width: 492
+        height: 871
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26ad59a1cc5ffd14a83d51f5cce80d8f
+      internalID: 1532428904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_34
+      rect:
+        serializedVersion: 2
+        x: 6423
+        y: 7380
+        width: 492
+        height: 865
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b58b4a9c45153f41bdc476eb2737960
+      internalID: -386824065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_35
+      rect:
+        serializedVersion: 2
+        x: 6995
+        y: 7380
+        width: 493
+        height: 865
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9d8f2d63757d9f4f8e8818613540a67
+      internalID: -695285621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_36
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 6378
+        width: 492
+        height: 870
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 397c572522c8de6419546c44de48d8ab
+      internalID: 1197457965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_37
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 6378
+        width: 498
+        height: 870
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16864e07c2850cd45b42cc0d1c3a0257
+      internalID: 1382775769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_38
+      rect:
+        serializedVersion: 2
+        x: 1738
+        y: 6378
+        width: 493
+        height: 870
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0214041df35d784598ef196cfb9f18c
+      internalID: -462774481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_39
+      rect:
+        serializedVersion: 2
+        x: 2316
+        y: 6372
+        width: 493
+        height: 876
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d7b3ef6a758d50499b4dcee66da9186
+      internalID: 990005185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_40
+      rect:
+        serializedVersion: 2
+        x: 2889
+        y: 6372
+        width: 493
+        height: 876
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc204a39b1201b24e86438018df8f352
+      internalID: 2065984044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_41
+      rect:
+        serializedVersion: 2
+        x: 3468
+        y: 6372
+        width: 492
+        height: 876
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ac6726a15ed2a840b8714ef0e91f5af
+      internalID: -1371791084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_42
+      rect:
+        serializedVersion: 2
+        x: 4075
+        y: 6383
+        width: 492
+        height: 871
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0204640d3e8e8744d862101e6945a31d
+      internalID: 661123828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_43
+      rect:
+        serializedVersion: 2
+        x: 4653
+        y: 6383
+        width: 492
+        height: 871
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 864b8ce6d319b1847a76fd8997f7722b
+      internalID: 1884040871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_44
+      rect:
+        serializedVersion: 2
+        x: 5231
+        y: 6383
+        width: 493
+        height: 871
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb14b136befadb344ada4c61d727c4d5
+      internalID: -1648295532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_45
+      rect:
+        serializedVersion: 2
+        x: 5810
+        y: 6378
+        width: 492
+        height: 876
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc3057ecfee11bb4ba92494ed63de9a6
+      internalID: 1249582668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_46
+      rect:
+        serializedVersion: 2
+        x: 6382
+        y: 6378
+        width: 498
+        height: 876
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 520582e419daae0429c797e2cfdc682a
+      internalID: -692972858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_47
+      rect:
+        serializedVersion: 2
+        x: 6961
+        y: 6378
+        width: 492
+        height: 876
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0276b62e7f7a9ff43b4152f3fdb8ec0d
+      internalID: 938696359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_48
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 5410
+        width: 492
+        height: 876
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a39b0ee6e4eeef409cf95cbac1726dc
+      internalID: -1155799598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_49
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 5415
+        width: 498
+        height: 871
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f32ec6b7a8a96854ebc65780836677cf
+      internalID: -1796084057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_50
+      rect:
+        serializedVersion: 2
+        x: 1738
+        y: 5415
+        width: 493
+        height: 871
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6c60fc1ed3e4bc4db355ca4a573ed45
+      internalID: 1128178382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_51
+      rect:
+        serializedVersion: 2
+        x: 2311
+        y: 5415
+        width: 498
+        height: 871
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04256ea637e6e3649a446c9ed73f0347
+      internalID: -2142575653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_52
+      rect:
+        serializedVersion: 2
+        x: 2889
+        y: 5415
+        width: 493
+        height: 871
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cf6ab2650b87c344b7f39420e6bd219
+      internalID: -1730785479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_53
+      rect:
+        serializedVersion: 2
+        x: 3468
+        y: 5415
+        width: 492
+        height: 871
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c89cdc1a54504c64d9041384ca3d7897
+      internalID: -432725228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_54
+      rect:
+        serializedVersion: 2
+        x: 4075
+        y: 5415
+        width: 492
+        height: 877
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e1df2693d6011548bc1dddb73afcb07
+      internalID: 256280189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_55
+      rect:
+        serializedVersion: 2
+        x: 4653
+        y: 5415
+        width: 492
+        height: 877
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42baabbfc9a1b0c44b33edc833852a1b
+      internalID: -1928639649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_56
+      rect:
+        serializedVersion: 2
+        x: 5231
+        y: 5421
+        width: 493
+        height: 871
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d292cf0a14850cf439363a92666f78cd
+      internalID: -1601308711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_57
+      rect:
+        serializedVersion: 2
+        x: 5804
+        y: 5421
+        width: 498
+        height: 871
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bd3536966bdf764faf1aa25a9cb0db7
+      internalID: -248682444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_58
+      rect:
+        serializedVersion: 2
+        x: 6382
+        y: 5421
+        width: 498
+        height: 871
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43aedb578ca4acd4f8ab89d4b0ae8351
+      internalID: 1495913436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_59
+      rect:
+        serializedVersion: 2
+        x: 6955
+        y: 5421
+        width: 498
+        height: 871
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7725a30ced9929418c08ca535f49c6c
+      internalID: 1583130787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_60
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 4448
+        width: 492
+        height: 876
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: accc09c0bc066084d8297a24f5e65bca
+      internalID: 317785543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_61
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 4448
+        width: 498
+        height: 876
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94e3b8eaf96fc7442bf752b8989193b4
+      internalID: 1484340825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_62
+      rect:
+        serializedVersion: 2
+        x: 1738
+        y: 4447
+        width: 493
+        height: 877
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c57feaf2f742e8f43952dadcec334e87
+      internalID: -1185428326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_63
+      rect:
+        serializedVersion: 2
+        x: 2316
+        y: 4448
+        width: 493
+        height: 876
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76289a6f078b6bb47bb558fdce9ec4b1
+      internalID: -733491212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_64
+      rect:
+        serializedVersion: 2
+        x: 2895
+        y: 4453
+        width: 492
+        height: 871
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11de0fd90844b094780ebe4541c66c8e
+      internalID: 1500115250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_65
+      rect:
+        serializedVersion: 2
+        x: 3468
+        y: 4459
+        width: 497
+        height: 865
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d7c8630bc7da5c4cb11205465e3c778
+      internalID: 409160267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_66
+      rect:
+        serializedVersion: 2
+        x: 4075
+        y: 4453
+        width: 492
+        height: 876
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f58a3e822333f5f4abae4eabdf07300a
+      internalID: 2131837334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_67
+      rect:
+        serializedVersion: 2
+        x: 4653
+        y: 4453
+        width: 492
+        height: 876
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7db52ecb761be8b49989a6ce65437702
+      internalID: 1375832727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_68
+      rect:
+        serializedVersion: 2
+        x: 5231
+        y: 4448
+        width: 493
+        height: 881
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 488fd8509f5f61c47b481d467a09b982
+      internalID: -858490655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_69
+      rect:
+        serializedVersion: 2
+        x: 5810
+        y: 4453
+        width: 492
+        height: 876
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed2b1f5e039a1bd45b582202e1341fa6
+      internalID: 496056145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_70
+      rect:
+        serializedVersion: 2
+        x: 6383
+        y: 4453
+        width: 498
+        height: 876
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77bac1022a223844e866227a845dbed8
+      internalID: -1522449769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_71
+      rect:
+        serializedVersion: 2
+        x: 6961
+        y: 4459
+        width: 498
+        height: 870
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dafa4ef820131f7438ce2004202c42f3
+      internalID: -2103519138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_72
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 2958
+        width: 498
+        height: 1186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e359e06d1d0ead04db92a2241495b11e
+      internalID: 1060819583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_73
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 2958
+        width: 498
+        height: 1186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61b9b79990532f04ea492e1d6b6f6d81
+      internalID: -1048065929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_74
+      rect:
+        serializedVersion: 2
+        x: 1778
+        y: 2958
+        width: 504
+        height: 1186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36018761b6fcffc459359909e6c06498
+      internalID: 679904955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_75
+      rect:
+        serializedVersion: 2
+        x: 2368
+        y: 2953
+        width: 498
+        height: 1191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b436fa32438dab747a3f9a722299b4fd
+      internalID: 1639070234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_76
+      rect:
+        serializedVersion: 2
+        x: 2946
+        y: 2953
+        width: 499
+        height: 1197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3535f92c7a5adf428a96c2569be6135
+      internalID: -1661111141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_77
+      rect:
+        serializedVersion: 2
+        x: 3531
+        y: 2953
+        width: 498
+        height: 1197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eab9d22fc9e861c428465ce5cab71cb9
+      internalID: 325529836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_78
+      rect:
+        serializedVersion: 2
+        x: 4132
+        y: 2964
+        width: 497
+        height: 1180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7577c983ff7efdc4c884b8e6c305482a
+      internalID: 295400404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_79
+      rect:
+        serializedVersion: 2
+        x: 4710
+        y: 2964
+        width: 498
+        height: 1180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 618d2bf16a594604d835d6db43d0ec99
+      internalID: -492376987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_80
+      rect:
+        serializedVersion: 2
+        x: 5289
+        y: 2964
+        width: 498
+        height: 1180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77bf1925ed7b28441bffca4451dacfb1
+      internalID: -595849739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_81
+      rect:
+        serializedVersion: 2
+        x: 5873
+        y: 2958
+        width: 498
+        height: 1186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12cdf20395d3ee943962568b4096db10
+      internalID: 2096246415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_82
+      rect:
+        serializedVersion: 2
+        x: 6451
+        y: 2958
+        width: 498
+        height: 1192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2bc06ac9aa42ea40aef6f15b454d8a9
+      internalID: 310916776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_83
+      rect:
+        serializedVersion: 2
+        x: 7032
+        y: 2958
+        width: 501
+        height: 1192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d79bcf14acd1b649920e76e4913d8bd
+      internalID: 1424716731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_84
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 1624
+        width: 498
+        height: 1191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 073766a85211e57419ea4a2ab5304cb1
+      internalID: -642209829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_85
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1630
+        width: 498
+        height: 1185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 190e97a244977b84b9d93669e74af7b4
+      internalID: -103153864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_86
+      rect:
+        serializedVersion: 2
+        x: 1778
+        y: 1635
+        width: 504
+        height: 1180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff8d1bfddd5230141a1fa0aa68dfb66d
+      internalID: 1489717005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_87
+      rect:
+        serializedVersion: 2
+        x: 2362
+        y: 1630
+        width: 503
+        height: 1185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb036d060aff1f14b87d5b1afdd2693d
+      internalID: -1244599532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_88
+      rect:
+        serializedVersion: 2
+        x: 2946
+        y: 1630
+        width: 499
+        height: 1191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f667113b7c40890459e4c19780421a4c
+      internalID: 1269269125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_89
+      rect:
+        serializedVersion: 2
+        x: 3526
+        y: 1635
+        width: 503
+        height: 1186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 162ab808e70b647438d86017598c394e
+      internalID: 1086251761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_90
+      rect:
+        serializedVersion: 2
+        x: 4132
+        y: 1635
+        width: 497
+        height: 1186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f399152764874e4fbabee892166db78
+      internalID: 744772174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_91
+      rect:
+        serializedVersion: 2
+        x: 4710
+        y: 1641
+        width: 498
+        height: 1183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1fc1bdc9f75de34195d19dbae0e08ff
+      internalID: -1373755081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_92
+      rect:
+        serializedVersion: 2
+        x: 5289
+        y: 1641
+        width: 498
+        height: 1183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cf6f01254b4a4142bffcbcdbea8d361
+      internalID: -1030472829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_93
+      rect:
+        serializedVersion: 2
+        x: 5873
+        y: 1641
+        width: 498
+        height: 1183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73657a66138c9954a95bb3e244f1f0e8
+      internalID: 73705164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_94
+      rect:
+        serializedVersion: 2
+        x: 6451
+        y: 1641
+        width: 498
+        height: 1186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 962da35d3a68c4342b5a63ed43792fef
+      internalID: -271762968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_95
+      rect:
+        serializedVersion: 2
+        x: 7030
+        y: 1641
+        width: 498
+        height: 1186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05b17fb4dc08cc04d943d374414a7dbe
+      internalID: -1152900928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_96
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 261
+        width: 498
+        height: 1174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e253a7d8c9249ed4c81d872a49a3d5d9
+      internalID: 1135463394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_97
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 261
+        width: 498
+        height: 1174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10aab12f42193ff40b1c873dadad5aa7
+      internalID: -1512290757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_98
+      rect:
+        serializedVersion: 2
+        x: 1778
+        y: 261
+        width: 504
+        height: 1174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37da6c269c25fc64c85b86fe848751f2
+      internalID: -1198755510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_99
+      rect:
+        serializedVersion: 2
+        x: 2368
+        y: 261
+        width: 498
+        height: 1174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e411bc729ca9a64cac3ba81f34c12c9
+      internalID: -741590164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_100
+      rect:
+        serializedVersion: 2
+        x: 2947
+        y: 261
+        width: 503
+        height: 1179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d9f0648401a07f488238e66d423a5e2
+      internalID: 175457804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_101
+      rect:
+        serializedVersion: 2
+        x: 3531
+        y: 266
+        width: 503
+        height: 1174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8a3d11b269220544b6d1241df93be36
+      internalID: -355627689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_102
+      rect:
+        serializedVersion: 2
+        x: 4132
+        y: 278
+        width: 498
+        height: 1174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5830a2bdeeeac0f4080cc2a1c43e7f6e
+      internalID: -2072439477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_103
+      rect:
+        serializedVersion: 2
+        x: 4710
+        y: 278
+        width: 498
+        height: 1174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f1aea42c48c52a4a863020998e3a843
+      internalID: 1869986388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_104
+      rect:
+        serializedVersion: 2
+        x: 5289
+        y: 273
+        width: 498
+        height: 1179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f4765d11c22613499083a0f48229ef8
+      internalID: -394082387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_105
+      rect:
+        serializedVersion: 2
+        x: 5873
+        y: 278
+        width: 498
+        height: 1174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78b78b02278eda74dbc65aa3b567df8d
+      internalID: -131216557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_106
+      rect:
+        serializedVersion: 2
+        x: 6451
+        y: 278
+        width: 498
+        height: 1174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 818c39d4889e0b449a326b59a75d2f67
+      internalID: 806776959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITES DUENDES ANDAR Lado_107
+      rect:
+        serializedVersion: 2
+        x: 7035
+        y: 284
+        width: 498
+        height: 1168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d5a99452937aaa4e823ccfc89f1a3bf
+      internalID: -1200970759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      SPRITES DUENDES ANDAR Lado_0: -99837990
+      SPRITES DUENDES ANDAR Lado_1: -1354508086
+      SPRITES DUENDES ANDAR Lado_10: -66038835
+      SPRITES DUENDES ANDAR Lado_100: 175457804
+      SPRITES DUENDES ANDAR Lado_101: -355627689
+      SPRITES DUENDES ANDAR Lado_102: -2072439477
+      SPRITES DUENDES ANDAR Lado_103: 1869986388
+      SPRITES DUENDES ANDAR Lado_104: -394082387
+      SPRITES DUENDES ANDAR Lado_105: -131216557
+      SPRITES DUENDES ANDAR Lado_106: 806776959
+      SPRITES DUENDES ANDAR Lado_107: -1200970759
+      SPRITES DUENDES ANDAR Lado_11: 1726982192
+      SPRITES DUENDES ANDAR Lado_12: 1661077060
+      SPRITES DUENDES ANDAR Lado_13: 103726270
+      SPRITES DUENDES ANDAR Lado_14: -919118736
+      SPRITES DUENDES ANDAR Lado_15: 2009604092
+      SPRITES DUENDES ANDAR Lado_16: 1368179882
+      SPRITES DUENDES ANDAR Lado_17: -1236053062
+      SPRITES DUENDES ANDAR Lado_18: -2125178701
+      SPRITES DUENDES ANDAR Lado_19: 1738089118
+      SPRITES DUENDES ANDAR Lado_2: -149932846
+      SPRITES DUENDES ANDAR Lado_20: -1027826242
+      SPRITES DUENDES ANDAR Lado_21: -1242560887
+      SPRITES DUENDES ANDAR Lado_22: -1113804548
+      SPRITES DUENDES ANDAR Lado_23: 1915860848
+      SPRITES DUENDES ANDAR Lado_24: 257481274
+      SPRITES DUENDES ANDAR Lado_25: -414243729
+      SPRITES DUENDES ANDAR Lado_26: 901735280
+      SPRITES DUENDES ANDAR Lado_27: -1699016680
+      SPRITES DUENDES ANDAR Lado_28: 935090476
+      SPRITES DUENDES ANDAR Lado_29: -221350055
+      SPRITES DUENDES ANDAR Lado_3: 602218449
+      SPRITES DUENDES ANDAR Lado_30: -2080580617
+      SPRITES DUENDES ANDAR Lado_31: 1301795403
+      SPRITES DUENDES ANDAR Lado_32: 1615305188
+      SPRITES DUENDES ANDAR Lado_33: 1532428904
+      SPRITES DUENDES ANDAR Lado_34: -386824065
+      SPRITES DUENDES ANDAR Lado_35: -695285621
+      SPRITES DUENDES ANDAR Lado_36: 1197457965
+      SPRITES DUENDES ANDAR Lado_37: 1382775769
+      SPRITES DUENDES ANDAR Lado_38: -462774481
+      SPRITES DUENDES ANDAR Lado_39: 990005185
+      SPRITES DUENDES ANDAR Lado_4: 1687077341
+      SPRITES DUENDES ANDAR Lado_40: 2065984044
+      SPRITES DUENDES ANDAR Lado_41: -1371791084
+      SPRITES DUENDES ANDAR Lado_42: 661123828
+      SPRITES DUENDES ANDAR Lado_43: 1884040871
+      SPRITES DUENDES ANDAR Lado_44: -1648295532
+      SPRITES DUENDES ANDAR Lado_45: 1249582668
+      SPRITES DUENDES ANDAR Lado_46: -692972858
+      SPRITES DUENDES ANDAR Lado_47: 938696359
+      SPRITES DUENDES ANDAR Lado_48: -1155799598
+      SPRITES DUENDES ANDAR Lado_49: -1796084057
+      SPRITES DUENDES ANDAR Lado_5: -1795614187
+      SPRITES DUENDES ANDAR Lado_50: 1128178382
+      SPRITES DUENDES ANDAR Lado_51: -2142575653
+      SPRITES DUENDES ANDAR Lado_52: -1730785479
+      SPRITES DUENDES ANDAR Lado_53: -432725228
+      SPRITES DUENDES ANDAR Lado_54: 256280189
+      SPRITES DUENDES ANDAR Lado_55: -1928639649
+      SPRITES DUENDES ANDAR Lado_56: -1601308711
+      SPRITES DUENDES ANDAR Lado_57: -248682444
+      SPRITES DUENDES ANDAR Lado_58: 1495913436
+      SPRITES DUENDES ANDAR Lado_59: 1583130787
+      SPRITES DUENDES ANDAR Lado_6: 1245116920
+      SPRITES DUENDES ANDAR Lado_60: 317785543
+      SPRITES DUENDES ANDAR Lado_61: 1484340825
+      SPRITES DUENDES ANDAR Lado_62: -1185428326
+      SPRITES DUENDES ANDAR Lado_63: -733491212
+      SPRITES DUENDES ANDAR Lado_64: 1500115250
+      SPRITES DUENDES ANDAR Lado_65: 409160267
+      SPRITES DUENDES ANDAR Lado_66: 2131837334
+      SPRITES DUENDES ANDAR Lado_67: 1375832727
+      SPRITES DUENDES ANDAR Lado_68: -858490655
+      SPRITES DUENDES ANDAR Lado_69: 496056145
+      SPRITES DUENDES ANDAR Lado_7: -971205110
+      SPRITES DUENDES ANDAR Lado_70: -1522449769
+      SPRITES DUENDES ANDAR Lado_71: -2103519138
+      SPRITES DUENDES ANDAR Lado_72: 1060819583
+      SPRITES DUENDES ANDAR Lado_73: -1048065929
+      SPRITES DUENDES ANDAR Lado_74: 679904955
+      SPRITES DUENDES ANDAR Lado_75: 1639070234
+      SPRITES DUENDES ANDAR Lado_76: -1661111141
+      SPRITES DUENDES ANDAR Lado_77: 325529836
+      SPRITES DUENDES ANDAR Lado_78: 295400404
+      SPRITES DUENDES ANDAR Lado_79: -492376987
+      SPRITES DUENDES ANDAR Lado_8: -1687956902
+      SPRITES DUENDES ANDAR Lado_80: -595849739
+      SPRITES DUENDES ANDAR Lado_81: 2096246415
+      SPRITES DUENDES ANDAR Lado_82: 310916776
+      SPRITES DUENDES ANDAR Lado_83: 1424716731
+      SPRITES DUENDES ANDAR Lado_84: -642209829
+      SPRITES DUENDES ANDAR Lado_85: -103153864
+      SPRITES DUENDES ANDAR Lado_86: 1489717005
+      SPRITES DUENDES ANDAR Lado_87: -1244599532
+      SPRITES DUENDES ANDAR Lado_88: 1269269125
+      SPRITES DUENDES ANDAR Lado_89: 1086251761
+      SPRITES DUENDES ANDAR Lado_9: -866323097
+      SPRITES DUENDES ANDAR Lado_90: 744772174
+      SPRITES DUENDES ANDAR Lado_91: -1373755081
+      SPRITES DUENDES ANDAR Lado_92: -1030472829
+      SPRITES DUENDES ANDAR Lado_93: 73705164
+      SPRITES DUENDES ANDAR Lado_94: -271762968
+      SPRITES DUENDES ANDAR Lado_95: -1152900928
+      SPRITES DUENDES ANDAR Lado_96: 1135463394
+      SPRITES DUENDES ANDAR Lado_97: -1512290757
+      SPRITES DUENDES ANDAR Lado_98: -1198755510
+      SPRITES DUENDES ANDAR Lado_99: -741590164
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

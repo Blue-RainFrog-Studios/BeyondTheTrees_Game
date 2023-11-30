@@ -13,7 +13,9 @@ public class PlayerMovementInputSystem : MonoBehaviour
     public int nivel = 0;
 
     //animacion personaje
-    public Animator characterAnimator;
+    //public Animator //characterAnimator;
+    public Animator Body;
+    public Animator Head;
 
     //audio source
     [SerializeField] private AudioSource AttackSoundEffect1;
@@ -25,7 +27,7 @@ public class PlayerMovementInputSystem : MonoBehaviour
     public Vector2 attackDirection;
     private Vector2 velocity;
     public float shoteRate = 0.5f;
-
+    private Vector2 lowSpeed = new Vector2(0.2f, 0.2f);
     private float shotRateTime = 0;
     private void Awake()
     {
@@ -62,23 +64,69 @@ public class PlayerMovementInputSystem : MonoBehaviour
         //make the walksoundeffect volume proportional to the player's velocity
         WalkSoundEffect.volume = player_rb.velocity.magnitude / 10;
 
-        if (direction.y < 0 && !characterAnimator.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
+
+        if (playerInputActions.Player.Attack.ReadValue<Vector2>() != Vector2.zero)
         {
-            characterAnimator.Play("WalkFront");
+            Head.SetBool("AttackEnded", false);
         }
-        else if (direction.y > 0 && !characterAnimator.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
+        else
         {
-            characterAnimator.Play("WalkBack");
+            Head.SetBool("AttackEnded", true);
         }
-        else if (direction.x < 0 && !characterAnimator.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
+
+        if (direction.y < 0 )
         {
-            characterAnimator.Play("WalkLeft");
+            if (!Head.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
+            {
+                Head.Play("Down");
+            }
+            Body.Play("WalkDown");
+            //set the variable Direction of the animator controller to 2
+            Head.SetInteger("Direction", 2);
+
+            //characterAnimator.Play("WalkFront");
         }
-        else if (direction.x > 0 && !characterAnimator.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
+        else if (direction.y > 0)
         {
+            Body.Play("WalkUp");
+            if (!Head.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
+            {
+                Head.Play("Up");
+            }
+            Head.SetInteger("Direction", 0);
+
+            //characterAnimator.Play("WalkBack");
+        }
+        else if (direction.x < 0)
+        {
+            Body.Play("WalkLeft");
+            if (!Head.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
+            {
+                Head.Play("Left");
+
+            }
+            Head.SetInteger("Direction", 3);
+
+            //characterAnimator.Play("WalkLeft");
+        }
+        else if (direction.x > 0)
+        {
+            Body.Play("WalkRight");
+            if (!Head.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
+            {
+                Head.Play("Right");
+            }
+            Head.SetInteger("Direction", 1);
+
             //set the animator to play the "walkRight" animation
-            characterAnimator.Play("WalkRight");
+            //characterAnimator.Play("WalkRight");
         }
+        if (player_rb.velocity.x <= lowSpeed.x && player_rb.velocity.y <= lowSpeed.y)
+        {
+            Body.SetBool("Stoped", true);
+        }
+
+
     }
 
     private void FixedUpdate()
@@ -102,6 +150,7 @@ public class PlayerMovementInputSystem : MonoBehaviour
             //Leemos la entrada del usuario
             if (!this.enabled) return;
             attackDirection = playerInputActions.Player.Attack.ReadValue<Vector2>();
+
 
             //Redondeamos para los controles de moviles
             attackDirection.x = Mathf.Round(attackDirection.x);
@@ -131,12 +180,17 @@ public class PlayerMovementInputSystem : MonoBehaviour
                     {
                         if (transform.Find("FrontCollider").gameObject.GetComponentInChildren<ComprobarAtaque>().Cercano())
                         {
-                            characterAnimator.Play("AttackFront");
+                            //characterAnimator.Play("AttackFront");
                             shotRateTime = Time.time + shoteRate;
 
                         }
                         else
                         {
+                            Head.Play("AttackDown");
+                            if (player_rb.velocity.x <= lowSpeed.x && player_rb.velocity.y <= lowSpeed.y)
+                            {
+                                Body.Play("IdleDown");
+                            }
                             Instantiate(attack, transform.position, transform.rotation);
                             shotRateTime = Time.time + shoteRate;
                         }
@@ -148,11 +202,16 @@ public class PlayerMovementInputSystem : MonoBehaviour
                     {
                         if (transform.Find("BackCollider").gameObject.GetComponentInChildren<ComprobarAtaque>().Cercano())
                         {
-                            characterAnimator.Play("AttackBack");
+                            //characterAnimator.Play("AttackBack");
                             shotRateTime = Time.time + shoteRate;
                         }
                         else
                         {
+                            Head.Play("AttackUp");
+                            if (player_rb.velocity.x <= lowSpeed.x && player_rb.velocity.y <= lowSpeed.y)
+                            {
+                                Body.Play("IdleUp");
+                            }
                             Instantiate(attack, transform.position, transform.rotation);
                             shotRateTime = Time.time + shoteRate;
                         }
@@ -165,11 +224,16 @@ public class PlayerMovementInputSystem : MonoBehaviour
                     {
                         if (transform.Find("LeftCollider").gameObject.GetComponentInChildren<ComprobarAtaque>().Cercano())
                         {
-                            characterAnimator.Play("AttackLeft");
+                            //characterAnimator.Play("AttackLeft");
                             shotRateTime = Time.time + shoteRate;
                         }
                         else
                         {
+                            Head.Play("AttackLeft");
+                            if (player_rb.velocity.x <= lowSpeed.x && player_rb.velocity.y <= lowSpeed.y)
+                            {
+                                Body.Play("IdleLeft");
+                            }
                             Instantiate(attack, transform.position, transform.rotation);
                             shotRateTime = Time.time + shoteRate;
                         }
@@ -182,11 +246,16 @@ public class PlayerMovementInputSystem : MonoBehaviour
                     {
                         if (transform.Find("RightCollider").gameObject.GetComponentInChildren<ComprobarAtaque>().Cercano())
                         {
-                            characterAnimator.Play("AttackRight");
+                            //characterAnimator.Play("AttackRight");
                             shotRateTime = Time.time + shoteRate;
                         }
                         else
                         {
+                            Head.Play("AttackRight");
+                            if (player_rb.velocity.x <= lowSpeed.x && player_rb.velocity.y <= lowSpeed.y)
+                            {
+                                Body.Play("IdleRight");
+                            }
                             Instantiate(attack, transform.position, transform.rotation);
                             shotRateTime = Time.time + shoteRate;
                         }
@@ -233,12 +302,13 @@ public class PlayerMovementInputSystem : MonoBehaviour
                     {
                         if(transform.Find("FrontCollider").gameObject.GetComponentInChildren<ComprobarAtaque>().Cercano())
                         {
-                            characterAnimator.Play("AttackFront");
+                            //characterAnimator.Play("AttackFront");
                             shotRateTime = Time.time + shoteRate;
  
                         }
                         else
                         {
+                            Head.Play("AttackDown");
                             Instantiate(attack, transform.position, transform.rotation);
                             shotRateTime = Time.time + shoteRate;
                         }
@@ -250,11 +320,12 @@ public class PlayerMovementInputSystem : MonoBehaviour
                     {
                         if (transform.Find("BackCollider").gameObject.GetComponentInChildren<ComprobarAtaque>().Cercano())
                         {
-                            characterAnimator.Play("AttackBack");
+                            //characterAnimator.Play("AttackBack");
                             shotRateTime = Time.time + shoteRate;
                         }
                         else
                         {
+                            Head.Play("AttackUp");
                             Instantiate(attack, transform.position, transform.rotation);
                             shotRateTime = Time.time + shoteRate;
                         }
@@ -267,11 +338,12 @@ public class PlayerMovementInputSystem : MonoBehaviour
                     {
                         if (transform.Find("LeftCollider").gameObject.GetComponentInChildren<ComprobarAtaque>().Cercano())
                         {
-                            characterAnimator.Play("AttackLeft");
+                            //characterAnimator.Play("AttackLeft");
                             shotRateTime = Time.time + shoteRate;
                         }
                         else
                         {
+                            Head.Play("AttackLeft");
                             Instantiate(attack, transform.position, transform.rotation);
                             shotRateTime = Time.time + shoteRate;
                         }
@@ -284,11 +356,12 @@ public class PlayerMovementInputSystem : MonoBehaviour
                     {
                         if (transform.Find("RightCollider").gameObject.GetComponentInChildren<ComprobarAtaque>().Cercano())
                         {
-                            characterAnimator.Play("AttackRight");
+                            //characterAnimator.Play("AttackRight");
                             shotRateTime = Time.time + shoteRate;
                         }
                         else
                         {
+                            Head.Play("AttackRight");
                             Instantiate(attack, transform.position, transform.rotation);
                             shotRateTime = Time.time + shoteRate;
                         }

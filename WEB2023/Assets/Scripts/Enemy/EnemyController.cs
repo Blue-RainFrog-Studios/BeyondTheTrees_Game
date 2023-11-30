@@ -205,25 +205,40 @@ public class EnemyController : MonoBehaviour
 
         direction = player.transform.position - transform.position;
             if (direction.x > 0)
-                animator.Play("GhostRight");
-            else
-                animator.Play("GhostLeft");
+        {
+            animator.Play("GhostRight");
+
+
+        }
+        else
+        {
+            animator.Play("GhostLeft");
+
+        }
 
         if (isPlayerInRange(range))
         {
             if (direction.x > 0.0f)
             {
                 if (direction.y + 1.0f > direction.x)
-                    animator.Play("WalkTop");
+                {
+                    animator.Play("WalkBackTeleGoblin");
+
+
+                }
                 else
-                    animator.Play("WalkRight");
+                {
+                    animator.Play("WalkRightTeleGoblin");
+
+
+                }
             }
             else if (direction.x < 0.0f)
             {
                 if (direction.y + 1.0f < direction.x)
-                    animator.Play("WalkDown");
+                    animator.Play("WalkFrontTeleGoblin");
                 else
-                    animator.Play("WalkLeft");
+                    animator.Play("WalkLeftTeleGoblin");
 
             }
         }
@@ -231,18 +246,25 @@ public class EnemyController : MonoBehaviour
         {
             if (direction.x > 0.0f)
             {
-                if (direction.y + 1.0f > direction.x)
-                    animator.Play("WalkTopMage");
-                else
-                    animator.Play("WalkRightMage");
+                if (direction.y + 1.0f > direction.x) { 
+                    animator.Play("WalkBackRangedGoblin");
+
+                }
+                else {
+                    animator.Play("WalkRightRangedGoblin");
+
+                }
             }
             else if (direction.x < 0.0f)
             {
-                if (direction.y + 1.0f < direction.x)
-                    animator.Play("WalkDownMage");
-                else
-                    animator.Play("WalkLeftMage");
+                if (direction.y + 1.0f < direction.x) {
+                    animator.Play("WalkDownRangedGoblin");
 
+                }
+                else {
+                    animator.Play("WalkLeftRangedGoblin");
+
+                }
             }
         }
         else
@@ -250,16 +272,32 @@ public class EnemyController : MonoBehaviour
             if (direction.x > 0.0f)
             {
                 if (direction.y + 1.0f > direction.x)
-                    animator.Play("MageUp");
+                {
+                    animator.Play("AttackBackGoblin");
+
+
+                }
                 else
-                    animator.Play("MageRight");
+                {
+                    animator.Play("AttackRightGoblin");
+
+
+                }
             }
             else if (direction.x < 0.0f)
             {
                 if (direction.y + 1.0f < direction.x)
-                    animator.Play("MageDown");
+                {
+                    animator.Play("AttackFrontGoblin");
+
+
+                }
                 else
-                    animator.Play("MageLeft");
+                {
+                    animator.Play("AtackLeftGoblin");
+
+
+                }
             }
         }
         if (acorn != null) { 
