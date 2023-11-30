@@ -38,7 +38,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 212.9, y: -479.5}
+  m_AnchoredPosition: {x: 199, y: -457}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4510656794470225217
@@ -2354,8 +2354,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 36, y: -5}
-  m_SizeDelta: {x: 80, y: 20}
+  m_AnchoredPosition: {x: 8.669, y: 2.5}
+  m_SizeDelta: {x: 25.338, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6675163058882193979
 MonoBehaviour:
@@ -3038,8 +3038,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 144, y: -119}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 77, y: -98.93323}
+  m_SizeDelta: {x: 30.538, y: 59.8664}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3717110776907033590
 MonoBehaviour:
@@ -3160,8 +3160,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 31.34
+  m_fontSizeBase: 31.34
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3408,7 +3408,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 14.506714, y: -0.5}
+  m_AnchoredPosition: {x: 14.506714, y: -0.50000095}
   m_SizeDelta: {x: 5.8554, y: -11.5535}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7505315005067066663
@@ -4299,8 +4299,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.1875, y: 0}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 131.4, y: -26.784718}
-  m_SizeDelta: {x: 291.6758, y: 12.2425995}
+  m_AnchoredPosition: {x: 134.3283, y: -27.95288}
+  m_SizeDelta: {x: 297.5325, y: 27.3077}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &9074348998246690000
 GameObject:
