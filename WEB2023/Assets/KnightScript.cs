@@ -36,6 +36,15 @@ public class KnightScript : MonoBehaviour
 
     private bool inmune = false;
 
+    [SerializeField]
+    private int maxAttack = 40;
+
+    [SerializeField]
+    private int maxSpeed = 10;
+
+    [SerializeField]
+    private int maxAttackSpeed = 6;
+
     public KnightScript() 
     {
         totalHealth = 50;
@@ -126,10 +135,10 @@ public class KnightScript : MonoBehaviour
 
     public void ModifyStats(int v, ItemSO inventoryItem, int quantity)
     {
-        attack += v * inventoryItem.Attack;
+        attack += ((attack + (v * inventoryItem.Attack)) <= maxAttack) ? v * inventoryItem.Attack : 0;
         defense += v * inventoryItem.Defense;
-        GetComponent<PlayerMovementInputSystem>().speed += v * inventoryItem.Speed;
-        GetComponent<PlayerMovementInputSystem>().shoteRate -= v * inventoryItem.AttackSpeed;
+        GetComponent<PlayerMovementInputSystem>().speed += ((GetComponent<PlayerMovementInputSystem>().speed + (v * inventoryItem.Speed)) <= maxSpeed) ? v * inventoryItem.Speed : 0;
+        GetComponent<PlayerMovementInputSystem>().shoteRate -= ((GetComponent<PlayerMovementInputSystem>().shoteRate - (v * inventoryItem.AttackSpeed)) <= maxAttackSpeed) ? v * inventoryItem.AttackSpeed : 0;
         GetComponent<CoinCounter>().ExpeditionMoneyChanger(v * (inventoryItem.Value * quantity));
     }
 
