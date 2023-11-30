@@ -65,10 +65,6 @@ public class KnightScript : MonoBehaviour
     {
         if (inmune) return;
         inmune = true;
-        GetComponent<SpriteRenderer>().color = Color.black;
-        knight.health -= (dmgValue - knight.defense <= 0.0f) ? minDmg : (dmgValue - knight.defense);
-        lifeBar.value = knight.health;
-        hitSource.PlayOneShot(hitClip);
         if (knight.health <= 0)
         {
             SceneManager.LoadScene("GameOver");
@@ -80,6 +76,10 @@ public class KnightScript : MonoBehaviour
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             GetComponentInChildren<Canvas>().enabled = false;
         }
+        GetComponent<SpriteRenderer>().color = Color.black;
+        knight.health -= (dmgValue - knight.defense <= 0.0f) ? minDmg : (dmgValue - knight.defense);
+        lifeBar.value = knight.health;
+        hitSource.PlayOneShot(hitClip);
         StartCoroutine(WaitSeconds(1));
     }
 
