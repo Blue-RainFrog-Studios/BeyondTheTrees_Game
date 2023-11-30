@@ -30,8 +30,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3789336805313456490}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -29.072989, y: 36.35809, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -28.7528, y: 36.1152, z: 0}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,12 +78,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 813361291, guid: 70e85111105532d42a516e37e49b656a, type: 3}
+  m_Sprite: {fileID: -657580014, guid: 093908b5cab1a6b449be7bc63fa5aa71, type: 3}
   m_Color: {r: 0.7686275, g: 0.7686275, b: 0.7686275, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 0.8828125}
+  m_Size: {x: 6.73, y: 11.822273}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -119,6 +119,7 @@ MonoBehaviour:
   life: 60
   bulletSpeed: 10
   animator: {fileID: 1330603882934896760}
+  IAmAGhost: {fileID: 0}
   damage: 20
   notInRoom: 0
   blinkDuration: 0
@@ -182,8 +183,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.0000019073486}
-  m_Size: {x: 1, y: 3.8387794}
+  m_Offset: {x: -0.11497737, y: -1.379714}
+  m_Size: {x: 3.4637842, y: 7.1895247}
   m_Direction: 0
 --- !u!95 &1330603882934896760
 Animator:
@@ -195,7 +196,7 @@ Animator:
   m_GameObject: {fileID: 3789336805313456490}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2607d1bb134bf2d4eb42a45329cb3260, type: 2}
+  m_Controller: {fileID: 9100000, guid: 099fa79ba3e27e8419da0c96dbec2a63, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
