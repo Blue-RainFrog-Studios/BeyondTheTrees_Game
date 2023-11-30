@@ -64,6 +64,16 @@ public class PlayerMovementInputSystem : MonoBehaviour
         //make the walksoundeffect volume proportional to the player's velocity
         WalkSoundEffect.volume = player_rb.velocity.magnitude / 10;
 
+
+        if (playerInputActions.Player.Attack.ReadValue<Vector2>() != Vector2.zero)
+        {
+            Head.SetBool("AttackEnded", false);
+        }
+        else
+        {
+            Head.SetBool("AttackEnded", true);
+        }
+
         if (direction.y < 0 )
         {
             if (!Head.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
@@ -115,6 +125,8 @@ public class PlayerMovementInputSystem : MonoBehaviour
         {
             Body.SetBool("Stoped", true);
         }
+
+
     }
 
     private void FixedUpdate()
@@ -138,6 +150,7 @@ public class PlayerMovementInputSystem : MonoBehaviour
             //Leemos la entrada del usuario
             if (!this.enabled) return;
             attackDirection = playerInputActions.Player.Attack.ReadValue<Vector2>();
+
 
             //Redondeamos para los controles de moviles
             attackDirection.x = Mathf.Round(attackDirection.x);
