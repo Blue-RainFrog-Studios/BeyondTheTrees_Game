@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 54842742dbf87854b96c30e91efb74e7
+guid: 7f61bac6364808d48a00b1595f3a0d4a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,106 +110,148 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ataqueSpriteDist_0
+      name: fireball2_0
       rect:
         serializedVersion: 2
         x: 0
+        y: 2154
+        width: 220
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 768b18ced25f56b4fb08633f587fe27f
+      internalID: 224934568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fireball2_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1791
+        width: 226
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04cebd1ff218b5d4baca3d6e43522d73
+      internalID: 1742847452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fireball2_3
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 1430
+        width: 221
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5277d6ecc8156f48b106695139b7524
+      internalID: 1874288713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fireball2_4
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 1072
+        width: 215
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3731f78294a8ec24bb7ad62310dd89c1
+      internalID: -1038002792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fireball2_5
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 712
+        width: 216
+        height: 323
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a294f579cf485e147a33b77afe79576b
+      internalID: -279073278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fireball2_6
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 345
+        width: 215
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 486561510914afb4caef45fac174794c
+      internalID: 1571878148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fireball2_7
+      rect:
+        serializedVersion: 2
+        x: 11
         y: 0
-        width: 489
-        height: 301
-      alignment: 9
-      pivot: {x: 0.2833285, y: 0.52346677}
+        width: 221
+        height: 314
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84c8a9231afe8f84f87dea5e3f74dc4b
-      internalID: 1401388225
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ataqueSpriteDist_1
-      rect:
-        serializedVersion: 2
-        x: 572
-        y: 4
-        width: 509
-        height: 278
-      alignment: 9
-      pivot: {x: 0.30225006, y: 0.48729584}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: de299fe2c6081f74e8607635841c7702
-      internalID: -849255381
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ataqueSpriteDist_2
-      rect:
-        serializedVersion: 2
-        x: 1190
-        y: 21
-        width: 463
-        height: 298
-      alignment: 9
-      pivot: {x: 0.32455727, y: 0.52962875}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 03533c182b384314eaa5e203c905b56a
-      internalID: -1955403400
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ataqueSpriteDist_3
-      rect:
-        serializedVersion: 2
-        x: 1757
-        y: 22
-        width: 589
-        height: 305
-      alignment: 9
-      pivot: {x: 0.2901344, y: 0.49421036}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e46d34a06e7af9445aae864b5cac588a
-      internalID: -2115853644
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ataqueSpriteDist_4
-      rect:
-        serializedVersion: 2
-        x: 2477
-        y: 36
-        width: 549
-        height: 291
-      alignment: 9
-      pivot: {x: 0.2973593, y: 0.52427334}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 718639409f9521e4ea10d5098bedf8a3
-      internalID: 1387915788
+      spriteID: 178c68c7ee6049540bc733c4fa21133c
+      internalID: -962257932
       vertices: []
       indices: 
       edges: []
@@ -225,11 +267,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ataqueSpriteDist_0: 1401388225
-      ataqueSpriteDist_1: -849255381
-      ataqueSpriteDist_2: -1955403400
-      ataqueSpriteDist_3: -2115853644
-      ataqueSpriteDist_4: 1387915788
+      fireball2_0: 224934568
+      fireball2_1: 1742847452
+      fireball2_2: 1928035297
+      fireball2_3: 1874288713
+      fireball2_4: -1038002792
+      fireball2_5: -279073278
+      fireball2_6: 1571878148
+      fireball2_7: -962257932
+      fireball2_8: -1574602171
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
