@@ -138,7 +138,7 @@ public class KnightScript : MonoBehaviour
         attack += ((attack + (v * inventoryItem.Attack)) <= maxAttack) ? v * inventoryItem.Attack : 0;
         defense += v * inventoryItem.Defense;
         GetComponent<PlayerMovementInputSystem>().speed += ((GetComponent<PlayerMovementInputSystem>().speed + (v * inventoryItem.Speed)) <= maxSpeed) ? v * inventoryItem.Speed : 0;
-        GetComponent<PlayerMovementInputSystem>().shoteRate -= ((GetComponent<PlayerMovementInputSystem>().shoteRate - (v * inventoryItem.AttackSpeed)) <= maxAttackSpeed) ? v * inventoryItem.AttackSpeed : 0;
+        GetComponent<PlayerMovementInputSystem>().shoteRate -= ((GetComponent<PlayerMovementInputSystem>().shoteRate - (v * inventoryItem.AttackSpeed)) >= maxAttackSpeed) ? v * inventoryItem.AttackSpeed : 0;
         GetComponent<CoinCounter>().ExpeditionMoneyChanger(v * (inventoryItem.Value * quantity));
     }
 
