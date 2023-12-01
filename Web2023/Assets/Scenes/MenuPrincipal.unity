@@ -14832,7 +14832,7 @@ MonoBehaviour:
   textoESP: {fileID: 1766498127}
   maleButton: {fileID: 502887776}
   femaleButton: {fileID: 900214495}
-  playerPrefab: {fileID: 1156985873014526917, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+  playerPrefab: {fileID: 1678408579497617631, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
   database: {fileID: 11400000, guid: f25f080a6867dab409aea6dde7391662, type: 2}
 --- !u!114 &919053661
 MonoBehaviour:
