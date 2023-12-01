@@ -49,6 +49,9 @@ public class PlayerMovementInputSystem : MonoBehaviour
         //Actualiza las posiciones que le decimos mediante el input
         //Move
         direction = playerInputActions.Player.Move.ReadValue<Vector2>();
+        direction.x = Mathf.Round(direction.x);
+        direction.y = Mathf.Round(direction.y);
+        direction = direction.normalized;
         Attack2();
         //attackDirection = playerInputActions.Player.Attack.ReadValue<Vector2>();
         //if animation dont have attack tag
@@ -92,7 +95,11 @@ public class PlayerMovementInputSystem : MonoBehaviour
     {
         Debug.Log("Me estoy moviendo en: " + context.phase);
         Vector2 inputVector = context.ReadValue<Vector2>();
-        player_rb.AddForce(new Vector3(inputVector.x, 0, inputVector.y) * speed, ForceMode2D.Force);
+        if(direction.magnitude == 1)
+        {
+            player_rb.AddForce(new Vector3(inputVector.x, 0, inputVector.y) * speed, ForceMode2D.Force);
+        }
+        
         
     }
     public void Attack2()
