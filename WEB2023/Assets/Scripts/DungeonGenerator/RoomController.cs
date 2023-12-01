@@ -46,6 +46,8 @@ public class RoomController : MonoBehaviour
     bool updatedRooms = false;
 
     int contPuzzle = 0;
+
+    public float maxHealth=0;
     //ItemSpawner spawn;
 
     private void Awake()
@@ -315,11 +317,28 @@ public class RoomController : MonoBehaviour
         lastRoom = auxRoom;
 
         //los enemigos se quden quietos cuando la camara no este en la sala
-
+        sumHealth();
         //UpdateRooms();
         StartCoroutine(RoomCoroutine());
 
+        
         //currRom.ActivarSpawn();
+    }
+
+    public void sumHealth()
+    {
+        foreach (Room room in loadedRooms)
+        {
+            if(currRom==room)
+            {
+                EnemyController[] enemies = room.GetComponentsInChildren<EnemyController>();
+                foreach (EnemyController enemy in enemies)
+                {
+                    maxHealth += enemy.life;
+                    //Debug.Log("Not in Room");
+                }
+            }
+        }
     }
 
     public IEnumerator RoomCoroutine()

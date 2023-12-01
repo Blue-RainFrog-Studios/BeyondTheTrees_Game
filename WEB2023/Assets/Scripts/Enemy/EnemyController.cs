@@ -140,6 +140,10 @@ public class EnemyController : MonoBehaviour
                 Run();
                   
                 break;
+            case (EnemyState.Heal):
+                Heal();
+
+                break;
         }
 
         if (!notInRoom)
@@ -168,7 +172,24 @@ public class EnemyController : MonoBehaviour
             }
             else if (!isPlayerInRange(range) && !isPlayerInRangeTeleport(rangeTeleport) && !isAcornInRangeSquirrel(rangeSquirrel) && currState != EnemyState.Die)
             {
-                currState = EnemyState.Wander;
+                switch (enemyType)
+                {
+                    case (EnemyType.Melee):
+                        currState = EnemyState.Wander;
+                        break;
+                    case (EnemyType.Ranged):
+                        currState = EnemyState.Idle;
+
+                        break;
+                    case (EnemyType.Teleport):
+
+                        currState = EnemyState.Wander;
+                        break;
+                    case (EnemyType.Squirrel):
+                        currState = EnemyState.Wander;
+                        break;
+                }
+               
             }
             else if(isPlayerInRangeTeleport(rangeTeleport) && currState!=EnemyState.Die)
             {       
@@ -183,11 +204,44 @@ public class EnemyController : MonoBehaviour
             {
                 currState = EnemyState.EatAcorn;
             }
-
-            if (Vector3.Distance(transform.position, player.transform.position) < attackRange) 
+            switch (enemyType)
             {
-                currState = EnemyState.Attack;
+                case (EnemyType.Melee):
+                    if (Vector3.Distance(transform.position, player.transform.position) < attackRange)
+                    {
+                        currState = EnemyState.Attack;
+                    }
+                    break;
+                case (EnemyType.Ranged):
+                    if (Vector3.Distance(transform.position, player.transform.position) < attackRange && Vector3.Distance(transform.position, player.transform.position)>range)
+                    {
+                        currState = EnemyState.Attack;
+                    }
+                    else if(Vector3.Distance(transform.position, player.transform.position) < range)
+                    {
+                        currState = EnemyState.Run;
+                    }
+                    else
+                    {
+                        currState = EnemyState.Follow;
+                    }
+
+                    break;
+                case (EnemyType.Teleport):
+
+                    if (Vector3.Distance(transform.position, player.transform.position) < attackRange)
+                    {
+                        currState = EnemyState.Attack;
+                    }
+                    break;
+                case (EnemyType.Squirrel):
+                    if (Vector3.Distance(transform.position, player.transform.position) < attackRange)
+                    {
+                        currState = EnemyState.Attack;
+                    }
+                    break;
             }
+            
         }
         else
         {
@@ -242,28 +296,44 @@ public class EnemyController : MonoBehaviour
 
             }
         }
-        if (isPlayerInRange(range) && !(Vector3.Distance(transform.position, player.transform.position) < attackRange))
+        if ( !(Vector3.Distance(transform.position, player.transform.position) < attackRange && currState!=EnemyState.Run))
         {
             if (direction.x > 0.0f)
             {
-                if (direction.y + 1.0f > direction.x) { 
+                if (direction.y + 1.0f > direction.x && currState!=EnemyState.Run) { 
                     animator.Play("WalkBackRangedGoblin");
 
                 }
-                else {
+                else if (direction.y + 1.0f < direction.x && currState != EnemyState.Run)
+                {
                     animator.Play("WalkRightRangedGoblin");
 
+                }else if (direction.y + 1.0f > direction.x && currState == EnemyState.Run)
+                {
+                    animator.Play("WalkFrontRangedGoblin");
+                }
+                else
+                {
+                    animator.Play("WalkLeftRangedGoblin");
                 }
             }
             else if (direction.x < 0.0f)
             {
-                if (direction.y + 1.0f < direction.x) {
-                    animator.Play("WalkDownRangedGoblin");
+                if (direction.y + 1.0f < direction.x && currState != EnemyState.Run) {
+                    animator.Play("WalkFrontRangedGoblin");
 
                 }
-                else {
+                else if (direction.y + 1.0f > direction.x && currState != EnemyState.Run)
+                {
                     animator.Play("WalkLeftRangedGoblin");
 
+                }else if (direction.y + 1.0f < direction.x && currState == EnemyState.Run)
+                {
+                    animator.Play("WalkBackRangedGoblin");
+                }
+                else
+                {
+                    animator.Play("WalkRightRangedGoblin");
                 }
             }
         }
@@ -384,7 +454,7 @@ public class EnemyController : MonoBehaviour
         chooseDir = true;
         yield return new WaitForSeconds(Random.Range(2f, 8f));
         randomDir = new Vector3(0, 0, Random.Range(0, 360));
-        // Quaternion nextRotation = Quaternion.Euler(randomDir);
+        //Quaternion nextRotation = Quaternion.Euler(randomDir);
         //transform.rotation = Quaternion.Lerp(transform.rotation, nextRotation, Random.Range(0.5f, 2.5f));
         chooseDir = false;
     }
@@ -428,8 +498,12 @@ public class EnemyController : MonoBehaviour
 
     void Run()
     {
-        //runAway = transform.position - player.transform.position;
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        runAway = transform.position - player.transform.position;
+        transform.position = Vector2.MoveTowards(transform.position, transform.position+runAway, speed * Time.deltaTime);
+    }
+    public void Heal()
+    {
+
     }
 
     void Idle()
