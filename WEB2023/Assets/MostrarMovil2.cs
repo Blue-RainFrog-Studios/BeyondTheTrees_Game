@@ -12,6 +12,7 @@ public class MostrarMovil2 : MonoBehaviour
     private void Start()
     {
         posicion = transform.position;
+        Input.multiTouchEnabled = true;
     }
     private void Update()
     {

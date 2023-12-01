@@ -10,6 +10,8 @@ public class MostrarMovil3 : MonoBehaviour
     private void Start()
     {
         posicion = transform.position;
+        Input.multiTouchEnabled = true;
+        Input.simulateMouseWithTouches = true;
     }
     private void Update()
     {
