@@ -23,7 +23,7 @@ public class KnightScript : MonoBehaviour
     public int health { get; set; }
     public int totalHealth { get; set; }
     public float speed { get; set; }
-
+    [SerializeField]
     public int attack { get; set; }
     public int attackSpeed { get; set; }
     public int defense { get; set; }

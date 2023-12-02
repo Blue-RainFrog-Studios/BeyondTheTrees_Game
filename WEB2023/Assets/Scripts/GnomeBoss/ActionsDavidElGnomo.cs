@@ -77,14 +77,8 @@ public class ActionsDavidElGnomo : MonoBehaviour
         else
         animator.Play("WalkSideDG");
 
-    }
-
-
-    public Status UpdateMethodWalkAttack()
-    {
-        //move right for 2 seconds
-        //coroutine that moves the object to the right for 2 seconds
-        if (playerTransform.position.x > DavidElGnomoTransform.position.x) {
+        if (playerTransform.position.x > DavidElGnomoTransform.position.x)
+        {
             StartCoroutine(WalkRightUntilCollision(this.gameObject, GetComponent<DavidElGnomoController>().speed));
             //screenShake.StartCoroutine(screenShake.ShakeScreen());
         }
@@ -93,6 +87,14 @@ public class ActionsDavidElGnomo : MonoBehaviour
             StartCoroutine(WalkLeftUntilCollision(this.gameObject, GetComponent<DavidElGnomoController>().speed));
             //screenShake.StartCoroutine(screenShake.ShakeScreen());
         }
+    }
+
+
+    public Status UpdateMethodWalkAttack()
+    {
+        //move right for 2 seconds
+        //coroutine that moves the object to the right for 2 seconds
+
         if (collisionDetected){
             GetComponent<Knockback>().strength = 10f;
             StopAllCoroutines();
@@ -180,7 +182,7 @@ public class ActionsDavidElGnomo : MonoBehaviour
 
     public bool CheckCollisionWithYAxis()
     {
-        return ((playerTransform.position.y > DavidElGnomoTransform.position.y-1) && (playerTransform.position.y < DavidElGnomoTransform.position.y + 1) && GetComponent<DavidElGnomoController>().HP > GetComponent<DavidElGnomoController>().HPSecondPhase+80);
+        return ((playerTransform.position.y > DavidElGnomoTransform.position.y-1) && (playerTransform.position.y < DavidElGnomoTransform.position.y + 1));
     }
 
     public bool CheckHPVeryLow()

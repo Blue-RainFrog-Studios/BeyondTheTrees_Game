@@ -180,7 +180,7 @@ public class PlayerMovementInputSystem : MonoBehaviour
                     {
                         if (transform.Find("FrontCollider").gameObject.GetComponentInChildren<ComprobarAtaque>().Cercano())
                         {
-                            //characterAnimator.Play("AttackFront");
+                            Head.Play("AttackMeeleDown");
                             shotRateTime = Time.time + shoteRate;
 
                         }
@@ -202,7 +202,7 @@ public class PlayerMovementInputSystem : MonoBehaviour
                     {
                         if (transform.Find("BackCollider").gameObject.GetComponentInChildren<ComprobarAtaque>().Cercano())
                         {
-                            //characterAnimator.Play("AttackBack");
+                            Head.Play("AttackMeeleUp");
                             shotRateTime = Time.time + shoteRate;
                         }
                         else
@@ -224,7 +224,7 @@ public class PlayerMovementInputSystem : MonoBehaviour
                     {
                         if (transform.Find("LeftCollider").gameObject.GetComponentInChildren<ComprobarAtaque>().Cercano())
                         {
-                            //characterAnimator.Play("AttackLeft");
+                            Head.Play("AttackMeeleLeft");
                             shotRateTime = Time.time + shoteRate;
                         }
                         else
@@ -246,7 +246,7 @@ public class PlayerMovementInputSystem : MonoBehaviour
                     {
                         if (transform.Find("RightCollider").gameObject.GetComponentInChildren<ComprobarAtaque>().Cercano())
                         {
-                            //characterAnimator.Play("AttackRight");
+                            Head.Play("AttackMeeleRight");
                             shotRateTime = Time.time + shoteRate;
                         }
                         else
@@ -266,7 +266,7 @@ public class PlayerMovementInputSystem : MonoBehaviour
 
         }
     }
-    public void Attack(InputAction.CallbackContext context)
+    /*public void Attack(InputAction.CallbackContext context)
     {
         //El disparo tiene Cooldown
         
@@ -371,5 +371,5 @@ public class PlayerMovementInputSystem : MonoBehaviour
             }   
 
         }
-    }
+    }*/
 }

@@ -116,7 +116,7 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     #region MethodsGnomeModeNoHat
     public void StartMethodGnomeModeNoHat()
     {
-        StopAllCoroutines();
+        GetComponent<ActionsDavidElGnomo>().StopAllCoroutines();
         this.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         
         animator.Play("IdleNoHat");
