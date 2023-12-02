@@ -40,10 +40,19 @@ public class KnightScript : MonoBehaviour
     private int maxAttack = 40;
 
     [SerializeField]
+    private int minAttack = 5;
+
+    [SerializeField]
     private int maxSpeed = 10;
 
     [SerializeField]
+    private int minSpeed = 2;
+
+    [SerializeField]
     private int maxAttackSpeed = 6;
+
+    [SerializeField]
+    private int minAttackSpeed = 1;
 
     public KnightScript() 
     {
@@ -135,10 +144,20 @@ public class KnightScript : MonoBehaviour
 
     public void ModifyStats(int v, ItemSO inventoryItem, int quantity)
     {
-        attack += ((attack + (v * inventoryItem.Attack)) <= maxAttack) ? v * inventoryItem.Attack : 0;
-        defense += v * inventoryItem.Defense;
-        GetComponent<PlayerMovementInputSystem>().speed += ((GetComponent<PlayerMovementInputSystem>().speed + (v * inventoryItem.Speed)) <= maxSpeed) ? v * inventoryItem.Speed : 0;
-        GetComponent<PlayerMovementInputSystem>().shoteRate -= ((GetComponent<PlayerMovementInputSystem>().shoteRate - (v * inventoryItem.AttackSpeed)) >= maxAttackSpeed) ? v * inventoryItem.AttackSpeed : 0;
+        attack += ((attack + (v * inventoryItem.Attack)) <= maxAttack) &&
+            ((attack + (v * inventoryItem.Attack)) >= minAttack)? v * inventoryItem.Attack : 0;
+
+        defense += v * inventoryItem.Defense;  //Este no hace falta revisarlo porque ya se revisa cuando se resta daño en "ReceiveAttack()"
+
+        GetComponent<PlayerMovementInputSystem>().speed += 
+            (((GetComponent<PlayerMovementInputSystem>().speed + (v * inventoryItem.Speed)) <= maxSpeed) &&
+            (GetComponent<PlayerMovementInputSystem>().speed + (v * inventoryItem.Speed)) >= minSpeed) ? v * inventoryItem.Speed : 0;
+
+        GetComponent<PlayerMovementInputSystem>().shoteRate -= 
+            (((GetComponent<PlayerMovementInputSystem>().shoteRate - (v * inventoryItem.AttackSpeed)) >= maxAttackSpeed) &&
+            (GetComponent<PlayerMovementInputSystem>().shoteRate - (v * inventoryItem.AttackSpeed)) <= minAttackSpeed)? v * inventoryItem.AttackSpeed : 0;
+        
+        
         GetComponent<CoinCounter>().ExpeditionMoneyChanger(v * (inventoryItem.Value * quantity));
     }
 
