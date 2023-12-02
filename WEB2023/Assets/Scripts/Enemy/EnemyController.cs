@@ -711,7 +711,7 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision == healCol)
+        if (collision.CompareTag("Enemy"))
         {
             Debug.Log("Me estoy curando");
         }
