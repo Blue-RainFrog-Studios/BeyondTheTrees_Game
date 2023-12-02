@@ -330,6 +330,7 @@ public class RoomController : MonoBehaviour
 
     public void sumHealth()
     {
+        maxHealth= 0;
         foreach (Room room in loadedRooms)
         {
             if(currRom==room)

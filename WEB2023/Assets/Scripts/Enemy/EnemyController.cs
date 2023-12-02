@@ -709,6 +709,13 @@ public class EnemyController : MonoBehaviour
         blinking = false;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision == healCol)
+        {
+            Debug.Log("Me estoy curando");
+        }
+    }
 
 
 }
