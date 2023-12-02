@@ -26,7 +26,7 @@ public class CanvasController : MonoBehaviour
         itemImage.sprite = image;
         itemName.text = name;
         itemDescription.text = description;
-        StartCoroutine(WaitSeconds(5));
+        StartCoroutine(WaitSeconds(6));
     }
 
     IEnumerator WaitSeconds(float Time)
