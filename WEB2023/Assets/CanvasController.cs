@@ -26,17 +26,12 @@ public class CanvasController : MonoBehaviour
         itemImage.sprite = image;
         itemName.text = name;
         itemDescription.text = description;
-        StartCoroutine(AnimateFadeOut());
+        StartCoroutine(WaitSeconds(5));
     }
 
-    private IEnumerator AnimateFadeOut()
+    IEnumerator WaitSeconds(float Time)
     {
-        float currentTime = 0;
-        while (currentTime < duration)
-        {
-            currentTime += Time.deltaTime;
-            yield return null;
-        }
+        yield return new WaitForSeconds(Time);
         pickupPanel.SetActive(false);
     }
 }
