@@ -15,7 +15,9 @@ MonoBehaviour:
   <IsStackable>k__BackingField: 0
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: Capa del Viento
-  <Descrption>k__BackingField: 'Velocidad: +10'
+  <Descrption>k__BackingField: "Velocidad: +10\n\nUna capa que aparece en antiguas
+    leyendas, se dice que all\xE1 d\xF3nde est\xE9 el viento sopla a espaldas de
+    su portador. Se puede vender por mucho oro y te dar\xE1 mucha velocidad de movimiento."
   <ItemImage>k__BackingField: {fileID: 754790592, guid: 0d6e7eb0117b0dd42b3ef1b04224dbec, type: 3}
   <Attack>k__BackingField: 0
   <Defense>k__BackingField: 0
@@ -25,3 +27,4 @@ MonoBehaviour:
   <ShopValue>k__BackingField: 300
   <IsPurchased>k__BackingField: 0
   <Rarity>k__BackingField: 3
+  <dropChance>k__BackingField: 0
