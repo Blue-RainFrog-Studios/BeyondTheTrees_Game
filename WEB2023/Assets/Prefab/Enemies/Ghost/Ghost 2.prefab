@@ -148,8 +148,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.015925467, y: -0.19032136}
-  m_Size: {x: 2.5316594, y: 4.1781845}
+  m_Offset: {x: 0.06251812, y: -0.013269931}
+  m_Size: {x: 1.8420899, y: 2.444943}
   m_Direction: 0
 --- !u!95 &6938415437227796382
 Animator:
@@ -190,7 +190,7 @@ MonoBehaviour:
   enemyType: 0
   range: 20
   rangeTeleport: 0
-  attackRange: 1.5
+  attackRange: 0.65
   rangeSquirrel: 0
   eatRange: 0
   consumed: 0
