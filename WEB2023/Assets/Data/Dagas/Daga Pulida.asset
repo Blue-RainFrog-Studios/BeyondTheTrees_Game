@@ -15,7 +15,11 @@ MonoBehaviour:
   <IsStackable>k__BackingField: 0
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: Daga Pulida
-  <Descrption>k__BackingField: 'Ataque: +7'
+  <Descrption>k__BackingField: 'Ataque: +7
+
+
+    Esta daga ha sido afilada y retocada
+    para cumplir mejor su trabajo. Se puede vender por un buen precio.'
   <ItemImage>k__BackingField: {fileID: -404682497, guid: 0d6e7eb0117b0dd42b3ef1b04224dbec, type: 3}
   <Attack>k__BackingField: 7
   <Defense>k__BackingField: 0
