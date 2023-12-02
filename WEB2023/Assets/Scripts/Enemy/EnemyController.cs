@@ -42,7 +42,7 @@ public class EnemyController : MonoBehaviour
 {
 
     Material enemyMaterial;
-
+    public Collider2D healCol;
     public GameObject ghost;
     GameObject acorn;
     GameObject player;
@@ -54,6 +54,7 @@ public class EnemyController : MonoBehaviour
     public float attackRange;
     public float rangeSquirrel;
     public float eatRange;
+    GameObject room;
     [SerializeField]public bool consumed;
     Rigidbody2D rb;
 
@@ -105,6 +106,9 @@ public class EnemyController : MonoBehaviour
         ghost = this.gameObject;
 
         enemyMaterial = GetComponent<Renderer>().material;
+
+        room = GameObject.FindGameObjectWithTag("RoomController");
+
     }
 
     // Update is called once per frame
@@ -148,6 +152,7 @@ public class EnemyController : MonoBehaviour
 
         if (!notInRoom)
         {
+
             if (isPlayerInRange(range) && currState != EnemyState.Die)
             {
                 switch (enemyType)
@@ -156,6 +161,7 @@ public class EnemyController : MonoBehaviour
                         currState = EnemyState.Follow;
                         break;
                     case (EnemyType.Ranged):
+                        
                         currState = EnemyState.Run;
                         
                         break;
@@ -213,9 +219,21 @@ public class EnemyController : MonoBehaviour
                     }
                     break;
                 case (EnemyType.Ranged):
-                    if (Vector3.Distance(transform.position, player.transform.position) < attackRange && Vector3.Distance(transform.position, player.transform.position)>range)
+                    if (Vector3.Distance(transform.position, player.transform.position) < attackRange && Vector3.Distance(transform.position, player.transform.position)>range && !room.GetComponent<RoomController>().lowHealth())
                     {
                         currState = EnemyState.Attack;
+
+                    }
+                    else if(Vector3.Distance(transform.position, player.transform.position) < attackRange && Vector3.Distance(transform.position, player.transform.position) > range && room.GetComponent<RoomController>().lowHealth())
+                    {
+                        if (room.GetComponent<RoomController>().heal)
+                        {
+                            currState = EnemyState.Attack;
+                        }
+                        else
+                        {
+                            currState = EnemyState.Heal;
+                        }
                     }
                     else if(Vector3.Distance(transform.position, player.transform.position) < range)
                     {
@@ -223,6 +241,7 @@ public class EnemyController : MonoBehaviour
                     }
                     else
                     {
+                        
                         currState = EnemyState.Follow;
                     }
 
@@ -503,7 +522,7 @@ public class EnemyController : MonoBehaviour
     }
     public void Heal()
     {
-
+        healCol.enabled = true;
     }
 
     void Idle()
@@ -554,7 +573,8 @@ public class EnemyController : MonoBehaviour
                 case (EnemyType.Ranged):
                     GameObject bullet = Instantiate(EnemyBullet, transform.position, Quaternion.identity) as GameObject;
                     bullet.GetComponent<BulletController>().GetPlayer(player.transform);
-                    bullet.AddComponent<Rigidbody2D>().gravityScale = 0;    
+                    bullet.AddComponent<Rigidbody2D>().gravityScale = 0;
+                    
                     StartCoroutine(CoolDown());
                     break;
                 case (EnemyType.Teleport):
@@ -627,6 +647,7 @@ public class EnemyController : MonoBehaviour
 
 
     }
+   
     public void Die()
     {
         if (player.GetComponent<KnightScript>().king)

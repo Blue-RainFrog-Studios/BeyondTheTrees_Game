@@ -48,6 +48,9 @@ public class RoomController : MonoBehaviour
     int contPuzzle = 0;
 
     public float maxHealth=0;
+    public float leftHealth = 0;
+    public bool loHealth = false;
+    public bool heal = false;
     //ItemSpawner spawn;
 
     private void Awake()
@@ -339,6 +342,36 @@ public class RoomController : MonoBehaviour
                 }
             }
         }
+    }
+    public float lHealth()
+    {
+        leftHealth = 0;
+        foreach (Room room in loadedRooms)
+        {
+            if (currRom == room)
+            {
+                EnemyController[] enemies = room.GetComponentsInChildren<EnemyController>();
+                foreach (EnemyController enemy in enemies)
+                {
+                    leftHealth += enemy.life;
+                    //Debug.Log("Not in Room");
+                }
+            }
+        }
+        Debug.Log(leftHealth);
+        return leftHealth;
+    }
+    public bool lowHealth()
+    {
+        if (lHealth()< maxHealth * 0.3)
+        {
+            loHealth = true;
+            Debug.Log(leftHealth);
+            Debug.Log(maxHealth);
+            Debug.Log("poca vida");
+        }
+        
+        return loHealth;
     }
 
     public IEnumerator RoomCoroutine()
