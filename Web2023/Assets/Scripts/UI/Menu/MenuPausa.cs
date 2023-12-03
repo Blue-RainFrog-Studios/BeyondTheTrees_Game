@@ -93,16 +93,16 @@ public class MenuPausa : MonoBehaviour
         ataqueCruceta = true;
         cruceta.GetComponent<Image>().color = new Color(0.8f, 0.8f, 0.8f, 0.5f);
         stick.GetComponent<Image>().color = Color.white;
-        player.transform.GetChild(10).transform.Find("JoystickDer").gameObject.SetActive(false);
-        player.transform.GetChild(10).transform.Find("TouchArroys").gameObject.SetActive(true);
+        player.transform.GetChild(9).transform.Find("JoystickDer").gameObject.SetActive(false);
+        player.transform.GetChild(9).transform.Find("TouchArroys").gameObject.SetActive(true);
     }
     public void EsStick()
     {
         ataqueCruceta = false;
         stick.GetComponent<Image>().color = new Color(0.2f, 0.2f, 0.2f, 0.5f);
         cruceta.GetComponent<Image>().color = Color.white;
-        player.transform.GetChild(10).transform.Find("JoystickDer").gameObject.SetActive(true);
-        player.transform.GetChild(10).transform.Find("TouchArroys").gameObject.SetActive(false);
+        player.transform.GetChild(9).transform.Find("JoystickDer").gameObject.SetActive(true);
+        player.transform.GetChild(9).transform.Find("TouchArroys").gameObject.SetActive(false);
     }
     public bool GetAtaqueCruceta()
     {
