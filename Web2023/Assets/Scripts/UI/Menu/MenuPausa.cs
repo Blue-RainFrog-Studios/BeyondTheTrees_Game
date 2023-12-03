@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuPausa : MonoBehaviour
 {
@@ -18,10 +20,19 @@ public class MenuPausa : MonoBehaviour
     [SerializeField]
     private GameObject botonPausa;
     private GameObject player;
+
+    private bool ataqueCruceta = true; 
+
+    [SerializeField]
+    private GameObject stick;
+    [SerializeField]
+    private GameObject cruceta;
+
     private void Awake()
     {
         DontDestroyOnLoad(this);
         player = GameObject.FindGameObjectWithTag("Player");
+        cruceta.GetComponent<Image>().color = new Color(0.2f, 0.2f, 0.2f, 0.5f);
     }
     public void Pausa()
     {
@@ -76,5 +87,25 @@ public class MenuPausa : MonoBehaviour
         menuConfirmacion.SetActive(false);
         cajaPausa.SetActive(true);
         menuPausa.SetActive(false);
+    }
+    public void EsCruceta()
+    {
+        ataqueCruceta = true;
+        cruceta.GetComponent<Image>().color = new Color(0.2f, 0.2f, 0.2f, 0.5f);
+        stick.GetComponent<Image>().color = Color.white;
+        player.GetComponentInChildren<Canvas>().transform.Find("JoystickDer").gameObject.SetActive(false);
+        player.GetComponentInChildren<Canvas>().transform.Find("TouchArroys").gameObject.SetActive(true);
+    }
+    public void EsStick()
+    {
+        ataqueCruceta = false;
+        stick.GetComponent<Image>().color = new Color(0.2f, 0.2f, 0.2f, 0.5f);
+        cruceta.GetComponent<Image>().color = Color.white;
+        player.GetComponentInChildren<Canvas>().transform.Find("JoystickDer").gameObject.SetActive(true);
+        player.GetComponentInChildren<Canvas>().transform.Find("TouchArroys").gameObject.SetActive(false);
+    }
+    public bool GetAtaqueCruceta()
+    {
+        return ataqueCruceta;
     }
 }

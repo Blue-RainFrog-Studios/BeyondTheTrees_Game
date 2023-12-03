@@ -40,6 +40,10 @@ public class PlayerMovementInputSystem : MonoBehaviour
         //playerInputActions.Player.Attack2.performed += Attack;
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
+    private void OnDisable()
+    {
+        //playerInputActions.Disable();
+    }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
 
