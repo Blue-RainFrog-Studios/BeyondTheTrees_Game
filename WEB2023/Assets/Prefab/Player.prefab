@@ -3664,7 +3664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9d677f1681015749b15c436eec6d880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MovementRange: 250
+  m_MovementRange: 130
   m_DynamicOriginRange: 400
   m_ControlPath: <Gamepad>/rightStick
   m_Behaviour: 2
@@ -3937,7 +3937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9d677f1681015749b15c436eec6d880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MovementRange: 250
+  m_MovementRange: 150
   m_DynamicOriginRange: 315
   m_ControlPath: <Gamepad>/leftStick
   m_Behaviour: 2

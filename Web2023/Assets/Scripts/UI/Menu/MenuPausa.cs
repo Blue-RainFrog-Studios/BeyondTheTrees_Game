@@ -32,7 +32,7 @@ public class MenuPausa : MonoBehaviour
     {
         DontDestroyOnLoad(this);
         player = GameObject.FindGameObjectWithTag("Player");
-        cruceta.GetComponent<Image>().color = new Color(0.2f, 0.2f, 0.2f, 0.8f);
+        cruceta.GetComponent<Image>().color = new Color(0.8f, 0.8f, 0.8f, 0.5f);
     }
     public void Pausa()
     {
@@ -91,7 +91,7 @@ public class MenuPausa : MonoBehaviour
     public void EsCruceta()
     {
         ataqueCruceta = true;
-        cruceta.GetComponent<Image>().color = new Color(0.2f, 0.2f, 0.2f, 0.8f);
+        cruceta.GetComponent<Image>().color = new Color(0.8f, 0.8f, 0.8f, 0.5f);
         stick.GetComponent<Image>().color = Color.white;
         player.transform.GetChild(10).transform.Find("JoystickDer").gameObject.SetActive(false);
         player.transform.GetChild(10).transform.Find("TouchArroys").gameObject.SetActive(true);
