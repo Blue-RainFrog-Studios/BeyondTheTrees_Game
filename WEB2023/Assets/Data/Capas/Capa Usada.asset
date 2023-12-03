@@ -15,7 +15,9 @@ MonoBehaviour:
   <IsStackable>k__BackingField: 0
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: Capa Usada
-  <Descrption>k__BackingField: 'Velocidad: +3'
+  <Descrption>k__BackingField: "Velocidad: +3\n\nUna capa que ya tiene un poco de
+    trote pero puede servir bien. Se puede vender por un poco de oro y te dar\xE1
+    un poco de velocidad de movimiento."
   <ItemImage>k__BackingField: {fileID: 1942974243, guid: 0d6e7eb0117b0dd42b3ef1b04224dbec, type: 3}
   <Attack>k__BackingField: 0
   <Defense>k__BackingField: 0

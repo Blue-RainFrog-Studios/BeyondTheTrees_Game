@@ -15,7 +15,8 @@ MonoBehaviour:
   <IsStackable>k__BackingField: 0
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: "Pluma Da\xF1ada"
-  <Descrption>k__BackingField: 'Velocidad de ataque: +1'
+  <Descrption>k__BackingField: "Velocidad de ataque: +1\n\nUna pluma casi deshecha.
+    Se podr\xEDa vender por algo de dinero y te har\xE1 atacar un poco m\xE1s r\xE1pido."
   <ItemImage>k__BackingField: {fileID: -404431350, guid: 0d6e7eb0117b0dd42b3ef1b04224dbec, type: 3}
   <Attack>k__BackingField: 0
   <Defense>k__BackingField: 0
@@ -23,4 +24,6 @@ MonoBehaviour:
   <AttackSpeed>k__BackingField: 0.05
   <Value>k__BackingField: 5
   <ShopValue>k__BackingField: 0
-  <isPurchased>k__BackingField: 0
+  <IsPurchased>k__BackingField: 0
+  <Rarity>k__BackingField: 0
+  <dropChance>k__BackingField: 0

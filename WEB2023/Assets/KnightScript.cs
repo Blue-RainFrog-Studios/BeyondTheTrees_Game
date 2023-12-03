@@ -23,7 +23,7 @@ public class KnightScript : MonoBehaviour
     public int health { get; set; }
     public int totalHealth { get; set; }
     public float speed { get; set; }
-
+    [SerializeField]
     public int attack { get; set; }
     public int attackSpeed { get; set; }
     public int defense { get; set; }
@@ -35,6 +35,24 @@ public class KnightScript : MonoBehaviour
     private AudioClip hitClip;
 
     private bool inmune = false;
+
+    [SerializeField]
+    private int maxAttack = 40;
+
+    [SerializeField]
+    private int minAttack = 5;
+
+    [SerializeField]
+    private int maxSpeed = 10;
+
+    [SerializeField]
+    private int minSpeed = 2;
+
+    [SerializeField]
+    private int maxAttackSpeed = 6;
+
+    [SerializeField]
+    private int minAttackSpeed = 1;
 
     public KnightScript() 
     {
@@ -56,10 +74,6 @@ public class KnightScript : MonoBehaviour
     {
         if (inmune) return;
         inmune = true;
-        GetComponent<SpriteRenderer>().color = Color.black;
-        knight.health -= (dmgValue - knight.defense <= 0.0f) ? minDmg : (dmgValue - knight.defense);
-        lifeBar.value = knight.health;
-        hitSource.PlayOneShot(hitClip);
         if (knight.health <= 0)
         {
             SceneManager.LoadScene("GameOver");
@@ -71,6 +85,10 @@ public class KnightScript : MonoBehaviour
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             GetComponentInChildren<Canvas>().enabled = false;
         }
+        GetComponent<SpriteRenderer>().color = Color.black;
+        knight.health -= (dmgValue - knight.defense <= 0.0f) ? minDmg : (dmgValue - knight.defense);
+        lifeBar.value = knight.health;
+        hitSource.PlayOneShot(hitClip);
         StartCoroutine(WaitSeconds(1));
     }
 
@@ -126,10 +144,20 @@ public class KnightScript : MonoBehaviour
 
     public void ModifyStats(int v, ItemSO inventoryItem, int quantity)
     {
-        attack += v * inventoryItem.Attack;
-        defense += v * inventoryItem.Defense;
-        GetComponent<PlayerMovementInputSystem>().speed += v * inventoryItem.Speed;
-        GetComponent<PlayerMovementInputSystem>().shoteRate -= v * inventoryItem.AttackSpeed;
+        attack += ((attack + (v * inventoryItem.Attack)) <= maxAttack) &&
+            ((attack + (v * inventoryItem.Attack)) >= minAttack)? v * inventoryItem.Attack : 0;
+
+        defense += v * inventoryItem.Defense;  //Este no hace falta revisarlo porque ya se revisa cuando se resta daño en "ReceiveAttack()"
+
+        GetComponent<PlayerMovementInputSystem>().speed += 
+            (((GetComponent<PlayerMovementInputSystem>().speed + (v * inventoryItem.Speed)) <= maxSpeed) &&
+            (GetComponent<PlayerMovementInputSystem>().speed + (v * inventoryItem.Speed)) >= minSpeed) ? v * inventoryItem.Speed : 0;
+
+        GetComponent<PlayerMovementInputSystem>().shoteRate -= 
+            (((GetComponent<PlayerMovementInputSystem>().shoteRate - (v * inventoryItem.AttackSpeed)) >= maxAttackSpeed) &&
+            (GetComponent<PlayerMovementInputSystem>().shoteRate - (v * inventoryItem.AttackSpeed)) <= minAttackSpeed)? v * inventoryItem.AttackSpeed : 0;
+        
+        
         GetComponent<CoinCounter>().ExpeditionMoneyChanger(v * (inventoryItem.Value * quantity));
     }
 

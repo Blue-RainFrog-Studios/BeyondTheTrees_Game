@@ -15,7 +15,9 @@ MonoBehaviour:
   <IsStackable>k__BackingField: 0
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: Daga Lunar
-  <Descrption>k__BackingField: 'Ataque: +20'
+  <Descrption>k__BackingField: "Ataque: +20\n\nLas leyendas m\xE1s siniestras hablan
+    de una daga que solo se puede forjar tras un gran sacrificio. Su precio es alt\xEDsimo,
+    tanto como el poder que otorga."
   <ItemImage>k__BackingField: {fileID: 920042217, guid: 0d6e7eb0117b0dd42b3ef1b04224dbec, type: 3}
   <Attack>k__BackingField: 20
   <Defense>k__BackingField: 0
@@ -25,3 +27,4 @@ MonoBehaviour:
   <ShopValue>k__BackingField: 300
   <IsPurchased>k__BackingField: 0
   <Rarity>k__BackingField: 3
+  <dropChance>k__BackingField: 0

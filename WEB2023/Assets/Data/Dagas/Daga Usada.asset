@@ -15,7 +15,8 @@ MonoBehaviour:
   <IsStackable>k__BackingField: 0
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: Daga Usada
-  <Descrption>k__BackingField: 'Ataque: +3'
+  <Descrption>k__BackingField: "Ataque: +3\n\nHa perdido mucho de su filo pero todav\xEDa
+    cumple su funci\xF3n, se puede vender por un poco de oro."
   <ItemImage>k__BackingField: {fileID: 682853992, guid: 0d6e7eb0117b0dd42b3ef1b04224dbec, type: 3}
   <Attack>k__BackingField: 3
   <Defense>k__BackingField: 0
@@ -23,4 +24,6 @@ MonoBehaviour:
   <AttackSpeed>k__BackingField: 0
   <Value>k__BackingField: 5
   <ShopValue>k__BackingField: 0
-  <isPurchased>k__BackingField: 1
+  <IsPurchased>k__BackingField: 0
+  <Rarity>k__BackingField: 0
+  <dropChance>k__BackingField: 0

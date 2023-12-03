@@ -15,9 +15,8 @@ MonoBehaviour:
   <IsStackable>k__BackingField: 0
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: Escudo
-  <Descrption>k__BackingField: 'Defensa: +12
-
-    Velocidad: -7'
+  <Descrption>k__BackingField: "Defensa: +12\nVelocidad: -7\n\nUn gran escudo que
+    perteneci\xF3 a un robusto pero lento caballero en un pasado."
   <ItemImage>k__BackingField: {fileID: -16775570, guid: abc337d96d4cc874d86a35188cba93ad, type: 3}
   <Attack>k__BackingField: 0
   <Defense>k__BackingField: 12

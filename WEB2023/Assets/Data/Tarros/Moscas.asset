@@ -15,13 +15,21 @@ MonoBehaviour:
   <IsStackable>k__BackingField: 1
   <MaxStackSize>k__BackingField: 6
   <Name>k__BackingField: Moscas
-  <Descrption>k__BackingField: 'Vida: +5'
+  <Descrption>k__BackingField: 'Vida: +5
+
+
+    Un tarro con moscas que se puede consumir
+    para ganar un poco de vida. A Kero le gustan.'
   <ItemImage>k__BackingField: {fileID: -1882732206, guid: 0d6e7eb0117b0dd42b3ef1b04224dbec, type: 3}
   <Attack>k__BackingField: 0
   <Defense>k__BackingField: 0
   <Speed>k__BackingField: 0
   <AttackSpeed>k__BackingField: 0
-  <Price>k__BackingField: 10
+  <Value>k__BackingField: 0
+  <ShopValue>k__BackingField: 0
+  <IsPurchased>k__BackingField: 0
+  <Rarity>k__BackingField: 0
+  <dropChance>k__BackingField: 0
   modifiersData:
   - statModifier: {fileID: 11400000, guid: f4da559af5418614580a267b7dac9fa4, type: 2}
     value: 5

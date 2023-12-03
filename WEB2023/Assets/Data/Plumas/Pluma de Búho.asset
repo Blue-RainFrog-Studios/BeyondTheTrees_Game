@@ -15,7 +15,9 @@ MonoBehaviour:
   <IsStackable>k__BackingField: 0
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: "Pluma de B\xFAho"
-  <Descrption>k__BackingField: 'Velocidad de ataque: +2'
+  <Descrption>k__BackingField: "Velocidad de ataque: +2\n\nEsta pluma perteneci\xF3
+    una vez a un b\xFAho vendedor. Se puede vender por un poco de oro y te dar\xE1
+    m\xE1s velocidad de ataque."
   <ItemImage>k__BackingField: {fileID: 1818049017, guid: 0d6e7eb0117b0dd42b3ef1b04224dbec, type: 3}
   <Attack>k__BackingField: 0
   <Defense>k__BackingField: 0

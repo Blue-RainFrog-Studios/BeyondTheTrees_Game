@@ -15,7 +15,9 @@ MonoBehaviour:
   <IsStackable>k__BackingField: 0
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: Pluma de Grifo
-  <Descrption>k__BackingField: 'Velocidad de ataque: +3'
+  <Descrption>k__BackingField: "Velocidad de ataque: +3\n\nUna pluma de un animal
+    noble, su calidad es excelente. Se puede vender por una buena cantidad de oro
+    y te dar\xE1 bastante velocidad de ataque."
   <ItemImage>k__BackingField: {fileID: -536081246, guid: 0d6e7eb0117b0dd42b3ef1b04224dbec, type: 3}
   <Attack>k__BackingField: 0
   <Defense>k__BackingField: 0
