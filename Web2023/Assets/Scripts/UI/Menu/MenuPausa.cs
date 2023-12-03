@@ -32,7 +32,7 @@ public class MenuPausa : MonoBehaviour
     {
         DontDestroyOnLoad(this);
         player = GameObject.FindGameObjectWithTag("Player");
-        cruceta.GetComponent<Image>().color = new Color(0.2f, 0.2f, 0.2f, 0.5f);
+        cruceta.GetComponent<Image>().color = new Color(0.2f, 0.2f, 0.2f, 0.8f);
     }
     public void Pausa()
     {
@@ -91,18 +91,18 @@ public class MenuPausa : MonoBehaviour
     public void EsCruceta()
     {
         ataqueCruceta = true;
-        cruceta.GetComponent<Image>().color = new Color(0.2f, 0.2f, 0.2f, 0.5f);
+        cruceta.GetComponent<Image>().color = new Color(0.2f, 0.2f, 0.2f, 0.8f);
         stick.GetComponent<Image>().color = Color.white;
-        player.GetComponentInChildren<Canvas>().transform.Find("JoystickDer").gameObject.SetActive(false);
-        player.GetComponentInChildren<Canvas>().transform.Find("TouchArroys").gameObject.SetActive(true);
+        player.transform.GetChild(10).transform.Find("JoystickDer").gameObject.SetActive(false);
+        player.transform.GetChild(10).transform.Find("TouchArroys").gameObject.SetActive(true);
     }
     public void EsStick()
     {
         ataqueCruceta = false;
         stick.GetComponent<Image>().color = new Color(0.2f, 0.2f, 0.2f, 0.5f);
         cruceta.GetComponent<Image>().color = Color.white;
-        player.GetComponentInChildren<Canvas>().transform.Find("JoystickDer").gameObject.SetActive(true);
-        player.GetComponentInChildren<Canvas>().transform.Find("TouchArroys").gameObject.SetActive(false);
+        player.transform.GetChild(10).transform.Find("JoystickDer").gameObject.SetActive(true);
+        player.transform.GetChild(10).transform.Find("TouchArroys").gameObject.SetActive(false);
     }
     public bool GetAtaqueCruceta()
     {
