@@ -51,6 +51,7 @@ public class RoomController : MonoBehaviour
     public float leftHealth = 0;
     public bool loHealth = false;
     public bool heal = false;
+    public Vector2 posHealer;
     //ItemSpawner spawn;
 
     private void Awake()
@@ -476,6 +477,7 @@ public class RoomController : MonoBehaviour
                     {
                         door.doorCollider.SetActive(false);
                         room.GetComponent<Collider2D>().enabled = false;
+                        heal = false;
                         //spawn.SpawObject();
                     }
 

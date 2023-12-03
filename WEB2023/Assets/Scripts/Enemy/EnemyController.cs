@@ -26,7 +26,9 @@ public enum EnemyState
 
     Heal,
 
-    Run
+    Run,
+
+    GoHeal
 };
 public enum EnemyType
 {
@@ -54,6 +56,8 @@ public class EnemyController : MonoBehaviour
     public float attackRange;
     public float rangeSquirrel;
     public float eatRange;
+    private bool healed=false;
+    private float iLife;
     GameObject room;
     [SerializeField]public bool consumed;
     Rigidbody2D rb;
@@ -98,6 +102,7 @@ public class EnemyController : MonoBehaviour
     private void Awake()
     {
         Idle();
+        iLife = life;
     }
     void Start()
     {
@@ -148,6 +153,10 @@ public class EnemyController : MonoBehaviour
                 Heal();
 
                 break;
+            case (EnemyState.GoHeal):
+                GoHeal();
+                break;
+
         }
 
         if (!notInRoom)
@@ -260,12 +269,29 @@ public class EnemyController : MonoBehaviour
                     }
                     break;
             }
-            
+            if (healed == false && room.GetComponent<RoomController>().lowHealth() && room.GetComponent<RoomController>().heal)
+            {
+                switch (enemyType)
+                {
+                    case (EnemyType.Melee):
+                        currState = EnemyState.GoHeal;
+                        break;
+
+                    case (EnemyType.Teleport):
+
+                        currState = EnemyState.GoHeal;
+                        break;
+                    case (EnemyType.Squirrel):
+                        currState = EnemyState.GoHeal;
+                        break;
+                }
+            }
         }
         else
         {
             currState = EnemyState.Idle;
         }
+        
         //if the gameobject is a ghost
         if (IAmAGhost != null)
         {
@@ -522,7 +548,13 @@ public class EnemyController : MonoBehaviour
     }
     public void Heal()
     {
+        room.GetComponent<RoomController>().heal=true;
+        room.GetComponent<RoomController>().posHealer = transform.position;
         healCol.enabled = true;
+    }
+    public void GoHeal()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, room.GetComponent<RoomController>().posHealer, speed * Time.deltaTime);
     }
 
     void Idle()
@@ -711,9 +743,10 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy") && healed==false)
         {
-            Debug.Log("Me estoy curando");
+            life = iLife;
+            healed = true;
         }
     }
 
