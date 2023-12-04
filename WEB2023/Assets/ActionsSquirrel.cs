@@ -1,5 +1,4 @@
 using BehaviourAPI.Core;
-using BehaviourAPI.StateMachines;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,9 +21,13 @@ public class ActionsSquirrel : MonoBehaviour
     [SerializeField]
     private AudioSource audioSource;
 
+    public string rol;
+
     private void Awake()
     {
         consumedAcorn = false;
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerTransform = player.transform;
     }
 
     public void StartWalkAcorn()
@@ -41,8 +44,9 @@ public class ActionsSquirrel : MonoBehaviour
         }
         else
         {
-            if(acornTransform == null)
+            if (acornTransform == null)
                 return Status.Running;
+        
 
             squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, acornTransform.position, speed * Time.deltaTime);
             return Status.Running;
@@ -83,7 +87,8 @@ public class ActionsSquirrel : MonoBehaviour
         StartCoroutine(WaitSeconds(1));
         if (ended){
             ended = false;
-            Destroy(acornTransform.gameObject);
+            if(this.rol == "Eater")   //AQUÍ SE MIRA EL ROL
+                Destroy(acornTransform.gameObject);
             return Status.Success;
         }
         else

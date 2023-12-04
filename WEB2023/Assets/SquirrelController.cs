@@ -12,8 +12,9 @@ public class SquirrelController : MonoBehaviour
     private GameObject sq2;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        sq1.GetComponent<ActionsSquirrel>().rol = "Eater";
+        sq2.GetComponent<ActionsSquirrel>().rol = "Protector";
     }
 }
