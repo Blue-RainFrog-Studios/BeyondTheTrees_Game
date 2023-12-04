@@ -25,8 +25,13 @@ public class BTSquirrel : BehaviourRunner
 
     protected override BehaviourGraph CreateGraph()
     {
+        //Perceptions
+        var squirrelPerception = new ConditionPerception(() => !_ActionsSquirrel.consumedAcorn);
 
-        var squirrelPerception = new ConditionPerception(() => _ActionsSquirrel.consumedAcorn);
+        var rolePerception = new ConditionPerception(() => _ActionsSquirrel.rol == "Protector");
+
+        var otherSquirrels = new ConditionPerception(() => true);
+
 
         //bt
         var walkAcorn = bt.CreateLeafNode("Walk Acorn", new FunctionalAction(_ActionsSquirrel.StartWalkAcorn, _ActionsSquirrel.UpdateWalkAcorn));
@@ -36,12 +41,21 @@ public class BTSquirrel : BehaviourRunner
         var walkPlayer = bt.CreateLeafNode("Walk Player", new FunctionalAction(_ActionsSquirrel.StartWalkPlayer, _ActionsSquirrel.UpdateWalkPlayer));
 
 
-        var seq = bt.CreateComposite<SequencerNode>("seq", false, walkAcorn, walkPlayer);  //Nodo secuencia
 
-        var sel = bt.CreateComposite<SelectorNode>("sel", false, walkAcorn, eatAcorn, walkPlayer);
+        //Nodes
+        var otherEnemy = bt.CreateDecorator<ConditionNode>("Other Enemy", walkAcorn).SetPerception(rolePerception);
 
+        var seq2 = bt.CreateComposite<SequencerNode>("seq2", false, otherEnemy);  //Nodo secuencia
 
-        var loop = bt.CreateDecorator<LoopNode>("loop", seq).SetIterations(-1);
+        var sel2 = bt.CreateComposite<SelectorNode>("Selector 2", false, seq2);
+
+        var acornExists = bt.CreateDecorator<ConditionNode>("Acorn Exists", sel2).SetPerception(squirrelPerception);
+
+        var seq1 = bt.CreateComposite<SequencerNode>("seq1", false, acornExists);  //Nodo secuencia
+
+        var sel1 = bt.CreateComposite<SelectorNode>("Selector 1", false, seq1, walkPlayer);
+
+        var loop = bt.CreateDecorator<LoopNode>("loop", sel1).SetIterations(-1);  //Nodo loop
 
         bt.SetRootNode(loop);
 
