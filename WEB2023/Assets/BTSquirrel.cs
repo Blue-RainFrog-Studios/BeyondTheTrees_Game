@@ -28,7 +28,7 @@ public class BTSquirrel : BehaviourRunner
         //Perceptions
         var squirrelPerception = new ConditionPerception(() => !_ActionsSquirrel.consumedAcorn);
 
-        var rolePerception = new ConditionPerception(() => _ActionsSquirrel.rol == "Protector");
+        var rolePerception = new ConditionPerception(() => _ActionsSquirrel.rol == "Eater");
 
         var otherSquirrels = new ConditionPerception(() => true);
 
@@ -43,7 +43,9 @@ public class BTSquirrel : BehaviourRunner
 
 
         //Nodes
-        var otherEnemy = bt.CreateDecorator<ConditionNode>("Other Enemy", walkAcorn).SetPerception(rolePerception);
+        var seq3 = bt.CreateComposite<SequencerNode>("seq3", false, walkAcorn, eatAcorn);  //Nodo secuencia
+
+        var otherEnemy = bt.CreateDecorator<ConditionNode>("Other Enemy", seq3).SetPerception(rolePerception);
 
         var seq2 = bt.CreateComposite<SequencerNode>("seq2", false, otherEnemy);  //Nodo secuencia
 

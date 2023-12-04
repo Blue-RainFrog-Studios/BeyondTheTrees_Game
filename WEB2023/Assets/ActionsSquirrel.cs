@@ -87,7 +87,7 @@ public class ActionsSquirrel : MonoBehaviour
         StartCoroutine(WaitSeconds(1));
         if (ended){
             ended = false;
-            if(this.rol == "Eater")   //AQUÍ SE MIRA EL ROL
+            if(acornTransform.gameObject != null)   //AQUÍ SE MIRA EL ROL
                 Destroy(acornTransform.gameObject);
             return Status.Success;
         }
