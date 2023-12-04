@@ -4,17 +4,19 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NPCBase : MonoBehaviour
+public class NPCTutorial : MonoBehaviour
 {
-    [SerializeField] GameObject shopUI;
     public GameObject dialoguePanel;
     public Text dialogueText;
-    public List<string> dialogueList; 
+
+    // LAs siguientes variables osn los distintos dialogos que puede mostrar el personaje del tutorial
+    public string[] dialogueTutorial;
+
+    public string[] dialogue;
     private int index;
 
     private GameObject player;
     public GameObject continueButton;
-    public GameObject buyButton;
     public float wordSpeed;
     public bool playerIsClose;
 
@@ -22,17 +24,17 @@ public class NPCBase : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
     }
-
     private void Update()
     {
-        if (dialogueText.text == dialogueList[index])
+
+        //SWitch que cambie segun la situacion que se quiera mostrar en el dialogo
+        if (dialogueText.text == dialogue[index])
         {
             player.GetComponent<PlayerMovementInputSystem>().enabled = true;
             //continueButton.SetActive(true);
             //buyButton.SetActive(true);
         }
     }
-
     public void EnseñarDialogo()
     {
         player.GetComponent<PlayerMovementInputSystem>().enabled = false;
@@ -45,6 +47,9 @@ public class NPCBase : MonoBehaviour
             dialoguePanel.SetActive(true);
             StartCoroutine(Typing());
         }
+
+
+
     }
 
     public void zeroText()
@@ -56,7 +61,7 @@ public class NPCBase : MonoBehaviour
 
     IEnumerator Typing()
     {
-        foreach (char letter in dialogueList[index].ToCharArray())
+        foreach (char letter in dialogue[index].ToCharArray())
         {
             dialogueText.text += letter;
             yield return new WaitForSeconds(wordSpeed);
@@ -66,8 +71,7 @@ public class NPCBase : MonoBehaviour
     public void NextLine()
     {
         continueButton.SetActive(false);
-        buyButton.SetActive(false);
-        if (index < dialogueList.Count)
+        if (index < dialogue.Length - 1)
         {
             index++;
             dialogueText.text = "";
@@ -78,13 +82,6 @@ public class NPCBase : MonoBehaviour
             zeroText();
         }
     }
-
-    public void OpenShop()
-    {
-        shopUI.SetActive(true);
-        dialoguePanel.SetActive(false);
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -92,7 +89,6 @@ public class NPCBase : MonoBehaviour
             EnseñarDialogo();
         }
     }
-
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
