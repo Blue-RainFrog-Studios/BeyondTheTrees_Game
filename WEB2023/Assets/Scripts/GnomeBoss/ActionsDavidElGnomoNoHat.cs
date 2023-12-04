@@ -37,6 +37,25 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
         DavidElGnomoTransform = GetComponent<Transform>();
     }
 
+    public void StartMethodNoHat()
+    {
+        GetComponent<ActionsDavidElGnomo>().StopAllCoroutines();
+        this.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        animator.Play("HatFall");
+    }
+    public Status UpdateMethodNoHat()
+    {
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("HatFall"))
+        {
+            return Status.Running;
+        }
+        else
+        {
+            return Status.Success;
+        }
+    }
+
+
     #region MethodsWalkNoHat
     public void StartMethodWalkNoHat()
     {
@@ -93,6 +112,8 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     #endregion
 
     #region MethodsPunchNoHat
+
+
     public void StartMethodPunchNoHat()
     {
         //StartCoroutine(PlayAnimation("PunchDG"));
@@ -116,8 +137,7 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     #region MethodsGnomeModeNoHat
     public void StartMethodGnomeModeNoHat()
     {
-        GetComponent<ActionsDavidElGnomo>().StopAllCoroutines();
-        this.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        StopAllCoroutines();
         
         animator.Play("IdleNoHat");
 
@@ -180,7 +200,7 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
 
     public bool CheckHPLowNoHat()
     {
-        return GetComponent<DavidElGnomoController>().HP < GetComponent<DavidElGnomoController>().HPGnomeMode && !hasBeenPlayed;
+        return GetComponent<DavidElGnomoController>().HP < GetComponent<DavidElGnomoController>().HPGnomeMode-200 && !hasBeenPlayed;
     }
     #endregion
 

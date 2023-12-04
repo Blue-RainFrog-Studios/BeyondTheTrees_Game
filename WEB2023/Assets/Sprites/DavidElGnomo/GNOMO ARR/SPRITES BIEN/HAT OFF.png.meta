@@ -1,0 +1,369 @@
+fileFormatVersion: 2
+guid: d7198e347e8cfad4682b5ffd576979cd
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HAT OFF_0
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 1094
+        width: 339
+        height: 540
+      alignment: 9
+      pivot: {x: 0.5129807, y: 0.39134702}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 751232c1d0edba345892407aec986df9
+      internalID: 1392918369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HAT OFF_1
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 1091
+        width: 340
+        height: 540
+      alignment: 9
+      pivot: {x: 0.51941365, y: 0.39406332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ba06cbee8992414ba3ff554514ac8a6
+      internalID: -284602791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HAT OFF_2
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 1092
+        width: 340
+        height: 553
+      alignment: 9
+      pivot: {x: 0.5129427, y: 0.3859437}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 652498c80d5e5a844931cd2969aae0c1
+      internalID: -1110630740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HAT OFF_3
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 633
+        width: 339
+        height: 387
+      alignment: 9
+      pivot: {x: 0.51408374, y: 0.54582226}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31ebf046f54a9624caee35205942aa64
+      internalID: -2044031551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HAT OFF_4
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 634
+        width: 339
+        height: 387
+      alignment: 9
+      pivot: {x: 0.5149745, y: 0.548721}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dafdc296f4a52247b80772ac158e236
+      internalID: 241684964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HAT OFF_5
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 634
+        width: 339
+        height: 387
+      alignment: 9
+      pivot: {x: 0.52139217, y: 0.5468471}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81107a150afc4b14ab5b2ae29267fcdb
+      internalID: 1394095667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HAT OFF_6
+      rect:
+        serializedVersion: 2
+        x: 1385
+        y: 638
+        width: 300
+        height: 378
+      alignment: 9
+      pivot: {x: 0.54044396, y: 0.53611034}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aae783698272e41429d72b2d0837394f
+      internalID: -1672186928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HAT OFF_7
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 113
+        width: 345
+        height: 481
+      alignment: 9
+      pivot: {x: 0.50261503, y: 0.44092122}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43b13ff0872b0dd44af735465d726647
+      internalID: -519346115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HAT OFF_8
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 137
+        width: 350
+        height: 422
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 193f4ed9360c3be4cb15fa5f27a2a0a8
+      internalID: 58827296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HAT OFF_9
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 140
+        width: 354
+        height: 387
+      alignment: 9
+      pivot: {x: 0.49547306, y: 0.54554754}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18b694815fad4074ca4963e7afb82a75
+      internalID: 2111750750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HAT OFF_10
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 140
+        width: 339
+        height: 387
+      alignment: 9
+      pivot: {x: 0.5173322, y: 0.5510684}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c325f76aeb69abe46ae1c9d703b80a87
+      internalID: 1545643660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      HAT OFF_0: 1392918369
+      HAT OFF_1: -284602791
+      HAT OFF_10: 1545643660
+      HAT OFF_2: -1110630740
+      HAT OFF_3: -2044031551
+      HAT OFF_4: 241684964
+      HAT OFF_5: 1394095667
+      HAT OFF_6: -1672186928
+      HAT OFF_7: -519346115
+      HAT OFF_8: 58827296
+      HAT OFF_9: 2111750750
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

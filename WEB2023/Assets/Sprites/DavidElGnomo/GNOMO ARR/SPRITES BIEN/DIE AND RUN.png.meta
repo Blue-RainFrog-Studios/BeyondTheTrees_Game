@@ -1,0 +1,745 @@
+fileFormatVersion: 2
+guid: 41d4a204d8e168242812f1724f1adbc6
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DIE AND RUN_0
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 1457
+        width: 320
+        height: 402
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14dc8bfdc98b1a84d8a739b28a9f5850
+      internalID: 1474749816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIE AND RUN_1
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 1449
+        width: 327
+        height: 398
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18ff3bb0a5892954da84092be16c0ba3
+      internalID: 1213918096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIE AND RUN_2
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 1448
+        width: 298
+        height: 402
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34031779a80a0bc40b2cc33c63954447
+      internalID: -686635565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIE AND RUN_3
+      rect:
+        serializedVersion: 2
+        x: 1115
+        y: 1442
+        width: 326
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68ec96b9f044d464a83d2bdf25036758
+      internalID: -1615260727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIE AND RUN_4
+      rect:
+        serializedVersion: 2
+        x: 1459
+        y: 1430
+        width: 326
+        height: 393
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 965993152d8686445a11eca13e9c24fa
+      internalID: -1070476667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIE AND RUN_5
+      rect:
+        serializedVersion: 2
+        x: 1808
+        y: 1434
+        width: 297
+        height: 393
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39e4039a64e4c7c41b57cd01bad0e2d4
+      internalID: 1698621943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIE AND RUN_6
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 1027
+        width: 246
+        height: 405
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5f56d62f8c36a847b0a66c68ba4bdfe
+      internalID: 249853901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIE AND RUN_7
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 1019
+        width: 266
+        height: 410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fad6504339f200458a447e17881cef0
+      internalID: 109592020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIE AND RUN_8
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 1020
+        width: 248
+        height: 407
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56705b413375ee5488020ce3a07eb4d5
+      internalID: 967016304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIE AND RUN_9
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 1019
+        width: 256
+        height: 409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40fbc45665df4614a86083dbe6df1541
+      internalID: 951233502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIE AND RUN_10
+      rect:
+        serializedVersion: 2
+        x: 1191
+        y: 1017
+        width: 246
+        height: 407
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1207d8e509490ff4194729db9b68b33f
+      internalID: 165298257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIE AND RUN_11
+      rect:
+        serializedVersion: 2
+        x: 1448
+        y: 1011
+        width: 266
+        height: 408
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61f39ab535b867f44b48b410012819b2
+      internalID: -214648407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIE AND RUN_12
+      rect:
+        serializedVersion: 2
+        x: 1733
+        y: 1009
+        width: 246
+        height: 407
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d6504425b1d741478e82ec8dab9d0b0
+      internalID: -236855329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIE AND RUN_13
+      rect:
+        serializedVersion: 2
+        x: 1997
+        y: 1005
+        width: 255
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd620277bf778604a8ee3c09923b392a
+      internalID: -901346631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIE AND RUN_14
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 544
+        width: 255
+        height: 409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59e8a62784ab33a469f97dd5c18d6592
+      internalID: 763882987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIE AND RUN_15
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 547
+        width: 247
+        height: 407
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 997a63b22fc405a46918bcc457994ca8
+      internalID: 1037582156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIE AND RUN_16
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 548
+        width: 266
+        height: 409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beaedb99fb6ad4149a8e1f58eedac600
+      internalID: -1034780789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIE AND RUN_17
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 555
+        width: 247
+        height: 408
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c756ee23defe32f4b801e7f455e5687d
+      internalID: 127841211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIE AND RUN_18
+      rect:
+        serializedVersion: 2
+        x: 1155
+        y: 557
+        width: 255
+        height: 409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5a0812a536a84a4b989ebbc5bf18b43
+      internalID: 697480789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIE AND RUN_19
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 558
+        width: 247
+        height: 407
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35e50a87f94a1ee4b9a5f9631e0376f8
+      internalID: -1308201706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIE AND RUN_20
+      rect:
+        serializedVersion: 2
+        x: 1720
+        y: 557
+        width: 267
+        height: 410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67039610f0fb7c347a41ea36c7b22f42
+      internalID: -1348807378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIE AND RUN_21
+      rect:
+        serializedVersion: 2
+        x: 2006
+        y: 565
+        width: 246
+        height: 406
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60033c184026eb14f9077422fc86f7c5
+      internalID: 1814746614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIE AND RUN_22
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 110
+        width: 315
+        height: 398
+      alignment: 9
+      pivot: {x: 0.51971924, y: 0.5234105}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd42f5d72cdb9f24cae881695697642c
+      internalID: -121593582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIE AND RUN_23
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 110
+        width: 316
+        height: 396
+      alignment: 9
+      pivot: {x: 0.5131046, y: 0.43725687}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89bf56a48e3b6364db040c6571dd632a
+      internalID: -1946303394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIE AND RUN_24
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 107
+        width: 318
+        height: 399
+      alignment: 9
+      pivot: {x: 0.52604395, y: 0.33727294}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8727db5e5ca666345a1a9288cf18326d
+      internalID: -616917616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIE AND RUN_25
+      rect:
+        serializedVersion: 2
+        x: 1133
+        y: 84
+        width: 253
+        height: 384
+      alignment: 9
+      pivot: {x: 0.49590752, y: 0.29779992}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4299209c4515ae84bb174565eed00e49
+      internalID: -1224127343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIE AND RUN_26
+      rect:
+        serializedVersion: 2
+        x: 1433
+        y: 100
+        width: 230
+        height: 234
+      alignment: 9
+      pivot: {x: 0.48199463, y: 0.34957716}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 718b7738d5154b344a9e7165de6d26f5
+      internalID: 754943743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIE AND RUN_28
+      rect:
+        serializedVersion: 2
+        x: 1722
+        y: 168
+        width: 113
+        height: 109
+      alignment: 9
+      pivot: {x: 0.5091607, y: 0.3005455}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77313a7daeb6ab0429a5921d3e791c32
+      internalID: -1698689904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      DIE AND RUN_0: 1474749816
+      DIE AND RUN_1: 1213918096
+      DIE AND RUN_10: 165298257
+      DIE AND RUN_11: -214648407
+      DIE AND RUN_12: -236855329
+      DIE AND RUN_13: -901346631
+      DIE AND RUN_14: 763882987
+      DIE AND RUN_15: 1037582156
+      DIE AND RUN_16: -1034780789
+      DIE AND RUN_17: 127841211
+      DIE AND RUN_18: 697480789
+      DIE AND RUN_19: -1308201706
+      DIE AND RUN_2: -686635565
+      DIE AND RUN_20: -1348807378
+      DIE AND RUN_21: 1814746614
+      DIE AND RUN_22: -121593582
+      DIE AND RUN_23: -1946303394
+      DIE AND RUN_24: -616917616
+      DIE AND RUN_25: -1224127343
+      DIE AND RUN_26: 754943743
+      DIE AND RUN_27: 410511958
+      DIE AND RUN_28: -1698689904
+      DIE AND RUN_29: -495412220
+      DIE AND RUN_3: -1615260727
+      DIE AND RUN_4: -1070476667
+      DIE AND RUN_5: 1698621943
+      DIE AND RUN_6: 249853901
+      DIE AND RUN_7: 109592020
+      DIE AND RUN_8: 967016304
+      DIE AND RUN_9: 951233502
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

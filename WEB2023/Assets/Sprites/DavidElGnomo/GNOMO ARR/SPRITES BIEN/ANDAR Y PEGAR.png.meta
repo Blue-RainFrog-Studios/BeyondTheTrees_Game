@@ -1,0 +1,590 @@
+fileFormatVersion: 2
+guid: 71d77ae6ebfa38e46bb653f003f262db
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ANDAR Y PEGAR_0
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 1463
+        width: 287
+        height: 507
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8158ae86f8b3c846815e716c6844c98
+      internalID: -2104050521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ANDAR Y PEGAR_1
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 1458
+        width: 263
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3d15070c68c36f459327d352e0ebda1
+      internalID: -410027373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ANDAR Y PEGAR_2
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 1463
+        width: 288
+        height: 507
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aea1350f11f1bb4abcb324b9e9c05a4
+      internalID: -1840431754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ANDAR Y PEGAR_3
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 1463
+        width: 296
+        height: 507
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c43fcb0db4242ef408c7f29e2f10d957
+      internalID: -199150371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ANDAR Y PEGAR_4
+      rect:
+        serializedVersion: 2
+        x: 1421
+        y: 1466
+        width: 289
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beb461d84a9459449a9389a3f5a44d29
+      internalID: 255851889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ANDAR Y PEGAR_5
+      rect:
+        serializedVersion: 2
+        x: 1778
+        y: 1461
+        width: 265
+        height: 509
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cb7aecd88a22cf41b73ad4033979f33
+      internalID: 1949095530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ANDAR Y PEGAR_6
+      rect:
+        serializedVersion: 2
+        x: 2107
+        y: 1466
+        width: 289
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dce7ba8c57f76d142823d2e2af79b25e
+      internalID: 103815788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ANDAR Y PEGAR_7
+      rect:
+        serializedVersion: 2
+        x: 2461
+        y: 1466
+        width: 296
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7396a63c65b9bc94cb14e92da0a14bd2
+      internalID: 926034187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ANDAR Y PEGAR_8
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 1019
+        width: 358
+        height: 409
+      alignment: 9
+      pivot: {x: 0.5226388, y: 0.5491979}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bbd92a8b2d18174b86925885831cb13
+      internalID: 747162496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ANDAR Y PEGAR_9
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 1015
+        width: 340
+        height: 408
+      alignment: 9
+      pivot: {x: 0.5146461, y: 0.5512187}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f901ee7c8fc7064495d4b699ac2af53
+      internalID: -1604217851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ANDAR Y PEGAR_10
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 1019
+        width: 434
+        height: 408
+      alignment: 9
+      pivot: {x: 0.50737005, y: 0.54605883}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e46d041d2695ff3418f0e84bd32836d4
+      internalID: 2018115836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ANDAR Y PEGAR_11
+      rect:
+        serializedVersion: 2
+        x: 1539
+        y: 1009
+        width: 364
+        height: 408
+      alignment: 9
+      pivot: {x: 0.51444423, y: 0.5468002}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfb44f03f759065439e299e403967b88
+      internalID: 735159303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ANDAR Y PEGAR_12
+      rect:
+        serializedVersion: 2
+        x: 1968
+        y: 1028
+        width: 445
+        height: 408
+      alignment: 9
+      pivot: {x: 0.51305795, y: 0.5468002}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c15f29f303ec664685515eb5de6776d
+      internalID: 1473700749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ANDAR Y PEGAR_13
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 578
+        width: 363
+        height: 383
+      alignment: 9
+      pivot: {x: 0.52253056, y: 0.55092084}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f42b88fff66beae4482fd6daf03072e2
+      internalID: -859932649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ANDAR Y PEGAR_14
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 603
+        width: 329
+        height: 367
+      alignment: 9
+      pivot: {x: 0.5248588, y: 0.5325702}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 134e456aea51072469adacf3d96e2163
+      internalID: 712478128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ANDAR Y PEGAR_17
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 471
+        width: 700
+        height: 530
+      alignment: 9
+      pivot: {x: 0.54224086, y: 0.6768657}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14de83a53ac49ee4897aa27960e537ed
+      internalID: -1470817360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ANDAR Y PEGAR_22
+      rect:
+        serializedVersion: 2
+        x: 1810
+        y: 523
+        width: 542
+        height: 454
+      alignment: 9
+      pivot: {x: 0.5284757, y: 0.6220527}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7fdd18aa1f3f744086f0951f376a899
+      internalID: -1111311790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ANDAR Y PEGAR_31
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 0
+        width: 518
+        height: 452
+      alignment: 9
+      pivot: {x: 0.5021975, y: 0.6217201}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b05df0d5b23a0234d96735e1e27e2bfd
+      internalID: 1296063515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ANDAR Y PEGAR_34
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 40
+        width: 433
+        height: 423
+      alignment: 9
+      pivot: {x: 0.524536, y: 0.5959789}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0660a50d17763f6438d31bf5fa5f4761
+      internalID: -1544746903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ANDAR Y PEGAR_36
+      rect:
+        serializedVersion: 2
+        x: 1276
+        y: 54
+        width: 329
+        height: 415
+      alignment: 9
+      pivot: {x: 0.5242189, y: 0.5877719}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2501473e288a7b4ca5ac10bdca430de
+      internalID: -624913597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ANDAR Y PEGAR_0: -2104050521
+      ANDAR Y PEGAR_1: -410027373
+      ANDAR Y PEGAR_10: 2018115836
+      ANDAR Y PEGAR_11: 735159303
+      ANDAR Y PEGAR_12: 1473700749
+      ANDAR Y PEGAR_13: -859932649
+      ANDAR Y PEGAR_14: 712478128
+      ANDAR Y PEGAR_15: 379527380
+      ANDAR Y PEGAR_16: -89729301
+      ANDAR Y PEGAR_17: -1470817360
+      ANDAR Y PEGAR_18: 1920229902
+      ANDAR Y PEGAR_19: -227042063
+      ANDAR Y PEGAR_2: -1840431754
+      ANDAR Y PEGAR_20: 2095832231
+      ANDAR Y PEGAR_21: 97464433
+      ANDAR Y PEGAR_22: -1111311790
+      ANDAR Y PEGAR_23: -685033040
+      ANDAR Y PEGAR_24: -2081801960
+      ANDAR Y PEGAR_25: -1561097836
+      ANDAR Y PEGAR_26: 1554114626
+      ANDAR Y PEGAR_27: -1191499946
+      ANDAR Y PEGAR_28: -1595166238
+      ANDAR Y PEGAR_29: -322903268
+      ANDAR Y PEGAR_3: -199150371
+      ANDAR Y PEGAR_30: 711077834
+      ANDAR Y PEGAR_31: 1296063515
+      ANDAR Y PEGAR_32: -671135556
+      ANDAR Y PEGAR_33: 2042661882
+      ANDAR Y PEGAR_34: -1544746903
+      ANDAR Y PEGAR_35: -1699373253
+      ANDAR Y PEGAR_36: -624913597
+      ANDAR Y PEGAR_37: -1259750215
+      ANDAR Y PEGAR_38: 697180470
+      ANDAR Y PEGAR_39: 1410669587
+      ANDAR Y PEGAR_4: 255851889
+      ANDAR Y PEGAR_40: 272373314
+      ANDAR Y PEGAR_41: -1120632028
+      ANDAR Y PEGAR_42: 1222393728
+      ANDAR Y PEGAR_5: 1949095530
+      ANDAR Y PEGAR_6: 103815788
+      ANDAR Y PEGAR_7: 926034187
+      ANDAR Y PEGAR_8: 747162496
+      ANDAR Y PEGAR_9: -1604217851
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

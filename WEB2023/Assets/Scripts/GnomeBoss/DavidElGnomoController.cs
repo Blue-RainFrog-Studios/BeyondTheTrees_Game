@@ -17,6 +17,8 @@ public class DavidElGnomoController : MonoBehaviour
     GameObject player;
     private bool Played;
     private bool PlayedSF;
+    private bool PlayedSF2;
+
 
     #region BossController
 
@@ -38,6 +40,10 @@ public class DavidElGnomoController : MonoBehaviour
         {
             GetComponent<FMSDavidElGnomo>().ChangeToNoHat();
             PlayedSF = true;
+        }
+        if (HP< HPSecondPhase - 200 && !PlayedSF2) {
+            GetComponent<FMSDavidElGnomo>().ChangeToGnomeModeNoHat();
+            PlayedSF2 = true;
         }
     }
     //ESTO EN UN FUTURO DEBE ESTAR EN UN ENEMYCONTROLLER

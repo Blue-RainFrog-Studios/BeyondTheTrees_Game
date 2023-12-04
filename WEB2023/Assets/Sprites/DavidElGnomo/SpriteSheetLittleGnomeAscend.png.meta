@@ -160,7 +160,7 @@ TextureImporter:
         width: 221
         height: 359
       alignment: 9
-      pivot: {x: 0.5051782, y: 0.037787486}
+      pivot: {x: 0.51921135, y: 0.39073503}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,7 +181,7 @@ TextureImporter:
         width: 227
         height: 355
       alignment: 9
-      pivot: {x: 0.5100826, y: 0.06481536}
+      pivot: {x: 0.52376, y: 0.3840331}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -202,7 +202,7 @@ TextureImporter:
         width: 257
         height: 334
       alignment: 9
-      pivot: {x: 0.50445294, y: 0.078568615}
+      pivot: {x: 0.51250696, y: 0.34814024}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -223,7 +223,7 @@ TextureImporter:
         width: 205
         height: 302
       alignment: 9
-      pivot: {x: 0.5000006, y: 0.0718071}
+      pivot: {x: 0.53281516, y: 0.2774178}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -239,12 +239,12 @@ TextureImporter:
       name: SpriteSheetLittleGnomeAscend_6
       rect:
         serializedVersion: 2
-        x: 995
+        x: 996
         y: 84
         width: 195
         height: 253
       alignment: 9
-      pivot: {x: 0.52347505, y: 0.07029425}
+      pivot: {x: 0.5102076, y: 0.13778816}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -265,7 +265,7 @@ TextureImporter:
         width: 197
         height: 222
       alignment: 9
-      pivot: {x: 0.5058092, y: 0.056683857}
+      pivot: {x: 0.50055647, y: 0.05668372}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

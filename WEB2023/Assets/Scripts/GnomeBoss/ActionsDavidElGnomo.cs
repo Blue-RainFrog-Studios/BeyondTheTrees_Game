@@ -187,7 +187,7 @@ public class ActionsDavidElGnomo : MonoBehaviour
 
     public bool CheckHPVeryLow()
     {
-        return GetComponent<DavidElGnomoController>().HP < GetComponent<DavidElGnomoController>().HPSecondPhase;
+        return GetComponent<DavidElGnomoController>().HP < GetComponent<DavidElGnomoController>().HPSecondPhase ;
     }
     #endregion
 
