@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1330603882934896760}
   - component: {fileID: -3211634261659054906}
   - component: {fileID: 5298211785329011669}
+  - component: {fileID: -7839364179883838192}
   m_Layer: 0
   m_Name: RangedEnemy
   m_TagString: Enemy
@@ -102,6 +103,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 450c7171584c7d740adfedb980fda1d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  life: 60
+  notInRoom: 0
   healCol: {fileID: 5298211785329011669}
   ghost: {fileID: 0}
   EnemyBullet: {fileID: 7118902396155586748, guid: cb6b95ca48fe6f24e88beb9c65cda3e2, type: 3}
@@ -118,12 +121,10 @@ MonoBehaviour:
   coolDown: 1
   coolDownTp: 0
   speed: 1
-  life: 60
   bulletSpeed: 10
   animator: {fileID: 1330603882934896760}
   IAmAGhost: {fileID: 0}
   damage: 20
-  notInRoom: 0
   blinkDuration: 0
   blinkNumber: 0
 --- !u!50 &-8955868755180615599
@@ -264,3 +265,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 13.561204
+--- !u!114 &-7839364179883838192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3789336805313456490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6955bb70d59f2874ab7d9f2e695cac26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 60
+  notInRoom: 0

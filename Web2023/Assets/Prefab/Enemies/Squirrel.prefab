@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 4225666012270259615}
   - component: {fileID: 6951873516816919427}
   - component: {fileID: -8572632945045838320}
+  - component: {fileID: -44337383600171385}
   m_Layer: 0
   m_Name: Squirrel
   m_TagString: Enemy
@@ -312,6 +313,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 450c7171584c7d740adfedb980fda1d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  life: 10
+  notInRoom: 0
+  healCol: {fileID: 0}
   ghost: {fileID: 5304357250516780494}
   EnemyBullet: {fileID: 0}
   currState: 0
@@ -327,11 +331,10 @@ MonoBehaviour:
   coolDown: 1
   coolDownTp: 0
   speed: 2
-  life: 10
   bulletSpeed: 0
   animator: {fileID: -8572632945045838320}
+  IAmAGhost: {fileID: 0}
   damage: 10
-  notInRoom: 0
   blinkDuration: 0
   blinkNumber: 0
 --- !u!114 &6951873516816919427
@@ -375,3 +378,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-44337383600171385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5304357250516780494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6955bb70d59f2874ab7d9f2e695cac26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 10
+  notInRoom: 0

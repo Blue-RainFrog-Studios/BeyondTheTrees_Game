@@ -336,14 +336,16 @@ public class RoomController : MonoBehaviour
         {
             if(currRom==room)
             {
-                EnemyController[] enemies = room.GetComponentsInChildren<EnemyController>();
-                foreach (EnemyController enemy in enemies)
+                Enemy[] enemies = room.GetComponentsInChildren<Enemy>();
+                foreach (Enemy enemy in enemies)
                 {
                     maxHealth += enemy.life;
+                    
                     //Debug.Log("Not in Room");
                 }
             }
         }
+        Debug.Log("La vida en la sala es" + maxHealth);
     }
     public float lHealth()
     {
@@ -352,15 +354,15 @@ public class RoomController : MonoBehaviour
         {
             if (currRom == room)
             {
-                EnemyController[] enemies = room.GetComponentsInChildren<EnemyController>();
-                foreach (EnemyController enemy in enemies)
+                Enemy[] enemies = room.GetComponentsInChildren<Enemy>();
+                foreach (Enemy enemy in enemies)
                 {
                     leftHealth += enemy.life;
                     //Debug.Log("Not in Room");
                 }
             }
         }
-        Debug.Log(leftHealth);
+        Debug.Log("Queda tanta vida:"+leftHealth);
         return leftHealth;
     }
     public bool lowHealth()
@@ -390,10 +392,10 @@ public class RoomController : MonoBehaviour
         {
             if (currRom != room && lastRoom!=room && lastlastRoom!=room)
             {
-                EnemyController[] enemies = room.GetComponentsInChildren<EnemyController>();
+                Enemy[] enemies = room.GetComponentsInChildren<Enemy>();
                 if(enemies != null)
                 {
-                    foreach(EnemyController enemy in enemies)
+                    foreach(Enemy enemy in enemies)
                     {
                         enemy.notInRoom = true;
                         //Debug.Log("Not in Room");
@@ -434,11 +436,11 @@ public class RoomController : MonoBehaviour
 
             else
             {
-                EnemyController[] enemies = room.GetComponentsInChildren<EnemyController>();
+                Enemy[] enemies = room.GetComponentsInChildren<Enemy>();
                 //if (enemies != null)
                 if (enemies.Length > 0)
                 {
-                    foreach (EnemyController enemy in enemies)
+                    foreach (Enemy enemy in enemies)
                     {
                         enemy.notInRoom = false;
                         Debug.Log("In Room");

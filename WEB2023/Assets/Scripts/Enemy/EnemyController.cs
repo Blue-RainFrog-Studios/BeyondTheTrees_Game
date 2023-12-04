@@ -40,24 +40,23 @@ public enum EnemyType
 
     Squirrel
 };
-public class EnemyController : MonoBehaviour
+public class EnemyController : Enemy
 {
 
     Material enemyMaterial;
     public Collider2D healCol;
     public GameObject ghost;
     GameObject acorn;
-    GameObject player;
+    protected GameObject player;
     public GameObject EnemyBullet;
     public EnemyState currState = EnemyState.Idle;
     public EnemyType enemyType;
-    public float range;
+    
     public float rangeTeleport;
-    public float attackRange;
+    
     public float rangeSquirrel;
     public float eatRange;
-    private bool healed=false;
-    private float iLife;
+    
     GameObject room;
     [SerializeField]public bool consumed;
     Rigidbody2D rb;
@@ -71,7 +70,7 @@ public class EnemyController : MonoBehaviour
     public float coolDown;
     public float coolDownTp;
     public float speed;
-    public float life;
+   
 
     private bool animationEx = false;
     private bool coolDownAttack = false;
@@ -94,7 +93,7 @@ public class EnemyController : MonoBehaviour
     public int damage = 20;
     // Start is called before the first frame update
 
-    public bool notInRoom = false;
+    
 
     public float blinkDuration;
     public int blinkNumber;
@@ -166,9 +165,7 @@ public class EnemyController : MonoBehaviour
             {
                 switch (enemyType)
                 {
-                    case (EnemyType.Melee):
-                        currState = EnemyState.Follow;
-                        break;
+                    
                     case (EnemyType.Ranged):
                         
                         currState = EnemyState.Run;
@@ -189,9 +186,7 @@ public class EnemyController : MonoBehaviour
             {
                 switch (enemyType)
                 {
-                    case (EnemyType.Melee):
-                        currState = EnemyState.Wander;
-                        break;
+                    
                     case (EnemyType.Ranged):
                         currState = EnemyState.Idle;
 
@@ -220,13 +215,7 @@ public class EnemyController : MonoBehaviour
                 currState = EnemyState.EatAcorn;
             }
             switch (enemyType)
-            {
-                case (EnemyType.Melee):
-                    if (Vector3.Distance(transform.position, player.transform.position) < attackRange)
-                    {
-                        currState = EnemyState.Attack;
-                    }
-                    break;
+            {              
                 case (EnemyType.Ranged):
                     if (Vector3.Distance(transform.position, player.transform.position) < attackRange && Vector3.Distance(transform.position, player.transform.position)>range && !room.GetComponent<RoomController>().lowHealth())
                     {
@@ -438,7 +427,7 @@ public class EnemyController : MonoBehaviour
 
     }
 
-    private bool isPlayerInRange(float range)
+    public bool isPlayerInRange(float range)
     {
         return Vector3.Distance(transform.position, player.transform.position) <= range;
     }
@@ -536,7 +525,7 @@ public class EnemyController : MonoBehaviour
         }
 
     }
-    void Follow()
+    public void Follow()
     {
         transform.position = Vector2.MoveTowards(transform.position,player.transform.position,speed * Time.deltaTime);
     }
@@ -692,18 +681,6 @@ public class EnemyController : MonoBehaviour
     }
     public void RecieveDamage(float damage)
     {
-        //get the rigid body component
-        //rb = GetComponent<Rigidbody2D>();
-        //direction = player.transform.position - transform.position;
-        //Vector2 OpositeDirection = direction * -1;
-        //do this for 1 second and then reset the velocity
-        //rb.AddForce(-direction * 10, ForceMode2D.Impulse);
-        //player.GetComponent<Rigidbody2D>().AddForce(direction * 10, ForceMode2D.Impulse);
-
-        //call the event PlayFeedback of the script feedback
-        //GetComponent<Knockback>().PlayFeedback(player, GetComponent<Rigidbody2D>());
-
-
         life -= damage;
         this.GetComponent<Knockback>().PlayFeedback(player , this.gameObject.GetComponent<Rigidbody2D>());
         //Debug.Log("Recibo da�o");
