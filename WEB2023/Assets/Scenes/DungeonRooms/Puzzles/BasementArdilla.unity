@@ -434,6 +434,10 @@ PrefabInstance:
       propertyPath: acornTransform
       value: 
       objectReference: {fileID: 2000206401}
+    - target: {fileID: 1856821096735309085, guid: f35aa5fe2f581a7468bb5eeb2777b25b, type: 3}
+      propertyPath: squirrelController
+      value: 
+      objectReference: {fileID: 478278281}
     - target: {fileID: 4625157923182912523, guid: f35aa5fe2f581a7468bb5eeb2777b25b, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -752,7 +756,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &478278282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -767,7 +771,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sq1: {fileID: 1270350017}
   sq2: {fileID: 2144208648}
+  acorn: {fileID: 119520866}
   numProtectors: 1
+  ended: 0
 --- !u!4 &478278283
 Transform:
   m_ObjectHideFlags: 0
@@ -2829,6 +2835,10 @@ PrefabInstance:
       propertyPath: acornTransform
       value: 
       objectReference: {fileID: 2000206401}
+    - target: {fileID: 1856821096735309085, guid: f35aa5fe2f581a7468bb5eeb2777b25b, type: 3}
+      propertyPath: squirrelController
+      value: 
+      objectReference: {fileID: 478278281}
     - target: {fileID: 4625157923182912523, guid: f35aa5fe2f581a7468bb5eeb2777b25b, type: 3}
       propertyPath: m_RootOrder
       value: -1

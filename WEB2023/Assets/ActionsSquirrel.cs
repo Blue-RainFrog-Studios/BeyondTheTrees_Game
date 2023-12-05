@@ -11,13 +11,15 @@ public class ActionsSquirrel : MonoBehaviour
     [SerializeField] private Transform acornTransform;
     [SerializeField] private Transform squirrelTransform;
     [SerializeField] private float speed;
-    private bool ended = false;
     public bool consumedAcorn;
     int numReady;
     [SerializeField] private int damage;
 
     [SerializeField]
     private AudioClip eatClip;
+
+    [SerializeField]
+    private GameObject squirrelController;
 
     [SerializeField]
     private AudioSource audioSource;
@@ -35,6 +37,7 @@ public class ActionsSquirrel : MonoBehaviour
         squirrels[0].rol = "Eater";
         squirrels[1].rol = "Protector";
         numReady = 0;
+        //ended2 = squirrelController.GetComponent<SquirrelController>().ended;
     }
 
     public void StartWalkAcorn()
@@ -93,10 +96,11 @@ public class ActionsSquirrel : MonoBehaviour
     public Status UpdateEatAcorn()
     {
         StartCoroutine(WaitSeconds(1));
-        if (ended){
-            ended = false;
-            if(acornTransform.gameObject != null)   //AQUÍ SE MIRA EL ROL
-                Destroy(acornTransform.gameObject);
+        if (squirrelController.GetComponent<SquirrelController>().ended)
+        {
+            squirrelController.GetComponent<SquirrelController>().ended = false;
+            if (this.rol == "Eater")   //AQUÍ SE MIRA EL ROL
+                squirrelController.GetComponent<SquirrelController>().DestroyAcorn();
             return Status.Success;
         }
         else
@@ -104,13 +108,13 @@ public class ActionsSquirrel : MonoBehaviour
     }
     public bool CheckEnded()
     {
-        return ended;
+        return squirrelController.GetComponent<SquirrelController>().ended;
     }
 
     IEnumerator WaitSeconds(float Time)
     {
         yield return new WaitForSeconds(Time);
-        ended = true;
+        squirrelController.GetComponent<SquirrelController>().ended = true;
     }
 
     public void StartForming()
@@ -151,15 +155,20 @@ public class ActionsSquirrel : MonoBehaviour
 
     public Status UpdateProtecting()
     {
-        if (CheckSquirrelEaterInRange())
-            return Status.Running;
-
         if (!CheckAcornExists())
             return Status.Success;
+
+        if (CheckSquirrelEaterInRange())
+            return Status.Running;
 
         squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, squirrels[0].transform.position, speed * Time.deltaTime);
         return Status.Running;
 
+    }
+
+    public bool CheckAcornEated()
+    {
+        return acornTransform == null;
     }
 
 }
