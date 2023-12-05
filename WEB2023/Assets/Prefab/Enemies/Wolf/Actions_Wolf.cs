@@ -127,7 +127,7 @@ public class Actions_Wolf : MonoBehaviour
         //move right for 2 seconds
         //coroutine that moves the object to the right for 2 seconds
 
-        WolfTransform.position = Vector2.MoveTowards(WolfTransform.position, targetPosition, GetComponent<WolfController>().speedJump * Time.deltaTime);
+        WolfTransform.position = Vector2.MoveTowards(WolfTransform.position, targetPosition, GetComponent<WolfController>().speedJump * Time.deltaTime); //el salto
         if (collisionDetected || WolfTransform.position.x == targetPosition.x && WolfTransform.position.y == targetPosition.y)
         {
             GetComponent<Knockback>().strength = 10f;
@@ -230,6 +230,8 @@ public class Actions_Wolf : MonoBehaviour
             GetComponent<FSMWolf>().Crash();
             Debug.Log(collisionDetected);
         }
+
+        
     }
     #endregion
 
