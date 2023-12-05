@@ -11,8 +11,8 @@ public class SquirrelController : MonoBehaviour
     [SerializeField]
     private GameObject sq2;
 
-    [SerializeField]
-    private GameObject acorn;
+    //[SerializeField]
+    //private GameObject acorn;
 
     public int numProtectors = 1;
 
@@ -25,7 +25,7 @@ public class SquirrelController : MonoBehaviour
     {
         c = true;
     }
-    public void DestroyAcorn()
+    public void DestroyAcorn(GameObject acorn)
     {
         if (c)
         {

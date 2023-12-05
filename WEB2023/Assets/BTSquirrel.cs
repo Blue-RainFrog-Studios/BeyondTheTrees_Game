@@ -26,9 +26,9 @@ public class BTSquirrel : BehaviourRunner
     protected override BehaviourGraph CreateGraph()
     {
         //Perceptions
-        var squirrelPerception = new ConditionPerception(() => !_ActionsSquirrel.CheckEnded());
+        var squirrelPerception = new ConditionPerception(() => !_ActionsSquirrel.CheckAcornEated());
 
-        var rolePerception = new ConditionPerception(() => (_ActionsSquirrel.rol == "Protector") && (!_ActionsSquirrel.CheckEnded()));
+        var rolePerception = new ConditionPerception(() => (_ActionsSquirrel.rol == "Protector") && (!_ActionsSquirrel.CheckAcornEated()));
 
         var otherSquirrels = new ConditionPerception(() => true);
         
