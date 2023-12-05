@@ -20,10 +20,6 @@ public enum EnemyState
 
     Teleport,
 
-    WalkAcorn,
-
-    EatAcorn,
-
     Heal,
 
     Run,
@@ -36,9 +32,8 @@ public enum EnemyType
 
     Ranged,
     
-    Teleport,
+    Teleport
 
-    Squirrel
 };
 public class EnemyController : Enemy
 {
@@ -163,9 +158,6 @@ public class EnemyController : Enemy
                     break;
                 case (EnemyType.Teleport):
 
-                    currState = EnemyState.Follow;
-                    break;
-                case (EnemyType.Squirrel):
                     currState = EnemyState.Follow;
                     break;
             }

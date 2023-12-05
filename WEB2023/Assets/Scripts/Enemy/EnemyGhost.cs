@@ -90,12 +90,17 @@ public class EnemyGhost : EnemyController
 
 
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy") && healed == false)
         {
-            life = iLife;
-            healed = true;
+            life += 5;
+            if(life>=iLife)
+            {
+                Debug.Log("Vida inicial " + iLife);
+                healed = true;
+            }
+            
         }
     }
 

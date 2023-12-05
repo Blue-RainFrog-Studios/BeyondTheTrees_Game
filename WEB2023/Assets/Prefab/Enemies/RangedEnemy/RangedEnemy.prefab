@@ -278,7 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6955bb70d59f2874ab7d9f2e695cac26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 60
+  life: 0
   notInRoom: 0
   range: 0
   attackRange: 0
