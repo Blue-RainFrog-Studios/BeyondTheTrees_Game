@@ -11,6 +11,8 @@ public class SquirrelController : MonoBehaviour
     [SerializeField]
     private GameObject sq2;
 
+    public int numProtectors = 1;
+
     // Start is called before the first frame update
     void Awake()
     {

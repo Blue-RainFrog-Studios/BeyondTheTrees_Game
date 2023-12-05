@@ -13,6 +13,7 @@ public class ActionsSquirrel : MonoBehaviour
     [SerializeField] private float speed;
     private bool ended = false;
     public bool consumedAcorn;
+    int numReady;
     [SerializeField] private int damage;
 
     [SerializeField]
@@ -23,15 +24,22 @@ public class ActionsSquirrel : MonoBehaviour
 
     public string rol;
 
+    private ActionsSquirrel[] squirrels;
+
     private void Awake()
     {
         consumedAcorn = false;
         player = GameObject.FindGameObjectWithTag("Player");
         playerTransform = player.transform;
+        squirrels = FindObjectsOfType<ActionsSquirrel>();
+        squirrels[0].rol = "Eater";
+        squirrels[1].rol = "Protector";
+        numReady = 0;
     }
 
     public void StartWalkAcorn()
     {
+
 
     }
 
@@ -104,6 +112,56 @@ public class ActionsSquirrel : MonoBehaviour
         yield return new WaitForSeconds(Time);
         ended = true;
     }
+
+    public void StartForming()
+    {
+
+    }
+
+    public Status UpdateForming()
+    {
+        if (CheckSquirrelEaterInRange())
+        {
+            numReady++;
+            return Status.Success;
+        }
+        else
+        {
+            squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, squirrels[0].transform.position, speed * Time.deltaTime);
+            return Status.Running;
+        }
+    }
+
+    public bool CheckSquirrelEaterInRange()
+    {
+        if (rol == "Protector")
+            return Vector2.Distance(this.transform.position, squirrels[0].transform.position) < 3.0f;
+        return true;
+    }
+
+    public bool CheckFormationDone()
+    {
+        return (squirrels.Length - 1) == numReady;
+    }
+
+    public void StartProtecting()
+    {
+
+    }
+
+    public Status UpdateProtecting()
+    {
+        if (CheckSquirrelEaterInRange())
+            return Status.Running;
+
+        if (!CheckAcornExists())
+            return Status.Success;
+
+        squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, squirrels[0].transform.position, speed * Time.deltaTime);
+        return Status.Running;
+
+    }
+
 }
 
 
