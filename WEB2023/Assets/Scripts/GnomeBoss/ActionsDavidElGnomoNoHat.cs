@@ -41,7 +41,7 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     public void StartMethodNoHat()
     {
         screenShake = GetComponent<ScreenShake>();
-        GetComponent<ActionsDavidElGnomo>().StopAllCoroutines();
+        GetComponent<ActionsDavidElGnomo>().StopAllCoroutines();    
         this.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         animator.Play("HatFall");
 
