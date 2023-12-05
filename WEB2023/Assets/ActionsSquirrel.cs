@@ -38,7 +38,10 @@ public class ActionsSquirrel : MonoBehaviour
         playerTransform = player.transform;
         squirrels = FindObjectsOfType<ActionsSquirrel>();
         squirrels[0].rol = "Eater";
-        squirrels[1].rol = "Protector";
+        for(int i = 1;i < squirrels.Length; i++)
+        {
+            squirrels[i].rol = "Protector";
+        }
         numReady = 0;
         acorns = new List<GameObject>(GameObject.FindGameObjectsWithTag("Acorn"));
         //ended2 = squirrelController.GetComponent<SquirrelController>().ended;
