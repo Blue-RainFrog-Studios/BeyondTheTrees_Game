@@ -120,240 +120,18 @@ public class EnemyController : Enemy
     {
         switch (currState)
         {
-            case (EnemyState.Idle):
-                Idle();
-                break;
-            case (EnemyState.Wander):
-                Wander();
-                break;
-            case (EnemyState.Follow):
-                Follow();
-                break;
-            case (EnemyState.Attack):
-                Attack();
-                break;
             case (EnemyState.Die):
                 Die();
                 break;
-            case (EnemyState.Teleport):
-                Teleport();
-            break;
-            case (EnemyState.WalkAcorn):
-                WalkAcorn();
-                break;
-            case (EnemyState.EatAcorn):
-                EatAcorn();
-                break;
-            case (EnemyState.Run):
-                Run();
-                  
-                break;
-            case (EnemyState.Heal):
-                Heal();
-
-                break;
-            case (EnemyState.GoHeal):
-                GoHeal();
-                break;
-
         }
-
-        if (!notInRoom)
-        {
-
-            if (isPlayerInRange(range) && currState != EnemyState.Die)
-            {
-                switch (enemyType)
-                {
-                    
-                    
-                    case (EnemyType.Teleport):
-
-                        currState = EnemyState.Follow;
-                        break;
-                    case (EnemyType.Squirrel):
-                        currState = EnemyState.Follow;
-                        break;
-                }
-
-                
-            }
-            else if (!isPlayerInRange(range) && !isPlayerInRangeTeleport(rangeTeleport) && !isAcornInRangeSquirrel(rangeSquirrel) && currState != EnemyState.Die)
-            {
-                switch (enemyType)
-                {
-                    
-                    case (EnemyType.Ranged):
-                        currState = EnemyState.Idle;
-
-                        break;
-                    case (EnemyType.Teleport):
-
-                        currState = EnemyState.Wander;
-                        break;
-                    case (EnemyType.Squirrel):
-                        currState = EnemyState.Wander;
-                        break;
-                }
-               
-            }
-            else if(isPlayerInRangeTeleport(rangeTeleport) && currState!=EnemyState.Die)
-            {       
-                currState = EnemyState.Teleport;
-            }
-            else if(isAcornInRangeSquirrel(rangeSquirrel) && currState != EnemyState.Die)
-            {
-                currState = EnemyState.WalkAcorn;
-            }
-
-            if (acorn != null && Vector3.Distance(transform.position, acorn.transform.position) < eatRange && currState != EnemyState.Die && consumed == false)
-            {
-                currState = EnemyState.EatAcorn;
-            }
-            switch (enemyType)
-            {              
-                
-                case (EnemyType.Teleport):
-
-                    if (Vector3.Distance(transform.position, player.transform.position) < attackRange)
-                    {
-                        currState = EnemyState.Attack;
-                    }
-                    break;
-                case (EnemyType.Squirrel):
-                    if (Vector3.Distance(transform.position, player.transform.position) < attackRange)
-                    {
-                        currState = EnemyState.Attack;
-                    }
-                    break;
-            }
-            if (healed == false && room.GetComponent<RoomController>().lowHealth() && room.GetComponent<RoomController>().heal)
-            {
-                switch (enemyType)
-                {
-                
-
-                    case (EnemyType.Teleport):
-
-                        currState = EnemyState.GoHeal;
-                        break;
-                    case (EnemyType.Squirrel):
-                        currState = EnemyState.GoHeal;
-                        break;
-                }
-            }
-        }
-        else
-        {
-            currState = EnemyState.Idle;
-        }
-        
-        //if the gameobject is a ghost
-        
-        if (isPlayerInRange(range))
-        {
-            if (direction.x > 0.0f)
-            {
-                if (direction.y + 1.0f > direction.x)
-                {
-                    animator.Play("WalkBackTeleGoblin");
-
-
-                }
-                else
-                {
-                    animator.Play("WalkRightTeleGoblin");
-
-
-                }
-            }
-            else if (direction.x < 0.0f)
-            {
-                if (direction.y + 1.0f < direction.x)
-                    animator.Play("WalkFrontTeleGoblin");
-                else
-                    animator.Play("WalkLeftTeleGoblin");
-
-            }
-        }
-        
-        if (acorn != null) { 
-        directionSquirrel = acorn.transform.position - transform.position;
-        }
-        if (direction.x < 0.0f && acorn == null){
-            animator.Play("SquirrelAnimationRigth");
-
-        }
-        else if (direction.x > 0.0f && acorn == null)
-        {
-            animator.Play("SquirrelAnimation");
-        }
-        if (directionSquirrel.x < 0.0f && acorn != null)
-        {
-            animator.Play("SquirrelAnimationRigth");
-
-        }
-        else if (directionSquirrel.x > 0.0f && acorn != null)
-        {
-            animator.Play("SquirrelAnimation");
-        }
-
     }
-
     public bool isPlayerInRange(float range)
     {
         return Vector3.Distance(transform.position, player.transform.position) <= range;
     }
-    private bool isPlayerInRangeTeleport(float rangeTeleport)
+    public bool isPlayerInRangeTeleport(float rangeTeleport)
     {
         return Vector3.Distance(transform.position, player.transform.position) <= rangeTeleport;
-    }
-
-    private bool isAcornInRangeSquirrel(float rangeSquirrel)
-    {
-        acorn = GameObject.FindGameObjectWithTag("Acorn");
-        if (acorn != null)
-            return Vector3.Distance(transform.position, acorn.transform.position) <= rangeSquirrel;
-        else
-            switch (enemyType)
-            {
-                case (EnemyType.Squirrel):
-
-                    currState = EnemyState.Follow;
-                    range = 10;
-                    break;
-            }
-        return false;
-    }    
-
-    private void WalkAcorn()
-    {
-        if(acorn != null)
-            transform.position = Vector2.MoveTowards(transform.position, acorn.transform.position, speed * Time.deltaTime);
-    }
-
-    private void EatAcorn()
-    {
-        StartCoroutine(WaitSeconds(1));
-        if(!audioSource.isPlaying)
-            audioSource.PlayOneShot(eatClip);
-    }
-
-    IEnumerator WaitSeconds(float Time)
-    {
-        yield return new WaitForSeconds(Time);
-        consumed = true;
-        if (consumed)
-        {
-            Destroy(acorn);
-        }
-        switch (enemyType)
-        {
-            case (EnemyType.Squirrel):              
-                range = 10;
-                break;
-        }
-
     }
 
     private IEnumerator ChooseDirection()
@@ -476,14 +254,11 @@ public class EnemyController : Enemy
                     StartCoroutine(CoolDown());
                     player.GetComponent<KnightScript>().ReceiveAttack(damage);
                     break;
-                case (EnemyType.Squirrel):
-                    player.GetComponent<KnightScript>().ReceiveAttack(damage);
-                    StartCoroutine(CoolDown());
-                    break;
+
             }
         }
     }
-    void Teleport()
+    public void Teleport()
     {
 
         StartCoroutine(wait());
