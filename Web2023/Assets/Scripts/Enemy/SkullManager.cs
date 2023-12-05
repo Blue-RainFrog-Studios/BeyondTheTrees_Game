@@ -32,9 +32,7 @@ public class SkullManager : MonoBehaviour
                         skull.GetComponent<Animator>().SetTrigger("Fase 3-4");
                         skull.GetComponent<Skull>().valor = 0;
                     }
-                }
-                
-
+                }               
             }
         }
     }

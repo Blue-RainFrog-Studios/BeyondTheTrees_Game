@@ -257,7 +257,6 @@ public class RoomController : MonoBehaviour
                 "SkullPuzzle",
                 "RapidoQueSeQueman",
                 "Ardilla",
-                //"RapidoQueSeQueman 2",
             };
 
         }
