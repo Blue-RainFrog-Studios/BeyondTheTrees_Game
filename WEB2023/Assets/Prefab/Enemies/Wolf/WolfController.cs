@@ -5,6 +5,7 @@ using UnityEngine;
 public class WolfController : MonoBehaviour
 {
     [SerializeField] public float speed;
+    [SerializeField] public float speedJump;
     [SerializeField] public int damage;
 
     [SerializeField] public float HP;

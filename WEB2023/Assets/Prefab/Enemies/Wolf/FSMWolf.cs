@@ -14,6 +14,7 @@ public class FSMWolf : BehaviourRunner
 
     Actions_Wolf _ActionsWolf;
     public PushPerception itemExist; //mirar distanca a enemigo
+    public PushPerception iCrashed; //mirar distanca a enemigo
     protected override void Init()
     {
         _ActionsWolf = GetComponent<Actions_Wolf>();
@@ -85,18 +86,28 @@ public class FSMWolf : BehaviourRunner
 
         StateTransition Charging_to_Bite = WolfFsm.CreateTransition(Charging, Bite, statusFlags: StatusFlags.Finished); // new wolf 
 
-        StateTransition Bite_to_Dazed = WolfFsm.CreateTransition(Bite, Dazed, collisionWithYAxis); // new wolf dazed
+        StateTransition Bite_to_WalkToPlayer = WolfFsm.CreateTransition(Bite, WalkToPlayer, statusFlags: StatusFlags.Finished); // new wolf 
+
+
 
         //push perceptions
 
+        //StateTransition Bite_to_Dazed = WolfFsm.CreateTransition(Bite, Dazed, collisionWithYAxis); // new wolf dazed
+        StateTransition Bite_to_Dazed = WolfFsm.CreateTransition(Bite, Dazed, statusFlags: StatusFlags.Success); // new wolf dazed
         //StateTransition WalkingToPlayerAttack_to_Tired = WolfFsm.CreateTransition(WalkAttack, Tired, statusFlags: StatusFlags.Success);
         StateTransition Dazed_to_WalkingToPlayer = WolfFsm.CreateTransition(Dazed, WalkToPlayer, statusFlags: StatusFlags.Finished);
         #endregion
 
         #region Push Perceptions
+        iCrashed = new PushPerception(Bite_to_Dazed);
         //itemExist = new PushPerception(WalkToPlayer_to_WalkToItem, Waitintg_to_WalkToItem, Bite_to_WalkToItem, Dazed_to_WalkToItem); //para cuando tenga el imtem
         #endregion
 
         return WolfFsm;
+    }
+
+    public void Crash()
+    {
+        iCrashed.Fire();
     }
 }

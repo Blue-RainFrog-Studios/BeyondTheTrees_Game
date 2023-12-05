@@ -1,10 +1,12 @@
 using BehaviourAPI.Core;
+using BehaviourAPI.UnityToolkit.Demos;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Analytics;
+using UnityEngine.UIElements;
 
 public class Actions_Wolf : MonoBehaviour
 {
@@ -19,6 +21,8 @@ public class Actions_Wolf : MonoBehaviour
     [SerializeField] private float TimeCharge;
     [SerializeField] private Animator animator;
     bool collisionDetected = false;
+
+    Vector2 targetPosition;
     #endregion
     // Start is called before the first frame update
     void Start()
@@ -69,6 +73,7 @@ public class Actions_Wolf : MonoBehaviour
         ended = false;
         //animator.Play("Charge");
         //cambia el color a morado
+        
         StartCoroutine(WaitSeconds(TimeCharge));
     }
     public Status UpdateMethodCharge()
@@ -100,32 +105,40 @@ public class Actions_Wolf : MonoBehaviour
         else
             animator.Play("WalkSideDG");
 
+        targetPosition = playerTransform.position;
+
+        /*
         if (playerTransform.position.x > WolfTransform.position.x)
         {
-            StartCoroutine(WalkRightUntilCollision(this.gameObject, GetComponent<WolfController>().speed));
+            //StartCoroutine(WalkRightUntilCollision(this.gameObject, GetComponent<WolfController>().speed));
             //screenShake.StartCoroutine(screenShake.ShakeScreen());
         }
         else
         {
-            StartCoroutine(WalkLeftUntilCollision(this.gameObject, GetComponent<WolfController>().speed));
+            //StartCoroutine(WalkLeftUntilCollision(this.gameObject, GetComponent<WolfController>().speed));
             //screenShake.StartCoroutine(screenShake.ShakeScreen());
         }
+        */
     }
 
-
+   
     public Status UpdateMethodBiteAttack()
     {
         //move right for 2 seconds
         //coroutine that moves the object to the right for 2 seconds
 
-        if (collisionDetected)
+        WolfTransform.position = Vector2.MoveTowards(WolfTransform.position, targetPosition, GetComponent<WolfController>().speedJump * Time.deltaTime);
+        if (collisionDetected || WolfTransform.position.x == targetPosition.x && WolfTransform.position.y == targetPosition.y)
         {
             GetComponent<Knockback>().strength = 10f;
             StopAllCoroutines();
             collisionDetected = false;
+            
             return Status.Success;
         }
+        ended = true;
         return Status.Running;
+
     }
     #endregion
 
@@ -154,7 +167,7 @@ public class Actions_Wolf : MonoBehaviour
     #region CheckTransitions
     public bool CheckPlayerInBiteRange()
     {
-        return Vector2.Distance(playerTransform.position, WolfTransform.position) < 2f;
+        return Vector2.Distance(playerTransform.position, WolfTransform.position) < 4f;
     }
 
     public bool CheckCollisionWithYAxis()
@@ -210,7 +223,13 @@ public class Actions_Wolf : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        collisionDetected = true;
+
+        if (collision.gameObject.CompareTag("Player") == false)
+        {
+            collisionDetected = true;
+            GetComponent<FSMWolf>().Crash();
+            Debug.Log(collisionDetected);
+        }
     }
     #endregion
 
