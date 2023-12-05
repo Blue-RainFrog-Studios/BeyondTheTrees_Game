@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: -3211634261659054906}
   - component: {fileID: 5298211785329011669}
   - component: {fileID: -7839364179883838192}
+  - component: {fileID: 3586582975330463079}
   m_Layer: 0
   m_Name: RangedEnemy
   m_TagString: Enemy
@@ -105,14 +106,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 60
   notInRoom: 0
+  range: 5
+  attackRange: 15
   healCol: {fileID: 5298211785329011669}
   ghost: {fileID: 0}
   EnemyBullet: {fileID: 7118902396155586748, guid: cb6b95ca48fe6f24e88beb9c65cda3e2, type: 3}
   currState: 0
   enemyType: 1
-  range: 5
   rangeTeleport: 0
-  attackRange: 15
   rangeSquirrel: 0
   eatRange: 0
   consumed: 0
@@ -279,3 +280,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 60
   notInRoom: 0
+  range: 0
+  attackRange: 0
+--- !u!114 &3586582975330463079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3789336805313456490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fa8c156c612ae84b97146c45208de8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 0
+  notInRoom: 0
+  range: 0
+  attackRange: 0
+  healCol: {fileID: 0}
+  ghost: {fileID: 0}
+  EnemyBullet: {fileID: 0}
+  currState: 0
+  enemyType: 0
+  rangeTeleport: 0
+  rangeSquirrel: 0
+  eatRange: 0
+  consumed: 0
+  eatClip: {fileID: 0}
+  audioSource: {fileID: 0}
+  coolDown: 0
+  coolDownTp: 0
+  speed: 0
+  bulletSpeed: 0
+  animator: {fileID: 0}
+  IAmAGhost: {fileID: 0}
+  damage: 20
+  blinkDuration: 0
+  blinkNumber: 0

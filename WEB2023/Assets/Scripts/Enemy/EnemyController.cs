@@ -166,11 +166,7 @@ public class EnemyController : Enemy
                 switch (enemyType)
                 {
                     
-                    case (EnemyType.Ranged):
-                        
-                        currState = EnemyState.Run;
-                        
-                        break;
+                    
                     case (EnemyType.Teleport):
 
                         currState = EnemyState.Follow;
@@ -216,34 +212,7 @@ public class EnemyController : Enemy
             }
             switch (enemyType)
             {              
-                case (EnemyType.Ranged):
-                    if (Vector3.Distance(transform.position, player.transform.position) < attackRange && Vector3.Distance(transform.position, player.transform.position)>range && !room.GetComponent<RoomController>().lowHealth())
-                    {
-                        currState = EnemyState.Attack;
-
-                    }
-                    else if(Vector3.Distance(transform.position, player.transform.position) < attackRange && Vector3.Distance(transform.position, player.transform.position) > range && room.GetComponent<RoomController>().lowHealth())
-                    {
-                        if (room.GetComponent<RoomController>().heal)
-                        {
-                            currState = EnemyState.Attack;
-                        }
-                        else
-                        {
-                            currState = EnemyState.Heal;
-                        }
-                    }
-                    else if(Vector3.Distance(transform.position, player.transform.position) < range)
-                    {
-                        currState = EnemyState.Run;
-                    }
-                    else
-                    {
-                        
-                        currState = EnemyState.Follow;
-                    }
-
-                    break;
+                
                 case (EnemyType.Teleport):
 
                     if (Vector3.Distance(transform.position, player.transform.position) < attackRange)
@@ -307,80 +276,7 @@ public class EnemyController : Enemy
 
             }
         }
-        if ( !(Vector3.Distance(transform.position, player.transform.position) < attackRange && currState!=EnemyState.Run))
-        {
-            if (direction.x > 0.0f)
-            {
-                if (direction.y + 1.0f > direction.x && currState!=EnemyState.Run) { 
-                    animator.Play("WalkBackRangedGoblin");
-
-                }
-                else if (direction.y + 1.0f < direction.x && currState != EnemyState.Run)
-                {
-                    animator.Play("WalkRightRangedGoblin");
-
-                }else if (direction.y + 1.0f > direction.x && currState == EnemyState.Run)
-                {
-                    animator.Play("WalkFrontRangedGoblin");
-                }
-                else
-                {
-                    animator.Play("WalkLeftRangedGoblin");
-                }
-            }
-            else if (direction.x < 0.0f)
-            {
-                if (direction.y + 1.0f < direction.x && currState != EnemyState.Run) {
-                    animator.Play("WalkFrontRangedGoblin");
-
-                }
-                else if (direction.y + 1.0f > direction.x && currState != EnemyState.Run)
-                {
-                    animator.Play("WalkLeftRangedGoblin");
-
-                }else if (direction.y + 1.0f < direction.x && currState == EnemyState.Run)
-                {
-                    animator.Play("WalkBackRangedGoblin");
-                }
-                else
-                {
-                    animator.Play("WalkRightRangedGoblin");
-                }
-            }
-        }
-        else
-        {
-            if (direction.x > 0.0f)
-            {
-                if (direction.y + 1.0f > direction.x)
-                {
-                    animator.Play("AttackBackGoblin");
-
-
-                }
-                else
-                {
-                    animator.Play("AttackRightGoblin");
-
-
-                }
-            }
-            else if (direction.x < 0.0f)
-            {
-                if (direction.y + 1.0f < direction.x)
-                {
-                    animator.Play("AttackFrontGoblin");
-
-
-                }
-                else
-                {
-                    animator.Play("AtackLeftGoblin");
-
-
-                }
-            }
-        }
+        
         if (acorn != null) { 
         directionSquirrel = acorn.transform.position - transform.position;
         }
