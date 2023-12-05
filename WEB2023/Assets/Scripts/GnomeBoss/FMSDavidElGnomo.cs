@@ -14,6 +14,8 @@ namespace BehaviourAPI.UnityToolkit.Demos
         ActionsDavidElGnomoNoHat _ActionsDavidElGnomoNoHat;
         public PushPerception HpLessThanX;
         public PushPerception HpPhaseTwo;
+        public PushPerception HpLessThanPhaseTwo;
+        public PushPerception DieGnomePerception;
         protected override void Init()
         {
             _ActionsDavidElGnomo = GetComponent<ActionsDavidElGnomo>();
@@ -124,8 +126,11 @@ namespace BehaviourAPI.UnityToolkit.Demos
         private FSM CreateGnomeWithoutHatFSM()
         {
             FSM GnomeWithoutHatFSM = new FSM();
-            
+
             #region Actions
+            FunctionalAction StartPhase2Action = new FunctionalAction(_ActionsDavidElGnomoNoHat.StartMethodNoHat, _ActionsDavidElGnomoNoHat.UpdateMethodNoHat);
+
+
             FunctionalAction WalkToPlayerActionNoHat = new FunctionalAction(_ActionsDavidElGnomoNoHat.StartMethodWalkNoHat, _ActionsDavidElGnomoNoHat.UpdateMethodWalkNoHat); 
             FunctionalAction PunchActionNoHat = new FunctionalAction(_ActionsDavidElGnomoNoHat.StartMethodPunchNoHat, _ActionsDavidElGnomoNoHat.UpdateMethodPunchNoHat); 
 
@@ -134,9 +139,15 @@ namespace BehaviourAPI.UnityToolkit.Demos
             FunctionalAction GnomeModeActionNoHat = new FunctionalAction(_ActionsDavidElGnomoNoHat.StartMethodGnomeModeNoHat, _ActionsDavidElGnomoNoHat.UpdateMethodGnomeModeNoHat);
 
             FunctionalAction TiredActionNoHat = new FunctionalAction(_ActionsDavidElGnomoNoHat.StartMethodTiredNoHat, _ActionsDavidElGnomoNoHat.UpdateMethodTiredNoHat);
+
+            FunctionalAction DieGnomeAction = new FunctionalAction(_ActionsDavidElGnomoNoHat.StartMethodDieGnome, _ActionsDavidElGnomoNoHat.UpdateMethodDieGnome);
+
+            
             #endregion
 
             #region States
+            State StartPhase2 = GnomeWithoutHatFSM.CreateState(StartPhase2Action);
+
             State GnomeModeNoHat = GnomeWithoutHatFSM.CreateState(GnomeModeActionNoHat); //SOLO REPETIR 1 vez
 
             State WalkToPlayerNoHat = GnomeWithoutHatFSM.CreateState(WalkToPlayerActionNoHat); //el estado WalkToPlayer se crea con la acción WalkToPlayerAction
@@ -147,6 +158,8 @@ namespace BehaviourAPI.UnityToolkit.Demos
 
 
             State TiredNoHat = GnomeWithoutHatFSM.CreateState(TiredActionNoHat);
+
+            State DieNoHat = GnomeWithoutHatFSM.CreateState(DieGnomeAction);
             #endregion
 
             #region Perceptions
@@ -156,24 +169,37 @@ namespace BehaviourAPI.UnityToolkit.Demos
             ConditionPerception collisionWithYAxisNoHat = new ConditionPerception(() => _ActionsDavidElGnomoNoHat.CheckCollisionWithYAxisNoHat());
             ConditionPerception noCollisionWithYAxisNoHat = new ConditionPerception(() => !_ActionsDavidElGnomoNoHat.CheckCollisionWithYAxisNoHat());
 
-            ConditionPerception HPLowNoHat = new ConditionPerception(() => _ActionsDavidElGnomoNoHat.CheckHPLowNoHat());
             #endregion
 
             #region Transitions
+            StateTransition StartPhase2_to_WalkingToPlayer = GnomeWithoutHatFSM.CreateTransition(StartPhase2,WalkToPlayerNoHat, statusFlags: StatusFlags.Finished);
+
             StateTransition WalkingToPlayerNoHat_to_PunchNoHat = GnomeWithoutHatFSM.CreateTransition(WalkToPlayerNoHat, PunchNoHat, isInPunchRangeNoHat); 
             StateTransition PunchNoHat_to_WalkingToPlayerNoHat = GnomeWithoutHatFSM.CreateTransition(PunchNoHat, WalkToPlayerNoHat, /*leavesPunchRange,*/ statusFlags: StatusFlags.Finished); // cambiara cuando se acabe la accion
 
             StateTransition WalkToPlayerNoHat_to_WalkAttackNoHat = GnomeWithoutHatFSM.CreateTransition(WalkToPlayerNoHat, WalkAttackNoHat, collisionWithYAxisNoHat);
 
             StateTransition GnomeModeNoHat_to_WalkToPlayerNoHat = GnomeWithoutHatFSM.CreateTransition(GnomeModeNoHat, WalkToPlayerNoHat, statusFlags: StatusFlags.Finished);
-            StateTransition WalkToPlayerNoHat_to_GnomeModeNoHat = GnomeWithoutHatFSM.CreateTransition(WalkToPlayerNoHat, GnomeModeNoHat, HPLowNoHat);
-            StateTransition WalkToPlayerAttackNoHat_to_GnomeModeNoHat = GnomeWithoutHatFSM.CreateTransition(WalkAttackNoHat, GnomeModeNoHat, HPLowNoHat);
-            StateTransition PunchNoHat_to_GnomeModeNoHat = GnomeWithoutHatFSM.CreateTransition(PunchNoHat, GnomeModeNoHat, HPLowNoHat);
-            StateTransition TiredNoHat_to_GnomeModeNoHat = GnomeWithoutHatFSM.CreateTransition(TiredNoHat, GnomeModeNoHat, HPLowNoHat);
+            StateTransition WalkToPlayerNoHat_to_GnomeModeNoHat = GnomeWithoutHatFSM.CreateTransition(WalkToPlayerNoHat, GnomeModeNoHat, statusFlags: StatusFlags.None);
+            StateTransition WalkToPlayerAttackNoHat_to_GnomeModeNoHat = GnomeWithoutHatFSM.CreateTransition(WalkAttackNoHat, GnomeModeNoHat, statusFlags: StatusFlags.None);
+            StateTransition PunchNoHat_to_GnomeModeNoHat = GnomeWithoutHatFSM.CreateTransition(PunchNoHat, GnomeModeNoHat, statusFlags: StatusFlags.None);
+            StateTransition TiredNoHat_to_GnomeModeNoHat = GnomeWithoutHatFSM.CreateTransition(TiredNoHat, GnomeModeNoHat, statusFlags: StatusFlags.None);
 
             StateTransition WalkingToPlayerAttackNoHat_to_TiredNoHat = GnomeWithoutHatFSM.CreateTransition(WalkAttackNoHat, TiredNoHat, statusFlags: StatusFlags.Success);
             StateTransition TiredNoHat_to_WalkingToPlayerNoHat = GnomeWithoutHatFSM.CreateTransition(TiredNoHat, WalkToPlayerNoHat, statusFlags: StatusFlags.Finished);
+
+            //transitions die
+            StateTransition GnomeModeNoHat_to_DieGnome = GnomeWithoutHatFSM.CreateTransition(GnomeModeNoHat, DieNoHat, statusFlags: StatusFlags.Success);
+            StateTransition WalkToPlayerNoHat_to_DieGnome = GnomeWithoutHatFSM.CreateTransition(WalkToPlayerNoHat, DieNoHat, statusFlags: StatusFlags.Success);
+            StateTransition WalkToPlayerAttackNoHat_to_DieGnome = GnomeWithoutHatFSM.CreateTransition(WalkAttackNoHat, DieNoHat, statusFlags: StatusFlags.Success);
+            StateTransition PunchNoHat_to_DieGnome = GnomeWithoutHatFSM.CreateTransition(PunchNoHat, DieNoHat, statusFlags: StatusFlags.Success);
+            StateTransition TiredNoHat_to_DieGnome = GnomeWithoutHatFSM.CreateTransition(TiredNoHat, DieNoHat, statusFlags: StatusFlags.Success);
+
             #endregion
+
+            HpLessThanPhaseTwo = new PushPerception(WalkToPlayerNoHat_to_GnomeModeNoHat, WalkToPlayerAttackNoHat_to_GnomeModeNoHat, PunchNoHat_to_GnomeModeNoHat, TiredNoHat_to_GnomeModeNoHat);
+            DieGnomePerception = new PushPerception(WalkToPlayerNoHat_to_DieGnome, WalkToPlayerAttackNoHat_to_DieGnome, PunchNoHat_to_DieGnome, TiredNoHat_to_DieGnome, GnomeModeNoHat_to_DieGnome);
+
 
             return GnomeWithoutHatFSM;
         }
@@ -182,12 +208,19 @@ namespace BehaviourAPI.UnityToolkit.Demos
         {
             HpLessThanX.Fire();
         }
+        public void DieGnome()
+        {
+            DieGnomePerception.Fire();
+        }
         public void ChangeToNoHat()
         {
             Debug.Log("Change to no hat");
             HpPhaseTwo.Fire();
         }
-
+        public void ChangeToGnomeModeNoHat()
+        {
+            HpLessThanPhaseTwo.Fire();
+        }
     }
 
 }

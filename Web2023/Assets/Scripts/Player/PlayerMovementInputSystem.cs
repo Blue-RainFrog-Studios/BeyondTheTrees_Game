@@ -40,6 +40,10 @@ public class PlayerMovementInputSystem : MonoBehaviour
         //playerInputActions.Player.Attack2.performed += Attack;
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
+    private void OnDisable()
+    {
+        //playerInputActions.Disable();
+    }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
 
@@ -51,6 +55,9 @@ public class PlayerMovementInputSystem : MonoBehaviour
         //Actualiza las posiciones que le decimos mediante el input
         //Move
         direction = playerInputActions.Player.Move.ReadValue<Vector2>();
+        direction.x = Mathf.Round(direction.x);
+        direction.y = Mathf.Round(direction.y);
+        direction = direction.normalized;
         Attack2();
         //attackDirection = playerInputActions.Player.Attack.ReadValue<Vector2>();
         //if animation dont have attack tag
@@ -140,7 +147,11 @@ public class PlayerMovementInputSystem : MonoBehaviour
     {
         Debug.Log("Me estoy moviendo en: " + context.phase);
         Vector2 inputVector = context.ReadValue<Vector2>();
-        player_rb.AddForce(new Vector3(inputVector.x, 0, inputVector.y) * speed, ForceMode2D.Force);
+        if(direction.magnitude == 1)
+        {
+            player_rb.AddForce(new Vector3(inputVector.x, 0, inputVector.y) * speed, ForceMode2D.Force);
+        }
+        
         
     }
     public void Attack2()
@@ -180,7 +191,7 @@ public class PlayerMovementInputSystem : MonoBehaviour
                     {
                         if (transform.Find("FrontCollider").gameObject.GetComponentInChildren<ComprobarAtaque>().Cercano())
                         {
-                            //characterAnimator.Play("AttackFront");
+                            Head.Play("AttackMeeleDown");
                             shotRateTime = Time.time + shoteRate;
 
                         }
@@ -202,7 +213,7 @@ public class PlayerMovementInputSystem : MonoBehaviour
                     {
                         if (transform.Find("BackCollider").gameObject.GetComponentInChildren<ComprobarAtaque>().Cercano())
                         {
-                            //characterAnimator.Play("AttackBack");
+                            Head.Play("AttackMeeleUp");
                             shotRateTime = Time.time + shoteRate;
                         }
                         else
@@ -224,7 +235,7 @@ public class PlayerMovementInputSystem : MonoBehaviour
                     {
                         if (transform.Find("LeftCollider").gameObject.GetComponentInChildren<ComprobarAtaque>().Cercano())
                         {
-                            //characterAnimator.Play("AttackLeft");
+                            Head.Play("AttackMeeleLeft");
                             shotRateTime = Time.time + shoteRate;
                         }
                         else
@@ -246,7 +257,7 @@ public class PlayerMovementInputSystem : MonoBehaviour
                     {
                         if (transform.Find("RightCollider").gameObject.GetComponentInChildren<ComprobarAtaque>().Cercano())
                         {
-                            //characterAnimator.Play("AttackRight");
+                            Head.Play("AttackMeeleRight");
                             shotRateTime = Time.time + shoteRate;
                         }
                         else
@@ -266,7 +277,7 @@ public class PlayerMovementInputSystem : MonoBehaviour
 
         }
     }
-    public void Attack(InputAction.CallbackContext context)
+    /*public void Attack(InputAction.CallbackContext context)
     {
         //El disparo tiene Cooldown
         
@@ -371,5 +382,5 @@ public class PlayerMovementInputSystem : MonoBehaviour
             }   
 
         }
-    }
+    }*/
 }

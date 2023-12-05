@@ -15,7 +15,8 @@ MonoBehaviour:
   <IsStackable>k__BackingField: 0
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: Daga Solar
-  <Descrption>k__BackingField: 'Ataque: +13'
+  <Descrption>k__BackingField: "Ataque: +13\n\nUn objeto casi mitol\xF3gico creado
+    con un rayo del Sol. un coleccionista pagar\xEDa un gran precio por este objeto."
   <ItemImage>k__BackingField: {fileID: 816346421, guid: 0d6e7eb0117b0dd42b3ef1b04224dbec, type: 3}
   <Attack>k__BackingField: 13
   <Defense>k__BackingField: 0

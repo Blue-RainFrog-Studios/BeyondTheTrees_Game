@@ -1,0 +1,372 @@
+fileFormatVersion: 2
+guid: a6e473fd3695bb3429b5f17e88e59067
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PUNCH SLEEP_0
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 1345
+        width: 335
+        height: 532
+      alignment: 9
+      pivot: {x: 0.5130277, y: 0.3917126}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d9c1b030774222438588929b85b266d
+      internalID: 1018506096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PUNCH SLEEP_1
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 1341
+        width: 318
+        height: 532
+      alignment: 9
+      pivot: {x: 0.5090094, y: 0.39409208}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dc4e94adeee9bb46a97a81cfc9db08f
+      internalID: -63229262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PUNCH SLEEP_2
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 1344
+        width: 406
+        height: 533
+      alignment: 9
+      pivot: {x: 0.51058495, y: 0.39160317}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b8623790cb9b1c43b3a117e0d16f617
+      internalID: 1216924929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PUNCH SLEEP_3
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 748
+        width: 339
+        height: 532
+      alignment: 9
+      pivot: {x: 0.5165445, y: 0.39352107}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6f46c8d62f99ed49bbdfff639539881
+      internalID: -1479886214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PUNCH SLEEP_4
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 766
+        width: 416
+        height: 532
+      alignment: 9
+      pivot: {x: 0.50943756, y: 0.39141262}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed42aef101d3c134e8209c89413f3470
+      internalID: -634695292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PUNCH SLEEP_5
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 761
+        width: 341
+        height: 496
+      alignment: 9
+      pivot: {x: 0.5213816, y: 0.40049276}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a081c3f8e7faaa542aa064fed4dc178c
+      internalID: 2110903259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PUNCH SLEEP_6
+      rect:
+        serializedVersion: 2
+        x: 1404
+        y: 784
+        width: 306
+        height: 482
+      alignment: 9
+      pivot: {x: 0.5183289, y: 0.38363925}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68e7390e91dcc0840bfe545288a2a371
+      internalID: -314573033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PUNCH SLEEP_7
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 143
+        width: 316
+        height: 504
+      alignment: 9
+      pivot: {x: 0.51233023, y: 0.39254114}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 982cb071002d9d046b2e77738bc4ca7e
+      internalID: -1864468701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PUNCH SLEEP_8
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 134
+        width: 316
+        height: 504
+      alignment: 9
+      pivot: {x: 0.5184954, y: 0.39331418}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a44265210117f742b2e63faadedce16
+      internalID: 175294692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PUNCH SLEEP_9
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 129
+        width: 340
+        height: 504
+      alignment: 9
+      pivot: {x: 0.48111033, y: 0.38955942}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 957cd1b6db79a4044be10c97faf45645
+      internalID: 1909169491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PUNCH SLEEP_10
+      rect:
+        serializedVersion: 2
+        x: 1172
+        y: 146
+        width: 437
+        height: 504
+      alignment: 9
+      pivot: {x: 0.37360665, y: 0.39125848}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c192b188c42b3f4438f75656695a15e3
+      internalID: -2144776239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      PUNCH SLEEP_0: 1018506096
+      PUNCH SLEEP_1: -63229262
+      PUNCH SLEEP_10: -2144776239
+      PUNCH SLEEP_11: 1380378027
+      PUNCH SLEEP_12: 1750165413
+      PUNCH SLEEP_13: -852514319
+      PUNCH SLEEP_2: 1216924929
+      PUNCH SLEEP_3: -1479886214
+      PUNCH SLEEP_4: -634695292
+      PUNCH SLEEP_5: 2110903259
+      PUNCH SLEEP_6: -314573033
+      PUNCH SLEEP_7: -1864468701
+      PUNCH SLEEP_8: 175294692
+      PUNCH SLEEP_9: 1909169491
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

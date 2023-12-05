@@ -15,7 +15,9 @@ MonoBehaviour:
   <IsStackable>k__BackingField: 0
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: "Escama de Drag\xF3n"
-  <Descrption>k__BackingField: 'Defensa: +16'
+  <Descrption>k__BackingField: "Defensa: +16\n\nUna escama de una de las bestias
+    m\xE1s nobles, su brillo y resistencia son excepcionales. Otorga mucha defensa
+    y se puede vender por una peque\xF1a fortuna."
   <ItemImage>k__BackingField: {fileID: 1402202630, guid: 0d6e7eb0117b0dd42b3ef1b04224dbec, type: 3}
   <Attack>k__BackingField: 0
   <Defense>k__BackingField: 16
@@ -25,3 +27,4 @@ MonoBehaviour:
   <ShopValue>k__BackingField: 300
   <IsPurchased>k__BackingField: 0
   <Rarity>k__BackingField: 3
+  <dropChance>k__BackingField: 0

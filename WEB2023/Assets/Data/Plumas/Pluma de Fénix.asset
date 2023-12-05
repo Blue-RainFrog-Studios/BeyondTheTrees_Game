@@ -15,7 +15,9 @@ MonoBehaviour:
   <IsStackable>k__BackingField: 0
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: "Pluma de F\xE9nix"
-  <Descrption>k__BackingField: 'Velocidad de ataque: +4'
+  <Descrption>k__BackingField: "Velocidad de ataque: +4\n\nUna pluma de un animal
+    mitol\xF3gico que a muchos les costar\xE1 creer que la has encontrado. Se puede
+    vender por bastante dinero y te dar\xE1 mucha m\xE1s velocidad de ataque."
   <ItemImage>k__BackingField: {fileID: -978607917, guid: 0d6e7eb0117b0dd42b3ef1b04224dbec, type: 3}
   <Attack>k__BackingField: 0
   <Defense>k__BackingField: 0
@@ -25,3 +27,4 @@ MonoBehaviour:
   <ShopValue>k__BackingField: 300
   <IsPurchased>k__BackingField: 0
   <Rarity>k__BackingField: 3
+  <dropChance>k__BackingField: 0

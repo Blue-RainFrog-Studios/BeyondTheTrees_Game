@@ -16,7 +16,10 @@ public class PickupSystem : MonoBehaviour
         Item item = collision.GetComponent<Item>();
         if (item != null)
         {
-            int reminder = inventoryData.AddItem(item.InventoryItem, item.Quantity);
+            this.GetComponent<CanvasController>().AssignItem(item.InventoryItem.ItemImage, item.InventoryItem.name, item.InventoryItem.Descrption);
+            this.GetComponent<CanvasController>().pickupPanel.SetActive(true);
+            
+                int reminder = inventoryData.AddItem(item.InventoryItem, item.Quantity);
             if (reminder == 0)  //Coje todos los items
             {
                 item.DestroyItem();

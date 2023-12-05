@@ -15,7 +15,9 @@ MonoBehaviour:
   <IsStackable>k__BackingField: 0
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: Capa del Cazador
-  <Descrption>k__BackingField: 'Velocidad: +7'
+  <Descrption>k__BackingField: "Velocidad: +7\n\nUna capa que perteneci\xF3 a un
+    veterano cazador, muy valorada por coleccionistas. Se puede vender por bastante
+    oro y dar\xE1 bastante velocidad de movimiento."
   <ItemImage>k__BackingField: {fileID: -754118266, guid: 0d6e7eb0117b0dd42b3ef1b04224dbec, type: 3}
   <Attack>k__BackingField: 0
   <Defense>k__BackingField: 0
