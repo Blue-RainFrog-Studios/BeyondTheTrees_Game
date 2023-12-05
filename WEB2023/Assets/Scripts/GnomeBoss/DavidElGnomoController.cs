@@ -45,22 +45,23 @@ public class DavidElGnomoController : MonoBehaviour
             GetComponent<FMSDavidElGnomo>().ChangeToGnomeModeNoHat();
             PlayedSF2 = true;
         }
+        
     }
     //ESTO EN UN FUTURO DEBE ESTAR EN UN ENEMYCONTROLLER
-    void DieGO()
-    {
-        StartCoroutine(animAndDie());
-        Destroy(gameObject);
-        player.GetComponent<PlayerMovementInputSystem>().nivel++;
-        SceneManager.LoadScene("LoandingBoss");
+    //void DieGO()
+    //{
+    //    StartCoroutine(animAndDie());
+    //    Destroy(gameObject);
+    //    player.GetComponent<PlayerMovementInputSystem>().nivel++;
+    //    SceneManager.LoadScene("LoandingBoss");
 
-    }
-    IEnumerator animAndDie()
-    {
-        Animator animator = GetComponent<Animator>();
-        animator.Play("DieGnome");
-        yield return new WaitForSeconds(1f);
-    }
+    //}
+    //IEnumerator animAndDie()
+    //{
+    //    Animator animator = GetComponent<Animator>();
+    //    animator.Play("DieGnome");
+    //    yield return new WaitForSeconds(1f);
+    //}
     // Update is called once per frame
     public void RecieveDamage(float damage)
     {
@@ -71,7 +72,7 @@ public class DavidElGnomoController : MonoBehaviour
             Debug.Log("Recibo daño");
             if (HP <= 0)
             {
-                DieGO();
+                GetComponent<FMSDavidElGnomo>().DieGnome();
             }
         }
     }

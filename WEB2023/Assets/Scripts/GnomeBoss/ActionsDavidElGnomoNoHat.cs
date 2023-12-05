@@ -28,6 +28,7 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
 
     Vector2 walkAttackDistance = new Vector2(0, 2);
     ScreenShake screenShake;
+    private bool animationPlayed = false;
     #endregion
 
     private void Start()
@@ -39,18 +40,22 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
 
     public void StartMethodNoHat()
     {
+        screenShake = GetComponent<ScreenShake>();
         GetComponent<ActionsDavidElGnomo>().StopAllCoroutines();
         this.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         animator.Play("HatFall");
+
     }
     public Status UpdateMethodNoHat()
     {
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("HatFall"))
-        {
+        StartCoroutine(WaitSeconds(5));
+        screenShake.StartCoroutine(screenShake.ShakeScreen());
+        if (!ended) { 
             return Status.Running;
         }
         else
         {
+            ended = false;
             return Status.Success;
         }
     }
@@ -74,7 +79,6 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     public void StartMethodWalkAttackNoHat()
     {
         collisionDetected = false;
-        screenShake = GetComponent<ScreenShake>();
         GetComponent<Knockback>().strength = 40f;
         ended = false;
         if (playerTransform.position.x > DavidElGnomoTransform.position.x)
@@ -187,6 +191,26 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     }
     #endregion
 
+    public void StartMethodDieGnome()
+    {
+        ended=false; 
+        StopAllCoroutines();
+        StartCoroutine(animAndDie());
+    }   
+    public Status UpdateMethodDieGnome()
+    {
+        if (ended) { 
+        Destroy(gameObject);
+        player.GetComponent<PlayerMovementInputSystem>().nivel++;
+        UnityEngine.SceneManagement.SceneManager.LoadScene("LoandingBoss");
+        return Status.Success;
+        }
+        else
+        {
+            return Status.Running;
+        }
+    }
+
     #region CheckTransitions
     public bool CheckPlayerInPunchRangeNoHat()
     {
@@ -239,6 +263,12 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     {
         yield return new WaitForSeconds(Time);
         ended = true;
+    }
+    IEnumerator animAndDie()
+    {
+        animator.Play("DieGnome");
+        yield return new WaitForSeconds(2f);
+        ended=true;
     }
 
     IEnumerator InvokeGnomes(float timeSpawn)
