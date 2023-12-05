@@ -275,10 +275,10 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   coolDown: 0
   coolDownTp: 0
-  speed: 0
+  speed: 3
   bulletSpeed: 0
-  animator: {fileID: 0}
+  animator: {fileID: 6938415437227796382}
   IAmAGhost: {fileID: 263330336992781321}
   damage: 20
-  blinkDuration: 0
-  blinkNumber: 0
+  blinkDuration: 1
+  blinkNumber: 6

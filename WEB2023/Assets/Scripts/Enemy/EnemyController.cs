@@ -57,7 +57,7 @@ public class EnemyController : Enemy
     public float rangeSquirrel;
     public float eatRange;
     
-    GameObject room;
+    protected GameObject room;
     [SerializeField]public bool consumed;
     Rigidbody2D rb;
 
@@ -87,7 +87,7 @@ public class EnemyController : Enemy
     private Vector3 runAway;
     public Animator animator;
     public GameObject IAmAGhost;
-    Vector2 direction;
+    protected Vector2 direction;
     Vector2 directionSquirrel;
 
     public int damage = 20;
@@ -97,7 +97,7 @@ public class EnemyController : Enemy
 
     public float blinkDuration;
     public int blinkNumber;
-    private bool blinking = false;
+    protected bool blinking = false;
     private void Awake()
     {
         Idle();
@@ -262,9 +262,7 @@ public class EnemyController : Enemy
             {
                 switch (enemyType)
                 {
-                    case (EnemyType.Melee):
-                        currState = EnemyState.GoHeal;
-                        break;
+                
 
                     case (EnemyType.Teleport):
 
@@ -282,28 +280,7 @@ public class EnemyController : Enemy
         }
         
         //if the gameobject is a ghost
-        if (IAmAGhost != null)
-        {
-            float distance = Vector2.Distance(transform.position, player.transform.position);
-            //do it gradually
-            Color color = GetComponent<SpriteRenderer>().color;
-            color.a = 1 - (distance / 10);
-            GetComponent<SpriteRenderer>().color = color;
-        }
-
-        direction = player.transform.position - transform.position;
-            if (direction.x > 0)
-        {
-            animator.Play("GhostRight");
-
-
-        }
-        else
-        {
-            animator.Play("GhostLeft");
-
-        }
-
+        
         if (isPlayerInRange(range))
         {
             if (direction.x > 0.0f)
@@ -492,7 +469,7 @@ public class EnemyController : Enemy
         //transform.rotation = Quaternion.Lerp(transform.rotation, nextRotation, Random.Range(0.5f, 2.5f));
         chooseDir = false;
     }
-    void Wander()
+    public void Wander()
     {
         if (!chooseDir)
         {
@@ -525,7 +502,7 @@ public class EnemyController : Enemy
         }
 
     }
-    public void Follow()
+    public  void Follow()
     {
         transform.position = Vector2.MoveTowards(transform.position,player.transform.position,speed * Time.deltaTime);
     }
@@ -546,7 +523,7 @@ public class EnemyController : Enemy
         transform.position = Vector2.MoveTowards(transform.position, room.GetComponent<RoomController>().posHealer, speed * Time.deltaTime);
     }
 
-    void Idle()
+    public void Idle()
     {
         StopCoroutine(ChooseDirection());
     }
@@ -581,7 +558,7 @@ public class EnemyController : Enemy
 
 
     }
-    void Attack()
+    public void Attack()
     {
         if (!coolDownAttack)
         {
@@ -696,7 +673,7 @@ public class EnemyController : Enemy
 
     }
 
-    private IEnumerator Blink()
+    public IEnumerator Blink()
     {
         blinkDuration = 0.05f; ;
         blinkNumber = 3;
@@ -718,14 +695,7 @@ public class EnemyController : Enemy
         blinking = false;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Enemy") && healed==false)
-        {
-            life = iLife;
-            healed = true;
-        }
-    }
+    
 
 
 }
