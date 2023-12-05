@@ -48,6 +48,9 @@ public class EnemyTeleport : EnemyController
             if (isPlayerInRange(range) && currState != EnemyState.Die)
             {
                 currState = EnemyState.Follow;
+            }else if(!isPlayerInRangeTeleport(rangeTeleport) && currState != EnemyState.Die)
+            {
+                currState = EnemyState.Follow;
             }
             else if (isPlayerInRangeTeleport(rangeTeleport) && currState != EnemyState.Die)
             {
@@ -93,6 +96,14 @@ public class EnemyTeleport : EnemyController
                     animator.Play("WalkLeftTeleGoblin");
 
             }
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy") && healed == false)
+        {
+            life = iLife;
+            healed = true;
         }
     }
 
