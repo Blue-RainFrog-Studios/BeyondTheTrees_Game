@@ -187,7 +187,7 @@ public class ActionsDavidElGnomo : MonoBehaviour
 
     public bool CheckHPVeryLow()
     {
-        return GetComponent<DavidElGnomoController>().HP < GetComponent<DavidElGnomoController>().HPSecondPhase;
+        return GetComponent<DavidElGnomoController>().HP < GetComponent<DavidElGnomoController>().HPSecondPhase ;
     }
     #endregion
 
@@ -223,7 +223,7 @@ public class ActionsDavidElGnomo : MonoBehaviour
 
     }
     IEnumerator WalkLeftUntilCollision(GameObject gnomoObj, float speed)
-    {
+  {
         float elapsedTime = 0f;
         Vector3 startingPos = gnomoObj.transform.position;
         Vector3 targetPos = startingPos + Vector3.left*20;

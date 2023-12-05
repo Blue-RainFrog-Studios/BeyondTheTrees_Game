@@ -1,0 +1,611 @@
+fileFormatVersion: 2
+guid: 148c1aeed0819af42b11fb02d87a3cc0
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ULTIMO_0
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 1422
+        width: 229
+        height: 368
+      alignment: 9
+      pivot: {x: 0.42517057, y: 0.5136954}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7630f561f5d58bd4bb0ea8e84105938c
+      internalID: -541312777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ULTIMO_1
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 1425
+        width: 221
+        height: 370
+      alignment: 9
+      pivot: {x: 0.4321536, y: 0.5152723}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34c8e57db7e5dfd4281b5d82f1239577
+      internalID: 243776393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ULTIMO_2
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 1426
+        width: 239
+        height: 369
+      alignment: 9
+      pivot: {x: 0.4058432, y: 0.51565844}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27d0dcc0ea412ec4786eca62e8b32195
+      internalID: -974920071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ULTIMO_3
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 1432
+        width: 221
+        height: 369
+      alignment: 9
+      pivot: {x: 0.427071, y: 0.51730686}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c321436a7743544fa0ea834962c9ba5
+      internalID: 1367575603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ULTIMO_4
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 1433
+        width: 229
+        height: 369
+      alignment: 9
+      pivot: {x: 0.42297897, y: 0.51730686}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d8ffbcf3f7deef4bb1346b080bcf834
+      internalID: -270729468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ULTIMO_5
+      rect:
+        serializedVersion: 2
+        x: 1316
+        y: 1434
+        width: 222
+        height: 371
+      alignment: 9
+      pivot: {x: 0.4232898, y: 0.520492}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89db999db9054fe44ad05db988025d1a
+      internalID: -1733506161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ULTIMO_6
+      rect:
+        serializedVersion: 2
+        x: 1565
+        y: 1433
+        width: 240
+        height: 372
+      alignment: 9
+      pivot: {x: 0.39609882, y: 0.5220721}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 005085e9fa37e7f47bc77111334c3433
+      internalID: -334680585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ULTIMO_7
+      rect:
+        serializedVersion: 2
+        x: 1822
+        y: 1440
+        width: 220
+        height: 369
+      alignment: 9
+      pivot: {x: 0.4336509, y: 0.52225155}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30a501c613ff2924b9e4af684647cf09
+      internalID: -850482523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ULTIMO_8
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 996
+        width: 221
+        height: 368
+      alignment: 9
+      pivot: {x: 0.57297695, y: 0.52191263}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e34bb3ff3ed51844385bedf4b30a5210
+      internalID: 26937889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ULTIMO_9
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 990
+        width: 240
+        height: 370
+      alignment: 9
+      pivot: {x: 0.6049994, y: 0.52179414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf218e216b108ed459b6e3be260c6f6e
+      internalID: -1089329150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ULTIMO_10
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 991
+        width: 222
+        height: 369
+      alignment: 9
+      pivot: {x: 0.57264805, y: 0.51638985}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c2a81d887bb7e34b9e5a89ac663615d
+      internalID: 680020747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ULTIMO_11
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 988
+        width: 227
+        height: 369
+      alignment: 9
+      pivot: {x: 0.5799289, y: 0.5191217}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 606314842f3bc4749bb9e2d6d4a7f94c
+      internalID: -929414020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ULTIMO_12
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 987
+        width: 220
+        height: 369
+      alignment: 9
+      pivot: {x: 0.5687267, y: 0.5191217}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 561b05f630898d148a9f313b9ebcfe21
+      internalID: -105229181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ULTIMO_13
+      rect:
+        serializedVersion: 2
+        x: 1323
+        y: 981
+        width: 238
+        height: 369
+      alignment: 9
+      pivot: {x: 0.6016461, y: 0.5191217}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ae6486af813d8f4cbeabd0db2ff4f4b
+      internalID: -731121812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ULTIMO_14
+      rect:
+        serializedVersion: 2
+        x: 1578
+        y: 980
+        width: 222
+        height: 369
+      alignment: 9
+      pivot: {x: 0.56356674, y: 0.5136583}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9aec956619067024389d438acb91af5f
+      internalID: -878879753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ULTIMO_15
+      rect:
+        serializedVersion: 2
+        x: 1815
+        y: 977
+        width: 228
+        height: 368
+      alignment: 9
+      pivot: {x: 0.56631523, y: 0.5136954}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41c138c276903a745ab926a3909e6f99
+      internalID: 433280435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ULTIMO_16
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 404
+        width: 292
+        height: 515
+      alignment: 9
+      pivot: {x: 0.5241642, y: 0.3766918}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a551fd4956cc2a84aabcd51dd2fc61ab
+      internalID: -1598741888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ULTIMO_17
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 396
+        width: 298
+        height: 503
+      alignment: 9
+      pivot: {x: 0.5405902, y: 0.36773828}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b61cc126962ccdb4ba509e7519695e71
+      internalID: -1017898960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ULTIMO_18
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 396
+        width: 273
+        height: 498
+      alignment: 9
+      pivot: {x: 0.5443073, y: 0.35628977}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a764024ab9b9a542b97304519f19cd7
+      internalID: 642939247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ULTIMO_19
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 390
+        width: 297
+        height: 499
+      alignment: 9
+      pivot: {x: 0.54072666, y: 0.35859782}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 838865acc8d926d4c9a5bf237af2556e
+      internalID: 1291119199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ULTIMO_20
+      rect:
+        serializedVersion: 2
+        x: 1298
+        y: 379
+        width: 298
+        height: 496
+      alignment: 9
+      pivot: {x: 0.48308712, y: 0.3557103}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d94729fb2056ef94295166e626f8a624
+      internalID: 673870251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ULTIMO_21
+      rect:
+        serializedVersion: 2
+        x: 1615
+        y: 384
+        width: 271
+        height: 495
+      alignment: 9
+      pivot: {x: 0.49628022, y: 0.3513461}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd43f33e1ebf10e4c9bb4d310718d043
+      internalID: -859426815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ULTIMO_0: -541312777
+      ULTIMO_1: 243776393
+      ULTIMO_10: 680020747
+      ULTIMO_11: -929414020
+      ULTIMO_12: -105229181
+      ULTIMO_13: -731121812
+      ULTIMO_14: -878879753
+      ULTIMO_15: 433280435
+      ULTIMO_16: -1598741888
+      ULTIMO_17: -1017898960
+      ULTIMO_18: 642939247
+      ULTIMO_19: 1291119199
+      ULTIMO_2: -974920071
+      ULTIMO_20: 673870251
+      ULTIMO_21: -859426815
+      ULTIMO_3: 1367575603
+      ULTIMO_4: -270729468
+      ULTIMO_5: -1733506161
+      ULTIMO_6: -334680585
+      ULTIMO_7: -850482523
+      ULTIMO_8: 26937889
+      ULTIMO_9: -1089329150
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

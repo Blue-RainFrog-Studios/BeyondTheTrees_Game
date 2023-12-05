@@ -268,7 +268,7 @@ public class EnemyController : MonoBehaviour
                 else
                 {
                     animator.Play("AtackLeftGoblin");
-
+    
 
                 }
             }
