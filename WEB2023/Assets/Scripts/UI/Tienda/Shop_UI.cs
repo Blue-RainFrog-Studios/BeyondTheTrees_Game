@@ -41,6 +41,7 @@ public class Shop_UI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("Abre tienda");
         AddShopEvents();
         GenerateShopItems();
         player = GameObject.FindGameObjectWithTag("Player");
@@ -61,6 +62,8 @@ public class Shop_UI : MonoBehaviour
     }
     void GenerateShopItems()
     {
+
+        Debug.Log("GENERANDO ITEMS");
         // Puede que haya que cambiar de donde pilla los datos
         // Escribe los items que se han compreado como bloqueados
         /*for(int i = 0; i < GameDataManager.GetAllPurchasedItems().Count; i++)
@@ -150,7 +153,7 @@ public class Shop_UI : MonoBehaviour
             itemDB.PurchaseItem(index);
 
             ui_item.SetItemAsPurchased();
-            GameDataManager.AddPurchasedItems(index);
+            //GameDataManager.AddPurchasedItems(index);
             
         }
         else

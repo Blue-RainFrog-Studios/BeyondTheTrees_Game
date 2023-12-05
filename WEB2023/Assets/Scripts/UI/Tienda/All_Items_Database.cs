@@ -109,5 +109,9 @@ public class All_Items_Database : ScriptableObject
             Shop_Items[i].IsPurchased = false;
         }
         Debug.Log("Items purchased eliminados");
+
+        Debug.Log("//////////////////////////////////////////////////////////////////////");
+        Debug.Log("RESETEEEEEEEEEEEOOOO");
+        Debug.Log("//////////////////////////////////////////////////////////////////////");
     }
 }
