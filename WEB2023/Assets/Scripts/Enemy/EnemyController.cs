@@ -403,7 +403,7 @@ public class EnemyController : Enemy
         transform.position = Vector2.MoveTowards(transform.position,player.transform.position,speed * Time.deltaTime);
     }
 
-    void Run()
+    public void Run()
     {
         runAway = transform.position - player.transform.position;
         transform.position = Vector2.MoveTowards(transform.position, transform.position+runAway, speed * Time.deltaTime);

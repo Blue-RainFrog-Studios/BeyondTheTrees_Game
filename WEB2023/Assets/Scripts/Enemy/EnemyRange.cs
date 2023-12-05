@@ -38,6 +38,10 @@ public class EnemyRange : EnemyController
             case (EnemyState.Heal):
                 Heal();
                 break;
+            case (EnemyState.Run):
+                Run();
+
+                break;
         }
         if (!notInRoom)
         {
@@ -75,6 +79,7 @@ public class EnemyRange : EnemyController
         {
             currState = EnemyState.Idle;
         }
+        direction = player.transform.position - transform.position;
         if (!(Vector3.Distance(transform.position, player.transform.position) < attackRange && currState != EnemyState.Run))
         {
             if (direction.x > 0.0f)

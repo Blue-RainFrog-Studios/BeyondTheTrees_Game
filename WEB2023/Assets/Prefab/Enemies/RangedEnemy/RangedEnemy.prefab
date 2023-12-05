@@ -296,24 +296,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 0
   notInRoom: 0
-  range: 0
-  attackRange: 0
-  healCol: {fileID: 0}
+  range: 5
+  attackRange: 15
+  healCol: {fileID: 5298211785329011669}
   ghost: {fileID: 0}
-  EnemyBullet: {fileID: 0}
+  EnemyBullet: {fileID: 7118902396155586748, guid: cb6b95ca48fe6f24e88beb9c65cda3e2, type: 3}
   currState: 0
-  enemyType: 0
+  enemyType: 1
   rangeTeleport: 0
   rangeSquirrel: 0
   eatRange: 0
   consumed: 0
   eatClip: {fileID: 0}
   audioSource: {fileID: 0}
-  coolDown: 0
+  coolDown: 1
   coolDownTp: 0
-  speed: 0
-  bulletSpeed: 0
-  animator: {fileID: 0}
+  speed: 1
+  bulletSpeed: 10
+  animator: {fileID: 1330603882934896760}
   IAmAGhost: {fileID: 0}
   damage: 20
   blinkDuration: 0
