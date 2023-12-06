@@ -21,6 +21,9 @@ public class ActionsDavidElGnomo : MonoBehaviour
     public event EventHandler OnWalkAttack;
     public event EventHandler OnWalkAttackEnd;
 
+    [SerializeField] public GameObject TiredHat;
+    [SerializeField] public GameObject GnomeHat;
+
     [SerializeField] private float TimeTired;
     [SerializeField] private Animator animator;
     [SerializeField] private GameObject littleGnome;
@@ -156,6 +159,8 @@ public class ActionsDavidElGnomo : MonoBehaviour
         this.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         StopAllCoroutines();
         animator.Play("Idle");
+        TiredHat.SetActive(false);
+        GnomeHat.SetActive(true);
         StartCoroutine(InvokeGnomes(1f));
         StartCoroutine(InvokeGnomes(2f));
         StartCoroutine(InvokeGnomes(3f));
@@ -168,6 +173,7 @@ public class ActionsDavidElGnomo : MonoBehaviour
         {
             invulnerable = false;
             hasBeenPlayed = true;
+            GnomeHat.SetActive(false);
             return Status.Success;
         }
         else
@@ -182,6 +188,7 @@ public class ActionsDavidElGnomo : MonoBehaviour
     {
         ended=false;
         animator.Play("Idle");
+        TiredHat.SetActive(true);
         //cambia el color a morado
         StartCoroutine(WaitSeconds(TimeTired));
     }
@@ -189,6 +196,7 @@ public class ActionsDavidElGnomo : MonoBehaviour
     {
         if (ended)
         {
+            TiredHat.SetActive(false);
             return Status.Success;
         }
         else

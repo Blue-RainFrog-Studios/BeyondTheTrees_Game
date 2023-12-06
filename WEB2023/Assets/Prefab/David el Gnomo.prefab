@@ -471,6 +471,8 @@ MonoBehaviour:
   currentTheme: {fileID: 8991721561769723423}
   sleepTheme: {fileID: 2433331940325582104}
   bossTheme: {fileID: 3849351619336960780}
+  TiredHat: {fileID: 3848505903859273225}
+  GnomeHat: {fileID: 4757461468691010098}
   TimeTired: 1.5
   animator: {fileID: 6589944774424933058}
   littleGnome: {fileID: 3517669100422621170, guid: 6aef6da7872c24f4cb92cf1629616e5e, type: 3}
@@ -591,6 +593,8 @@ MonoBehaviour:
   TimeTired: 1
   animator: {fileID: 6589944774424933058}
   littleGnome: {fileID: 3517669100422621170, guid: 6aef6da7872c24f4cb92cf1629616e5e, type: 3}
+  TiredNoHat: {fileID: 1136498536372720974}
+  GnomeNoHat: {fileID: 6040601285934954748}
   dieSound: {fileID: 2345209178451290200}
 --- !u!114 &4251262224745933555
 MonoBehaviour:

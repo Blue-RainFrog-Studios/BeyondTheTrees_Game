@@ -24,6 +24,10 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private GameObject littleGnome;
 
+    [SerializeField] private GameObject TiredNoHat;
+    [SerializeField] private GameObject GnomeNoHat;
+
+
     //audio
     [SerializeField] private AudioSource dieSound;
 
@@ -44,6 +48,8 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
 
     public void StartMethodNoHat()
     {
+        GetComponent<ActionsDavidElGnomo>().TiredHat.SetActive(false);
+        GetComponent<ActionsDavidElGnomo>().GnomeHat.SetActive(false);
         OnWalkAttack?.Invoke(this, EventArgs.Empty);
         screenShake = GetComponent<ScreenShake>();
         GetComponent<ActionsDavidElGnomo>().StopAllCoroutines();    
@@ -153,7 +159,8 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
         StopAllCoroutines();
         
         animator.Play("IdleNoHat");
-
+        TiredNoHat.SetActive(false);
+        GnomeNoHat.SetActive(true);
         StartCoroutine(InvokeGnomes(1f));
         StartCoroutine(InvokeGnomes(2f));
         StartCoroutine(InvokeGnomes(3f)); 
@@ -168,6 +175,7 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     {
         if (ended)
         {
+            GnomeNoHat.SetActive(false);
             invulnerable = false;
             hasBeenPlayed = true;
             return Status.Success;
@@ -183,14 +191,15 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     public void StartMethodTiredNoHat()
     {
         ended = false;
+        TiredNoHat.SetActive(true);
         animator.Play("IdleNoHat");
-        //cambia el color a morado
         StartCoroutine(WaitSeconds(TimeTired));
     }
     public Status UpdateMethodTiredNoHat()
     {
         if (ended)
         {
+            TiredNoHat.SetActive(false);
             return Status.Success;
         }
         else
@@ -202,7 +211,9 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
 
     public void StartMethodDieGnome()
     {
-        ended=false; 
+        GnomeNoHat.SetActive(false);
+        TiredNoHat.SetActive(false);
+        ended = false; 
         StopAllCoroutines();
         StartCoroutine(animAndDie());
         dieSound.Play();
