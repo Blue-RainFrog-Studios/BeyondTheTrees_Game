@@ -13,6 +13,13 @@ public class ActionsDavidElGnomo : MonoBehaviour
     private Transform DavidElGnomoTransform;
     private bool ended;
 
+    //audio
+    [SerializeField] private AudioSource currentTheme;
+    [SerializeField] private AudioSource sleepTheme;
+    [SerializeField] private AudioSource bossTheme;
+
+
+
     [SerializeField] private float TimeTired;
     [SerializeField] private Animator animator;
     [SerializeField] private GameObject littleGnome;
@@ -40,7 +47,13 @@ public class ActionsDavidElGnomo : MonoBehaviour
     }
     public Status UpdateMethodSleep()
     {
-        if (Vector2.Distance(playerTransform.position, DavidElGnomoTransform.position) < 3f || GetComponent<DavidElGnomoController>().HP<300)
+        if (Vector2.Distance(playerTransform.position, DavidElGnomoTransform.position) < 6f || GetComponent<DavidElGnomoController>().HP < 500)
+        {
+            //stop all music
+            currentTheme.Stop();
+            sleepTheme.Play();
+        }
+        if (Vector2.Distance(playerTransform.position, DavidElGnomoTransform.position) < 3f || GetComponent<DavidElGnomoController>().HP<500)
         {
             return Status.Success;
         }
@@ -56,6 +69,14 @@ public class ActionsDavidElGnomo : MonoBehaviour
     {
         Debug.Log("ANDANDO AL JUGADOR");
         animator.Play("WalkFrontDG");
+        if (!bossTheme.isPlaying)
+        {
+            //music starts from volume 0 to volume 1 in 2 seconds
+            StartCoroutine(MusicVolumeUp());
+            sleepTheme.Stop();
+            bossTheme.Play();
+        }
+
     }
     public Status UpdateMethodWalk()
     {
@@ -258,6 +279,17 @@ public class ActionsDavidElGnomo : MonoBehaviour
         animator.Play(animationName);
         yield return null;
         ended= true;
+    }
+
+    IEnumerator MusicVolumeUp()
+    {
+        float elapsedTime = 0f;
+        while (elapsedTime < 2f)
+        {
+            bossTheme.volume = Mathf.Lerp(0, 1, (elapsedTime));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
     }
     #endregion
 

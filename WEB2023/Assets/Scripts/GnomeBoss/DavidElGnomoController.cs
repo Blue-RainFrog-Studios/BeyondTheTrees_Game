@@ -14,6 +14,10 @@ public class DavidElGnomoController : MonoBehaviour
     [SerializeField] public float HP;
     [SerializeField] public float HPGnomeMode;
     [SerializeField] public float HPSecondPhase;
+    [SerializeField] private AudioSource grunt1;
+    [SerializeField] private AudioSource grunt2;
+
+
     GameObject player;
     private bool Played;
     private bool PlayedSF;
@@ -68,6 +72,16 @@ public class DavidElGnomoController : MonoBehaviour
 
         if (!GetComponent<ActionsDavidElGnomo>().invulnerable)
         {
+            //random between 1 and 2
+            int random = Random.Range(1, 3);
+            if (random == 1)
+            {
+                grunt1.Play();
+            }
+            else
+            {
+                grunt2.Play();
+            }
             HP -= damage;
             Debug.Log("Recibo daño");
             if (HP <= 0)

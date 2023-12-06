@@ -23,6 +23,9 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private GameObject littleGnome;
 
+    //audio
+    [SerializeField] private AudioSource dieSound;
+
     private bool invulnerable = false;
     private bool hasBeenPlayed = false;
 
