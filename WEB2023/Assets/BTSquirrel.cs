@@ -10,7 +10,6 @@ using BehaviourAPI.Core.Actions;
 public class BTSquirrel : BehaviourRunner
 {
 
-    private GameObject playerPrefab;
 
     ActionsSquirrel _ActionsSquirrel;
 
@@ -18,7 +17,6 @@ public class BTSquirrel : BehaviourRunner
 
     protected override void Init()
     {
-        playerPrefab = GameObject.FindGameObjectWithTag("Player");
         _ActionsSquirrel = GetComponent<ActionsSquirrel>();
         base.Init();
     }
