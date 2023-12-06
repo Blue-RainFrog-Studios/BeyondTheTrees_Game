@@ -28,7 +28,7 @@ public class BTSquirrel : BehaviourRunner
 
         var rolePerception = new ConditionPerception(() => (_ActionsSquirrel.rol == "Protector") && (!_ActionsSquirrel.CheckAcornEated()));
 
-        var otherSquirrels = new ConditionPerception(() => true);
+        var otherSquirrels = new ConditionPerception(() => _ActionsSquirrel.CheckOtherSquirrels());
         
         var formEnded = new ConditionPerception(() => !_ActionsSquirrel.CheckFormationDone());
 

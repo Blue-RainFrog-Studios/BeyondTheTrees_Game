@@ -37,16 +37,22 @@ public class ActionsSquirrel : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerTransform = player.transform;
         squirrels = FindObjectsOfType<ActionsSquirrel>();
-        squirrels[0].rol = "Eater";
-        for(int i = 1;i < squirrels.Length; i++)
+        if(squirrels != null )
         {
-            squirrels[i].rol = "Protector";
+            squirrels[0].rol = "Eater";
+            for (int i = 1; i < squirrels.Length; i++)
+            {
+                squirrels[i].rol = "Protector";
+            }
         }
         numReady = 0;
         acorns = new List<GameObject>(GameObject.FindGameObjectsWithTag("Acorn"));
         //ended2 = squirrelController.GetComponent<SquirrelController>().ended;
     }
-    
+    private void Update()
+    {
+        
+    }
     public void StartWalkAcorn()
     {
 
@@ -79,7 +85,6 @@ public class ActionsSquirrel : MonoBehaviour
 
     public Status UpdateWalkPlayer()
     {
-        Debug.Log("Atacando: " +gameObject.name);
         squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, playerTransform.position, speed * Time.deltaTime);
         return Status.Running;
     }
@@ -145,20 +150,14 @@ public class ActionsSquirrel : MonoBehaviour
     {
         if (CheckSquirrelEaterInRange())
         {
-            Debug.Log("Termiando de Formando: " + gameObject.name);
             numReady++;
             return Status.Success;
         }
         else
-        {
-            Debug.Log("Formando: " + gameObject.name);
-            //Vector3 pos = (squirrels[0].transform.position - player.transform.position);
-            //Vector3 posicionIntermedia = (squirrels[0].transform.position + player.transform.position) / 2f;
+        {;
             Vector3 direccionPC = (squirrels[0].transform.position - player.transform.position).normalized * 3.0f;
-            Vector3 posicionProtegida = squirrels[0].transform.position - direccionPC;
-            //squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, squirrels[0].transform.position, speed * Time.deltaTime);
+            Vector3 posicionProtegida = squirrels[0].transform.position - direccionPC;;
             squirrelTransform.position = Vector2.MoveTowards(transform.position, posicionProtegida, speed * Time.deltaTime);
-            //squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, posicionProtegida, speed * Time.deltaTime);
         }
 
         return Status.Running;
@@ -166,10 +165,8 @@ public class ActionsSquirrel : MonoBehaviour
 
     public bool CheckSquirrelEaterInRange()
     {
-        if (rol == "Protector")
+        if (rol == "Protector" && squirrels[0] != null)
         {
-            //Vector3 pos = (squirrels[0].transform.position - player.transform.position);
-            //float pos = Vector2.Distance(player.transform.position, squirrels[0].transform.position);
             return Vector2.Distance(this.transform.position, squirrels[0].transform.position) < 3.0f;
         }
             
@@ -178,7 +175,6 @@ public class ActionsSquirrel : MonoBehaviour
 
     public bool CheckFormationDone()
     {
-        Debug.Log("B");
         return (squirrels.Length - 1) == numReady;
     }
 
@@ -193,28 +189,20 @@ public class ActionsSquirrel : MonoBehaviour
         {
             return Status.Success;
         }
-
-
-        //else if (CheckSquirrelEaterInRange())
-        //    return Status.Running;
-        Debug.Log("Formando: " + gameObject.name);
-        //Vector3 pos = (squirrels[0].transform.position - player.transform.position);
-        //Vector3 posicionIntermedia = (squirrels[0].transform.position + player.transform.position) / 2f;
         Vector3 direccionPC = (squirrels[0].transform.position - player.transform.position).normalized * 3.0f;
         Vector3 posicionProtegida = squirrels[0].transform.position - direccionPC;
-        //squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, squirrels[0].transform.position, speed * Time.deltaTime);
         squirrelTransform.position = Vector2.MoveTowards(transform.position, posicionProtegida, speed * Time.deltaTime);
-        //squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, posicionProtegida, speed * Time.deltaTime);
-       // squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, squirrels[0].transform.position, speed * Time.deltaTime);
         return Status.Running;
-
     }
 
     public bool CheckAcornEated()
     {
-        return acorns.Count == 0;
+        return acorns.Count == 0 || squirrels[0] == null;
     }
-
+    public bool CheckOtherSquirrels()
+    {
+        return squirrels.Length > 0;
+    }
 }
 
 
