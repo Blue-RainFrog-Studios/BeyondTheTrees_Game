@@ -88,11 +88,11 @@ public class DavidElGnomoController : MonoBehaviour
         {
             //random between 1 and 2
             int random = UnityEngine.Random.Range(1, 3);
-            if (random == 1 && HP>=0)
+            if (random == 1 && HP>=0 && !walkAtt)
             {
                 grunt1.Play();
             }
-            else if (random == 2 && HP >= 0)
+            else if (random == 2 && HP >= 0 && !walkAtt)
             {
                 grunt2.Play();
             }

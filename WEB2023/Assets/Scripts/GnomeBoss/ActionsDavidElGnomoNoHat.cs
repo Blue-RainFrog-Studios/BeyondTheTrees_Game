@@ -44,6 +44,7 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
 
     public void StartMethodNoHat()
     {
+        OnWalkAttack?.Invoke(this, EventArgs.Empty);
         screenShake = GetComponent<ScreenShake>();
         GetComponent<ActionsDavidElGnomo>().StopAllCoroutines();    
         this.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
@@ -60,6 +61,7 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
         else
         {
             ended = false;
+            OnWalkAttackEnd?.Invoke(this, EventArgs.Empty);
             return Status.Success;
         }
     }
