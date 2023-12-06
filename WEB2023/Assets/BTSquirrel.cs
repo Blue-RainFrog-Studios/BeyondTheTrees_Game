@@ -30,7 +30,7 @@ public class BTSquirrel : BehaviourRunner
 
         var otherSquirrels = new ConditionPerception(() => true);
         
-        var formEnded = new ConditionPerception(() => true);
+        var formEnded = new ConditionPerception(() => !_ActionsSquirrel.CheckFormationDone());
 
 
         //bt
@@ -56,9 +56,9 @@ public class BTSquirrel : BehaviourRunner
 
         var formationDone = bt.CreateDecorator<ConditionNode>("Formation Done", form).SetPerception(formEnded);
 
-        var inversor1 = bt.CreateDecorator<InverterNode>("Inversor 1", formationDone);
+        //var inversor1 = bt.CreateDecorator<InverterNode>("Inversor 1", formationDone);
 
-        var seq3 = bt.CreateComposite<SequencerNode>("seq3", false, inversor1);  //Nodo secuencia
+        var seq3 = bt.CreateComposite<SequencerNode>("seq3", false, formationDone);  //Nodo secuencia
 
         var otherEnemy = bt.CreateDecorator<ConditionNode>("Other Enemy", seq3).SetPerception(otherSquirrels);
 

@@ -144,12 +144,18 @@ public class ActionsSquirrel : MonoBehaviour
     {
         if (CheckSquirrelEaterInRange())
         {
+            Debug.Log("A");
             numReady++;
             return Status.Success;
         }
         else
         {
-            squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, squirrels[0].transform.position, speed * Time.deltaTime);
+            Vector3 posicionIntermedia = (squirrels[0].transform.position + player.transform.position) / 3f;
+            Vector3 direccion = (squirrels[0].transform.position - player.transform.position).normalized;
+            Vector3 posicionProtegida = posicionIntermedia - direccion;
+            //squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, squirrels[0].transform.position, speed * Time.deltaTime);
+            //squirrelTransform.position = Vector3.Lerp(transform.position, posicionProtegida, speed *Time.deltaTime );
+            squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, posicionProtegida, speed * Time.deltaTime);
             return Status.Running;
         }
     }
@@ -163,6 +169,7 @@ public class ActionsSquirrel : MonoBehaviour
 
     public bool CheckFormationDone()
     {
+        Debug.Log("B");
         return (squirrels.Length - 1) == numReady;
     }
 
