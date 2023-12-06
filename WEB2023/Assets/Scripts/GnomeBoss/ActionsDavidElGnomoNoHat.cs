@@ -19,7 +19,8 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     //[SerializeField] private float HPGnomeMode;
 
     [SerializeField] private float TimeTired;
-
+    public event EventHandler OnWalkAttack;
+    public event EventHandler OnWalkAttackEnd;
     [SerializeField] private Animator animator;
     [SerializeField] private GameObject littleGnome;
 
@@ -84,6 +85,8 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
         collisionDetected = false;
         GetComponent<Knockback>().strength = 40f;
         ended = false;
+        OnWalkAttack?.Invoke(this, EventArgs.Empty);
+
         if (playerTransform.position.x > DavidElGnomoTransform.position.x)
             animator.Play("WalkSideNoHat");
         else
@@ -112,6 +115,7 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
             GetComponent<Knockback>().strength = 10f;
             StopAllCoroutines();
             collisionDetected = false;
+            OnWalkAttackEnd?.Invoke(this, EventArgs.Empty);
             return Status.Success;
         }
         return Status.Running;
@@ -199,7 +203,9 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
         ended=false; 
         StopAllCoroutines();
         StartCoroutine(animAndDie());
-    }   
+        dieSound.Play();
+
+    }
     public Status UpdateMethodDieGnome()
     {
         if (ended) { 

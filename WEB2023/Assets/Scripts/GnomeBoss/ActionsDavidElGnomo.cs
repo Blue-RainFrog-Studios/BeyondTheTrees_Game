@@ -18,7 +18,8 @@ public class ActionsDavidElGnomo : MonoBehaviour
     [SerializeField] private AudioSource sleepTheme;
     [SerializeField] private AudioSource bossTheme;
 
-
+    public event EventHandler OnWalkAttack;
+    public event EventHandler OnWalkAttackEnd;
 
     [SerializeField] private float TimeTired;
     [SerializeField] private Animator animator;
@@ -90,6 +91,7 @@ public class ActionsDavidElGnomo : MonoBehaviour
     public void StartMethodWalkAttack()
     {
         collisionDetected = false;
+        OnWalkAttack?.Invoke(this, EventArgs.Empty);
         //screenShake = GetComponent<ScreenShake>();
         GetComponent<Knockback>().strength = 30f;
         ended = false;
@@ -115,11 +117,12 @@ public class ActionsDavidElGnomo : MonoBehaviour
     {
         //move right for 2 seconds
         //coroutine that moves the object to the right for 2 seconds
-
+        
         if (collisionDetected){
             GetComponent<Knockback>().strength = 10f;
             StopAllCoroutines();
             collisionDetected = false;
+            OnWalkAttackEnd?.Invoke(this, EventArgs.Empty);
             return Status.Success;
         }
         return Status.Running;
