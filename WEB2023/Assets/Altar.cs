@@ -42,11 +42,15 @@ public class Altar : MonoBehaviour
                 {
                     audioSource.PlayOneShot(endSound);
                     collision.GetComponent<KnightScript>().AddHealth((int)(collision.GetComponent<KnightScript>().health * 0.5f));
+                    GetComponent<Animator>().SetTrigger("Fase 3-4");
                 }
                 else
                 {
                     audioSource.PlayOneShot(placeSound);
-                    //Animacion;
+                    if(state == 1)
+                        GetComponent<Animator>().SetTrigger("Fase 1-2");
+                    else if(state == 2)
+                        GetComponent<Animator>().SetTrigger("Fase 2-3");
                 }
 
             }
