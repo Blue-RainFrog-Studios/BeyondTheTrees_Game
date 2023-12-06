@@ -16,7 +16,7 @@ namespace Inventory
         private UIInventoryPage inventoryUI;
 
         [SerializeField]
-        private InventorySO inventoryData;
+        public InventorySO inventoryData;
 
         private Map playerInputActions;
 
