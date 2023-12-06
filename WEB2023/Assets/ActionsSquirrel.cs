@@ -79,6 +79,7 @@ public class ActionsSquirrel : MonoBehaviour
 
     public Status UpdateWalkPlayer()
     {
+        Debug.Log("Atacando: " +gameObject.name);
         squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, playerTransform.position, speed * Time.deltaTime);
         return Status.Running;
     }
@@ -144,26 +145,34 @@ public class ActionsSquirrel : MonoBehaviour
     {
         if (CheckSquirrelEaterInRange())
         {
-            Debug.Log("A");
+            Debug.Log("Termiando de Formando: " + gameObject.name);
             numReady++;
             return Status.Success;
         }
         else
         {
-            Vector3 posicionIntermedia = (squirrels[0].transform.position + player.transform.position) / 3f;
-            Vector3 direccion = (squirrels[0].transform.position - player.transform.position).normalized;
-            Vector3 posicionProtegida = posicionIntermedia - direccion;
+            Debug.Log("Formando: " + gameObject.name);
+            //Vector3 pos = (squirrels[0].transform.position - player.transform.position);
+            //Vector3 posicionIntermedia = (squirrels[0].transform.position + player.transform.position) / 2f;
+            Vector3 direccionPC = (squirrels[0].transform.position - player.transform.position).normalized * 3.0f;
+            Vector3 posicionProtegida = squirrels[0].transform.position - direccionPC;
             //squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, squirrels[0].transform.position, speed * Time.deltaTime);
-            //squirrelTransform.position = Vector3.Lerp(transform.position, posicionProtegida, speed *Time.deltaTime );
-            squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, posicionProtegida, speed * Time.deltaTime);
-            return Status.Running;
+            squirrelTransform.position = Vector2.MoveTowards(transform.position, posicionProtegida, speed * Time.deltaTime);
+            //squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, posicionProtegida, speed * Time.deltaTime);
         }
+
+        return Status.Running;
     }
 
     public bool CheckSquirrelEaterInRange()
     {
         if (rol == "Protector")
+        {
+            //Vector3 pos = (squirrels[0].transform.position - player.transform.position);
+            //float pos = Vector2.Distance(player.transform.position, squirrels[0].transform.position);
             return Vector2.Distance(this.transform.position, squirrels[0].transform.position) < 3.0f;
+        }
+            
         return true;
     }
 
@@ -186,10 +195,17 @@ public class ActionsSquirrel : MonoBehaviour
         }
 
 
-        else if (CheckSquirrelEaterInRange())
-            return Status.Running;
-
-        squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, squirrels[0].transform.position, speed * Time.deltaTime);
+        //else if (CheckSquirrelEaterInRange())
+        //    return Status.Running;
+        Debug.Log("Formando: " + gameObject.name);
+        //Vector3 pos = (squirrels[0].transform.position - player.transform.position);
+        //Vector3 posicionIntermedia = (squirrels[0].transform.position + player.transform.position) / 2f;
+        Vector3 direccionPC = (squirrels[0].transform.position - player.transform.position).normalized * 3.0f;
+        Vector3 posicionProtegida = squirrels[0].transform.position - direccionPC;
+        //squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, squirrels[0].transform.position, speed * Time.deltaTime);
+        squirrelTransform.position = Vector2.MoveTowards(transform.position, posicionProtegida, speed * Time.deltaTime);
+        //squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, posicionProtegida, speed * Time.deltaTime);
+       // squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, squirrels[0].transform.position, speed * Time.deltaTime);
         return Status.Running;
 
     }
