@@ -1,3 +1,4 @@
+using BehaviourAPI.UnityToolkit.Demos;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,13 +6,14 @@ using UnityEngine;
 public class MusicSelector : MonoBehaviour
 {
     [SerializeField] private AudioSource OstPiso1;
-    [SerializeField] private AudioSource OstPiso2;
+    [SerializeField] public AudioSource OstPiso2;
     [SerializeField] private AudioSource OstPiso3; 
     GameObject player;
     
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+
     }
 
     // Update is called once per frame

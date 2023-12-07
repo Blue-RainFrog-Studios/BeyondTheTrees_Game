@@ -76,6 +76,7 @@ public class KnightScript : MonoBehaviour
         inmune = true;
         if (knight.health <= 0)
         {
+            StartCoroutine(Wait(1));
             SceneManager.LoadScene("GameOver");
             GetComponent<PlayerMovementInputSystem>().nivel = 0;
             knight.health = 50;
@@ -85,7 +86,7 @@ public class KnightScript : MonoBehaviour
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             GetComponentInChildren<Canvas>().enabled = false;
         }
-        GetComponent<SpriteRenderer>().color = Color.black;
+        GetComponent<PlayerMovementInputSystem>().Head.Play("Hit");
         knight.health -= (dmgValue - knight.defense <= 0.0f) ? minDmg : (dmgValue - knight.defense);
         lifeBar.value = knight.health;
         hitSource.PlayOneShot(hitClip);
@@ -229,5 +230,10 @@ public class KnightScript : MonoBehaviour
         }
     }
 
+    private IEnumerator Wait(int seconds)
+    {
+        GetComponent<PlayerMovementInputSystem>().Head.Play("Die");
+        yield return new WaitForSeconds(seconds);
+    }
 }
 

@@ -20,6 +20,7 @@ public class ActionsDavidElGnomo : MonoBehaviour
 
     public event EventHandler OnWalkAttack;
     public event EventHandler OnWalkAttackEnd;
+    public bool despierto = false;
 
     [SerializeField] public GameObject TiredHat;
     [SerializeField] public GameObject GnomeHat;
@@ -33,10 +34,13 @@ public class ActionsDavidElGnomo : MonoBehaviour
     bool collisionDetected = false;
 
     ScreenShake screenShake;
+
+    GameObject music;
     #endregion
 
     private void Start()
     {
+        music = GameObject.FindWithTag("Music");
         player = GameObject.FindGameObjectWithTag("Player");
         playerTransform = player.transform;
         DavidElGnomoTransform = GetComponent<Transform>();
@@ -51,10 +55,10 @@ public class ActionsDavidElGnomo : MonoBehaviour
     }
     public Status UpdateMethodSleep()
     {
-        if (Vector2.Distance(playerTransform.position, DavidElGnomoTransform.position) < 6f || GetComponent<DavidElGnomoController>().HP < 500)
+        if (Vector2.Distance(playerTransform.position, DavidElGnomoTransform.position) < 9f)
         {
             //stop all music
-            currentTheme.Stop();
+            music.GetComponent<MusicSelector>().OstPiso2.Stop();
             sleepTheme.Play();
         }
         if (Vector2.Distance(playerTransform.position, DavidElGnomoTransform.position) < 3f || GetComponent<DavidElGnomoController>().HP<500)

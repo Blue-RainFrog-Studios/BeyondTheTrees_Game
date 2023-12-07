@@ -22,6 +22,8 @@ TagManager:
   - BossTree
   - AttackRoot
   - Acorn
+  - ItemSpawner
+  - Music
   layers:
   - Default
   - TransparentFX
