@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.Analytics;
 using UnityEngine.UIElements;
 
@@ -17,6 +18,7 @@ public class Actions_Wolf : MonoBehaviour
     private Transform WolfTransform;
     private bool ended;
     private bool endedDazed;
+    private NavMeshAgent navMeshAgent;
 
     [SerializeField] private float TimeCharge;
     [SerializeField] private Animator animator;
@@ -28,12 +30,20 @@ public class Actions_Wolf : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        
+
         playerTransform = player.transform;
         WolfTransform = GetComponent<Transform>();
+
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        navMeshAgent.updateRotation = false;
+        navMeshAgent.updateUpAxis = false;
+
     }
     private void Update()
     {
         direction = targetPosition - WolfTransform.position;
+        
     }
     #region MethodsIdle
     public void StartMethodWaiting()
@@ -95,7 +105,9 @@ public class Actions_Wolf : MonoBehaviour
     public Status UpdateMethodWalk()
     {
         //make the object move to the player position
-        WolfTransform.position = Vector2.MoveTowards(WolfTransform.position, playerTransform.transform.position, GetComponent<WolfController>().speed * Time.deltaTime);
+        //WolfTransform.position = Vector2.MoveTowards(WolfTransform.position, playerTransform.transform.position, GetComponent<WolfController>().speed * Time.deltaTime);
+
+        navMeshAgent.SetDestination(player.transform.position);
         return Status.Running;
     }
     #endregion
