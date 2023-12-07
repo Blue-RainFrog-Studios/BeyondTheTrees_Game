@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     public float range;
     public float attackRange;
     protected bool healed = false;
-    protected float iLife;
+    
     // Start is called before the first frame update
     void Start()
     {

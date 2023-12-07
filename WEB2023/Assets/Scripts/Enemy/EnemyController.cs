@@ -1,6 +1,7 @@
 using BehaviourAPI.UnityToolkit.Demos;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.SceneManagement;
@@ -9,8 +10,6 @@ using UnityEngine.SceneManagement;
 public enum EnemyState
 {
     Idle,
-
-    Wander,
 
     Follow,
 
@@ -47,20 +46,10 @@ public class EnemyController : Enemy
     public EnemyState currState = EnemyState.Idle;
     public EnemyType enemyType;
     
-    public float rangeTeleport;
-    
-    public float rangeSquirrel;
-    public float eatRange;
-    
+  
+ 
     protected GameObject room;
-    [SerializeField]public bool consumed;
     Rigidbody2D rb;
-
-    [SerializeField]
-    private AudioClip eatClip;
-
-    [SerializeField]
-    private AudioSource audioSource;
 
     public float coolDown;
     public float coolDownTp;
@@ -83,8 +72,8 @@ public class EnemyController : Enemy
     public Animator animator;
     public GameObject IAmAGhost;
     protected Vector2 direction;
-    Vector2 directionSquirrel;
-
+    public float iLife;
+    public bool can = false;
     public int damage = 20;
     // Start is called before the first frame update
 
@@ -96,10 +85,11 @@ public class EnemyController : Enemy
     private void Awake()
     {
         Idle();
-        iLife = life;
+        
     }
     void Start()
     {
+        
         player = GameObject.FindGameObjectWithTag("Player");
         
         ghost = this.gameObject;
@@ -107,6 +97,8 @@ public class EnemyController : Enemy
         enemyMaterial = GetComponent<Renderer>().material;
 
         room = GameObject.FindGameObjectWithTag("RoomController");
+
+        
 
     }
 
@@ -129,45 +121,8 @@ public class EnemyController : Enemy
         return Vector3.Distance(transform.position, player.transform.position) <= rangeTeleport;
     }
 
-    private IEnumerator ChooseDirection()
-    {
-        chooseDir = true;
-        yield return new WaitForSeconds(Random.Range(2f, 8f));
-        randomDir = new Vector3(0, 0, Random.Range(0, 360));
-        //Quaternion nextRotation = Quaternion.Euler(randomDir);
-        //transform.rotation = Quaternion.Lerp(transform.rotation, nextRotation, Random.Range(0.5f, 2.5f));
-        chooseDir = false;
-    }
-    public void Wander()
-    {
-        if (!chooseDir)
-        {
-            StartCoroutine(ChooseDirection());
-        }
-        transform.position += -transform.right * speed * Time.deltaTime;
-        if (isPlayerInRange(range))
-        {
-            switch (enemyType)
-            {
-                case (EnemyType.Melee):
-                    currState = EnemyState.Follow;
-                    break;
-                case (EnemyType.Ranged):
-                    currState = EnemyState.Run;
 
-                    break;
-                case (EnemyType.Teleport):
 
-                    currState = EnemyState.Follow;
-                    break;
-            }
-        }
-        else if (isPlayerInRangeTeleport(rangeTeleport))
-        {
-            currState = EnemyState.Teleport;
-        }
-
-    }
     public  void Follow()
     {
         transform.position = Vector2.MoveTowards(transform.position,player.transform.position,speed * Time.deltaTime);
@@ -191,7 +146,12 @@ public class EnemyController : Enemy
 
     public void Idle()
     {
-        StopCoroutine(ChooseDirection());
+    }
+    public IEnumerator Wait()
+    {
+        can = true;
+        yield return new WaitForSeconds(5);
+        can = false;
     }
     private IEnumerator CoolDown()
     {

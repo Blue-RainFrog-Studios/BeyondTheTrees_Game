@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyTeleport : EnemyController
 {
+    
+    public float rangeTeleport;
     private void Awake()
     {
         Idle();
@@ -21,9 +23,6 @@ public class EnemyTeleport : EnemyController
         {
             case (EnemyState.Idle):
                 Idle();
-                break;
-            case (EnemyState.Wander):
-                Wander();
                 break;
             case (EnemyState.Follow):
                 Follow();

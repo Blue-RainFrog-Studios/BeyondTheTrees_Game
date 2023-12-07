@@ -195,18 +195,14 @@ MonoBehaviour:
   EnemyBullet: {fileID: 0}
   currState: 0
   enemyType: 0
-  rangeTeleport: 0
-  rangeSquirrel: 0
-  eatRange: 0
-  consumed: 0
-  eatClip: {fileID: 0}
-  audioSource: {fileID: 0}
   coolDown: 1
   coolDownTp: 0
   speed: 3
   bulletSpeed: 0
   animator: {fileID: 6938415437227796382}
   IAmAGhost: {fileID: 263330336992781321}
+  iLife: 80
+  can: 0
   damage: 10
   blinkDuration: 1
   blinkNumber: 6
@@ -267,18 +263,14 @@ MonoBehaviour:
   EnemyBullet: {fileID: 0}
   currState: 0
   enemyType: 0
-  rangeTeleport: 0
-  rangeSquirrel: 0
-  eatRange: 0
-  consumed: 0
-  eatClip: {fileID: 0}
-  audioSource: {fileID: 0}
   coolDown: 0
   coolDownTp: 0
   speed: 3
   bulletSpeed: 0
   animator: {fileID: 6938415437227796382}
   IAmAGhost: {fileID: 263330336992781321}
+  iLife: 80
+  can: 0
   damage: 20
   blinkDuration: 1
   blinkNumber: 6

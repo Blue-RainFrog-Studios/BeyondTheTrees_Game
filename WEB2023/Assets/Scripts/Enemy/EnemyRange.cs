@@ -23,9 +23,6 @@ public class EnemyRange : EnemyController
             case (EnemyState.Idle):
                 Idle();
                 break;
-            case (EnemyState.Wander):
-                Wander();
-                break;
             case (EnemyState.Follow):
                 Follow();
                 break;

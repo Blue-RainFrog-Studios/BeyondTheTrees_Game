@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyGhost : EnemyController
 {
-
+    
     // Start is called before the first frame update
     private void Awake()
     {
@@ -12,8 +12,10 @@ public class EnemyGhost : EnemyController
     }
     void Start()
     {
+
         player = GameObject.FindGameObjectWithTag("Player");
         room = GameObject.FindGameObjectWithTag("RoomController");
+        Debug.Log("Vida inicial fantasma" + iLife);
     }
 
     // Update is called once per frame
@@ -23,9 +25,6 @@ public class EnemyGhost : EnemyController
         {
             case (EnemyState.Idle):
                 Idle();
-                break;
-            case (EnemyState.Wander):
-                Wander();
                 break;
             case (EnemyState.Follow):
                 Follow();
@@ -45,10 +44,6 @@ public class EnemyGhost : EnemyController
             if (isPlayerInRange(range) && currState != EnemyState.Die)
             {
                 currState = EnemyState.Follow;
-            }
-            else if (!isPlayerInRange(range))
-            {
-                currState = EnemyState.Wander;
             }
             if (Vector3.Distance(transform.position, player.transform.position) < attackRange)
             {
@@ -92,16 +87,25 @@ public class EnemyGhost : EnemyController
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy") && healed == false)
+
+        if (collision.CompareTag("Enemy") && healed == false && can == false)
         {
+            StartCoroutine(Wait());
+            Debug.Log("Entro en el area");
+
+
+            Debug.Log("Puedo entrar");
             life += 5;
-            if(life>=iLife)
+            if (life >= iLife)
             {
-                Debug.Log("Vida inicial " + iLife);
+                Debug.Log("Vida tras cura " + life);
                 healed = true;
             }
-            
+
+
+
         }
     }
+
 
 }
