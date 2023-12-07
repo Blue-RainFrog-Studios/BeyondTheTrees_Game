@@ -12,7 +12,7 @@ public class NPCBase : MonoBehaviour
     public List<string> dialogueList; 
     private int index;
     public string nameCharacter;
-    public Image speackChar;
+    public Sprite speackImg;
     public BoxCollider2D speakZone;
 
 
@@ -29,17 +29,16 @@ public class NPCBase : MonoBehaviour
 
     private void Update()
     {
-        if (dialogueText.text == dialogueList[index])
+        /*if (dialogueText.text == dialogueList[index])
         {
-            player.GetComponent<PlayerMovementInputSystem>().enabled = true;
-            //continueButton.SetActive(true);
-            //buyButton.SetActive(true);
-        }
+            //player.GetComponent<PlayerMovementInputSystem>().enabled = true;
+            
+        }*/
     }
 
     public void EnseñarDialogo()
     {
-        player.GetComponent<PlayerMovementInputSystem>().enabled = false;
+        //player.GetComponent<PlayerMovementInputSystem>().enabled = false;
         if (dialoguePanel.activeInHierarchy)
         {
             zeroText();
@@ -60,18 +59,27 @@ public class NPCBase : MonoBehaviour
 
     IEnumerator Typing()
     {
+        player.GetComponent<PlayerMovementInputSystem>().enabled = false;
         foreach (char letter in dialogueList[index].ToCharArray())
         {
             dialogueText.text += letter;
             yield return new WaitForSeconds(wordSpeed);
         }
+        continueButton.SetActive(true);
+        if(index == 0)
+        {
+            buyButton.SetActive(true);
+        }
+        
+
     }
 
     public void NextLine()
     {
         continueButton.SetActive(false);
         buyButton.SetActive(false);
-        if (index < dialogueList.Count)
+
+        if (index < dialogueList.Count-1)
         {
             index++;
             dialogueText.text = "";
@@ -79,29 +87,34 @@ public class NPCBase : MonoBehaviour
         }
         else
         {
-            zeroText();
+            //zeroText();
+            player.GetComponent<PlayerMovementInputSystem>().enabled = true;
+            dialoguePanel.SetActive(false); // Cierra el panel de diálogo
+            //speakZone.enabled = false;
         }
     }
 
     public void OpenShop()
     {
+
         shopUI.SetActive(true);
         dialoguePanel.SetActive(false);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D speakZone)
     {
-        if (collision.CompareTag("Player"))
+        if (speakZone.CompareTag("Player"))
         {
             EnseñarDialogo();
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D speakZone)
     {
-        if (collision.CompareTag("Player"))
+        if (speakZone.CompareTag("Player"))
         {
             zeroText();
+
         }
     }
 }

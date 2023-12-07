@@ -14,11 +14,18 @@ public class NPCTutorial : MonoBehaviour
 
     public string[] dialogue;
     private int index;
+    public string nameCharacter;
+    public Image speackImg;
 
     private GameObject player;
     public GameObject continueButton;
     public float wordSpeed;
     public bool playerIsClose;
+
+    public BoxCollider2D areaTutorial;
+    public BoxCollider2D areaHablar;
+
+    public bool remindBack;
 
     private void Start()
     {
