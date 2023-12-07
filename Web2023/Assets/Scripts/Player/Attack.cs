@@ -33,7 +33,7 @@ public class Attack : MonoBehaviour
 
         if (collision.CompareTag("Enemy"))
         {
-            collision.GetComponent<EnemyController>().RecieveDamage(damage);
+            collision.GetComponent<ActionsSquirrel>().RecieveDamage(damage);
             Destroy(gameObject);
         }
         if (collision.CompareTag("Boss"))

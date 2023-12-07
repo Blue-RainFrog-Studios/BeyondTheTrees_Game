@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActionsSquirrel : MonoBehaviour
+public class ActionsSquirrel : Enemy
 {
     [SerializeField] private GameObject player;
     [SerializeField] private Transform playerTransform;
@@ -232,6 +232,15 @@ public class ActionsSquirrel : MonoBehaviour
     public bool CheckOtherSquirrels()
     {
         return squirrels.Count > 0;
+    }
+
+    public void RecieveDamage(float damage)
+    {
+        Debug.Log("PENE");
+        life -= damage;
+        this.GetComponent<Knockback>().PlayFeedback(player, this.gameObject.GetComponent<Rigidbody2D>());
+        RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());
+        Destroy(this.gameObject);
     }
 }
 
