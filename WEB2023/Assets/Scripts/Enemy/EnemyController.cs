@@ -15,7 +15,7 @@ public enum EnemyState
 
     Attack,
 
-    Die,
+    //Die,
 
     Teleport,
 
@@ -77,8 +77,6 @@ public class EnemyController : Enemy
     public int damage = 20;
     // Start is called before the first frame update
 
-    
-
     public float blinkDuration;
     public int blinkNumber;
     protected bool blinking = false;
@@ -97,20 +95,17 @@ public class EnemyController : Enemy
         enemyMaterial = GetComponent<Renderer>().material;
 
         room = GameObject.FindGameObjectWithTag("RoomController");
-
-        
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        switch (currState)
+        /*switch (currState)
         {
             case (EnemyState.Die):
                 Die();
                 break;
-        }
+        }*/
     }
     public bool isPlayerInRange(float range)
     {
@@ -279,7 +274,7 @@ public class EnemyController : Enemy
         Destroy(ghost);
 
     }
-    public void RecieveDamage(float damage)
+    /*public void RecieveDamage(float damage)
     {
         life -= damage;
         this.GetComponent<Knockback>().PlayFeedback(player , this.gameObject.GetComponent<Rigidbody2D>());
@@ -293,7 +288,7 @@ public class EnemyController : Enemy
         {
             StartCoroutine(Blink());
         }
-    }
+    }*/
 
     public IEnumerator Blink()
     {
@@ -316,8 +311,4 @@ public class EnemyController : Enemy
 
         blinking = false;
     }
-
-    
-
-
 }

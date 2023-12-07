@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
 
     public void RecieveDamage(float damage)
     {
-        Debug.Log("OKAY, LETS GO");
+        Debug.Log("FUTBOL Y FORTNAIT");
         life -= damage;
         this.GetComponent<Knockback>().PlayFeedback(player, this.gameObject.GetComponent<Rigidbody2D>());
         if (life <= 0) { 

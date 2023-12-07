@@ -49,7 +49,7 @@ public class Attack : MonoBehaviour
         }
         if (collision.CompareTag("LittleGnome"))
         {
-            collision.GetComponent<LittleGnomes>().RecieveDamage((int)damage);
+            collision.GetComponent<LittleGnomes>().RecieveDamage((int)damage); 
             Destroy(gameObject);
         }
         if (collision.CompareTag("GhostTree"))

@@ -185,28 +185,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 450c7171584c7d740adfedb980fda1d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  life: 100
+  notInRoom: 0
+  range: 20
+  attackRange: 0.65
+  healCol: {fileID: 0}
   ghost: {fileID: 263330336992781321}
   EnemyBullet: {fileID: 0}
   currState: 0
   enemyType: 0
-  range: 20
-  rangeTeleport: 0
-  attackRange: 0.65
-  rangeSquirrel: 0
-  eatRange: 0
-  consumed: 0
-  eatClip: {fileID: 0}
-  audioSource: {fileID: 0}
-  receiveDmg: {fileID: 0}
   coolDown: 1
   coolDownTp: 0
   speed: 3.5
-  life: 100
   bulletSpeed: 0
   animator: {fileID: 6938415437227796382}
   IAmAGhost: {fileID: 263330336992781321}
+  iLife: 0
+  can: 0
   damage: 12
-  notInRoom: 0
   blinkDuration: 1
   blinkNumber: 6
 --- !u!114 &6435021500296126172

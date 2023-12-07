@@ -29,9 +29,9 @@ public class EnemyRange : EnemyController
             case (EnemyState.Attack):
                 Attack();
                 break;
-            case (EnemyState.Die):
+            /*case (EnemyState.Die):
                 Die();
-                break;
+                break; */
             case (EnemyState.Heal):
                 Heal();
                 break;
@@ -42,7 +42,7 @@ public class EnemyRange : EnemyController
         }
         if (!notInRoom)
         {
-            if (isPlayerInRange(range) && currState != EnemyState.Die)
+            if (isPlayerInRange(range)/* && currState != EnemyState.Die*/)
             {
                 currState = EnemyState.Run;
             }

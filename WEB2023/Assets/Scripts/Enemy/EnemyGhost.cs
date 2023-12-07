@@ -32,16 +32,16 @@ public class EnemyGhost : EnemyController
             case (EnemyState.Attack):
                 Attack();
                 break;
-            case (EnemyState.Die):
+            /*case (EnemyState.Die):
                 Die();
-                break;
+                break;*/
             case (EnemyState.GoHeal):
                 GoHeal();
                 break;
         }
         if (!notInRoom)
         {
-            if (isPlayerInRange(range) && currState != EnemyState.Die)
+            if (isPlayerInRange(range)/* && currState != EnemyState.Die*/)
             {
                 currState = EnemyState.Follow;
             }
@@ -85,10 +85,10 @@ public class EnemyGhost : EnemyController
 
 
             Debug.Log("Puedo entrar");
-            life += 5;
-            if (life >= iLife)
+            GetComponent<Enemy>().life += 5;
+            if (GetComponent<Enemy>().life >= iLife)
             {
-                Debug.Log("Vida tras cura " + life);
+                Debug.Log("Vida tras cura " + GetComponent<Enemy>().life);
                 healed = true;
             }
         }

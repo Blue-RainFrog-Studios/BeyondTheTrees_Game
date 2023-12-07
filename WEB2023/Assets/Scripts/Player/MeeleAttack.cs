@@ -10,7 +10,7 @@ public class MeeleAttack : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            collision.GetComponent<EnemyController>().RecieveDamage(damage);
+            collision.GetComponent<Enemy>().RecieveDamage(damage);
         }
         if (collision.CompareTag("Boss"))
         {
