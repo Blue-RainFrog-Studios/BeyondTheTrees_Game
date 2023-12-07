@@ -319,7 +319,7 @@ Pluma de Fénix
 Kero coin (moneda del juego)
 
 ![Kero Coin][keroCoin]
-f
+
 ## DISEÑO
 ### Personaje
 Kero es el protagonista.
