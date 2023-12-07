@@ -11,6 +11,10 @@ public class NPCBase : MonoBehaviour
     public Text dialogueText;
     public List<string> dialogueList; 
     private int index;
+    public string nameCharacter;
+    public Image speackChar;
+    public BoxCollider2D speakZone;
+
 
     private GameObject player;
     public GameObject continueButton;

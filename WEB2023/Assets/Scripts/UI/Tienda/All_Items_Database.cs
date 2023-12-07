@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName ="All_Items_Database")]
-
+[System.Serializable]
 public class All_Items_Database : ScriptableObject
 {
     public List<ItemSO> All_items;

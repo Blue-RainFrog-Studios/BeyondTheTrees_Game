@@ -42,9 +42,11 @@ public class Shop_UI : MonoBehaviour
     void Start()
     {
         Debug.Log("Abre tienda");
+        itemDB = DataManager_Items_Database.Instance.myItemsData;
         AddShopEvents();
         GenerateShopItems();
         player = GameObject.FindGameObjectWithTag("Player");
+        
     }
 
     // Update is called once per frame

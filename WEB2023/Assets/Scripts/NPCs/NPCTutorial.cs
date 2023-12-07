@@ -19,7 +19,6 @@ public class NPCTutorial : MonoBehaviour
     public GameObject continueButton;
     public float wordSpeed;
     public bool playerIsClose;
-    public bool explicar;
 
     private void Start()
     {

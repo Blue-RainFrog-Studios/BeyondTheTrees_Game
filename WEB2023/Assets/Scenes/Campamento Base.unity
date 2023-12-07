@@ -358,7 +358,7 @@ MonoBehaviour:
   ShopMenu: {fileID: 891438303}
   ShopItemsContainer: {fileID: 1270878185}
   itemPrefab: {fileID: 5023801194274651572, guid: e4032e73f8c2289469ce070e02ca90d5, type: 3}
-  itemDB: {fileID: 11400000, guid: f25f080a6867dab409aea6dde7391662, type: 2}
+  itemDB: {fileID: 0}
   shopUI: {fileID: 146149028}
   openShopButton: {fileID: 822403570}
   closeShopButton: {fileID: 1945535084}
@@ -577,6 +577,9 @@ MonoBehaviour:
   dialogueList:
   - "\xBFVienes a comprar algo? Puede que tenga algo nuevo para tus aventuritas"
   - "Un placer ayudar, dales ca\xF1a, zagal"
+  nameCharacter: Eerling
+  speackChar: {fileID: 0}
+  speakZone: {fileID: 204765825}
   continueButton: {fileID: 741964578}
   buyButton: {fileID: 822403568}
   wordSpeed: 0.06
@@ -613,7 +616,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.12021203, y: 0}
+  m_Offset: {x: 0.11630531, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -624,7 +627,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0288512, y: 1}
+  m_Size: {x: 1.0366646, y: 1}
   m_EdgeRadius: 0
 --- !u!61 &204765825
 BoxCollider2D:
@@ -658,7 +661,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.77963215, y: -0.28}
+  m_Offset: {x: 0.77963215, y: -0.33012792}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -669,7 +672,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.61, y: 2.08}
+  m_Size: {x: 1.61, y: 2.1802557}
   m_EdgeRadius: 0
 --- !u!114 &204765826
 MonoBehaviour:
@@ -3348,13 +3351,17 @@ GameObject:
   m_Component:
   - component: {fileID: 1262552944}
   - component: {fileID: 1262552946}
+  - component: {fileID: 1262552947}
+  - component: {fileID: 1262552949}
+  - component: {fileID: 1262552948}
+  - component: {fileID: 1262552950}
   m_Layer: 0
   m_Name: Zidan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1262552944
 Transform:
   m_ObjectHideFlags: 0
@@ -3363,7 +3370,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1262552943}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.05, y: 2.54, z: -0.025503717}
+  m_LocalPosition: {x: 4, y: 2.06, z: -0.025503717}
   m_LocalScale: {x: 0.7783, y: 0.6675, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3422,6 +3429,160 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1262552947
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262552943}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -5.930004, y: -5.034264}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 2}
+    newSize: {x: 1, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 22.827747, y: 14.927491}
+  m_EdgeRadius: 0
+--- !u!61 &1262552948
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262552943}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 2}
+    newSize: {x: 1, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2}
+  m_EdgeRadius: 0
+--- !u!61 &1262552949
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262552943}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.11993265, y: -0.077689886}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 2}
+    newSize: {x: 1, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.27816, y: 3.5227118}
+  m_EdgeRadius: 0
+--- !u!114 &1262552950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262552943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85d9d5d9efb920041a2a4d88e993fa7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialoguePanel: {fileID: 2022397978}
+  dialogueText: {fileID: 765452949}
+  dialogueTutorial: []
+  dialogue: []
+  continueButton: {fileID: 741964578}
+  wordSpeed: 0.06
+  playerIsClose: 0
 --- !u!1 &1270878184
 GameObject:
   m_ObjectHideFlags: 0
@@ -3792,7 +3953,7 @@ GameObject:
   - component: {fileID: 1557911106}
   - component: {fileID: 1557911105}
   m_Layer: 0
-  m_Name: Buho
+  m_Name: Eerling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
