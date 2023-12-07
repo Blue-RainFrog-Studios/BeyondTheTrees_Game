@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WolfWalkRight
+  m_Name: WolfIdle
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,15 +21,7 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -1188394844, guid: 8b117b353b7bf47449dde3ad8676f122, type: 3}
-    - time: 0.16666667
-      value: {fileID: 948005862, guid: 8b117b353b7bf47449dde3ad8676f122, type: 3}
-    - time: 0.33333334
-      value: {fileID: 2028270714, guid: 8b117b353b7bf47449dde3ad8676f122, type: 3}
-    - time: 0.5
-      value: {fileID: 1327759566, guid: 8b117b353b7bf47449dde3ad8676f122, type: 3}
-    - time: 0.6666667
-      value: {fileID: 1497675360, guid: 8b117b353b7bf47449dde3ad8676f122, type: 3}
+      value: {fileID: -301284517, guid: 5a36d3af0b6b4e64e86289c75af35e18, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -52,17 +44,13 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -1188394844, guid: 8b117b353b7bf47449dde3ad8676f122, type: 3}
-    - {fileID: 948005862, guid: 8b117b353b7bf47449dde3ad8676f122, type: 3}
-    - {fileID: 2028270714, guid: 8b117b353b7bf47449dde3ad8676f122, type: 3}
-    - {fileID: 1327759566, guid: 8b117b353b7bf47449dde3ad8676f122, type: 3}
-    - {fileID: 1497675360, guid: 8b117b353b7bf47449dde3ad8676f122, type: 3}
+    - {fileID: -301284517, guid: 5a36d3af0b6b4e64e86289c75af35e18, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.68333334
+    m_StopTime: 0.016666668
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

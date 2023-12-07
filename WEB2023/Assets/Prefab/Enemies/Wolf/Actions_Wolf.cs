@@ -21,8 +21,8 @@ public class Actions_Wolf : MonoBehaviour
     [SerializeField] private float TimeCharge;
     [SerializeField] private Animator animator;
     bool collisionDetected = false;
-
-    Vector2 targetPosition;
+    Vector2 direction;
+    Vector3 targetPosition;
     #endregion
     // Start is called before the first frame update
     void Start()
@@ -31,7 +31,10 @@ public class Actions_Wolf : MonoBehaviour
         playerTransform = player.transform;
         WolfTransform = GetComponent<Transform>();
     }
-
+    private void Update()
+    {
+        direction = targetPosition - WolfTransform.position;
+    }
     #region MethodsIdle
     public void StartMethodWaiting()
     {
@@ -56,7 +59,38 @@ public class Actions_Wolf : MonoBehaviour
     public void StartMethodWalk()
     {
         Debug.Log("ANDANDO AL JUGADOR");
-        //animator.Play("WalkFront");
+
+
+        //if (playerTransform.position.x > WolfTransform.position.x)
+        //    animator.Play("WolfWalkRight");
+        //else
+        //    animator.Play("WolfWalkLeft");
+
+        
+        targetPosition = playerTransform.position;
+
+        if (direction.x > 0.0f)
+        {
+            if (direction.y + 1.0f > direction.x)
+            {
+                animator.Play("WolfWalkBack");
+            }
+            else
+            {
+                animator.Play("WolfWalkRight");
+            }
+        }
+        else if (direction.x < 0.0f)
+        {
+            if (direction.y + 1.0f < direction.x)
+            {
+                animator.Play("WolfWalkFront");
+            }
+            else
+            {
+                animator.Play("WolfWalkLeft");
+            }
+        }
     }
     public Status UpdateMethodWalk()
     {
@@ -71,9 +105,34 @@ public class Actions_Wolf : MonoBehaviour
     {
         Debug.Log("cargando");
         ended = false;
-        //animator.Play("Charge");
-        //cambia el color a morado
-        
+
+
+        //if (playerTransform.position.x > WolfTransform.position.x)
+        //    animator.Play("WolfChargeRight");
+        //else
+        //    animator.Play("WolfChargeLeft");
+
+        targetPosition = playerTransform.position;
+
+        if (direction.x > 0.0f)
+        {
+            if (direction.y + 1.0f > direction.x)
+            {
+                animator.Play("WolfChargeBack");
+            }
+            else
+            {
+                animator.Play("WolfChargeRight");
+            }
+        }
+        else if (direction.x < 0.0f)
+        {
+            if (direction.y + 1.0f < direction.x)
+                animator.Play("WolfChargeFront");
+            else
+                animator.Play("WolfChargeLeft");
+        }
+
         StartCoroutine(WaitSeconds(TimeCharge));
     }
     public Status UpdateMethodCharge()
@@ -100,12 +159,33 @@ public class Actions_Wolf : MonoBehaviour
         //screenShake = GetComponent<ScreenShake>();
         GetComponent<Knockback>().strength = 30f;
         ended = false;
-        if (playerTransform.position.x > WolfTransform.position.x)
-            animator.Play("WalkSideRightDG");
-        else
-            animator.Play("WalkSideDG");
+        //if (playerTransform.position.x > WolfTransform.position.x)
+        //    animator.Play("WolfAtackRight");
+        //else
+        //    animator.Play("WolfAtackLeft");
 
         targetPosition = playerTransform.position;
+
+        if (direction.x > 0.0f)
+        {
+            if (direction.y + 1.0f > direction.x)
+            {
+                animator.Play("WolfAtackBack");
+            }
+            else
+            {
+                animator.Play("WolfAtackRight");
+            }
+        }
+        else if (direction.x < 0.0f)
+        {
+            if (direction.y + 1.0f < direction.x)
+                animator.Play("WolfAtackFront");
+            else
+                animator.Play("WolfAtackLeft");
+        }
+
+     
 
         /*
         if (playerTransform.position.x > WolfTransform.position.x)
@@ -147,7 +227,7 @@ public class Actions_Wolf : MonoBehaviour
     {
         Debug.Log("estoy stuned");
         ended = false;
-        //animator.Play("Charge");
+        animator.Play("WolfDazed");
         //cambia el color a morado
         StartCoroutine(WaitSeconds(TimeCharge));
     }
