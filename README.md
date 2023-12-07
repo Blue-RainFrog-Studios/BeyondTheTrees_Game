@@ -767,7 +767,7 @@ A = Ataque, D=Defensa, VA=Velocidad de Ataque, VM=Velocidad de Movimiento, R=Rar
 | Nombre           | Descripción                                                                                                                                                                             | A  | D  | VA | VM | R          | P  |
 |------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----|----|----|----|------------|----|
 | Escudo       | Un gran escudo que perteneció a un robusto pero lento caballero en un pasado.                                                                                          |  0 |  12 |  0 |  -7 |  0 |  12 |  0 |  7 | Debufo       | 10 |
-| Esfera dorada       | Un gran escudo que perteneció a un robusto pero lento caballero en un pasado.                                                                                          |  0 |  12 |  0 |  0 |  0 |  0 |  0 |  0 | Debufo       | 50 |
+| Esfera dorada       | Un gran escudo que perteneció a un robusto pero lento caballero en un pasado.                                                                                          |  0 |  12 |  0 |  0 |  0 | 0 | Debufo       | 50 |
 | Martillo       | Este martillo fue empuñado en un pasado por un caballero que también se adentró en el bosque al igual que Kero.                                                                         | |10 |  0 |  -3 |  0 | Debufo      | 10 |
 
 ## Enlace de lector al GDD en Google docs
