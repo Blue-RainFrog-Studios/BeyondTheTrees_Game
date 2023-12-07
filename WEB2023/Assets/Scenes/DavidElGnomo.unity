@@ -1112,10 +1112,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 838413450959587855, guid: 62c3a45f1969b2b40adb3b9f422350be, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1188394844, guid: 8b117b353b7bf47449dde3ad8676f122, type: 3}
     - target: {fileID: 4356442477611463076, guid: 62c3a45f1969b2b40adb3b9f422350be, type: 3}
       propertyPath: m_Name
       value: Wolf
       objectReference: {fileID: 0}
+    - target: {fileID: 6498803744283796586, guid: 62c3a45f1969b2b40adb3b9f422350be, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2e74e87132522a34bab155c152ac4819, type: 2}
     - target: {fileID: 7438436955063162470, guid: 62c3a45f1969b2b40adb3b9f422350be, type: 3}
       propertyPath: m_RootOrder
       value: 8
