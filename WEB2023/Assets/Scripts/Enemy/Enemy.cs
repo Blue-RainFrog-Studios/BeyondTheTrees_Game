@@ -21,7 +21,9 @@ public class Enemy : MonoBehaviour
         Debug.Log("OKAY, LETS GO");
         life -= damage;
         this.GetComponent<Knockback>().PlayFeedback(player, this.gameObject.GetComponent<Rigidbody2D>());
-        RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());
-        Destroy(this);
+        if (life <= 0) { 
+            RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());
+            Destroy(this.gameObject);
+        }
     }
 }
