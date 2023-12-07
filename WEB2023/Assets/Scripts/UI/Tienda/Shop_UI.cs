@@ -30,6 +30,8 @@ public class Shop_UI : MonoBehaviour
     [SerializeField] Button openShopButton;
     [SerializeField] Button closeShopButton;
     [SerializeField] GameObject dialogUI;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip buyClip;
 
     [SerializeField]
     private TextMeshProUGUI moneyText;
@@ -151,7 +153,8 @@ public class Shop_UI : MonoBehaviour
 
             ui_item.SetItemAsPurchased();
             GameDataManager.AddPurchasedItems(index);
-            
+
+            audioSource.PlayOneShot(buyClip);
         }
         else
         {

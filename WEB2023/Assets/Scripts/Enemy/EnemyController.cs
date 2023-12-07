@@ -59,6 +59,9 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     private AudioSource audioSource;
 
+    [SerializeField]
+    private AudioClip receiveDmg;
+
     public float coolDown;
     public float coolDownTp;
     public float speed;
@@ -100,6 +103,8 @@ public class EnemyController : MonoBehaviour
         ghost = this.gameObject;
 
         enemyMaterial = GetComponent<Renderer>().material;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -180,8 +185,6 @@ public class EnemyController : MonoBehaviour
             if (direction.x > 0)
         {
             animator.Play("GhostRight");
-
-
         }
         else
         {
@@ -526,6 +529,11 @@ public class EnemyController : MonoBehaviour
 
         //call the event PlayFeedback of the script feedback
         //GetComponent<Knockback>().PlayFeedback(player, GetComponent<Rigidbody2D>());
+
+
+        //SONIDO RECIBIR DAÑO FANTASMA
+        /*if (IAmAGhost)
+            audioSource.PlayOneShot(receiveDmg);*/
 
 
         life -= damage;
