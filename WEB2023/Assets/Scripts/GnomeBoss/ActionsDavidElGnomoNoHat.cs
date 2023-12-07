@@ -60,7 +60,7 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     public Status UpdateMethodNoHat()
     {
         StartCoroutine(WaitSeconds(5));
-        screenShake.StartCoroutine(screenShake.ShakeScreen());
+        //screenShake.StartCoroutine(screenShake.ShakeScreen());
         if (!ended) { 
             return Status.Running;
         }
