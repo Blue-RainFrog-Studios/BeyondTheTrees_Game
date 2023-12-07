@@ -293,7 +293,6 @@ public class EnemyController : Enemy
         {
             StartCoroutine(Blink());
         }
-
     }
 
     public IEnumerator Blink()

@@ -10,16 +10,18 @@ public class Enemy : MonoBehaviour
     public float range;
     public float attackRange;
     protected bool healed = false;
-    
-    // Start is called before the first frame update
-    void Start()
+    GameObject player;
+    private void Start()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void RecieveDamage(float damage)
     {
-        
+        Debug.Log("OKAY, LETS GO");
+        life -= damage;
+        this.GetComponent<Knockback>().PlayFeedback(player, this.gameObject.GetComponent<Rigidbody2D>());
+        RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());
+        Destroy(this);
     }
 }

@@ -70,19 +70,9 @@ public class EnemyGhost : EnemyController
 
         direction = player.transform.position - transform.position;
         if (direction.x > 0)
-        {
             animator.Play("GhostRight");
-
-
-        }
         else
-        {
             animator.Play("GhostLeft");
-
-        }
-
-
-
 
     }
     private void OnTriggerStay2D(Collider2D collision)
@@ -101,9 +91,6 @@ public class EnemyGhost : EnemyController
                 Debug.Log("Vida tras cura " + life);
                 healed = true;
             }
-
-
-
         }
     }
 

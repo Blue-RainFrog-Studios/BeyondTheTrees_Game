@@ -33,7 +33,6 @@ public class ActionsSquirrel : Enemy
 
     private void Awake()
     {
-        //consumedAcorn = false;
         player = GameObject.FindGameObjectWithTag("Player");
         playerTransform = player.transform;
         squirrels = new List<ActionsSquirrel>(FindObjectsOfType<ActionsSquirrel>());
@@ -47,27 +46,23 @@ public class ActionsSquirrel : Enemy
         }
         numReady = 0;
         acorns = new List<GameObject>(GameObject.FindGameObjectsWithTag("Acorn"));
-        //ended2 = squirrelController.GetComponent<SquirrelController>().ended;
     }
+    private void Update()
+    {
+        if (!notInRoom)
+            GetComponent<BTSquirrel>().enabled = true;
+    }
+
     void OnDrawGizmos()
     {
-        // Obtén la posición del GameObject
         Vector3 position = player.transform.position;
 
-        // Obtén el vector "right" del GameObject
-        //Vector3 rightVector = player.transform.forward;
         Vector3 direccionPC = (squirrels[0].transform.position - player.transform.position).normalized*2;
-        // Configura el color de los gizmos
         Gizmos.color = Color.red;
 
-        // Dibuja una línea en la escena para representar el vector "right"
         Gizmos.DrawLine(position, position + direccionPC);
     }
-    public void StartWalkAcorn()
-    {
-
-
-    }
+    public void StartWalkAcorn() {}
 
     public Status UpdateWalkAcorn()
     {
@@ -232,15 +227,6 @@ public class ActionsSquirrel : Enemy
     public bool CheckOtherSquirrels()
     {
         return squirrels.Count > 0;
-    }
-
-    public void RecieveDamage(float damage)
-    {
-        Debug.Log("PENE");
-        life -= damage;
-        this.GetComponent<Knockback>().PlayFeedback(player, this.gameObject.GetComponent<Rigidbody2D>());
-        RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());
-        Destroy(this.gameObject);
     }
 }
 
