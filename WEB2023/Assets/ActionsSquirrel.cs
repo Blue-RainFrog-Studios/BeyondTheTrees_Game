@@ -26,7 +26,7 @@ public class ActionsSquirrel : MonoBehaviour
 
     public string rol;
 
-    private ActionsSquirrel[] squirrels;
+    private List<ActionsSquirrel> squirrels;
 
     static private List<GameObject> acorns;
     private bool aux = false;
@@ -36,11 +36,11 @@ public class ActionsSquirrel : MonoBehaviour
         //consumedAcorn = false;
         player = GameObject.FindGameObjectWithTag("Player");
         playerTransform = player.transform;
-        squirrels = FindObjectsOfType<ActionsSquirrel>();
+        squirrels = new List<ActionsSquirrel>(FindObjectsOfType<ActionsSquirrel>());
         if(squirrels != null )
         {
             squirrels[0].rol = "Eater";
-            for (int i = 1; i < squirrels.Length; i++)
+            for (int i = 1; i < squirrels.Count; i++)
             {
                 squirrels[i].rol = "Protector";
             }
@@ -49,9 +49,19 @@ public class ActionsSquirrel : MonoBehaviour
         acorns = new List<GameObject>(GameObject.FindGameObjectsWithTag("Acorn"));
         //ended2 = squirrelController.GetComponent<SquirrelController>().ended;
     }
-    private void Update()
+    void OnDrawGizmos()
     {
-        
+        // Obtén la posición del GameObject
+        Vector3 position = player.transform.position;
+
+        // Obtén el vector "right" del GameObject
+        //Vector3 rightVector = player.transform.forward;
+        Vector3 direccionPC = (squirrels[0].transform.position - player.transform.position).normalized*2;
+        // Configura el color de los gizmos
+        Gizmos.color = Color.red;
+
+        // Dibuja una línea en la escena para representar el vector "right"
+        Gizmos.DrawLine(position, position + direccionPC);
     }
     public void StartWalkAcorn()
     {
@@ -155,8 +165,17 @@ public class ActionsSquirrel : MonoBehaviour
         }
         else
         {;
-            Vector3 direccionPC = (squirrels[0].transform.position - player.transform.position).normalized * 3.0f;
-            Vector3 posicionProtegida = squirrels[0].transform.position - direccionPC;;
+            Vector3 direccionPC = (squirrels[0].transform.position - player.transform.position).normalized;
+            Vector3 perpendicular = new Vector3(-direccionPC.y, direccionPC.x, 0.0f);
+            float auxP;
+            if(squirrels.IndexOf(this) %2  == 0)
+            {
+                auxP = squirrels.IndexOf(this) * 0.5f;
+            }
+            else{
+                auxP = -(squirrels.IndexOf(this) - 1) * 0.5f;
+            }
+            Vector3 posicionProtegida = squirrels[0].transform.position - direccionPC* 3.0f  + perpendicular*auxP;
             squirrelTransform.position = Vector2.MoveTowards(transform.position, posicionProtegida, speed * Time.deltaTime);
         }
 
@@ -175,7 +194,7 @@ public class ActionsSquirrel : MonoBehaviour
 
     public bool CheckFormationDone()
     {
-        return (squirrels.Length - 1) == numReady;
+        return (squirrels.Count - 1) == numReady;
     }
 
     public void StartProtecting()
@@ -189,8 +208,19 @@ public class ActionsSquirrel : MonoBehaviour
         {
             return Status.Success;
         }
-        Vector3 direccionPC = (squirrels[0].transform.position - player.transform.position).normalized * 3.0f;
-        Vector3 posicionProtegida = squirrels[0].transform.position - direccionPC;
+
+        Vector3 direccionPC = (squirrels[0].transform.position - player.transform.position).normalized;
+        Vector3 perpendicular = new Vector3(-direccionPC.y, direccionPC.x, 0.0f);
+        float auxP;
+        if (squirrels.IndexOf(this) % 2 == 0)
+        {
+            auxP = squirrels.IndexOf(this) * 0.5f;
+        }
+        else
+        {
+            auxP = -(squirrels.IndexOf(this) - 1) * 0.5f;
+        }
+        Vector3 posicionProtegida = squirrels[0].transform.position - direccionPC * 3.0f + perpendicular * auxP;
         squirrelTransform.position = Vector2.MoveTowards(transform.position, posicionProtegida, speed * Time.deltaTime);
         return Status.Running;
     }
@@ -201,7 +231,7 @@ public class ActionsSquirrel : MonoBehaviour
     }
     public bool CheckOtherSquirrels()
     {
-        return squirrels.Length > 0;
+        return squirrels.Count > 0;
     }
 }
 
