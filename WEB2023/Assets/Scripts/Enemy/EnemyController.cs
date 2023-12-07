@@ -51,13 +51,13 @@ public class EnemyController : Enemy
     protected GameObject room;
     Rigidbody2D rb;
 
-    public float coolDown;
+    //public float coolDown;
     public float coolDownTp;
     public float speed;
    
 
     private bool animationEx = false;
-    private bool coolDownAttack = false;
+    //private bool coolDownAttack = false;
     private bool coolDownTeleport = false;
     private bool chooseDir = false;
     public float bulletSpeed;
@@ -74,7 +74,6 @@ public class EnemyController : Enemy
     protected Vector2 direction;
     public float iLife;
     public bool can = false;
-    public int damage = 20;
     // Start is called before the first frame update
 
     public float blinkDuration;
@@ -148,12 +147,12 @@ public class EnemyController : Enemy
         yield return new WaitForSeconds(5);
         can = false;
     }
-    private IEnumerator CoolDown()
-    {
-        coolDownAttack = true;
-        yield return new WaitForSeconds(coolDown);
-        coolDownAttack = false;
-    }
+    //private IEnumerator CoolDown()
+    //{
+    //    coolDownAttack = true;
+    //    yield return new WaitForSeconds(coolDown);
+    //    coolDownAttack = false;
+    //}
     private IEnumerator CoolDownTP()
     {
         coolDownTeleport = true;

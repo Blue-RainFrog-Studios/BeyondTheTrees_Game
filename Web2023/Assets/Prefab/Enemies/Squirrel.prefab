@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 8057056320807100863}
   - component: {fileID: 1856821096735309085}
   - component: {fileID: 8848712778407726177}
-  - component: {fileID: 4225666012270259615}
   - component: {fileID: 6951873516816919427}
   - component: {fileID: -8572632945045838320}
   - component: {fileID: 76406445582394311}
@@ -41,7 +40,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4413202303269975415
 SpriteRenderer:
@@ -200,7 +199,9 @@ MonoBehaviour:
   life: 0
   notInRoom: 1
   range: 0
-  attackRange: 0
+  attackRange: 1
+  damage: 10
+  coolDown: 2
   player: {fileID: 0}
   playerTransform: {fileID: 0}
   squirrelTransform: {fileID: 4625157923182912523}
@@ -306,38 +307,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &4225666012270259615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5304357250516780494}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 450c7171584c7d740adfedb980fda1d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  life: 10
-  notInRoom: 0
-  range: 0
-  attackRange: 1
-  healCol: {fileID: 0}
-  ghost: {fileID: 5304357250516780494}
-  EnemyBullet: {fileID: 0}
-  currState: 0
-  enemyType: 3
-  coolDown: 1
-  coolDownTp: 0
-  speed: 2
-  bulletSpeed: 0
-  animator: {fileID: -8572632945045838320}
-  IAmAGhost: {fileID: 0}
-  iLife: 0
-  can: 0
-  damage: 10
-  blinkDuration: 0
-  blinkNumber: 0
 --- !u!114 &6951873516816919427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,4 +377,6 @@ MonoBehaviour:
   life: 10
   notInRoom: 1
   range: 0
-  attackRange: 0
+  attackRange: 0.75
+  damage: 10
+  coolDown: 0

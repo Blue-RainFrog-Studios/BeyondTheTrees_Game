@@ -13,7 +13,6 @@ public class ActionsSquirrel : Enemy
     [SerializeField] private float speed;
     //public bool consumedAcorn;
     int numReady;
-    [SerializeField] private int damage;
 
     [SerializeField]
     private AudioClip eatClip;
@@ -51,17 +50,26 @@ public class ActionsSquirrel : Enemy
     {
         if (!notInRoom)
             GetComponent<BTSquirrel>().enabled = true;
+        if (Vector3.Distance(transform.position, player.transform.position) < attackRange)
+        {
+            if(!coolDownAttack)
+            {
+                player.GetComponent<KnightScript>().ReceiveAttack(damage);
+                StartCoroutine(CoolDown());
+            }
+
+        }
     }
 
-    void OnDrawGizmos()
-    {
-        Vector3 position = player.transform.position;
+    //void OnDrawGizmos()
+    //{
+    //    Vector3 position = player.transform.position;
 
-        Vector3 direccionPC = (squirrels[0].transform.position - player.transform.position).normalized*2;
-        Gizmos.color = Color.red;
+    //    Vector3 direccionPC = (squirrels[0].transform.position - player.transform.position).normalized*2;
+    //    Gizmos.color = Color.red;
 
-        Gizmos.DrawLine(position, position + direccionPC);
-    }
+    //    Gizmos.DrawLine(position, position + direccionPC);
+    //}
     public void StartWalkAcorn() {}
 
     public Status UpdateWalkAcorn()
@@ -228,6 +236,7 @@ public class ActionsSquirrel : Enemy
     {
         return squirrels.Count > 0;
     }
+
 }
 
 

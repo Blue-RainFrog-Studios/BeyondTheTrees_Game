@@ -345,7 +345,6 @@ public class RoomController : MonoBehaviour
                 }
             }
         }
-        Debug.Log("La vida en la sala es: " + maxHealth);
     }
     public float lHealth()
     {
@@ -362,7 +361,6 @@ public class RoomController : MonoBehaviour
                 }
             }
         }
-        Debug.Log("Queda tanta vida: "+leftHealth);
         return leftHealth;
     }
     public bool lowHealth()
@@ -370,9 +368,6 @@ public class RoomController : MonoBehaviour
         if (lHealth()< maxHealth * 0.3)
         {
             loHealth = true;
-            Debug.Log(leftHealth);
-            Debug.Log(maxHealth);
-            Debug.Log("poca vida");
         }
         
         return loHealth;
