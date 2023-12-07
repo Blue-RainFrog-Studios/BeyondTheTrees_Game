@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 6938415437227796382}
   - component: {fileID: 6628442988745050789}
   - component: {fileID: 5509788322218400130}
+  - component: {fileID: 8205568043618531357}
+  - component: {fileID: -942966139534371549}
   m_Layer: 3
   m_Name: Ghost
   m_TagString: Enemy
@@ -184,27 +186,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 450c7171584c7d740adfedb980fda1d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  life: 80
+  notInRoom: 0
+  range: 20
+  attackRange: 0.65
+  healCol: {fileID: 0}
   ghost: {fileID: 263330336992781321}
   EnemyBullet: {fileID: 0}
   currState: 0
   enemyType: 0
-  range: 20
-  rangeTeleport: 0
-  attackRange: 0.65
-  rangeSquirrel: 0
-  eatRange: 0
-  consumed: 0
-  eatClip: {fileID: 0}
-  audioSource: {fileID: 0}
   coolDown: 1
   coolDownTp: 0
   speed: 3
-  life: 80
   bulletSpeed: 0
   animator: {fileID: 6938415437227796382}
   IAmAGhost: {fileID: 263330336992781321}
+  iLife: 80
+  can: 0
   damage: 10
-  notInRoom: 0
   blinkDuration: 1
   blinkNumber: 6
 --- !u!114 &5509788322218400130
@@ -227,3 +226,51 @@ MonoBehaviour:
   OnDone:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8205568043618531357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263330336992781321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6955bb70d59f2874ab7d9f2e695cac26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 0
+  notInRoom: 0
+  range: 20
+  attackRange: 1
+--- !u!114 &-942966139534371549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263330336992781321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 535428537d67d494a848b2753636bbc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 0
+  notInRoom: 0
+  range: 20
+  attackRange: 0.65
+  healCol: {fileID: 0}
+  ghost: {fileID: 263330336992781321}
+  EnemyBullet: {fileID: 0}
+  currState: 0
+  enemyType: 0
+  coolDown: 0
+  coolDownTp: 0
+  speed: 3
+  bulletSpeed: 0
+  animator: {fileID: 6938415437227796382}
+  IAmAGhost: {fileID: 263330336992781321}
+  iLife: 80
+  can: 0
+  damage: 20
+  blinkDuration: 1
+  blinkNumber: 6

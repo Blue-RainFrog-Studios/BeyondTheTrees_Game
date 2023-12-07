@@ -2813,7 +2813,7 @@ GameObject:
   - component: {fileID: 1724925879}
   m_Layer: 0
   m_Name: RoomController
-  m_TagString: Untagged
+  m_TagString: RoomController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2847,6 +2847,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadedRooms: []
+  maxHealth: 0
+  leftHealth: 0
 --- !u!4 &1724925881
 Transform:
   m_ObjectHideFlags: 0
