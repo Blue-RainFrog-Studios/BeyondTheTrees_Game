@@ -55,7 +55,7 @@ public class ActionsDavidElGnomo : MonoBehaviour
     }
     public Status UpdateMethodSleep()
     {
-        if (Vector2.Distance(playerTransform.position, DavidElGnomoTransform.position) < 9f)
+        if (Vector2.Distance(playerTransform.position, DavidElGnomoTransform.position) < 9f || GetComponent<DavidElGnomoController>().HP < 500)
         {
             //stop all music
             music.GetComponent<MusicSelector>().OstPiso2.Stop();
