@@ -52,7 +52,7 @@ public class EnemyController : Enemy
     
   
  
-    protected GameObject room;
+    
     Rigidbody2D rb;
 
     //public float coolDown;

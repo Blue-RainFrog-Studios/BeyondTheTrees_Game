@@ -15,14 +15,14 @@ public class Enemy : MonoBehaviour
     protected bool coolDownAttack = false;
     public float coolDown;
     GameObject player;
-
+    protected GameObject room;
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-
+        room = GameObject.FindGameObjectWithTag("RoomController");
     }
 
-    public void RecieveDamage(float damage)
+    virtual public void RecieveDamage(float damage)
     {
         if (GetComponent<EnemyController>() != null)
         {
@@ -30,8 +30,6 @@ public class Enemy : MonoBehaviour
             {
                 case (EnemyType.Melee):
                     GetComponent<EnemyController>().audioSource.PlayOneShot(GetComponent<EnemyController>().ghostClip);
-                    break;
-                case (EnemyType.Ranged):
                     break;
                 case (EnemyType.Teleport):
                     GetComponent<EnemyController>().audioSource.PlayOneShot(GetComponent<EnemyController>().teleportHit);
@@ -42,8 +40,18 @@ public class Enemy : MonoBehaviour
         life -= damage;
         this.GetComponent<Knockback>().PlayFeedback(player, this.gameObject.GetComponent<Rigidbody2D>());
         if (life <= 0) {
-            
-                    RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());
+            if (GetComponent<EnemyController>() != null)
+            {
+                switch (GetComponent<EnemyController>().enemyType)
+                {
+                    
+                    case (EnemyType.Ranged):
+                        room.GetComponent<RoomController>().healing = false;
+                        break;
+                }
+            }
+            RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());
+
             Destroy(this.gameObject);
         }
     }
