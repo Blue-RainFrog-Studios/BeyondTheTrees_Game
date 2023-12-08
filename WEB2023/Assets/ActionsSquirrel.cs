@@ -45,14 +45,18 @@ public class ActionsSquirrel : Enemy
         }
     }
     public void StartWalkAcorn() {
-        if (transform.position.x >= acorns[0].transform.position.x)
+        if(acorns[0] != null)
         {
-            animator.Play("SquirrelAnimationRigth");
+            if (transform.position.x >= acorns[0].transform.position.x)
+            {
+                animator.Play("SquirrelAnimationRigth");
+            }
+            else
+            {
+                animator.Play("SquirrelAnimation");
+            }
         }
-        else
-        {
-            animator.Play("SquirrelAnimation");
-        }
+        
         this.rolB = true;
         hayArdillaCome = true;
     }
