@@ -318,9 +318,9 @@ public class RoomController : MonoBehaviour
     {
         CameraController.instance.currRom= room;
         lastlastRoom = lastRoom;
-        auxRoom= currRom;
+        lastRoom = currRom;
         currRom = room;
-        lastRoom = auxRoom;
+        
 
         //los enemigos se quden quietos cuando la camara no este en la sala
         sumHealth();
@@ -369,7 +369,12 @@ public class RoomController : MonoBehaviour
     {
         if (lHealth()< maxHealth * 0.3)
         {
+            Debug.Log("Queda poca vida");
             loHealth = true;
+        }
+        else
+        {
+            loHealth= false;
         }
         
         return loHealth;
@@ -477,6 +482,7 @@ public class RoomController : MonoBehaviour
                         door.doorCollider.SetActive(false);
                         room.GetComponent<Collider2D>().enabled = false;
                         fheal = false;
+                        loHealth= false;
                         //spawn.SpawObject();
                     }
 

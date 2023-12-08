@@ -49,7 +49,7 @@ public class EnemyGhost : EnemyController
             {
                 currState = EnemyState.Attack;
             }
-            if (healed == false && room.GetComponent<RoomController>().lowHealth() && room.GetComponent<RoomController>().healing)
+            if (healed == false  && room.GetComponent<RoomController>().healing)
             {
                 currState = EnemyState.GoHeal;
             }
