@@ -58,8 +58,8 @@ public class EnemyController : Enemy
     //public float coolDown;
     public float coolDownTp;
     public float speed;
-   
 
+    private bool healTime = true;
     private bool animationEx = false;
     //private bool coolDownAttack = false;
     private bool coolDownTeleport = false;
@@ -131,11 +131,27 @@ public class EnemyController : Enemy
         runAway = transform.position - player.transform.position;
         transform.position = Vector2.MoveTowards(transform.position, transform.position+runAway, speed * Time.deltaTime);
     }
+    public IEnumerator WaitHeal()
+    {
+        healCol.enabled = true;
+        healTime = false;
+        room.GetComponent<RoomController>().healing = true;
+        room.GetComponent<RoomController>().posHealer = transform.position+new Vector3(1,1,0);
+        yield return new WaitForSeconds(20);
+        room.GetComponent<RoomController>().fheal = true;
+        room.GetComponent<RoomController>().healing = false;
+        healCol.enabled = false;
+    }
     public void Heal()
     {
-        room.GetComponent<RoomController>().heal=true;
-        room.GetComponent<RoomController>().posHealer = transform.position;
-        healCol.enabled = true;
+        if (healTime)
+        {
+            StartCoroutine(WaitHeal());
+        }
+        
+       
+        
+        
     }
     public void GoHeal()
     {

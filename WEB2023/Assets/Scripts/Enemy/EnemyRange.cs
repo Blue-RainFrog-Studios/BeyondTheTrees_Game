@@ -42,7 +42,7 @@ public class EnemyRange : EnemyController
         }
         if (!notInRoom)
         {
-            if (isPlayerInRange(range)/* && currState != EnemyState.Die*/)
+            if (isPlayerInRange(range) && currState !=EnemyState.Heal/* && currState != EnemyState.Die*/)
             {
                 currState = EnemyState.Run;
             }
@@ -53,7 +53,7 @@ public class EnemyRange : EnemyController
             }
             else if (Vector3.Distance(transform.position, player.transform.position) < attackRange && Vector3.Distance(transform.position, player.transform.position) > range && room.GetComponent<RoomController>().lowHealth())
             {
-                if (room.GetComponent<RoomController>().heal)
+                if (room.GetComponent<RoomController>().fheal)
                 {
                     currState = EnemyState.Attack;
                 }
@@ -62,7 +62,7 @@ public class EnemyRange : EnemyController
                     currState = EnemyState.Heal;
                 }
             }
-            else if (Vector3.Distance(transform.position, player.transform.position) < range)
+            else if (Vector3.Distance(transform.position, player.transform.position) < range && currState != EnemyState.Heal)
             {
                 currState = EnemyState.Run;
             }

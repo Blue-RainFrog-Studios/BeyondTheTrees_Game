@@ -50,7 +50,8 @@ public class RoomController : MonoBehaviour
     public float maxHealth=0;
     public float leftHealth = 0;
     public bool loHealth = false;
-    public bool heal = false;
+    public bool fheal = false;
+    public bool healing = false;
     public Vector2 posHealer;
     //ItemSpawner spawn;
 
@@ -235,8 +236,8 @@ public class RoomController : MonoBehaviour
             possibleRooms = new string[]
             {
                     //"Empty",
-                    "Basic",
-                    "Basic_11"
+                    "Basic"
+                    //"Basic_11"
             };
                     
         }
@@ -475,7 +476,7 @@ public class RoomController : MonoBehaviour
                     {
                         door.doorCollider.SetActive(false);
                         room.GetComponent<Collider2D>().enabled = false;
-                        heal = false;
+                        fheal = false;
                         //spawn.SpawObject();
                     }
 

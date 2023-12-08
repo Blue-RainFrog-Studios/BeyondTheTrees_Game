@@ -15,9 +15,11 @@ public class Enemy : MonoBehaviour
     protected bool coolDownAttack = false;
     public float coolDown;
     GameObject player;
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+
     }
 
     public void RecieveDamage(float damage)
@@ -39,8 +41,9 @@ public class Enemy : MonoBehaviour
 
         life -= damage;
         this.GetComponent<Knockback>().PlayFeedback(player, this.gameObject.GetComponent<Rigidbody2D>());
-        if (life <= 0) { 
-            RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());
+        if (life <= 0) {
+            
+                    RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());
             Destroy(this.gameObject);
         }
     }
