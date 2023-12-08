@@ -177,6 +177,8 @@ MonoBehaviour:
   eatClip: {fileID: 8300000, guid: 03570853aba8d874e8d6617ad3ad07dc, type: 3}
   squirrelController: {fileID: 0}
   audioSource: {fileID: 8848712778407726177}
+  rangeToEater: 4
+  animator: {fileID: -8572632945045838320}
   rolB: 0
 --- !u!82 &8848712778407726177
 AudioSource:

@@ -15,6 +15,8 @@ public class ActionsSquirrel : Enemy
     private AudioSource audioSource;
     [SerializeField]
     private float rangeToEater = 4.0f;
+    [SerializeField]
+    private Animator animator;
     public bool rolB;
     private List<ActionsSquirrel> squirrels;
     static bool hayArdillaCome;
@@ -31,6 +33,7 @@ public class ActionsSquirrel : Enemy
     {
         if (!notInRoom)
             GetComponent<BTSquirrel>().enabled = true;
+
         if (Vector3.Distance(transform.position, player.transform.position) < attackRange)
         {
             if(!coolDownAttack)
@@ -48,6 +51,14 @@ public class ActionsSquirrel : Enemy
 
     public Status UpdateWalkAcorn()
     {
+        if (transform.position.x >= acorns[0].transform.position.x)
+        {
+            animator.Play("SquirrelAnimationRigth");
+        }
+        else
+        {
+            animator.Play("SquirrelAnimation");
+        }
         if (CheckAcornInRange())
         {
             return Status.Success;
@@ -65,12 +76,21 @@ public class ActionsSquirrel : Enemy
 
     public void StartWalkPlayer()
     {
+            
         if (audioSource.isPlaying)
             audioSource.Stop();
     }
 
     public Status UpdateWalkPlayer()
     {
+        if (transform.position.x >= player.transform.position.x)
+        {
+            animator.Play("SquirrelAnimationRigth");
+        }
+        else
+        {
+            animator.Play("SquirrelAnimation");
+        }
         transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
         return Status.Running;
     }
