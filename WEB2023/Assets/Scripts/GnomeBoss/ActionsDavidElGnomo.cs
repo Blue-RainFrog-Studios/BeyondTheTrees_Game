@@ -160,6 +160,7 @@ public class ActionsDavidElGnomo : MonoBehaviour
     #region MethodsGnomeMode
     public void StartMethodGnomeMode()
     {
+        invulnerable = true;
         this.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         StopAllCoroutines();
         animator.Play("Idle");
@@ -169,7 +170,6 @@ public class ActionsDavidElGnomo : MonoBehaviour
         StartCoroutine(InvokeGnomes(2f));
         StartCoroutine(InvokeGnomes(3f));
         StartCoroutine(WaitSeconds(5));
-        invulnerable = true;
     }
     public Status UpdateMethodGnomeMode()
     {

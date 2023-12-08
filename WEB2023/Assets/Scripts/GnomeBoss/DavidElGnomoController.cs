@@ -17,6 +17,8 @@ public class DavidElGnomoController : MonoBehaviour
     [SerializeField] public float HPSecondPhase;
     [SerializeField] private AudioSource grunt1;
     [SerializeField] private AudioSource grunt2;
+    [SerializeField] private AudioSource metalicS; 
+    [SerializeField] private AudioSource metalicS2;
 
     [SerializeField] GameObject ouchFace;
     [SerializeField] GameObject ouchNoHatFace;
@@ -113,6 +115,18 @@ public class DavidElGnomoController : MonoBehaviour
             if (HP <= 0)
             {
                 GetComponent<FMSDavidElGnomo>().DieGnome();
+            }
+        }
+        else
+        {
+            int random = UnityEngine.Random.Range(1, 3);
+            if (random == 1 && HP >= 0 && !walkAtt)
+            {
+                metalicS.Play();
+            }
+            else if (random == 2 && HP >= 0 && !walkAtt)
+            {
+                metalicS2.Play();
             }
         }
     }
