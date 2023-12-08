@@ -157,7 +157,7 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     public void StartMethodGnomeModeNoHat()
     {
         StopAllCoroutines();
-        
+        invulnerable = true;
         animator.Play("IdleNoHat");
         TiredNoHat.SetActive(false);
         GnomeNoHat.SetActive(true);
@@ -169,7 +169,6 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
         StartCoroutine(InvokeGnomes(3f));
         StartCoroutine(WaitSeconds(6));
         
-        invulnerable = true;
     }
     public Status UpdateMethodGnomeModeNoHat()
     {
