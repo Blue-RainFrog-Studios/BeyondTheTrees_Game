@@ -236,7 +236,7 @@ public class RoomController : MonoBehaviour
             {
                     //"Empty",
                     "Basic",
-                    "Basic_11"
+                    "Basic_14"
             };
                     
         }
