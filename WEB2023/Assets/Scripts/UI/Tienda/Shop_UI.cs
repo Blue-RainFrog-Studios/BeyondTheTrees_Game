@@ -23,6 +23,7 @@ public class Shop_UI : MonoBehaviour
 
     //[SerializeField] Purchasable_Items_Database itemDB;
     [SerializeField] All_Items_Database itemDB;
+    [SerializeField] GameObject tutorialData;
     [Space(20)]
 
     [Header("Shop Event")]
@@ -33,7 +34,7 @@ public class Shop_UI : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI moneyText;
-
+    
     GameObject player;
 
 
@@ -61,6 +62,7 @@ public class Shop_UI : MonoBehaviour
 
         closeShopButton.onClick.RemoveAllListeners();
         closeShopButton.onClick.AddListener(CloseShop);
+        closeShopButton.gameObject.SetActive(false);
     }
     void GenerateShopItems()
     {
@@ -156,6 +158,14 @@ public class Shop_UI : MonoBehaviour
 
             ui_item.SetItemAsPurchased();
             //GameDataManager.AddPurchasedItems(index);
+
+
+            // Se completa el tutorial al comprar el primer item
+            if (!tutorialData.GetComponent<NPCHelperManager>().tutorialTienda)
+            {
+                tutorialData.GetComponent<NPCHelperManager>().tutorialTienda = true;
+                closeShopButton.gameObject.SetActive(true);
+            }
             
         }
         else
