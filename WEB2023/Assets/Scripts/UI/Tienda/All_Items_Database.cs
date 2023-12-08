@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName ="All_Items_Database")]
-
+[System.Serializable]
 public class All_Items_Database : ScriptableObject
 {
     public List<ItemSO> All_items;
@@ -108,6 +108,40 @@ public class All_Items_Database : ScriptableObject
         {
             Shop_Items[i].IsPurchased = false;
         }
-        Debug.Log("Items purchased eliminados");
+        /*Debug.Log("Items purchased eliminados");
+
+        Debug.Log("//////////////////////////////////////////////////////////////////////");
+        Debug.Log("RESETEEEEEEEEEEEOOOO");
+        Debug.Log("//////////////////////////////////////////////////////////////////////");
+    */
+        }
+
+    public int CalculateCheapestItem(int currentCheapest)
+    {
+        
+        foreach (ItemSO item in Shop_Items)
+        {
+
+            if (item.ShopValue < currentCheapest && !item.IsPurchased)
+            {
+                currentCheapest = item.ShopValue;
+            }
+        }
+        Debug.Log("Item mas barato recalculado");
+
+        return currentCheapest;
+    }
+    public int CalculateCheapestPotion()
+    {
+
+        // Implementar cuando este la tienda de pocione
+        int value = 0;
+        return value;
+    }
+    public int CalculateCheapestInvUpgrade()
+    {
+        // Implementar cuando este la tienda de pocione
+        int value = 0;
+        return value;
     }
 }

@@ -55,7 +55,7 @@ public class MenuLogin : MonoBehaviour
     public void empezarJuego()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        database.ResetDatabase();
+        //database.ResetDatabase();
         SceneManager.LoadScene("Campamento Base");
         if (player == null)
         {
@@ -63,6 +63,7 @@ public class MenuLogin : MonoBehaviour
             playerPrefab.GetComponent<Name>().sexo = genero;
             playerPrefab.GetComponent<Name>().CambiarDatos();
             Instantiate(playerPrefab);
+
         }
         else
         {
@@ -73,6 +74,7 @@ public class MenuLogin : MonoBehaviour
             player.GetComponent<PlayerMovementInputSystem>().enabled = true;
             player.GetComponentInChildren<Canvas>().enabled = true;
         }
+        DataManager_Items_Database.Instance.myItemsData.ResetDatabase();
     }
     public void esDerecha()
     {

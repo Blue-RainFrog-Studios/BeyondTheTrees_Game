@@ -6,6 +6,7 @@ using static Assets.Scripts.Model.NormalItemSO;
 
 namespace Assets.Scripts.Model
 {
+    [System.Serializable]
     [CreateAssetMenu]
     public class NormalItemSO : ItemSO, INormalItem
     {

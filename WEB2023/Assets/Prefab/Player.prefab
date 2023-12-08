@@ -599,6 +599,7 @@ GameObject:
   - component: {fileID: 372513030826480231}
   - component: {fileID: 1995731812660044136}
   - component: {fileID: 6814571794177722753}
+  - component: {fileID: 1460276213252413893}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1317,6 +1318,26 @@ MonoBehaviour:
   itemName: {fileID: 3435058225539963721}
   itemDescription: {fileID: 6708075451843801047}
   duration: 20
+--- !u!114 &1460276213252413893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156985873014526917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4036ba5740f14484d970cbcb30fe1d03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newPlayer: 1
+  expedicionFallida: 0
+  expedicionExito: 0
+  expedicionInterrumpida: 0
+  allItems: 0
+  allPotions: 0
+  allInventory: 0
+  comingBack: 0
 --- !u!1 &1219289662831748500
 GameObject:
   m_ObjectHideFlags: 0
