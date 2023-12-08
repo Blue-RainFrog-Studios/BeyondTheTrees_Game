@@ -22,6 +22,21 @@ public class Enemy : MonoBehaviour
 
     public void RecieveDamage(float damage)
     {
+        if (GetComponent<EnemyController>() != null)
+        {
+            switch (GetComponent<EnemyController>().enemyType)
+            {
+                case (EnemyType.Melee):
+                    GetComponent<EnemyController>().audioSource.PlayOneShot(GetComponent<EnemyController>().ghostClip);
+                    break;
+                case (EnemyType.Ranged):
+                    break;
+                case (EnemyType.Teleport):
+                    GetComponent<EnemyController>().audioSource.PlayOneShot(GetComponent<EnemyController>().teleportHit);
+                    break;
+            }
+        }
+
         life -= damage;
         this.GetComponent<Knockback>().PlayFeedback(player, this.gameObject.GetComponent<Rigidbody2D>());
         if (life <= 0) { 

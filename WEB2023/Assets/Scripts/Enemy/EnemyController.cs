@@ -45,6 +45,10 @@ public class EnemyController : Enemy
     public GameObject EnemyBullet;
     public EnemyState currState = EnemyState.Idle;
     public EnemyType enemyType;
+    public AudioSource audioSource;
+    [SerializeField] private AudioClip fireClip;
+    public AudioClip ghostClip;
+    public AudioClip teleportHit;
     
   
  
@@ -192,11 +196,10 @@ public class EnemyController : Enemy
                     GameObject bullet = Instantiate(EnemyBullet, transform.position, Quaternion.identity) as GameObject;
                     bullet.GetComponent<BulletController>().GetPlayer(player.transform);
                     bullet.AddComponent<Rigidbody2D>().gravityScale = 0;
-                    
+                    audioSource.PlayOneShot(fireClip);
                     StartCoroutine(CoolDown());
                     break;
                 case (EnemyType.Teleport):
-
                     StartCoroutine(CoolDown());
                     player.GetComponent<KnightScript>().ReceiveAttack(damage);
                     break;
