@@ -38,7 +38,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4413202303269975415
 SpriteRenderer:
@@ -167,18 +167,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 0
-  notInRoom: 0
+  notInRoom: 1
   range: 0
   attackRange: 1
   damage: 10
   coolDown: 2
   player: {fileID: 0}
-  squirrelTransform: {fileID: 4625157923182912523}
   speed: 3
   eatClip: {fileID: 8300000, guid: 03570853aba8d874e8d6617ad3ad07dc, type: 3}
   squirrelController: {fileID: 0}
   audioSource: {fileID: 8848712778407726177}
-  rol: '"Eater"'
   rolB: 0
 --- !u!82 &8848712778407726177
 AudioSource:

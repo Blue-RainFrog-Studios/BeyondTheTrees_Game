@@ -6,24 +6,15 @@ using UnityEngine;
 
 public class ActionsSquirrel : Enemy
 {
-    //[SerializeField] private GameObject player;
-    //[SerializeField] private Transform playerTransform;
-   // [SerializeField] private Transform acornTransform;
-    [SerializeField] private Transform squirrelTransform;
     [SerializeField] private float speed;
-    //public bool consumedAcorn;
-    int numReady;
-
     [SerializeField]
     private AudioClip eatClip;
-
     [SerializeField]
     private GameObject squirrelController;
-
     [SerializeField]
     private AudioSource audioSource;
-
-    public string rol;
+    [SerializeField]
+    private float rangeToEater = 4.0f;
     public bool rolB;
     private List<ActionsSquirrel> squirrels;
     static bool hayArdillaCome;
@@ -33,18 +24,7 @@ public class ActionsSquirrel : Enemy
     private void Awake()
     {
         hayArdillaCome = false;
-        //player = GameObject.FindGameObjectWithTag("Player");
-        //playerTransform = player.transform;
         squirrels = new List<ActionsSquirrel>(FindObjectsOfType<ActionsSquirrel>());
-        //if(squirrels != null )
-        //{
-        //    squirrels[0].rol = "Eater";
-        //    for (int i = 1; i < squirrels.Count; i++)
-        //    {
-        //        squirrels[i].rol = "Protector";
-        //    }
-        //}
-        numReady = 0;
         acorns = new List<GameObject>(GameObject.FindGameObjectsWithTag("Acorn"));
     }
     private void Update()
@@ -61,16 +41,6 @@ public class ActionsSquirrel : Enemy
 
         }
     }
-
-    //void OnDrawGizmos()
-    //{
-    //    Vector3 position = player.transform.position;
-
-    //    Vector3 direccionPC = (squirrels[0].transform.position - player.transform.position).normalized*2;
-    //    Gizmos.color = Color.red;
-
-    //    Gizmos.DrawLine(position, position + direccionPC);
-    //}
     public void StartWalkAcorn() {
         this.rolB = true;
         hayArdillaCome = true;
@@ -88,22 +58,20 @@ public class ActionsSquirrel : Enemy
                 return Status.Running;
         
 
-            squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, acorns[0].transform.position, speed * Time.deltaTime);
+            this.transform.position = Vector2.MoveTowards(transform.position, acorns[0].transform.position, speed * Time.deltaTime);
             return Status.Running;
         }
     }
 
     public void StartWalkPlayer()
     {
-        Debug.Log(this.name);
         if (audioSource.isPlaying)
             audioSource.Stop();
     }
 
     public Status UpdateWalkPlayer()
     {
-        //Debug.Log(this.name);
-        squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, player.transform.position, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
         return Status.Running;
     }
 
@@ -117,7 +85,7 @@ public class ActionsSquirrel : Enemy
     public bool CheckAcornInRange()
     {
         if(acorns[0] != null)
-            return Vector2.Distance(squirrelTransform.position, acorns[0].transform.position) < 1.0f;
+            return Vector2.Distance(this.transform.position, acorns[0].transform.position) < 1.0f;
         return true;
     }
 
@@ -151,63 +119,12 @@ public class ActionsSquirrel : Enemy
         }
         
     }
-    public bool CheckEnded()
-    {
-        return squirrelController.GetComponent<SquirrelController>().ended;
-    }
-
     IEnumerator WaitSeconds(float Time)
     {
         yield return new WaitForSeconds(Time);
         aux = true;
-        //squirrelController.GetComponent<SquirrelController>().ended = true;
     }
 
-    public void StartForming()
-    {
-
-    }
-
-    public Status UpdateForming()
-    {
-        if (CheckSquirrelEaterInRange())
-        {
-            numReady++;
-            return Status.Success;
-        }
-        else
-        {;
-            Vector3 direccionPC = (squirrels[0].transform.position - player.transform.position).normalized;
-            Vector3 perpendicular = new Vector3(-direccionPC.y, direccionPC.x, 0.0f);
-            float auxP;
-            if(squirrels.IndexOf(this) %2  == 0)
-            {
-                auxP = squirrels.IndexOf(this) * 0.5f;
-            }
-            else{
-                auxP = -(squirrels.IndexOf(this) - 1) * 0.5f;
-            }
-            Vector3 posicionProtegida = squirrels[0].transform.position - direccionPC* 3.0f  + perpendicular*auxP;
-            squirrelTransform.position = Vector2.MoveTowards(transform.position, posicionProtegida, speed * Time.deltaTime);
-        }
-
-        return Status.Running;
-    }
-
-    public bool CheckSquirrelEaterInRange()
-    {
-        if (rol == "Protector" && squirrels[0] != null)
-        {
-            return Vector2.Distance(this.transform.position, squirrels[0].transform.position) < 3.0f;
-        }
-            
-        return true;
-    }
-
-    public bool CheckFormationDone()
-    {
-        return (squirrels.Count - 1) == numReady;
-    }
 
     public void StartProtecting()
     {
@@ -232,18 +149,14 @@ public class ActionsSquirrel : Enemy
         {
             auxP = -(squirrels.IndexOf(this) - 1) * 0.5f;
         }
-        Vector3 posicionProtegida = squirrels[0].transform.position - direccionPC * 3.0f + perpendicular * auxP;
-        squirrelTransform.position = Vector2.MoveTowards(transform.position, posicionProtegida, speed * Time.deltaTime);
+        Vector3 posicionProtegida = squirrels[0].transform.position - direccionPC * rangeToEater + perpendicular * auxP;
+        transform.position = Vector2.MoveTowards(transform.position, posicionProtegida, speed * Time.deltaTime);
         return Status.Running;
     }
 
     public bool CheckAcornEated()
     {
         return acorns.Count == 0 || squirrels[0] == null;
-    }
-    public bool CheckOtherSquirrels()
-    {
-        return squirrels.Count > 0;
     }
     public bool CheckSquirrelEater()
     {
@@ -253,7 +166,6 @@ public class ActionsSquirrel : Enemy
     {
         if(life <= 0)
         {
-            Debug.Log("CEJOTA");
             if(this.rolB)
                 hayArdillaCome = false;
         }
