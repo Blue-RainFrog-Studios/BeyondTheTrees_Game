@@ -1,50 +1,91 @@
 using BehaviourAPI.Core;
-using BehaviourAPI.StateMachines;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActionsSquirrel : MonoBehaviour
+public class ActionsSquirrel : Enemy
 {
     [SerializeField] private GameObject player;
     [SerializeField] private Transform playerTransform;
-    [SerializeField] private Transform acornTransform;
+   // [SerializeField] private Transform acornTransform;
     [SerializeField] private Transform squirrelTransform;
     [SerializeField] private float speed;
-    private bool ended = false;
-    public bool consumedAcorn;
-    [SerializeField] private int damage;
+    //public bool consumedAcorn;
+    int numReady;
 
     [SerializeField]
     private AudioClip eatClip;
 
     [SerializeField]
+    private GameObject squirrelController;
+
+    [SerializeField]
     private AudioSource audioSource;
+
+    public string rol;
+
+    private List<ActionsSquirrel> squirrels;
+
+    static private List<GameObject> acorns;
+    private bool aux = false;
 
     private void Awake()
     {
-        consumedAcorn = false;
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerTransform = player.transform;
+        squirrels = new List<ActionsSquirrel>(FindObjectsOfType<ActionsSquirrel>());
+        if(squirrels != null )
+        {
+            squirrels[0].rol = "Eater";
+            for (int i = 1; i < squirrels.Count; i++)
+            {
+                squirrels[i].rol = "Protector";
+            }
+        }
+        numReady = 0;
+        acorns = new List<GameObject>(GameObject.FindGameObjectsWithTag("Acorn"));
     }
-
-    public void StartWalkAcorn()
+    private void Update()
     {
+        if (!notInRoom)
+            GetComponent<BTSquirrel>().enabled = true;
+        if (Vector3.Distance(transform.position, player.transform.position) < attackRange)
+        {
+            if(!coolDownAttack)
+            {
+                player.GetComponent<KnightScript>().ReceiveAttack(damage);
+                StartCoroutine(CoolDown());
+            }
 
+        }
     }
+
+    //void OnDrawGizmos()
+    //{
+    //    Vector3 position = player.transform.position;
+
+    //    Vector3 direccionPC = (squirrels[0].transform.position - player.transform.position).normalized*2;
+    //    Gizmos.color = Color.red;
+
+    //    Gizmos.DrawLine(position, position + direccionPC);
+    //}
+    public void StartWalkAcorn() {}
 
     public Status UpdateWalkAcorn()
     {
         if (CheckAcornInRange())
         {
-            consumedAcorn = true;
+            //consumedAcorn = true;
             return Status.Success;
         }
         else
         {
-            if(acornTransform == null)
+            if (acorns[0] == null)
                 return Status.Running;
+        
 
-            squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, acornTransform.position, speed * Time.deltaTime);
+            squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, acorns[0].transform.position, speed * Time.deltaTime);
             return Status.Running;
         }
     }
@@ -63,27 +104,39 @@ public class ActionsSquirrel : MonoBehaviour
 
     public bool CheckAcornExists()
     {
-        return consumedAcorn;
+        if (acorns[0] != null)
+            return acorns[0].activeSelf;
+        return false;
     }
 
     public bool CheckAcornInRange()
     {
-        if(acornTransform != null)
-            return Vector2.Distance(squirrelTransform.position, acornTransform.position) < 1.0f;
+        if(acorns[0] != null)
+            return Vector2.Distance(squirrelTransform.position, acorns[0].transform.position) < 1.0f;
         return true;
     }
 
     public void StartEatAcorn()
     {
         audioSource.PlayOneShot(eatClip);
+        StartCoroutine(WaitSeconds(1));
     }
 
     public Status UpdateEatAcorn()
     {
-        StartCoroutine(WaitSeconds(1));
-        if (ended){
-            ended = false;
-            Destroy(acornTransform.gameObject);
+        
+        if (!aux) return Status.Running;
+        if (!CheckAcornEated())
+        {
+            aux = false;
+            //squirrelController.GetComponent<SquirrelController>().ended = false;
+            if (this.rol == "Eater")   //AQUÍ SE MIRA EL ROL
+            {
+                //squirrelController.GetComponent<SquirrelController>().DestroyAcorn(acorns[0]);
+                Destroy(acorns[0]);
+                acorns.RemoveAt(0);
+            }
+                
             return Status.Success;
         }
         else
@@ -91,14 +144,99 @@ public class ActionsSquirrel : MonoBehaviour
     }
     public bool CheckEnded()
     {
-        return ended;
+        return squirrelController.GetComponent<SquirrelController>().ended;
     }
 
     IEnumerator WaitSeconds(float Time)
     {
         yield return new WaitForSeconds(Time);
-        ended = true;
+        aux = true;
+        //squirrelController.GetComponent<SquirrelController>().ended = true;
     }
+
+    public void StartForming()
+    {
+
+    }
+
+    public Status UpdateForming()
+    {
+        if (CheckSquirrelEaterInRange())
+        {
+            numReady++;
+            return Status.Success;
+        }
+        else
+        {;
+            Vector3 direccionPC = (squirrels[0].transform.position - player.transform.position).normalized;
+            Vector3 perpendicular = new Vector3(-direccionPC.y, direccionPC.x, 0.0f);
+            float auxP;
+            if(squirrels.IndexOf(this) %2  == 0)
+            {
+                auxP = squirrels.IndexOf(this) * 0.5f;
+            }
+            else{
+                auxP = -(squirrels.IndexOf(this) - 1) * 0.5f;
+            }
+            Vector3 posicionProtegida = squirrels[0].transform.position - direccionPC* 3.0f  + perpendicular*auxP;
+            squirrelTransform.position = Vector2.MoveTowards(transform.position, posicionProtegida, speed * Time.deltaTime);
+        }
+
+        return Status.Running;
+    }
+
+    public bool CheckSquirrelEaterInRange()
+    {
+        if (rol == "Protector" && squirrels[0] != null)
+        {
+            return Vector2.Distance(this.transform.position, squirrels[0].transform.position) < 3.0f;
+        }
+            
+        return true;
+    }
+
+    public bool CheckFormationDone()
+    {
+        return (squirrels.Count - 1) == numReady;
+    }
+
+    public void StartProtecting()
+    {
+
+    }
+
+    public Status UpdateProtecting()
+    {
+        if (CheckAcornEated())
+        {
+            return Status.Success;
+        }
+
+        Vector3 direccionPC = (squirrels[0].transform.position - player.transform.position).normalized;
+        Vector3 perpendicular = new Vector3(-direccionPC.y, direccionPC.x, 0.0f);
+        float auxP;
+        if (squirrels.IndexOf(this) % 2 == 0)
+        {
+            auxP = squirrels.IndexOf(this) * 0.5f;
+        }
+        else
+        {
+            auxP = -(squirrels.IndexOf(this) - 1) * 0.5f;
+        }
+        Vector3 posicionProtegida = squirrels[0].transform.position - direccionPC * 3.0f + perpendicular * auxP;
+        squirrelTransform.position = Vector2.MoveTowards(transform.position, posicionProtegida, speed * Time.deltaTime);
+        return Status.Running;
+    }
+
+    public bool CheckAcornEated()
+    {
+        return acorns.Count == 0 || squirrels[0] == null;
+    }
+    public bool CheckOtherSquirrels()
+    {
+        return squirrels.Count > 0;
+    }
+
 }
 
 

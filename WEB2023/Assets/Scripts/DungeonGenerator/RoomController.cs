@@ -28,6 +28,7 @@ public class RoomController : MonoBehaviour
 
     Room lastRoom;
     Room lastlastRoom;
+    Room auxRoom;
 
     public static bool boosDoor = false;
 
@@ -45,6 +46,12 @@ public class RoomController : MonoBehaviour
     bool updatedRooms = false;
 
     int contPuzzle = 0;
+
+    public float maxHealth=0;
+    public float leftHealth = 0;
+    public bool loHealth = false;
+    public bool heal = false;
+    public Vector2 posHealer;
     //ItemSpawner spawn;
 
     private void Awake()
@@ -253,9 +260,9 @@ public class RoomController : MonoBehaviour
             puzzleRooms = new string[]
             {
 
-                "King1",
-                "SkullPuzzle",
-                "RapidoQueSeQueman",
+                //"King1",
+                //"SkullPuzzle",
+                //"RapidoQueSeQueman",
                 "Ardilla",
                 //"RapidoQueSeQueman 2",
             };
@@ -309,16 +316,61 @@ public class RoomController : MonoBehaviour
     {
         CameraController.instance.currRom= room;
         lastlastRoom = lastRoom;
-        lastRoom = currRom;
+        auxRoom= currRom;
         currRom = room;
-        
+        lastRoom = auxRoom;
 
         //los enemigos se quden quietos cuando la camara no este en la sala
-
+        sumHealth();
         //UpdateRooms();
         StartCoroutine(RoomCoroutine());
 
+        
         //currRom.ActivarSpawn();
+    }
+
+    public void sumHealth()
+    {
+        maxHealth= 0;
+        foreach (Room room in loadedRooms)
+        {
+            if(currRom==room)
+            {
+                Enemy[] enemies = room.GetComponentsInChildren<Enemy>();
+                foreach (Enemy enemy in enemies)
+                {
+                    maxHealth += enemy.life;
+                    
+                    //Debug.Log("Not in Room");
+                }
+            }
+        }
+    }
+    public float lHealth()
+    {
+        leftHealth = 0;
+        foreach (Room room in loadedRooms)
+        {
+            if (currRom == room)
+            {
+                Enemy[] enemies = room.GetComponentsInChildren<Enemy>();
+                foreach (Enemy enemy in enemies)
+                {
+                    leftHealth += enemy.life;
+                    //Debug.Log("Not in Room");
+                }
+            }
+        }
+        return leftHealth;
+    }
+    public bool lowHealth()
+    {
+        if (lHealth()< maxHealth * 0.3)
+        {
+            loHealth = true;
+        }
+        
+        return loHealth;
     }
 
     public IEnumerator RoomCoroutine()
@@ -335,10 +387,10 @@ public class RoomController : MonoBehaviour
         {
             if (currRom != room && lastRoom!=room && lastlastRoom!=room)
             {
-                EnemyController[] enemies = room.GetComponentsInChildren<EnemyController>();
+                Enemy[] enemies = room.GetComponentsInChildren<Enemy>();
                 if(enemies != null)
                 {
-                    foreach(EnemyController enemy in enemies)
+                    foreach(Enemy enemy in enemies)
                     {
                         enemy.notInRoom = true;
                         //Debug.Log("Not in Room");
@@ -379,11 +431,11 @@ public class RoomController : MonoBehaviour
 
             else
             {
-                EnemyController[] enemies = room.GetComponentsInChildren<EnemyController>();
+                Enemy[] enemies = room.GetComponentsInChildren<Enemy>();
                 //if (enemies != null)
                 if (enemies.Length > 0)
                 {
-                    foreach (EnemyController enemy in enemies)
+                    foreach (Enemy enemy in enemies)
                     {
                         enemy.notInRoom = false;
                         Debug.Log("In Room");
@@ -422,6 +474,7 @@ public class RoomController : MonoBehaviour
                     {
                         door.doorCollider.SetActive(false);
                         room.GetComponent<Collider2D>().enabled = false;
+                        heal = false;
                         //spawn.SpawObject();
                     }
 

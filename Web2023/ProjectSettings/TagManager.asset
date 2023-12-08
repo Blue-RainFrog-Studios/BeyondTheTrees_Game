@@ -24,6 +24,7 @@ TagManager:
   - Acorn
   - ItemSpawner
   - Music
+  - RoomController
   layers:
   - Default
   - TransparentFX

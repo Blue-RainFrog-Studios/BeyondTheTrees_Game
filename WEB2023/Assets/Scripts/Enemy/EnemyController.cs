@@ -1,6 +1,7 @@
 using BehaviourAPI.UnityToolkit.Demos;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.SceneManagement;
@@ -10,19 +11,19 @@ public enum EnemyState
 {
     Idle,
 
-    Wander,
-
     Follow,
 
     Attack,
 
-    Die,
+    //Die,
 
     Teleport,
 
-    WalkAcorn,
+    Heal,
 
-    EatAcorn
+    Run,
+
+    GoHeal
 };
 public enum EnemyType
 {
@@ -30,42 +31,37 @@ public enum EnemyType
 
     Ranged,
     
-    Teleport,
+    Teleport
 
-    Squirrel
 };
-public class EnemyController : MonoBehaviour
+public class EnemyController : Enemy
 {
 
     Material enemyMaterial;
-
+    public Collider2D healCol;
     public GameObject ghost;
     GameObject acorn;
-    GameObject player;
+    protected GameObject player;
     public GameObject EnemyBullet;
     public EnemyState currState = EnemyState.Idle;
     public EnemyType enemyType;
-    public float range;
-    public float rangeTeleport;
-    public float attackRange;
-    public float rangeSquirrel;
-    public float eatRange;
-    [SerializeField]public bool consumed;
+    public AudioSource audioSource;
+    [SerializeField] private AudioClip fireClip;
+    public AudioClip ghostClip;
+    public AudioClip teleportHit;
+    
+  
+ 
+    protected GameObject room;
     Rigidbody2D rb;
 
-    [SerializeField]
-    private AudioClip eatClip;
-
-    [SerializeField]
-    private AudioSource audioSource;
-
-    public float coolDown;
+    //public float coolDown;
     public float coolDownTp;
     public float speed;
-    public float life;
+   
 
     private bool animationEx = false;
-    private bool coolDownAttack = false;
+    //private bool coolDownAttack = false;
     private bool coolDownTeleport = false;
     private bool chooseDir = false;
     public float bulletSpeed;
@@ -76,323 +72,91 @@ public class EnemyController : MonoBehaviour
     private Vector3 space2 = new Vector3(2, 0, 0);
     private Vector3 space3 = new Vector3(-2, 0, 0);
     private Vector3 space4 = new Vector3(0, -2, 0);
+    private Vector3 runAway;
     public Animator animator;
     public GameObject IAmAGhost;
-    Vector2 direction;
-    Vector2 directionSquirrel;
-
-    public int damage = 20;
+    protected Vector2 direction;
+    public float iLife;
+    public bool can = false;
     // Start is called before the first frame update
-
-    public bool notInRoom = false;
 
     public float blinkDuration;
     public int blinkNumber;
-    private bool blinking = false;
+    protected bool blinking = false;
     private void Awake()
     {
         Idle();
+        
     }
     void Start()
     {
+        
         player = GameObject.FindGameObjectWithTag("Player");
         
         ghost = this.gameObject;
 
         enemyMaterial = GetComponent<Renderer>().material;
+
+        room = GameObject.FindGameObjectWithTag("RoomController");
     }
 
     // Update is called once per frame
     void Update()
     {
-        switch (currState)
+        /*switch (currState)
         {
-            case (EnemyState.Idle):
-                Idle();
-                break;
-            case (EnemyState.Wander):
-                Wander();
-                break;
-            case (EnemyState.Follow):
-                Follow();
-                break;
-            case (EnemyState.Attack):
-                Attack();
-                break;
             case (EnemyState.Die):
                 Die();
                 break;
-            case (EnemyState.Teleport):
-                Teleport();
-            break;
-            case (EnemyState.WalkAcorn):
-                WalkAcorn();
-                break;
-            case (EnemyState.EatAcorn):
-                EatAcorn();
-                break;
-        }
-
-        if (!notInRoom)
-        {
-            if (isPlayerInRange(range) && currState != EnemyState.Die)
-            {
-                currState = EnemyState.Follow;
-            }
-            else if (!isPlayerInRange(range) && !isPlayerInRangeTeleport(rangeTeleport) && !isAcornInRangeSquirrel(rangeSquirrel) && currState != EnemyState.Die)
-            {
-                currState = EnemyState.Wander;
-            }
-            else if(isPlayerInRangeTeleport(rangeTeleport) && currState!=EnemyState.Die)
-            {       
-                currState = EnemyState.Teleport;
-            }
-            else if(isAcornInRangeSquirrel(rangeSquirrel) && currState != EnemyState.Die)
-            {
-                currState = EnemyState.WalkAcorn;
-            }
-
-            if (acorn != null && Vector3.Distance(transform.position, acorn.transform.position) < eatRange && currState != EnemyState.Die && consumed == false)
-            {
-                currState = EnemyState.EatAcorn;
-            }
-
-            if (Vector3.Distance(transform.position, player.transform.position) < attackRange) 
-            {
-                currState = EnemyState.Attack;
-            }
-        }
-        else
-        {
-            currState = EnemyState.Idle;
-        }
-        //if the gameobject is a ghost
-        if (IAmAGhost != null)
-        {
-            float distance = Vector2.Distance(transform.position, player.transform.position);
-            //do it gradually
-            Color color = GetComponent<SpriteRenderer>().color;
-            color.a = 1 - (distance / 10);
-            GetComponent<SpriteRenderer>().color = color;
-        }
-
-        direction = player.transform.position - transform.position;
-            if (direction.x > 0)
-        {
-            animator.Play("GhostRight");
-
-
-        }
-        else
-        {
-            animator.Play("GhostLeft");
-
-        }
-
-        if (isPlayerInRange(range))
-        {
-            if (direction.x > 0.0f)
-            {
-                if (direction.y + 1.0f > direction.x)
-                {
-                    animator.Play("WalkBackTeleGoblin");
-
-
-                }
-                else
-                {
-                    animator.Play("WalkRightTeleGoblin");
-
-
-                }
-            }
-            else if (direction.x < 0.0f)
-            {
-                if (direction.y + 1.0f < direction.x)
-                    animator.Play("WalkFrontTeleGoblin");
-                else
-                    animator.Play("WalkLeftTeleGoblin");
-
-            }
-        }
-        if (isPlayerInRange(range) && !(Vector3.Distance(transform.position, player.transform.position) < attackRange))
-        {
-            if (direction.x > 0.0f)
-            {
-                if (direction.y + 1.0f > direction.x) { 
-                    animator.Play("WalkBackRangedGoblin");
-
-                }
-                else {
-                    animator.Play("WalkRightRangedGoblin");
-
-                }
-            }
-            else if (direction.x < 0.0f)
-            {
-                if (direction.y + 1.0f < direction.x) {
-                    animator.Play("WalkDownRangedGoblin");
-
-                }
-                else {
-                    animator.Play("WalkLeftRangedGoblin");
-
-                }
-            }
-        }
-        else
-        {
-            if (direction.x > 0.0f)
-            {
-                if (direction.y + 1.0f > direction.x)
-                {
-                    animator.Play("AttackBackGoblin");
-
-
-                }
-                else
-                {
-                    animator.Play("AttackRightGoblin");
-
-
-                }
-            }
-            else if (direction.x < 0.0f)
-            {
-                if (direction.y + 1.0f < direction.x)
-                {
-                    animator.Play("AttackFrontGoblin");
-
-
-                }
-                else
-                {
-                    animator.Play("AtackLeftGoblin");
-    
-
-                }
-            }
-        }
-        if (acorn != null) { 
-        directionSquirrel = acorn.transform.position - transform.position;
-        }
-        if (direction.x < 0.0f && acorn == null){
-            animator.Play("SquirrelAnimationRigth");
-
-        }
-        else if (direction.x > 0.0f && acorn == null)
-        {
-            animator.Play("SquirrelAnimation");
-        }
-        if (directionSquirrel.x < 0.0f && acorn != null)
-        {
-            animator.Play("SquirrelAnimationRigth");
-
-        }
-        else if (directionSquirrel.x > 0.0f && acorn != null)
-        {
-            animator.Play("SquirrelAnimation");
-        }
-
+        }*/
     }
-
-    private bool isPlayerInRange(float range)
+    public bool isPlayerInRange(float range)
     {
         return Vector3.Distance(transform.position, player.transform.position) <= range;
     }
-    private bool isPlayerInRangeTeleport(float rangeTeleport)
+    public bool isPlayerInRangeTeleport(float rangeTeleport)
     {
         return Vector3.Distance(transform.position, player.transform.position) <= rangeTeleport;
     }
 
-    private bool isAcornInRangeSquirrel(float rangeSquirrel)
-    {
-        acorn = GameObject.FindGameObjectWithTag("Acorn");
-        if (acorn != null)
-            return Vector3.Distance(transform.position, acorn.transform.position) <= rangeSquirrel;
-        else
-            switch (enemyType)
-            {
-                case (EnemyType.Squirrel):
 
-                    currState = EnemyState.Follow;
-                    range = 10;
-                    break;
-            }
-        return false;
-    }    
 
-    private void WalkAcorn()
-    {
-        if(acorn != null)
-            transform.position = Vector2.MoveTowards(transform.position, acorn.transform.position, speed * Time.deltaTime);
-    }
-
-    private void EatAcorn()
-    {
-        StartCoroutine(WaitSeconds(1));
-        if(!audioSource.isPlaying)
-            audioSource.PlayOneShot(eatClip);
-    }
-
-    IEnumerator WaitSeconds(float Time)
-    {
-        yield return new WaitForSeconds(Time);
-        consumed = true;
-        if (consumed)
-        {
-            Destroy(acorn);
-        }
-        switch (enemyType)
-        {
-            case (EnemyType.Squirrel):              
-                range = 10;
-                break;
-        }
-
-    }
-
-    private IEnumerator ChooseDirection()
-    {
-        chooseDir = true;
-        yield return new WaitForSeconds(Random.Range(2f, 8f));
-        randomDir = new Vector3(0, 0, Random.Range(0, 360));
-        // Quaternion nextRotation = Quaternion.Euler(randomDir);
-        //transform.rotation = Quaternion.Lerp(transform.rotation, nextRotation, Random.Range(0.5f, 2.5f));
-        chooseDir = false;
-    }
-    void Wander()
-    {
-        if (!chooseDir)
-        {
-            StartCoroutine(ChooseDirection());
-        }
-        transform.position += -transform.right * speed * Time.deltaTime;
-        if (isPlayerInRange(range))
-        {
-            currState = EnemyState.Follow;
-        }
-        else if (isPlayerInRangeTeleport(rangeTeleport))
-        {
-            currState = EnemyState.Teleport;
-        }
-
-    }
-    void Follow()
+    public  void Follow()
     {
         transform.position = Vector2.MoveTowards(transform.position,player.transform.position,speed * Time.deltaTime);
     }
 
-    void Idle()
+    public void Run()
     {
-        StopCoroutine(ChooseDirection());
+        runAway = transform.position - player.transform.position;
+        transform.position = Vector2.MoveTowards(transform.position, transform.position+runAway, speed * Time.deltaTime);
     }
-    private IEnumerator CoolDown()
+    public void Heal()
     {
-        coolDownAttack = true;
-        yield return new WaitForSeconds(coolDown);
-        coolDownAttack = false;
+        room.GetComponent<RoomController>().heal=true;
+        room.GetComponent<RoomController>().posHealer = transform.position;
+        healCol.enabled = true;
     }
+    public void GoHeal()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, room.GetComponent<RoomController>().posHealer, speed * Time.deltaTime);
+    }
+
+    public void Idle()
+    {
+    }
+    public IEnumerator Wait()
+    {
+        can = true;
+        yield return new WaitForSeconds(5);
+        can = false;
+    }
+    //private IEnumerator CoolDown()
+    //{
+    //    coolDownAttack = true;
+    //    yield return new WaitForSeconds(coolDown);
+    //    coolDownAttack = false;
+    //}
     private IEnumerator CoolDownTP()
     {
         coolDownTeleport = true;
@@ -418,7 +182,7 @@ public class EnemyController : MonoBehaviour
 
 
     }
-    void Attack()
+    public void Attack()
     {
         if (!coolDownAttack)
         {
@@ -431,22 +195,19 @@ public class EnemyController : MonoBehaviour
                 case (EnemyType.Ranged):
                     GameObject bullet = Instantiate(EnemyBullet, transform.position, Quaternion.identity) as GameObject;
                     bullet.GetComponent<BulletController>().GetPlayer(player.transform);
-                    bullet.AddComponent<Rigidbody2D>().gravityScale = 0;    
+                    bullet.AddComponent<Rigidbody2D>().gravityScale = 0;
+                    audioSource.PlayOneShot(fireClip);
                     StartCoroutine(CoolDown());
                     break;
                 case (EnemyType.Teleport):
+                    StartCoroutine(CoolDown());
+                    player.GetComponent<KnightScript>().ReceiveAttack(damage);
+                    break;
 
-                    StartCoroutine(CoolDown());
-                    player.GetComponent<KnightScript>().ReceiveAttack(damage);
-                    break;
-                case (EnemyType.Squirrel):
-                    player.GetComponent<KnightScript>().ReceiveAttack(damage);
-                    StartCoroutine(CoolDown());
-                    break;
             }
         }
     }
-    void Teleport()
+    public void Teleport()
     {
 
         StartCoroutine(wait());
@@ -504,6 +265,7 @@ public class EnemyController : MonoBehaviour
 
 
     }
+   
     public void Die()
     {
         if (player.GetComponent<KnightScript>().king)
@@ -514,20 +276,8 @@ public class EnemyController : MonoBehaviour
         Destroy(ghost);
 
     }
-    public void RecieveDamage(float damage)
+    /*public void RecieveDamage(float damage)
     {
-        //get the rigid body component
-        //rb = GetComponent<Rigidbody2D>();
-        //direction = player.transform.position - transform.position;
-        //Vector2 OpositeDirection = direction * -1;
-        //do this for 1 second and then reset the velocity
-        //rb.AddForce(-direction * 10, ForceMode2D.Impulse);
-        //player.GetComponent<Rigidbody2D>().AddForce(direction * 10, ForceMode2D.Impulse);
-
-        //call the event PlayFeedback of the script feedback
-        //GetComponent<Knockback>().PlayFeedback(player, GetComponent<Rigidbody2D>());
-
-
         life -= damage;
         this.GetComponent<Knockback>().PlayFeedback(player , this.gameObject.GetComponent<Rigidbody2D>());
         //Debug.Log("Recibo da�o");
@@ -540,10 +290,9 @@ public class EnemyController : MonoBehaviour
         {
             StartCoroutine(Blink());
         }
+    }*/
 
-    }
-
-    private IEnumerator Blink()
+    public IEnumerator Blink()
     {
         blinkDuration = 0.05f; ;
         blinkNumber = 3;
@@ -564,7 +313,4 @@ public class EnemyController : MonoBehaviour
 
         blinking = false;
     }
-
-
-
 }

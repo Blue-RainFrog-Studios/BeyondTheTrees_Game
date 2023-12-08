@@ -212,6 +212,15 @@ A = Ataque, D=Defensa, VA=Velocidad de Ataque, VM=Velocidad de Movimiento, R=Rar
 | Capa del cazador | Una capa que perteneció a un veterano cazador, muy valorada por coleccionistas. Se puede vender por bastante oro y dará bastante velocidad de movimiento                                |  0 |  0 |  0 |  8 | Épico      | 15 |
 | Capa del viento  | Una capa que aparece en antiguas leyendas, se dice que allá dónde esté el viento sopla a espaldas de tu portador. Se puede vender por mucho oro y te dará mucha velocidad de movimiento |  0 |  0 |  0 | 11 | Legendario | 30 |
 
+Items con debufos:
+
+| Nombre           | Descripción                                                                                                                                                                             | A  | D  | VA | VM | R          | P  |
+|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----|----|----|----|------------|----|
+| Escudo       | Un gran escudo que perteneció a un robusto pero lento caballero en un pasado.|  0 |  12 |  0 |  -7 | Debufo | 10 |
+| Esfera dorada | Una esfera dorada con un alto valor económico a la vez que un gran peso.|  0 |  0  |  0 |  0  |Debufo | 50 |
+| Martillo       | Este martillo fue empuñado en un pasado por un caballero que también se adentró en el bosque al igual que Kero.|10 |  0 |  -3 |  0 | Debufo      | 10 |
+
+
 Daga Solar
 
 ![Daga solar][DagaSolar]
@@ -310,7 +319,7 @@ Pluma de Fénix
 Kero coin (moneda del juego)
 
 ![Kero Coin][keroCoin]
-f
+
 ## DISEÑO
 ### Personaje
 Kero es el protagonista.
@@ -756,6 +765,11 @@ No se han implementado todos los enemigos ni los boses, esto se debe a que la he
 Se han cambiado las pociones por insecto. Se han añadido las imágenes de los items que faltaban de la tabla del apartado items.
 
 Se ha añadido el análisis MDA del videojuego.
+
+### Cambios en la version gold master
+### Items:
+Se han metido items que además de sumar estadísticas las restan.
+
 
 ## Enlace de lector al GDD en Google docs
 https://docs.google.com/document/d/1l6Qfy3xQ0anlrgdIv_5JKlhzeY_67oTvJoi1X06fd6Q/edit?usp=sharing
