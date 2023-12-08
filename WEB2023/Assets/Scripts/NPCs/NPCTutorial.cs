@@ -4,22 +4,30 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NPCBase : MonoBehaviour
+public class NPCTutorial : MonoBehaviour
 {
-    [SerializeField] GameObject shopUI;
     public GameObject dialoguePanel;
     public Text dialogueText;
-    public List<string> dialogueList; 
+
+    // LAs siguientes variables osn los distintos dialogos que puede mostrar el personaje del tutorial
+    public List<string> dialogueTutorial;
+
+    public List<string> dialogueList;
     private int index;
     public string nameCharacter;
-    public Sprite speackImg;
-    public BoxCollider2D speakZone;
-
+    public Image speackImg;
 
     private GameObject player;
     public GameObject continueButton;
-    public GameObject buyButton;
     public float wordSpeed;
+    public bool playerIsClose;
+
+    public BoxCollider2D areaRegreso;
+    public BoxCollider2D areaHablar;
+
+    
+
+    
 
     private void Start()
     {
@@ -51,7 +59,7 @@ public class NPCBase : MonoBehaviour
 
     public void zeroText()
     {
-        this.dialogueText.text = "";
+        dialogueText.text = "";
         index = 0;
         dialoguePanel.SetActive(false);
     }
@@ -61,27 +69,23 @@ public class NPCBase : MonoBehaviour
         player.GetComponent<PlayerMovementInputSystem>().enabled = false;
         foreach (char letter in dialogueList[index].ToCharArray())
         {
-            this.dialogueText.text += letter;
+            dialogueText.text += letter;
             yield return new WaitForSeconds(wordSpeed);
         }
         continueButton.SetActive(true);
-        if(index == 0)
-        {
-            buyButton.SetActive(true);
-        }
         
+
 
     }
 
     public void NextLine()
     {
         continueButton.SetActive(false);
-        buyButton.SetActive(false);
 
-        if (index < dialogueList.Count-1)
+        if (index < dialogueList.Count - 1)
         {
             index++;
-            this.dialogueText.text = "";
+            dialogueText.text = "";
             StartCoroutine(Typing());
         }
         else
@@ -95,8 +99,6 @@ public class NPCBase : MonoBehaviour
 
     public void OpenShop()
     {
-
-        shopUI.SetActive(true);
         dialoguePanel.SetActive(false);
     }
 
