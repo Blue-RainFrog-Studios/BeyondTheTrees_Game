@@ -20,8 +20,8 @@ public class DavidElGnomoController : MonoBehaviour
     [SerializeField] private AudioSource metalicS; 
     [SerializeField] private AudioSource metalicS2;
 
-    [SerializeField] GameObject ouchFace;
-    [SerializeField] GameObject ouchNoHatFace;
+    [SerializeField] public GameObject ouchFace;
+    [SerializeField] public GameObject ouchNoHatFace;
 
     GameObject player;
     private bool Played;
@@ -86,7 +86,7 @@ public class DavidElGnomoController : MonoBehaviour
     public void RecieveDamage(float damage)
     {
 
-        if (!GetComponent<ActionsDavidElGnomo>().invulnerable)
+        if (!GetComponent<ActionsDavidElGnomo>().invulnerable || !GetComponent<ActionsDavidElGnomoNoHat>().invulnerable)
         {
             //random between 1 and 2
             int random = UnityEngine.Random.Range(1, 3);
@@ -120,11 +120,11 @@ public class DavidElGnomoController : MonoBehaviour
         else
         {
             int random = UnityEngine.Random.Range(1, 3);
-            if (random == 1 && HP >= 0 && !walkAtt)
+            if (random == 1)
             {
                 metalicS.Play();
             }
-            else if (random == 2 && HP >= 0 && !walkAtt)
+            else if (random == 2)
             {
                 metalicS2.Play();
             }

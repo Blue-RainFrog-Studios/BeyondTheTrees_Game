@@ -162,6 +162,7 @@ public class ActionsDavidElGnomo : MonoBehaviour
     {
         invulnerable = true;
         this.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        GetComponent<DavidElGnomoController>().ouchFace.SetActive(false);
         StopAllCoroutines();
         animator.Play("Idle");
         TiredHat.SetActive(false);

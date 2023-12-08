@@ -599,6 +599,7 @@ MonoBehaviour:
   TiredNoHat: {fileID: 1136498536372720974}
   GnomeNoHat: {fileID: 6040601285934954748}
   dieSound: {fileID: 2345209178451290200}
+  invulnerable: 0
 --- !u!114 &4251262224745933555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1178,7 +1179,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 861508010344493465, guid: 41fc75b265ffcd94fa619ee09e7a4877, type: 2}
   m_audioClip: {fileID: 8300000, guid: 77995dac89e03fb4b838b07330936c65, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1274,7 +1275,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 861508010344493465, guid: 41fc75b265ffcd94fa619ee09e7a4877, type: 2}
   m_audioClip: {fileID: 8300000, guid: 983354a273182684484fce8803782c70, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
