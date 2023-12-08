@@ -1333,9 +1333,11 @@ MonoBehaviour:
   newPlayer: 1
   expedicionFallida: 0
   expedicionExito: 0
+  expedicionInterrumpida: 0
   allItems: 0
   allPotions: 0
   allInventory: 0
+  comingBack: 0
 --- !u!1 &1219289662831748500
 GameObject:
   m_ObjectHideFlags: 0

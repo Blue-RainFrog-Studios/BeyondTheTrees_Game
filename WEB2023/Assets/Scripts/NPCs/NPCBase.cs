@@ -20,7 +20,6 @@ public class NPCBase : MonoBehaviour
     public GameObject continueButton;
     public GameObject buyButton;
     public float wordSpeed;
-    public bool playerIsClose;
 
     private void Start()
     {
@@ -52,7 +51,7 @@ public class NPCBase : MonoBehaviour
 
     public void zeroText()
     {
-        dialogueText.text = "";
+        this.dialogueText.text = "";
         index = 0;
         dialoguePanel.SetActive(false);
     }
@@ -62,7 +61,7 @@ public class NPCBase : MonoBehaviour
         player.GetComponent<PlayerMovementInputSystem>().enabled = false;
         foreach (char letter in dialogueList[index].ToCharArray())
         {
-            dialogueText.text += letter;
+            this.dialogueText.text += letter;
             yield return new WaitForSeconds(wordSpeed);
         }
         continueButton.SetActive(true);
@@ -82,7 +81,7 @@ public class NPCBase : MonoBehaviour
         if (index < dialogueList.Count-1)
         {
             index++;
-            dialogueText.text = "";
+            this.dialogueText.text = "";
             StartCoroutine(Typing());
         }
         else

@@ -10,9 +10,9 @@ public class NPCTutorial : MonoBehaviour
     public Text dialogueText;
 
     // LAs siguientes variables osn los distintos dialogos que puede mostrar el personaje del tutorial
-    public string[] dialogueTutorial;
+    public List<string> dialogueTutorial;
 
-    public string[] dialogue;
+    public List<string> dialogueList;
     private int index;
     public string nameCharacter;
     public Image speackImg;
@@ -22,29 +22,30 @@ public class NPCTutorial : MonoBehaviour
     public float wordSpeed;
     public bool playerIsClose;
 
-    public BoxCollider2D areaTutorial;
+    public BoxCollider2D areaRegreso;
     public BoxCollider2D areaHablar;
 
-    public bool remindBack;
+    
+
+    
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
     }
+
     private void Update()
     {
-
-        //SWitch que cambie segun la situacion que se quiera mostrar en el dialogo
-        if (dialogueText.text == dialogue[index])
+        /*if (dialogueText.text == dialogueList[index])
         {
-            player.GetComponent<PlayerMovementInputSystem>().enabled = true;
-            //continueButton.SetActive(true);
-            //buyButton.SetActive(true);
-        }
+            //player.GetComponent<PlayerMovementInputSystem>().enabled = true;
+            
+        }*/
     }
+
     public void EnseñarDialogo()
     {
-        player.GetComponent<PlayerMovementInputSystem>().enabled = false;
+        //player.GetComponent<PlayerMovementInputSystem>().enabled = false;
         if (dialoguePanel.activeInHierarchy)
         {
             zeroText();
@@ -54,9 +55,6 @@ public class NPCTutorial : MonoBehaviour
             dialoguePanel.SetActive(true);
             StartCoroutine(Typing());
         }
-
-
-
     }
 
     public void zeroText()
@@ -68,17 +66,23 @@ public class NPCTutorial : MonoBehaviour
 
     IEnumerator Typing()
     {
-        foreach (char letter in dialogue[index].ToCharArray())
+        player.GetComponent<PlayerMovementInputSystem>().enabled = false;
+        foreach (char letter in dialogueList[index].ToCharArray())
         {
             dialogueText.text += letter;
             yield return new WaitForSeconds(wordSpeed);
         }
+        continueButton.SetActive(true);
+        
+
+
     }
 
     public void NextLine()
     {
         continueButton.SetActive(false);
-        if (index < dialogue.Length - 1)
+
+        if (index < dialogueList.Count - 1)
         {
             index++;
             dialogueText.text = "";
@@ -86,21 +90,32 @@ public class NPCTutorial : MonoBehaviour
         }
         else
         {
-            zeroText();
+            //zeroText();
+            player.GetComponent<PlayerMovementInputSystem>().enabled = true;
+            dialoguePanel.SetActive(false); // Cierra el panel de diálogo
+            //speakZone.enabled = false;
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    public void OpenShop()
     {
-        if (collision.CompareTag("Player"))
+        dialoguePanel.SetActive(false);
+    }
+
+    private void OnTriggerEnter2D(Collider2D speakZone)
+    {
+        if (speakZone.CompareTag("Player"))
         {
             EnseñarDialogo();
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
+
+    private void OnTriggerExit2D(Collider2D speakZone)
     {
-        if (collision.CompareTag("Player"))
+        if (speakZone.CompareTag("Player"))
         {
             zeroText();
+
         }
     }
 }
