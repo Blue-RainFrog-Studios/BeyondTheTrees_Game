@@ -14,13 +14,13 @@ public class Enemy : MonoBehaviour
     public int damage;
     protected bool coolDownAttack = false;
     public float coolDown;
-    GameObject player;
+    public GameObject player;
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    public void RecieveDamage(float damage)
+    virtual public void RecieveDamage(float damage)
     {
         if (GetComponent<EnemyController>() != null)
         {

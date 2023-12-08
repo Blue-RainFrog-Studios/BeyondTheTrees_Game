@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class ActionsSquirrel : Enemy
 {
-    [SerializeField] private GameObject player;
-    [SerializeField] private Transform playerTransform;
+    //[SerializeField] private GameObject player;
+    //[SerializeField] private Transform playerTransform;
    // [SerializeField] private Transform acornTransform;
     [SerializeField] private Transform squirrelTransform;
     [SerializeField] private float speed;
@@ -24,25 +24,26 @@ public class ActionsSquirrel : Enemy
     private AudioSource audioSource;
 
     public string rol;
-
+    public bool rolB;
     private List<ActionsSquirrel> squirrels;
-
+    static bool hayArdillaCome;
     static private List<GameObject> acorns;
     private bool aux = false;
 
     private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        playerTransform = player.transform;
+        hayArdillaCome = false;
+        //player = GameObject.FindGameObjectWithTag("Player");
+        //playerTransform = player.transform;
         squirrels = new List<ActionsSquirrel>(FindObjectsOfType<ActionsSquirrel>());
-        if(squirrels != null )
-        {
-            squirrels[0].rol = "Eater";
-            for (int i = 1; i < squirrels.Count; i++)
-            {
-                squirrels[i].rol = "Protector";
-            }
-        }
+        //if(squirrels != null )
+        //{
+        //    squirrels[0].rol = "Eater";
+        //    for (int i = 1; i < squirrels.Count; i++)
+        //    {
+        //        squirrels[i].rol = "Protector";
+        //    }
+        //}
         numReady = 0;
         acorns = new List<GameObject>(GameObject.FindGameObjectsWithTag("Acorn"));
     }
@@ -70,13 +71,15 @@ public class ActionsSquirrel : Enemy
 
     //    Gizmos.DrawLine(position, position + direccionPC);
     //}
-    public void StartWalkAcorn() {}
+    public void StartWalkAcorn() {
+        this.rolB = true;
+        hayArdillaCome = true;
+    }
 
     public Status UpdateWalkAcorn()
     {
         if (CheckAcornInRange())
         {
-            //consumedAcorn = true;
             return Status.Success;
         }
         else
@@ -92,13 +95,15 @@ public class ActionsSquirrel : Enemy
 
     public void StartWalkPlayer()
     {
-        if(audioSource.isPlaying)
+        Debug.Log(this.name);
+        if (audioSource.isPlaying)
             audioSource.Stop();
     }
 
     public Status UpdateWalkPlayer()
     {
-        squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, playerTransform.position, speed * Time.deltaTime);
+        //Debug.Log(this.name);
+        squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, player.transform.position, speed * Time.deltaTime);
         return Status.Running;
     }
 
@@ -118,29 +123,33 @@ public class ActionsSquirrel : Enemy
 
     public void StartEatAcorn()
     {
+
         audioSource.PlayOneShot(eatClip);
         StartCoroutine(WaitSeconds(1));
     }
 
     public Status UpdateEatAcorn()
     {
-        
+
         if (!aux) return Status.Running;
         if (!CheckAcornEated())
         {
+            
             aux = false;
-            //squirrelController.GetComponent<SquirrelController>().ended = false;
-            if (this.rol == "Eater")   //AQUÍ SE MIRA EL ROL
+            if (this.rolB)   //AQUÍ SE MIRA EL ROL
             {
-                //squirrelController.GetComponent<SquirrelController>().DestroyAcorn(acorns[0]);
                 Destroy(acorns[0]);
                 acorns.RemoveAt(0);
+                hayArdillaCome = false;
             }
                 
             return Status.Success;
         }
         else
+        {
             return Status.Running;
+        }
+        
     }
     public bool CheckEnded()
     {
@@ -202,7 +211,7 @@ public class ActionsSquirrel : Enemy
 
     public void StartProtecting()
     {
-
+        this.rolB = false;
     }
 
     public Status UpdateProtecting()
@@ -236,7 +245,21 @@ public class ActionsSquirrel : Enemy
     {
         return squirrels.Count > 0;
     }
-
+    public bool CheckSquirrelEater()
+    {
+        return hayArdillaCome;
+    }
+      override public void RecieveDamage(float damage)
+    {
+        if(life <= 0)
+        {
+            Debug.Log("CEJOTA");
+            if(this.rolB)
+                hayArdillaCome = false;
+        }
+            
+        base.RecieveDamage(damage);
+    }
 }
 
 
