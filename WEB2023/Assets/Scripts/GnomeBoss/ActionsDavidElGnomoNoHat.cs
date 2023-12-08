@@ -19,9 +19,17 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     //[SerializeField] private float HPGnomeMode;
 
     [SerializeField] private float TimeTired;
-
+    public event EventHandler OnWalkAttack;
+    public event EventHandler OnWalkAttackEnd;
     [SerializeField] private Animator animator;
     [SerializeField] private GameObject littleGnome;
+
+    [SerializeField] private GameObject TiredNoHat;
+    [SerializeField] private GameObject GnomeNoHat;
+
+
+    //audio
+    [SerializeField] private AudioSource dieSound;
 
     private bool invulnerable = false;
     private bool hasBeenPlayed = false;
@@ -40,6 +48,9 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
 
     public void StartMethodNoHat()
     {
+        GetComponent<ActionsDavidElGnomo>().TiredHat.SetActive(false);
+        GetComponent<ActionsDavidElGnomo>().GnomeHat.SetActive(false);
+        OnWalkAttack?.Invoke(this, EventArgs.Empty);
         screenShake = GetComponent<ScreenShake>();
         GetComponent<ActionsDavidElGnomo>().StopAllCoroutines();    
         this.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
@@ -49,13 +60,14 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     public Status UpdateMethodNoHat()
     {
         StartCoroutine(WaitSeconds(5));
-        screenShake.StartCoroutine(screenShake.ShakeScreen());
+        //screenShake.StartCoroutine(screenShake.ShakeScreen());
         if (!ended) { 
             return Status.Running;
         }
         else
         {
             ended = false;
+            OnWalkAttackEnd?.Invoke(this, EventArgs.Empty);
             return Status.Success;
         }
     }
@@ -81,6 +93,8 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
         collisionDetected = false;
         GetComponent<Knockback>().strength = 40f;
         ended = false;
+        OnWalkAttack?.Invoke(this, EventArgs.Empty);
+
         if (playerTransform.position.x > DavidElGnomoTransform.position.x)
             animator.Play("WalkSideNoHat");
         else
@@ -109,6 +123,7 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
             GetComponent<Knockback>().strength = 10f;
             StopAllCoroutines();
             collisionDetected = false;
+            OnWalkAttackEnd?.Invoke(this, EventArgs.Empty);
             return Status.Success;
         }
         return Status.Running;
@@ -142,9 +157,10 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     public void StartMethodGnomeModeNoHat()
     {
         StopAllCoroutines();
-        
+        invulnerable = true;
         animator.Play("IdleNoHat");
-
+        TiredNoHat.SetActive(false);
+        GnomeNoHat.SetActive(true);
         StartCoroutine(InvokeGnomes(1f));
         StartCoroutine(InvokeGnomes(2f));
         StartCoroutine(InvokeGnomes(3f)); 
@@ -153,12 +169,12 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
         StartCoroutine(InvokeGnomes(3f));
         StartCoroutine(WaitSeconds(6));
         
-        invulnerable = true;
     }
     public Status UpdateMethodGnomeModeNoHat()
     {
         if (ended)
         {
+            GnomeNoHat.SetActive(false);
             invulnerable = false;
             hasBeenPlayed = true;
             return Status.Success;
@@ -174,14 +190,15 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     public void StartMethodTiredNoHat()
     {
         ended = false;
+        TiredNoHat.SetActive(true);
         animator.Play("IdleNoHat");
-        //cambia el color a morado
         StartCoroutine(WaitSeconds(TimeTired));
     }
     public Status UpdateMethodTiredNoHat()
     {
         if (ended)
         {
+            TiredNoHat.SetActive(false);
             return Status.Success;
         }
         else
@@ -193,10 +210,14 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
 
     public void StartMethodDieGnome()
     {
-        ended=false; 
+        GnomeNoHat.SetActive(false);
+        TiredNoHat.SetActive(false);
+        ended = false; 
         StopAllCoroutines();
         StartCoroutine(animAndDie());
-    }   
+        dieSound.Play();
+
+    }
     public Status UpdateMethodDieGnome()
     {
         if (ended) { 

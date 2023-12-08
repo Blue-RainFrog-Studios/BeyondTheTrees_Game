@@ -1,0 +1,435 @@
+fileFormatVersion: 2
+guid: 8eb45b127b6cd41479e1c12a1968d166
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ALL expresions_0
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 4880
+        width: 1642
+        height: 1408
+      alignment: 9
+      pivot: {x: 0.62183106, y: 0.5101492}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11c916efc16d9634784e28c2f0d0cb8a
+      internalID: 470765517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ALL expresions_1
+      rect:
+        serializedVersion: 2
+        x: 2587
+        y: 4849
+        width: 1966
+        height: 1409
+      alignment: 9
+      pivot: {x: 0.6780677, y: 0.50000036}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02931b48a6dd73d41a069e34475924c6
+      internalID: -1930052237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ALL expresions_2
+      rect:
+        serializedVersion: 2
+        x: 5337
+        y: 4834
+        width: 2101
+        height: 1409
+      alignment: 9
+      pivot: {x: 0.7074324, y: 0.48478842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35ac30c655a5a2846a7b97d57c6b050c
+      internalID: 1342813419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ALL expresions_3
+      rect:
+        serializedVersion: 2
+        x: 8312
+        y: 4721
+        width: 2553
+        height: 1409
+      alignment: 9
+      pivot: {x: 0.77145225, y: 0.48478842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba15672815e38634983d6a7032eda47a
+      internalID: -1691802496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ALL expresions_4
+      rect:
+        serializedVersion: 2
+        x: 12274
+        y: 4842
+        width: 2802
+        height: 1408
+      alignment: 9
+      pivot: {x: 0.7906762, y: 0.4695549}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e27e3502fcb6165408e87364eccff8ad
+      internalID: 1640329551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ALL expresions_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 2641
+        width: 2795
+        height: 1409
+      alignment: 9
+      pivot: {x: 0.2022464, y: 0.50732595}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 241c0122a5b598c4db1128f22e3e37ff
+      internalID: -2019866117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ALL expresions_6
+      rect:
+        serializedVersion: 2
+        x: 4523
+        y: 2521
+        width: 2554
+        height: 1409
+      alignment: 9
+      pivot: {x: 0.22225113, y: 0.5113871}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc626fdf51703dc4cb07dbd088b9b743
+      internalID: 765070845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ALL expresions_7
+      rect:
+        serializedVersion: 2
+        x: 7950
+        y: 2637
+        width: 2102
+        height: 1409
+      alignment: 9
+      pivot: {x: 0.26056656, y: 0.49524558}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0df8da1473ccfd4488a73e3ec67f146d
+      internalID: 1277127739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ALL expresions_8
+      rect:
+        serializedVersion: 2
+        x: 10843
+        y: 2660
+        width: 1958
+        height: 1409
+      alignment: 9
+      pivot: {x: 0.28592134, y: 0.4851826}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d273e483e1d56a489410cc945fb0789
+      internalID: -528568604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ALL expresions_9
+      rect:
+        serializedVersion: 2
+        x: 13547
+        y: 2680
+        width: 1649
+        height: 1408
+      alignment: 9
+      pivot: {x: 0.33890155, y: 0.49719238}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a6b5353304d9744e9c6d090ce4f510f
+      internalID: -960611641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ALL expresions_10
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 494
+        width: 1484
+        height: 1424
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd041003a73a67a4a9129da52a4ac53d
+      internalID: -401388805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ALL expresions_11
+      rect:
+        serializedVersion: 2
+        x: 2279
+        y: 516
+        width: 1483
+        height: 1424
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 965948c71cb5e0842b4cf1c7f91f1c46
+      internalID: -1607233375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ALL expresions_12
+      rect:
+        serializedVersion: 2
+        x: 4229
+        y: 486
+        width: 1484
+        height: 1432
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25868a0f7e9ce81488ab64eca39c4c26
+      internalID: 2123891287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ALL expresions_13
+      rect:
+        serializedVersion: 2
+        x: 6045
+        y: 456
+        width: 1489
+        height: 1432
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce5a7a9dd67db074dad49532ee264ad5
+      internalID: -127559842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ALL expresions_0: 470765517
+      ALL expresions_1: -1930052237
+      ALL expresions_10: -401388805
+      ALL expresions_11: -1607233375
+      ALL expresions_12: 2123891287
+      ALL expresions_13: -127559842
+      ALL expresions_2: 1342813419
+      ALL expresions_3: -1691802496
+      ALL expresions_4: 1640329551
+      ALL expresions_5: -2019866117
+      ALL expresions_6: 765070845
+      ALL expresions_7: 1277127739
+      ALL expresions_8: -528568604
+      ALL expresions_9: -960611641
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

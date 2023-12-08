@@ -1,4 +1,5 @@
 using BehaviourAPI.UnityToolkit.Demos;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,10 +15,19 @@ public class DavidElGnomoController : MonoBehaviour
     [SerializeField] public float HP;
     [SerializeField] public float HPGnomeMode;
     [SerializeField] public float HPSecondPhase;
+    [SerializeField] private AudioSource grunt1;
+    [SerializeField] private AudioSource grunt2;
+    [SerializeField] private AudioSource metalicS; 
+    [SerializeField] private AudioSource metalicS2;
+
+    [SerializeField] GameObject ouchFace;
+    [SerializeField] GameObject ouchNoHatFace;
+
     GameObject player;
     private bool Played;
     private bool PlayedSF;
     private bool PlayedSF2;
+    private bool walkAtt;
 
 
     #region BossController
@@ -27,6 +37,11 @@ public class DavidElGnomoController : MonoBehaviour
         Played = false;
         PlayedSF = false;
         player = GameObject.FindGameObjectWithTag("Player");
+        GetComponent<ActionsDavidElGnomo>().OnWalkAttack += WalkAttackDoing;
+        GetComponent<ActionsDavidElGnomo>().OnWalkAttackEnd += WalkAttackEnd; 
+        
+        GetComponent<ActionsDavidElGnomoNoHat>().OnWalkAttack += WalkAttackDoing;
+        GetComponent<ActionsDavidElGnomoNoHat>().OnWalkAttackEnd += WalkAttackEnd;
     }
 
     private void Update()
@@ -44,6 +59,11 @@ public class DavidElGnomoController : MonoBehaviour
         if (HP< HPSecondPhase - 200 && !PlayedSF2) {
             GetComponent<FMSDavidElGnomo>().ChangeToGnomeModeNoHat();
             PlayedSF2 = true;
+        }
+        if (walkAtt)
+        {
+            ouchFace.SetActive(false);
+            ouchNoHatFace.SetActive(false);
         }
         
     }
@@ -68,11 +88,45 @@ public class DavidElGnomoController : MonoBehaviour
 
         if (!GetComponent<ActionsDavidElGnomo>().invulnerable)
         {
+            //random between 1 and 2
+            int random = UnityEngine.Random.Range(1, 3);
+            if (random == 1 && HP>=0 && !walkAtt)
+            {
+                grunt1.Play();
+            }
+            else if (random == 2 && HP >= 0 && !walkAtt)
+            {
+                grunt2.Play();
+            }
             HP -= damage;
+
+            if(HP>HPSecondPhase && !walkAtt)
+            {
+                ouchFace.SetActive(true);
+                StartCoroutine(wait1second());
+            }
+            else if (HP < HPSecondPhase && !walkAtt && HP >= 0)
+            {
+                ouchNoHatFace.SetActive(true);
+                StartCoroutine(wait1second());
+            }
+
             Debug.Log("Recibo daño");
             if (HP <= 0)
             {
                 GetComponent<FMSDavidElGnomo>().DieGnome();
+            }
+        }
+        else
+        {
+            int random = UnityEngine.Random.Range(1, 3);
+            if (random == 1 && HP >= 0 && !walkAtt)
+            {
+                metalicS.Play();
+            }
+            else if (random == 2 && HP >= 0 && !walkAtt)
+            {
+                metalicS2.Play();
             }
         }
     }
@@ -97,4 +151,21 @@ public class DavidElGnomoController : MonoBehaviour
         }
     }
     #endregion
+
+    public void WalkAttackDoing(object sender, EventArgs e)
+    {
+        walkAtt = true;
+    }
+    public void WalkAttackEnd(object sender, EventArgs e)
+    {
+        walkAtt = false;
+    }
+
+    IEnumerator wait1second()
+    {
+        //wait 1 second 
+        yield return new WaitForSeconds(1f);
+        ouchFace.SetActive(false);
+        ouchNoHatFace.SetActive(false);
+    }
 }

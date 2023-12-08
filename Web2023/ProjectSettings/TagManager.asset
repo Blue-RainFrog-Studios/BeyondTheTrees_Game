@@ -23,6 +23,7 @@ TagManager:
   - AttackRoot
   - Acorn
   - ItemSpawner
+  - Music
   - RoomController
   layers:
   - Default
