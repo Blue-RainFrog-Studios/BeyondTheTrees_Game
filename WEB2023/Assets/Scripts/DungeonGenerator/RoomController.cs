@@ -291,16 +291,7 @@ public class RoomController : MonoBehaviour
                 "Ardilla2",
             };
         }
-        //string[] puzzleRooms = new string[]
-        //{
 
-        //    /*"King1",
-        //    "SkullPuzzle",
-        //    "RapidoQueSeQueman",*/
-        //    "Ardilla",
-        //    //"RapidoQueSeQueman 1",
-        //    //"RapidoQueSeQueman 2",
-        //};
         if(randomAux == 0 && contPuzzle < 1)
         {
             contPuzzle++;
@@ -462,10 +453,6 @@ public class RoomController : MonoBehaviour
                         {
                             SceneManager.LoadScene("Victory");
                         }
-                        
-                        //GameObject menuOpcion = GameObject.Find("Opcion");
-                        //menuOpcion.transform.GetChild(0).gameObject.SetActive(true);
-
                     }
 
                 }else{
