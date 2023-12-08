@@ -45,12 +45,6 @@ public class ActionsSquirrel : Enemy
         }
     }
     public void StartWalkAcorn() {
-        this.rolB = true;
-        hayArdillaCome = true;
-    }
-
-    public Status UpdateWalkAcorn()
-    {
         if (transform.position.x >= acorns[0].transform.position.x)
         {
             animator.Play("SquirrelAnimationRigth");
@@ -59,6 +53,14 @@ public class ActionsSquirrel : Enemy
         {
             animator.Play("SquirrelAnimation");
         }
+        this.rolB = true;
+        hayArdillaCome = true;
+    }
+
+    public Status UpdateWalkAcorn()
+    {
+
+        
         if (CheckAcornInRange())
         {
             return Status.Success;
