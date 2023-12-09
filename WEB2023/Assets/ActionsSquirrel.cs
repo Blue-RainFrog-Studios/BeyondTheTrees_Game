@@ -44,7 +44,11 @@ public class ActionsSquirrel : Enemy
     private void Update()
     {
         if (!notInRoom)
+        {
             GetComponent<BTSquirrel>().enabled = true;
+            GetComponent<NavMeshAgent>().enabled = true;
+        }
+            
 
         if (Vector3.Distance(transform.position, player.transform.position) < attackRange)
         {

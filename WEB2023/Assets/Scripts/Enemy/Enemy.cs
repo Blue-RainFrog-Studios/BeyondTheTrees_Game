@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     public int damage;
     protected bool coolDownAttack = false;
     public float coolDown;
-    public GameObject player;
+    static public GameObject player;
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
