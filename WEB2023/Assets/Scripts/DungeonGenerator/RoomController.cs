@@ -101,15 +101,16 @@ public class RoomController : MonoBehaviour
                 if(cont == 1)
                 {
                     updatedRooms = true;
+                    
                 }
                 
             }
-            iHaveFinishied = true;
+            iHaveFinishied = true;        
             return;
         }
         currentLoadRoomData = loadRoomQueue.Dequeue();
         isLoadingRoom = true;
-
+        
         StartCoroutine(LoadRoomRoutine(currentLoadRoomData));
     }
     IEnumerator SpawnBossRoom()
@@ -182,6 +183,7 @@ public class RoomController : MonoBehaviour
         {
             yield return null;
         }
+        currRom = loadedRooms[0];//Esta Linea puede dar problemas
     }
     public void RegisterRoom(Room room)
     {
