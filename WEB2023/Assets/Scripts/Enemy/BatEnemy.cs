@@ -14,7 +14,7 @@ public class BatEnemy : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
         //Damos una velocidad inicial
-        rb.velocity = new Vector2(1, -1) * 10;
+        rb.velocity = new Vector2(1, -1) * 4;
     }
     void FixedUpdate()
     {

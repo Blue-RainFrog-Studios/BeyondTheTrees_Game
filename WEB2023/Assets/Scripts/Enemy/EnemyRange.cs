@@ -42,7 +42,7 @@ public class EnemyRange : EnemyController
         }
         if (!notInRoom)
         {
-            if (isPlayerInRange(range) && currState !=EnemyState.Heal/* && currState != EnemyState.Die*/)
+            if (isPlayerInRange(range) && currState !=EnemyState.Heal)
             {
                 currState = EnemyState.Run;
             }

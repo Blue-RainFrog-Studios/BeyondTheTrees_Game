@@ -49,7 +49,7 @@ public class EnemyGhost : EnemyController
             {
                 currState = EnemyState.Attack;
             }
-            if (healed == false  && room.GetComponent<RoomController>().healing)
+            if (healed == false  && room.GetComponent<RoomController>().healing && GetComponent<Enemy>().life < iLife)
             {
                 currState = EnemyState.GoHeal;
             }
@@ -81,10 +81,7 @@ public class EnemyGhost : EnemyController
         if (collision.CompareTag("Enemy") && healed == false && can == false)
         {
             StartCoroutine(Wait());
-            Debug.Log("Entro en el area");
 
-
-            Debug.Log("Puedo entrar");
             GetComponent<Enemy>().life += 10;
             if (GetComponent<Enemy>().life >= iLife)
             {

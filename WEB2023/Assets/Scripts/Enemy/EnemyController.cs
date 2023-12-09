@@ -37,7 +37,7 @@ public enum EnemyType
 public class EnemyController : Enemy
 {
 
-    Material enemyMaterial;
+    
     public Collider2D healCol;
     public GameObject ghost;
     GameObject acorn;
@@ -80,9 +80,7 @@ public class EnemyController : Enemy
     public bool can = false;
     // Start is called before the first frame update
 
-    public float blinkDuration;
-    public int blinkNumber;
-    protected bool blinking = false;
+    
     private void Awake()
     {
         Idle();
@@ -95,7 +93,7 @@ public class EnemyController : Enemy
         
         ghost = this.gameObject;
 
-        enemyMaterial = GetComponent<Renderer>().material;
+        
 
         room = GameObject.FindGameObjectWithTag("RoomController");
     }
@@ -103,12 +101,7 @@ public class EnemyController : Enemy
     // Update is called once per frame
     void Update()
     {
-        /*switch (currState)
-        {
-            case (EnemyState.Die):
-                Die();
-                break;
-        }*/
+        
     }
     public bool isPlayerInRange(float range)
     {
@@ -167,12 +160,7 @@ public class EnemyController : Enemy
         yield return new WaitForSeconds(5);
         can = false;
     }
-    //private IEnumerator CoolDown()
-    //{
-    //    coolDownAttack = true;
-    //    yield return new WaitForSeconds(coolDown);
-    //    coolDownAttack = false;
-    //}
+    
     private IEnumerator CoolDownTP()
     {
         coolDownTeleport = true;
@@ -282,51 +270,8 @@ public class EnemyController : Enemy
 
     }
    
-    public void Die()
-    {
-        if (player.GetComponent<KnightScript>().king)
-        {
-            player.GetComponent<CoinCounter>().ExpeditionMoneyChanger(2);
-        }
-        RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());
-        Destroy(ghost);
+ 
+    
 
-    }
-    /*public void RecieveDamage(float damage)
-    {
-        life -= damage;
-        this.GetComponent<Knockback>().PlayFeedback(player , this.gameObject.GetComponent<Rigidbody2D>());
-        //Debug.Log("Recibo da�o");
-        if (life <= 0)
-        {
-            currState = EnemyState.Die;
-        }
-
-        if (!blinking)
-        {
-            StartCoroutine(Blink());
-        }
-    }*/
-
-    public IEnumerator Blink()
-    {
-        blinkDuration = 0.05f; ;
-        blinkNumber = 3;
-        blinking = true;
-
-        // Almacenar el color original del material
-        Color colorOriginal = enemyMaterial.color;
-
-        // Cambiar el color a rojo durante el parpadeo
-        for (int i = 0; i < blinkNumber; i++)
-        {
-            enemyMaterial.color = Color.red;
-            yield return new WaitForSeconds(blinkDuration);
-
-            enemyMaterial.color = colorOriginal;
-            yield return new WaitForSeconds(blinkDuration);
-        }
-
-        blinking = false;
-    }
+    
 }
