@@ -89,9 +89,10 @@ public class ActionsSquirrel : Enemy
         {
             if (acorns[0] == null)
                 return Status.Running;
-        
 
-            this.transform.position = Vector2.MoveTowards(transform.position, acorns[0].transform.position, speed * Time.deltaTime);
+
+            //this.transform.position = Vector2.MoveTowards(transform.position, acorns[0].transform.position, speed * Time.deltaTime);
+            navMeshAgent.SetDestination(acorns[0].transform.position);
             return Status.Running;
         }
     }
@@ -195,7 +196,8 @@ public class ActionsSquirrel : Enemy
             auxP = -(squirrels.IndexOf(this) - 1) * 0.5f;
         }
         Vector3 posicionProtegida = squirrels[0].transform.position - direccionPC * rangeToEater + perpendicular * auxP;
-        transform.position = Vector2.MoveTowards(transform.position, posicionProtegida, speed * Time.deltaTime);
+        //transform.position = Vector2.MoveTowards(transform.position, posicionProtegida, speed * Time.deltaTime);
+        navMeshAgent.SetDestination(posicionProtegida);
         return Status.Running;
     }
 
