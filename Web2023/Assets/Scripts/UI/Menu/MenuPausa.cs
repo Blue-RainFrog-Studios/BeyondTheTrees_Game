@@ -56,7 +56,7 @@ public class MenuPausa : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Campamento Base") return;
         SceneManager.LoadScene("Campamento Base");
         player.GetComponent<KnightScript>().ResetStats();
-        player.GetComponent<KnightScript>().MoneyDealer(0.5f,player.GetComponent<CoinCounter>().expeditionMoney);
+        player.GetComponent<KnightScript>().MoneyDealer(0.5f, player.GetComponent<CoinCounter>().expeditionMoney);
         player.GetComponent<PlayerMovementInputSystem>().nivel = 0;
         player.GetComponent<KnightScript>().ResetMoneyCanvas();
         player.transform.position = new Vector2(0, -4);

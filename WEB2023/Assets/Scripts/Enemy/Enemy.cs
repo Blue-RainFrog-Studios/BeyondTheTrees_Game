@@ -15,12 +15,13 @@ public class Enemy : MonoBehaviour
     public int damage;
     protected bool coolDownAttack = false;
     public float coolDown;
-    GameObject player;
+    
     protected GameObject room;
 
     public float blinkDuration;
     public int blinkNumber;
     protected bool blinking = false;
+    static public GameObject player;
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");

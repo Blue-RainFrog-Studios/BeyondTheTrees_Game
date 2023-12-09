@@ -113,7 +113,7 @@ public class NPCBase : MonoBehaviour
         if (speakZone.CompareTag("Player"))
         {
             zeroText();
-
+            player.GetComponent<PlayerMovementInputSystem>().enabled = true;
         }
     }
 }
