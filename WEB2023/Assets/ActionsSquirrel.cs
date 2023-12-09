@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ActionsSquirrel : Enemy
 {
@@ -13,6 +14,8 @@ public class ActionsSquirrel : Enemy
     [SerializeField] private float speed;
     //public bool consumedAcorn;
     int numReady;
+
+    private NavMeshAgent navMeshAgent;
 
     [SerializeField]
     private AudioClip eatClip;
@@ -45,6 +48,13 @@ public class ActionsSquirrel : Enemy
         }
         numReady = 0;
         acorns = new List<GameObject>(GameObject.FindGameObjectsWithTag("Acorn"));
+    }
+
+    private void Start()
+    {
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        navMeshAgent.updateRotation = false;
+        navMeshAgent.updateUpAxis = false;
     }
     private void Update()
     {
@@ -98,7 +108,9 @@ public class ActionsSquirrel : Enemy
 
     public Status UpdateWalkPlayer()
     {
-        squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, playerTransform.position, speed * Time.deltaTime);
+        //squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, playerTransform.position, speed * Time.deltaTime);
+
+        navMeshAgent.SetDestination(player.transform.position);
         return Status.Running;
     }
 

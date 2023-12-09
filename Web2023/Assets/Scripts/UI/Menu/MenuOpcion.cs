@@ -34,6 +34,8 @@ public class MenuOpcion : MonoBehaviour
         player.GetComponent<KnightScript>().ResetMoneyCanvas();
         player.GetComponent <KnightScript>().ResetStats();
         player.GetComponent<PlayerMovementInputSystem>().nivel = 0;
+        player.GetComponent<ReactionNPCs>().comingBack = true;
+        player.GetComponent<ReactionNPCs>().expedicionExito = true;
     }
     public void ContinuarLaRun()
     {

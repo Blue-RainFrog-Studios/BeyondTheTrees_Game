@@ -19,6 +19,7 @@ public class ItemSpawner : MonoBehaviour
     {
         //RandomItemFromRun();
         //RandomItem_BasedOnProbability_FromRun();
+        ItemDB = DataManager_Items_Database.Instance.myItemsData;
         SpawObject();
     }
 
