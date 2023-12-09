@@ -27,7 +27,7 @@ public class ActionsSquirrel : Enemy
     static bool hayArdillaCome;
     static private List<GameObject> acorns;
     private bool aux = false;
-
+    private Vector3 posPaComer;
     private void Awake()
     {
         hayArdillaCome = false;
@@ -83,6 +83,7 @@ public class ActionsSquirrel : Enemy
         
         if (CheckAcornInRange())
         {
+            navMeshAgent.SetDestination(posPaComer);
             return Status.Success;
         }
         else
@@ -131,7 +132,11 @@ public class ActionsSquirrel : Enemy
     public bool CheckAcornInRange()
     {
         if(acorns[0] != null)
+        {
+            posPaComer = transform.position;
             return Vector2.Distance(this.transform.position, acorns[0].transform.position) < 1.0f;
+        }
+            
         return true;
     }
 
