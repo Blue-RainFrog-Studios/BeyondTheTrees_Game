@@ -1330,7 +1330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4036ba5740f14484d970cbcb30fe1d03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newPlayer: 1
+  newPlayer: 0
   expedicionFallida: 0
   expedicionExito: 0
   expedicionInterrumpida: 0
