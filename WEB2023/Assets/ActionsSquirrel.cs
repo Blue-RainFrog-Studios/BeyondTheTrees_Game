@@ -3,10 +3,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ActionsSquirrel : Enemy
 {
     [SerializeField] private float speed;
+
+
+    private NavMeshAgent navMeshAgent;
+
     [SerializeField]
     private AudioClip eatClip;
     [SerializeField]
@@ -28,6 +33,13 @@ public class ActionsSquirrel : Enemy
         hayArdillaCome = false;
         squirrels = new List<ActionsSquirrel>(FindObjectsOfType<ActionsSquirrel>());
         acorns = new List<GameObject>(GameObject.FindGameObjectsWithTag("Acorn"));
+    }
+
+    private void Start()
+    {
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        navMeshAgent.updateRotation = false;
+        navMeshAgent.updateUpAxis = false;
     }
     private void Update()
     {
@@ -97,7 +109,10 @@ public class ActionsSquirrel : Enemy
         {
             animator.Play("SquirrelAnimation");
         }
-        transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
+        //transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
+        //squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, playerTransform.position, speed * Time.deltaTime);
+
+        navMeshAgent.SetDestination(player.transform.position);
         return Status.Running;
     }
 
@@ -130,7 +145,7 @@ public class ActionsSquirrel : Enemy
         {
             
             aux = false;
-            if (this.rolB)   //AQUÍ SE MIRA EL ROL
+            if (this.rolB)   //AQUï¿½ SE MIRA EL ROL
             {
                 Destroy(acorns[0]);
                 acorns.RemoveAt(0);

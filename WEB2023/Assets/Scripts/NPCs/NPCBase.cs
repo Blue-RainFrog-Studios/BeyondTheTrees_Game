@@ -9,31 +9,35 @@ public class NPCBase : MonoBehaviour
     [SerializeField] GameObject shopUI;
     public GameObject dialoguePanel;
     public Text dialogueText;
-    public string[] dialogue;
+    public List<string> dialogueList; 
     private int index;
+    public string nameCharacter;
+    public Sprite speackImg;
+    public BoxCollider2D speakZone;
+
 
     private GameObject player;
     public GameObject continueButton;
     public GameObject buyButton;
     public float wordSpeed;
-    public bool playerIsClose;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
     }
+
     private void Update()
     {
-        if (dialogueText.text == dialogue[index])
+        /*if (dialogueText.text == dialogueList[index])
         {
-            player.GetComponent<PlayerMovementInputSystem>().enabled = true;
-            //continueButton.SetActive(true);
-            //buyButton.SetActive(true);
-        }
+            //player.GetComponent<PlayerMovementInputSystem>().enabled = true;
+            
+        }*/
     }
+
     public void EnseñarDialogo()
     {
-        player.GetComponent<PlayerMovementInputSystem>().enabled = false;
+        //player.GetComponent<PlayerMovementInputSystem>().enabled = false;
         if (dialoguePanel.activeInHierarchy)
         {
             zeroText();
@@ -43,59 +47,73 @@ public class NPCBase : MonoBehaviour
             dialoguePanel.SetActive(true);
             StartCoroutine(Typing());
         }
-
-        
-        
     }
 
     public void zeroText()
     {
-        dialogueText.text = "";
+        this.dialogueText.text = "";
         index = 0;
         dialoguePanel.SetActive(false);
     }
 
     IEnumerator Typing()
     {
-        foreach(char letter in dialogue[index].ToCharArray())
+        player.GetComponent<PlayerMovementInputSystem>().enabled = false;
+        foreach (char letter in dialogueList[index].ToCharArray())
         {
-            dialogueText.text+= letter;
+            this.dialogueText.text += letter;
             yield return new WaitForSeconds(wordSpeed);
         }
+        continueButton.SetActive(true);
+        if(index == 0)
+        {
+            buyButton.SetActive(true);
+        }
+        
+
     }
 
     public void NextLine()
     {
         continueButton.SetActive(false);
         buyButton.SetActive(false);
-        if (index < dialogue.Length-1)
+
+        if (index < dialogueList.Count-1)
         {
             index++;
-            dialogueText.text = "";
+            this.dialogueText.text = "";
             StartCoroutine(Typing());
         }
         else
         {
-            zeroText();
+            //zeroText();
+            player.GetComponent<PlayerMovementInputSystem>().enabled = true;
+            dialoguePanel.SetActive(false); // Cierra el panel de diálogo
+            //speakZone.enabled = false;
         }
     }
+
     public void OpenShop()
     {
+
         shopUI.SetActive(true);
         dialoguePanel.SetActive(false);
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    private void OnTriggerEnter2D(Collider2D speakZone)
     {
-        if (collision.CompareTag("Player"))
+        if (speakZone.CompareTag("Player"))
         {
             EnseñarDialogo();
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
+
+    private void OnTriggerExit2D(Collider2D speakZone)
     {
-        if (collision.CompareTag("Player"))
+        if (speakZone.CompareTag("Player"))
         {
             zeroText();
+            player.GetComponent<PlayerMovementInputSystem>().enabled = true;
         }
     }
 }

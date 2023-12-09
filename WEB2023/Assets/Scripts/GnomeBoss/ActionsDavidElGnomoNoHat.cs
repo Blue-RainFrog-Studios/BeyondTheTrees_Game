@@ -31,7 +31,7 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     //audio
     [SerializeField] private AudioSource dieSound;
 
-    private bool invulnerable = false;
+    public bool invulnerable = false;
     private bool hasBeenPlayed = false;
 
     Vector2 walkAttackDistance = new Vector2(0, 2);
@@ -160,6 +160,7 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
         invulnerable = true;
         animator.Play("IdleNoHat");
         TiredNoHat.SetActive(false);
+        GetComponent<DavidElGnomoController>().ouchNoHatFace.SetActive(false);
         GnomeNoHat.SetActive(true);
         StartCoroutine(InvokeGnomes(1f));
         StartCoroutine(InvokeGnomes(2f));

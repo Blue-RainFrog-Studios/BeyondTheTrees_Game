@@ -235,7 +235,8 @@ public class RoomController : MonoBehaviour
             possibleRooms = new string[]
             {
                     //"Empty",
-                    "Basic1",
+                    "Basic",
+                    "Basic_15"
             };
                     
         }

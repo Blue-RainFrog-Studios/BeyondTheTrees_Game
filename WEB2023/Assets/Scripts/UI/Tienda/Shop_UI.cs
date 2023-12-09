@@ -23,6 +23,7 @@ public class Shop_UI : MonoBehaviour
 
     //[SerializeField] Purchasable_Items_Database itemDB;
     [SerializeField] All_Items_Database itemDB;
+    [SerializeField] GameObject tutorialData;
     [Space(20)]
 
     [Header("Shop Event")]
@@ -35,7 +36,7 @@ public class Shop_UI : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI moneyText;
-
+    
     GameObject player;
 
 
@@ -43,10 +44,15 @@ public class Shop_UI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("Abre tienda");
+        itemDB = DataManager_Items_Database.Instance.myItemsData;
         AddShopEvents();
         GenerateShopItems();
         player = GameObject.FindGameObjectWithTag("Player");
+        
     }
+
+    
 
     // Update is called once per frame
     void Update()
@@ -60,9 +66,20 @@ public class Shop_UI : MonoBehaviour
 
         closeShopButton.onClick.RemoveAllListeners();
         closeShopButton.onClick.AddListener(CloseShop);
+        if (tutorialData.GetComponent<NPCHelperManager>().tutorialTienda)
+        {
+            closeShopButton.gameObject.SetActive(true);
+        }
+        else
+        {
+            closeShopButton.gameObject.SetActive(false);
+
+        }
     }
     void GenerateShopItems()
     {
+
+        Debug.Log("GENERANDO ITEMS");
         // Puede que haya que cambiar de donde pilla los datos
         // Escribe los items que se han compreado como bloqueados
         /*for(int i = 0; i < GameDataManager.GetAllPurchasedItems().Count; i++)
@@ -109,7 +126,7 @@ public class Shop_UI : MonoBehaviour
 
             //ShopItemsContainer.GetComponent<RectTransform>().sizeDelta=
             //    Vector2.up *(itemHeight+itemSpacing)* itemDB.ItemCount;
-            //Hay que expandir el bottom de content de objetos 86,66 unidades por cada objeto que se ñada a la tienda
+            //Hay que expandir el bottom de content de objetos 86,66 unidades por cada objeto que se ï¿½ada a la tienda
         }
 
     }
@@ -155,6 +172,16 @@ public class Shop_UI : MonoBehaviour
             GameDataManager.AddPurchasedItems(index);
 
             audioSource.PlayOneShot(buyClip);
+            //GameDataManager.AddPurchasedItems(index);
+
+
+            // Se completa el tutorial al comprar el primer item
+            if (!tutorialData.GetComponent<NPCHelperManager>().tutorialTienda)
+            {
+                tutorialData.GetComponent<NPCHelperManager>().tutorialTienda = true;
+                closeShopButton.gameObject.SetActive(true);
+            }
+            
         }
         else
         {
