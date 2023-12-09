@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1330603882934896760}
   - component: {fileID: -3211634261659054906}
   - component: {fileID: 4363450322601480263}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RangedEnemy 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -108,6 +108,8 @@ MonoBehaviour:
   attackRange: 8
   damage: 20
   coolDown: 1
+  blinkDuration: 0
+  blinkNumber: 0
   healCol: {fileID: 0}
   ghost: {fileID: 0}
   EnemyBullet: {fileID: 7118902396155586748, guid: 56f121bf4736fc24ba00489e1378fa11, type: 3}
@@ -124,8 +126,6 @@ MonoBehaviour:
   IAmAGhost: {fileID: 0}
   iLife: 0
   can: 0
-  blinkDuration: 0
-  blinkNumber: 0
 --- !u!50 &-8955868755180615599
 Rigidbody2D:
   serializedVersion: 4
