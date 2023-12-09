@@ -59,7 +59,7 @@ public class EnemyTeleport : EnemyController
             {
                 currState = EnemyState.Attack;
             }
-            if (healed == false && room.GetComponent<RoomController>().lowHealth() && room.GetComponent<RoomController>().heal)
+            if (healed == false && room.GetComponent<RoomController>().healing && GetComponent<Enemy>().life < iLife)
             {
                 currState = EnemyState.GoHeal;
             }
@@ -97,13 +97,23 @@ public class EnemyTeleport : EnemyController
             }
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy") && healed == false)
+
+        if (collision.CompareTag("Enemy") && healed == false && can == false)
         {
-            life = iLife;
-            healed = true;
+            StartCoroutine(Wait());
+
+            GetComponent<Enemy>().life += 10;
+            if (GetComponent<Enemy>().life >= iLife)
+            {
+                Debug.Log("Vida tras cura " + GetComponent<Enemy>().life);
+                healed = true;
+            }
         }
     }
+
+
+
 
 }
