@@ -149,8 +149,7 @@ public class KnightScript : MonoBehaviour
 
     public void ModifyStats(int v, ItemSO inventoryItem, int quantity)
     {
-        attack += ((attack + (v * inventoryItem.Attack)) <= maxAttack) &&
-            ((attack + (v * inventoryItem.Attack)) >= minAttack)? v * inventoryItem.Attack : 0;
+        attack += v * inventoryItem.Attack;
 
         defense += v * inventoryItem.Defense;  //Este no hace falta revisarlo porque ya se revisa cuando se resta daño en "ReceiveAttack()"
 
