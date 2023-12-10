@@ -275,12 +275,14 @@ public class RoomController : MonoBehaviour
             puzzleRooms = new string[]
             {
 
-                //"King1",
-                //"SkullPuzzle",
-                //"RapidoQueSeQueman",
-                //"Ardilla",
-                //"RapidoQueSeQueman 2",
+                "King1",
+                "SkullPuzzle",
+                "RapidoQueSeQueman",
+                "Ardilla",
+                "RapidoQueSeQueman",
                 "Lobo",
+                "BasicCastle",
+                "BasicHouse"
             };
 
         }
