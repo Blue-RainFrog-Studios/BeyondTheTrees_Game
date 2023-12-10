@@ -60,7 +60,7 @@ public class Actions_Wolf : MonoBehaviour
     }
     public Status UpdateMethodWaiting()
     {
-        if (Vector2.Distance(playerTransform.position, WolfTransform.position) < 3f || GetComponent<WolfController>().HP < 50)
+        if (Vector2.Distance(playerTransform.position, WolfTransform.position) < 3f)
         {
             return Status.Success;
         }
