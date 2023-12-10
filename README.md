@@ -893,12 +893,66 @@ Se han cambiado las pociones por insecto. Se han añadido las imágenes de los i
 
 Se ha añadido el análisis MDA del videojuego.
 
-### Cambios en la version gold master
+## Cambios en la version gold master
 ### Items:
 Se han metido items que además de sumar estadísticas las restan.
 
 ### Puzle ardilla:
-Si una ardilla se come una bellota y se mata, esta ya no la soltará, el jugador la habrá perdido para siempre y no podrá completar el puzle.
+Si una ardilla se come una bellota y se mata, está ya no la soltará, el jugador la habrá perdido para siempre y no podrá completar el puzle.
+La ardilla ahora protege a la ardilla que come poniéndose enfrente del jugador en todo momento.
+Ahora hay un altar al que si le entregas 3 bellotas te cura vida.
+
+### Lobo:
+Se ha añadido un enemigo para que aparezca en las salas.
+
+### Murciélago:
+Se ha añadido un enemigo para que aparezca en las salas.
+
+### Duendecillo Mago:
+Ahora el mago cuando la vida total es inferior a un porcentaje, todos los enemigos van a curarse cerca del mago y este deja de atacar.
+
+### David el Gnomo y Árbol Maligno:
+Se han mejorado las animaciones de los enemigos y su interacción con el jugador y el mundo.
+
+### Rediseño de enemigos:
+Se han rediseñado el diseño visual de los enemigos para que concuerden con otros.
+
+### Animaciones Kero:
+Se han añadido animaciones de atacar de Kero y cuando recibe daño.
+
+### Controles:
+Se ha mejorado los controles de ataque del móvil y del PC.
+
+### Personalización móvil:
+Se le da al usuario la opción de personalizar los controles de ataque del móvil en el menú de pausa.
+
+### NPCs:
+Se han añadido nuevos NPCs para la interacción con el jugador.
+
+### Tutorial interactivo:
+Se han añadido un tutorial interactivo que aparece la primera vez que inicia el jugador.
+
+### Textos al morir:
+Se han añadido varios textos para dotar de más narración al juego.
+
+### UI:
+Se ha terminado de hacer totalmente adaptable la interfaz de usuario.
+
+### Balas:
+Ahora las balas se destruyen al chocar con algo.
+
+### BUG puertas:
+Se ha corregido el bug que impedía proseguir con la expedición cuando te pasas un jefe.
+
+### Arreglos tienda:
+Ahora se guardan correctamente los objetos comprados en la tienda.
+
+### Campamento base:
+Se ha mejorado el campamento base haciendo más fácil al jugador la navegación.
+
+### Correcciones menores:
+Se han hecho correcciones de ortografía, de visibilidad, de jugabilidad y mejoras en el código.
+
 
 ## Enlace de lector al GDD en Google docs
 https://docs.google.com/document/d/1l6Qfy3xQ0anlrgdIv_5JKlhzeY_67oTvJoi1X06fd6Q/edit?usp=sharing
