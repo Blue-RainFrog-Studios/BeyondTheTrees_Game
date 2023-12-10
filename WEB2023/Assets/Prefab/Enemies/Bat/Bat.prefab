@@ -37,7 +37,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4430072588373907204
 SpriteRenderer:
@@ -146,9 +146,9 @@ MonoBehaviour:
   life: 10
   notInRoom: 0
   range: 0
-  attackRange: 0
+  attackRange: 0.5
   damage: 5
-  coolDown: 0
+  coolDown: 2
   blinkDuration: 0
   blinkNumber: 0
   animator: {fileID: 6889727632241612487}
