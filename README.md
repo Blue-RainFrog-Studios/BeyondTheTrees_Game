@@ -791,15 +791,15 @@ En cuanto a la intención inicial de utilizar una API proporcionada por el profe
 
 ### Individual
 #### Persona 1
-¿Que ha ido bien?
+**¿Que ha ido bien?**
 Hemos trabajado de forma paralela de forma correcta, sin detener el trabajo en casi ningún momento.
 Las mecánicas seleccionadas son interesantes y entretenidas y se ha conseguido que lleguen a un nivel cercano al deseado.
-Flujo de correcciones
+**Flujo de correcciones**
 Inicialmente se buscaba crear una gran variedad de salas y enemigos para evitar que resultara muy repetitivo, finalmente por falta de tiempo se ha creado una pool muy pequeña de puzzles y salas genéricas para intentar conseguir un producto final aceptable.
 Una decisión incorrecta fue intentar que compartieran un mismo script los enemigos porque ha impedido que se implementarán algunos enemigos.
-Feedback o retroalimentación externo
+**Feedback o retroalimentación externo**
 En el poco feedback que tenemos se nos indica que hay algunos enemigos cabrones y que te están esperando en las puertas.
-¿Qué se podría haber mejorado?
+**¿Qué se podría haber mejorado?**
 Se podrían haber mejorado temas de plazos, tipo juntar las cosas antes y ver cómo funcionan en conjunto y  no esperar a los últimos días.
 Compartimentar el control de los enemigos.
 
