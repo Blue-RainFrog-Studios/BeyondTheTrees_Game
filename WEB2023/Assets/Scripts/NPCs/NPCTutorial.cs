@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,39 +9,27 @@ public class NPCTutorial : MonoBehaviour
 {
     public GameObject dialoguePanel;
     public Text dialogueText;
-
-    // LAs siguientes variables osn los distintos dialogos que puede mostrar el personaje del tutorial
-    public List<string> dialogueTutorial;
-
     public List<string> dialogueList;
     private int index;
     public string nameCharacter;
-    public Image speackImg;
+    public Sprite speackImg;
+    public BoxCollider2D tutorialBegginingZone;
+    public bool ultimoTutorial;
+    public bool checksProgress;
+    public bool isExit;
+    public int checkType; // Donde 0 = items, 1 = pociones, 2 = inventario
+    public GameObject actualTutorial;
+    public GameObject siguienteTutorial;
+    public GameObject barrera;
 
     private GameObject player;
     public GameObject continueButton;
+    public GameObject sceneData;
     public float wordSpeed;
-    public bool playerIsClose;
 
-    public BoxCollider2D areaRegreso;
-    public BoxCollider2D areaHablar;
-
-    
-
-    
-
-    private void Start()
+    private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-    }
-
-    private void Update()
-    {
-        /*if (dialogueText.text == dialogueList[index])
-        {
-            //player.GetComponent<PlayerMovementInputSystem>().enabled = true;
-            
-        }*/
     }
 
     public void EnseñarDialogo()
@@ -56,10 +45,9 @@ public class NPCTutorial : MonoBehaviour
             StartCoroutine(Typing());
         }
     }
-
     public void zeroText()
     {
-        dialogueText.text = "";
+        this.dialogueText.text = "";
         index = 0;
         dialoguePanel.SetActive(false);
     }
@@ -67,13 +55,13 @@ public class NPCTutorial : MonoBehaviour
     IEnumerator Typing()
     {
         player.GetComponent<PlayerMovementInputSystem>().enabled = false;
-        foreach (char letter in dialogueList[index].ToCharArray())
+        foreach (char letter in this.dialogueList[index].ToCharArray())
         {
-            dialogueText.text += letter;
+            this.dialogueText.text += letter;
             yield return new WaitForSeconds(wordSpeed);
         }
         continueButton.SetActive(true);
-        
+
 
 
     }
@@ -82,40 +70,93 @@ public class NPCTutorial : MonoBehaviour
     {
         continueButton.SetActive(false);
 
-        if (index < dialogueList.Count - 1)
+        if (index < this.dialogueList.Count - 1)
         {
             index++;
-            dialogueText.text = "";
+            this.dialogueText.text = "";
             StartCoroutine(Typing());
         }
         else
         {
             //zeroText();
-            player.GetComponent<PlayerMovementInputSystem>().enabled = true;
-            dialoguePanel.SetActive(false); // Cierra el panel de diálogo
-            //speakZone.enabled = false;
+            if (isExit)
+            {
+                player.GetComponent<PlayerMovementInputSystem>().enabled = true;
+
+                dialoguePanel.SetActive(false); // Cierra el panel de diálogo
+            }
+            else
+            {
+                player.GetComponent<PlayerMovementInputSystem>().enabled = true;
+                dialoguePanel.SetActive(false); // Cierra el panel de diálogo
+                                                //this.dialogueList.Clear();
+                actualTutorial.SetActive(false);
+                
+                if (ultimoTutorial)
+                {
+                    player.GetComponent<ReactionNPCs>().newPlayer = false;
+                    
+                    sceneData.GetComponent<NPCHelperManager>().TutorialesCompletos();
+                }
+                else
+                {
+                    if (siguienteTutorial.GetComponent<NPCTutorial>().ultimoTutorial)
+                    {
+                        barrera.SetActive(false);
+                    }
+                    siguienteTutorial.SetActive(true);
+                }
+            }
+            
         }
     }
 
-    public void OpenShop()
+    private void OnTriggerEnter2D(Collider2D tutorialBegginingZone)
     {
-        dialoguePanel.SetActive(false);
-    }
-
-    private void OnTriggerEnter2D(Collider2D speakZone)
-    {
-        if (speakZone.CompareTag("Player"))
+        if (tutorialBegginingZone.CompareTag("Player"))
         {
-            EnseñarDialogo();
+            // Para los tutoriales que requieran que el jugador haga algo primero, como por ejemp`lo comprar un objeto
+
+            if (checksProgress)
+            {
+                switch (checkType)
+                {
+                    case 0:
+                        if (sceneData.GetComponent<NPCHelperManager>().tutorialTienda)
+                        {
+                            EnseñarDialogo();
+                        }
+                        break;
+                    case 1:
+                        if (sceneData.GetComponent<NPCHelperManager>().tutorialPociones)
+                        {
+                            EnseñarDialogo();
+                        }
+                        break;
+                    case 2:
+                        if (sceneData.GetComponent<NPCHelperManager>().tutorialInventario)
+                        {
+                            EnseñarDialogo();
+                        }
+                        break;
+                        default: break;
+                }
+            }
+            else
+            {
+                EnseñarDialogo();
+            }
+            
         }
     }
 
-    private void OnTriggerExit2D(Collider2D speakZone)
+    private void OnTriggerExit2D(Collider2D tutorialBegginingZone)
     {
-        if (speakZone.CompareTag("Player"))
+        if (tutorialBegginingZone.CompareTag("Player"))
         {
             zeroText();
-
+            player.GetComponent<PlayerMovementInputSystem>().enabled = true;
         }
     }
+
 }

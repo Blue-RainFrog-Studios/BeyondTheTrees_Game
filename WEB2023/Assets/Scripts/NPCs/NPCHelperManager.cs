@@ -9,7 +9,7 @@ public class NPCHelperManager : MonoBehaviour
     public bool tutorialTienda;
     public bool tutorialPociones;
     public bool tutorialInventario;
-    public bool tutorialAumentoInventario;
+    //public bool tutorialAumentoInventario;
     public bool tutorialCompleto;
 
     // Recordatorios al volver
@@ -22,14 +22,11 @@ public class NPCHelperManager : MonoBehaviour
     public int cheapestInvUpgrade;
 
     public GameObject returnArea;
-    public GameObject itemTutorialArea;
-    public GameObject potionTutorialArea;
-    public GameObject invTutorialArea;
-    public GameObject exitTutorialArea;
+ 
     public GameObject barrier;
     private GameObject player;
 
-    public GameObject tutoriales;
+    public GameObject primerTutorial;
     
         
     
@@ -42,7 +39,12 @@ public class NPCHelperManager : MonoBehaviour
        // Desactiva el tutorial si el jugador no es nuevo
         if (player.GetComponent<ReactionNPCs>().newPlayer)
         {
-            tutoriales.SetActive(true);
+            primerTutorial.SetActive(true);
+        }
+        else
+        {
+            this.TutorialesCompletos();
+            barrier.SetActive(false);
         }
 
         // Muestra la ayuda si el jugador tiene selccionado que quiere verlas
@@ -51,5 +53,12 @@ public class NPCHelperManager : MonoBehaviour
             returnArea.SetActive(true);
             Debug.Log("Activando ayuda");
         }
+    }
+    public void TutorialesCompletos()
+    {
+        tutorialTienda = true;
+        tutorialPociones = true;
+        tutorialInventario = true;
+        tutorialCompleto = true;
     }
 }

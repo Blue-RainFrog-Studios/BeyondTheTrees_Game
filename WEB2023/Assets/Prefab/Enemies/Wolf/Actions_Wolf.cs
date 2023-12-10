@@ -16,12 +16,16 @@ public class Actions_Wolf : MonoBehaviour
     private GameObject player;
     private Transform playerTransform;
     private Transform WolfTransform;
+    private float distanciaUmbral;
     private bool ended;
     private bool endedDazed;
     private NavMeshAgent navMeshAgent;
 
     [SerializeField] private float TimeCharge;
+    [SerializeField] private float TimeEating;
     [SerializeField] private Animator animator;
+    [SerializeField] private GameObject itemToChase;
+    private Transform itemTransform;
     bool collisionDetected = false;
     Vector2 direction;
     Vector3 targetPosition;
@@ -30,14 +34,16 @@ public class Actions_Wolf : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        
 
+        distanciaUmbral = 1;
         playerTransform = player.transform;
         WolfTransform = GetComponent<Transform>();
+        itemTransform= itemToChase.transform;
 
         navMeshAgent = GetComponent<NavMeshAgent>();
         navMeshAgent.updateRotation = false;
         navMeshAgent.updateUpAxis = false;
+        
 
     }
     private void Update()
@@ -54,7 +60,7 @@ public class Actions_Wolf : MonoBehaviour
     }
     public Status UpdateMethodWaiting()
     {
-        if (Vector2.Distance(playerTransform.position, WolfTransform.position) < 3f || GetComponent<WolfController>().HP < 50)
+        if (Vector2.Distance(playerTransform.position, WolfTransform.position) < 3f)
         {
             return Status.Success;
         }
@@ -160,7 +166,104 @@ public class Actions_Wolf : MonoBehaviour
     }
     #endregion
 
+    #region ItemChase
+    public void StartMethodItemChase()
+    {
+        Debug.Log("ANDANDO AL ITEM");
 
+
+        //if (playerTransform.position.x > WolfTransform.position.x)
+        //    animator.Play("WolfWalkRight");
+        //else
+        //    animator.Play("WolfWalkLeft");
+
+
+        //targetPosition = playerTransform.position;
+        targetPosition = itemTransform.position;
+
+        if (direction.x > 0.0f)
+        {
+            if (direction.y + 1.0f > direction.x)
+            {
+                animator.Play("WolfWalkBack");
+            }
+            else
+            {
+                animator.Play("WolfWalkRight");
+            }
+        }
+        else if (direction.x < 0.0f)
+        {
+            if (direction.y + 1.0f < direction.x)
+            {
+                animator.Play("WolfWalkFront");
+            }
+            else
+            {
+                animator.Play("WolfWalkLeft");
+            }
+        }
+    }
+    public Status UpdateMethodItemChase()
+    {
+        //make the object move to the player position
+        //WolfTransform.position = Vector2.MoveTowards(WolfTransform.position, playerTransform.transform.position, GetComponent<WolfController>().speed * Time.deltaTime);
+
+        navMeshAgent.SetDestination(targetPosition);
+        
+        if (ComprobarProximidad())
+        {
+            return Status.Success;
+        }
+        else
+        {
+            return Status.Running;
+        }
+        if (itemToChase == null)
+        {
+            GetComponent<FSMWolf>().LoseItem();
+            Debug.Log("Perdiste el ITEEEEM GUASAAAAAAAAAA JAJAJAJAJAJAJAJAJA");
+        }
+
+    }
+    #endregion
+
+    #region DestroyItem
+    public void StartMethodDestroyItem()
+    {
+        Debug.Log("DESTRUYENDO AL ITEM");
+        ended = false;
+
+        //if (playerTransform.position.x > WolfTransform.position.x)
+        //    animator.Play("WolfWalkRight");
+        //else
+        //    animator.Play("WolfWalkLeft");
+
+
+        //targetPosition = playerTransform.position;
+        targetPosition = itemTransform.position;
+
+        animator.Play("WolfEating");
+        StartCoroutine(WaitSeconds(TimeEating));
+    }
+    public Status UpdateMethodDestroyItem()
+    {
+        if (ended)
+        {
+            GetComponent<WolfController>().HP += 30;
+            itemToChase.SetActive(false);
+            //GetComponent<WolfController>().HP += itemToChase.GetComponent<Item>().InventoryItem.HealthValue;
+            return Status.Success;
+        }
+        else
+        {
+            return Status.Running;
+        }
+        
+        //GetComponent<WolfController>().HP += itemToChase.GetComponent<Item>().InventoryItem.HealthValue;
+        
+    }
+    #endregion
 
     //cambiar bite a lgun tipo de dash hacia el jugador
     #region MethodBite
@@ -269,9 +372,21 @@ public class Actions_Wolf : MonoBehaviour
     
     public bool CheckItemExist()
     {
-        //comprobar item existe
-        return true;
+        if (itemToChase != null && itemToChase.activeSelf )
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        
         //return GetComponent<DavidElGnomoController>().HP < GetComponent<DavidElGnomoController>().HPSecondPhase;
+    }
+
+    public bool CheckHPLow()
+    {
+        return GetComponent<WolfController>().HP <= GetComponent<WolfController>().initialHP*0.3;
     }
     #endregion
 
@@ -326,5 +441,17 @@ public class Actions_Wolf : MonoBehaviour
         
     }
     #endregion
+    private bool ComprobarProximidad()
+    {
+        float distancia = Vector3.Distance(itemTransform.position, WolfTransform.position);
 
+        if (distancia < distanciaUmbral)
+        {
+            return true; 
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
