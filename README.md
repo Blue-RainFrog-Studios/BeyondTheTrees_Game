@@ -852,7 +852,7 @@ Debería haber sido más decidido a la hora de coger tareas, la duda a la hora d
 La tienda y los datos fue un vaivén de decisiones, no elegí bien el video tutorial, no supe que rumbo coger y tuve que virar después de haber perdido 5 días de trabajo, haber intentado implementar un paquete, en general trabajo que al final no sirvió de nada, por suerte se cambió el rumbo y el resultado es dinámico, fácilmente escalable y de paso se introdujo la memoria persistente
 
 Feedback o retroalimentación externo
-La gente no lee el tutorial
+La gente no lee el tutorial.
 
 ¿Qué se podría haber mejorado?
 El flujo de trabajo, en el sentido de que se ordenen mejor las dependencia de las tareas.
