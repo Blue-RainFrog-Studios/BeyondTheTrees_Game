@@ -23,16 +23,16 @@ public class GhostTree : MonoBehaviour
         float distance = Vector2.Distance(transform.position, player.transform.position);
         //do it gradually
         Color color = GetComponent<SpriteRenderer>().color;
-        color.a = 1 - (distance / 10);
+        color.a = 1 - (distance / 20);
         GetComponent<SpriteRenderer>().color = color;
 
 
 
         direction = player.transform.position - transform.position;
         if (direction.x > 0)
-            animator.Play("GhostRight3");
+            animator.Play("GhostRight 3");
         else
-            animator.Play("GhostLeft3");
+            animator.Play("GhostLeft");
 
         if (HP <= 0)
         {

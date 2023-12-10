@@ -245,7 +245,7 @@ public class RoomController : MonoBehaviour
                     "Basic_4",
                     "Basic_5",
 
-                    "Basic_17"
+                    //"Basic_17"
             };
                     
         }

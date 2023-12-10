@@ -54,9 +54,9 @@ public class ActionsSpookyTree : MonoBehaviour
         Vector3 posBullet1 = new Vector3(spookyTree.transform.position.x + 4, spookyTree.transform.position.y, spookyTree.transform.position.z);
         Vector3 posBullet2 = new Vector3(spookyTree.transform.position.x, spookyTree.transform.position.y, spookyTree.transform.position.z);
         Vector3 posBullet3 = new Vector3(spookyTree.transform.position.x - 4, spookyTree.transform.position.y, spookyTree.transform.position.z);
-        StartCoroutine(InstantiateBullet(posBullet1, finalPos2, 10));
-        StartCoroutine(InstantiateBullet(posBullet2, finalPos1, 10));
-        StartCoroutine(InstantiateBullet(posBullet3, finalPos3, 10));
+        StartCoroutine(InstantiateBullet(posBullet1, finalPos2, 12));
+        StartCoroutine(InstantiateBullet(posBullet2, finalPos1, 12));
+        StartCoroutine(InstantiateBullet(posBullet3, finalPos3, 12));
         //cuando termine cambia la variable de ended a true
         StartCoroutine(WaitThreeSecondsAndEnd());
 
@@ -81,9 +81,9 @@ public class ActionsSpookyTree : MonoBehaviour
         Vector3 posBullet1 = new Vector3(spookyTree.transform.position.x + 4, spookyTree.transform.position.y, spookyTree.transform.position.z);
         Vector3 posBullet2 = new Vector3(spookyTree.transform.position.x, spookyTree.transform.position.y, spookyTree.transform.position.z);
         Vector3 posBullet3 = new Vector3(spookyTree.transform.position.x - 4, spookyTree.transform.position.y, spookyTree.transform.position.z);
-        StartCoroutine(InstantiateBullet(posBullet1, finalPos3,12));
-        StartCoroutine(InstantiateBullet(posBullet2, finalPos1, 10));
-        StartCoroutine(InstantiateBullet(posBullet3, finalPos2, 12));
+        StartCoroutine(InstantiateBullet(posBullet1, finalPos3,14));
+        StartCoroutine(InstantiateBullet(posBullet2, finalPos1, 12));
+        StartCoroutine(InstantiateBullet(posBullet3, finalPos2, 14));
         //cuando termine cambia la variable de ended a true
         StartCoroutine(WaitThreeSecondsAndEnd());
     }
@@ -229,7 +229,7 @@ public class ActionsSpookyTree : MonoBehaviour
         StartCoroutine(WaitSecondAndAttack(2));
         StartCoroutine(WaitSecondAndAttack(3));
     }
-    IEnumerator WaitThreeSecondsAndEnd() { yield return new WaitForSeconds(3); ended = true; }
+    IEnumerator WaitThreeSecondsAndEnd() { yield return new WaitForSeconds(2); ended = true; }
     IEnumerator WaitOneSecondsAndEnd() { yield return new WaitForSeconds(1); ended = true; }
     IEnumerator WaitSecondAndAttack(int time) { yield return new WaitForSeconds(time); Instantiate(RootAttack, player.transform.position, Quaternion.identity);}
 
