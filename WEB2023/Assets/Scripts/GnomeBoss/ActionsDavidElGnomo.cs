@@ -14,7 +14,7 @@ public class ActionsDavidElGnomo : MonoBehaviour
     private bool ended;
 
     //audio
-    //[SerializeField] private AudioSource currentTheme;
+    [SerializeField] private AudioSource currentTheme;
     [SerializeField] private AudioSource sleepTheme;
     [SerializeField] private AudioSource bossTheme;
 
@@ -58,7 +58,7 @@ public class ActionsDavidElGnomo : MonoBehaviour
         if (Vector2.Distance(playerTransform.position, DavidElGnomoTransform.position) < 9f || GetComponent<DavidElGnomoController>().HP < 500)
         {
             //stop all music
-            //music.GetComponent<MusicSelector>().OstPiso2.Stop();
+            music.GetComponent<MusicSelector>().OstPiso2.Stop();
             sleepTheme.Play();
         }
         if (Vector2.Distance(playerTransform.position, DavidElGnomoTransform.position) < 3f || GetComponent<DavidElGnomoController>().HP<500)

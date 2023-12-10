@@ -179,6 +179,8 @@ GameObject:
   - component: {fileID: 2702382123326925815}
   - component: {fileID: 3321505691073023792}
   - component: {fileID: 3544500312377885349}
+  - component: {fileID: 492316878612044289}
+  - component: {fileID: 1878166858499573673}
   - component: {fileID: 3113921293586694263}
   - component: {fileID: -1793667132281868266}
   - component: {fileID: -5769247891855293941}
@@ -267,19 +269,21 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4875267983180699273}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 450c7171584c7d740adfedb980fda1d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   life: 60
   notInRoom: 0
-  range: 6
+  range: 5
   attackRange: 1
-  damage: 15
+  damage: 20
   coolDown: 5
+  blinkDuration: 1
+  blinkNumber: 6
   healCol: {fileID: 0}
-  ghost: {fileID: 0}
+  ghost: {fileID: 4875267983180699273}
   EnemyBullet: {fileID: 0}
   currState: 0
   enemyType: 2
@@ -292,10 +296,65 @@ MonoBehaviour:
   bulletSpeed: 0
   animator: {fileID: -5769247891855293941}
   IAmAGhost: {fileID: 0}
-  iLife: 0
-  can: 0
+  iLife: 80
+  can: 1
+--- !u!114 &492316878612044289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4875267983180699273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6955bb70d59f2874ab7d9f2e695cac26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 80
+  notInRoom: 0
+  range: 5
+  attackRange: 1
+  damage: 20
+  coolDown: 5
+  blinkDuration: 0
+  blinkNumber: 0
+--- !u!114 &1878166858499573673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4875267983180699273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1338e8f22c9f41345b3eaecb4b16d1fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 0
+  notInRoom: 0
+  range: 5
+  attackRange: 1
+  damage: 20
+  coolDown: 5
   blinkDuration: 1
   blinkNumber: 6
+  healCol: {fileID: 0}
+  ghost: {fileID: 4875267983180699273}
+  EnemyBullet: {fileID: 0}
+  currState: 0
+  enemyType: 2
+  audioSource: {fileID: -1801923627733827356}
+  fireClip: {fileID: 0}
+  ghostClip: {fileID: 0}
+  teleportHit: {fileID: 8300000, guid: deabd33679ce0af4cb2b6f2128ae1723, type: 3}
+  coolDownTp: 0
+  speed: 1
+  bulletSpeed: 0
+  animator: {fileID: 0}
+  IAmAGhost: {fileID: 0}
+  iLife: 80
+  can: 0
+  rangeTeleport: 7
 --- !u!50 &3113921293586694263
 Rigidbody2D:
   serializedVersion: 4

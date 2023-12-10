@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: -3948499072547772380}
   - component: {fileID: 1086757213067007569}
   - component: {fileID: 641151293933619832}
+  - component: {fileID: 3517392614735334430}
   m_Layer: 11
   m_Name: RangedEnemy 1
   m_TagString: Enemy
@@ -304,7 +305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6955bb70d59f2874ab7d9f2e695cac26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 0
+  life: 100
   notInRoom: 0
   range: 0
   attackRange: 0
@@ -332,18 +333,18 @@ MonoBehaviour:
   coolDown: 1
   blinkDuration: 0
   blinkNumber: 0
-  healCol: {fileID: 0}
+  healCol: {fileID: 3517392614735334430}
   ghost: {fileID: 0}
   EnemyBullet: {fileID: 7118902396155586748, guid: 56f121bf4736fc24ba00489e1378fa11, type: 3}
   currState: 0
-  enemyType: 0
-  audioSource: {fileID: 0}
-  fireClip: {fileID: 0}
+  enemyType: 1
+  audioSource: {fileID: 4363450322601480263}
+  fireClip: {fileID: 8300000, guid: 6221f7ed4fa745a4f8610195b01dee42, type: 3}
   ghostClip: {fileID: 0}
   teleportHit: {fileID: 0}
   coolDownTp: 0
-  speed: 0
-  bulletSpeed: 0
+  speed: 1
+  bulletSpeed: 10
   animator: {fileID: 1330603882934896760}
   IAmAGhost: {fileID: 0}
   iLife: 0
@@ -5143,3 +5144,38 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!58 &3517392614735334430
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3789336805313456490}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 4096
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 13.561204
