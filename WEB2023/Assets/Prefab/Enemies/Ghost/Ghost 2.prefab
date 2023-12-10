@@ -306,7 +306,7 @@ MonoBehaviour:
   notInRoom: 0
   range: 20
   attackRange: 0.65
-  damage: 0
+  damage: 5
   coolDown: 0
   blinkDuration: 0
   blinkNumber: 0
@@ -326,7 +326,7 @@ MonoBehaviour:
   notInRoom: 0
   range: 20
   attackRange: 0.65
-  damage: 0
+  damage: 5
   coolDown: 0
   blinkDuration: 1
   blinkNumber: 6

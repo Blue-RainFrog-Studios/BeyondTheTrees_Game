@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerMovementInputSystem : MonoBehaviour
 {
     private Rigidbody2D player_rb;
-    [SerializeField] public float speed = 8.0f;
+    [SerializeField] public float speed;
     [SerializeField] private float smoothness = 0.3f;
     [SerializeField] private GameObject attack;
     public int nivel = 0;
@@ -35,6 +35,8 @@ public class PlayerMovementInputSystem : MonoBehaviour
         player_rb = GetComponent<Rigidbody2D>();
         playerInputActions = new Map();
         playerInputActions.Enable();
+
+        speed = GetComponent<KnightScript>().speed;
 
         //playerInputActions.Player.Attack.performed += Attack;
         //playerInputActions.Player.Attack2.performed += Attack;

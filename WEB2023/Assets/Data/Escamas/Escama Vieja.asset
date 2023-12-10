@@ -20,7 +20,7 @@ MonoBehaviour:
     de dinero."
   <ItemImage>k__BackingField: {fileID: 1576112327, guid: 0d6e7eb0117b0dd42b3ef1b04224dbec, type: 3}
   <Attack>k__BackingField: 0
-  <Defense>k__BackingField: 5
+  <Defense>k__BackingField: 3
   <Speed>k__BackingField: 0
   <AttackSpeed>k__BackingField: 0
   <Value>k__BackingField: 5
