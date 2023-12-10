@@ -239,11 +239,11 @@ public class RoomController : MonoBehaviour
             {
                     //"Empty",
                     "Basic",
-                    "Basic_1",
-                    "Basic_2",
-                    "Basic_3",
-                    "Basic_4",
-                    "Basic_5",
+                    //"Basic_1",
+                    //"Basic_2",
+                    //"Basic_3",
+                    //"Basic_4",
+                    //"Basic_5",
 
                     //"Basic_17"
             };
@@ -253,7 +253,12 @@ public class RoomController : MonoBehaviour
         {
             possibleRooms = new string[]
             {
-                "Basic1_1",
+                "Basic2_1",
+                "Basic2_2",
+                "Basic2_3",
+                "Basic2_4",
+                "Basic2_5",
+                "Basic2_6",
             };
         }
         else if (player.GetComponent<PlayerMovementInputSystem>().nivel >= 2)
