@@ -441,12 +441,12 @@ MonoBehaviour:
   dialoguePanel: {fileID: 727296261}
   dialogueText: {fileID: 695341933}
   dialogueList:
-  - Buen trabajo, te veo potencial, chabal.
-  - "\xBFA ver que son tus pociones?"
+  - Buen trabajo, te veo potencial, chaval.
+  - "\xBFA ver qu\xE9 son tus pociones?"
   - ...
-  - "Bichos... Bueno, Alexia saber lo que hace con cada uno. Las m\xEDas son c\xE9sped
-    gourmet"
-  - En cualquier caso, ya solo te queda una prueba por superar.
+  - "Bichos... Bueno, Alexia sabe lo que hace con cada uno. Las m\xEDas son c\xE9sped
+    gourmet."
+  - "En cualquier caso, ya s\xF3lo te queda una prueba por superar."
   - "Es hora de hablar de tu inventario, dir\xEDgete al puesto amarillo y habla con
     Florentino."
   nameCharacter: 
@@ -3381,7 +3381,7 @@ MonoBehaviour:
   dialogueText: {fileID: 1823797438}
   dialogueList:
   - "Chaval, te he dicho que no est\xE1s listo."
-  - "Cuando completes los encargos que te he dado te dejar\xE9 pasar"
+  - "Cuando completes los encargos que te he dado te dejar\xE9 pasar."
   nameCharacter: 
   speackImg: {fileID: 0}
   tutorialBegginingZone: {fileID: 0}
@@ -4097,8 +4097,8 @@ MonoBehaviour:
     lejos posible."
   - "Veo que tienes algo de dinero en los bolsillos, venga compra tu primer objeto,
     con suerte te lo encontrar\xE1s en tu primera expedici\xF3n."
-  - "Venga, acercate un poco m\xE1s a Eerling y pulsa comprar para comprar tu primer
-    objeto."
+  - "Venga, ac\xE9rcate un poco m\xE1s a Eerling y pulsa comprar para comprar tu
+    primer objeto."
   - "Cuando hayas comprado tu primer objeto ven a ense\xF1\xE1rmerlo."
   nameCharacter: Zidan
   speackImg: {fileID: 0}
@@ -4978,7 +4978,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9132,10 +9132,11 @@ MonoBehaviour:
   dialogueText: {fileID: 875050237}
   dialogueList:
   - "Buen trabajo, chaval. Est\xE1s m\xE1s que preparado para comerte este bosque."
-  - "No se que te habr\xE1 tra\xEDdo aqu\xED pero espero que lo encuentres dentro."
-  - "\xBFQui\xE9n sabe, puede que te copnviertas en la primera persona en llegar
-    a lo m\xE1s profundo.?"
-  - Sea como sea, buena suerte y vuelve de una pieza
+  - "No s\xE9 qu\xE9 te habr\xE1 tra\xEDdo aqu\xED pero espero que lo encuentres
+    dentro."
+  - "Qui\xE9n sabe, \xBFpuede que te conviertas en la primera criatura en llegar
+    a lo m\xE1s profundo?"
+  - Sea como sea, buena suerte y vuelve de una pieza.
   nameCharacter: 
   speackImg: {fileID: 0}
   tutorialBegginingZone: {fileID: 0}
@@ -10776,7 +10777,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 9a6f22e6c409f1b4abdb2ef5895b7bdd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -10929,24 +10930,24 @@ MonoBehaviour:
   dialoguePanel: {fileID: 1294304699}
   dialogueText: {fileID: 556982172}
   dialogueList:
-  - "Bueno, bueno , bueno. \xBFQu\xE9 tenemos aqu\xED?"
+  - "Bueno, bueno, bueno. \xBFQu\xE9 tenemos aqu\xED?"
   - Un nuevo visitante a nuestro humilde Campamento Base, un nuevo aventurero en
     ciernes.
   - "Bienvenido, chaval. Yo soy Zid\xE1n, el lider de este campamento."
   - Y no te lo tomes a mal, pero se te ve algo novatillo en esto de las expediciones.
   - "No te preocupes, ense\xF1ar a chavales como t\xFA forma parte de mi trabajo."
-  - "Ver\xE1s, detras m\xEDa est\xE1 el famoso e infinito bosque de EverBlue. Habitat
+  - "Ver\xE1s, detr\xE1s de mi est\xE1 el famoso e infinito bosque de EverBlue. H\xE1bitat
     de criaturas peligrosas y abundantes tesoros."
-  - "Nadie sabe que hay en lo m\xE1s profundo de la foresta, por eso numerosos campamentos
-    como este la rodean y cientos de exploradores se adentran buscando tesoros con
-    los que poder adentrarse cada vez m\xE1s ."
+  - "Nadie sabe qu\xE9 hay en lo m\xE1s profundo de la foresta, por eso numerosos
+    campamentos como este la rodean y cientos de exploradores se adentran buscando
+    tesoros con los que poder adentrarse cada vez m\xE1s."
   - Intuyo que te mueres por explorar ya mismo pero me temo que te faltan algunos
     preparativos.
   - "Lo siento chaval, pero son las normas, primero debes completar la instrucci\xF3n
     b\xE1sica, venga empecemos."
   - "Primero voy a explicarte c\xF3mo funcionan los objetos. "
-  - Para eso acercate primero al Emporio de Eerling, el puesto con el toldo rojo.
-    Tranquilo el bueno de Eerling no suele picotear a los nuevos.
+  - "Para eso ac\xE9rcate primero al Emporio de Eerling, el puesto con el toldo rojo.
+    Tranquilo el bueno de Eerling no suele picotear a los nuevos."
   nameCharacter: 
   speackImg: {fileID: 0}
   tutorialBegginingZone: {fileID: 0}
@@ -13740,7 +13741,7 @@ MonoBehaviour:
   dialoguePanel: {fileID: 661358786}
   dialogueText: {fileID: 2061414757}
   dialogueList:
-  - "Buen trabajo, chaval y veo que Florentino tambi\xE9n lo ha clavado."
+  - "Buen trabajo chaval, veo que Florentino tambi\xE9n lo ha clavado."
   - "Recuerda que aunque tengas m\xE1s hueco este sigue siendo limitado, gesti\xF3nalo
     bien y no tengas miedo de tirar un item para coger uno mejor."
   - Pero tampoco pierdas la oportunidad de llevarte un objeto muy valioso a pesar
@@ -18855,7 +18856,7 @@ MonoBehaviour:
     podr\xE1s recoger m\xE1s objetos y por ende volverte m\xE1s fuerte durante la
     expedici\xF3n y volver con m\xE1s dinero."
   - "Venga, acercate a Florentino, he o\xEDdo que est\xE1 de promoci\xF3n y la primera
-    mejora es gratis, aprobecha, no suele ser tan generoso."
+    mejora es gratis, aprovecha, no suele ser tan generoso."
   - "Cuando lo haya hecho ven a hablar conmigo y te dar\xE9 mis \xFAltimos consejos."
   nameCharacter: 
   speackImg: {fileID: 0}
