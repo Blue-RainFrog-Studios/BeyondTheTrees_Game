@@ -429,7 +429,7 @@ MonoBehaviour:
   notInRoom: 0
   range: 5
   attackRange: 1
-  damage: 20
+  damage: 15
   coolDown: 5
   blinkDuration: 1
   blinkNumber: 6
@@ -445,7 +445,7 @@ MonoBehaviour:
   coolDownTp: 0
   speed: 1
   bulletSpeed: 0
-  animator: {fileID: 0}
+  animator: {fileID: -5769247891855293941}
   IAmAGhost: {fileID: 0}
   iLife: 80
   can: 0
@@ -462,11 +462,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6955bb70d59f2874ab7d9f2e695cac26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 80
+  life: 120
   notInRoom: 0
   range: 5
   attackRange: 1
-  damage: 20
+  damage: 15
   coolDown: 5
   blinkDuration: 0
   blinkNumber: 0

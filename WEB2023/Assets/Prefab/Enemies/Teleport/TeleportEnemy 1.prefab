@@ -273,11 +273,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6955bb70d59f2874ab7d9f2e695cac26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 80
+  life: 100
   notInRoom: 0
   range: 5
   attackRange: 1
-  damage: 20
+  damage: 10
   coolDown: 5
   blinkDuration: 0
   blinkNumber: 0
@@ -297,7 +297,7 @@ MonoBehaviour:
   notInRoom: 0
   range: 5
   attackRange: 1
-  damage: 20
+  damage: 10
   coolDown: 5
   blinkDuration: 1
   blinkNumber: 6
