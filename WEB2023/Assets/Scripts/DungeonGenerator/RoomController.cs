@@ -285,9 +285,8 @@ public class RoomController : MonoBehaviour
 
                 "King1",
                 "SkullPuzzle",
-                "RapidoQueSeQueman",
                 "Ardilla",
-                "RapidoQueSeQueman",
+                "RapidoQueSeQueman 0",
                 "Lobo",
                 "BasicCastle",
                 "BasicHouse"
