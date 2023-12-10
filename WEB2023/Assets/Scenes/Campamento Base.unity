@@ -326,7 +326,7 @@ MonoBehaviour:
   dialoguePanel: {fileID: 0}
   dialogueText: {fileID: 0}
   dialogueList: []
-  nameCharacter: 
+  nameCharacter: Zidan
   speackImg: {fileID: 0}
   tutorialBegginingZone: {fileID: 0}
   ultimoTutorial: 0
@@ -338,7 +338,7 @@ MonoBehaviour:
   barrera: {fileID: 427328437}
   continueButton: {fileID: 0}
   sceneData: {fileID: 0}
-  wordSpeed: 0
+  wordSpeed: 0.03
 --- !u!1 &84075514
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,7 +580,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &133111600
 MonoBehaviour:
@@ -854,7 +854,7 @@ RectTransform:
   - {fileID: 1178254527}
   - {fileID: 729951640}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1240,7 +1240,7 @@ MonoBehaviour:
   speakZone: {fileID: 204765825}
   continueButton: {fileID: 741964578}
   buyButton: {fileID: 822403568}
-  wordSpeed: 0.06
+  wordSpeed: 0.03
 --- !u!61 &204765825
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1504,7 +1504,7 @@ RectTransform:
   - {fileID: 2022397979}
   - {fileID: 1720377336}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1928,7 +1928,7 @@ MonoBehaviour:
   speakZone: {fileID: 280167654}
   continueButton: {fileID: 186652136}
   sceneData: {fileID: 467032795}
-  wordSpeed: 0.06
+  wordSpeed: 0.03
 --- !u!1 &283654849
 GameObject:
   m_ObjectHideFlags: 0
@@ -2158,7 +2158,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -38.411}
 --- !u!50 &396823596
 Rigidbody2D:
@@ -2430,7 +2430,7 @@ MonoBehaviour:
   barrera: {fileID: 0}
   continueButton: {fileID: 1879498188}
   sceneData: {fileID: 467032795}
-  wordSpeed: 0.01
+  wordSpeed: 0.03
 --- !u!61 &427328440
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2898,9 +2898,9 @@ MonoBehaviour:
     lejos posible."
   - "Veo que tienes algo de dinero en los bolsillos, venga compra tu primer objeto,
     con suerte te lo encontrar\xE1s en tu primera expedici\xF3n."
-  - "Venga, acercate un poco m\xE1s a Eerling y pulsa comprar para comprar tu primer
-    objeto"
-  - "Cuando hayas comprado tu primer objeto ven a ense\xF1\xE1rmerlo"
+  - "Venga, ac\xE9rcate un poco m\xE1s a Eerling y pulsa comprar para comprar tu
+    primer objeto."
+  - "Cuando hayas comprado tu primer objeto ven a ense\xF1\xE1rmerlo."
   nameCharacter: Zidan
   speackImg: {fileID: 0}
   tutorialBegginingZone: {fileID: 0}
@@ -2913,7 +2913,7 @@ MonoBehaviour:
   barrera: {fileID: 427328437}
   continueButton: {fileID: 2068743493}
   sceneData: {fileID: 467032795}
-  wordSpeed: 0.01
+  wordSpeed: 0.03
 --- !u!61 &542385075
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4019,7 +4019,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &725347861
 MonoBehaviour:
@@ -4558,7 +4558,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &765452947
 GameObject:
@@ -5090,7 +5090,7 @@ MonoBehaviour:
   barrera: {fileID: 427328437}
   continueButton: {fileID: 2065832549}
   sceneData: {fileID: 467032795}
-  wordSpeed: 0.01
+  wordSpeed: 0.03
 --- !u!61 &818410846
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6468,10 +6468,10 @@ MonoBehaviour:
   dialogueList:
   - "Buen trabajo, chaval. Est\xE1s m\xE1s que preparado para comerte este bosque."
   - "No se que te habr\xE1 tra\xEDdo aqu\xED pero espero que lo encuentres dentro."
-  - "\xBFQui\xE9n sabe, puede que te copnviertas en la primera persona en llegar
-    a lo m\xE1s profundo.?"
-  - Sea como sea, buena suerte y vuelve de una pieza
-  nameCharacter: 
+  - "Qui\xE9n sabe, \xBFpuede que te conviertas en la primera persona en llegar a
+    lo m\xE1s profundo?"
+  - Sea como sea, buena suerte y vuelve de una pieza.
+  nameCharacter: Zidan
   speackImg: {fileID: 0}
   tutorialBegginingZone: {fileID: 0}
   ultimoTutorial: 1
@@ -6483,7 +6483,7 @@ MonoBehaviour:
   barrera: {fileID: 427328437}
   continueButton: {fileID: 1924575579}
   sceneData: {fileID: 467032795}
-  wordSpeed: 0.01
+  wordSpeed: 0.03
 --- !u!61 &1055430673
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7815,11 +7815,11 @@ MonoBehaviour:
   dialogueList:
   - "Bueno, bueno , bueno. \xBFQu\xE9 tenemos aqu\xED?"
   - Un nuevo visitante a nuestro humilde Campamento Base, un nuevo aventurero en
-    ciernes
+    ciernes.
   - "Bienvenido, chaval. Yo soy Zid\xE1n, el lider de este campamento."
   - Y no te lo tomes a mal, pero se te ve algo novatillo en esto de las expediciones
   - "No te preocupes, ense\xF1ar a chavales como t\xFA forma parte de mi trabajo."
-  - "Ver\xE1s, detras m\xEDa est\xE1 el famoso e infinito bosque de EverBlue. Habitat
+  - "Ver\xE1s, detras de mi est\xE1 el famoso e infinito bosque de EverBlue. H\xE1bitat
     de criaturas peligrosas y abundantes tesoros."
   - "Nadie sabe que hay en lo m\xE1s profundo de la foresta, por eso numerosos campamentos
     como este la rodean y cientos de exploradores se adentran buscando tesoros para
@@ -7828,10 +7828,10 @@ MonoBehaviour:
     preparativos.
   - "Lo siento chaval, pero son las normas, primero debes completar la instrucci\xF3n
     b\xE1sica, venga empecemos."
-  - Para eso acercate primero al Emporio de Eerling, el puesto con el toldo rojo.
-    Tranquilo el bueno de Eerling no siele picotear a los nuevos
+  - "Para eso ac\xE9rcate primero al Emporio de Eerling, el puesto con el toldo rojo.
+    Tranquilo el bueno de Eerling no suele picotear a los nuevos."
   - "Primero voy a explicarte c\xF3mo funcionan los objetos."
-  nameCharacter: 
+  nameCharacter: Zidan
   speackImg: {fileID: 0}
   tutorialBegginingZone: {fileID: 0}
   ultimoTutorial: 0
@@ -7843,7 +7843,7 @@ MonoBehaviour:
   barrera: {fileID: 427328437}
   continueButton: {fileID: 1101896642}
   sceneData: {fileID: 1510405980}
-  wordSpeed: 0.01
+  wordSpeed: 0.03
 --- !u!61 &1250486425
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8980,7 +8980,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1453630615
 PrefabInstance:
@@ -9107,7 +9107,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1468178901
 GameObject:
@@ -9261,6 +9261,318 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1501547776}
   m_CullTransparentMesh: 1
+--- !u!1001 &1509556223
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 488171760153668876, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488171760153668876, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488171760153668876, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488171760153668876, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488171760153668876, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488171760153668876, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 913089236603703688, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 913089236603703688, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 913089236603703688, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 913089236603703688, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 913089236603703688, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 913089236603703688, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1156985873014526917, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442948853860364146, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442948853860364146, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442948853860364146, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442948853860364146, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442948853860364146, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442948853860364146, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3368593533092928942, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3368593533092928942, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3907890136628772526, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3907890136628772526, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3983220779195578612, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3983220779195578612, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3983220779195578612, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3983220779195578612, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3983220779195578612, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3983220779195578612, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3987696434345734635, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3987696434345734635, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3987696434345734635, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3987696434345734635, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4093861723330955632, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4093861723330955632, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4093861723330955632, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4093861723330955632, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4093861723330955632, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4093861723330955632, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5308110313655663404, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5308110313655663404, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 5308110313655663404, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3868992
+      objectReference: {fileID: 0}
+    - target: {fileID: 5308110313655663404, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5308110313655663404, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5308110313655663404, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5308110313655663404, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5308110313655663404, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5308110313655663404, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5308110313655663404, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5308110313655663404, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5817899188977316618, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5817899188977316618, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5817899188977316618, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5817899188977316618, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5817899188977316618, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5817899188977316618, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066888497321266305, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066888497321266305, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066888497321266305, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066888497321266305, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066888497321266305, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066888497321266305, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7688656109348949115, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7688656109348949115, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7688656109348949115, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7688656109348949115, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347801745792315031, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347801745792315031, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347801745792315031, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347801745792315031, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347801745792315031, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347801745792315031, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8490994439232194137, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8490994439232194137, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 4345022793383522747, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+    - {fileID: 4678808852051076593, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+    - {fileID: 2498661019506208815, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c389f3578bf17564ea67eaa7eb3dfce7, type: 3}
 --- !u!1 &1510405980
 GameObject:
   m_ObjectHideFlags: 0
@@ -9563,7 +9875,7 @@ MonoBehaviour:
   dialoguePanel: {fileID: 0}
   dialogueText: {fileID: 0}
   dialogueList: []
-  nameCharacter: 
+  nameCharacter: Zidan
   speackImg: {fileID: 0}
   tutorialBegginingZone: {fileID: 0}
   ultimoTutorial: 0
@@ -9575,7 +9887,7 @@ MonoBehaviour:
   barrera: {fileID: 427328437}
   continueButton: {fileID: 0}
   sceneData: {fileID: 0}
-  wordSpeed: 0
+  wordSpeed: 0.03
 --- !u!1 &1557911102
 GameObject:
   m_ObjectHideFlags: 0
@@ -11705,7 +12017,7 @@ Transform:
   - {fileID: 1760968061}
   - {fileID: 1094100782}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1905046397
 GameObject:
@@ -12090,7 +12402,7 @@ Transform:
   - {fileID: 1858967097}
   - {fileID: 467032796}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1945535082
 GameObject:
@@ -13724,7 +14036,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0.87, y: 0, z: 0}
 --- !u!1 &2104259203
 GameObject:
@@ -13773,7 +14085,7 @@ MonoBehaviour:
   dialoguePanel: {fileID: 0}
   dialogueText: {fileID: 0}
   dialogueList: []
-  nameCharacter: 
+  nameCharacter: Zidan
   speackImg: {fileID: 0}
   tutorialBegginingZone: {fileID: 0}
   ultimoTutorial: 0
@@ -13785,7 +14097,7 @@ MonoBehaviour:
   barrera: {fileID: 427328437}
   continueButton: {fileID: 0}
   sceneData: {fileID: 0}
-  wordSpeed: 0
+  wordSpeed: 0.03
 --- !u!1 &2116108034
 GameObject:
   m_ObjectHideFlags: 0
@@ -13833,7 +14145,7 @@ MonoBehaviour:
   dialoguePanel: {fileID: 0}
   dialogueText: {fileID: 0}
   dialogueList: []
-  nameCharacter: 
+  nameCharacter: Zidan
   speackImg: {fileID: 0}
   tutorialBegginingZone: {fileID: 0}
   ultimoTutorial: 0
@@ -13845,4 +14157,4 @@ MonoBehaviour:
   barrera: {fileID: 427328437}
   continueButton: {fileID: 0}
   sceneData: {fileID: 0}
-  wordSpeed: 0
+  wordSpeed: 0.03
