@@ -7,25 +7,18 @@ using UnityEngine.UI;
 public class CloseInventory : MonoBehaviour
 {
     [SerializeField]
-    private Button invButton;
+    private GameObject invButtonPanel;
     [SerializeField]
     private GameObject inventory;
     [SerializeField]
     private GameObject invActionPanel;
 
-    private void Awake()
-    {
-        //invButton = GetComponentInParent<Button>();
-    }
     private void Start()
     {
         this.gameObject.GetComponentInChildren<Button>().onClick.AddListener(() => { 
             inventory.SetActive(false);
             invActionPanel.SetActive(false);
-            if (Application.isMobilePlatform) 
-            { 
-                invButton.gameObject.SetActive(true); 
-            }
+            invButtonPanel.gameObject.SetActive(true); 
                  } );
     }
 }

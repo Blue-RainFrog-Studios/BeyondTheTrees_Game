@@ -7,8 +7,13 @@ public class InventoryBtnScript : MonoBehaviour
 {
     public GameObject inventory;
 
+    public Button inventoryBtn;
+
+    public AudioSource audioSource;
+    public AudioClip audioClip;
+
     void Start()
     {
-        this.gameObject.GetComponent<Button>().onClick.AddListener(() => { inventory.SetActive(true); this.gameObject.SetActive(false); } );
+        inventoryBtn.onClick.AddListener(() => { inventory.SetActive(true); this.gameObject.SetActive(false); audioSource.PlayOneShot(audioClip); } );
     }
 }
