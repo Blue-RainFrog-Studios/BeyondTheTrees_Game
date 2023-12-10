@@ -28,6 +28,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.3559246
       objectReference: {fileID: 0}
+    - target: {fileID: 3586582975330463079, guid: b61eff804755ac34a8b2ded704f94d8b, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: -391864765268405954}
     - target: {fileID: 3789336805313456490, guid: b61eff804755ac34a8b2ded704f94d8b, type: 3}
       propertyPath: m_Name
       value: RangedEnemy Variant
