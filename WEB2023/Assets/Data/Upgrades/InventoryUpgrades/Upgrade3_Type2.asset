@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ee3bfc8b9d47a44987f21c422ab335, type: 3}
+  m_Name: Upgrade3_Type2
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Mejora Avanzada inventario
+  <Descrption>k__BackingField: "Mejora tu inventario todav\xEDa m\xE1s. Aumenta tu
+    inventario en 1 hueco"
+  <UpgradeImage>k__BackingField: {fileID: 21300000, guid: 65f87db2adaf77b4d9c37d868224bf16, type: 3}
+  <ShopValue>k__BackingField: 300
+  <IsPurchased>k__BackingField: 0
+  <InventoryUpgrade>k__BackingField: 1
+  <PotionsUpgrade>k__BackingField: 0
+  <UpgradeTier>k__BackingField: 0

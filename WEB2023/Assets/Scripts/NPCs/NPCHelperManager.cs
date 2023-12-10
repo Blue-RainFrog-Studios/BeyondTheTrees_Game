@@ -12,6 +12,11 @@ public class NPCHelperManager : MonoBehaviour
     //public bool tutorialAumentoInventario;
     public bool tutorialCompleto;
 
+    // Tiendas para activar o desactivar
+    public GameObject TiendaItems;
+    public GameObject TiendaPociones;
+    public GameObject TiendaInventario;
+
     // Recordatorios al volver
     public bool remindBack;
 
@@ -53,6 +58,8 @@ public class NPCHelperManager : MonoBehaviour
             returnArea.SetActive(true);
             Debug.Log("Activando ayuda");
         }
+
+        player.transform.position = new Vector3(4.0f, -2.5f);
     }
     public void TutorialesCompletos()
     {

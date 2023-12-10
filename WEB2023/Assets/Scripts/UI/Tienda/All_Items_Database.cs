@@ -9,11 +9,19 @@ public class All_Items_Database : ScriptableObject
 {
     public List<ItemSO> All_items;
     public List<ItemSO> Shop_Items;
+    public List<UpgradeSO> Shop_Potions_Upgrades;
+    
+    public List<UpgradeSO> Shop_Inventory_Upgrades;
+
     public List<ItemSO> Run_Items;
     public List<ItemSO> Run_Common_Items;
     public List<ItemSO> Run_Rare_Items;
     public List<ItemSO> Run_Epic_Items;
     public List<ItemSO> Run_Legendary_Items;
+
+    public List<ItemSO> Run_PotionsAvalible;
+
+    public UpgradeSO PotionToSpawn;
 
 
     public int All_Items_Count
@@ -25,6 +33,16 @@ public class All_Items_Database : ScriptableObject
     public int Shop_Items_Count
     {
         get { return Shop_Items.Count; }
+
+    }
+    public int Potions_Shop_Items_Count
+    {
+        get { return Shop_Potions_Upgrades.Count; }
+
+    }
+    public int Inventory_Shop_Items_Count
+    {
+        get { return Shop_Inventory_Upgrades.Count; }
 
     }
     public int Run_Items_Count
@@ -55,10 +73,30 @@ public class All_Items_Database : ScriptableObject
         }
     }
 
+    public void PotionPurchaseUpgrades(int index)
+    {
+        Shop_Potions_Upgrades[index].IsPurchased = true;
+
+        if (Shop_Potions_Upgrades[index].UpgradeTier>=PotionToSpawn.UpgradeTier)
+        {
+            PotionToSpawn = Shop_Potions_Upgrades[index];
+        }
+    }
     public ItemSO ShopGetItemFromPool(int index)
     {
         return Shop_Items[index];
     }
+
+    public UpgradeSO PotionShopGetItemFromDB(int index)
+    {
+        return Shop_Potions_Upgrades[index];
+    }
+
+    public UpgradeSO InventoryShopGetItemFromDB(int index)
+    {
+        return Shop_Inventory_Upgrades[index];
+    }
+
     public ItemSO RunGetItemFromPool(int index)
     {
         return Run_Items[index];
@@ -108,13 +146,20 @@ public class All_Items_Database : ScriptableObject
         {
             Shop_Items[i].IsPurchased = false;
         }
+
+        //Reseteo las mejoras de la tienda
+        for (int i = 0; i < Potions_Shop_Items_Count; i++)
+        {
+            Shop_Potions_Upgrades[i].IsPurchased = false;
+        }
+
         /*Debug.Log("Items purchased eliminados");
 
         Debug.Log("//////////////////////////////////////////////////////////////////////");
         Debug.Log("RESETEEEEEEEEEEEOOOO");
         Debug.Log("//////////////////////////////////////////////////////////////////////");
     */
-        }
+    }
 
     public int CalculateCheapestItem(int currentCheapest)
     {
