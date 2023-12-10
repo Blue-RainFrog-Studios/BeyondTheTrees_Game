@@ -30,9 +30,6 @@ public class EnemyTeleport : EnemyController
             case (EnemyState.Attack):
                 Attack();
                 break;
-            /*case (EnemyState.Die):
-                Die();
-                break;*/
             case (EnemyState.GoHeal):
                 GoHeal();
                 break;
@@ -44,18 +41,18 @@ public class EnemyTeleport : EnemyController
         if (!notInRoom)
         {
 
-            if (isPlayerInRange(range)/* && currState != EnemyState.Die*/)
+            if (isPlayerInRange(range) && currState != EnemyState.GoHeal)
             {
                 currState = EnemyState.Follow;
-            }else if(!isPlayerInRangeTeleport(rangeTeleport)/* && currState != EnemyState.Die*/)
+            }else if(!isPlayerInRangeTeleport(rangeTeleport) && currState != EnemyState.GoHeal)
             {
                 currState = EnemyState.Follow;
             }
-            else if (isPlayerInRangeTeleport(rangeTeleport)/* && currState != EnemyState.Die*/)
+            else if (isPlayerInRangeTeleport(rangeTeleport) && currState != EnemyState.GoHeal)
             {
                 currState = EnemyState.Teleport;
             }
-            if (Vector3.Distance(transform.position, player.transform.position) < attackRange)
+            if (Vector3.Distance(transform.position, player.transform.position) < attackRange && currState != EnemyState.GoHeal)
             {
                 currState = EnemyState.Attack;
             }

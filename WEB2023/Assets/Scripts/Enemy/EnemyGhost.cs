@@ -15,7 +15,6 @@ public class EnemyGhost : EnemyController
 
         player = GameObject.FindGameObjectWithTag("Player");
         room = GameObject.FindGameObjectWithTag("RoomController");
-        Debug.Log("Vida inicial fantasma" + iLife);
     }
 
     // Update is called once per frame
