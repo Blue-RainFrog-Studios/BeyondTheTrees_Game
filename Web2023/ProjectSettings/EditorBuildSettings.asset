@@ -69,7 +69,7 @@ EditorBuildSettings:
     path: Assets/Scenes/DungeonRooms/BasementBasic2.unity
     guid: 8eca9841883c7df448c1350ee6e22f52
   - enabled: 1
-    path: Assets/Scenes/DungeonRooms/BasementBasic3.unity
+    path: Assets/Scenes/DungeonRooms/Floor 3/BasementBasic3.unity
     guid: f2e740c4ccbacce49a2e211dc7a9c283
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
@@ -188,5 +188,17 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DungeonRooms/Puzzles/BasementKing2_2.unity
     guid: 081bb3267b9b9084d93c537b8820da35
+  - enabled: 1
+    path: Assets/Scenes/DungeonRooms/Puzzles/BasementKing3_1.unity
+    guid: 09bf080ca2211f340afd7154fe6ef0ca
+  - enabled: 1
+    path: Assets/Scenes/DungeonRooms/Puzzles/BasementKing3_2.unity
+    guid: 481d5410d9b373543ad1959574f11d8b
+  - enabled: 1
+    path: Assets/Scenes/DungeonRooms/Floor 3/BasementBasic3_1.unity
+    guid: f10e88b703ddac94d92b5f4be15ce7d9
+  - enabled: 1
+    path: Assets/Scenes/DungeonRooms/Floor 3/BasementBasic3_2.unity
+    guid: 85082b32c787ba44ba78ee1d109d3a19
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9ecf038445ed1da49931ebbc8f3a8320, type: 2}
