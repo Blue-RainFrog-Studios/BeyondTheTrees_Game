@@ -143,5 +143,20 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DungeonRooms/Puzzles/BasementKing1_4.unity
     guid: 02d59a3ab1096b449bae2ff54a81fd99
+  - enabled: 1
+    path: Assets/Scenes/DungeonRooms/Floor 2/BasementBasic_1.unity
+    guid: e8afa6d78dc40254380165d15e5b7600
+  - enabled: 1
+    path: Assets/Scenes/DungeonRooms/Floor 1/BasementBasic_2.unity
+    guid: e68ca0a9b1d2edc46916993573e32fb5
+  - enabled: 1
+    path: Assets/Scenes/DungeonRooms/Floor 1/BasementBasic_4.unity
+    guid: ab6cc11a822a950418905f354f60f372
+  - enabled: 1
+    path: Assets/Scenes/DungeonRooms/Floor 1/BasementBasic_3.unity
+    guid: 6cbe2c336b4d31d4c9977168c3463865
+  - enabled: 1
+    path: Assets/Scenes/DungeonRooms/Floor 1/BasementBasic_5.unity
+    guid: ba5a94d62d75aa4408bde96d53d547b2
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9ecf038445ed1da49931ebbc8f3a8320, type: 2}
