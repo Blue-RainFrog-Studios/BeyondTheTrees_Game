@@ -52,6 +52,8 @@ public class Shop_UI : MonoBehaviour
         
     }
 
+    
+
     // Update is called once per frame
     void Update()
     {
@@ -64,7 +66,15 @@ public class Shop_UI : MonoBehaviour
 
         closeShopButton.onClick.RemoveAllListeners();
         closeShopButton.onClick.AddListener(CloseShop);
-        closeShopButton.gameObject.SetActive(false);
+        if (tutorialData.GetComponent<NPCHelperManager>().tutorialTienda)
+        {
+            closeShopButton.gameObject.SetActive(true);
+        }
+        else
+        {
+            closeShopButton.gameObject.SetActive(false);
+
+        }
     }
     void GenerateShopItems()
     {

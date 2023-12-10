@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -2603985412263265142}
   - component: {fileID: -177290575293570143}
   - component: {fileID: 7599798388187925332}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TeleportEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -214,6 +214,8 @@ MonoBehaviour:
   attackRange: 1
   damage: 20
   coolDown: 5
+  blinkDuration: 0
+  blinkNumber: 0
 --- !u!114 &-177290575293570143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,6 +234,8 @@ MonoBehaviour:
   attackRange: 1
   damage: 20
   coolDown: 5
+  blinkDuration: 0
+  blinkNumber: 0
   healCol: {fileID: 0}
   ghost: {fileID: 0}
   EnemyBullet: {fileID: 0}
@@ -248,8 +252,6 @@ MonoBehaviour:
   IAmAGhost: {fileID: 0}
   iLife: 0
   can: 0
-  blinkDuration: 0
-  blinkNumber: 0
   rangeTeleport: 7
 --- !u!82 &7599798388187925332
 AudioSource:
@@ -357,7 +359,7 @@ GameObject:
   m_Component:
   - component: {fileID: 280047258082415557}
   - component: {fileID: 7167627296873051653}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MofleteL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -441,7 +443,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1656863906777568967}
   - component: {fileID: 3878154524859173116}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MofleteR
   m_TagString: Untagged
   m_Icon: {fileID: 0}

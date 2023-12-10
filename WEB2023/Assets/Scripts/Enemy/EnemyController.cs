@@ -37,7 +37,7 @@ public enum EnemyType
 public class EnemyController : Enemy
 {
 
-    Material enemyMaterial;
+    
     public Collider2D healCol;
     public GameObject ghost;
     GameObject acorn;
@@ -52,14 +52,14 @@ public class EnemyController : Enemy
     
   
  
-    protected GameObject room;
+    
     Rigidbody2D rb;
 
     //public float coolDown;
     public float coolDownTp;
     public float speed;
-   
 
+    private bool healTime = true;
     private bool animationEx = false;
     //private bool coolDownAttack = false;
     private bool coolDownTeleport = false;
@@ -80,9 +80,7 @@ public class EnemyController : Enemy
     public bool can = false;
     // Start is called before the first frame update
 
-    public float blinkDuration;
-    public int blinkNumber;
-    protected bool blinking = false;
+    
     private void Awake()
     {
         Idle();
@@ -95,7 +93,7 @@ public class EnemyController : Enemy
         
         ghost = this.gameObject;
 
-        enemyMaterial = GetComponent<Renderer>().material;
+        
 
         room = GameObject.FindGameObjectWithTag("RoomController");
     }
@@ -103,12 +101,7 @@ public class EnemyController : Enemy
     // Update is called once per frame
     void Update()
     {
-        /*switch (currState)
-        {
-            case (EnemyState.Die):
-                Die();
-                break;
-        }*/
+        
     }
     public bool isPlayerInRange(float range)
     {
@@ -131,11 +124,25 @@ public class EnemyController : Enemy
         runAway = transform.position - player.transform.position;
         transform.position = Vector2.MoveTowards(transform.position, transform.position+runAway, speed * Time.deltaTime);
     }
+    public IEnumerator WaitHeal()
+    {
+        healCol.enabled = true;
+        GetComponent<ParticleSystem>().Play();
+        healTime = false;
+        room.GetComponent<RoomController>().healing = true;
+        room.GetComponent<RoomController>().posHealer = transform.position+new Vector3(1,1,0);
+        yield return new WaitForSeconds(20);
+        room.GetComponent<RoomController>().fheal = true;
+        room.GetComponent<RoomController>().healing = false;
+        GetComponent<ParticleSystem>().Stop();
+        healCol.enabled = false;
+    }
     public void Heal()
     {
-        room.GetComponent<RoomController>().heal=true;
-        room.GetComponent<RoomController>().posHealer = transform.position;
-        healCol.enabled = true;
+        if (healTime)
+        {
+            StartCoroutine(WaitHeal());
+        }   
     }
     public void GoHeal()
     {
@@ -151,12 +158,7 @@ public class EnemyController : Enemy
         yield return new WaitForSeconds(5);
         can = false;
     }
-    //private IEnumerator CoolDown()
-    //{
-    //    coolDownAttack = true;
-    //    yield return new WaitForSeconds(coolDown);
-    //    coolDownAttack = false;
-    //}
+    
     private IEnumerator CoolDownTP()
     {
         coolDownTeleport = true;
@@ -195,7 +197,7 @@ public class EnemyController : Enemy
                 case (EnemyType.Ranged):
                     GameObject bullet = Instantiate(EnemyBullet, transform.position, Quaternion.identity) as GameObject;
                     bullet.GetComponent<BulletController>().GetPlayer(player.transform);
-                    bullet.AddComponent<Rigidbody2D>().gravityScale = 0;
+                    //bullet.AddComponent<Rigidbody2D>().gravityScale = 0;
                     audioSource.PlayOneShot(fireClip);
                     StartCoroutine(CoolDown());
                     break;
@@ -266,51 +268,8 @@ public class EnemyController : Enemy
 
     }
    
-    public void Die()
-    {
-        if (player.GetComponent<KnightScript>().king)
-        {
-            player.GetComponent<CoinCounter>().ExpeditionMoneyChanger(2);
-        }
-        RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());
-        Destroy(ghost);
+ 
+    
 
-    }
-    /*public void RecieveDamage(float damage)
-    {
-        life -= damage;
-        this.GetComponent<Knockback>().PlayFeedback(player , this.gameObject.GetComponent<Rigidbody2D>());
-        //Debug.Log("Recibo da�o");
-        if (life <= 0)
-        {
-            currState = EnemyState.Die;
-        }
-
-        if (!blinking)
-        {
-            StartCoroutine(Blink());
-        }
-    }*/
-
-    public IEnumerator Blink()
-    {
-        blinkDuration = 0.05f; ;
-        blinkNumber = 3;
-        blinking = true;
-
-        // Almacenar el color original del material
-        Color colorOriginal = enemyMaterial.color;
-
-        // Cambiar el color a rojo durante el parpadeo
-        for (int i = 0; i < blinkNumber; i++)
-        {
-            enemyMaterial.color = Color.red;
-            yield return new WaitForSeconds(blinkDuration);
-
-            enemyMaterial.color = colorOriginal;
-            yield return new WaitForSeconds(blinkDuration);
-        }
-
-        blinking = false;
-    }
+    
 }

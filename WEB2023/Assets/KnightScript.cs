@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Timeline;
 using UnityEngine.UI;
 
 public class KnightScript : MonoBehaviour
@@ -16,6 +17,7 @@ public class KnightScript : MonoBehaviour
     KnightScript knight;
     RoomController r;
 
+    public int bleed=1;
     public int col = -1;
     private int minDmg = 3;
     public bool king = false;
@@ -141,6 +143,7 @@ public class KnightScript : MonoBehaviour
         knight.attack = 20;
         knight.defense = 7;
         knight.attackSpeed = 3;
+        knight.bleed = 1;
     }
 
     public void ModifyStats(int v, ItemSO inventoryItem, int quantity)

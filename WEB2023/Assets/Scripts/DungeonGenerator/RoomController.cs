@@ -50,7 +50,8 @@ public class RoomController : MonoBehaviour
     public float maxHealth=0;
     public float leftHealth = 0;
     public bool loHealth = false;
-    public bool heal = false;
+    public bool fheal = false;
+    public bool healing = false;
     public Vector2 posHealer;
     //ItemSpawner spawn;
 
@@ -100,15 +101,16 @@ public class RoomController : MonoBehaviour
                 if(cont == 1)
                 {
                     updatedRooms = true;
+                    
                 }
                 
             }
-            iHaveFinishied = true;
+            iHaveFinishied = true;        
             return;
         }
         currentLoadRoomData = loadRoomQueue.Dequeue();
         isLoadingRoom = true;
-
+        
         StartCoroutine(LoadRoomRoutine(currentLoadRoomData));
     }
     IEnumerator SpawnBossRoom()
@@ -181,6 +183,7 @@ public class RoomController : MonoBehaviour
         {
             yield return null;
         }
+        currRom = loadedRooms[0];//Esta Linea puede dar problemas
     }
     public void RegisterRoom(Room room)
     {
@@ -236,7 +239,13 @@ public class RoomController : MonoBehaviour
             {
                     //"Empty",
                     "Basic",
-                    "Basic_15"
+                    "Basic_1",
+                    "Basic_2",
+                    "Basic_3",
+                    "Basic_4",
+                    "Basic_5",
+
+                    "Basic_17"
             };
                     
         }
@@ -317,9 +326,9 @@ public class RoomController : MonoBehaviour
     {
         CameraController.instance.currRom= room;
         lastlastRoom = lastRoom;
-        auxRoom= currRom;
+        lastRoom = currRom;
         currRom = room;
-        lastRoom = auxRoom;
+        
 
         //los enemigos se quden quietos cuando la camara no este en la sala
         sumHealth();
@@ -368,7 +377,12 @@ public class RoomController : MonoBehaviour
     {
         if (lHealth()< maxHealth * 0.3)
         {
+            Debug.Log("Queda poca vida");
             loHealth = true;
+        }
+        else
+        {
+            loHealth= false;
         }
         
         return loHealth;
@@ -475,7 +489,9 @@ public class RoomController : MonoBehaviour
                     {
                         door.doorCollider.SetActive(false);
                         room.GetComponent<Collider2D>().enabled = false;
-                        heal = false;
+                        fheal = false;
+                        loHealth= false;
+                        player.GetComponent<KnightScript>().bleed = 1;
                         //spawn.SpawObject();
                     }
 
