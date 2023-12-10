@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 5272131518903584950}
   - component: {fileID: 6889727632241612487}
   m_Layer: 9
-  m_Name: Bat
+  m_Name: Bat 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b20518261c9d03c46805ebc6a9fe7ae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 41
+  life: 63
   notInRoom: 0
   range: 0
   attackRange: 0.5
