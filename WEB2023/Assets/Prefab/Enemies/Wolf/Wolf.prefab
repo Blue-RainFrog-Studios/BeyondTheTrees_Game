@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeCharge: 1.5
-  TimeEating: 0
+  TimeEating: 4
   animator: {fileID: 6498803744283796586}
   itemToChase: {fileID: 0}
 --- !u!114 &3946693732341454511
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e237d50db23ccfc4984fd4a15b6f6a82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 0
+  life: 100
   notInRoom: 0
   range: 0
   attackRange: 2
@@ -226,8 +226,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.068017244, y: 0}
-  m_Size: {x: 2.49, y: 1.24}
+  m_Offset: {x: 0.16848302, y: -0.16744292}
+  m_Size: {x: 1.686274, y: 1.686274}
   m_Direction: 0
 --- !u!114 &2539975288948852186
 MonoBehaviour:
