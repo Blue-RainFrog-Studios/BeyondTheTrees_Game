@@ -53,22 +53,33 @@
   * Arte conceptual
      * Turn arround personaje
   * Sprites	
-  * Banda Sonora	
+  * Banda Sonora
+    
 5. ALCANCE	
     * Público objetivo
-       * ¿Quien va a comprar el juego?
-       * ¿Quien va a jugar el juego?
+       * ¿Quién va a comprar el juego?
+       * ¿Quién va a jugar el juego?
     * Publicidad y redes sociales	
     * Modelo de Negocio
        * Mapa de Empatía
        * ToolBox
        * Model Canvas
     * Planes de monetización
-6. Análsis MDA
+      
+6. ANÁLISIS MDA
    * Mecánicas
    * Dinámicas
    * Estéticas
-7. CAMBIOS	
+     
+7. POST MORTEM
+   * Grupal
+      * ¿Qué ha ido bien?
+      * Flujo de correcciones
+      * Feedback externo
+      * ¿Qué se podría haber mejorado?   
+   * Individuales
+     
+8. CAMBIOS	
    
 
 ### INTRODUCCIÓN
@@ -744,6 +755,38 @@ A lo largo de una partida te suelen aparecer un conjunto de puzzles, pero no tod
 Según el paso de niveles vas encontrándote con enemigos con propiedades y comportamientos distintos y los enemigos finales que son únicos por nivel.
 #### Coleccionismo
 En Beyond The Trees hay muchos objetos que no aparecen en la primera iteración del jugador con el videojuego. Tiene que volver a jugar y con el oro obtenido desbloquear nuevos ítems. En definitiva, hay que ganar y volver a jugar para poder desbloquear todos los objetos.
+
+
+## POST MORTEM
+### Grupal
+#### ¿Qué ha ido bien?
+El desarrollo de nuestro juego fue un viaje impulsado por la sincronización y la innovación. Desde el principio, implementamos una estrategia de trabajo en paralelo, permitiendo que los equipos de desarrollo se centrarán en sus áreas específicas sin perder de vista la visión global, o reparto de trabajo mientras algunos hacían enemigos otros mejoraron los escenarios y puzles. 
+
+Durante la primera entrega al ser muy repartido y no estar junto no era necesaria mucha comunicación sin embargo en la segunda al necesitar luz verde de algunos departamentos, las 'dailies' se convirtieron en nuestro pilar, sesiones diarias que no solo mantuvieron a todos informados, sino que fomentaron una comunicación abierta y fluida entre los equipos de recursos humanos y gestión humana.
+
+La velocidad de las tareas fue un desafío que abordamos con determinación, estableciendo procesos eficientes que no comprometieron la calidad del producto final, somos muy rápidos con el lead time y nos permite una agilidad de decisión entre tareas. Se propusieron muchos puzzles y desde el departamento de programadores se pensaba que sería imposible abordar tal tarea, sin embargo al final salió adelante.
+
+En retrospectiva, nuestra capacidad para equilibrar la gestión humana, la comunicación efectiva y la ejecución técnica en Unity fue clave para lograr un juego que no solo cumplió con nuestras expectativas, sino que también trascendió con ideas innovadoras. Este proceso no solo fue un logro en términos de desarrollo, sino también un testimonio del poder del trabajo en equipo y la dedicación para convertir ideas en realidades jugables.
+
+#### Flujo de correciones
+Los puzzles tuvieron un buen desempeño en general, cumplimos con nuestras promesas en su mayoría, pero varios de ellos carecen de la fuerza y el detalle que esperábamos. Aunque anticipamos un impacto mayor, parece que no capturaron la atención del jugador promedio como habíamos previsto.
+
+Una de las decisiones acertadas fue organizar equipos pequeños de dos o cuatro personas, lo que agilizó enormemente nuestras tareas. Javi en la entrega final estaba casi en 4 ramas(enemigos, arte de enemigos, generación escenario, items etc…)
+
+Distribuir recursos significativos al desarrollo de los enemigos fue una elección acertada debido a la complejidad de esta sección. Sin embargo, esta priorización dejó otras áreas, como la tienda, en manos exclusivas de Luis, confiando bastante en su gestión.
+Inicialmente, utilizamos ampliamente Trello, lo que fue un aspecto positivo en la primera etapa. Aunque en la segunda entrega no recurrimos tanto a esta herramienta, compensamos esta ausencia con reuniones diarias más frecuentes.
+En cuanto al GDD, en algún momento nos dejamos llevar por la emoción y añadimos mucho contenido sin evaluar su viabilidad realista.
+
+#### Feedback Externo
+
+
+#### ¿Qué se podría haber mejorado?
+Somos conscientes de varios desafíos que enfrentamos en el desarrollo. Los tiempos fueron un factor crucial; algunas tareas carecían de la fuerza necesaria. Además, la transición entre tareas resultó lenta, ya que requería la aprobación de otros equipos. Esto llevó a que varias tareas se quedaran sin completar, principalmente debido a nuestra falta de agilidad. 
+
+Aunque nos organizamos eficientemente al principio, tareas enormes como la generación de escenarios, enemigos, jefes y la tienda representaron desafíos significativos. La interdependencia entre estos conceptos complejos a menudo obstaculizaban el avance, ya que no podíamos probar elementos como escenarios sin tener los enemigos o jefes correspondientes preparados.
+
+En cuanto a la intención inicial de utilizar una API proporcionada por el profesor para el comportamiento de personajes, tuvo impactos mixtos. Si bien facilitó la integración de muchos jefes y algunos enemigos, al ser una versión experimental, causó numerosos problemas en la construcción del juego y la adaptación de otros enemigos. A pesar de estos contratiempos, esta API sigue siendo valiosa, ya que resulta cómoda y contribuye significativamente al aprendizaje relacionado con el comportamiento de personajes en nuestra asignatura.
+
 
 ## CAMBIOS
 El documento de diseño se encuentra en la versión 1.1, este apartado servirá para comunicar los cambios hechos en futuras versiones.
