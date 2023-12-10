@@ -240,6 +240,7 @@ public class RoomController : MonoBehaviour
                     //"Empty",
                     "Basic",
                     "Basic_1",
+                    "Basic_1 1",
                     "Basic_2",
                     "Basic_3",
                     "Basic_4",
@@ -251,7 +252,6 @@ public class RoomController : MonoBehaviour
                     "Basic_15",
                     "Basic_16",
                     "Basic_17",
-                    "Basic_18",
 
                     //"Basic_17"
             };
@@ -267,6 +267,9 @@ public class RoomController : MonoBehaviour
                 "Basic2_4",
                 "Basic2_5",
                 "Basic2_6",
+                "Basic2_7",
+                "Basic2_8",
+                "Basic2_9",
             };
         }
         else if (player.GetComponent<PlayerMovementInputSystem>().nivel >= 2)
@@ -276,6 +279,16 @@ public class RoomController : MonoBehaviour
                 //"Empty",
                 //"Basic1",
                 "Basic3",
+                "Basic3_1",
+                "Basic3_2",
+                "Basic3_3",
+                "Basic3_4",
+                "Basic3_5",
+                "Basic3_6",
+                "Basic3_7",
+                "Basic3_8",
+                "Basic3_9",
+                "Basic3_10"
             };
         }
         if (player.GetComponent<PlayerMovementInputSystem>().nivel == 0)
@@ -284,9 +297,14 @@ public class RoomController : MonoBehaviour
             {
 
                 "King1",
+                "King1_1",
+                "King1_2",
+                "King1_3",
+                "King1_4",
                 "SkullPuzzle",
                 "Ardilla",
                 "RapidoQueSeQueman 0",
+                "RapidoQueSeQueman 0_1",
                 "Lobo",
                 "BasicCastle",
                 "BasicHouse"
@@ -299,8 +317,11 @@ public class RoomController : MonoBehaviour
             {
 
                 "King2",
+                "King2_1",
+                "King2_2",
                 "SkullPuzzle1",
                 "RapidoQueSeQueman 1",
+                "RapidoQueSeQueman 1_1",
                 "Ardilla1",
 
             };
@@ -311,8 +332,11 @@ public class RoomController : MonoBehaviour
             {
                 
                 "King3",
+                "King3_1",
+                "King3_1",
                 "SkullPuzzle2",
                 "RapidoQueSeQueman 2",
+                "RapidoQueSeQueman 2_1",
                 "Ardilla2",
                 
             };

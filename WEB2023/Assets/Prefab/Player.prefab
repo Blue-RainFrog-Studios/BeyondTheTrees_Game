@@ -615,7 +615,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1156985873014526917}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1, y: 0.05, z: 0}
+  m_LocalPosition: {x: -1, y: -2, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -832,8 +832,6 @@ MonoBehaviour:
   minAttack: 5
   maxSpeed: 10
   minSpeed: 2
-  maxAttackSpeed: 6
-  minAttackSpeed: 1
 --- !u!95 &2472352434232250267
 Animator:
   serializedVersion: 5
@@ -1265,7 +1263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a642bfd1325e7eb40a33fa8688d1cc27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombre: 
+  nombre: Invitado
   texto: {fileID: 1272554201272834293}
   sexo: 0
 --- !u!114 &372513030826480231
@@ -4136,7 +4134,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Name
+  m_text: Invitado
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c41a1a6355e104641857672414d4b012, type: 2}
   m_sharedMaterial: {fileID: -7099467593743831185, guid: c41a1a6355e104641857672414d4b012, type: 2}

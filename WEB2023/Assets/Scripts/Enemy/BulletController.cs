@@ -48,7 +48,7 @@ public class BulletController : MonoBehaviour
         }
         if(collision.CompareTag("Prop"))
         {
-            Debug.Log("COÑETE");
+            
             Destroy(gameObject);
         }
        
