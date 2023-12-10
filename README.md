@@ -380,7 +380,7 @@ Los niveles se dividen en 4 categorías: niveles de desafío, niveles de jefe, n
 
 	      ![bn5][bn5]
 
-   - Recoge las bellotas: en el nivel aparecerán un número de bellotas (entre 4-5 bellotas). El jugador deberá recoger las bellotas y dejarlas en un pedestal de piedra. Los enemigos podrán coger las bellotas y para recuperarlas deberás matarlos, una vez muertos las bellotas caen al suelo. Si el jugador no es suficientemente rápido en matar a los enemigos con bellotas dentro estos se comerán las bellotas, impidiendo que el jugador obtenga su recompensa. Si el jugador consigue poner las bellotas en el pedestal se le curará el 50% de la vida actual.
+   - Recoge las bellotas: en el nivel aparecerán un número de bellotas (entre 4-5 bellotas). El jugador deberá recoger las bellotas y dejarlas en un pedestal de piedra. Los enemigos podrán coger las bellotas y no se podrán recuperar. Si el jugador no es suficientemente rápido en matar a los enemigos con bellotas dentro estos se comerán las bellotas, impidiendo que el jugador obtenga su recompensa. Si el jugador consigue poner las bellotas en el pedestal se le curará el 50% de la vida actual.
       - Objetivo: recoger las bellotas y dejarlas en el pedestal
       - Recompensa: una vez dejadas las bellotas en el pedestal, este te proporcionará vida
       - Enemigos: ardillas, duendes y duendes mágicos
@@ -770,6 +770,8 @@ Se ha añadido el análisis MDA del videojuego.
 ### Items:
 Se han metido items que además de sumar estadísticas las restan.
 
+### Puzle ardilla:
+Si una ardilla se come una bellota y se mata, esta ya no la soltará, el jugador la habrá perdido para siempre y no podrá completar el puzle.
 
 ## Enlace de lector al GDD en Google docs
 https://docs.google.com/document/d/1l6Qfy3xQ0anlrgdIv_5JKlhzeY_67oTvJoi1X06fd6Q/edit?usp=sharing
