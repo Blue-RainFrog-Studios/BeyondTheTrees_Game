@@ -83,19 +83,23 @@ public class Enemy : MonoBehaviour
         blinkNumber = 3;
         blinking = true;
 
-        // Almacenar el color original del material
-        Color colorOriginal = enemyMaterial.color;
-
-        // Cambiar el color a rojo durante el parpadeo
-        for (int i = 0; i < blinkNumber; i++)
+        if(enemyMaterial != null) 
         {
-            enemyMaterial.color = Color.red;
-            yield return new WaitForSeconds(blinkDuration);
+            // Almacenar el color original del material
+            Color colorOriginal = enemyMaterial.color;
 
-            enemyMaterial.color = colorOriginal;
-            yield return new WaitForSeconds(blinkDuration);
+            // Cambiar el color a rojo durante el parpadeo
+            for (int i = 0; i < blinkNumber; i++)
+            {
+                enemyMaterial.color = Color.red;
+                yield return new WaitForSeconds(blinkDuration);
+
+                enemyMaterial.color = colorOriginal;
+                yield return new WaitForSeconds(blinkDuration);
+            }
+
+            blinking = false;
         }
-
-        blinking = false;
     }
+       
 }
