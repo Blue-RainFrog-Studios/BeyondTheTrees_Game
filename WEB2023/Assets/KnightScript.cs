@@ -52,10 +52,10 @@ public class KnightScript : MonoBehaviour
     private int minSpeed = 6;
 
     [SerializeField]
-    private float maxAttackSpeed = 0.3f;
+    private const float maxAttackSpeed = 0.3f;
 
     [SerializeField]
-    private float minAttackSpeed = 0.6f;
+    private const float minAttackSpeed = 0.6f;
 
     public KnightScript() 
     {
@@ -154,24 +154,37 @@ public class KnightScript : MonoBehaviour
         defense += v * inventoryItem.Defense;  //Este no hace falta revisarlo porque ya se revisa cuando se resta daño en "ReceiveAttack()"
 
         GetComponent<PlayerMovementInputSystem>().speed += v * inventoryItem.Speed;
+        speed += v * inventoryItem.Speed;
 
         GetComponent<PlayerMovementInputSystem>().shoteRate -= v * inventoryItem.AttackSpeed;
+        attackSpeed -= v * inventoryItem.AttackSpeed;
         
         
         GetComponent<CoinCounter>().ExpeditionMoneyChanger(v * (inventoryItem.Value * quantity));
 
-        if (GetComponent<PlayerMovementInputSystem>().speed > maxSpeed)
+        if (GetComponent<PlayerMovementInputSystem>().speed > maxSpeed) { 
             GetComponent<PlayerMovementInputSystem>().speed = maxSpeed;
+            speed = maxSpeed;
+        }
 
         else if (GetComponent<PlayerMovementInputSystem>().speed < minSpeed)
+        {
             GetComponent<PlayerMovementInputSystem>().speed = minSpeed;
+            speed = minSpeed;
+        }
 
         if (GetComponent<PlayerMovementInputSystem>().shoteRate < maxAttackSpeed)
+        {
             GetComponent<PlayerMovementInputSystem>().shoteRate = maxAttackSpeed;
+            attackSpeed = maxAttackSpeed;
+        }
 
         else if (GetComponent<PlayerMovementInputSystem>().shoteRate > minAttackSpeed)
+        {
             GetComponent<PlayerMovementInputSystem>().shoteRate = minAttackSpeed;
-
+            attackSpeed = minAttackSpeed;
+        }
+            
         if (attack > maxAttack)
             attack = maxAttack;
 

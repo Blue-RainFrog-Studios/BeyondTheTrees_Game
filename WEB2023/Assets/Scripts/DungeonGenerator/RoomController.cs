@@ -239,11 +239,19 @@ public class RoomController : MonoBehaviour
             {
                     //"Empty",
                     "Basic",
-                    //"Basic_1",
-                    //"Basic_2",
-                    //"Basic_3",
-                    //"Basic_4",
-                    //"Basic_5",
+                    "Basic_1",
+                    "Basic_2",
+                    "Basic_3",
+                    "Basic_4",
+                    "Basic_5",
+                    "Basic_11",
+                    "Basic_12",
+                    "Basic_13",
+                    "Basic_14",
+                    "Basic_15",
+                    "Basic_16",
+                    "Basic_17",
+                    "Basic_18",
 
                     //"Basic_17"
             };
@@ -275,11 +283,13 @@ public class RoomController : MonoBehaviour
             puzzleRooms = new string[]
             {
 
-                //"King1",
-                //"SkullPuzzle",
-                //"RapidoQueSeQueman",
+                "King1",
+                "SkullPuzzle",
                 "Ardilla",
-                //"RapidoQueSeQueman 2",
+                "RapidoQueSeQueman 0",
+                "Lobo",
+                "BasicCastle",
+                "BasicHouse"
             };
 
         }
@@ -304,6 +314,7 @@ public class RoomController : MonoBehaviour
                 "SkullPuzzle2",
                 "RapidoQueSeQueman 2",
                 "Ardilla2",
+                
             };
         }
         //string[] puzzleRooms = new string[]
