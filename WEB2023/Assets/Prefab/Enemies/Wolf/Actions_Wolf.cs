@@ -210,21 +210,25 @@ public class Actions_Wolf : MonoBehaviour
         //WolfTransform.position = Vector2.MoveTowards(WolfTransform.position, playerTransform.transform.position, GetComponent<WolfController>().speed * Time.deltaTime);
 
         navMeshAgent.SetDestination(targetPosition);
-        
+
+
+
+        if (itemToChase == null)
+        {
+            GetComponent<FSMWolf>().LoseItem();
+            Debug.Log("Perdiste el ITEEEEM GUAAAAAAAAAAA JAJAJAJAJAJAJAJAJA");
+        }
+
         if (ComprobarProximidad())
         {
             return Status.Success;
         }
+        
         else
         {
             return Status.Running;
         }
-        if (itemToChase == null)
-        {
-            GetComponent<FSMWolf>().LoseItem();
-            Debug.Log("Perdiste el ITEEEEM GUASAAAAAAAAAA JAJAJAJAJAJAJAJAJA");
-        }
-
+        //
     }
     #endregion
 

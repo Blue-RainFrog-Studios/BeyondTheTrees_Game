@@ -9,11 +9,15 @@ public class All_Items_Database : ScriptableObject
 {
     public List<ItemSO> All_items;
     public List<ItemSO> Shop_Items;
+    public List<UpgradeSO> Shop_Potions_Upgrades;
+    public List<UpgradeSO> Shop_Inventory_Upgrades;
     public List<ItemSO> Run_Items;
     public List<ItemSO> Run_Common_Items;
     public List<ItemSO> Run_Rare_Items;
     public List<ItemSO> Run_Epic_Items;
     public List<ItemSO> Run_Legendary_Items;
+
+    public ItemSO PotionToSpawn;
 
 
     public int All_Items_Count
