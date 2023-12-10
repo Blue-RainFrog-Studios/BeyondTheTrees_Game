@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ee3bfc8b9d47a44987f21c422ab335, type: 3}
   m_Name: PU_DragonFly
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: 
-  <Descrption>k__BackingField: 
-  <UpgradeImage>k__BackingField: {fileID: 0}
-  <ShopValue>k__BackingField: 0
+  <Name>k__BackingField: "Tarro con lib\xE9lula"
+  <Descrption>k__BackingField: "El gremio te proporcionar\xE1 tarros con lib\xE9lula
+    al inico de cada capa.\nSon muy dif\xEDciles de atrapar, pero valen la pena.
+    Recuperar\xE1s mucha salud al consumirla."
+  <UpgradeImage>k__BackingField: {fileID: -1491376607, guid: 0d6e7eb0117b0dd42b3ef1b04224dbec, type: 3}
+  <ShopValue>k__BackingField: 800
   <IsPurchased>k__BackingField: 0
   <InventoryUpgrade>k__BackingField: 0
-  <PotionsUpgrade>k__BackingField: 0
-  <UpgradeTier>k__BackingField: 0
+  <PotionsUpgrade>k__BackingField: 1
+  <UpgradeTier>k__BackingField: 2

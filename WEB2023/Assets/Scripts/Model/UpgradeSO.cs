@@ -27,6 +27,8 @@ public abstract class UpgradeSO : ScriptableObject
     [field: SerializeField]
     public bool PotionsUpgrade { get; set; }
 
+
+
     [field: SerializeField]
     public int UpgradeTier { get; set; }
 }
