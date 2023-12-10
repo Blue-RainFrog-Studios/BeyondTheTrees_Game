@@ -24,6 +24,7 @@ public class KnightScript : MonoBehaviour
     public bool bush = false;
     public int health { get; set; }
     public int totalHealth { get; set; }
+    [SerializeField]
     public float speed { get; set; }
     [SerializeField]
     public int attack { get; set; }
@@ -39,16 +40,16 @@ public class KnightScript : MonoBehaviour
     private bool inmune = false;
 
     [SerializeField]
-    private int maxAttack = 40;
+    private int maxAttack = 60;
 
     [SerializeField]
     private int minAttack = 5;
 
     [SerializeField]
-    private int maxSpeed = 10;
+    private int maxSpeed = 20;
 
     [SerializeField]
-    private int minSpeed = 2;
+    private int minSpeed = 6;
 
     [SerializeField]
     private int maxAttackSpeed = 6;
@@ -60,7 +61,7 @@ public class KnightScript : MonoBehaviour
     {
         totalHealth = 50;
         health = 50;
-        speed = 6;
+        speed = 10;
         attack = 20;
         defense = 7;
         attackSpeed = 3;
@@ -139,7 +140,7 @@ public class KnightScript : MonoBehaviour
     public void ResetStats()
     {
         knight.health = knight.totalHealth;
-        knight.speed = 6;
+        knight.speed = 10;
         knight.attack = 20;
         knight.defense = 7;
         knight.attackSpeed = 3;
