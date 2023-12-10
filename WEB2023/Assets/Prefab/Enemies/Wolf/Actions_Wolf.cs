@@ -9,7 +9,7 @@ using UnityEngine.AI;
 using UnityEngine.Analytics;
 using UnityEngine.UIElements;
 
-public class Actions_Wolf : MonoBehaviour
+public class Actions_Wolf : Enemy
 {
 
     #region Varibles
@@ -18,10 +18,12 @@ public class Actions_Wolf : MonoBehaviour
     private Transform WolfTransform;
     private float distanciaUmbral;
     private bool ended;
+    private bool endedSearch;
     private bool endedDazed;
     private NavMeshAgent navMeshAgent;
 
     [SerializeField] private float TimeCharge;
+    private float TimeSearching =1.5f;
     [SerializeField] private float TimeEating;
     [SerializeField] private Animator animator;
     [SerializeField] private GameObject itemToChase;
@@ -48,6 +50,12 @@ public class Actions_Wolf : MonoBehaviour
     }
     private void Update()
     {
+        if (!notInRoom)
+        {
+            
+            GetComponent<NavMeshAgent>().enabled = true;
+        }
+
         direction = targetPosition - WolfTransform.position;
         
     }
@@ -161,8 +169,6 @@ public class Actions_Wolf : MonoBehaviour
         }
         if (ended)
         {
-
-
 
             return Status.Success;
         }
@@ -290,9 +296,9 @@ public class Actions_Wolf : MonoBehaviour
 
         targetPosition = playerTransform.position;
 
+        StartCoroutine(WaitSeconds(TimeSearching));
 
 
-     
 
         /*
         if (playerTransform.position.x > WolfTransform.position.x)
@@ -311,8 +317,12 @@ public class Actions_Wolf : MonoBehaviour
    
     public Status UpdateMethodBiteAttack()
     {
+        Debug.Log("estoy mordiedno");
         //move right for 2 seconds
         //coroutine that moves the object to the right for 2 seconds
+
+        targetPosition = playerTransform.position;
+
         if (direction.x > 0.0f)
         {
             if (direction.y + 1.0f > direction.x)
@@ -332,14 +342,16 @@ public class Actions_Wolf : MonoBehaviour
                 animator.Play("WolfAtackLeft");
         }
         WolfTransform.position = Vector2.MoveTowards(WolfTransform.position, targetPosition, GetComponent<WolfController>().speedJump * Time.deltaTime); //el salto
-        if (collisionDetected || WolfTransform.position.x == targetPosition.x && WolfTransform.position.y == targetPosition.y)
+        
+        if (collisionDetected || WolfTransform.position.x == targetPosition.x && WolfTransform.position.y == targetPosition.y || endedSearch)
         {
             GetComponent<Knockback>().strength = 10f;
             StopAllCoroutines();
             collisionDetected = false;
-            
+          
             return Status.Success;
         }
+
         ended = true;
         return Status.Running;
 
@@ -403,8 +415,10 @@ public class Actions_Wolf : MonoBehaviour
     #region Courutines
     IEnumerator WaitSeconds(float Time)
     {
+        endedSearch = false;
         yield return new WaitForSeconds(Time);
         ended = true;
+        endedSearch = true;
     }
 
 
@@ -463,4 +477,5 @@ public class Actions_Wolf : MonoBehaviour
             return false;
         }
     }
+
 }

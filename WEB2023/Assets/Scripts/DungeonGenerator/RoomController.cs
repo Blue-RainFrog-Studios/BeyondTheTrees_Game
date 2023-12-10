@@ -273,8 +273,9 @@ public class RoomController : MonoBehaviour
                 //"King1",
                 //"SkullPuzzle",
                 //"RapidoQueSeQueman",
-                "Ardilla",
+                //"Ardilla",
                 //"RapidoQueSeQueman 2",
+                "Lobo",
             };
 
         }
@@ -299,6 +300,7 @@ public class RoomController : MonoBehaviour
                 "SkullPuzzle2",
                 "RapidoQueSeQueman 2",
                 "Ardilla2",
+                
             };
         }
         //string[] puzzleRooms = new string[]
