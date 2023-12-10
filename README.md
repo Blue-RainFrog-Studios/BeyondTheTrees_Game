@@ -804,72 +804,72 @@ Se podrían haber mejorado temas de plazos, tipo juntar las cosas antes y ver c�
 Compartimentar el control de los enemigos.
 
 #### Persona 2
-¿Que ha ido bien?
-En general velocidad de tarea y resolución de conflictos. Si no recuerdo mal nuestro lead time no era más de 3 días teniendo más agilidad en cambiar de tareas y scopes (esto no funciona o se entiende mal, bien pues dejalo haz esto o junta esto otro). Buena idea usar tutoriales para que no tenga excesos problemas más adelante(dio problemas)
-Flujo de correcciones
+**¿Que ha ido bien?**
+En general velocidad de tarea y resolución de conflictos. Si no recuerdo mal nuestro lead time no era más de 3 días teniendo más agilidad en cambiar de tareas y scopes (esto no funciona o se entiende mal, bien pues dejalo haz esto o junta esto otro). Buena idea usar tutoriales para que no tenga excesos problemas más adelante(dio problemas).
+**Flujo de correcciones**
 A un nivel realista, al principio se prometen muchos puzzles y otras mecánicas que no sabíamos si llegarían a buen puerto. Somos soñadores algunos de nosotros pero por lo general los programadores están más en tierra y explican la realidad posible de entrega.
 Decisiones acertadas, repartimos en micro grupos a menudo de dos o cuatro, con muchísima comunicación, la tarea en sí una vez entregada la termina la que empezó, si haces el código de una ardilla también terminas el arte.
 por el lado negativo, siendo lo más positivo del aspecto, no todos nosotros somos super genios de programación y el inconveniente que mencione de hacer microgrupos de la parte positiva su negativa seria demasiada libertad, por ejemplo poca optimizacion de codigo, como generamos salas(no es dinámico, no son prefabs, etc), cómo gestionamos el POO de los enemigos (no abstracto).
-¿Qué se podría haber mejorado?
+**¿Qué se podría haber mejorado?**
 Bueno para empezar como mencionado anteriormente, ser mejores programadores, pero bueno somos estudiantes, aunque en cuarto ya, triste sea que sea quizás nuestra primera entrega de un juego.
 Una dirección artística. No ser mejor dibujante, sino saber encajar y cohesionar un todo.
 Por mi parte no me voy a quejar porque estrictamente hablando no por parte del arte de este juego, ya que tome la decision de separarme para hacer yo algo por mi cuenta.
 
 #### Persona 3
-¿Que ha ido bien?
+**¿Que ha ido bien?**
 Lo que mejor ha ido para mi, ha sido la gestión de todo lo que tiene que ver con el proyecto, tanto la gestión humana (reparto de tareas), como la del tiempo.
 La elección de la API ha sido clave para el comportamiento de enemigos y la de dar la última semana para la elaboración de puzzles fue clave.
 
-Flujo de correcciones
+**Flujo de correcciones**
 Como he dicho lo de la última semana de puzzles, adelantando así la finalización del flujo principal del juego (generación de escenarios, enemigos, básicos, stats, inventario, flujo de pantallas, jugador).
 Por otro lado, creo que fue, para mí, una decisión errónea la de hacer la mayoría de los enemigos para la beta (los bosses eran necesarios) mientras que podriamos a ver asignado a otra persona más en la mecánica de la tienda para que hubiese quedado más pulida (al final está bien).
 
-¿Qué se podría haber mejorado?
+**¿Qué se podría haber mejorado?**
 En general el tiempo. Entregamos el juego a 20 min y estuvimos un putisimo dia entero en Discord pero bueno.
 
 #### Persona 4
-¿Que ha ido bien?
+**¿Que ha ido bien?**
 Dailys y comunicación: Una de las cosas que más orden han aportado al equipo son las reuniones daily, son las que realmente se ve en que está trabajando el equipo y sobretodo las opiniones y reacciones de lo que están haciendo.
 Entorno de programación: Unity es sin duda la herramienta predilecta para estudios indie, es una herramienta lo suficientemente potente para hacer un juego bueno y tiene una cantidad absurda de documentación y tutoriales. Es muy user friendly y aunque más de una vez se ha crasheado nunca ha sido una complicación mayor.
 	
-Flujo de correcciones
+**Flujo de correcciones**
 Organización: Pese que al principio la organización se planteó muy estrictamente, a mediados del desarrollo todo fue bastante caótico ya que nadie miraba trello o la información de tareas estaba en diferentes sitios, en muchos momentos algunos del equipo no sabían qué hacer mientras otros estaban hasta arriba de trabajo. Afortunadamente tomamos un rumbo mucho más personal haciendo las dailys en clase más profesionales y todo pillo un rumbo más adecuado
 GDD desorbitado: Al principio del GDD teníamos muchas ideas que eran imposibles de implementar en 2 meses. Afortunadamente a mediados del desarrollo se decidió que cosas deben de estar implementadas para la beta y cuales se descartaron indefinidamente
 
-¿Qué se podría haber mejorado?
+**¿Qué se podría haber mejorado?**
 API comportamiento: En un principio del proyecto se decidió que los enemigos se hiciesen más adelante con la API de la asignatura de comportamiento de personajes debido a procedimiento a dia de hoy no tendriamos ningun enemigo terminado al 100%
 Equipo: En el equipo ha hecho falta una persona que hiciera arte. Mucho.
 
 #### Persona 5
-¿Que ha ido bien?
+**¿Que ha ido bien?**
 Los objetivos básicos que nos hemos marcado se han cumplido.
 Nos hemos sabido coordinar bien y debido a que no éramos herméticos con nuestras partes nos hemos podido ayudar en cada cosa que hacíamos lo cual ha evitado que estemos demasiado tiempo solucionando un problema.
 Las bases del juego son firmes, hemos conseguido crear unos cimientos muy fuertes sobre los que construir el juego.
 El tratado de datos a pesar de que llevo tiempo se ha convertido en el inicio de persistencia de memoria y un acceso sencillo y rápido a la información del juego.
 
-Flujo de correcciones
+**Flujo de correcciones**
 Debería haber sido más decidido a la hora de coger tareas, la duda a la hora de con qué tarea seguir o con que podía ayudar.
 La tienda y los datos fue un vaivén de decisiones, no elegí bien el video tutorial, no supe que rumbo coger y tuve que virar después de haber perdido 5 días de trabajo, haber intentado implementar un paquete, en general trabajo que al final no sirvió de nada, por suerte se cambió el rumbo y el resultado es dinámico, fácilmente escalable y de paso se introdujo la memoria persistente
 
-Feedback o retroalimentación externo
+**Feedback o retroalimentación externo**
 La gente no lee el tutorial.
 
-¿Qué se podría haber mejorado?
+**¿Qué se podría haber mejorado?**
 El flujo de trabajo, en el sentido de que se ordenen mejor las dependencia de las tareas.
 Las decisiones a la hora de dónde buscar referencias.
 
 #### Persona 6
-Qué ha ido bien
+**Qué ha ido bien**
 Nos hemos organizado bastante bien, la repartición de tareas ha hecho que en todo momento todo el mundo tuviese algo que hacer. Somos un equipo trabajado, los tiempos los hemos gestionado bien y hay buen ambiente (tanto de trabajo como de compañerismo).
 
 
-Flujo de correcciones
+**Flujo de correcciones**
 Ser más constantes, creo que encargar tareas a cada uno fue acertado pero creo también que a veces éramos grupos grandes de personas y al final había algunos que nos quedamos mirando como otros trabajaban cuando podríamos haber avanzado más por nuestra cuenta. Creo que algunos van SOBRADÍSIMOS en algunos roles que desempeñan otros que no lo están tanto y creo que sí que se podría avanzar más rápido en ciertas partes si repartimos las tareas mejor (que cada uno haga las tareas que se le dan mejor).
 
-Feedback externo
+**Feedback externo**
 Por lo general hay gente que se encuentra un poco perdida (no sabe qué hacer en ciertos momentos o no saben qué hacen ciertos elementos) o piensa que algunas cosas son injustas.
 	
-Qué se podría haber mejorado
+**Qué se podría haber mejorado**
 Haber puesto fechas a las cosas antes, haber repartido mejor algunas tareas (tanto por habilidad para hacerlas como por gente que se queda mirando).
 
 ## CAMBIOS
