@@ -1667,7 +1667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc4df2b6977700d4eacc0adf06b4751e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  invButton: {fileID: 0}
+  invButtonPanel: {fileID: 0}
   inventory: {fileID: 3010520855084953955}
   invActionPanel: {fileID: 0}
 --- !u!1 &9072494693164606337
