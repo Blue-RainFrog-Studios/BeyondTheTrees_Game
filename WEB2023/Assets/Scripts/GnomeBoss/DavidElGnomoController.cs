@@ -86,7 +86,7 @@ public class DavidElGnomoController : MonoBehaviour
     public void RecieveDamage(float damage)
     {
 
-        if (!GetComponent<ActionsDavidElGnomo>().invulnerable || !GetComponent<ActionsDavidElGnomoNoHat>().invulnerable)
+        if (!GetComponent<ActionsDavidElGnomo>().invulnerable && !GetComponent<ActionsDavidElGnomoNoHat>().invulnerable)
         {
             //random between 1 and 2
             int random = UnityEngine.Random.Range(1, 3);
@@ -117,22 +117,10 @@ public class DavidElGnomoController : MonoBehaviour
                 GetComponent<FMSDavidElGnomo>().DieGnome();
             }
         }
-        else
-        {
-            int random = UnityEngine.Random.Range(1, 3);
-            if (random == 1)
-            {
-                metalicS.Play();
-            }
-            else if (random == 2)
-            {
-                metalicS2.Play();
-            }
-        }
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!GetComponent<ActionsDavidElGnomo>().invulnerable)
+        if (!GetComponent<ActionsDavidElGnomo>().invulnerable && !GetComponent<ActionsDavidElGnomoNoHat>().invulnerable)
         {
             if (collision.gameObject.CompareTag("Player"))
             {

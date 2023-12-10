@@ -52,7 +52,8 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
         GetComponent<ActionsDavidElGnomo>().GnomeHat.SetActive(false);
         OnWalkAttack?.Invoke(this, EventArgs.Empty);
         screenShake = GetComponent<ScreenShake>();
-        GetComponent<ActionsDavidElGnomo>().StopAllCoroutines();    
+        StopAllCoroutines();
+        GetComponent<ActionsDavidElGnomo>().StopAllCoroutines();
         this.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         animator.Play("HatFall");
 
@@ -157,6 +158,7 @@ public class ActionsDavidElGnomoNoHat : MonoBehaviour
     public void StartMethodGnomeModeNoHat()
     {
         StopAllCoroutines();
+        GetComponent<ActionsDavidElGnomo>().StopAllCoroutines();
         invulnerable = true;
         animator.Play("IdleNoHat");
         TiredNoHat.SetActive(false);
