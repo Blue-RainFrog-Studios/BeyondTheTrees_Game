@@ -4363,6 +4363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 4358039079510067195}
+  inventoryBtn: {fileID: 0}
 --- !u!114 &2396587320709909508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4641,7 +4642,6 @@ GameObject:
   - component: {fileID: 682585936797466555}
   - component: {fileID: 769456284254970177}
   - component: {fileID: 3193008139304166761}
-  - component: {fileID: 1730026032196211900}
   m_Layer: 10
   m_Name: InventoryBtn
   m_TagString: Untagged
@@ -4751,19 +4751,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1730026032196211900
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6999400746236989495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fec526dc4f106e4daaf726b45d07591, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventory: {fileID: 4358039079510067195}
 --- !u!1 &7004198159331531610
 GameObject:
   m_ObjectHideFlags: 0
@@ -5171,6 +5158,7 @@ GameObject:
   - component: {fileID: 2364767063571611533}
   - component: {fileID: 7421005791984823362}
   - component: {fileID: 3538977784280870642}
+  - component: {fileID: 7749847583594831772}
   m_Layer: 10
   m_Name: InventarioBoton
   m_TagString: Untagged
@@ -5237,6 +5225,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7749847583594831772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8624993977969632165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fec526dc4f106e4daaf726b45d07591, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 4358039079510067195}
+  inventoryBtn: {fileID: 3193008139304166761}
 --- !u!1 &8835213782275455546
 GameObject:
   m_ObjectHideFlags: 0
@@ -7264,9 +7266,17 @@ PrefabInstance:
       value: -39.926003
       objectReference: {fileID: 0}
     - target: {fileID: 4792027716140945197, guid: a68b9fc9a0fe09d49879213d453f29f0, type: 3}
+      propertyPath: invButton
+      value: 
+      objectReference: {fileID: 3193008139304166761}
+    - target: {fileID: 4792027716140945197, guid: a68b9fc9a0fe09d49879213d453f29f0, type: 3}
       propertyPath: invActionPanel
       value: 
       objectReference: {fileID: 8076079403061358545}
+    - target: {fileID: 4792027716140945197, guid: a68b9fc9a0fe09d49879213d453f29f0, type: 3}
+      propertyPath: invButtonPanel
+      value: 
+      objectReference: {fileID: 8624993977969632165}
     - target: {fileID: 4834042317825695622, guid: a68b9fc9a0fe09d49879213d453f29f0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
