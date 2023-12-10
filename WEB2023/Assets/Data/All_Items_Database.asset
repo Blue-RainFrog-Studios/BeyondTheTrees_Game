@@ -46,18 +46,26 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 529c4a46c1402e04eacf8f53c78e4085, type: 2}
   - {fileID: 11400000, guid: d77d7002feea0d54ebb144768044b625, type: 2}
   - {fileID: 11400000, guid: 43e61dd5e251801448f7026169a31c8a, type: 2}
-  Shop_Inventory_Upgrades: []
+  Shop_Inventory_Upgrades:
+  - {fileID: 11400000, guid: 8a2520db66ce3d14f885f01873a1bb89, type: 2}
+  - {fileID: 11400000, guid: 870d647df2a5c894c865d37ec7908b10, type: 2}
+  - {fileID: 11400000, guid: 27092b2c3a4b5d343ba9e2c6afde3eb2, type: 2}
+  - {fileID: 11400000, guid: ab044c44e7ca8da4a8925759ce54d440, type: 2}
+  - {fileID: 11400000, guid: c69a0b24d10a42f45a7bea3994252c3f, type: 2}
+  - {fileID: 11400000, guid: 5e2c4271a9361614285e9dc791531a65, type: 2}
   Run_Items:
   - {fileID: 11400000, guid: 8e6336a503d404a4ea8e86fa86288ef2, type: 2}
   - {fileID: 11400000, guid: 34fb42aaca0b15348ac7c42654e803fc, type: 2}
   - {fileID: 11400000, guid: 7a2b7f1dcbedc0c4090472f0cc3e75a2, type: 2}
   - {fileID: 11400000, guid: 6d4b787610268d642a807af78f88b1b8, type: 2}
+  - {fileID: 11400000, guid: 2883508b101feda49a4352d064fed83a, type: 2}
   Run_Common_Items:
   - {fileID: 11400000, guid: 8e6336a503d404a4ea8e86fa86288ef2, type: 2}
   - {fileID: 11400000, guid: 34fb42aaca0b15348ac7c42654e803fc, type: 2}
   - {fileID: 11400000, guid: 7a2b7f1dcbedc0c4090472f0cc3e75a2, type: 2}
   - {fileID: 11400000, guid: 6d4b787610268d642a807af78f88b1b8, type: 2}
-  Run_Rare_Items: []
+  Run_Rare_Items:
+  - {fileID: 11400000, guid: 2883508b101feda49a4352d064fed83a, type: 2}
   Run_Epic_Items: []
   Run_Legendary_Items: []
   Run_PotionsAvalible:

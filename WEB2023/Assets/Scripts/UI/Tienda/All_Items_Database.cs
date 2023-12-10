@@ -12,6 +12,7 @@ public class All_Items_Database : ScriptableObject
     public List<UpgradeSO> Shop_Potions_Upgrades;
     
     public List<UpgradeSO> Shop_Inventory_Upgrades;
+
     public List<ItemSO> Run_Items;
     public List<ItemSO> Run_Common_Items;
     public List<ItemSO> Run_Rare_Items;
@@ -37,6 +38,11 @@ public class All_Items_Database : ScriptableObject
     public int Potions_Shop_Items_Count
     {
         get { return Shop_Potions_Upgrades.Count; }
+
+    }
+    public int Inventory_Shop_Items_Count
+    {
+        get { return Shop_Inventory_Upgrades.Count; }
 
     }
     public int Run_Items_Count
@@ -76,7 +82,6 @@ public class All_Items_Database : ScriptableObject
             PotionToSpawn = Shop_Potions_Upgrades[index];
         }
     }
-
     public ItemSO ShopGetItemFromPool(int index)
     {
         return Shop_Items[index];
@@ -86,6 +91,12 @@ public class All_Items_Database : ScriptableObject
     {
         return Shop_Potions_Upgrades[index];
     }
+
+    public UpgradeSO InventoryShopGetItemFromDB(int index)
+    {
+        return Shop_Inventory_Upgrades[index];
+    }
+
     public ItemSO RunGetItemFromPool(int index)
     {
         return Run_Items[index];
