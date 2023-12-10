@@ -39,8 +39,8 @@ public class NPCHelperManager : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         cheapestItem = DataManager_Items_Database.Instance.myItemsData.CalculateCheapestItem(cheapestItem);
-        cheapestPotion = DataManager_Items_Database.Instance.myItemsData.CalculateCheapestPotion();
-        cheapestInvUpgrade = DataManager_Items_Database.Instance.myItemsData.CalculateCheapestInvUpgrade();
+        cheapestPotion = DataManager_Items_Database.Instance.myItemsData.CalculateCheapestPotion(cheapestPotion);
+        cheapestInvUpgrade = DataManager_Items_Database.Instance.myItemsData.CalculateCheapestInvUpgrade(cheapestInvUpgrade);
        // Desactiva el tutorial si el jugador no es nuevo
         if (player.GetComponent<ReactionNPCs>().newPlayer)
         {
@@ -59,7 +59,7 @@ public class NPCHelperManager : MonoBehaviour
             Debug.Log("Activando ayuda");
         }
 
-        player.transform.position = new Vector3(4.0f, -2.5f);
+        player.transform.position = new Vector3(0.0f, -4.0f);
     }
     public void TutorialesCompletos()
     {

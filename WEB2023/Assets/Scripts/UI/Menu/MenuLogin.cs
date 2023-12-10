@@ -63,6 +63,7 @@ public class MenuLogin : MonoBehaviour
             playerPrefab.GetComponent<Name>().sexo = genero;
             playerPrefab.GetComponent<Name>().CambiarDatos();
             Instantiate(playerPrefab);
+            playerPrefab.transform.position = new Vector2(-1, -2);
 
         }
         else
@@ -70,7 +71,7 @@ public class MenuLogin : MonoBehaviour
             player.GetComponent<Name>().nombre = nombreUsuario;
             player.GetComponent<Name>().sexo = genero;
             player.GetComponent<Name>().CambiarDatos();
-            player.transform.position = new Vector2(0, -4);
+            player.transform.position = new Vector2(-1, -2);
             player.GetComponent<PlayerMovementInputSystem>().enabled = true;
             player.GetComponentInChildren<Canvas>().enabled = true;
         }

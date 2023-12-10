@@ -176,17 +176,28 @@ public class All_Items_Database : ScriptableObject
 
         return currentCheapest;
     }
-    public int CalculateCheapestPotion()
+    public int CalculateCheapestPotion(int currentCheapest)
     {
+        foreach (UpgradeSO item in Shop_Potions_Upgrades)
+        {
 
-        // Implementar cuando este la tienda de pocione
-        int value = 0;
-        return value;
+            if (item.ShopValue < currentCheapest && !item.IsPurchased)
+            {
+                currentCheapest = item.ShopValue;
+            }
+        }
+        return currentCheapest;
     }
-    public int CalculateCheapestInvUpgrade()
+    public int CalculateCheapestInvUpgrade(int currentCheapest)
     {
-        // Implementar cuando este la tienda de pocione
-        int value = 0;
-        return value;
+        foreach (UpgradeSO item in Shop_Inventory_Upgrades)
+        {
+
+            if (item.ShopValue < currentCheapest && !item.IsPurchased)
+            {
+                currentCheapest = item.ShopValue;
+            }
+        }
+        return currentCheapest;
     }
-}
+    }

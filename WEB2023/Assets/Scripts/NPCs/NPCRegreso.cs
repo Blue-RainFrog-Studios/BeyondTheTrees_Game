@@ -99,20 +99,15 @@ public class NPCAyuda : MonoBehaviour
         // Frases para recibir al jugador
         if (player.GetComponent<ReactionNPCs>().expedicionExito)
         {
-            this.dialogueList.Add("¡JAJA! Buen trabajo chavalote");
-            this.dialogueList.Add("Seguro que te has hecho con un buien botín");
+            this.dialogueList.Add("¡JAJA! Buen trabajo chavalote. Seguro que te has hecho con un buien botín.");
         }
         else if (player.GetComponent<ReactionNPCs>().expedicionInterrumpida)
         {
-            this.dialogueList.Add("¿Se te ha complicado la expedición, eh?");
-            this.dialogueList.Add("No pasa nada, haz acopio de pociones o comprate algo nuevo");
-            this.dialogueList.Add("Ya verás como la siguiente se te da mejor");
+            this.dialogueList.Add("¿Se te ha complicado la expedición, eh? No pasa nada, haz acopio de pociones o comprate algo nuevo.");
         }
         else if (player.GetComponent<ReactionNPCs>().expedicionFallida)
         {
-            this.dialogueList.Add("¿Va todo bien chaval?");
-            this.dialogueList.Add("Hemos tenido que sacarte del bosque a cuestas");
-            this.dialogueList.Add("Tómatelo con un poco más de calma la próxima vez, no queremos que te pase nada");
+            this.dialogueList.Add("¿Va todo bien chaval? Hemos tenido que sacarte del bosque a cuestas.");
         }
 
         // Frases para decirle al jugador que puede comprar
@@ -127,7 +122,7 @@ public class NPCAyuda : MonoBehaviour
         // Activas cuando estén las tiendas de pociones e inventario
 
 
-        /*if (sceneData.GetComponent<NPCHelperManager>().cheapestPotion <= player.GetComponent<CoinCounter>().totalMoney)
+        if (sceneData.GetComponent<NPCHelperManager>().cheapestPotion <= player.GetComponent<CoinCounter>().totalMoney)
         {
             this.dialogueList.Add("Tienes una buena cantidad de dinero, deberías pasarte a mirar las pociones");
             this.dialogueList.Add("Puede que Alexia tenga algún brebaje que te sea de ayuda");
@@ -136,7 +131,7 @@ public class NPCAyuda : MonoBehaviour
         {
             this.dialogueList.Add("Veo que tienes una pequeña fortuna, deberías pensarte mejorar tu mochila");
             this.dialogueList.Add("El bueno de Florentino siempre está dispuesto a mejorar tu inventario");
-        }*/
+        }
 
     }
 
