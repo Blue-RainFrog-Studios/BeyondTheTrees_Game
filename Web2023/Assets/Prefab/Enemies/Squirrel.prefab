@@ -12,14 +12,13 @@ GameObject:
   - component: {fileID: 4413202303269975415}
   - component: {fileID: 7988745774428449434}
   - component: {fileID: 5037092153588110418}
-  - component: {fileID: 8771941632011251851}
-  - component: {fileID: 8057056320807100863}
   - component: {fileID: 1856821096735309085}
   - component: {fileID: 8848712778407726177}
   - component: {fileID: 6951873516816919427}
   - component: {fileID: -8572632945045838320}
   - component: {fileID: 76406445582394311}
   - component: {fileID: 5396230635431102423}
+  - component: {fileID: -4524300631771904218}
   m_Layer: 0
   m_Name: Squirrel
   m_TagString: Enemy
@@ -156,34 +155,6 @@ CircleCollider2D:
   m_Offset: {x: -0.45665264, y: 0}
   serializedVersion: 2
   m_Radius: 5.774753
---- !u!114 &8771941632011251851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5304357250516780494}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 219235103676b284cb397bd94f723525, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  executeOnLoop: 0
-  interruptOptions: 0
---- !u!114 &8057056320807100863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5304357250516780494}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5aacbb01c8890a4498d7d6f60cad372c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  distanceThreshold: 0.2
 --- !u!114 &1856821096735309085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,15 +173,13 @@ MonoBehaviour:
   attackRange: 1
   damage: 10
   coolDown: 2
-  player: {fileID: 0}
-  playerTransform: {fileID: 0}
-  squirrelTransform: {fileID: 4625157923182912523}
   speed: 3
-  damage: 5
   eatClip: {fileID: 8300000, guid: 03570853aba8d874e8d6617ad3ad07dc, type: 3}
   squirrelController: {fileID: 0}
   audioSource: {fileID: 8848712778407726177}
-  rol: '"Eater"'
+  rangeToEater: 4
+  animator: {fileID: -8572632945045838320}
+  rolB: 0
 --- !u!82 &8848712778407726177
 AudioSource:
   m_ObjectHideFlags: 0
@@ -380,3 +349,25 @@ MonoBehaviour:
   attackRange: 0.75
   damage: 10
   coolDown: 0
+--- !u!195 &-4524300631771904218
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5304357250516780494}
+  m_Enabled: 0
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

@@ -3,53 +3,53 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ActionsSquirrel : Enemy
 {
-    [SerializeField] private GameObject player;
-    [SerializeField] private Transform playerTransform;
-   // [SerializeField] private Transform acornTransform;
-    [SerializeField] private Transform squirrelTransform;
     [SerializeField] private float speed;
-    //public bool consumedAcorn;
-    int numReady;
+
+
+    private NavMeshAgent navMeshAgent;
 
     [SerializeField]
     private AudioClip eatClip;
-
     [SerializeField]
     private GameObject squirrelController;
-
     [SerializeField]
     private AudioSource audioSource;
-
-    public string rol;
-
+    [SerializeField]
+    private float rangeToEater = 4.0f;
+    [SerializeField]
+    private Animator animator;
+    public bool rolB;
     private List<ActionsSquirrel> squirrels;
-
+    static bool hayArdillaCome;
     static private List<GameObject> acorns;
     private bool aux = false;
-
+    private Vector3 posPaComer;
     private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        playerTransform = player.transform;
+        hayArdillaCome = false;
         squirrels = new List<ActionsSquirrel>(FindObjectsOfType<ActionsSquirrel>());
-        if(squirrels != null )
-        {
-            squirrels[0].rol = "Eater";
-            for (int i = 1; i < squirrels.Count; i++)
-            {
-                squirrels[i].rol = "Protector";
-            }
-        }
-        numReady = 0;
         acorns = new List<GameObject>(GameObject.FindGameObjectsWithTag("Acorn"));
+    }
+
+    private void Start()
+    {
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        navMeshAgent.updateRotation = false;
+        navMeshAgent.updateUpAxis = false;
     }
     private void Update()
     {
         if (!notInRoom)
+        {
             GetComponent<BTSquirrel>().enabled = true;
+            GetComponent<NavMeshAgent>().enabled = true;
+        }
+            
+
         if (Vector3.Distance(transform.position, player.transform.position) < attackRange)
         {
             if(!coolDownAttack)
@@ -60,45 +60,65 @@ public class ActionsSquirrel : Enemy
 
         }
     }
-
-    //void OnDrawGizmos()
-    //{
-    //    Vector3 position = player.transform.position;
-
-    //    Vector3 direccionPC = (squirrels[0].transform.position - player.transform.position).normalized*2;
-    //    Gizmos.color = Color.red;
-
-    //    Gizmos.DrawLine(position, position + direccionPC);
-    //}
-    public void StartWalkAcorn() {}
+    public void StartWalkAcorn() {
+        if(acorns[0] != null)
+        {
+            if (transform.position.x >= acorns[0].transform.position.x)
+            {
+                animator.Play("SquirrelAnimationRigth");
+            }
+            else
+            {
+                animator.Play("SquirrelAnimation");
+            }
+        }
+        
+        this.rolB = true;
+        hayArdillaCome = true;
+    }
 
     public Status UpdateWalkAcorn()
     {
+
+        
         if (CheckAcornInRange())
         {
-            //consumedAcorn = true;
+            navMeshAgent.SetDestination(posPaComer);
             return Status.Success;
         }
         else
         {
             if (acorns[0] == null)
                 return Status.Running;
-        
 
-            squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, acorns[0].transform.position, speed * Time.deltaTime);
+
+            //this.transform.position = Vector2.MoveTowards(transform.position, acorns[0].transform.position, speed * Time.deltaTime);
+            navMeshAgent.SetDestination(acorns[0].transform.position);
             return Status.Running;
         }
     }
 
     public void StartWalkPlayer()
     {
-        if(audioSource.isPlaying)
+            
+        if (audioSource.isPlaying)
             audioSource.Stop();
     }
 
     public Status UpdateWalkPlayer()
     {
-        squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, playerTransform.position, speed * Time.deltaTime);
+        if (transform.position.x >= player.transform.position.x)
+        {
+            animator.Play("SquirrelAnimationRigth");
+        }
+        else
+        {
+            animator.Play("SquirrelAnimation");
+        }
+        //transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
+        //squirrelTransform.position = Vector2.MoveTowards(squirrelTransform.position, playerTransform.position, speed * Time.deltaTime);
+
+        navMeshAgent.SetDestination(player.transform.position);
         return Status.Running;
     }
 
@@ -112,97 +132,54 @@ public class ActionsSquirrel : Enemy
     public bool CheckAcornInRange()
     {
         if(acorns[0] != null)
-            return Vector2.Distance(squirrelTransform.position, acorns[0].transform.position) < 1.0f;
+        {
+            posPaComer = transform.position;
+            return Vector2.Distance(this.transform.position, acorns[0].transform.position) < 1.0f;
+        }
+            
         return true;
     }
 
     public void StartEatAcorn()
     {
+
         audioSource.PlayOneShot(eatClip);
         StartCoroutine(WaitSeconds(1));
     }
 
     public Status UpdateEatAcorn()
     {
-        
+
         if (!aux) return Status.Running;
         if (!CheckAcornEated())
         {
+            
             aux = false;
-            //squirrelController.GetComponent<SquirrelController>().ended = false;
-            if (this.rol == "Eater")   //AQUÍ SE MIRA EL ROL
+            if (this.rolB)   //AQUï¿½ SE MIRA EL ROL
             {
-                //squirrelController.GetComponent<SquirrelController>().DestroyAcorn(acorns[0]);
                 Destroy(acorns[0]);
                 acorns.RemoveAt(0);
+                hayArdillaCome = false;
             }
                 
             return Status.Success;
         }
         else
+        {
             return Status.Running;
+        }
+        
     }
-    public bool CheckEnded()
-    {
-        return squirrelController.GetComponent<SquirrelController>().ended;
-    }
-
     IEnumerator WaitSeconds(float Time)
     {
         yield return new WaitForSeconds(Time);
         aux = true;
-        //squirrelController.GetComponent<SquirrelController>().ended = true;
     }
 
-    public void StartForming()
-    {
-
-    }
-
-    public Status UpdateForming()
-    {
-        if (CheckSquirrelEaterInRange())
-        {
-            numReady++;
-            return Status.Success;
-        }
-        else
-        {;
-            Vector3 direccionPC = (squirrels[0].transform.position - player.transform.position).normalized;
-            Vector3 perpendicular = new Vector3(-direccionPC.y, direccionPC.x, 0.0f);
-            float auxP;
-            if(squirrels.IndexOf(this) %2  == 0)
-            {
-                auxP = squirrels.IndexOf(this) * 0.5f;
-            }
-            else{
-                auxP = -(squirrels.IndexOf(this) - 1) * 0.5f;
-            }
-            Vector3 posicionProtegida = squirrels[0].transform.position - direccionPC* 3.0f  + perpendicular*auxP;
-            squirrelTransform.position = Vector2.MoveTowards(transform.position, posicionProtegida, speed * Time.deltaTime);
-        }
-
-        return Status.Running;
-    }
-
-    public bool CheckSquirrelEaterInRange()
-    {
-        if (rol == "Protector" && squirrels[0] != null)
-        {
-            return Vector2.Distance(this.transform.position, squirrels[0].transform.position) < 3.0f;
-        }
-            
-        return true;
-    }
-
-    public bool CheckFormationDone()
-    {
-        return (squirrels.Count - 1) == numReady;
-    }
 
     public void StartProtecting()
     {
-
+        this.rolB = false;
     }
 
     public Status UpdateProtecting()
@@ -223,8 +200,9 @@ public class ActionsSquirrel : Enemy
         {
             auxP = -(squirrels.IndexOf(this) - 1) * 0.5f;
         }
-        Vector3 posicionProtegida = squirrels[0].transform.position - direccionPC * 3.0f + perpendicular * auxP;
-        squirrelTransform.position = Vector2.MoveTowards(transform.position, posicionProtegida, speed * Time.deltaTime);
+        Vector3 posicionProtegida = squirrels[0].transform.position - direccionPC * rangeToEater + perpendicular * auxP;
+        //transform.position = Vector2.MoveTowards(transform.position, posicionProtegida, speed * Time.deltaTime);
+        navMeshAgent.SetDestination(posicionProtegida);
         return Status.Running;
     }
 
@@ -232,11 +210,20 @@ public class ActionsSquirrel : Enemy
     {
         return acorns.Count == 0 || squirrels[0] == null;
     }
-    public bool CheckOtherSquirrels()
+    public bool CheckSquirrelEater()
     {
-        return squirrels.Count > 0;
+        return hayArdillaCome;
     }
-
+      override public void RecieveDamage(float damage)
+    {
+        if(life <= 0)
+        {
+            if(this.rolB)
+                hayArdillaCome = false;
+        }
+            
+        base.RecieveDamage(damage);
+    }
 }
 
 
