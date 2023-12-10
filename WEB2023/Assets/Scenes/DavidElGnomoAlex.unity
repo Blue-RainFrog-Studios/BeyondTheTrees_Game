@@ -1432,6 +1432,14 @@ PrefabInstance:
       propertyPath: itemToChase
       value: 
       objectReference: {fileID: 1843392728}
+    - target: {fileID: 3946693732341454511, guid: 62c3a45f1969b2b40adb3b9f422350be, type: 3}
+      propertyPath: coolDown
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3946693732341454511, guid: 62c3a45f1969b2b40adb3b9f422350be, type: 3}
+      propertyPath: attackRange
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4356442477611463076, guid: 62c3a45f1969b2b40adb3b9f422350be, type: 3}
       propertyPath: m_Name
       value: Wolf
