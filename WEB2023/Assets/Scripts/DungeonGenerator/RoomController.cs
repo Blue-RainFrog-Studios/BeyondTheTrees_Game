@@ -485,6 +485,7 @@ public class RoomController : MonoBehaviour
                         room.GetComponent<Collider2D>().enabled = false;
                         fheal = false;
                         loHealth= false;
+                        player.GetComponent<KnightScript>().bleed = 1;
                         //spawn.SpawObject();
                     }
 
