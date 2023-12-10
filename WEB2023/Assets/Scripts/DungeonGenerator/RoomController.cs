@@ -239,6 +239,12 @@ public class RoomController : MonoBehaviour
             {
                     //"Empty",
                     "Basic",
+                    "Basic_1",
+                    "Basic_2",
+                    "Basic_3",
+                    "Basic_4",
+                    "Basic_5",
+
                     "Basic_17"
             };
                     
@@ -485,6 +491,7 @@ public class RoomController : MonoBehaviour
                         room.GetComponent<Collider2D>().enabled = false;
                         fheal = false;
                         loHealth= false;
+                        player.GetComponent<KnightScript>().bleed = 1;
                         //spawn.SpawObject();
                     }
 
