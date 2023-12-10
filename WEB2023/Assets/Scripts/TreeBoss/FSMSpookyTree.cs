@@ -54,7 +54,7 @@ public class FSMSpookyTree : BehaviourRunner
         StateTransition RootsOut_to_GhostSpawn = TreeFSM.CreateTransition(RootsOut, GhostSpawn, statusFlags:StatusFlags.Finished);
         RootsOut.SetProbability(RootsOut_to_GhostSpawn, 0.15f);
         StateTransition RootsOut_to_SharpRoots = TreeFSM.CreateTransition(RootsOut, SharpRoots, statusFlags:StatusFlags.Finished);
-        RootsOut.SetProbability(RootsOut_to_SharpRoots, 0.3f);
+        RootsOut.SetProbability(RootsOut_to_SharpRoots, 0.35f);
         //else to rootOut
         StateTransition SharpLeaves1_to_RootsOut = TreeFSM.CreateTransition(SharpLeavesP1, RootsOut, statusFlags:StatusFlags.Finished);
         StateTransition SharpLeaves2_to_RootsOut = TreeFSM.CreateTransition(SharpLeavesP2, RootsOut, statusFlags:StatusFlags.Finished);
