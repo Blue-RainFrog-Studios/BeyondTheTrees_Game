@@ -46,6 +46,10 @@ public class Enemy : MonoBehaviour
 
         life -= damage;
         this.GetComponent<Knockback>().PlayFeedback(player, this.gameObject.GetComponent<Rigidbody2D>());
+        if (!blinking)
+        {
+            StartCoroutine(Blink());
+        }
         if (life <= 0) {
             if (player.GetComponent<KnightScript>().king)
             {
@@ -65,10 +69,7 @@ public class Enemy : MonoBehaviour
 
             Destroy(this.gameObject);
         }
-        if (!blinking)
-        {
-            StartCoroutine(Blink());
-        }
+        
     }
     public IEnumerator CoolDown()
     {

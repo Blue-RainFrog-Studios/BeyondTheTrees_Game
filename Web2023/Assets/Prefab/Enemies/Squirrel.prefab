@@ -167,12 +167,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7bab50b2a4d4fc42bddd4fbe74b371b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 0
+  life: 40
   notInRoom: 1
   range: 0
   attackRange: 1
   damage: 10
   coolDown: 2
+  blinkDuration: 1
+  blinkNumber: 6
   speed: 3
   eatClip: {fileID: 8300000, guid: 03570853aba8d874e8d6617ad3ad07dc, type: 3}
   squirrelController: {fileID: 0}
@@ -349,6 +351,8 @@ MonoBehaviour:
   attackRange: 0.75
   damage: 10
   coolDown: 0
+  blinkDuration: 0
+  blinkNumber: 0
 --- !u!195 &-4524300631771904218
 NavMeshAgent:
   m_ObjectHideFlags: 0
