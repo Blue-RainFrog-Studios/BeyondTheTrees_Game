@@ -28,7 +28,7 @@ public class KnightScript : MonoBehaviour
     public float speed { get; set; }
     [SerializeField]
     public int attack { get; set; }
-    public int attackSpeed { get; set; }
+    public float attackSpeed { get; set; }
     public int defense { get; set; }
 
     [SerializeField]
@@ -52,10 +52,10 @@ public class KnightScript : MonoBehaviour
     private int minSpeed = 6;
 
     [SerializeField]
-    private int maxAttackSpeed = 6;
+    private float maxAttackSpeed = 0.3f;
 
     [SerializeField]
-    private int minAttackSpeed = 1;
+    private float minAttackSpeed = 0.6f;
 
     public KnightScript() 
     {
@@ -64,7 +64,7 @@ public class KnightScript : MonoBehaviour
         speed = 10;
         attack = 20;
         defense = 7;
-        attackSpeed = 3;
+        attackSpeed = 0.5f;
     }
 
     private void Awake()
@@ -143,7 +143,7 @@ public class KnightScript : MonoBehaviour
         knight.speed = 10;
         knight.attack = 20;
         knight.defense = 7;
-        knight.attackSpeed = 3;
+        knight.attackSpeed = 0.5f;
         knight.bleed = 1;
     }
 
@@ -154,16 +154,31 @@ public class KnightScript : MonoBehaviour
 
         defense += v * inventoryItem.Defense;  //Este no hace falta revisarlo porque ya se revisa cuando se resta daño en "ReceiveAttack()"
 
-        GetComponent<PlayerMovementInputSystem>().speed += 
-            (((GetComponent<PlayerMovementInputSystem>().speed + (v * inventoryItem.Speed)) <= maxSpeed) &&
-            (GetComponent<PlayerMovementInputSystem>().speed + (v * inventoryItem.Speed)) >= minSpeed) ? v * inventoryItem.Speed : 0;
+        GetComponent<PlayerMovementInputSystem>().speed += v * inventoryItem.Speed;
 
-        GetComponent<PlayerMovementInputSystem>().shoteRate -= 
-            (((GetComponent<PlayerMovementInputSystem>().shoteRate - (v * inventoryItem.AttackSpeed)) >= maxAttackSpeed) &&
-            (GetComponent<PlayerMovementInputSystem>().shoteRate - (v * inventoryItem.AttackSpeed)) <= minAttackSpeed)? v * inventoryItem.AttackSpeed : 0;
+        GetComponent<PlayerMovementInputSystem>().shoteRate -= v * inventoryItem.AttackSpeed;
         
         
         GetComponent<CoinCounter>().ExpeditionMoneyChanger(v * (inventoryItem.Value * quantity));
+
+        if (GetComponent<PlayerMovementInputSystem>().speed > maxSpeed)
+            GetComponent<PlayerMovementInputSystem>().speed = maxSpeed;
+
+        else if (GetComponent<PlayerMovementInputSystem>().speed < minSpeed)
+            GetComponent<PlayerMovementInputSystem>().speed = minSpeed;
+
+        if (GetComponent<PlayerMovementInputSystem>().shoteRate < maxAttackSpeed)
+            GetComponent<PlayerMovementInputSystem>().shoteRate = maxAttackSpeed;
+
+        else if (GetComponent<PlayerMovementInputSystem>().shoteRate > minAttackSpeed)
+            GetComponent<PlayerMovementInputSystem>().shoteRate = minAttackSpeed;
+
+        if (attack > maxAttack)
+            attack = maxAttack;
+
+        else if (attack < minAttack)
+            attack = minAttack;
+
     }
 
     private void OnTriggerStay2D(Collider2D collision)
