@@ -199,7 +199,7 @@ public class EnemyController : Enemy
                 case (EnemyType.Ranged):
                     GameObject bullet = Instantiate(EnemyBullet, transform.position, Quaternion.identity) as GameObject;
                     bullet.GetComponent<BulletController>().GetPlayer(player.transform);
-                    bullet.AddComponent<Rigidbody2D>().gravityScale = 0;
+                    //bullet.AddComponent<Rigidbody2D>().gravityScale = 0;
                     audioSource.PlayOneShot(fireClip);
                     StartCoroutine(CoolDown());
                     break;
