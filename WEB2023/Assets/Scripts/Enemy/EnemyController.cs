@@ -127,12 +127,14 @@ public class EnemyController : Enemy
     public IEnumerator WaitHeal()
     {
         healCol.enabled = true;
+        GetComponent<ParticleSystem>().Play();
         healTime = false;
         room.GetComponent<RoomController>().healing = true;
         room.GetComponent<RoomController>().posHealer = transform.position+new Vector3(1,1,0);
         yield return new WaitForSeconds(20);
         room.GetComponent<RoomController>().fheal = true;
         room.GetComponent<RoomController>().healing = false;
+        GetComponent<ParticleSystem>().Stop();
         healCol.enabled = false;
     }
     public void Heal()
@@ -140,11 +142,7 @@ public class EnemyController : Enemy
         if (healTime)
         {
             StartCoroutine(WaitHeal());
-        }
-        
-       
-        
-        
+        }   
     }
     public void GoHeal()
     {
