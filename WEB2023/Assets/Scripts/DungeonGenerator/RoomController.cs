@@ -239,13 +239,13 @@ public class RoomController : MonoBehaviour
             {
                     //"Empty",
                     "Basic",
-                    "Basic_1",
-                    "Basic_2",
-                    "Basic_3",
-                    "Basic_4",
-                    "Basic_5",
+                    //"Basic_1",
+                    //"Basic_2",
+                    //"Basic_3",
+                    //"Basic_4",
+                    //"Basic_5",
 
-                    "Basic_17"
+                    //"Basic_17"
             };
                     
         }

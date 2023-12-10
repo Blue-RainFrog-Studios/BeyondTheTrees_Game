@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03468f94ca66c4f42bd4dc58df619a0c, type: 3}
+  m_Name: Libro de un aventurero
+  m_EditorClassIdentifier: 
+  <IsStackable>k__BackingField: 0
+  <MaxStackSize>k__BackingField: 1
+  <Name>k__BackingField: Libro de aventurero
+  <Descrption>k__BackingField: El diario de un aventurero...
+  <ItemImage>k__BackingField: {fileID: 21300000, guid: 6e8092c69fb342b4b9b992a3bc2ffce6, type: 3}
+  <Attack>k__BackingField: 0
+  <Defense>k__BackingField: 0
+  <Speed>k__BackingField: 0
+  <AttackSpeed>k__BackingField: 0
+  <Value>k__BackingField: 0
+  <ShopValue>k__BackingField: 0
+  <IsPurchased>k__BackingField: 0
+  <Rarity>k__BackingField: 0
+  <dropChance>k__BackingField: 0

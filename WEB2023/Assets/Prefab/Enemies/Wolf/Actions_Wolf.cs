@@ -85,6 +85,14 @@ public class Actions_Wolf : MonoBehaviour
         
         targetPosition = playerTransform.position;
 
+    }
+    public Status UpdateMethodWalk()
+    {
+        //make the object move to the player position
+        //WolfTransform.position = Vector2.MoveTowards(WolfTransform.position, playerTransform.transform.position, GetComponent<WolfController>().speed * Time.deltaTime);
+
+
+
         if (direction.x > 0.0f)
         {
             if (direction.y + 1.0f > direction.x)
@@ -107,12 +115,6 @@ public class Actions_Wolf : MonoBehaviour
                 animator.Play("WolfWalkLeft");
             }
         }
-    }
-    public Status UpdateMethodWalk()
-    {
-        //make the object move to the player position
-        //WolfTransform.position = Vector2.MoveTowards(WolfTransform.position, playerTransform.transform.position, GetComponent<WolfController>().speed * Time.deltaTime);
-
         navMeshAgent.SetDestination(player.transform.position);
         return Status.Running;
     }
@@ -132,6 +134,13 @@ public class Actions_Wolf : MonoBehaviour
 
         targetPosition = playerTransform.position;
 
+
+
+        StartCoroutine(WaitSeconds(TimeCharge));
+    }
+    public Status UpdateMethodCharge()
+    {
+
         if (direction.x > 0.0f)
         {
             if (direction.y + 1.0f > direction.x)
@@ -150,13 +159,11 @@ public class Actions_Wolf : MonoBehaviour
             else
                 animator.Play("WolfChargeLeft");
         }
-
-        StartCoroutine(WaitSeconds(TimeCharge));
-    }
-    public Status UpdateMethodCharge()
-    {
         if (ended)
         {
+
+
+
             return Status.Success;
         }
         else
@@ -181,28 +188,7 @@ public class Actions_Wolf : MonoBehaviour
         //targetPosition = playerTransform.position;
         targetPosition = itemTransform.position;
 
-        if (direction.x > 0.0f)
-        {
-            if (direction.y + 1.0f > direction.x)
-            {
-                animator.Play("WolfWalkBack");
-            }
-            else
-            {
-                animator.Play("WolfWalkRight");
-            }
-        }
-        else if (direction.x < 0.0f)
-        {
-            if (direction.y + 1.0f < direction.x)
-            {
-                animator.Play("WolfWalkFront");
-            }
-            else
-            {
-                animator.Play("WolfWalkLeft");
-            }
-        }
+
     }
     public Status UpdateMethodItemChase()
     {
@@ -213,6 +199,29 @@ public class Actions_Wolf : MonoBehaviour
         
         if (ComprobarProximidad())
         {
+
+            if (direction.x > 0.0f)
+            {
+                if (direction.y + 1.0f > direction.x)
+                {
+                    animator.Play("WolfWalkBack");
+                }
+                else
+                {
+                    animator.Play("WolfWalkRight");
+                }
+            }
+            else if (direction.x < 0.0f)
+            {
+                if (direction.y + 1.0f < direction.x)
+                {
+                    animator.Play("WolfWalkFront");
+                }
+                else
+                {
+                    animator.Play("WolfWalkLeft");
+                }
+            }
             return Status.Success;
         }
         else
@@ -281,24 +290,7 @@ public class Actions_Wolf : MonoBehaviour
 
         targetPosition = playerTransform.position;
 
-        if (direction.x > 0.0f)
-        {
-            if (direction.y + 1.0f > direction.x)
-            {
-                animator.Play("WolfAtackBack");
-            }
-            else
-            {
-                animator.Play("WolfAtackRight");
-            }
-        }
-        else if (direction.x < 0.0f)
-        {
-            if (direction.y + 1.0f < direction.x)
-                animator.Play("WolfAtackFront");
-            else
-                animator.Play("WolfAtackLeft");
-        }
+
 
      
 
@@ -321,7 +313,24 @@ public class Actions_Wolf : MonoBehaviour
     {
         //move right for 2 seconds
         //coroutine that moves the object to the right for 2 seconds
-
+        if (direction.x > 0.0f)
+        {
+            if (direction.y + 1.0f > direction.x)
+            {
+                animator.Play("WolfAtackBack");
+            }
+            else
+            {
+                animator.Play("WolfAtackRight");
+            }
+        }
+        else if (direction.x < 0.0f)
+        {
+            if (direction.y + 1.0f < direction.x)
+                animator.Play("WolfAtackFront");
+            else
+                animator.Play("WolfAtackLeft");
+        }
         WolfTransform.position = Vector2.MoveTowards(WolfTransform.position, targetPosition, GetComponent<WolfController>().speedJump * Time.deltaTime); //el salto
         if (collisionDetected || WolfTransform.position.x == targetPosition.x && WolfTransform.position.y == targetPosition.y)
         {

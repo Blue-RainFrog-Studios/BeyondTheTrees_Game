@@ -932,7 +932,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1878511699
 Transform:
   m_ObjectHideFlags: 0
@@ -1425,21 +1425,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -1188394844, guid: 8b117b353b7bf47449dde3ad8676f122, type: 3}
     - target: {fileID: 889696031492777373, guid: 62c3a45f1969b2b40adb3b9f422350be, type: 3}
-      propertyPath: TimeEating
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 889696031492777373, guid: 62c3a45f1969b2b40adb3b9f422350be, type: 3}
       propertyPath: itemToChase
       value: 
       objectReference: {fileID: 1843392728}
+    - target: {fileID: 3946693732341454511, guid: 62c3a45f1969b2b40adb3b9f422350be, type: 3}
+      propertyPath: notInRoom
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4356442477611463076, guid: 62c3a45f1969b2b40adb3b9f422350be, type: 3}
       propertyPath: m_Name
       value: Wolf
       objectReference: {fileID: 0}
-    - target: {fileID: 6498803744283796586, guid: 62c3a45f1969b2b40adb3b9f422350be, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 2e74e87132522a34bab155c152ac4819, type: 2}
+    - target: {fileID: 4356442477611463076, guid: 62c3a45f1969b2b40adb3b9f422350be, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7355274128988081921, guid: 62c3a45f1969b2b40adb3b9f422350be, type: 3}
+      propertyPath: life
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7438436955063162470, guid: 62c3a45f1969b2b40adb3b9f422350be, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -1483,6 +1487,14 @@ PrefabInstance:
     - target: {fileID: 7438436955063162470, guid: 62c3a45f1969b2b40adb3b9f422350be, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7666831783066089790, guid: 62c3a45f1969b2b40adb3b9f422350be, type: 3}
+      propertyPath: m_Size.y
+      value: 1.3437462
+      objectReference: {fileID: 0}
+    - target: {fileID: 7666831783066089790, guid: 62c3a45f1969b2b40adb3b9f422350be, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.05323696
       objectReference: {fileID: 0}
     - target: {fileID: 7666831783066089790, guid: 62c3a45f1969b2b40adb3b9f422350be, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
