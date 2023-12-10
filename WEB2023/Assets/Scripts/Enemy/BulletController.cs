@@ -48,6 +48,11 @@ public class BulletController : MonoBehaviour
             collision.GetComponent<KnightScript>().ReceiveAttack(damage);
             Destroy(gameObject);
         }
+        if(collision.CompareTag("Prop"))
+        {
+            Debug.Log("COÑETE");
+            Destroy(gameObject);
+        }
        
     }
 }
