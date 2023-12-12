@@ -830,7 +830,7 @@ MonoBehaviour:
   hitClip: {fileID: 8300000, guid: f39c3ece76e8dde4fb85bc7917f9437e, type: 3}
   maxAttack: 40
   minAttack: 5
-  maxSpeed: 10
+  maxSpeed: 20
   minSpeed: 2
 --- !u!95 &2472352434232250267
 Animator:
