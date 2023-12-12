@@ -89,4 +89,8 @@ public class MenuLogin : MonoBehaviour
         if (edad < 3) edad = 3;
         CambioEdad();
     }
+    public void NewPlayer(bool opcion)
+    {
+        playerPrefab.GetComponent<ReactionNPCs>().newPlayer = opcion;
+    }
 }
