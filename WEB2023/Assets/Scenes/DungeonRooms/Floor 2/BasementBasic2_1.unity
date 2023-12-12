@@ -259,7 +259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8220837559685250634, guid: ebae7ad7c8d7da144b748dd06968bcc9, type: 3}
       propertyPath: m_Size.y
-      value: 5.428982
+      value: 6.196174
       objectReference: {fileID: 0}
     - target: {fileID: 8220837559685250634, guid: ebae7ad7c8d7da144b748dd06968bcc9, type: 3}
       propertyPath: m_Offset.x
@@ -267,7 +267,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8220837559685250634, guid: ebae7ad7c8d7da144b748dd06968bcc9, type: 3}
       propertyPath: m_Offset.y
-      value: 0.4355092
+      value: 0.051913023
       objectReference: {fileID: 0}
     - target: {fileID: 8890678904828543738, guid: ebae7ad7c8d7da144b748dd06968bcc9, type: 3}
       propertyPath: m_Name
@@ -804,6 +804,10 @@ PrefabInstance:
     - target: {fileID: 2594360390756391280, guid: ec0e0aaf5a82c8b42a1d876be77e755d, type: 3}
       propertyPath: m_Name
       value: Room2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3692966194594527468, guid: ec0e0aaf5a82c8b42a1d876be77e755d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5737041558395484372, guid: ec0e0aaf5a82c8b42a1d876be77e755d, type: 3}
       propertyPath: m_IsActive

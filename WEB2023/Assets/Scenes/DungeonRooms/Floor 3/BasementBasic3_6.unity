@@ -982,10 +982,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: River 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7210497293033031595, guid: a7a9696623618f543ba615adc915f31e, type: 3}
+      propertyPath: m_Size.y
+      value: 1.0567248
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210497293033031595, guid: a7a9696623618f543ba615adc915f31e, type: 3}
+      propertyPath: m_Offset.y
+      value: -2.5406818
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5662931843522224408, guid: a7a9696623618f543ba615adc915f31e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1995510223}
   m_SourcePrefab: {fileID: 100100000, guid: a7a9696623618f543ba615adc915f31e, type: 3}
 --- !u!4 &660927299 stripped
 Transform:
@@ -1666,10 +1677,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: River 1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7078902455920688029, guid: a7a9696623618f543ba615adc915f31e, type: 3}
+      propertyPath: m_Size.y
+      value: 0.5507388
+      objectReference: {fileID: 0}
+    - target: {fileID: 7078902455920688029, guid: a7a9696623618f543ba615adc915f31e, type: 3}
+      propertyPath: m_Offset.y
+      value: 2.8296306
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210497293033031595, guid: a7a9696623618f543ba615adc915f31e, type: 3}
+      propertyPath: m_Size.y
+      value: 1.3562486
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210497293033031595, guid: a7a9696623618f543ba615adc915f31e, type: 3}
+      propertyPath: m_Offset.y
+      value: -2.3909197
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5662931843522224408, guid: a7a9696623618f543ba615adc915f31e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2115017575}
   m_SourcePrefab: {fileID: 100100000, guid: a7a9696623618f543ba615adc915f31e, type: 3}
 --- !u!4 &907388980 stripped
 Transform:
@@ -2821,7 +2851,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: da6235759611f7f44b9d116782fca77a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.8862745}
   m_FlipX: 0
@@ -3262,11 +3292,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8224585114216296096, guid: 3685253e5f5f1b941b6724092da4050c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.09
+      value: -0.59
       objectReference: {fileID: 0}
     - target: {fileID: 8224585114216296096, guid: 3685253e5f5f1b941b6724092da4050c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.4799999
+      value: -0.64
       objectReference: {fileID: 0}
     - target: {fileID: 8224585114216296096, guid: 3685253e5f5f1b941b6724092da4050c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4069,6 +4099,56 @@ MonoBehaviour:
     spawnerData: {fileID: 11400000, guid: 5ba87e723c8a07841b8138e1177e6ca5, type: 2}
   - name: GrassSpawner
     spawnerData: {fileID: 11400000, guid: 2839ab188f1fc7740a457dbb58766375, type: 2}
+--- !u!1 &1995510219 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5662931843522224408, guid: a7a9696623618f543ba615adc915f31e, type: 3}
+  m_PrefabInstance: {fileID: 660927298}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1995510223
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995510219}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.04416752, y: 0.18720263}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.67, y: 6.21}
+    newSize: {x: 2.67, y: 6.21}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0516505, y: 2.166428}
+  m_EdgeRadius: 0
 --- !u!1 &2031183877
 GameObject:
   m_ObjectHideFlags: 0
@@ -4442,3 +4522,53 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2115017571 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5662931843522224408, guid: a7a9696623618f543ba615adc915f31e, type: 3}
+  m_PrefabInstance: {fileID: 907388979}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &2115017575
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115017571}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.044168115, y: 0.53352714}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.67, y: 6.21}
+    newSize: {x: 2.67, y: 6.21}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.9338696, y: 2.1851487}
+  m_EdgeRadius: 0
