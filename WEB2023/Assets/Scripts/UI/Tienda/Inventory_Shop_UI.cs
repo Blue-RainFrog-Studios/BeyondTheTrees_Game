@@ -166,6 +166,8 @@ public class Inventory_Shop_UI : MonoBehaviour
             player.GetComponent<CoinCounter>().totalMoney -= itemDB.InventoryShopGetItemFromDB(index).ShopValue;
             player.GetComponent<CoinCounter>().UpdateTotalMoneyText();
 
+            itemDB.InventoryPurchaseUpgrades(index);
+
             ui_item.SetItemAsPurchased();
             //GameDataManager.AddPurchasedItems(index);
 
