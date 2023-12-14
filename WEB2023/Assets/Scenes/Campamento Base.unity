@@ -463,7 +463,7 @@ MonoBehaviour:
   barrera: {fileID: 427328437}
   continueButton: {fileID: 182991545}
   sceneData: {fileID: 467032795}
-  wordSpeed: 0.03
+  wordSpeed: 0.001
 --- !u!61 &80888013
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1780,7 +1780,7 @@ MonoBehaviour:
   speakZone: {fileID: 204765825}
   continueButton: {fileID: 741964578}
   buyButton: {fileID: 822403568}
-  wordSpeed: 0.06
+  wordSpeed: 0.001
 --- !u!61 &204765825
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3486,7 +3486,7 @@ MonoBehaviour:
   barrera: {fileID: 0}
   continueButton: {fileID: 1879498188}
   sceneData: {fileID: 467032795}
-  wordSpeed: 0.03
+  wordSpeed: 0.001
 --- !u!61 &427328440
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4206,7 +4206,7 @@ MonoBehaviour:
   barrera: {fileID: 427328437}
   continueButton: {fileID: 2068743493}
   sceneData: {fileID: 467032795}
-  wordSpeed: 0.03
+  wordSpeed: 0.001
 --- !u!61 &542385075
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5998,7 +5998,7 @@ MonoBehaviour:
   speakZone: {fileID: 0}
   continueButton: {fileID: 1343284291}
   buyButton: {fileID: 258976466}
-  wordSpeed: 0.03
+  wordSpeed: 0.001
 --- !u!1 &741964578
 GameObject:
   m_ObjectHideFlags: 0
@@ -7116,7 +7116,7 @@ MonoBehaviour:
   barrera: {fileID: 427328437}
   continueButton: {fileID: 2065832549}
   sceneData: {fileID: 467032795}
-  wordSpeed: 0.03
+  wordSpeed: 0.001
 --- !u!61 &818410846
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9425,7 +9425,7 @@ MonoBehaviour:
   barrera: {fileID: 427328437}
   continueButton: {fileID: 1924575579}
   sceneData: {fileID: 467032795}
-  wordSpeed: 0.03
+  wordSpeed: 0.001
 --- !u!61 &1055430673
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11236,7 +11236,7 @@ MonoBehaviour:
   barrera: {fileID: 427328437}
   continueButton: {fileID: 1101896642}
   sceneData: {fileID: 1510405980}
-  wordSpeed: 0.03
+  wordSpeed: 0.001
 --- !u!61 &1250486425
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11575,7 +11575,7 @@ MonoBehaviour:
   speakZone: {fileID: 0}
   continueButton: {fileID: 1521568922}
   buyButton: {fileID: 389379010}
-  wordSpeed: 0.03
+  wordSpeed: 0.001
 --- !u!1 &1262552943
 GameObject:
   m_ObjectHideFlags: 0
@@ -14039,7 +14039,7 @@ MonoBehaviour:
   barrera: {fileID: 427328437}
   continueButton: {fileID: 1813805114}
   sceneData: {fileID: 467032795}
-  wordSpeed: 0.03
+  wordSpeed: 0.001
 --- !u!61 &1550484236
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15648,7 +15648,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Eerling
+  m_text: Alexia
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c41a1a6355e104641857672414d4b012, type: 2}
   m_sharedMaterial: {fileID: -7099467593743831185, guid: c41a1a6355e104641857672414d4b012, type: 2}
@@ -17419,7 +17419,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Eerling
+  m_text: Florentino
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c41a1a6355e104641857672414d4b012, type: 2}
   m_sharedMaterial: {fileID: -7099467593743831185, guid: c41a1a6355e104641857672414d4b012, type: 2}
@@ -19121,7 +19121,7 @@ MonoBehaviour:
   barrera: {fileID: 427328437}
   continueButton: {fileID: 1774592502}
   sceneData: {fileID: 467032795}
-  wordSpeed: 0.03
+  wordSpeed: 0.001
 --- !u!61 &2104259206
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19332,7 +19332,7 @@ MonoBehaviour:
   barrera: {fileID: 427328437}
   continueButton: {fileID: 1066422226}
   sceneData: {fileID: 467032795}
-  wordSpeed: 0.03
+  wordSpeed: 0.001
 --- !u!61 &2116108037
 BoxCollider2D:
   m_ObjectHideFlags: 0
