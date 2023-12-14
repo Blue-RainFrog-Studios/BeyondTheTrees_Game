@@ -101,6 +101,19 @@ public class All_Items_Database : ScriptableObject
     {
         return Run_Items[index];
     }
+    public ItemSO RunGetPotionToSpawn()
+    {
+        ItemSO yourPotion = Run_PotionsAvalible[0];
+        foreach (ItemSO potion in Run_PotionsAvalible)
+        {
+            if(PotionToSpawn.Name == potion.Name)
+            {
+                yourPotion = potion;
+            }
+        }
+        return yourPotion;
+    }
+
     public ItemSO RunGetCommonItemFromPool(int index)
     {
         return Run_Common_Items[index];
@@ -152,6 +165,13 @@ public class All_Items_Database : ScriptableObject
         {
             Shop_Potions_Upgrades[i].IsPurchased = false;
         }
+
+        for (int i = 0; i < Inventory_Shop_Items_Count; i++)
+        {
+            Shop_Inventory_Upgrades[i].IsPurchased = false;
+        }
+
+        PotionToSpawn = Shop_Potions_Upgrades[0];
 
         /*Debug.Log("Items purchased eliminados");
 

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ee3bfc8b9d47a44987f21c422ab335, type: 3}
   m_Name: PU_DragonFly
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: "Tarro con lib\xE9lula"
+  <Name>k__BackingField: "Tarro con Lib\xE9lula"
   <Descrption>k__BackingField: "El gremio te proporcionar\xE1 tarros con lib\xE9lula
     al inico de cada capa.\nSon muy dif\xEDciles de atrapar, pero valen la pena.
     Recuperar\xE1s mucha salud al consumirla."

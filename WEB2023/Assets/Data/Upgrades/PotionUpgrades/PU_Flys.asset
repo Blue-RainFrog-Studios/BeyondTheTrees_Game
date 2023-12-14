@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ee3bfc8b9d47a44987f21c422ab335, type: 3}
   m_Name: PU_Flys
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Tarro de Moscas
+  <Name>k__BackingField: Tarro con Moscas
   <Descrption>k__BackingField: "El Gremio te proporcionar\xE1 tarros de moscas al
     principio de cada capa del bosque.\nLa cura m\xE1s b\xE1sica que Alexia ha enontrado
     para Kero, moscas. Parece que solo le gustan a Kero."

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <IsStackable>k__BackingField: 1
   <MaxStackSize>k__BackingField: 2
-  <Name>k__BackingField: "Lib\xE9lula"
+  <Name>k__BackingField: "Tarro con Lib\xE9lula"
   <Descrption>k__BackingField: "Vida: +10\n\nUn tarro con una lib\xE9lula que se
     puede consumir para ganar una gran cantidad de vida. Es el plato favorito de
     Kero."
