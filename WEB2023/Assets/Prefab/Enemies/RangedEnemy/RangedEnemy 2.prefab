@@ -330,7 +330,7 @@ MonoBehaviour:
   range: 5
   attackRange: 15
   damage: 20
-  coolDown: 1
+  coolDown: 0.6
   blinkDuration: 0
   blinkNumber: 0
   healCol: {fileID: 8481167337894093923}

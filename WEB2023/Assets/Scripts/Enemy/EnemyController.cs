@@ -131,7 +131,7 @@ public class EnemyController : Enemy
         healTime = false;
         room.GetComponent<RoomController>().healing = true;
         room.GetComponent<RoomController>().posHealer = transform.position+new Vector3(1,1,0);
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(8);
         room.GetComponent<RoomController>().fheal = true;
         room.GetComponent<RoomController>().healing = false;
         GetComponent<ParticleSystem>().Stop();

@@ -617,9 +617,9 @@ MonoBehaviour:
   damage: 10
   speedNoHat: 6
   damageNoHat: 20
-  HP: 500
-  HPGnomeMode: 350
-  HPSecondPhase: 250
+  HP: 800
+  HPGnomeMode: 650
+  HPSecondPhase: 400
   grunt1: {fileID: 8991721561769723423}
   grunt2: {fileID: 8301444585429782216}
   metalicS: {fileID: 4678925269871965277}
