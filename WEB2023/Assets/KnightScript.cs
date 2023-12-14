@@ -14,9 +14,9 @@ public class KnightScript : MonoBehaviour
     [SerializeField]
     public Slider lifeBar;
 
-    KnightScript knight;
+    //KnightScript knight { get; set; }
     RoomController r;
-
+    private GameObject data;
     public int bleed=1;
     public int col = -1;
     private int minDmg = 3;
@@ -70,28 +70,38 @@ public class KnightScript : MonoBehaviour
     private void Awake()
     {
         r = FindObjectOfType<RoomController>();
-        knight = new KnightScript();
+        //knight = new KnightScript();
+        
+    }
+    private void Start()
+    {
+
     }
 
     public void ReceiveAttack(int dmgValue)
     {
         if (inmune) return;
         inmune = true;
-        if (knight.health <= 0)
+        if (health <= 0)
         {
+            //health = knight.health;
+            data = GameObject.FindGameObjectWithTag("Data");
+            StartCoroutine(data.GetComponent<DatabaseManager>().SendPostRequest());
             StartCoroutine(Wait(1));
+            
             SceneManager.LoadScene("GameOver");
+
             GetComponent<PlayerMovementInputSystem>().nivel = 0;
-            knight.health = 50;
-            lifeBar.value = knight.health;
+            //knight.health = 50;
+            
             this.gameObject.transform.position = new Vector2(0, -4);
             GetComponent<PlayerMovementInputSystem>().enabled = false;
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             GetComponentInChildren<Canvas>().enabled = false;
         }
         GetComponent<PlayerMovementInputSystem>().Head.Play("Hit");
-        knight.health -= (dmgValue - knight.defense <= 0.0f) ? minDmg : (dmgValue - knight.defense);
-        lifeBar.value = knight.health;
+        health -= (dmgValue - defense <= 0.0f) ? minDmg : (dmgValue - defense);
+        lifeBar.value = health;
         hitSource.PlayOneShot(hitClip);
         StartCoroutine(WaitSeconds(1));
     }
@@ -106,20 +116,20 @@ public class KnightScript : MonoBehaviour
 
     private void Update()
     {
-        lifeBar.value= knight.health;
+        lifeBar.value= health;
     }
 
     public void AddHealth(int val)
     {
-        if (knight.health + val <= knight.totalHealth)
+        if (health + val <= totalHealth)
         {
-            knight.health += val;
-            lifeBar.value = knight.health;
+            health += val;
+            lifeBar.value = health;
         }
         else
         {
-            knight.health = knight.totalHealth;
-            lifeBar.value = knight.totalHealth;
+            health = totalHealth;
+            lifeBar.value = totalHealth;
         }
 
     }
@@ -139,12 +149,12 @@ public class KnightScript : MonoBehaviour
     }
     public void ResetStats()
     {
-        knight.health = knight.totalHealth;
-        knight.speed = 10;
-        knight.attack = 20;
-        knight.defense = 7;
-        knight.attackSpeed = 0.5f;
-        knight.bleed = 1;
+        health = totalHealth;
+        speed = 10;
+        attack = 20;
+        defense = 7;
+        attackSpeed = 0.5f;
+        bleed = 1;
     }
 
     public void ModifyStats(int v, ItemSO inventoryItem, int quantity)

@@ -13227,6 +13227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pausePrefab: {fileID: 8563154038657341325, guid: 3acb6ed13840cde43be7e07232bf95ce, type: 3}
+  dataPrefab: {fileID: 5417131291030801439, guid: 03fd9b2c0eed8f04a8d758c2e23ffe56, type: 3}
 --- !u!4 &1461508874
 Transform:
   m_ObjectHideFlags: 0

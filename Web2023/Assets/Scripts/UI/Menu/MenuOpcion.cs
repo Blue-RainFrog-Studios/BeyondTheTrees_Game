@@ -10,6 +10,10 @@ public class MenuOpcion : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
     }
+    private void Start()
+    {
+        
+    }
     private void Update()
     {
         if(player.GetComponent<PlayerMovementInputSystem>().nivel > 0 && player.GetComponent<PlayerMovementInputSystem>().nivel < 3 && RoomController.boosDoor)
@@ -27,6 +31,7 @@ public class MenuOpcion : MonoBehaviour
     }
     public void VolverAlCampamento()
     {
+
         SceneManager.LoadScene("Campamento Base");
         //player.GetComponent<KnightScript>().ResetMoneyCanvas();
         player.transform.position = new Vector2(0, -4);
@@ -42,6 +47,7 @@ public class MenuOpcion : MonoBehaviour
         SceneManager.LoadScene("Basement");
         //player.GetComponent<KnightScript>().ResetMoneyCanvas();
         player.transform.position = new Vector2(0, 0);
+        player.GetComponent<PlayerMovementInputSystem>().EmpezarContador();
     }
 
     IEnumerator Wait(int seconds)

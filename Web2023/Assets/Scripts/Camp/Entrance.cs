@@ -21,6 +21,7 @@ public class Entrance : MonoBehaviour
             playerMovementInputSystem.gameObject.transform.position = new Vector2(0.0f, -4.0f);
             collision.GetComponent<CoinCounter>().totalMoneyTxt.gameObject.SetActive(false);
             collision.GetComponent<CoinCounter>().expeditionMoneyTxt.gameObject.SetActive(true);
+            playerMovementInputSystem.EmpezarContador();
         }
     }
 

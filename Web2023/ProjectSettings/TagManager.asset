@@ -25,6 +25,7 @@ TagManager:
   - ItemSpawner
   - Music
   - RoomController
+  - Data
   layers:
   - Default
   - TransparentFX
