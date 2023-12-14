@@ -81,7 +81,7 @@ public class EnemyGhost : EnemyController
         {
             StartCoroutine(Wait());
 
-            GetComponent<Enemy>().life += 10;
+            GetComponent<Enemy>().life += 20;
             if (GetComponent<Enemy>().life >= iLife)
             {
                 Debug.Log("Vida tras cura " + GetComponent<Enemy>().life);
