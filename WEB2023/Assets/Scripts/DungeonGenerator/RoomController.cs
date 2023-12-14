@@ -415,7 +415,7 @@ public class RoomController : MonoBehaviour
     }
     public bool lowHealth()
     {
-        if (lHealth()< maxHealth * 0.3)
+        if (lHealth()< maxHealth * 0.5)
         {
             Debug.Log("Queda poca vida");
             loHealth = true;

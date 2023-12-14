@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 300
       objectReference: {fileID: 0}
+    - target: {fileID: -7839364179883838192, guid: b61eff804755ac34a8b2ded704f94d8b, type: 3}
+      propertyPath: life
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: -3937691868912107571, guid: b61eff804755ac34a8b2ded704f94d8b, type: 3}
       propertyPath: m_Size.x
       value: 1.0159011
@@ -32,6 +36,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: -391864765268405954}
+    - target: {fileID: 3586582975330463079, guid: b61eff804755ac34a8b2ded704f94d8b, type: 3}
+      propertyPath: coolDown
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 3789336805313456490, guid: b61eff804755ac34a8b2ded704f94d8b, type: 3}
       propertyPath: m_Name
       value: RangedEnemy Variant

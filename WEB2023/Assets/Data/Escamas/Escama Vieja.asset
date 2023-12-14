@@ -15,7 +15,7 @@ MonoBehaviour:
   <IsStackable>k__BackingField: 0
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: Escama Vieja
-  <Descrption>k__BackingField: "Defensa: +5\n\nSea lo que sea que llevase esta escama
+  <Descrption>k__BackingField: "Defensa: +3\n\nSea lo que sea que llevase esta escama
     ya no est\xE1 entre nosotros, te dar\xE1 defensa y se puede vender por un poco
     de dinero."
   <ItemImage>k__BackingField: {fileID: 1576112327, guid: 0d6e7eb0117b0dd42b3ef1b04224dbec, type: 3}

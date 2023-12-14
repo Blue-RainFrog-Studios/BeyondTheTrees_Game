@@ -41,14 +41,14 @@ public class EnemyTeleport : EnemyController
         if (!notInRoom)
         {
 
-            if (isPlayerInRange(range) && currState != EnemyState.GoHeal)
+            if (isPlayerInRange(range) )
             {
                 currState = EnemyState.Follow;
-            }else if(!isPlayerInRangeTeleport(rangeTeleport) && currState != EnemyState.GoHeal)
+            }else if(!isPlayerInRangeTeleport(rangeTeleport) )
             {
                 currState = EnemyState.Follow;
             }
-            else if (isPlayerInRangeTeleport(rangeTeleport) && currState != EnemyState.GoHeal)
+            else if (isPlayerInRangeTeleport(rangeTeleport))
             {
                 currState = EnemyState.Teleport;
             }

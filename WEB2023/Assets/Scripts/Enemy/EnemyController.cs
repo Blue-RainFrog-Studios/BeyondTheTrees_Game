@@ -67,11 +67,11 @@ public class EnemyController : Enemy
     public float bulletSpeed;
     private bool dead = false;
     private Vector3 randomDir;
-    private Vector3 space = new Vector3(2, 0, 0);
-    private Vector3 space1 = new Vector3(0, 2, 0);
-    private Vector3 space2 = new Vector3(2, 0, 0);
-    private Vector3 space3 = new Vector3(-2, 0, 0);
-    private Vector3 space4 = new Vector3(0, -2, 0);
+    private Vector3 space = new Vector3(1, 0, 0);
+    private Vector3 space1 = new Vector3(0, 1, 0);
+    private Vector3 space2 = new Vector3(1, 0, 0);
+    private Vector3 space3 = new Vector3(-1, 0, 0);
+    private Vector3 space4 = new Vector3(0, -1, 0);
     private Vector3 runAway;
     public Animator animator;
     public GameObject IAmAGhost;
@@ -131,7 +131,7 @@ public class EnemyController : Enemy
         healTime = false;
         room.GetComponent<RoomController>().healing = true;
         room.GetComponent<RoomController>().posHealer = transform.position+new Vector3(1,1,0);
-        yield return new WaitForSeconds(20);
+        yield return new WaitForSeconds(15);
         room.GetComponent<RoomController>().fheal = true;
         room.GetComponent<RoomController>().healing = false;
         GetComponent<ParticleSystem>().Stop();
@@ -155,7 +155,7 @@ public class EnemyController : Enemy
     public IEnumerator Wait()
     {
         can = true;
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         can = false;
     }
     

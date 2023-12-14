@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5130266212505891606}
   - component: {fileID: 3288657146099191573}
   m_Layer: 0
-  m_Name: Acorn
+  m_Name: Bellota
   m_TagString: Acorn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
