@@ -33,7 +33,8 @@ public class RoomController : MonoBehaviour
     public static bool boosDoor = false;
 
 
-    GameObject player; 
+    GameObject player;
+    GameObject data;
 
     Queue<RoomInfo> loadRoomQueue = new Queue<RoomInfo>();
 
@@ -58,6 +59,7 @@ public class RoomController : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        data = GameObject.FindGameObjectWithTag("Data");
 
     }
 
@@ -507,14 +509,16 @@ public class RoomController : MonoBehaviour
                     Debug.Log("TERMINASTE LA RUN");
                     if(player != null && spawnedBossRoom)
                     {
-                        
+                        StartCoroutine(data.GetComponent<DatabaseManager>().SendPostRequest());
                         player.GetComponent<PlayerMovementInputSystem>().nivel++;
                         if (player.GetComponent<PlayerMovementInputSystem>().nivel < 3)
                         {
+                            player.GetComponent<PlayerMovementInputSystem>().updateTimer = false;
                             SceneManager.LoadScene("LoandingBoss");
                         }
                         else
                         {
+                            player.GetComponent<PlayerMovementInputSystem>().updateTimer = false;
                             SceneManager.LoadScene("Victory");
                         }
                         

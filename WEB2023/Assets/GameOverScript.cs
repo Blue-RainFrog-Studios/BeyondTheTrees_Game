@@ -9,7 +9,7 @@ public class GameOverScript : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player");   
     }
     public void Return()
     {

@@ -20,6 +20,7 @@ public class MenuPausa : MonoBehaviour
     [SerializeField]
     private GameObject botonPausa;
     private GameObject player;
+    private GameObject data;
 
     private bool ataqueCruceta = true; 
 
@@ -32,6 +33,7 @@ public class MenuPausa : MonoBehaviour
     {
         DontDestroyOnLoad(this);
         player = GameObject.FindGameObjectWithTag("Player");
+        
         cruceta.GetComponent<Image>().color = new Color(0.8f, 0.8f, 0.8f, 0.5f);
     }
     public void Pausa()
@@ -50,6 +52,8 @@ public class MenuPausa : MonoBehaviour
     }
     public void VolverAlCampamento()
     {
+        data = GameObject.FindGameObjectWithTag("Data");
+        StartCoroutine(data.GetComponent<DatabaseManager>().SendPostRequest());
         botonPausa.SetActive(true);
         menuPausa.SetActive(false);
         Time.timeScale = 1f;

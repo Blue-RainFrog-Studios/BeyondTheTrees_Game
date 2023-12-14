@@ -29,6 +29,10 @@ public class PlayerMovementInputSystem : MonoBehaviour
     public float shoteRate = 0.5f;
     private Vector2 lowSpeed = new Vector2(0.2f, 0.2f);
     private float shotRateTime = 0;
+
+    public float timerInSecond = 0f;
+    public float levelTimer = 0.0f;
+    public bool updateTimer = false;
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
@@ -42,6 +46,11 @@ public class PlayerMovementInputSystem : MonoBehaviour
         //playerInputActions.Player.Attack2.performed += Attack;
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
+    public void EmpezarContador()
+    {
+        updateTimer = true;
+        levelTimer = 0.0f;
+    }
     private void OnDisable()
     {
         //playerInputActions.Disable();
@@ -54,6 +63,11 @@ public class PlayerMovementInputSystem : MonoBehaviour
     }
     private void Update()
     {
+        if (updateTimer)
+            levelTimer += Time.deltaTime * 1;
+        /// float to int
+        timerInSecond = Mathf.Round(levelTimer);
+
         //Actualiza las posiciones que le decimos mediante el input
         //Move
         direction = playerInputActions.Player.Move.ReadValue<Vector2>();

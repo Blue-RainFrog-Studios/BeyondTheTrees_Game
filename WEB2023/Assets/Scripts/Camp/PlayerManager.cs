@@ -8,6 +8,8 @@ public class PlayerManager : MonoBehaviour
 
     [SerializeField]
     private GameObject pausePrefab;
+    [SerializeField]
+    private GameObject dataPrefab;
 
     GameObject pause;
 
@@ -18,6 +20,7 @@ public class PlayerManager : MonoBehaviour
         if (pause == null)
         {
             Instantiate(pausePrefab);
+            Instantiate(dataPrefab);
         }
         player.GetComponent<KnightScript>().ResetStats();
     }
