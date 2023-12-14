@@ -99,11 +99,11 @@ public class NPCAyuda : MonoBehaviour
         // Frases para recibir al jugador
         if (player.GetComponent<ReactionNPCs>().expedicionExito)
         {
-            this.dialogueList.Add("¡JAJA! Buen trabajo chavalote. Seguro que te has hecho con un buien botín.");
+            this.dialogueList.Add("¡JAJA! Buen trabajo chavalote. Seguro que te has hecho con un buen botín.");
         }
         else if (player.GetComponent<ReactionNPCs>().expedicionInterrumpida)
         {
-            this.dialogueList.Add("¿Se te ha complicado la expedición, eh? No pasa nada, haz acopio de pociones o comprate algo nuevo.");
+            this.dialogueList.Add("¿Se te ha complicado la expedición, eh? No pasa nada, haz acopio de pociones o cómprate algo nuevo.");
         }
         else if (player.GetComponent<ReactionNPCs>().expedicionFallida)
         {
@@ -114,8 +114,8 @@ public class NPCAyuda : MonoBehaviour
 
         if (sceneData.GetComponent<NPCHelperManager>().cheapestItem<=player.GetComponent<CoinCounter>().totalMoney)
         {
-            this.dialogueList.Add("¿Hey! Parece que tienes suficientes monedas para comprar algun objeto nuevo");
-            this.dialogueList.Add("Habla con el viejo Eerling y comprate algo bonito");
+            this.dialogueList.Add("¡Hey! Parece que tienes suficientes monedas para comprar algún objeto nuevo.");
+            this.dialogueList.Add("Habla con el viejo Eerling y cómprate algo bonito.");
         }
 
 
@@ -124,13 +124,13 @@ public class NPCAyuda : MonoBehaviour
 
         if (sceneData.GetComponent<NPCHelperManager>().cheapestPotion <= player.GetComponent<CoinCounter>().totalMoney)
         {
-            this.dialogueList.Add("Tienes una buena cantidad de dinero, deberías pasarte a mirar las pociones");
-            this.dialogueList.Add("Puede que Alexia tenga algún brebaje que te sea de ayuda");
+            this.dialogueList.Add("Tienes una buena cantidad de dinero, deberías pasarte a mirar las pociones.");
+            this.dialogueList.Add("Puede que Alexia tenga algún brebaje que te sea de ayuda.");
         }
         if (sceneData.GetComponent<NPCHelperManager>().cheapestInvUpgrade <= player.GetComponent<CoinCounter>().totalMoney)
         {
-            this.dialogueList.Add("Veo que tienes una pequeña fortuna, deberías pensarte mejorar tu mochila");
-            this.dialogueList.Add("El bueno de Florentino siempre está dispuesto a mejorar tu inventario");
+            this.dialogueList.Add("Veo que tienes una pequeña fortuna, deberías pensarte mejorar tu mochila.");
+            this.dialogueList.Add("El bueno de Florentino siempre está dispuesto a mejorar tu inventario.");
         }
 
     }
