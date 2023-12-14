@@ -158,7 +158,10 @@ public class All_Items_Database : ScriptableObject
         {
             Shop_Potions_Upgrades[i].IsPurchased = false;
         }
-
+        for (int i = 0; i < Inventory_Shop_Items_Count; i++)
+        {
+            Shop_Inventory_Upgrades[i].IsPurchased = false;
+        }
         /*Debug.Log("Items purchased eliminados");
 
         Debug.Log("//////////////////////////////////////////////////////////////////////");
