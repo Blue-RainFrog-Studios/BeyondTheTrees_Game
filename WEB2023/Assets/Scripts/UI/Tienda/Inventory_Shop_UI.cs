@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using Inventory;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
@@ -179,6 +180,7 @@ public class Inventory_Shop_UI : MonoBehaviour
                 tutorialData.GetComponent<NPCHelperManager>().tutorialInventario = true;
                 closeShopButton.gameObject.SetActive(true);
             }
+            player.GetComponent<InventoryController>().InventorySize();
 
         }
         else

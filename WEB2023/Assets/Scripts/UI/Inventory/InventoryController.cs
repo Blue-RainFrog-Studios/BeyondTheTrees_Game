@@ -34,7 +34,6 @@ namespace Inventory
             playerInputActions = new Map();
             playerInputActions.Enable();
             playerInputActions.Player.Inventory.performed += ShowInventory;
-
         }
 
         private void ShowInventory(InputAction.CallbackContext context)
@@ -81,6 +80,13 @@ namespace Inventory
             {
                 inventoryUI.UpdateData(item.Key, item.Value.item.ItemImage, item.Value.quantity);
             }
+        }
+
+        public void InventorySize()
+        {
+            inventoryData.Size++;
+            inventoryData.AddSlot();
+            inventoryUI.InitializeInventoryUI(1);
         }
 
         public List<InventoryItem> initialItems = new();
@@ -187,7 +193,6 @@ namespace Inventory
                 DropItem(inventoryItem, itemIndex, inventoryItem.quantity);
                 itemIndex++;
             }
-
         } 
     }
 }

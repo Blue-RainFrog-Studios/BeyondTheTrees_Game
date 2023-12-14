@@ -14,7 +14,7 @@ namespace Inventory.Model
         private List<InventoryItem> inventoryItems;
 
         [field: SerializeField]
-        public int Size { get; private set; } = 10;
+        public int Size { get; set; } = 10;
 
         public event Action<Dictionary<int, InventoryItem>> OnInventoryUpdated;  //Informa de que el inventario tiene que cambiar, y así no se revisa todo el rato en el Update
 
@@ -25,6 +25,11 @@ namespace Inventory.Model
             {
                 inventoryItems.Add(InventoryItem.GetEmptyItem());
             }
+        }
+
+        public void AddSlot()
+        {
+            inventoryItems.Add(InventoryItem.GetEmptyItem());
         }
 
         public int AddItem(ItemSO item, int quantity)
