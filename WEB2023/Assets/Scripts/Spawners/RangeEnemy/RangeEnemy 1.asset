@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: RangeEnemy 1
   m_EditorClassIdentifier: 
   itemToSpawn: {fileID: 3789336805313456490, guid: 537136a009a5edc4d82ca1b6685a270f, type: 3}
-  minSpawn: 0
+  minSpawn: 1
   maxSpawn: 2

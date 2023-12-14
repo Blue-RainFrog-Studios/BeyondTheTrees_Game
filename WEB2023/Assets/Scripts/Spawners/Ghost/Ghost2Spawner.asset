@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Ghost2Spawner
   m_EditorClassIdentifier: 
   itemToSpawn: {fileID: 263330336992781321, guid: d122fc2a97b8c73449ac49069aaed613, type: 3}
-  minSpawn: 0
+  minSpawn: 1
   maxSpawn: 3

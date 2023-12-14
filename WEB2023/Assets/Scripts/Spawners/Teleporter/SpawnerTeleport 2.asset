@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemToSpawn: {fileID: 4875267983180699273, guid: 81d048b77f5cd9740aa5d60f9c05a1d8, type: 3}
   minSpawn: 0
-  maxSpawn: 1
+  maxSpawn: 2
