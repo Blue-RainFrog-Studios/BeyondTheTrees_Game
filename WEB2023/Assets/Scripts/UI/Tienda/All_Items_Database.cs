@@ -82,6 +82,12 @@ public class All_Items_Database : ScriptableObject
             PotionToSpawn = Shop_Potions_Upgrades[index];
         }
     }
+
+    public void InventoryPurchaseUpgrades(int index)
+    {
+        Shop_Inventory_Upgrades[index].IsPurchased = true;
+    }
+
     public ItemSO ShopGetItemFromPool(int index)
     {
         return Shop_Items[index];
