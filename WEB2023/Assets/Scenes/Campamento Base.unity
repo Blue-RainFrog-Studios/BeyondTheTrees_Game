@@ -2604,7 +2604,7 @@ MonoBehaviour:
   speakZone: {fileID: 280167654}
   continueButton: {fileID: 186652136}
   sceneData: {fileID: 467032795}
-  wordSpeed: 0.06
+  wordSpeed: 0.001
 --- !u!1 &283654849
 GameObject:
   m_ObjectHideFlags: 0

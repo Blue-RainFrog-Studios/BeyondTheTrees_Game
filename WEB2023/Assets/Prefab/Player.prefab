@@ -809,6 +809,9 @@ MonoBehaviour:
   WalkSoundEffect: {fileID: 1799273431241015053}
   attackDirection: {x: 0, y: 0}
   shoteRate: 0.5
+  timerInSecond: 0
+  levelTimer: 0
+  updateTimer: 0
 --- !u!114 &2902353004927614186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1266,6 +1269,8 @@ MonoBehaviour:
   nombre: Invitado
   texto: {fileID: 1272554201272834293}
   sexo: 0
+  sex: 
+  edad: 0
 --- !u!114 &372513030826480231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1329,7 +1334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4036ba5740f14484d970cbcb30fe1d03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newPlayer: 0
+  newPlayer: 1
   expedicionFallida: 0
   expedicionExito: 0
   expedicionInterrumpida: 0
