@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6955bb70d59f2874ab7d9f2e695cac26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 80
+  life: 160
   notInRoom: 0
   range: 20
   attackRange: 0.65
@@ -322,7 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 535428537d67d494a848b2753636bbc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 100
+  life: 0
   notInRoom: 0
   range: 20
   attackRange: 0.65
