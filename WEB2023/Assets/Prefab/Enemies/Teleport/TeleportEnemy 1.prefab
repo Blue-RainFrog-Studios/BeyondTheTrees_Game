@@ -278,7 +278,7 @@ MonoBehaviour:
   range: 5
   attackRange: 1
   damage: 10
-  coolDown: 5
+  coolDown: 3
   blinkDuration: 0
   blinkNumber: 0
 --- !u!114 &1878166858499573673
@@ -295,10 +295,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 0
   notInRoom: 0
-  range: 5
+  range: 4
   attackRange: 1
   damage: 10
-  coolDown: 5
+  coolDown: 3
   blinkDuration: 1
   blinkNumber: 6
   healCol: {fileID: 0}
@@ -317,7 +317,7 @@ MonoBehaviour:
   IAmAGhost: {fileID: 0}
   iLife: 100
   can: 0
-  rangeTeleport: 7
+  rangeTeleport: 8
 --- !u!50 &3113921293586694263
 Rigidbody2D:
   serializedVersion: 4

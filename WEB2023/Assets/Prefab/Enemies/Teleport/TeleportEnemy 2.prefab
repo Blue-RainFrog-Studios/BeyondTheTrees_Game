@@ -390,10 +390,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 0
   notInRoom: 0
-  range: 5
+  range: 4
   attackRange: 1
   damage: 15
-  coolDown: 5
+  coolDown: 3
   blinkDuration: 1
   blinkNumber: 6
   healCol: {fileID: 0}
@@ -412,7 +412,7 @@ MonoBehaviour:
   IAmAGhost: {fileID: 0}
   iLife: 120
   can: 0
-  rangeTeleport: 7
+  rangeTeleport: 8
 --- !u!114 &3675273563405679425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -430,7 +430,7 @@ MonoBehaviour:
   range: 5
   attackRange: 1
   damage: 15
-  coolDown: 5
+  coolDown: 3
   blinkDuration: 0
   blinkNumber: 0
 --- !u!1 &5489218989988641635

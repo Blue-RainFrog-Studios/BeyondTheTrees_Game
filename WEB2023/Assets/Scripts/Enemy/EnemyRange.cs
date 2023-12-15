@@ -51,7 +51,7 @@ public class EnemyRange : EnemyController
                 currState = EnemyState.Attack;
 
             }
-            else if (Vector3.Distance(transform.position, player.transform.position) < attackRange && Vector3.Distance(transform.position, player.transform.position) > range && room.GetComponent<RoomController>().lowHealth())
+             if (Vector3.Distance(transform.position, player.transform.position) < attackRange && Vector3.Distance(transform.position, player.transform.position) > range && room.GetComponent<RoomController>().lowHealth() || room.GetComponent<RoomController>().healing)
             {
                 if (room.GetComponent<RoomController>().fheal)
                 {
