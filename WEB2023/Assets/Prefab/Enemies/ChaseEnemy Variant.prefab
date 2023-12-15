@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -942966139534371549, guid: f665b535ad4f5824c80d275df6f7c6cd, type: 3}
+      propertyPath: iLife
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: -942966139534371549, guid: f665b535ad4f5824c80d275df6f7c6cd, type: 3}
       propertyPath: speed
       value: 4.5
       objectReference: {fileID: 0}
@@ -110,7 +114,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8205568043618531357, guid: f665b535ad4f5824c80d275df6f7c6cd, type: 3}
       propertyPath: life
-      value: 140
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
