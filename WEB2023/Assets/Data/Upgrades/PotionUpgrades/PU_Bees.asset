@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ee3bfc8b9d47a44987f21c422ab335, type: 3}
   m_Name: PU_Bees
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Tarro de abejas
+  <Name>k__BackingField: Tarro con Abejas
   <Descrption>k__BackingField: "El Gremio te proporcionar\xE1 tarros de abejas al
     principio de cada capa del bosque.\nM\xE1s dulces y saludables que las moscas.
     Cura bastante vida al usarse."
