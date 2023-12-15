@@ -6,13 +6,15 @@ using UnityEngine.SceneManagement;
 public class MenuOpcion : MonoBehaviour
 {
     private GameObject player;
+    GameObject data;
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        data = GameObject.FindGameObjectWithTag("Data");
     }
     private void Start()
     {
-        
+        StartCoroutine(data.GetComponent<DatabaseManager>().SendPostRequest());
     }
     private void Update()
     {

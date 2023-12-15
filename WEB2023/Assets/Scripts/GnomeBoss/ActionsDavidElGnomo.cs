@@ -55,7 +55,7 @@ public class ActionsDavidElGnomo : MonoBehaviour
     }
     public Status UpdateMethodSleep()
     {
-        if (Vector2.Distance(playerTransform.position, DavidElGnomoTransform.position) < 9f || GetComponent<DavidElGnomoController>().HP < 500)
+        if (Vector2.Distance(playerTransform.position, DavidElGnomoTransform.position) < 9f || GetComponent<DavidElGnomoController>().HP < 800)
         {
             //stop all music
             if (music != null)
@@ -64,7 +64,7 @@ public class ActionsDavidElGnomo : MonoBehaviour
             }
             sleepTheme.Play();
         }
-        if (Vector2.Distance(playerTransform.position, DavidElGnomoTransform.position) < 3f || GetComponent<DavidElGnomoController>().HP<500)
+        if (Vector2.Distance(playerTransform.position, DavidElGnomoTransform.position) < 3f || GetComponent<DavidElGnomoController>().HP<800)
         {
             return Status.Success;
         }
