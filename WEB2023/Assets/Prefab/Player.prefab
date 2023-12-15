@@ -801,7 +801,7 @@ MonoBehaviour:
   speed: 10
   smoothness: 0.12
   attack: {fileID: 1720175491396843235, guid: 49b138763be454a4e99c46e4bc979230, type: 3}
-  nivel: 0
+  nivel: 2
   Body: {fileID: 8909066435888895679}
   Head: {fileID: 6414043612838470999}
   AttackSoundEffect1: {fileID: 7633266851515481693}
