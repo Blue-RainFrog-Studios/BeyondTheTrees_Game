@@ -15,7 +15,7 @@ MonoBehaviour:
   <IsStackable>k__BackingField: 1
   <MaxStackSize>k__BackingField: 2
   <Name>k__BackingField: "Tarro con Lib\xE9lula"
-  <Descrption>k__BackingField: "Vida: +10\n\nUn tarro con una lib\xE9lula que se
+  <Descrption>k__BackingField: "Vida: +20\n\nUn tarro con una lib\xE9lula que se
     puede consumir para ganar una gran cantidad de vida. Es el plato favorito de
     Kero."
   <ItemImage>k__BackingField: {fileID: -1491376607, guid: 0d6e7eb0117b0dd42b3ef1b04224dbec, type: 3}
@@ -30,5 +30,5 @@ MonoBehaviour:
   <dropChance>k__BackingField: 0
   modifiersData:
   - statModifier: {fileID: 11400000, guid: f4da559af5418614580a267b7dac9fa4, type: 2}
-    value: 10
+    value: 20
   <actionSFX>k__BackingField: {fileID: 8300000, guid: 1390b8f08a7402a4a8ba6887a91226b0, type: 3}

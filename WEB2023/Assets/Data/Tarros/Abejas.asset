@@ -15,11 +15,11 @@ MonoBehaviour:
   <IsStackable>k__BackingField: 1
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: Tarro con Abejas
-  <Descrption>k__BackingField: 'Vida: +7
+  <Descrption>k__BackingField: 'Vida: +13
 
 
-    Un tarro con abejas que se puede consumir
-    para ganar bastante vida. A Kero le encantan.'
+    Un tarro con abejas que se puede
+    consumir para ganar bastante vida. A Kero le encantan.'
   <ItemImage>k__BackingField: {fileID: 1836974116, guid: 0d6e7eb0117b0dd42b3ef1b04224dbec, type: 3}
   <Attack>k__BackingField: 0
   <Defense>k__BackingField: 0
@@ -32,5 +32,5 @@ MonoBehaviour:
   <dropChance>k__BackingField: 0
   modifiersData:
   - statModifier: {fileID: 11400000, guid: f4da559af5418614580a267b7dac9fa4, type: 2}
-    value: 7
+    value: 13
   <actionSFX>k__BackingField: {fileID: 8300000, guid: 1390b8f08a7402a4a8ba6887a91226b0, type: 3}
