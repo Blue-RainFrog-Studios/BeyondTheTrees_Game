@@ -340,7 +340,7 @@ MonoBehaviour:
   ghostClip: {fileID: 8300000, guid: 24b585ca62f5a3142b003b03a92717b5, type: 3}
   teleportHit: {fileID: 0}
   coolDownTp: 0
-  speed: 4.5
+  speed: 4
   bulletSpeed: 0
   animator: {fileID: 6938415437227796382}
   IAmAGhost: {fileID: 0}
