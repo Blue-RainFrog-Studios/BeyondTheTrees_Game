@@ -1167,7 +1167,7 @@ AudioSource:
   m_GameObject: {fileID: 1156985873014526917}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 861508010344493465, guid: 41fc75b265ffcd94fa619ee09e7a4877, type: 2}
   m_audioClip: {fileID: 8300000, guid: f39c3ece76e8dde4fb85bc7917f9437e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -1334,7 +1334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4036ba5740f14484d970cbcb30fe1d03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newPlayer: 0
+  newPlayer: 1
   expedicionFallida: 0
   expedicionExito: 0
   expedicionInterrumpida: 0
